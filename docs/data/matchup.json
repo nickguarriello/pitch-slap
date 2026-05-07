@@ -1,0 +1,460 @@
+{
+  "cat_states": {
+    "R": {
+      "state": "FLIPPABLE",
+      "my_val": 19.0,
+      "opp_val": 20.0,
+      "gap": -1.0
+    },
+    "HR": {
+      "state": "TIE",
+      "my_val": 5.0,
+      "opp_val": 5.0,
+      "gap": 0.0
+    },
+    "RBI": {
+      "state": "FLIPPABLE",
+      "my_val": 20.0,
+      "opp_val": 24.0,
+      "gap": -4.0
+    },
+    "SB": {
+      "state": "FLOPPABLE",
+      "my_val": 3.0,
+      "opp_val": 2.0,
+      "gap": 1.0
+    },
+    "OBP": {
+      "state": "LOSS",
+      "my_val": 0.28402367,
+      "opp_val": 0.32638889,
+      "gap": -0.0424
+    },
+    "K": {
+      "state": "WIN",
+      "my_val": 39.0,
+      "opp_val": 33.0,
+      "gap": 6.0
+    },
+    "QS": {
+      "state": "TIE",
+      "my_val": 3.0,
+      "opp_val": 3.0,
+      "gap": 0.0
+    },
+    "ERA": {
+      "state": "LOSS",
+      "my_val": 5.68421053,
+      "opp_val": 4.95,
+      "gap": -0.7342
+    },
+    "WHIP": {
+      "state": "FLOPPABLE",
+      "my_val": 1.23684211,
+      "opp_val": 1.25,
+      "gap": 0.0132
+    },
+    "SvHd": {
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
+    }
+  },
+  "need_weights": {
+    "R": 0.44,
+    "HR": 0.57,
+    "RBI": 0.44,
+    "SB": 0.53,
+    "OBP": 0.7,
+    "K": 0.49,
+    "QS": 0.15,
+    "ERA": 0.53,
+    "WHIP": 0.61,
+    "SvHd": 0.53
+  },
+  "cat_records": {
+    "ERA": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "win_rate": 0.6
+    },
+    "HR": {
+      "wins": 0,
+      "losses": 5,
+      "ties": 0,
+      "win_rate": 0.0
+    },
+    "K": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "win_rate": 0.4
+    },
+    "OBP": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "win_rate": 0.6
+    },
+    "QS": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "win_rate": 0.8
+    },
+    "R": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "win_rate": 0.4
+    },
+    "RBI": {
+      "wins": 2,
+      "losses": 2,
+      "ties": 1,
+      "win_rate": 0.4
+    },
+    "SB": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "win_rate": 0.4
+    },
+    "SvHd": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "win_rate": 0.8
+    },
+    "WHIP": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "win_rate": 0.6
+    }
+  },
+  "history": {
+    "5": [
+      {
+        "cat": "R",
+        "result": "L",
+        "my_val": 39.0,
+        "opp_val": 55.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 9.0,
+        "opp_val": 13.0
+      },
+      {
+        "cat": "RBI",
+        "result": "L",
+        "my_val": 39.0,
+        "opp_val": 45.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "my_val": 4.0,
+        "opp_val": 10.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "my_val": 0.359,
+        "opp_val": 0.379
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "my_val": 61.0,
+        "opp_val": 66.0
+      },
+      {
+        "cat": "QS",
+        "result": "L",
+        "my_val": 5.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "my_val": 4.154,
+        "opp_val": 3.321
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "my_val": 1.319,
+        "opp_val": 1.38
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 1.0,
+        "opp_val": 0.0
+      }
+    ],
+    "4": [
+      {
+        "cat": "R",
+        "result": "L",
+        "my_val": 52.0,
+        "opp_val": 58.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 14.0,
+        "opp_val": 17.0
+      },
+      {
+        "cat": "RBI",
+        "result": "L",
+        "my_val": 41.0,
+        "opp_val": 45.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "my_val": 11.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "my_val": 0.372,
+        "opp_val": 0.351
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "my_val": 36.0,
+        "opp_val": 21.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "my_val": 3.0,
+        "opp_val": 1.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "my_val": 4.836,
+        "opp_val": 7.105
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "my_val": 1.209,
+        "opp_val": 1.579
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 2.0,
+        "opp_val": 1.0
+      }
+    ],
+    "3": [
+      {
+        "cat": "R",
+        "result": "W",
+        "my_val": 49.0,
+        "opp_val": 47.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 13.0,
+        "opp_val": 19.0
+      },
+      {
+        "cat": "RBI",
+        "result": "T",
+        "my_val": 54.0,
+        "opp_val": 54.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "my_val": 5.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "my_val": 0.352,
+        "opp_val": 0.342
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "my_val": 62.0,
+        "opp_val": 67.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "my_val": 7.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "my_val": 2.883,
+        "opp_val": 2.905
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "my_val": 1.194,
+        "opp_val": 0.949
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 7.0,
+        "opp_val": 5.0
+      }
+    ],
+    "2": [
+      {
+        "cat": "R",
+        "result": "L",
+        "my_val": 43.0,
+        "opp_val": 57.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 7.0,
+        "opp_val": 14.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "my_val": 44.0,
+        "opp_val": 38.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "my_val": 5.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "my_val": 0.389,
+        "opp_val": 0.394
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "my_val": 43.0,
+        "opp_val": 35.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "my_val": 4.0,
+        "opp_val": 1.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "my_val": 4.125,
+        "opp_val": 5.598
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "my_val": 1.312,
+        "opp_val": 1.463
+      },
+      {
+        "cat": "SvHd",
+        "result": "L",
+        "my_val": 1.0,
+        "opp_val": 4.0
+      }
+    ],
+    "1": [
+      {
+        "cat": "R",
+        "result": "W",
+        "my_val": 81.0,
+        "opp_val": 55.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 14.0,
+        "opp_val": 15.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "my_val": 59.0,
+        "opp_val": 46.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "my_val": 16.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "my_val": 0.351,
+        "opp_val": 0.298
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "my_val": 94.0,
+        "opp_val": 113.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "my_val": 7.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "my_val": 4.328,
+        "opp_val": 3.738
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "my_val": 1.254,
+        "opp_val": 1.027
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 10.0,
+        "opp_val": 6.0
+      }
+    ]
+  },
+  "constraints": {
+    "acquisitions_used": 5,
+    "acquisitions_remaining": 2,
+    "ip_accumulated": 0.0,
+    "ip_remaining": 15.0,
+    "waiver_priority": 3,
+    "acq_alert": "HIGH SPEND: 5/7 acquisitions used",
+    "ip_alert": "IP PACE: only 0.0 IP by Thursday \u2014 at risk of minimum",
+    "waiver_alert": "STRONG: waiver priority #3 \u2014 act early in week"
+  }
+}
