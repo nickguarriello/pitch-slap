@@ -3,34 +3,32 @@
 
 ---
 
-## Project Status: PRE-BUILD — READY TO START
-
-All planning and requirements are complete. See PRD v2.0 for full specifications.
+## Project Status: IN PROGRESS — Phase 1 partially complete
 
 ---
 
 ## What Exists Right Now
 
-- PRD v2.0 (pitch-slap-prd-v2.docx) — full requirements, architecture, business logic
-- Architecture diagram (pitch-slap-architecture.html) — visual system overview
-- Dashboard mockup (pitch-slap-mockup.html) — approved UI reference
-- CLAUDE.md — session rules
-- PLANNING.md — this file
-
-**Nothing has been built yet. The repository is empty.**
+- `config.py` — full league config, ESPN mappings, all PRD thresholds, snapshot() mechanism
+- `pipeline/init_db.py` — 11-table SQLite schema, verified clean init
+- `pipeline/validate.py` — 20 validation checks (schema, range, completeness, crosswalk, ground truth, staleness)
+- `db/pitch-slap.db` — initialized (gitignored — local only)
+- `espn_credentials.py` — ESPN cookies loaded (gitignored)
+- Planning docs: CLAUDE.md, PLANNING.md, architecture HTML
+- Repo: https://github.com/nickguarriello/pitch-slap
 
 ---
 
 ## Build Order — Follow This Sequence
 
 ### Phase 1 — Foundation (Do First, Do Not Skip)
-- [ ] Initialize repo structure (all directories per PRD Section 4.1)
-- [ ] Write `config.py` with all league settings (values in CLAUDE.md)
-- [ ] Write `config_history/` snapshot mechanism
-- [ ] Build `dim_players` crosswalk: `pybaseball.playerid_lookup()` as spine
+- [x] Initialize repo structure (all directories per PRD Section 4.1)
+- [x] Write `config.py` with all league settings — ESPN mappings ported from old engine
+- [x] Write `config_history/` snapshot mechanism — `config.snapshot()` built in
+- [ ] Build `dim_players` crosswalk: `pybaseball.playerid_lookup()` as spine — NEXT
 - [ ] Manual resolution of any ambiguous crosswalk matches
-- [ ] Initialize SQLite schema — all tables per PRD Section 5
-- [ ] Stub `validate.py` with all check definitions (implement checks as each fetch is built)
+- [x] Initialize SQLite schema — 11 tables per PRD Section 5, verified
+- [x] Stub `validate.py` with all check definitions — 20 checks built
 
 ### Phase 2 — Data Fetchers
 - [ ] `fetch_espn.py` — all view params per PRD Section 3.2
@@ -84,11 +82,12 @@ All planning and requirements are complete. See PRD v2.0 for full specifications
 
 ## Open Questions (Answer Before or During Phase 1)
 
-1. ESPN swid + espn_s2 cookies — retrieve from browser dev tools and add to GitHub Secrets
-2. ESPN team ID within league #1985887220 — check ESPN URL when viewing your team
-3. Current week number in the season
-4. Season start date (Week 1 Monday)
-5. Fresh repo name — recommended: `pitch-slap` or `pitch-slap-engine`
+All resolved:
+1. ESPN credentials — stored in `espn_credentials.py` (gitignored). Must be added to GitHub Secrets before first Actions run.
+2. Team ID = 1
+3. Current week = Week 6 (May 4–10, 2026)
+4. Week 1 = March 25–April 5 (12-day first week). Week 2+ = standard 7-day.
+5. Repo = https://github.com/nickguarriello/pitch-slap
 
 ---
 
@@ -122,6 +121,7 @@ All planning and requirements are complete. See PRD v2.0 for full specifications
 | Date | What Was Done | What Is Open |
 |------|--------------|--------------|
 | Pre-build | Full planning complete. PRD v2.1, architecture, mockup, CLAUDE.md, PLANNING.md produced. | Everything — build not started. |
+| 2026-05-07 | Phase 1: repo connected to github.com/nickguarriello/pitch-slap. All docs ingested. config.py built (full). 11-table SQLite schema init. validate.py stub (20 checks). Naming: snake_case for .py, kebab everywhere else. | dim_players crosswalk (Phase 1 last item). Then Phase 2: fetch_espn.py. |
 
 ---
 
