@@ -3,18 +3,28 @@
 
 ---
 
-## Project Status: IN PROGRESS — Phase 1 partially complete
+## Project Status: LIVE — Phases 1–6 complete. Phase 7 (manual verification) in progress.
 
 ---
 
-## What Exists Right Now
+## What Exists Right Now (Full Build — Live as of 2026-05-07)
 
-- `config.py` — full league config, ESPN mappings, all PRD thresholds, snapshot() mechanism
-- `pipeline/init_db.py` — 11-table SQLite schema, verified clean init
-- `pipeline/validate.py` — 20 validation checks (schema, range, completeness, crosswalk, ground truth, staleness)
-- `db/pitch-slap.db` — initialized (gitignored — local only)
-- `espn_credentials.py` — ESPN cookies loaded (gitignored)
-- Planning docs: CLAUDE.md, PLANNING.md, architecture HTML
+- `config.py` — full league config, ESPN mappings, all PRD thresholds
+- `pipeline/init_db.py` — 11-table SQLite schema + seed_crosswalk() for CI
+- `pipeline/fetch_espn.py` — ESPN roster, matchup, constraints (556 players)
+- `pipeline/fetch_mlb.py` — schedule, transactions, two-start detection
+- `pipeline/fetch_statcast.py` — Statcast + FanGraphs (499 rows, 7-day cache)
+- `pipeline/transform.py` — 4 windows: season / 30d / 14d / current (~2000 rows)
+- `pipeline/validate.py` — 23 checks (typically 19 pass / 3 warn / 0 fail)
+- `pipeline/evaluate.py` — cat states, need weights, buy/sell, 2-start, constraints
+- `pipeline/report.py` — writes docs/data/*.json + CSVs
+- `pipeline.py` — orchestrator (--mode full/light)
+- `docs/*.html` — 5 dashboard pages (index, matchup, waivers, players, league)
+- `docs/data/*.json` — live data, auto-committed by GitHub Actions after each run
+- `data/player-crosswalk.csv` — 556-player crosswalk (committed); seeds DB in CI
+- `.github/workflows/daily-pipeline.yml` — 3x daily cron (7am full, 12pm/6pm light)
+- `README.md` — setup instructions (Secrets, Pages, local dev)
+- Dashboard live: https://nickguarriello.github.io/pitch-slap/
 - Repo: https://github.com/nickguarriello/pitch-slap
 
 ---
@@ -82,6 +92,25 @@
 
 ---
 
+## UAT Backlog — Known Issues & Refinements (Start Here Next Session)
+
+### Priority Fixes
+1. **SELL_HIGH babip_ceiling too aggressive** — config value is 0.260, should be ~0.350. Almost all hitters flag as sell-high. Fix: snapshot config.py, update `SELL_HIGH["babip_ceiling"]` to 0.350.
+2. **League page: "Team N" labels** — no team names in league.json because build_league() in report.py doesn't store them. Fix: pull team names from fetch_espn.py (ESPN provides them) and include in the league output.
+
+### Verify During Week 6
+3. **Two-start pitchers = 0** — MLB hasn't posted probables for games >4 days out. Expected to populate Wed/Thu. Check waivers page later in the week.
+4. **IP accumulated = 0.0** — correct for Monday; verify it accumulates properly as games are played.
+5. **Current week cat scores** — ERA 5.68, WHIP 1.24, OBP 0.284 visible on matchup page. Spot-check these against ESPN.
+
+### Data Structure Notes (resolved — for future reference)
+- `roster.json` stats are nested: `players[].stats.season.r` not `players[].r_season`
+- `waivers.json` keys: `buy_low_fa` / `two_starters_fa` (not `buy_low` / `two_starters`)
+- `league.json` stats nested: `teams[].stats.R` (uppercase) not `teams[].r`
+- All 4 HTML pages corrected to match actual JSON structure (2026-05-07)
+
+---
+
 ## Open Questions (Answer Before or During Phase 1)
 
 All resolved:
@@ -127,6 +156,7 @@ All resolved:
 | 2026-05-07 (cont) | Phase 1 complete: build_crosswalk.py + overrides.json (all 256 rostered matched). Phase 2 complete: fetch_espn.py (556 players, per-cat matchups, constraints), fetch_mlb.py (182 schedule rows, 350 transactions, two-start detection), fetch_statcast.py (499 rows: 261 batters xBA/wRC+, 241 pitchers xFIP/SIERA, 7-day cache). FanGraphs legacy endpoint 403-blocked -- switched to JSON API. Phase 3: transform.py (2074 rows: season/30d/14d/current windows). validate.py (23 checks, 19 pass/3 warn/0 fail). Phase 4: evaluate.py (cat states, need weights, buy/sell, 2-start, constraints). pipeline.py orchestrator (full+light modes, ~29s light run). | Phase 5: report.py + dashboard HTML. |
 | 2026-05-07 (cont2) | Phase 5 complete: report.py (roster/waivers/matchup/league/status JSON + 3 CSVs). All 5 dashboard pages: index.html, matchup.html, waivers.html, players.html, league.html. Dark theme, pipeline health banner on all pages, sortable tables on players/league. Open: SELL_HIGH babip_ceiling threshold too low (0.260, should be ~0.350 — tune after 2 weeks live). | Phase 6: daily_pipeline.yml GitHub Actions workflow. |
 | 2026-05-07 (cont3) | Phase 6 complete: .github/workflows/daily-pipeline.yml (3x daily cron, workflow_dispatch, writes ESPN creds from secrets, inits DB, auto-commits docs/data/). README.md with first-time setup instructions (Secrets + Pages). Open: configure ESPN_SWID + ESPN_S2 secrets in GitHub repo settings, enable Pages (main/docs), trigger first manual run to verify. | Phase 7: manual verification. |
+| 2026-05-07 (cont4) | First CI run failed (exit code 1): dim_players empty in CI because db/pitch-slap.db is gitignored. Fix: exported dim_players to data/player-crosswalk.csv (committed), added seed_crosswalk() to init_db.py. Second CI run succeeded (1m 16s, 499 Statcast rows matched). Dashboard live. UAT round 1: all 4 HTML pages had field name mismatches vs actual JSON structure — fixed in same session. Dashboard now shows correct data on all 5 pages. | UAT round 1 in progress. See UAT Backlog above. |
 
 ---
 
