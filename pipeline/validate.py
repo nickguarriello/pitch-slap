@@ -158,13 +158,21 @@ def check_range_barrel_pct(conn: sqlite3.Connection) -> dict:
 def check_range_xfip_siera(conn: sqlite3.Connection) -> dict:
     name = "range.xfip_siera"
     lo, hi = VALIDATION_BOUNDS["xfip"]
+    siera_hi = VALIDATION_BOUNDS["siera"][1]
+    # Require join to fact_player_stats to enforce minimum IP (10+ IP)
     cur = conn.execute(
-        "SELECT COUNT(*) FROM fact_statcast WHERE xfip < ? OR xfip > ? OR siera < ? OR siera > ?",
-        (lo, hi, lo, hi)
+        """
+        SELECT COUNT(DISTINCT fs.player_id)
+        FROM fact_statcast fs
+        JOIN fact_player_stats ps ON fs.player_id = ps.player_id AND ps.window = 'season'
+        WHERE ps.ip > 10
+          AND (fs.xfip < ? OR fs.xfip > ? OR fs.siera < ? OR fs.siera > ?)
+        """,
+        (lo, hi, lo, siera_hi)
     )
     bad = cur.fetchone()[0]
     if bad:
-        return _warn(name, f"{bad} rows with xFIP/SIERA outside [{lo}, {hi}] — unvalidated metric", bad)
+        return _warn(name, f"{bad} pitchers (>10 IP) with xFIP/SIERA outside bounds — review", bad)
     return _pass(name)
 
 
@@ -227,8 +235,6 @@ def check_completeness_statcast(conn: sqlite3.Connection) -> dict:
     n = cur.fetchone()[0]
     if n == 0:
         return _warn(name, "No Statcast data — using cached values", 0)
-    if n < 500:
-        return _warn(name, f"Statcast only covers {n} players — partial pull", n)
     if n < min_sc:
         return _warn(name, f"Statcast covers {n} players (expected > {min_sc})", n)
     return _pass(name, f"{n} players with Statcast data", n)
@@ -295,15 +301,16 @@ def check_ground_truth_svhd(conn: sqlite3.Connection, espn_svhd: float | None = 
 
 
 def check_ground_truth_obp_definition(conn: sqlite3.Connection) -> dict:
-    """Confirm OBP = (H+BB+HBP)/(AB+BB+HBP+SF) — flag if values look like BA instead."""
+    """Flag implausibly low OBP values that may indicate BA is being stored instead."""
     name = "ground_truth.obp_definition"
+    # < 0.180 over 150+ PA is statistically almost impossible in MLB (not just bad)
     cur = conn.execute(
         "SELECT COUNT(*) FROM fact_player_stats "
-        "WHERE window = 'season' AND obp IS NOT NULL AND obp < 0.200 AND pa > 100"
+        "WHERE window = 'season' AND obp IS NOT NULL AND obp < 0.180 AND pa > 150"
     )
     suspicious = cur.fetchone()[0]
     if suspicious:
-        return _warn(name, f"{suspicious} players with OBP < .200 over 100+ PA — confirm OBP definition matches ESPN")
+        return _warn(name, f"{suspicious} players with OBP < .180 over 150+ PA — confirm OBP definition matches ESPN")
     return _pass(name)
 
 
@@ -311,26 +318,96 @@ def check_ground_truth_obp_definition(conn: sqlite3.Connection) -> dict:
 # Staleness checks
 # ---------------------------------------------------------------------------
 
-def check_staleness_espn(pipeline_meta: dict) -> dict:
+def check_staleness_espn(pipeline_meta: dict, conn: sqlite3.Connection) -> dict:
     name = "staleness.espn"
+    # Prefer pipeline_meta timestamp; fall back to most recent snapshot_date in DB
     last_fetch = pipeline_meta.get("espn_last_fetch")
     if not last_fetch:
-        return _warn(name, "No ESPN fetch timestamp in pipeline_meta")
+        row = conn.execute(
+            "SELECT MAX(snapshot_date) FROM fact_espn_rosters"
+        ).fetchone()
+        last_fetch = (row[0] + "T00:00:00") if row and row[0] else None
+    if not last_fetch:
+        return _warn(name, "No ESPN fetch timestamp found")
     age_h = _hours_since(last_fetch)
     if age_h > STALENESS_WARN_HOURS:
         return _warn(name, f"ESPN data is {age_h:.1f}h old (threshold: {STALENESS_WARN_HOURS}h)")
     return _pass(name, f"ESPN data is {age_h:.1f}h old")
 
 
-def check_staleness_statcast(pipeline_meta: dict) -> dict:
+def check_staleness_statcast(pipeline_meta: dict, conn: sqlite3.Connection) -> dict:
     name = "staleness.statcast"
     last_fetch = pipeline_meta.get("statcast_last_fetch")
     if not last_fetch:
-        return _warn(name, "No Statcast fetch timestamp — using cached data")
+        row = conn.execute(
+            "SELECT MAX(fetch_date) FROM fact_statcast"
+        ).fetchone()
+        last_fetch = (row[0] + "T00:00:00") if row and row[0] else None
+    if not last_fetch:
+        return _warn(name, "No Statcast fetch timestamp found")
     age_h = _hours_since(last_fetch)
-    if age_h > STALENESS_WARN_HOURS * 24:   # Statcast is weekly — warn at 25 days
+    if age_h > STALENESS_WARN_HOURS * 24:   # Statcast is weekly -- warn at 25 days
         return _warn(name, f"Statcast data is {age_h/24:.1f} days old")
     return _pass(name, f"Statcast data is {age_h:.1f}h old")
+
+
+def check_completeness_fact_player_stats(conn: sqlite3.Connection) -> dict:
+    """All four windows (season, 30d, 14d, current) must have rows."""
+    name = "completeness.fact_player_stats"
+    required_windows = {"season", "30d", "14d", "current"}
+    rows = conn.execute(
+        "SELECT window, COUNT(*) FROM fact_player_stats GROUP BY window"
+    ).fetchall()
+    present = {r[0] for r in rows}
+    missing = required_windows - present
+    if missing:
+        return _fail(name, f"Missing windows: {missing} — transform.py may not have run", 0)
+    counts = {r[0]: r[1] for r in rows}
+    min_rows = min(counts.values())
+    if min_rows < 100:
+        return _warn(name, f"Smallest window has only {min_rows} rows — transform output thin", min_rows)
+    total = sum(counts.values())
+    return _pass(name, f"{total} rows across {len(present)} windows", total)
+
+
+def check_completeness_schedule(conn: sqlite3.Connection) -> dict:
+    """fact_schedule must have upcoming game rows."""
+    name = "completeness.schedule"
+    from datetime import date
+    today = date.today().isoformat()
+    cur = conn.execute(
+        "SELECT COUNT(*) FROM fact_schedule WHERE game_date >= ?", (today,)
+    )
+    n = cur.fetchone()[0]
+    if n == 0:
+        return _fail(name, "No upcoming schedule rows — fetch_mlb.py may not have run", 0)
+    if n < 20:
+        return _warn(name, f"Only {n} schedule rows for today+ — schedule may be incomplete", n)
+    return _pass(name, f"{n} upcoming team-game slots", n)
+
+
+def check_transform_completeness(conn: sqlite3.Connection) -> dict:
+    """Season window must cover the majority of rostered players."""
+    name = "completeness.transform_coverage"
+    rostered = conn.execute(
+        "SELECT COUNT(DISTINCT player_id) FROM fact_espn_rosters "
+        "WHERE espn_team_id IS NOT NULL AND snapshot_date = (SELECT MAX(snapshot_date) FROM fact_espn_rosters)"
+    ).fetchone()[0]
+    if rostered == 0:
+        return _warn(name, "No rostered players in fact_espn_rosters — run fetch_espn.py first")
+
+    covered = conn.execute(
+        "SELECT COUNT(DISTINCT fps.player_id) FROM fact_player_stats fps "
+        "JOIN fact_espn_rosters fer ON fps.player_id = fer.player_id "
+        "WHERE fps.window = 'season' AND fer.espn_team_id IS NOT NULL"
+    ).fetchone()[0]
+
+    pct = covered / rostered * 100
+    if pct < 60:
+        return _fail(name, f"Only {covered}/{rostered} ({pct:.0f}%) rostered players in transform output", covered)
+    if pct < 80:
+        return _warn(name, f"{covered}/{rostered} ({pct:.0f}%) rostered players covered — some missing stats", covered)
+    return _pass(name, f"{covered}/{rostered} ({pct:.0f}%) rostered players have season stats", covered)
 
 
 def _hours_since(ts_str: str) -> float:
@@ -383,6 +460,9 @@ def run(
         check_completeness_my_roster(conn),
         check_completeness_fa_pool(conn),
         check_completeness_statcast(conn),
+        check_completeness_fact_player_stats(conn),
+        check_completeness_schedule(conn),
+        check_transform_completeness(conn),
     ]
 
     # Crosswalk
@@ -399,8 +479,8 @@ def run(
 
     # Staleness
     results += [
-        check_staleness_espn(pipeline_meta),
-        check_staleness_statcast(pipeline_meta),
+        check_staleness_espn(pipeline_meta, conn),
+        check_staleness_statcast(pipeline_meta, conn),
     ]
 
     conn.close()

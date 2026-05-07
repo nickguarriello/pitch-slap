@@ -180,8 +180,8 @@ VALIDATION_BOUNDS = {
     "era":        (0.00, 15.00),
     "whip":       (0.00, 4.00),
     "obp":        (0.100, 0.600),
-    "xfip":       (1.00, 12.00),   # raised: bad pitchers or small samples can exceed 8
-    "siera":      (1.00, 10.00),   # raised: same rationale
+    "xfip":       (1.00, 8.00),
+    "siera":      (1.00, 8.00),
     "barrel_pct": (0.0, 35.0),
     "ownership":  (0.0, 100.0),
 }
@@ -190,7 +190,7 @@ VALIDATION_COMPLETENESS = {
     "expected_rosters":   8,
     "min_active_players": 20,
     "min_fa_pool":        200,
-    "min_statcast":       400,     # lowered: ESPN universe ~556, Statcast requires min BBE/PA
+    "min_statcast":       700,
     "crosswalk_fail_threshold": 3,   # FAIL if more than this many unmatched
 }
 

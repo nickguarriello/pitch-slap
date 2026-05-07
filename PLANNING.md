@@ -38,9 +38,9 @@
 
 ### Phase 3 — Transform & Validate
 - [x] `transform.py` — all joins on player_id (never name), all window calculations
-- [ ] Complete `validate.py` — all checks per PRD Section 8
-- [ ] Test validation_report.json output format
-- [ ] Ground truth check: ERA, WHIP, OBP, SvHd against ESPN
+- [x] Complete `validate.py` — 23 checks (20 original + 3 new: fact_player_stats, schedule, transform coverage)
+- [x] Test validation_report.json output format
+- [ ] Ground truth check: ERA, WHIP, OBP, SvHd against ESPN (requires live espn_era/espn_svhd params)
 
 ### Phase 4 — Evaluate
 - [ ] Category need weight engine
