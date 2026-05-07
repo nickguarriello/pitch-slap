@@ -1,0 +1,75 @@
+name: Daily Pipeline
+
+on:
+  schedule:
+    # All times UTC. May = EDT (UTC-4).
+    - cron: '0 11 * * *'   # 7:00am EDT  — full run
+    - cron: '0 16 * * *'   # 12:00pm EDT — light run
+    - cron: '0 22 * * *'   # 6:00pm EDT  — light run
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Pipeline mode'
+        required: false
+        default: 'full'
+        type: choice
+        options: [full, light]
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Write ESPN credentials
+        env:
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+        run: |
+          cat > espn_credentials.py <<PYEOF
+          ESPN_SWID = "${ESPN_SWID}"
+          ESPN_S2 = "${ESPN_S2}"
+          PYEOF
+
+      - name: Initialize database
+        run: python -m pipeline.init_db
+
+      - name: Determine pipeline mode
+        id: mode
+        run: |
+          # workflow_dispatch overrides schedule
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ inputs.mode }}" >> $GITHUB_OUTPUT
+          else
+            HOUR=$(date -u +%H)
+            if [ "$HOUR" = "11" ]; then
+              echo "mode=full" >> $GITHUB_OUTPUT
+            else
+              echo "mode=light" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Run pipeline
+        run: python pipeline.py --mode ${{ steps.mode.outputs.mode }}
+
+      - name: Commit dashboard data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/
+          # Only commit if there are changes
+          git diff --staged --quiet || git commit -m "data: pipeline run $(date -u +'%Y-%m-%d %H:%M UTC') [${{ steps.mode.outputs.mode }}]"
+          git push

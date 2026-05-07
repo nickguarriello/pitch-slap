@@ -67,11 +67,11 @@
 - [x] Pipeline health banner (all pages)
 
 ### Phase 6 — GitHub Actions
-- [ ] `daily_pipeline.yml` — 3x daily schedule (7am full, 12pm light, 6pm light)
-- [ ] Implement --mode flag (full vs light) in pipeline entry point — DONE in pipeline.py
-- [ ] GitHub Secrets setup (ESPN cookies, documented in README)
-- [ ] Test full end-to-end run
-- [ ] Verify GitHub Pages deployment
+- [x] `daily-pipeline.yml` — 3x daily schedule (7am full, 12pm light, 6pm light); workflow_dispatch for manual runs
+- [x] Implement --mode flag (full vs light) in pipeline entry point — DONE in pipeline.py
+- [x] GitHub Secrets setup — ESPN_SWID + ESPN_S2 documented in README
+- [ ] Test full end-to-end run (requires push + secrets configured in GitHub)
+- [ ] Verify GitHub Pages deployment (Settings → Pages → main/docs)
 
 ### Phase 7 — Manual Verification (First 2 Weeks Live)
 - [ ] Daily spot check: 5-10 players against ESPN UI
@@ -126,6 +126,7 @@ All resolved:
 | 2026-05-07 | Phase 1: repo connected to github.com/nickguarriello/pitch-slap. All docs ingested. config.py built (full). 11-table SQLite schema init. validate.py stub (20 checks). Naming: snake_case for .py, kebab everywhere else. | dim_players crosswalk (Phase 1 last item). Then Phase 2: fetch_espn.py. |
 | 2026-05-07 (cont) | Phase 1 complete: build_crosswalk.py + overrides.json (all 256 rostered matched). Phase 2 complete: fetch_espn.py (556 players, per-cat matchups, constraints), fetch_mlb.py (182 schedule rows, 350 transactions, two-start detection), fetch_statcast.py (499 rows: 261 batters xBA/wRC+, 241 pitchers xFIP/SIERA, 7-day cache). FanGraphs legacy endpoint 403-blocked -- switched to JSON API. Phase 3: transform.py (2074 rows: season/30d/14d/current windows). validate.py (23 checks, 19 pass/3 warn/0 fail). Phase 4: evaluate.py (cat states, need weights, buy/sell, 2-start, constraints). pipeline.py orchestrator (full+light modes, ~29s light run). | Phase 5: report.py + dashboard HTML. |
 | 2026-05-07 (cont2) | Phase 5 complete: report.py (roster/waivers/matchup/league/status JSON + 3 CSVs). All 5 dashboard pages: index.html, matchup.html, waivers.html, players.html, league.html. Dark theme, pipeline health banner on all pages, sortable tables on players/league. Open: SELL_HIGH babip_ceiling threshold too low (0.260, should be ~0.350 — tune after 2 weeks live). | Phase 6: daily_pipeline.yml GitHub Actions workflow. |
+| 2026-05-07 (cont3) | Phase 6 complete: .github/workflows/daily-pipeline.yml (3x daily cron, workflow_dispatch, writes ESPN creds from secrets, inits DB, auto-commits docs/data/). README.md with first-time setup instructions (Secrets + Pages). Open: configure ESPN_SWID + ESPN_S2 secrets in GitHub repo settings, enable Pages (main/docs), trigger first manual run to verify. | Phase 7: manual verification. |
 
 ---
 
