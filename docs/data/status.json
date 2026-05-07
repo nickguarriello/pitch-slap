@@ -1,0 +1,22 @@
+{
+  "as_of": "2026-05-07",
+  "last_run_mode": "unknown",
+  "last_full_run": null,
+  "last_light_run": null,
+  "espn_last_fetch": "2026-05-07T19:41:47.579434+00:00",
+  "validate_overall": "warn",
+  "validate_warnings": 3,
+  "cats_winning": 1,
+  "cats_losing": 2,
+  "cats_flippable": 2,
+  "constraints": {
+    "acquisitions_used": 5,
+    "acquisitions_remaining": 2,
+    "ip_accumulated": 0.0,
+    "ip_remaining": 15.0,
+    "waiver_priority": 3,
+    "acq_alert": "HIGH SPEND: 5/7 acquisitions used",
+    "ip_alert": "IP PACE: only 0.0 IP by Thursday \u2014 at risk of minimum",
+    "waiver_alert": "STRONG: waiver priority #3 \u2014 act early in week"
+  }
+}
