@@ -31,8 +31,8 @@
 - [x] Stub `validate.py` with all check definitions — 20 checks built
 
 ### Phase 2 — Data Fetchers
-- [ ] `fetch_espn.py` — all view params per PRD Section 3.2
-- [ ] `fetch_mlb.py` — schedule, IL, 40-man, probables, lineup order
+- [x] `fetch_espn.py` — all view params per PRD Section 3.2
+- [x] `fetch_mlb.py` — schedule, IL, probables, two-start detection
 - [ ] `fetch_statcast.py` — Statcast + FanGraphs with weekly cache logic
 - [ ] Validate each fetcher output against ESPN UI manually before proceeding
 
@@ -122,6 +122,7 @@ All resolved:
 |------|--------------|--------------|
 | Pre-build | Full planning complete. PRD v2.1, architecture, mockup, CLAUDE.md, PLANNING.md produced. | Everything — build not started. |
 | 2026-05-07 | Phase 1: repo connected to github.com/nickguarriello/pitch-slap. All docs ingested. config.py built (full). 11-table SQLite schema init. validate.py stub (20 checks). Naming: snake_case for .py, kebab everywhere else. | dim_players crosswalk (Phase 1 last item). Then Phase 2: fetch_espn.py. |
+| 2026-05-07 (cont) | Phase 1 complete: build_crosswalk.py + overrides.json (all 256 rostered matched). Phase 2: fetch_espn.py (556 players, per-cat matchups, constraints). fetch_mlb.py (182 schedule rows, 350 transactions, two-start detection). | fetch_statcast.py (Phase 2 final). Then Phase 3: transform.py. |
 
 ---
 
