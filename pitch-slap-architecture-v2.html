@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pitch Slap — System Architecture v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0a0c0f; color:#e2e8f0; font-family:'IBM Plex Sans',sans-serif; font-size:13px; padding:32px; }
+h1 { font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:3px; color:#00e5ff; margin-bottom:4px; }
+.sub { font-family:'IBM Plex Mono',monospace; font-size:11px; color:#4a5568; letter-spacing:1px; margin-bottom:36px; }
+
+.sec { margin-bottom:24px; }
+.sec-hdr { font-family:'IBM Plex Mono',monospace; font-size:9px; font-weight:600; letter-spacing:3px; color:#2d3748; text-transform:uppercase; padding:4px 0 8px; border-bottom:1px solid #1e232d; margin-bottom:14px; }
+
+.row { display:flex; gap:10px; flex-wrap:wrap; }
+.node { background:#111318; border:1px solid #1e232d; border-radius:4px; padding:14px 16px; flex:1; min-width:150px; }
+.node:hover { border-color:#00e5ff22; }
+.nt { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px; }
+.nd { font-size:11px; color:#718096; line-height:1.7; }
+.nd li { list-style:none; }
+.nd li:before { content:"› "; color:#2d3748; }
+
+.tag { display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:8px; font-weight:700; padding:1px 6px; border-radius:2px; margin:0 2px 4px 0; }
+.td { background:rgba(57,255,110,0.1); color:#39ff6e; }
+.tw { background:rgba(255,183,0,0.1); color:#ffb700; }
+.tn { background:rgba(255,61,90,0.1); color:#ff3d5a; }
+.ta { background:rgba(0,229,255,0.1); color:#00e5ff; }
+
+/* source colors */
+.s-espn { border-top:2px solid #ff7043; } .s-espn .nt { color:#ff7043; }
+.s-mlb  { border-top:2px solid #42a5f5; } .s-mlb  .nt { color:#42a5f5; }
+.s-sc   { border-top:2px solid #ab47bc; } .s-sc   .nt { color:#ab47bc; }
+.s-fg   { border-top:2px solid #66bb6a; } .s-fg   .nt { color:#66bb6a; }
+.s-fetch{ border-top:2px solid #ffa726; } .s-fetch .nt { color:#ffa726; }
+.s-tf   { border-top:2px solid #26c6da; } .s-tf   .nt { color:#26c6da; }
+.s-val  { border-top:2px solid #ef5350; } .s-val  .nt { color:#ef5350; }
+.s-ev   { border-top:2px solid #7c4dff; } .s-ev   .nt { color:#7c4dff; }
+.s-db   { border-top:2px solid #8d6e63; } .s-db   .nt { color:#8d6e63; }
+.s-csv  { border-top:2px solid #78909c; } .s-csv  .nt { color:#78909c; }
+.s-out  { border-top:2px solid #00e5ff; } .s-out  .nt { color:#00e5ff; }
+.s-logic{ border-top:2px solid #ec407a; } .s-logic .nt { color:#ec407a; }
+
+/* pipeline steps */
+.pipe { display:flex; gap:4px; align-items:center; flex-wrap:wrap; margin-bottom:20px; }
+.step { background:#111318; border:1px solid #1e232d; border-radius:3px; padding:8px 10px; text-align:center; }
+.sn { font-family:'IBM Plex Mono',monospace; font-size:8px; color:#2d3748; }
+.sl { font-family:'IBM Plex Mono',monospace; font-size:9px; font-weight:600; color:#a0aec0; }
+.sa { color:#2d3748; font-size:14px; line-height:2.5; }
+.step.critical { border-color:#ef535044; }
+.step.critical .sl { color:#ef5350; }
+
+/* constraint table */
+.ctable { width:100%; border-collapse:collapse; margin-top:10px; }
+.ctable th { font-family:'IBM Plex Mono',monospace; font-size:9px; color:#4a5568; text-transform:uppercase; letter-spacing:1px; padding:6px 10px; border-bottom:1px solid #1e232d; text-align:left; }
+.ctable td { padding:8px 10px; border-bottom:1px solid #111318; font-size:11px; color:#718096; }
+.ctable tr:hover td { background:#111318; }
+.ctable td:first-child { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; color:#a0aec0; }
+
+/* cat states */
+.states { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+.state { border-radius:3px; padding:10px 12px; }
+.sl2 { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; margin-bottom:4px; }
+.sd { font-size:10px; color:#718096; line-height:1.5; }
+
+/* validation */
+.val-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.val-box { background:#0d1117; border:1px solid #1e232d; border-radius:3px; padding:10px 12px; }
+.val-title { font-family:'IBM Plex Mono',monospace; font-size:9px; font-weight:600; color:#ef5350; margin-bottom:6px; letter-spacing:1px; text-transform:uppercase; }
+.val-items { font-size:10px; color:#718096; line-height:1.8; }
+.val-items li { list-style:none; }
+.val-items li:before { content:"✓ "; color:#2d3748; }
+
+/* note box */
+.notebox { background:#0d1117; border:1px solid #1e232d; border-left:3px solid #ffb700; border-radius:3px; padding:10px 14px; margin-top:10px; font-size:11px; color:#8b7200; font-style:italic; }
+
+/* legend */
+.legend { display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; padding-top:20px; border-top:1px solid #1e232d; }
+.li { display:flex; align-items:center; gap:5px; }
+.ld { width:10px; height:10px; border-radius:2px; }
+.ll { font-family:'IBM Plex Mono',monospace; font-size:9px; color:#4a5568; }
+</style>
+</head>
+<body>
+
+<h1>PITCH SLAP — SYSTEM ARCHITECTURE</h1>
+<div class="sub">V2.1 · MAY 2026 · ESPN H2H CATEGORIES · 8 TEAMS · WEEKLY LOCK · LEAGUE #1985887220</div>
+
+<!-- TRIGGER -->
+<div class="sec">
+  <div class="sec-hdr">Automation Trigger — GitHub Actions</div>
+  <div style="background:#0d1117; border:1px solid #1e232d; border-radius:4px; padding:14px 18px; margin-bottom:12px; display:flex; align-items:center; gap:16px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; padding:5px 12px; border-radius:2px; background:rgba(57,255,110,0.1); color:#39ff6e; border:1px solid rgba(57,255,110,0.2); white-space:nowrap;">⚡ GitHub Actions</div>
+    <div style="font-size:11px; color:#718096;"><strong style="color:#a0aec0">daily_pipeline.yml</strong> — Runs <strong style="color:#a0aec0">3x daily: 7am (full), 12pm (light), 6pm (light) ET</strong>. No local machine. Full run fetches all sources. Light runs fetch ESPN + MLB only — skip Statcast cache. GitHub Pages auto-deploys.</div>
+  </div>
+  <div class="pipe">
+    <div class="step"><div class="sn">1</div><div class="sl">Fetch ESPN</div></div><div class="sa">›</div>
+    <div class="step"><div class="sn">2</div><div class="sl">Fetch MLB</div></div><div class="sa">›</div>
+    <div class="step"><div class="sn">3</div><div class="sl">Fetch Statcast</div></div><div class="sa">›</div>
+    <div class="step"><div class="sn">4</div><div class="sl">Transform</div></div><div class="sa">›</div>
+    <div class="step critical"><div class="sn">5</div><div class="sl">Validate ⚠</div></div><div class="sa">›</div>
+    <div class="step"><div class="sn">6</div><div class="sl">Evaluate</div></div><div class="sa">›</div>
+    <div class="step"><div class="sn">7</div><div class="sl">Snapshot DB</div></div><div class="sa">›</div>
+    <div class="step"><div class="sn">8</div><div class="sl">Write CSVs</div></div><div class="sa">›</div>
+    <div class="step"><div class="sn">9</div><div class="sl">Render HTML</div></div><div class="sa">›</div>
+    <div class="step"><div class="sn">10</div><div class="sl">Git Push</div></div>
+  </div>
+  <div class="notebox" style="margin-bottom:8px;"><strong style="color:#ffb700">Run modes:</strong> --mode full (7am) runs all 10 steps including FanGraphs stats. --mode light (12pm, 6pm) fetches ESPN + MLB only, skips Statcast/FanGraphs cache, runs transform → validate → evaluate → output on fresher data. ~60 sec per light run.</div>
+  <div class="notebox">Step 5 (Validate) is a blocking step — if critical checks fail, pipeline halts and last-known-good data is preserved. Dashboard shows RED banner.</div>
+</div>
+
+<!-- DATA SOURCES -->
+<div class="sec">
+  <div class="sec-hdr">Layer 1 — Data Sources (All Free, No Paid APIs)</div>
+  <div class="row">
+    <div class="node s-espn">
+      <div class="nt">ESPN Fantasy API</div>
+      <span class="tag td">3X DAILY</span>
+      <div class="nd"><ul>
+        <li>espn-api v0.46 · Auth: swid + espn_s2</li>
+        <li>Rosters + lineup slots (all 8 teams)</li>
+        <li>Live matchup scores (all cats)</li>
+        <li>Historical matchup results</li>
+        <li>FA pool + ownership % + delta 7D</li>
+        <li>Start %, ESPN ratings, projections</li>
+        <li>Acquisition type, injury flags</li>
+        <li>Transaction history</li>
+        <li><strong style="color:#ff7043">Acquisitions used this week</strong></li>
+        <li><strong style="color:#ff7043">Waiver priority order</strong></li>
+        <li>League settings (validates config.py)</li>
+      </ul></div>
+    </div>
+    <div class="node s-mlb">
+      <div class="nt">MLB Stats API</div>
+      <span class="tag td">3X DAILY</span>
+      <div class="nd"><ul>
+        <li>MLB-StatsAPI (PyPI) · No auth</li>
+        <li>Game schedule (next 7 days)</li>
+        <li>Probable starters per game</li>
+        <li>IL moves + expected return dates</li>
+        <li>40-man roster (callup watch)</li>
+        <li>Batting order / lineup position</li>
+        <li>Team stats (opp quality vs hand)</li>
+        <li>Transactions feed</li>
+        <li>Minor league stats (AAA)</li>
+        <li><strong style="color:#42a5f5">Games remaining this week per team</strong></li>
+      </ul></div>
+    </div>
+    <div class="node s-sc">
+      <div class="nt">Baseball Savant</div>
+      <span class="tag tw">WEEKLY MON</span>
+      <div class="nd"><ul>
+        <li>pybaseball · No auth</li>
+        <li>Exit velocity (avg + max)</li>
+        <li>Barrel% + hard hit%</li>
+        <li>xBA, xSLG, xwOBA</li>
+        <li>Launch angle</li>
+        <li>Sprint speed</li>
+        <li>Spin rate (pitchers)</li>
+        <li>~850 players bulk pull</li>
+        <li>Cache TTL: 7 days (skip if fresh)</li>
+      </ul></div>
+    </div>
+    <div class="node s-fg">
+      <div class="nt">FanGraphs</div>
+      <span class="tag td">DAILY</span><span class="tag tw">WEEKLY (park)</span>
+      <div class="nd"><ul>
+        <li>pybaseball · No auth</li>
+        <li>SIERA, xFIP, FIP</li>
+        <li>wRC+, BABIP, K%, BB%</li>
+        <li>Park factors (all parks)</li>
+        <li>Split stats (vs L/R)</li>
+        <li><strong style="color:#66bb6a">playerid_lookup() — crosswalk spine</strong></li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ETL -->
+<div class="sec">
+  <div class="sec-hdr">Layer 2 — ETL Pipeline (pipeline/ directory)</div>
+  <div class="row">
+    <div class="node s-fetch">
+      <div class="nt">fetch_espn.py</div>
+      <div class="nd"><ul>
+        <li>All ESPN view params per session</li>
+        <li>Handles cookie auth + rate limits</li>
+        <li>Returns structured dicts per player</li>
+        <li>Detects auth failure (0 rosters returned)</li>
+      </ul></div>
+    </div>
+    <div class="node s-fetch">
+      <div class="nt">fetch_mlb.py</div>
+      <div class="nd"><ul>
+        <li>Schedule, IL, probables, 40-man</li>
+        <li>Lineup position per player per day</li>
+        <li>AAA minor league stats</li>
+        <li>Games remaining this week per team</li>
+      </ul></div>
+    </div>
+    <div class="node s-fetch">
+      <div class="nt">fetch_statcast.py</div>
+      <div class="nd"><ul>
+        <li>Statcast + FanGraphs via pybaseball</li>
+        <li>Weekly cache check — skip if &lt; 7 days</li>
+        <li>Bulk ~850 player pull on Mondays</li>
+        <li>Falls back to cache on timeout</li>
+      </ul></div>
+    </div>
+    <div class="node s-tf">
+      <div class="nt">transform.py</div>
+      <div class="nd"><ul>
+        <li>Joins all sources on player_id only</li>
+        <li>No name matching in production</li>
+        <li>Builds all 5 window stat rows</li>
+        <li>Flags unmatched crosswalk players</li>
+        <li>SvHd = SV + HLD (combined per ESPN)</li>
+      </ul></div>
+    </div>
+    <div class="node s-val" style="border-width:2px; border-color:#ef535044;">
+      <div class="nt">validate.py ⚠ BLOCKING</div>
+      <div class="nd"><ul>
+        <li>Schema + type checks</li>
+        <li>Stat range bounds per category</li>
+        <li>Completeness (8 rosters, 700+ Statcast)</li>
+        <li>Crosswalk integrity (FAIL if &gt; 3 unmatched)</li>
+        <li>Ground truth spot checks (ERA, WHIP, OBP, SvHd)</li>
+        <li>Staleness detection (&gt; 25h = WARN)</li>
+        <li>Auth failure detection</li>
+        <li>Outputs validation_report.json</li>
+      </ul></div>
+    </div>
+    <div class="node s-ev">
+      <div class="nt">evaluate.py</div>
+      <div class="nd"><ul>
+        <li>Category need weights (0.0–1.0)</li>
+        <li>Buy low / sell high flags</li>
+        <li>Two-start composite scorer</li>
+        <li>Prospect + callup watchlist</li>
+        <li>Ownership velocity alerts</li>
+        <li>Waiver priority-aware recs</li>
+        <li>Constraint tracking (acq, IP, slots)</li>
+        <li>Cat state (WIN/FLOPPABLE/FLIPPABLE/LOSS)</li>
+        <li>Punt category framework</li>
+        <li>Roster slot constraint checks</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- STORAGE -->
+<div class="sec">
+  <div class="sec-hdr">Layer 3 — Storage</div>
+  <div class="row">
+    <div class="node s-db" style="flex:2;">
+      <div class="nt">SQLite — pitch_slap.db (Persistent)</div>
+      <div class="row" style="gap:8px; margin-top:8px;">
+        <div style="background:#0a0c0f; border:1px solid #1e232d; border-radius:3px; padding:8px 10px; flex:1; min-width:130px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#8d6e63; margin-bottom:3px;">dim_players</div>
+          <div style="font-size:10px; color:#718096;">ESPN ↔ MLB ↔ FG crosswalk. Built day 1. Crosswalk_status field flags unmatched.</div>
+        </div>
+        <div style="background:#0a0c0f; border:1px solid #1e232d; border-radius:3px; padding:8px 10px; flex:1; min-width:130px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#8d6e63; margin-bottom:3px;">fact_player_stats</div>
+          <div style="font-size:10px; color:#718096;">One row per player × window (current / 14d / 30d / season / post_asg)</div>
+        </div>
+        <div style="background:#0a0c0f; border:1px solid #1e232d; border-radius:3px; padding:8px 10px; flex:1; min-width:130px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#8d6e63; margin-bottom:3px;">matchup_snapshots</div>
+          <div style="font-size:10px; color:#718096;">Daily append of cat scores. Drives trend arrows + historical learning (Phase A).</div>
+        </div>
+        <div style="background:#0a0c0f; border:1px solid #1e232d; border-radius:3px; padding:8px 10px; flex:1; min-width:130px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#8d6e63; margin-bottom:3px;">constraint_log</div>
+          <div style="font-size:10px; color:#718096;">Daily: acquisitions used + IP accumulated per matchup week.</div>
+        </div>
+        <div style="background:#0a0c0f; border:1px solid #1e232d; border-radius:3px; padding:8px 10px; flex:1; min-width:130px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#8d6e63; margin-bottom:3px;">validation_log</div>
+          <div style="font-size:10px; color:#718096;">Full audit trail: every check, every run, pass/warn/fail + detail.</div>
+        </div>
+        <div style="background:#0a0c0f; border:1px solid #1e232d; border-radius:3px; padding:8px 10px; flex:1; min-width:130px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#8d6e63; margin-bottom:3px;">config_versions</div>
+          <div style="font-size:10px; color:#718096;">Config change log: timestamp, hash, notes. Protects historical comparisons.</div>
+        </div>
+      </div>
+    </div>
+    <div class="node s-csv" style="flex:1;">
+      <div class="nt">CSV Files — /data/</div>
+      <div class="nd"><ul>
+        <li>players_master.csv</li>
+        <li>my_roster.csv</li>
+        <li>matchup_current.csv</li>
+        <li>matchup_history.csv</li>
+        <li>free_agents_ranked.csv</li>
+        <li>two_start_pitchers.csv</li>
+        <li>prospects_watchlist.csv</li>
+        <li>buy_low.csv + sell_high.csv</li>
+        <li>league_standings.csv</li>
+        <li>category_need_weights.csv</li>
+        <li><strong style="color:#78909c">constraints_status.csv</strong></li>
+        <li><strong style="color:#78909c">validation_report.json</strong></li>
+        <li><strong style="color:#78909c">pipeline_meta.json</strong></li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- OUTPUT -->
+<div class="sec">
+  <div class="sec-hdr">Layer 4 — GitHub Pages Dashboard (docs/ directory)</div>
+  <div class="row">
+    <div class="node s-out">
+      <div class="nt">Home</div>
+      <div class="nd"><ul>
+        <li>Pipeline health banner</li>
+        <li><strong style="color:#00e5ff">Constraint bar (acq / IP / priority)</strong></li>
+        <li>Live matchup cat grid</li>
+        <li>WIN/FLOPPABLE/FLIPPABLE/LOSS</li>
+        <li>Daily alerts panel</li>
+        <li>Season summary stats</li>
+      </ul></div>
+    </div>
+    <div class="node s-out">
+      <div class="nt">Matchup</div>
+      <div class="nd"><ul>
+        <li>Cat table: stat | gap | trend</li>
+        <li>State badges per cat</li>
+        <li>Window toggle</li>
+        <li>Flippable action plan</li>
+        <li><strong style="color:#00e5ff">Punt recommendations</strong></li>
+      </ul></div>
+    </div>
+    <div class="node s-out">
+      <div class="nt">Waivers</div>
+      <div class="nd"><ul>
+        <li>Need weight bars (10 cats)</li>
+        <li><strong style="color:#00e5ff">Constraint bar (acq remaining)</strong></li>
+        <li>FA ranked by need score</li>
+        <li><strong style="color:#00e5ff">Priority-aware urgency flags</strong></li>
+        <li>2-start section</li>
+        <li>Roster slot impact per add</li>
+      </ul></div>
+    </div>
+    <div class="node s-out">
+      <div class="nt">Players</div>
+      <div class="nd"><ul>
+        <li>All ~850 MLB players</li>
+        <li>ESPN status per player</li>
+        <li>Statcast + FanGraphs cols</li>
+        <li>xStats flags</li>
+        <li>Search + sortable</li>
+        <li>Games remaining this week</li>
+      </ul></div>
+    </div>
+    <div class="node s-out">
+      <div class="nt">League</div>
+      <div class="nd"><ul>
+        <li>8-team standings</li>
+        <li>Cat rankings grid (1-8)</li>
+        <li>Opponent 14D vs season</li>
+        <li>H2H history vs each opponent</li>
+        <li>Tiebreaker tracker (H2H record)</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- WEEKLY CONSTRAINTS -->
+<div class="sec">
+  <div class="sec-hdr">Weekly Constraint System</div>
+  <div class="row">
+    <div class="node s-logic" style="flex:1;">
+      <div class="nt">7 Acquisitions / Week</div>
+      <div class="nd"><ul>
+        <li>Pulled from ESPN transaction history daily</li>
+        <li>Resets each Monday with new matchup</li>
+        <li>Move to last priority after any claim</li>
+        <li>At 5+ used: high-need adds only</li>
+        <li>At 6 used: "last move — confirm before acting"</li>
+        <li>Surfaced on Home + Waivers pages</li>
+      </ul></div>
+    </div>
+    <div class="node s-logic" style="flex:1;">
+      <div class="nt">15 IP Minimum / Week</div>
+      <div class="nd"><ul>
+        <li>Tracked daily from ESPN/MLB IP totals</li>
+        <li>Resets each Monday — no carryover</li>
+        <li>If trending below 15 by Thursday: alert</li>
+        <li>If safely above by Wednesday: can sit risky starters</li>
+        <li>Blocks punt recommendations if below 15</li>
+        <li>Interacts with 2-start streaming logic</li>
+      </ul></div>
+    </div>
+    <div class="node s-logic" style="flex:1;">
+      <div class="nt">Waiver Priority (1–8)</div>
+      <div class="nd"><ul>
+        <li>Pulled from ESPN each morning</li>
+        <li>1-day processing period</li>
+        <li>Top 3: confident recommendations</li>
+        <li>Bottom 3: surface "safe" targets + AT RISK flag</li>
+        <li>Ownership velocity + priority = urgency flag</li>
+        <li>"Claim tonight or lose the window"</li>
+      </ul></div>
+    </div>
+    <div class="node s-logic" style="flex:1;">
+      <div class="nt">Roster Slot Awareness</div>
+      <div class="nd"><ul>
+        <li>C x2, 1B, 2B, 3B, SS, MI, CI, OF x5</li>
+        <li>UTIL x2, P x10, BN x5, IL x3</li>
+        <li>MI = 2B or SS · CI = 1B or 3B</li>
+        <li>Every add recommendation includes a drop suggestion</li>
+        <li>Drop cost shown: net cat impact</li>
+        <li>Never recommend add without roster impact</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- CAT STATE MODEL -->
+<div class="sec">
+  <div class="sec-hdr">Category State Model</div>
+  <div class="states">
+    <div class="state" style="background:rgba(26,122,74,0.1); border:1px solid rgba(26,122,74,0.25);">
+      <div class="sl2" style="color:#39ff6e;">WIN</div>
+      <div class="sd">Leading comfortably. Gap exceeds cat-specific threshold. Do not sacrifice this cat to help another.</div>
+    </div>
+    <div class="state" style="background:rgba(183,119,13,0.1); border:1px solid rgba(183,119,13,0.25);">
+      <div class="sl2" style="color:#d4880a;">FLOPPABLE</div>
+      <div class="sd">Leading but opponent within striking range. Defensive mode — monitor, do not bench key contributors.</div>
+    </div>
+    <div class="state" style="background:rgba(212,104,10,0.1); border:1px solid rgba(212,104,10,0.25);">
+      <div class="sl2" style="color:#ff7043;">FLIPPABLE</div>
+      <div class="sd">Losing but closeable. Active target — stream, add, or prioritize starters contributing here.</div>
+    </div>
+    <div class="state" style="background:rgba(192,57,43,0.1); border:1px solid rgba(192,57,43,0.25);">
+      <div class="sl2" style="color:#ff3d5a;">LOSS</div>
+      <div class="sd">Losing, gap too large. Accept loss — if gap &gt; 2× threshold, recommend punt. Redirect effort.</div>
+    </div>
+  </div>
+</div>
+
+<!-- VALIDATION DETAIL -->
+<div class="sec">
+  <div class="sec-hdr">Validation Framework — validate.py (Step 5, Blocking)</div>
+  <div class="val-grid">
+    <div class="val-box">
+      <div class="val-title">Schema Checks</div>
+      <div class="val-items"><ul>
+        <li>Expected columns in all fact tables</li>
+        <li>Correct data types enforced</li>
+        <li>No nulls in required fields for active players</li>
+      </ul></div>
+    </div>
+    <div class="val-box">
+      <div class="val-title">Range Checks</div>
+      <div class="val-items"><ul>
+        <li>ERA: 0.00–15.00</li>
+        <li>WHIP: 0.00–4.00</li>
+        <li>OBP: .100–.600</li>
+        <li>xFIP/SIERA: 1.00–8.00</li>
+        <li>Barrel%: 0%–35%</li>
+        <li>Ownership: 0%–100%</li>
+      </ul></div>
+    </div>
+    <div class="val-box">
+      <div class="val-title">Completeness</div>
+      <div class="val-items"><ul>
+        <li>8 rosters returned (0 = auth fail)</li>
+        <li>Your roster ≥ 20 active players</li>
+        <li>FA pool &gt; 200 players</li>
+        <li>Statcast &gt; 700 players when fresh</li>
+      </ul></div>
+    </div>
+    <div class="val-box">
+      <div class="val-title">Crosswalk Integrity</div>
+      <div class="val-items"><ul>
+        <li>All rostered players have MLB ID</li>
+        <li>WARN if any unmatched</li>
+        <li>FAIL if &gt; 3 unmatched</li>
+        <li>Unmatched → data gap section only</li>
+      </ul></div>
+    </div>
+    <div class="val-box">
+      <div class="val-title">Ground Truth Checks</div>
+      <div class="val-items"><ul>
+        <li>Roster ERA vs ESPN ±0.10</li>
+        <li>SvHd total vs ESPN displayed</li>
+        <li>OBP definition match confirmed</li>
+        <li>Acquisition count vs ESPN</li>
+        <li>IP total vs ESPN weekly</li>
+      </ul></div>
+    </div>
+    <div class="val-box">
+      <div class="val-title">Staleness + Auth</div>
+      <div class="val-items"><ul>
+        <li>Source &gt; 25h old → WARN</li>
+        <li>ESPN 0 rosters → AUTH_FAILURE</li>
+        <li>All failures logged to validation_log</li>
+        <li>Dashboard banner on WARN or FAIL</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- POST MVP -->
+<div class="sec">
+  <div class="sec-hdr">Post-MVP Backlog</div>
+  <div class="row">
+    <div style="background:#0d1117; border:1px solid #1e232d; border-radius:3px; padding:10px 14px; flex:1; min-width:180px;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#4a5568; margin-bottom:5px; text-transform:uppercase; letter-spacing:1px;">Scope Together</div>
+      <div style="font-size:11px; color:#718096;">pre_asg frozen snapshot + 60D window (bridges 30D → season gap)</div>
+    </div>
+    <div style="background:#0d1117; border:1px solid #1e232d; border-radius:3px; padding:10px 14px; flex:1; min-width:180px;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#4a5568; margin-bottom:5px; text-transform:uppercase; letter-spacing:1px;">Needs Data First</div>
+      <div style="font-size:11px; color:#718096;">Historical learning B/C/D — Phase A table built now, analysis deferred 6+ weeks</div>
+    </div>
+    <div style="background:#0d1117; border:1px solid #1e232d; border-radius:3px; padding:10px 14px; flex:1; min-width:180px;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#4a5568; margin-bottom:5px; text-transform:uppercase; letter-spacing:1px;">End of Regular Season</div>
+      <div style="font-size:11px; color:#718096;">Playoff mode — 4 teams, 2 rounds, 2 weeks each, H2H bracket, tiebreaker H2H record</div>
+    </div>
+    <div style="background:#0d1117; border:1px solid #1e232d; border-radius:3px; padding:10px 14px; flex:1; min-width:180px;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#4a5568; margin-bottom:5px; text-transform:uppercase; letter-spacing:1px;">Future Features</div>
+      <div style="font-size:11px; color:#718096;">Trade helper UI · Multi-layer value model · Testing suite · Opponent profiling</div>
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="li"><div class="ld" style="background:#ff7043;"></div><div class="ll">ESPN API</div></div>
+  <div class="li"><div class="ld" style="background:#42a5f5;"></div><div class="ll">MLB Stats API</div></div>
+  <div class="li"><div class="ld" style="background:#ab47bc;"></div><div class="ll">Baseball Savant</div></div>
+  <div class="li"><div class="ld" style="background:#66bb6a;"></div><div class="ll">FanGraphs</div></div>
+  <div class="li"><div class="ld" style="background:#ffa726;"></div><div class="ll">Fetch Scripts</div></div>
+  <div class="li"><div class="ld" style="background:#26c6da;"></div><div class="ll">Transform</div></div>
+  <div class="li"><div class="ld" style="background:#ef5350;"></div><div class="ll">Validate (Blocking)</div></div>
+  <div class="li"><div class="ld" style="background:#7c4dff;"></div><div class="ll">Evaluate / Score</div></div>
+  <div class="li"><div class="ld" style="background:#ec407a;"></div><div class="ll">Business Logic</div></div>
+  <div class="li"><div class="ld" style="background:#8d6e63;"></div><div class="ll">SQLite</div></div>
+  <div class="li"><div class="ld" style="background:#78909c;"></div><div class="ll">CSV / JSON Output</div></div>
+  <div class="li"><div class="ld" style="background:#00e5ff;"></div><div class="ll">Dashboard Pages</div></div>
+  <div class="li"><span class="tag td">DAILY</span><div class="ll">Every morning</div></div>
+  <div class="li"><span class="tag tw">WEEKLY</span><div class="ll">Mondays only</div></div>
+</div>
+
+</body>
+</html>

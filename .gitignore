@@ -1,0 +1,27 @@
+# Credentials — never commit
+espn-credentials.py
+espn_credentials.py
+*.env
+.env*
+
+# Database
+db/*.db
+db/*.db-shm
+db/*.db-wal
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+venv/
+.venv/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
