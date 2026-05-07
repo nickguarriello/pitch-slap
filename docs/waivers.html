@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Slap — Waivers</title>
+<style>
+:root { --bg:#0f1117;--surface:#1a1d27;--border:#2a2d3a;--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--win:#22c55e;--loss:#ef4444;--warn:#f59e0b;--flip:#a78bfa; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:14px}
+nav{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
+nav a{padding:12px 20px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a.active,nav a:hover{color:var(--text);border-bottom:2px solid var(--accent)}
+.banner{padding:8px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap}
+.banner .warn{color:var(--warn)}
+.container{max-width:1000px;margin:0 auto;padding:24px 20px}
+h1{font-size:22px;font-weight:700;margin-bottom:20px}
+h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:12px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:20px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:8px 12px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border)}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700;margin-right:3px}
+.tag-buy{background:rgba(34,197,94,.15);color:var(--win)}
+.tag-fa{background:rgba(59,130,246,.15);color:var(--accent)}
+.tag-2start{background:rgba(167,139,250,.15);color:var(--flip)}
+.tag-vel{background:rgba(245,158,11,.15);color:var(--warn)}
+.score-bar{width:60px;height:5px;background:var(--border);border-radius:3px;display:inline-block;vertical-align:middle}
+.score-fill{height:5px;border-radius:3px;background:var(--accent)}
+.pos{font-size:11px;color:var(--muted);font-weight:600}
+.reason{font-size:11px;color:var(--muted)}
+.empty{color:var(--muted);font-size:13px;padding:12px 0}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="matchup.html">Matchup</a>
+  <a href="waivers.html" class="active">Waivers</a>
+  <a href="players.html">Players</a>
+  <a href="league.html">League</a>
+</nav>
+<div class="banner" id="banner">Loading...</div>
+
+<div class="container">
+  <h1>Waivers</h1>
+
+  <div class="card">
+    <h2>Two-Start Pitchers Available</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Pos</th>
+          <th>Score</th>
+          <th>SIERA</th>
+          <th>xFIP</th>
+          <th>K%</th>
+          <th>BB%</th>
+          <th>Own%</th>
+          <th>Tags</th>
+        </tr>
+      </thead>
+      <tbody id="two-start-table"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Buy-Low Targets (Free Agents)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Pos</th>
+          <th>Own%</th>
+          <th>Reasons</th>
+          <th>Tags</th>
+        </tr>
+      </thead>
+      <tbody id="buy-table"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Ownership Velocity Alerts</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Pos</th>
+          <th>Own% Change</th>
+          <th>Current Own%</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody id="vel-table"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
+function fmt(v,d=1){if(v==null)return'—';return typeof v==='number'?v.toFixed(d):v}
+function pct(v){if(v==null)return'—';return(v*100).toFixed(0)+'%'}
+
+async function main(){
+  const [waivers,status]=await Promise.all([load('data/waivers.json'),load('data/status.json')]);
+
+  const c=status.constraints||{};
+  document.getElementById('banner').innerHTML=
+    `<span>As of <b>${status.as_of||'—'}</b></span>`+
+    (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
+    (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
+
+  // Two-start pitchers
+  const twoStarters=(waivers.two_starters||[]);
+  const tsTbody=document.getElementById('two-start-table');
+  if(!twoStarters.length){
+    tsTbody.innerHTML=`<tr><td colspan="9" class="empty">No two-start pitchers available on waivers this week.</td></tr>`;
+  } else {
+    for(const p of twoStarters){
+      const score=p.composite_score||0;
+      tsTbody.innerHTML+=`<tr>
+        <td><b>${p.name||'—'}</b></td>
+        <td class="pos">${p.eligible_positions||'—'}</td>
+        <td>
+          <div class="score-bar"><div class="score-fill" style="width:${score*100}%"></div></div>
+          <span style="font-size:11px;color:var(--muted);margin-left:6px">${(score*100).toFixed(0)}</span>
+        </td>
+        <td>${fmt(p.siera,2)}</td>
+        <td>${fmt(p.xfip,2)}</td>
+        <td>${pct(p.k_pct)}</td>
+        <td>${pct(p.bb_pct)}</td>
+        <td>${pct(p.ownership_pct)}</td>
+        <td><span class="tag tag-2start">2-START</span>${p.is_fa?'<span class="tag tag-fa">FA</span>':''}</td>
+      </tr>`;
+    }
+  }
+
+  // Buy-low FA
+  const buyLow=(waivers.buy_low||[]);
+  const buyTbody=document.getElementById('buy-table');
+  if(!buyLow.length){
+    buyTbody.innerHTML=`<tr><td colspan="5" class="empty">No buy-low targets on waivers.</td></tr>`;
+  } else {
+    for(const p of buyLow){
+      const reasons=(p.buy_low_reasons||[]).slice(0,3).join(' · ');
+      buyTbody.innerHTML+=`<tr>
+        <td><b>${p.name||'—'}</b></td>
+        <td class="pos">${p.eligible_positions||'—'}</td>
+        <td>${pct(p.ownership_pct)}</td>
+        <td class="reason">${reasons||'—'}</td>
+        <td><span class="tag tag-buy">BUY</span><span class="tag tag-fa">FA</span></td>
+      </tr>`;
+    }
+  }
+
+  // Ownership velocity
+  const vel=(waivers.ownership_alerts||[]);
+  const velTbody=document.getElementById('vel-table');
+  if(!vel.length){
+    velTbody.innerHTML=`<tr><td colspan="5" class="empty">No significant ownership movement detected.</td></tr>`;
+  } else {
+    for(const p of vel){
+      const delta=p.ownership_delta||0;
+      const color=delta>0?'var(--win)':'var(--loss)';
+      velTbody.innerHTML+=`<tr>
+        <td><b>${p.name||'—'}</b></td>
+        <td class="pos">${p.eligible_positions||'—'}</td>
+        <td style="color:${color};font-weight:600">${delta>0?'+':''}${pct(delta)}</td>
+        <td>${pct(p.ownership_pct)}</td>
+        <td><span class="tag tag-vel">TRENDING</span></td>
+      </tr>`;
+    }
+  }
+}
+
+main().catch(e=>{document.getElementById('banner').innerHTML=`<span style="color:var(--loss)">Error: ${e.message}</span>`;});
+</script>
+</body>
+</html>

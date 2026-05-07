@@ -47,13 +47,14 @@ def _save_meta(meta: dict) -> None:
 
 
 def run_full() -> dict:
-    """Full pipeline: crosswalk refresh + all fetchers + transform + validate + evaluate."""
+    """Full pipeline: crosswalk refresh + all fetchers + transform + validate + evaluate + report."""
     from pipeline.fetch_espn import run as fetch_espn
     from pipeline.fetch_mlb import run as fetch_mlb, get_two_start_pitchers
     from pipeline.fetch_statcast import run as fetch_statcast
     from pipeline.transform import run as transform
     from pipeline.validate import run as validate
     from pipeline.evaluate import run as evaluate
+    from pipeline.report import run as report
     from datetime import date, timedelta
 
     meta = _load_meta()
@@ -105,6 +106,11 @@ def run_full() -> dict:
     meta["cats_losing"]  = eval_report["summary"]["cats_losing"]
     _save_meta(meta)
 
+    # Phase 5: Report
+    print("\n--- report ---")
+    report()
+    meta["report_last_run"] = _ts()
+
     meta["last_full_run"] = start_ts
     meta["last_run_mode"] = "full"
     _save_meta(meta)
@@ -114,13 +120,14 @@ def run_full() -> dict:
 
 
 def run_light() -> dict:
-    """Light pipeline: ESPN + MLB (no Statcast pull) + transform + validate + evaluate."""
+    """Light pipeline: ESPN + MLB (no Statcast pull) + transform + validate + evaluate + report."""
     from pipeline.fetch_espn import run as fetch_espn
     from pipeline.fetch_mlb import run as fetch_mlb
     from pipeline.fetch_statcast import run as fetch_statcast
     from pipeline.transform import run as transform
     from pipeline.validate import run as validate
     from pipeline.evaluate import run as evaluate
+    from pipeline.report import run as report
 
     meta = _load_meta()
     start_ts = _ts()
@@ -161,6 +168,10 @@ def run_light() -> dict:
     meta["evaluate_last_run"] = _ts()
     meta["cats_winning"] = eval_report["summary"]["cats_winning"]
     _save_meta(meta)
+
+    print("\n--- report ---")
+    report()
+    meta["report_last_run"] = _ts()
 
     meta["last_light_run"] = start_ts
     meta["last_run_mode"] = "light"

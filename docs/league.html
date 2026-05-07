@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Slap — League</title>
+<style>
+:root { --bg:#0f1117;--surface:#1a1d27;--border:#2a2d3a;--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--win:#22c55e;--loss:#ef4444;--warn:#f59e0b;--flip:#a78bfa; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:14px}
+nav{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
+nav a{padding:12px 20px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a.active,nav a:hover{color:var(--text);border-bottom:2px solid var(--accent)}
+.banner{padding:8px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap}
+.banner .warn{color:var(--warn)}
+.container{max-width:1200px;margin:0 auto;padding:24px 20px}
+h1{font-size:22px;font-weight:700;margin-bottom:20px}
+h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:12px}
+.cat-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.cat-tab{padding:5px 14px;border:1px solid var(--border);border-radius:20px;background:none;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer}
+.cat-tab.active,.cat-tab:hover{border-color:var(--accent);color:var(--text);background:rgba(59,130,246,.1)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:20px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:8px 12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap}
+th:hover{color:var(--text)}
+th.sorted{color:var(--accent)}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.my-team td{background:rgba(59,130,246,.06);}
+.rank{display:inline-block;width:22px;height:22px;border-radius:4px;text-align:center;line-height:22px;font-size:11px;font-weight:700}
+.rank-1{background:rgba(245,158,11,.2);color:var(--warn)}
+.rank-2{background:rgba(34,197,94,.15);color:var(--win)}
+.rank-3{background:rgba(59,130,246,.15);color:var(--accent)}
+.rank-other{background:var(--border);color:var(--muted)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="matchup.html">Matchup</a>
+  <a href="waivers.html">Waivers</a>
+  <a href="players.html">Players</a>
+  <a href="league.html" class="active">League</a>
+</nav>
+<div class="banner" id="banner">Loading...</div>
+
+<div class="container">
+  <h1>League</h1>
+
+  <div class="card">
+    <h2>Category Rankings</h2>
+    <div class="cat-tabs" id="cat-tabs"></div>
+    <table>
+      <thead>
+        <tr>
+          <th data-col="rank">#</th>
+          <th data-col="team_name">Team</th>
+          <th data-col="value" id="val-header">Value</th>
+          <th data-col="r">R</th>
+          <th data-col="hr">HR</th>
+          <th data-col="rbi">RBI</th>
+          <th data-col="sb">SB</th>
+          <th data-col="obp">OBP</th>
+          <th data-col="k">K</th>
+          <th data-col="qs">QS</th>
+          <th data-col="era">ERA</th>
+          <th data-col="whip">WHIP</th>
+          <th data-col="svhd">SvHd</th>
+        </tr>
+      </thead>
+      <tbody id="league-table"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
+
+const CATS=['R','HR','RBI','SB','OBP','K','QS','ERA','WHIP','SvHd'];
+const CAT_COLS={R:'r',HR:'hr',RBI:'rbi',SB:'sb',OBP:'obp',K:'k',QS:'qs',ERA:'era',WHIP:'whip',SvHd:'svhd'};
+const LOWER_BETTER=new Set(['ERA','WHIP']);
+const RATE_CATS=new Set(['OBP','ERA','WHIP']);
+
+function fmt(v,cat){
+  if(v==null||v===undefined) return '—';
+  if(RATE_CATS.has(cat)) return v.toFixed(3);
+  return typeof v==='number'?v.toFixed(0):v;
+}
+
+function rankClass(rank){
+  if(rank===1) return 'rank-1';
+  if(rank===2) return 'rank-2';
+  if(rank===3) return 'rank-3';
+  return 'rank-other';
+}
+
+let leagueData=[];
+let activeCat='R';
+let myTeamId=null;
+let sortCol='rank';
+let sortDir=1;
+
+function getTeamRank(team, cat){
+  const col=CAT_COLS[cat];
+  const ranks=team.ranks||{};
+  return ranks[cat]||null;
+}
+
+function renderTable(){
+  const col=CAT_COLS[activeCat];
+  document.getElementById('val-header').textContent=activeCat;
+
+  let rows=[...leagueData];
+  rows.sort((a,b)=>{
+    if(sortCol==='rank'){
+      const ra=getTeamRank(a,activeCat)||99;
+      const rb=getTeamRank(b,activeCat)||99;
+      return (ra-rb)*sortDir;
+    }
+    if(sortCol==='team_name') return (a.team_name||'').localeCompare(b.team_name||'')*sortDir;
+    if(sortCol==='value'){
+      const av=a[col],bv=b[col];
+      if(av==null&&bv==null) return 0;
+      if(av==null) return 1; if(bv==null) return -1;
+      return LOWER_BETTER.has(activeCat)?(av-bv)*sortDir:(bv-av)*sortDir;
+    }
+    const sc=CAT_COLS[sortCol]||sortCol;
+    const av=a[sc],bv=b[sc];
+    if(av==null&&bv==null) return 0;
+    if(av==null) return 1; if(bv==null) return -1;
+    return LOWER_BETTER.has(sortCol)?(av-bv)*sortDir:(bv-av)*sortDir;
+  });
+
+  const tbody=document.getElementById('league-table');
+  tbody.innerHTML=rows.map(t=>{
+    const isMe=t.espn_team_id===myTeamId;
+    const rank=getTeamRank(t,activeCat);
+    return `<tr class="${isMe?'my-team':''}">
+      <td><span class="rank ${rankClass(rank)}">${rank||'—'}</span></td>
+      <td><b>${t.team_name||'—'}</b>${isMe?' <span style="font-size:11px;color:var(--accent)">(you)</span>':''}</td>
+      <td style="color:${rank===1?'var(--warn)':rank<=3?'var(--win)':'var(--text)'};font-weight:${rank<=3?700:400}">${fmt(t[col],activeCat)}</td>
+      <td>${fmt(t.r,'R')}</td>
+      <td>${fmt(t.hr,'HR')}</td>
+      <td>${fmt(t.rbi,'RBI')}</td>
+      <td>${fmt(t.sb,'SB')}</td>
+      <td>${fmt(t.obp,'OBP')}</td>
+      <td>${fmt(t.k,'K')}</td>
+      <td>${fmt(t.qs,'QS')}</td>
+      <td>${fmt(t.era,'ERA')}</td>
+      <td>${fmt(t.whip,'WHIP')}</td>
+      <td>${fmt(t.svhd,'SvHd')}</td>
+    </tr>`;
+  }).join('');
+}
+
+async function main(){
+  const [league,status]=await Promise.all([load('data/league.json'),load('data/status.json')]);
+
+  const c=status.constraints||{};
+  document.getElementById('banner').innerHTML=
+    `<span>As of <b>${status.as_of||'—'}</b></span>`+
+    (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
+    (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
+
+  leagueData=league.teams||[];
+  myTeamId=league.my_team_id||null;
+
+  // Cat tabs
+  const tabContainer=document.getElementById('cat-tabs');
+  for(const cat of CATS){
+    const btn=document.createElement('button');
+    btn.className='cat-tab'+(cat===activeCat?' active':'');
+    btn.textContent=cat;
+    btn.addEventListener('click',()=>{
+      activeCat=cat;
+      document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      sortCol='rank';sortDir=1;
+      document.querySelectorAll('th').forEach(t=>t.classList.remove('sorted'));
+      renderTable();
+    });
+    tabContainer.appendChild(btn);
+  }
+
+  // Sort headers
+  document.querySelectorAll('th[data-col]').forEach(th=>{
+    th.addEventListener('click',()=>{
+      const col=th.dataset.col;
+      if(sortCol===col) sortDir*=-1;
+      else{sortCol=col;sortDir=1;}
+      document.querySelectorAll('th').forEach(t=>t.classList.remove('sorted'));
+      th.classList.add('sorted');
+      renderTable();
+    });
+  });
+
+  renderTable();
+}
+
+main().catch(e=>{document.getElementById('banner').innerHTML=`<span style="color:var(--loss)">Error: ${e.message}</span>`;});
+</script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Slap — Players</title>
+<style>
+:root { --bg:#0f1117;--surface:#1a1d27;--border:#2a2d3a;--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--win:#22c55e;--loss:#ef4444;--warn:#f59e0b;--flip:#a78bfa; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:14px}
+nav{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
+nav a{padding:12px 20px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a.active,nav a:hover{color:var(--text);border-bottom:2px solid var(--accent)}
+.banner{padding:8px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap}
+.banner .warn{color:var(--warn)}
+.container{max-width:1200px;margin:0 auto;padding:24px 20px}
+h1{font-size:22px;font-weight:700;margin-bottom:8px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.filter-btn{padding:5px 14px;border:1px solid var(--border);border-radius:20px;background:none;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer}
+.filter-btn.active,.filter-btn:hover{border-color:var(--accent);color:var(--text);background:rgba(59,130,246,.1)}
+.search-wrap{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.search-wrap input{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:7px 12px;color:var(--text);font-size:13px;width:220px}
+.search-wrap input::placeholder{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:8px 10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;cursor:pointer;user-select:none}
+th:hover{color:var(--text)}
+th.sorted{color:var(--accent)}
+td{padding:8px 10px;border-bottom:1px solid var(--border);font-size:12px;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:700;margin-right:2px}
+.tag-buy{background:rgba(34,197,94,.15);color:var(--win)}
+.tag-sell{background:rgba(239,68,68,.15);color:var(--loss)}
+.tag-2s{background:rgba(167,139,250,.15);color:var(--flip)}
+.tag-il{background:rgba(239,68,68,.1);color:var(--loss)}
+.pos{color:var(--muted);font-size:11px;font-weight:600}
+.slot{color:var(--accent);font-size:11px}
+.count{font-size:12px;color:var(--muted);margin-bottom:8px}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="matchup.html">Matchup</a>
+  <a href="waivers.html">Waivers</a>
+  <a href="players.html" class="active">Players</a>
+  <a href="league.html">League</a>
+</nav>
+<div class="banner" id="banner">Loading...</div>
+
+<div class="container">
+  <h1>Players</h1>
+
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="hitter">Hitters</button>
+    <button class="filter-btn" data-filter="pitcher">Pitchers</button>
+    <button class="filter-btn" data-filter="buy">Buy Low</button>
+    <button class="filter-btn" data-filter="sell">Sell High</button>
+    <button class="filter-btn" data-filter="il">IL</button>
+  </div>
+
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Search players...">
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr id="header-row">
+          <th data-col="name">Player</th>
+          <th data-col="roster_slot">Slot</th>
+          <th data-col="eligible_positions">Pos</th>
+          <th data-col="r_season" title="Runs (season)">R</th>
+          <th data-col="hr_season" title="Home Runs (season)">HR</th>
+          <th data-col="rbi_season" title="RBI (season)">RBI</th>
+          <th data-col="sb_season" title="Stolen Bases (season)">SB</th>
+          <th data-col="obp_season" title="OBP (season)">OBP</th>
+          <th data-col="k_season" title="Strikeouts (season)">K</th>
+          <th data-col="qs_season" title="Quality Starts (season)">QS</th>
+          <th data-col="era_season" title="ERA (season)">ERA</th>
+          <th data-col="whip_season" title="WHIP (season)">WHIP</th>
+          <th data-col="svhd_season" title="Saves+Holds (season)">SvHd</th>
+          <th data-col="xwoba" title="Expected wOBA">xwOBA</th>
+          <th data-col="xfip" title="Expected FIP">xFIP</th>
+          <th data-col="siera" title="SIERA">SIERA</th>
+          <th data-col="flags">Flags</th>
+        </tr>
+      </thead>
+      <tbody id="player-table"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
+function fmt(v,d=1){if(v==null||v===undefined)return'—';return typeof v==='number'?v.toFixed(d):v}
+
+let allPlayers=[];
+let sortCol='name';
+let sortDir=1;
+let activeFilter='all';
+
+function isHitter(p){
+  const pos=(p.eligible_positions||'').toUpperCase();
+  return /C|1B|2B|3B|SS|OF|MI|CI|UTIL/.test(pos) && !/^SP$|^RP$|^P$/.test(pos);
+}
+function isPitcher(p){
+  const pos=(p.eligible_positions||'').toUpperCase();
+  return /SP|RP/.test(pos);
+}
+
+function renderTable(){
+  const search=document.getElementById('search').value.toLowerCase();
+  let rows=allPlayers.filter(p=>{
+    if(search && !p.name?.toLowerCase().includes(search)) return false;
+    if(activeFilter==='hitter') return isHitter(p);
+    if(activeFilter==='pitcher') return isPitcher(p);
+    if(activeFilter==='buy') return p.buy_low;
+    if(activeFilter==='sell') return p.sell_high;
+    if(activeFilter==='il') return (p.roster_slot||'').toUpperCase()==='IL';
+    return true;
+  });
+
+  rows.sort((a,b)=>{
+    let av=a[sortCol],bv=b[sortCol];
+    if(av==null && bv==null) return 0;
+    if(av==null) return 1;
+    if(bv==null) return -1;
+    if(typeof av==='string') return av.localeCompare(bv)*sortDir;
+    return (av-bv)*sortDir;
+  });
+
+  document.getElementById('count').textContent=`${rows.length} players`;
+
+  const tbody=document.getElementById('player-table');
+  tbody.innerHTML=rows.map(p=>{
+    const flags=[];
+    if(p.buy_low) flags.push('<span class="tag tag-buy">BUY</span>');
+    if(p.sell_high) flags.push('<span class="tag tag-sell">SELL</span>');
+    if(p.two_start) flags.push('<span class="tag tag-2s">2-ST</span>');
+    if((p.roster_slot||'').toUpperCase()==='IL') flags.push('<span class="tag tag-il">IL</span>');
+    return `<tr>
+      <td><b>${p.name||'—'}</b></td>
+      <td class="slot">${p.roster_slot||'—'}</td>
+      <td class="pos">${p.eligible_positions||'—'}</td>
+      <td>${fmt(p.r_season,0)}</td>
+      <td>${fmt(p.hr_season,0)}</td>
+      <td>${fmt(p.rbi_season,0)}</td>
+      <td>${fmt(p.sb_season,0)}</td>
+      <td>${fmt(p.obp_season,3)}</td>
+      <td>${fmt(p.k_season,0)}</td>
+      <td>${fmt(p.qs_season,0)}</td>
+      <td>${fmt(p.era_season,2)}</td>
+      <td>${fmt(p.whip_season,3)}</td>
+      <td>${fmt(p.svhd_season,0)}</td>
+      <td>${fmt(p.xwoba,3)}</td>
+      <td>${fmt(p.xfip,2)}</td>
+      <td>${fmt(p.siera,2)}</td>
+      <td>${flags.join('')||'—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+async function main(){
+  const [roster,status]=await Promise.all([load('data/roster.json'),load('data/status.json')]);
+
+  const c=status.constraints||{};
+  document.getElementById('banner').innerHTML=
+    `<span>As of <b>${status.as_of||'—'}</b></span>`+
+    (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
+    (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
+
+  allPlayers=roster.players||[];
+
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter=btn.dataset.filter;
+      renderTable();
+    });
+  });
+
+  document.getElementById('search').addEventListener('input',renderTable);
+
+  document.querySelectorAll('th[data-col]').forEach(th=>{
+    th.addEventListener('click',()=>{
+      const col=th.dataset.col;
+      if(sortCol===col) sortDir*=-1;
+      else{sortCol=col;sortDir=1;}
+      document.querySelectorAll('th').forEach(t=>t.classList.remove('sorted'));
+      th.classList.add('sorted');
+      renderTable();
+    });
+  });
+
+  renderTable();
+}
+
+main().catch(e=>{document.getElementById('banner').innerHTML=`<span style="color:var(--loss)">Error: ${e.message}</span>`;});
+</script>
+</body>
+</html>

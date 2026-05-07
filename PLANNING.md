@@ -56,19 +56,19 @@
 - [x] `pipeline.py` — orchestrator with --mode full/light, writes pipeline-meta.json
 
 ### Phase 5 — Output & Dashboard
-- [ ] `report.py` — all CSVs per PRD Section 5.1
-- [ ] `pipeline_meta.json` and `validation_report.json` output
-- [ ] Home page (HTML/JS)
-- [ ] Matchup page
-- [ ] Waivers page
-- [ ] Players page
-- [ ] League page
-- [ ] Constraint status bar (Home + Waivers)
-- [ ] Pipeline health banner (all pages)
+- [x] `report.py` — all CSVs per PRD Section 5.1 + JSON outputs (roster, waivers, matchup, league, status)
+- [x] `pipeline_meta.json` and `validation_report.json` output
+- [x] Home page (HTML/JS)
+- [x] Matchup page
+- [x] Waivers page
+- [x] Players page
+- [x] League page
+- [x] Constraint status bar (Home + Waivers)
+- [x] Pipeline health banner (all pages)
 
 ### Phase 6 — GitHub Actions
 - [ ] `daily_pipeline.yml` — 3x daily schedule (7am full, 12pm light, 6pm light)
-- [ ] Implement --mode flag (full vs light) in pipeline entry point
+- [ ] Implement --mode flag (full vs light) in pipeline entry point — DONE in pipeline.py
 - [ ] GitHub Secrets setup (ESPN cookies, documented in README)
 - [ ] Test full end-to-end run
 - [ ] Verify GitHub Pages deployment
@@ -125,6 +125,7 @@ All resolved:
 | Pre-build | Full planning complete. PRD v2.1, architecture, mockup, CLAUDE.md, PLANNING.md produced. | Everything — build not started. |
 | 2026-05-07 | Phase 1: repo connected to github.com/nickguarriello/pitch-slap. All docs ingested. config.py built (full). 11-table SQLite schema init. validate.py stub (20 checks). Naming: snake_case for .py, kebab everywhere else. | dim_players crosswalk (Phase 1 last item). Then Phase 2: fetch_espn.py. |
 | 2026-05-07 (cont) | Phase 1 complete: build_crosswalk.py + overrides.json (all 256 rostered matched). Phase 2 complete: fetch_espn.py (556 players, per-cat matchups, constraints), fetch_mlb.py (182 schedule rows, 350 transactions, two-start detection), fetch_statcast.py (499 rows: 261 batters xBA/wRC+, 241 pitchers xFIP/SIERA, 7-day cache). FanGraphs legacy endpoint 403-blocked -- switched to JSON API. Phase 3: transform.py (2074 rows: season/30d/14d/current windows). validate.py (23 checks, 19 pass/3 warn/0 fail). Phase 4: evaluate.py (cat states, need weights, buy/sell, 2-start, constraints). pipeline.py orchestrator (full+light modes, ~29s light run). | Phase 5: report.py + dashboard HTML. |
+| 2026-05-07 (cont2) | Phase 5 complete: report.py (roster/waivers/matchup/league/status JSON + 3 CSVs). All 5 dashboard pages: index.html, matchup.html, waivers.html, players.html, league.html. Dark theme, pipeline health banner on all pages, sortable tables on players/league. Open: SELL_HIGH babip_ceiling threshold too low (0.260, should be ~0.350 — tune after 2 weeks live). | Phase 6: daily_pipeline.yml GitHub Actions workflow. |
 
 ---
 

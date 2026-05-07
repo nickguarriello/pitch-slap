@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Slap — Matchup</title>
+<style>
+:root { --bg:#0f1117;--surface:#1a1d27;--border:#2a2d3a;--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--win:#22c55e;--loss:#ef4444;--warn:#f59e0b;--flip:#a78bfa; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:14px}
+nav{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
+nav a{padding:12px 20px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a.active,nav a:hover{color:var(--text);border-bottom:2px solid var(--accent)}
+.banner{padding:8px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap}
+.banner .warn{color:var(--warn)}
+.container{max-width:1000px;margin:0 auto;padding:24px 20px}
+h1{font-size:22px;font-weight:700;margin-bottom:20px}
+h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:12px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:20px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:8px 12px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border)}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px}
+tr:last-child td{border-bottom:none}
+.state{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+.WIN{background:rgba(34,197,94,.15);color:var(--win)}
+.LOSS{background:rgba(239,68,68,.15);color:var(--loss)}
+.FLIPPABLE{background:rgba(167,139,250,.15);color:var(--flip)}
+.FLOPPABLE{background:rgba(34,197,94,.08);color:var(--win)}
+.TIE{background:var(--border);color:var(--muted)}
+.UNKNOWN{background:var(--border);color:var(--muted)}
+.need-bar{width:80px;height:6px;background:var(--border);border-radius:3px;display:inline-block;vertical-align:middle}
+.need-fill{height:6px;border-radius:3px;background:var(--accent)}
+.record{font-size:12px;color:var(--muted)}
+.history-week{display:inline-block;width:28px;height:28px;border-radius:4px;text-align:center;line-height:28px;font-size:11px;font-weight:700;margin:2px}
+.W{background:rgba(34,197,94,.2);color:var(--win)}
+.L{background:rgba(239,68,68,.2);color:var(--loss)}
+.T{background:var(--border);color:var(--muted)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="matchup.html" class="active">Matchup</a>
+  <a href="waivers.html">Waivers</a>
+  <a href="players.html">Players</a>
+  <a href="league.html">League</a>
+</nav>
+<div class="banner" id="banner">Loading...</div>
+
+<div class="container">
+  <h1>Matchup</h1>
+
+  <div class="card">
+    <h2>Current Week — Category Scores</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>State</th>
+          <th>My Score</th>
+          <th>Opp Score</th>
+          <th>Gap</th>
+          <th>Need</th>
+          <th>Season W/L</th>
+        </tr>
+      </thead>
+      <tbody id="cat-table"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Weekly Results History</h2>
+    <div id="history"></div>
+  </div>
+</div>
+
+<script>
+async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
+function fmt(v,d=1){if(v==null)return'—';return typeof v==='number'?v.toFixed(d):v}
+
+async function main(){
+  const [matchup,status]=await Promise.all([load('data/matchup.json'),load('data/status.json')]);
+
+  // Banner
+  const c=status.constraints||{};
+  document.getElementById('banner').innerHTML=
+    `<span>As of <b>${status.as_of||'—'}</b></span>`+
+    (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
+    (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
+
+  // Cat table
+  const cats=matchup.cat_states||{};
+  const needs=matchup.need_weights||{};
+  const records=matchup.cat_records||{};
+  const rateCats=new Set(['OBP','ERA','WHIP']);
+  const tbody=document.getElementById('cat-table');
+
+  for(const[cat,s]of Object.entries(cats)){
+    const state=s.state||'UNKNOWN';
+    const digits=rateCats.has(cat)?3:1;
+    const need=needs[cat]||0;
+    const cr=records[cat]||{};
+    tbody.innerHTML+=`<tr>
+      <td><b>${cat}</b></td>
+      <td><span class="state ${state}">${state}</span></td>
+      <td>${fmt(s.my_val,digits)}</td>
+      <td>${fmt(s.opp_val,digits)}</td>
+      <td style="color:${s.gap>0?'var(--win)':s.gap<0?'var(--loss)':'var(--muted)'}">${s.gap!=null?(s.gap>0?'+':'')+s.gap.toFixed(digits):'—'}</td>
+      <td>
+        <div class="need-bar"><div class="need-fill" style="width:${need*100}%"></div></div>
+        <span style="font-size:11px;color:var(--muted);margin-left:6px">${(need*100).toFixed(0)}%</span>
+      </td>
+      <td class="record">${cr.wins||0}-${cr.losses||0} (${cr.win_rate!=null?(cr.win_rate*100).toFixed(0)+'%':'—'})</td>
+    </tr>`;
+  }
+
+  // History
+  const hist=matchup.history||{};
+  const weeks=Object.keys(hist).map(Number).sort((a,b)=>a-b);
+  if(!weeks.length){document.getElementById('history').innerHTML='<p style="color:var(--muted)">No completed matchup history yet.</p>';return;}
+
+  const allCats=Object.keys(cats);
+  let tbl=`<table><thead><tr><th>Week</th>${allCats.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>`;
+  for(const wk of weeks){
+    const weekData={};
+    for(const row of hist[wk]){weekData[row.cat]=row.result;}
+    tbl+=`<tr><td style="color:var(--muted)">Wk ${wk}</td>`;
+    for(const cat of allCats){
+      const res=weekData[cat];
+      tbl+=`<td>${res?`<span class="history-week ${res}">${res}</span>`:'—'}</td>`;
+    }
+    tbl+=`</tr>`;
+  }
+  tbl+=`</tbody></table>`;
+  document.getElementById('history').innerHTML=tbl;
+}
+
+main().catch(e=>{document.getElementById('banner').innerHTML=`<span style="color:var(--loss)">Error: ${e.message}</span>`;});
+</script>
+</body>
+</html>
