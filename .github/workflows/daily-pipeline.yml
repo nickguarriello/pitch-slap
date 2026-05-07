@@ -39,12 +39,9 @@ jobs:
           ESPN_SWID: ${{ secrets.ESPN_SWID }}
           ESPN_S2: ${{ secrets.ESPN_S2 }}
         run: |
-          cat > espn_credentials.py <<PYEOF
-          ESPN_SWID = "${ESPN_SWID}"
-          ESPN_S2 = "${ESPN_S2}"
-          PYEOF
+          printf 'ESPN_SWID = "%s"\nESPN_S2 = "%s"\n' "$ESPN_SWID" "$ESPN_S2" > espn_credentials.py
 
-      - name: Initialize database
+      - name: Initialize database and seed crosswalk
         run: python -m pipeline.init_db
 
       - name: Determine pipeline mode

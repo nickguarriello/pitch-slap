@@ -255,5 +255,37 @@ def _verify(db_path: str) -> None:
     print(f"  {len(tables)} tables verified: {', '.join(sorted(tables))}")
 
 
+def seed_crosswalk(db_path: str = DB_PATH, csv_path: str = None) -> None:
+    """Load dim_players from the committed crosswalk CSV if the table is empty."""
+    import csv as _csv
+    if csv_path is None:
+        csv_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "player-crosswalk.csv")
+    if not os.path.exists(csv_path):
+        print(f"  [seed_crosswalk] CSV not found: {csv_path} — skipping")
+        return
+    conn = sqlite3.connect(db_path)
+    count = conn.execute("SELECT COUNT(*) FROM dim_players").fetchone()[0]
+    if count > 0:
+        print(f"  [seed_crosswalk] dim_players already has {count} rows — skipping")
+        conn.close()
+        return
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        reader = _csv.DictReader(f)
+        rows = list(reader)
+    conn.executemany(
+        """INSERT OR IGNORE INTO dim_players
+           (player_id, mlb_id, fg_id, bbref_id, name, position, mlb_team,
+            crosswalk_status, crosswalk_note, created_at, updated_at)
+           VALUES (:player_id, :mlb_id, :fg_id, :bbref_id, :name, :position, :mlb_team,
+                   :crosswalk_status, :crosswalk_note, :created_at, :updated_at)""",
+        [{k: (int(v) if k == "mlb_id" and v not in ("", "None", None) else (None if v in ("", "None") else v))
+          for k, v in row.items()} for row in rows]
+    )
+    conn.commit()
+    conn.close()
+    print(f"  [seed_crosswalk] Seeded {len(rows)} players into dim_players from {csv_path}")
+
+
 if __name__ == "__main__":
     init_db()
+    seed_crosswalk()
