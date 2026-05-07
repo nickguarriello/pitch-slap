@@ -1,0 +1,59 @@
+{
+  "_comment": "Manual crosswalk resolutions. Format: ESPN player_id → mlb_id + fg_id. Add new entries as needed.",
+
+  "38309": {
+    "mlb_id": 669257,
+    "fg_id": "19197",
+    "note": "Will Smith — LAD catcher (not ATL pitcher Will Smith 519293)"
+  },
+  "40429": {
+    "mlb_id": 650633,
+    "fg_id": "19853",
+    "note": "Michael King — pitcher, not in pybaseball as 'Michael' (stored as 'mike')"
+  },
+  "33303": {
+    "mlb_id": 571970,
+    "fg_id": "13301",
+    "note": "Max Muncy — LAD veteran 3B (not newer Max Muncy 691777)"
+  },
+  "35983": {
+    "mlb_id": 665487,
+    "fg_id": "19709",
+    "note": "Fernando Tatis Jr. — SD RF (not Fernando Tatis Sr. 123107); accent in pybaseball name causes fuzzy miss"
+  },
+  "4917854": {
+    "mlb_id": 691587,
+    "fg_id": "27768",
+    "note": "Eury Perez — MIA SP (not older Eury Pérez 516811); accent in pybaseball name causes fuzzy miss"
+  },
+  "42403": {
+    "mlb_id": 677951,
+    "fg_id": "25764",
+    "note": "Bobby Witt Jr. — KC SS (not Bobby Witt Sr. 124492)"
+  },
+  "35002": {
+    "mlb_id": 665489,
+    "fg_id": "19611",
+    "note": "Vladimir Guerrero Jr. — TOR 1B (not Vladimir Guerrero Sr. 115223)"
+  },
+  "35124": {
+    "mlb_id": 622491,
+    "fg_id": "15689",
+    "note": "Luis Castillo — SEA SP (not Luis Castillo 112116 retired 2010, or 622379)"
+  },
+  "35394": {
+    "mlb_id": 621242,
+    "fg_id": "14710",
+    "note": "Edwin Diaz — NYM RP (not Edwin Díaz 134262 retired 1999); accent in pybaseball name causes fuzzy miss"
+  },
+  "32801": {
+    "mlb_id": 608070,
+    "fg_id": "13510",
+    "note": "Jose Ramirez — CLE 3B (not José Ramírez 542432); accent in pybaseball name causes fuzzy miss"
+  },
+  "34401": {
+    "mlb_id": 571510,
+    "fg_id": "15440",
+    "note": "Matthew Boyd — ESPN uses full 'Matthew', pybaseball stores as 'matt' causing no-match"
+  }
+}
