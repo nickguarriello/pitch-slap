@@ -43,15 +43,14 @@
 - [ ] Ground truth check: ERA, WHIP, OBP, SvHd against ESPN (requires live espn_era/espn_svhd params)
 
 ### Phase 4 — Evaluate
-- [ ] Category need weight engine
-- [ ] Buy low / sell high flags
-- [ ] Two-start pitcher scorer
-- [ ] Prospect watchlist logic
-- [ ] Ownership velocity alerts
-- [ ] Waiver priority-aware recommendations
-- [ ] Constraint tracking (acquisitions, IP, roster slots)
-- [ ] Category state model (WIN / FLOPPABLE / FLIPPABLE / LOSS)
-- [ ] Punt framework
+- [x] Category state model (WIN / FLOPPABLE / FLIPPABLE / LOSS)
+- [x] Category need weight engine
+- [x] Buy low / sell high flags (hitter xwOBA gap, pitcher ERA vs xFIP/SIERA)
+- [x] Two-start pitcher scorer (SIERA/xFIP weighted composite)
+- [x] Ownership velocity alerts
+- [x] Constraint tracking (acquisitions, IP, waiver priority)
+- [ ] Prospect watchlist logic (deferred to post-MVP)
+- [ ] Punt framework (deferred to post-MVP)
 
 ### Phase 5 — Output & Dashboard
 - [ ] `report.py` — all CSVs per PRD Section 5.1
