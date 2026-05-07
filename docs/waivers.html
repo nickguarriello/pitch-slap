@@ -115,41 +115,42 @@ async function main(){
     (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
 
   // Two-start pitchers
-  const twoStarters=(waivers.two_starters||[]);
+  const twoStarters=(waivers.two_starters_fa||[]);
   const tsTbody=document.getElementById('two-start-table');
   if(!twoStarters.length){
     tsTbody.innerHTML=`<tr><td colspan="9" class="empty">No two-start pitchers available on waivers this week.</td></tr>`;
   } else {
     for(const p of twoStarters){
-      const score=p.composite_score||0;
+      const score=p.score||p.composite_score||0;
+      const st=p.stats||{};
       tsTbody.innerHTML+=`<tr>
         <td><b>${p.name||'—'}</b></td>
-        <td class="pos">${p.eligible_positions||'—'}</td>
+        <td class="pos">${p.position||p.eligible_positions||'—'}</td>
         <td>
           <div class="score-bar"><div class="score-fill" style="width:${score*100}%"></div></div>
           <span style="font-size:11px;color:var(--muted);margin-left:6px">${(score*100).toFixed(0)}</span>
         </td>
-        <td>${fmt(p.siera,2)}</td>
-        <td>${fmt(p.xfip,2)}</td>
-        <td>${pct(p.k_pct)}</td>
-        <td>${pct(p.bb_pct)}</td>
+        <td>${fmt(st.siera||p.siera,2)}</td>
+        <td>${fmt(st.xfip||p.xfip,2)}</td>
+        <td>${pct(st.k_pct||p.k_pct)}</td>
+        <td>${pct(st.bb_pct||p.bb_pct)}</td>
         <td>${pct(p.ownership_pct)}</td>
-        <td><span class="tag tag-2start">2-START</span>${p.is_fa?'<span class="tag tag-fa">FA</span>':''}</td>
+        <td><span class="tag tag-2start">2-START</span><span class="tag tag-fa">FA</span></td>
       </tr>`;
     }
   }
 
   // Buy-low FA
-  const buyLow=(waivers.buy_low||[]);
+  const buyLow=(waivers.buy_low_fa||[]);
   const buyTbody=document.getElementById('buy-table');
   if(!buyLow.length){
     buyTbody.innerHTML=`<tr><td colspan="5" class="empty">No buy-low targets on waivers.</td></tr>`;
   } else {
     for(const p of buyLow){
-      const reasons=(p.buy_low_reasons||[]).slice(0,3).join(' · ');
+      const reasons=(p.reasons||p.buy_low_reasons||[]).slice(0,3).join(' · ');
       buyTbody.innerHTML+=`<tr>
         <td><b>${p.name||'—'}</b></td>
-        <td class="pos">${p.eligible_positions||'—'}</td>
+        <td class="pos">${p.position||p.eligible_positions||'—'}</td>
         <td>${pct(p.ownership_pct)}</td>
         <td class="reason">${reasons||'—'}</td>
         <td><span class="tag tag-buy">BUY</span><span class="tag tag-fa">FA</span></td>
@@ -168,7 +169,7 @@ async function main(){
       const color=delta>0?'var(--win)':'var(--loss)';
       velTbody.innerHTML+=`<tr>
         <td><b>${p.name||'—'}</b></td>
-        <td class="pos">${p.eligible_positions||'—'}</td>
+        <td class="pos">${p.position||p.eligible_positions||'—'}</td>
         <td style="color:${color};font-weight:600">${delta>0?'+':''}${pct(delta)}</td>
         <td>${pct(p.ownership_pct)}</td>
         <td><span class="tag tag-vel">TRENDING</span></td>

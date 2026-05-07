@@ -173,7 +173,18 @@ async function main(){
     (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
     (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
 
-  allPlayers=roster.players||[];
+  allPlayers=(roster.players||[]).map(p=>{
+    const s=p.stats||{}; const ss=s.season||{}; const sc=p.statcast||{};
+    return {
+      ...p,
+      roster_slot: p.lineup_slot,
+      eligible_positions: p.position,
+      r_season: ss.r, hr_season: ss.hr, rbi_season: ss.rbi, sb_season: ss.sb,
+      obp_season: ss.obp, k_season: ss.k, qs_season: ss.qs, era_season: ss.era,
+      whip_season: ss.whip, svhd_season: ss.svhd,
+      xwoba: sc.xwoba, xfip: sc.xfip, siera: sc.siera,
+    };
+  });
 
   document.querySelectorAll('.filter-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{

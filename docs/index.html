@@ -159,7 +159,7 @@ async function main() {
     </div>`).join('');
 
   // Buy/sell from roster
-  const players = (roster.players || []).filter(p => p.espn_team_id != null);
+  const players = roster.players || [];
   const buyLow  = players.filter(p => p.buy_low).slice(0, 8);
   const sellHigh = players.filter(p => p.sell_high).slice(0, 8);
 

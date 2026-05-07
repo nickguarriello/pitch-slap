@@ -120,7 +120,7 @@ function renderTable(){
     }
     if(sortCol==='team_name') return (a.team_name||'').localeCompare(b.team_name||'')*sortDir;
     if(sortCol==='value'){
-      const av=a[col],bv=b[col];
+      const av=a[col.toLowerCase()],bv=b[col.toLowerCase()];
       if(av==null&&bv==null) return 0;
       if(av==null) return 1; if(bv==null) return -1;
       return LOWER_BETTER.has(activeCat)?(av-bv)*sortDir:(bv-av)*sortDir;
@@ -163,8 +163,17 @@ async function main(){
     (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
     (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
 
-  leagueData=league.teams||[];
-  myTeamId=league.my_team_id||null;
+  // Flatten nested stats into top-level fields for sorting/display
+  leagueData=(league.teams||[]).map(t=>({
+    ...t,
+    espn_team_id: t.team_id,
+    team_name: t.team_name||('Team '+t.team_id),
+    r: (t.stats||{}).R, hr: (t.stats||{}).HR, rbi: (t.stats||{}).RBI,
+    sb: (t.stats||{}).SB, obp: (t.stats||{}).OBP, k: (t.stats||{}).K,
+    qs: (t.stats||{}).QS, era: (t.stats||{}).ERA, whip: (t.stats||{}).WHIP,
+    svhd: (t.stats||{}).SvHd,
+  }));
+  myTeamId=(leagueData.find(t=>t.is_my_team)||{}).espn_team_id||null;
 
   // Cat tabs
   const tabContainer=document.getElementById('cat-tabs');
