@@ -1,25 +1,6 @@
 {
   "buy_low_fa": [
     {
-      "player_id": "4925604",
-      "name": "Carson Benge",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.237 below floor (0.240)",
-        "OBP (0.272) lags xwOBA (0.305)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.271929824,
-        "xwoba": 0.3048663892244038,
-        "babip": 0.236842105,
-        "sprint_speed": 28.5
-      }
-    },
-    {
       "player_id": "31027",
       "name": "Paul Goldschmidt",
       "team": null,
@@ -27,14 +8,14 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.219 below floor (0.260)",
-        "OBP (0.288) lags xwOBA (0.381)"
+        "BABIP 0.235 below floor (0.260)",
+        "OBP (0.316) lags xwOBA (0.394)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.288461538,
-        "xwoba": 0.3810238471397987,
-        "babip": 0.21875,
+        "obp": 0.315789473,
+        "xwoba": 0.3938287433825041,
+        "babip": 0.235294117,
         "sprint_speed": 24.7
       }
     },
@@ -52,7 +33,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.271028037,
-        "xwoba": 0.3114508512978242,
+        "xwoba": 0.3114581954813449,
         "babip": 0.246575342,
         "sprint_speed": 26.7
       }
@@ -71,8 +52,27 @@
       "score": 0.8,
       "stats": {
         "obp": 0.269662921,
-        "xwoba": 0.29599442642726254,
+        "xwoba": 0.2960106281751997,
         "babip": 0.208333333,
+        "sprint_speed": 27.0
+      }
+    },
+    {
+      "player_id": "39882",
+      "name": "Jake Burger",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.255 below floor (0.260)",
+        "OBP (0.247) lags xwOBA (0.283)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.246753246,
+        "xwoba": 0.282935922796076,
+        "babip": 0.25510204,
         "sprint_speed": 27.0
       }
     },
@@ -90,7 +90,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.271929824,
-        "xwoba": 0.30513810274893777,
+        "xwoba": 0.3051576447068599,
         "babip": 0.178082191,
         "sprint_speed": 28.8
       }
@@ -103,15 +103,15 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.221 below floor (0.260)",
-        "OBP (0.276) lags xwOBA (0.304)"
+        "BABIP 0.222 below floor (0.260)",
+        "OBP (0.281) lags xwOBA (0.317)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.275862068,
-        "xwoba": 0.3043104420537534,
-        "babip": 0.220588235,
-        "sprint_speed": 26.4
+        "obp": 0.280991735,
+        "xwoba": 0.31673736572265626,
+        "babip": 0.222222222,
+        "sprint_speed": 26.5
       }
     },
     {
@@ -122,34 +122,15 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.186 below floor (0.240)",
-        "OBP (0.218) lags xwOBA (0.271)"
+        "BABIP 0.206 below floor (0.240)",
+        "OBP (0.229) lags xwOBA (0.272)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.217821782,
-        "xwoba": 0.2705526257505511,
-        "babip": 0.186440677,
+        "obp": 0.228571428,
+        "xwoba": 0.2723033178420294,
+        "babip": 0.206349206,
         "sprint_speed": 28.0
-      }
-    },
-    {
-      "player_id": "42411",
-      "name": "Luisangel Acuna",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.209 below floor (0.240)",
-        "OBP (0.239) lags xwOBA (0.271)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.238636363,
-        "xwoba": 0.27112746238708496,
-        "babip": 0.208955223,
-        "sprint_speed": 29.5
       }
     },
     {
@@ -160,15 +141,15 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.155 below floor (0.260)",
-        "OBP (0.188) lags xwOBA (0.294)"
+        "BABIP 0.164 below floor (0.260)",
+        "OBP (0.200) lags xwOBA (0.296)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.188235294,
-        "xwoba": 0.29379352891301536,
-        "babip": 0.155172413,
-        "sprint_speed": 27.4
+        "obp": 0.2,
+        "xwoba": 0.29590496149930084,
+        "babip": 0.163934426,
+        "sprint_speed": 27.3
       }
     }
   ],
