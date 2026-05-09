@@ -77,6 +77,37 @@
       }
     }
   ],
-  "two_starters_fa": [],
+  "two_starters_fa": [
+    {
+      "player_id": "4966140",
+      "name": "Payton Tolle",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "score": 5.45,
+      "stats": {
+        "era": null,
+        "siera": 2.8867159372112496,
+        "xfip": 3.1645267866190805,
+        "ip": null,
+        "k_pct_14d": null
+      }
+    },
+    {
+      "player_id": "4966140",
+      "name": "Payton Tolle",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "score": 5.45,
+      "stats": {
+        "era": 2.0377359223900533,
+        "siera": 2.8867159372112496,
+        "xfip": 3.1645267866190805,
+        "ip": 17.2,
+        "k_pct_14d": null
+      }
+    }
+  ],
   "ownership_alerts": []
 }
