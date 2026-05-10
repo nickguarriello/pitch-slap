@@ -1,25 +1,6 @@
 {
   "buy_low_fa": [
     {
-      "player_id": "31027",
-      "name": "Paul Goldschmidt",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.229 below floor (0.260)",
-        "OBP (0.310) lags xwOBA (0.387)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.310344827,
-        "xwoba": 0.38729720280088226,
-        "babip": 0.228571428,
-        "sprint_speed": 24.7
-      }
-    },
-    {
       "player_id": "40700",
       "name": "Gavin Sheets",
       "team": null,
@@ -27,15 +8,34 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.243 below floor (0.260)",
-        "OBP (0.273) lags xwOBA (0.309)"
+        "BABIP 0.234 below floor (0.260)",
+        "OBP (0.263) lags xwOBA (0.309)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.272727272,
-        "xwoba": 0.3093920967795632,
-        "babip": 0.243243243,
-        "sprint_speed": 26.7
+        "obp": 0.263157894,
+        "xwoba": 0.3093184086314419,
+        "babip": 0.233766233,
+        "sprint_speed": 26.6
+      }
+    },
+    {
+      "player_id": "41034",
+      "name": "Mark Vientos",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.257 below floor (0.260)",
+        "OBP (0.277) lags xwOBA (0.348)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.276785714,
+        "xwoba": 0.34844490459987093,
+        "babip": 0.256756756,
+        "sprint_speed": 25.5
       }
     },
     {
@@ -46,14 +46,14 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.212 below floor (0.260)",
-        "OBP (0.269) lags xwOBA (0.299)"
+        "BABIP 0.200 below floor (0.260)",
+        "OBP (0.268) lags xwOBA (0.295)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.268817204,
-        "xwoba": 0.299343498804236,
-        "babip": 0.211538461,
+        "obp": 0.268041237,
+        "xwoba": 0.2950803225802392,
+        "babip": 0.2,
         "sprint_speed": 27.2
       }
     },
@@ -71,43 +71,69 @@
       "score": 0.8,
       "stats": {
         "obp": 0.29090909,
-        "xwoba": 0.331189650076407,
+        "xwoba": 0.33109866248236763,
         "babip": 0.258064516,
         "sprint_speed": 26.7
       }
-    }
-  ],
-  "two_starters_fa": [
+    },
     {
-      "player_id": "4966140",
-      "name": "Payton Tolle",
+      "player_id": "41169",
+      "name": "Alec Bohm",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
-      "score": 5.45,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.185 below floor (0.260)",
+        "OBP (0.241) lags xwOBA (0.271)"
+      ],
+      "score": 0.8,
       "stats": {
-        "era": null,
-        "siera": 2.8867159372112496,
-        "xfip": 3.1645267866190805,
-        "ip": null,
-        "k_pct_14d": null
+        "obp": 0.24137931,
+        "xwoba": 0.271206882264879,
+        "babip": 0.185185185,
+        "sprint_speed": 26.5
       }
     },
     {
-      "player_id": "4966140",
-      "name": "Payton Tolle",
+      "player_id": "36364",
+      "name": "Jake Cronenworth",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
-      "score": 5.45,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.178 below floor (0.240)",
+        "OBP (0.272) lags xwOBA (0.305)"
+      ],
+      "score": 0.8,
       "stats": {
-        "era": 2.0377359223900533,
-        "siera": 2.8867159372112496,
-        "xfip": 3.1645267866190805,
-        "ip": 17.2,
-        "k_pct_14d": null
+        "obp": 0.271929824,
+        "xwoba": 0.30505511635228205,
+        "babip": 0.178082191,
+        "sprint_speed": 28.8
+      }
+    },
+    {
+      "player_id": "39882",
+      "name": "Jake Burger",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.248 below floor (0.260)",
+        "OBP (0.242) lags xwOBA (0.278)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.242038216,
+        "xwoba": 0.2778171855173293,
+        "babip": 0.247524752,
+        "sprint_speed": 27.0
       }
     }
   ],
+  "two_starters_fa": [],
   "ownership_alerts": []
 }
