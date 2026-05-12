@@ -1,6 +1,25 @@
 {
   "buy_low_fa": [
     {
+      "player_id": "42410",
+      "name": "JJ Bleday",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.226 below floor (0.260)",
+        "OBP (0.392) lags xwOBA (0.481)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.392156862,
+        "xwoba": 0.48084014892578125,
+        "babip": 0.225806451,
+        "sprint_speed": 27.5
+      }
+    },
+    {
       "player_id": "40700",
       "name": "Gavin Sheets",
       "team": null,
@@ -8,34 +27,15 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.234 below floor (0.260)",
-        "OBP (0.263) lags xwOBA (0.309)"
+        "BABIP 0.228 below floor (0.260)",
+        "OBP (0.263) lags xwOBA (0.308)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.263157894,
-        "xwoba": 0.3093184086314419,
-        "babip": 0.233766233,
+        "obp": 0.262711864,
+        "xwoba": 0.30763238163317663,
+        "babip": 0.227848101,
         "sprint_speed": 26.6
-      }
-    },
-    {
-      "player_id": "41034",
-      "name": "Mark Vientos",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.257 below floor (0.260)",
-        "OBP (0.277) lags xwOBA (0.348)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.276785714,
-        "xwoba": 0.34844490459987093,
-        "babip": 0.256756756,
-        "sprint_speed": 25.5
       }
     },
     {
@@ -46,53 +46,34 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.200 below floor (0.260)",
-        "OBP (0.268) lags xwOBA (0.295)"
+        "BABIP 0.211 below floor (0.260)",
+        "OBP (0.267) lags xwOBA (0.296)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.268041237,
-        "xwoba": 0.2950803225802392,
-        "babip": 0.2,
+        "obp": 0.267326732,
+        "xwoba": 0.29636868391886795,
+        "babip": 0.210526315,
         "sprint_speed": 27.2
       }
     },
     {
-      "player_id": "34975",
-      "name": "Tyler Stephenson",
+      "player_id": "41034",
+      "name": "Mark Vientos",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.258 below floor (0.260)",
-        "OBP (0.291) lags xwOBA (0.331)"
+        "BABIP 0.256 below floor (0.260)",
+        "OBP (0.276) lags xwOBA (0.347)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.29090909,
-        "xwoba": 0.33109866248236763,
-        "babip": 0.258064516,
-        "sprint_speed": 26.7
-      }
-    },
-    {
-      "player_id": "41169",
-      "name": "Alec Bohm",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.185 below floor (0.260)",
-        "OBP (0.241) lags xwOBA (0.271)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.24137931,
-        "xwoba": 0.271206882264879,
-        "babip": 0.185185185,
-        "sprint_speed": 26.5
+        "obp": 0.275862068,
+        "xwoba": 0.34738583400331696,
+        "babip": 0.256410256,
+        "sprint_speed": 25.6
       }
     },
     {
@@ -109,7 +90,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.271929824,
-        "xwoba": 0.30505511635228205,
+        "xwoba": 0.3048869015877707,
         "babip": 0.178082191,
         "sprint_speed": 28.8
       }
@@ -122,15 +103,15 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.248 below floor (0.260)",
-        "OBP (0.242) lags xwOBA (0.278)"
+        "BABIP 0.243 below floor (0.260)",
+        "OBP (0.237) lags xwOBA (0.276)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.242038216,
-        "xwoba": 0.2778171855173293,
-        "babip": 0.247524752,
-        "sprint_speed": 27.0
+        "obp": 0.2375,
+        "xwoba": 0.27625231742858886,
+        "babip": 0.242718446,
+        "sprint_speed": 27.1
       }
     }
   ],
