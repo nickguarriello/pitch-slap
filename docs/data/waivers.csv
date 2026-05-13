@@ -1,7 +1,6 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
-JJ Bleday,,buy_low_hitter,0.8,False,,,,0.392156862,0.48084014892578125,0.225806451,BABIP 0.226 below floor (0.260); OBP (0.392) lags xwOBA (0.481)
-Gavin Sheets,,buy_low_hitter,0.8,False,,,,0.262711864,0.30763238163317663,0.227848101,BABIP 0.228 below floor (0.260); OBP (0.263) lags xwOBA (0.308)
-Royce Lewis,,buy_low_hitter,0.8,False,,,,0.267326732,0.29636868391886795,0.210526315,BABIP 0.211 below floor (0.260); OBP (0.267) lags xwOBA (0.296)
-Mark Vientos,,buy_low_hitter,0.8,False,,,,0.275862068,0.34738583400331696,0.256410256,BABIP 0.256 below floor (0.260); OBP (0.276) lags xwOBA (0.347)
-Jake Cronenworth,,buy_low_hitter,0.8,False,,,,0.271929824,0.3048869015877707,0.178082191,BABIP 0.178 below floor (0.240); OBP (0.272) lags xwOBA (0.305)
-Jake Burger,,buy_low_hitter,0.8,False,,,,0.2375,0.27625231742858886,0.242718446,BABIP 0.243 below floor (0.260); OBP (0.237) lags xwOBA (0.276)
+Gavin Sheets,,buy_low_hitter,0.8,False,,,,0.275,0.31613260904947915,0.2375,BABIP 0.237 below floor (0.260); OBP (0.275) lags xwOBA (0.316)
+Royce Lewis,,buy_low_hitter,0.8,False,,,,0.269230769,0.2945877405313345,0.210526315,BABIP 0.211 below floor (0.260); OBP (0.269) lags xwOBA (0.295)
+Tyler Stephenson,,buy_low_hitter,0.8,False,,,,0.279661016,0.3243474877398947,0.246376811,BABIP 0.246 below floor (0.260); OBP (0.280) lags xwOBA (0.324)
+Jake Cronenworth,,buy_low_hitter,0.8,False,,,,0.271929824,0.3048714085629112,0.178082191,BABIP 0.178 below floor (0.240); OBP (0.272) lags xwOBA (0.305)
+Bo Naylor,,buy_low_hitter,0.8,False,,,,0.2,0.2957709052345969,0.163934426,BABIP 0.164 below floor (0.260); OBP (0.200) lags xwOBA (0.296)
