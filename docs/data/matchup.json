@@ -1,63 +1,63 @@
 {
   "cat_states": {
     "R": {
-      "state": "FLIPPABLE",
-      "my_val": 9.0,
-      "opp_val": 10.0,
-      "gap": -1.0
+      "state": "TIE",
+      "my_val": 17.0,
+      "opp_val": 17.0,
+      "gap": 0.0
     },
     "HR": {
-      "state": "FLOPPABLE",
-      "my_val": 2.0,
+      "state": "WIN",
+      "my_val": 3.0,
       "opp_val": 1.0,
-      "gap": 1.0
+      "gap": 2.0
     },
     "RBI": {
       "state": "WIN",
-      "my_val": 11.0,
-      "opp_val": 6.0,
-      "gap": 5.0
+      "my_val": 19.0,
+      "opp_val": 13.0,
+      "gap": 6.0
     },
     "SB": {
-      "state": "TIE",
-      "my_val": 1.0,
+      "state": "WIN",
+      "my_val": 3.0,
       "opp_val": 1.0,
-      "gap": 0.0
+      "gap": 2.0
     },
     "OBP": {
       "state": "WIN",
-      "my_val": 0.38157895,
-      "opp_val": 0.3258427,
-      "gap": 0.0557
+      "my_val": 0.35658915,
+      "opp_val": 0.31818182,
+      "gap": 0.0384
     },
     "K": {
       "state": "FLIPPABLE",
-      "my_val": 12.0,
-      "opp_val": 17.0,
-      "gap": -5.0
+      "my_val": 33.0,
+      "opp_val": 40.0,
+      "gap": -7.0
     },
     "QS": {
       "state": "FLIPPABLE",
-      "my_val": 0.0,
-      "opp_val": 1.0,
+      "my_val": 2.0,
+      "opp_val": 3.0,
       "gap": -1.0
     },
     "ERA": {
-      "state": "LOSS",
-      "my_val": 5.4,
-      "opp_val": 4.725,
-      "gap": -0.675
+      "state": "WIN",
+      "my_val": 3.17647059,
+      "opp_val": 4.06451613,
+      "gap": 0.888
     },
     "WHIP": {
       "state": "WIN",
-      "my_val": 0.72,
-      "opp_val": 1.35,
-      "gap": 0.63
+      "my_val": 1.02352941,
+      "opp_val": 1.25806452,
+      "gap": 0.2345
     },
     "SvHd": {
       "state": "TIE",
-      "my_val": 2.0,
-      "opp_val": 2.0,
+      "my_val": 3.0,
+      "opp_val": 3.0,
       "gap": 0.0
     }
   },
@@ -516,7 +516,7 @@
     "ip_remaining": 15.0,
     "waiver_priority": 3,
     "acq_alert": null,
-    "ip_alert": null,
+    "ip_alert": "IP PACE: only 0.0 IP by Thursday \u2014 at risk of minimum",
     "waiver_alert": "STRONG: waiver priority #3 \u2014 act early in week"
   }
 }

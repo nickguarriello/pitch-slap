@@ -1,6 +1,25 @@
 {
   "buy_low_fa": [
     {
+      "player_id": "4987418",
+      "name": "Moises Ballesteros",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.253 below floor (0.260)",
+        "OBP (0.308) lags xwOBA (0.337)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.307692307,
+        "xwoba": 0.33700355597301923,
+        "babip": 0.253164556,
+        "sprint_speed": 24.5
+      }
+    },
+    {
       "player_id": "40700",
       "name": "Gavin Sheets",
       "team": null,
@@ -8,15 +27,34 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.237 below floor (0.260)",
-        "OBP (0.275) lags xwOBA (0.316)"
+        "BABIP 0.241 below floor (0.260)",
+        "OBP (0.282) lags xwOBA (0.316)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.275,
+        "obp": 0.282258064,
         "xwoba": 0.31613260904947915,
-        "babip": 0.2375,
-        "sprint_speed": 26.6
+        "babip": 0.240963855,
+        "sprint_speed": 26.5
+      }
+    },
+    {
+      "player_id": "34975",
+      "name": "Tyler Stephenson",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.239 below floor (0.260)",
+        "OBP (0.285) lags xwOBA (0.324)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.284552845,
+        "xwoba": 0.3243474877398947,
+        "babip": 0.239436619,
+        "sprint_speed": 26.9
       }
     },
     {
@@ -36,63 +74,6 @@
         "xwoba": 0.2945877405313345,
         "babip": 0.210526315,
         "sprint_speed": 27.2
-      }
-    },
-    {
-      "player_id": "34975",
-      "name": "Tyler Stephenson",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.246 below floor (0.260)",
-        "OBP (0.280) lags xwOBA (0.324)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.279661016,
-        "xwoba": 0.3243474877398947,
-        "babip": 0.246376811,
-        "sprint_speed": 26.8
-      }
-    },
-    {
-      "player_id": "36364",
-      "name": "Jake Cronenworth",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.178 below floor (0.240)",
-        "OBP (0.272) lags xwOBA (0.305)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.271929824,
-        "xwoba": 0.3048714085629112,
-        "babip": 0.178082191,
-        "sprint_speed": 28.8
-      }
-    },
-    {
-      "player_id": "41183",
-      "name": "Bo Naylor",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.164 below floor (0.260)",
-        "OBP (0.200) lags xwOBA (0.296)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.2,
-        "xwoba": 0.2957709052345969,
-        "babip": 0.163934426,
-        "sprint_speed": 27.3
       }
     }
   ],
