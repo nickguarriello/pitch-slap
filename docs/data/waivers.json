@@ -27,15 +27,15 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.241 below floor (0.260)",
-        "OBP (0.282) lags xwOBA (0.318)"
+        "BABIP 0.244 below floor (0.260)",
+        "OBP (0.289) lags xwOBA (0.322)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.282258064,
-        "xwoba": 0.3175596421764743,
-        "babip": 0.240963855,
-        "sprint_speed": 26.5
+        "obp": 0.2890625,
+        "xwoba": 0.3219629228115082,
+        "babip": 0.244186046,
+        "sprint_speed": 26.6
       }
     },
     {
@@ -58,22 +58,22 @@
       }
     },
     {
-      "player_id": "40635",
-      "name": "Royce Lewis",
+      "player_id": "36364",
+      "name": "Jake Cronenworth",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.211 below floor (0.260)",
-        "OBP (0.269) lags xwOBA (0.295)"
+        "BABIP 0.178 below floor (0.240)",
+        "OBP (0.272) lags xwOBA (0.305)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.269230769,
-        "xwoba": 0.2945529497586764,
-        "babip": 0.210526315,
-        "sprint_speed": 27.2
+        "obp": 0.271929824,
+        "xwoba": 0.30482998228909675,
+        "babip": 0.178082191,
+        "sprint_speed": 28.8
       }
     }
   ],
