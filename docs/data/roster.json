@@ -121,7 +121,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 70.5,
+      "ownership_pct": 71.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -343,7 +343,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 74.4,
+      "ownership_pct": 74.6,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -565,7 +565,7 @@
       "injury_status": "FIFTEEN_DAY_DL",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 55.3,
+      "ownership_pct": 55.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -881,7 +881,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 73.6,
+      "ownership_pct": 73.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1103,7 +1103,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 19.2,
+      "ownership_pct": 19.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1214,7 +1214,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 25.0,
+      "ownership_pct": 25.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1325,7 +1325,7 @@
       "injury_status": "DAY_TO_DAY",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 79.3,
+      "ownership_pct": 79.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1530,7 +1530,7 @@
       "injury_status": "FIFTEEN_DAY_DL",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 69.3,
+      "ownership_pct": 69.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1738,7 +1738,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 35.5,
+      "ownership_pct": 35.4,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2071,7 +2071,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 92.9,
+      "ownership_pct": 92.8,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2182,7 +2182,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 44.7,
+      "ownership_pct": 44.8,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2293,7 +2293,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 79.5,
+      "ownership_pct": 80.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2387,7 +2387,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 44.0,
+      "ownership_pct": 42.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2831,7 +2831,7 @@
       "injury_status": "DAY_TO_DAY",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 81.2,
+      "ownership_pct": 81.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2925,7 +2925,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 24.8,
+      "ownership_pct": 25.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3258,7 +3258,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 89.2,
+      "ownership_pct": 89.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3369,7 +3369,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 21.4,
+      "ownership_pct": 21.6,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
