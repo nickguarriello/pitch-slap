@@ -8,110 +8,15 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.230 below floor (0.260)",
-        "OBP (0.276) lags xwOBA (0.324)"
+        "BABIP 0.227 below floor (0.260)",
+        "OBP (0.279) lags xwOBA (0.327)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.275590551,
-        "xwoba": 0.32412085994597406,
-        "babip": 0.229729729,
+        "obp": 0.279069767,
+        "xwoba": 0.32745155455574154,
+        "babip": 0.226666666,
         "sprint_speed": 26.9
-      }
-    },
-    {
-      "player_id": "40635",
-      "name": "Royce Lewis",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.206 below floor (0.260)",
-        "OBP (0.268) lags xwOBA (0.294)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.267857142,
-        "xwoba": 0.294290440423148,
-        "babip": 0.206349206,
-        "sprint_speed": 27.2
-      }
-    },
-    {
-      "player_id": "41034",
-      "name": "Mark Vientos",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.250 below floor (0.260)",
-        "OBP (0.278) lags xwOBA (0.380)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.278195488,
-        "xwoba": 0.3799102611111519,
-        "babip": 0.25,
-        "sprint_speed": 25.7
-      }
-    },
-    {
-      "player_id": "36364",
-      "name": "Jake Cronenworth",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.178 below floor (0.240)",
-        "OBP (0.272) lags xwOBA (0.305)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.271929824,
-        "xwoba": 0.3048210478665536,
-        "babip": 0.178082191,
-        "sprint_speed": 28.8
-      }
-    },
-    {
-      "player_id": "35062",
-      "name": "Harrison Bader",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.171 below floor (0.260)",
-        "OBP (0.182) lags xwOBA (0.282)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.181818181,
-        "xwoba": 0.28156965429132635,
-        "babip": 0.170731707,
-        "sprint_speed": 27.5
-      }
-    },
-    {
-      "player_id": "4683371",
-      "name": "Coby Mayo",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.229 below floor (0.240)",
-        "OBP (0.250) lags xwOBA (0.277)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.25,
-        "xwoba": 0.2773504872475901,
-        "babip": 0.228571428,
-        "sprint_speed": 28.1
       }
     }
   ],
