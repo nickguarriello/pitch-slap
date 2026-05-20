@@ -1,22 +1,22 @@
 {
   "buy_low_fa": [
     {
-      "player_id": "4987418",
-      "name": "Moises Ballesteros",
+      "player_id": "34975",
+      "name": "Tyler Stephenson",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.253 below floor (0.260)",
-        "OBP (0.301) lags xwOBA (0.329)"
+        "BABIP 0.235 below floor (0.260)",
+        "OBP (0.291) lags xwOBA (0.326)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.300813008,
-        "xwoba": 0.32850958506266276,
-        "babip": 0.253012048,
-        "sprint_speed": 24.6
+        "obp": 0.290780141,
+        "xwoba": 0.32555458511131397,
+        "babip": 0.234567901,
+        "sprint_speed": 26.8
       }
     },
     {
@@ -28,12 +28,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.167 below floor (0.260)",
-        "OBP (0.188) lags xwOBA (0.281)"
+        "OBP (0.188) lags xwOBA (0.268)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.188235294,
-        "xwoba": 0.28119807243347167,
+        "xwoba": 0.26848025602452896,
         "babip": 0.166666666,
         "sprint_speed": 27.6
       }
@@ -52,7 +52,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.271929824,
-        "xwoba": 0.3047909318355092,
+        "xwoba": 0.30478976065652413,
         "babip": 0.178082191,
         "sprint_speed": 28.8
       }
@@ -71,7 +71,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.257142857,
-        "xwoba": 0.2922770089476648,
+        "xwoba": 0.2918818610055106,
         "babip": 0.225,
         "sprint_speed": 28.0
       }

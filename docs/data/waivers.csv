@@ -1,5 +1,5 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
-Moises Ballesteros,,buy_low_hitter,0.8,False,,,,0.300813008,0.32850958506266276,0.253012048,BABIP 0.253 below floor (0.260); OBP (0.301) lags xwOBA (0.329)
-Harrison Bader,,buy_low_hitter,0.8,False,,,,0.188235294,0.28119807243347167,0.166666666,BABIP 0.167 below floor (0.260); OBP (0.188) lags xwOBA (0.281)
-Jake Cronenworth,,buy_low_hitter,0.8,False,,,,0.271929824,0.3047909318355092,0.178082191,BABIP 0.178 below floor (0.240); OBP (0.272) lags xwOBA (0.305)
-Coby Mayo,,buy_low_hitter,0.8,False,,,,0.257142857,0.2922770089476648,0.225,BABIP 0.225 below floor (0.240); OBP (0.257) lags xwOBA (0.292)
+Tyler Stephenson,,buy_low_hitter,0.8,False,,,,0.290780141,0.32555458511131397,0.234567901,BABIP 0.235 below floor (0.260); OBP (0.291) lags xwOBA (0.326)
+Harrison Bader,,buy_low_hitter,0.8,False,,,,0.188235294,0.26848025602452896,0.166666666,BABIP 0.167 below floor (0.260); OBP (0.188) lags xwOBA (0.268)
+Jake Cronenworth,,buy_low_hitter,0.8,False,,,,0.271929824,0.30478976065652413,0.178082191,BABIP 0.178 below floor (0.240); OBP (0.272) lags xwOBA (0.305)
+Coby Mayo,,buy_low_hitter,0.8,False,,,,0.257142857,0.2918818610055106,0.225,BABIP 0.225 below floor (0.240); OBP (0.257) lags xwOBA (0.292)
