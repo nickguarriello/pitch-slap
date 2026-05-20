@@ -1,13 +1,13 @@
 {
-  "as_of": "2026-05-19",
+  "as_of": "2026-05-20",
   "last_run_mode": "unknown",
   "last_full_run": null,
   "last_light_run": null,
-  "espn_last_fetch": "2026-05-19T22:58:36.935158+00:00",
+  "espn_last_fetch": "2026-05-20T13:40:18.979725+00:00",
   "validate_overall": "warn",
   "validate_warnings": 3,
-  "cats_winning": 4,
-  "cats_losing": 3,
+  "cats_winning": 5,
+  "cats_losing": 2,
   "cats_flippable": 0,
   "constraints": {
     "acquisitions_used": 1,
