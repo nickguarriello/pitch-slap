@@ -10,7 +10,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 96.5,
+      "ownership_pct": 96.6,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -96,15 +96,15 @@
       },
       "statcast": {
         "xba": 0.254,
-        "xslg": 0.493,
+        "xslg": 0.491,
         "xwoba": 0.393,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 157.0,
-        "barrel_pct": 16.8,
-        "hard_hit_pct": 58.9,
-        "exit_velo": 95.0,
+        "barrel_pct": 16.5,
+        "hard_hit_pct": 58.7,
+        "exit_velo": 94.8,
         "sprint_speed": 26.6
       },
       "buy_low": false,
@@ -121,7 +121,7 @@
       "injury_status": "DAY_TO_DAY",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 78.2,
+      "ownership_pct": 77.9,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -320,16 +320,16 @@
         }
       },
       "statcast": {
-        "xba": 0.291,
-        "xslg": 0.379,
+        "xba": 0.294,
+        "xslg": 0.382,
         "xwoba": 0.338,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 113.0,
-        "barrel_pct": 1.7,
-        "hard_hit_pct": 25.1,
-        "exit_velo": 85.5,
+        "barrel_pct": 1.6,
+        "hard_hit_pct": 25.7,
+        "exit_velo": 85.3,
         "sprint_speed": 28.3
       },
       "buy_low": false,
@@ -346,7 +346,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 80.5,
+      "ownership_pct": 80.7,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -431,16 +431,16 @@
         }
       },
       "statcast": {
-        "xba": 0.313,
-        "xslg": 0.441,
+        "xba": 0.309,
+        "xslg": 0.44,
         "xwoba": 0.337,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 145.0,
-        "barrel_pct": 4.1,
-        "hard_hit_pct": 34.0,
-        "exit_velo": 87.2,
+        "barrel_pct": 4.0,
+        "hard_hit_pct": 33.1,
+        "exit_velo": 87.0,
         "sprint_speed": 27.0
       },
       "buy_low": false,
@@ -457,7 +457,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 64.1,
+      "ownership_pct": 64.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -542,16 +542,16 @@
         }
       },
       "statcast": {
-        "xba": 0.281,
-        "xslg": 0.584,
+        "xba": 0.279,
+        "xslg": 0.578,
         "xwoba": 0.41,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 149.0,
-        "barrel_pct": 19.3,
-        "hard_hit_pct": 54.1,
-        "exit_velo": 92.2,
+        "barrel_pct": 18.8,
+        "hard_hit_pct": 52.7,
+        "exit_velo": 92.0,
         "sprint_speed": 27.3
       },
       "buy_low": false,
@@ -568,7 +568,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 78.4,
+      "ownership_pct": 78.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -653,17 +653,17 @@
         }
       },
       "statcast": {
-        "xba": 0.222,
-        "xslg": 0.414,
+        "xba": 0.213,
+        "xslg": 0.394,
         "xwoba": 0.294,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 117.0,
-        "barrel_pct": 8.3,
-        "hard_hit_pct": 37.5,
-        "exit_velo": 89.4,
-        "sprint_speed": 27.0
+        "barrel_pct": 7.8,
+        "hard_hit_pct": 35.3,
+        "exit_velo": 88.8,
+        "sprint_speed": 27.1
       },
       "buy_low": false,
       "sell_high": false,
@@ -679,7 +679,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 34.4,
+      "ownership_pct": 34.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -764,16 +764,16 @@
         }
       },
       "statcast": {
-        "xba": 0.302,
-        "xslg": 0.591,
+        "xba": 0.303,
+        "xslg": 0.579,
         "xwoba": 0.436,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 178.0,
-        "barrel_pct": 15.0,
-        "hard_hit_pct": 53.3,
-        "exit_velo": 92.1,
+        "barrel_pct": 14.1,
+        "hard_hit_pct": 53.1,
+        "exit_velo": 91.9,
         "sprint_speed": 27.5
       },
       "buy_low": false,
@@ -790,7 +790,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 28.2,
+      "ownership_pct": 28.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -875,17 +875,17 @@
         }
       },
       "statcast": {
-        "xba": 0.272,
-        "xslg": 0.507,
+        "xba": 0.269,
+        "xslg": 0.498,
         "xwoba": 0.362,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 139.0,
-        "barrel_pct": 12.7,
-        "hard_hit_pct": 54.5,
-        "exit_velo": 93.2,
-        "sprint_speed": 27.0
+        "barrel_pct": 12.4,
+        "hard_hit_pct": 54.0,
+        "exit_velo": 93.0,
+        "sprint_speed": 26.9
       },
       "buy_low": false,
       "sell_high": false,
@@ -901,7 +901,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 96.0,
+      "ownership_pct": 95.9,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -986,17 +986,17 @@
         }
       },
       "statcast": {
-        "xba": 0.281,
-        "xslg": 0.478,
+        "xba": 0.288,
+        "xslg": 0.514,
         "xwoba": 0.354,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 91.0,
-        "barrel_pct": 9.8,
-        "hard_hit_pct": 39.2,
-        "exit_velo": 91.4,
-        "sprint_speed": 26.1
+        "barrel_pct": 12.7,
+        "hard_hit_pct": 43.6,
+        "exit_velo": 91.9,
+        "sprint_speed": 26.4
       },
       "buy_low": true,
       "sell_high": false,
@@ -1100,16 +1100,16 @@
         }
       },
       "statcast": {
-        "xba": 0.259,
-        "xslg": 0.464,
+        "xba": 0.265,
+        "xslg": 0.47,
         "xwoba": 0.364,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 91.0,
-        "barrel_pct": 14.2,
-        "hard_hit_pct": 38.9,
-        "exit_velo": 89.5,
+        "barrel_pct": 13.7,
+        "hard_hit_pct": 39.3,
+        "exit_velo": 89.7,
         "sprint_speed": 27.0
       },
       "buy_low": false,
@@ -1126,7 +1126,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 20.2,
+      "ownership_pct": 20.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1211,8 +1211,8 @@
         }
       },
       "statcast": {
-        "xba": 0.2,
-        "xslg": 0.349,
+        "xba": 0.198,
+        "xslg": 0.347,
         "xwoba": 0.293,
         "xfip": null,
         "siera": null,
@@ -1237,7 +1237,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 34.0,
+      "ownership_pct": 34.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1322,16 +1322,16 @@
         }
       },
       "statcast": {
-        "xba": 0.26,
-        "xslg": 0.457,
+        "xba": 0.263,
+        "xslg": 0.474,
         "xwoba": 0.336,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 132.0,
-        "barrel_pct": 10.4,
+        "barrel_pct": 11.2,
         "hard_hit_pct": 49.0,
-        "exit_velo": 92.5,
+        "exit_velo": 92.7,
         "sprint_speed": 25.3
       },
       "buy_low": false,
@@ -1425,7 +1425,7 @@
       "injury_status": "FIFTEEN_DAY_DL",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 89.3,
+      "ownership_pct": 89.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1690,7 +1690,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 37.6,
+      "ownership_pct": 37.7,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1886,16 +1886,16 @@
         }
       },
       "statcast": {
-        "xba": 0.267,
-        "xslg": 0.561,
+        "xba": 0.276,
+        "xslg": 0.609,
         "xwoba": 0.385,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 162.0,
-        "barrel_pct": 17.8,
-        "hard_hit_pct": 49.5,
-        "exit_velo": 92.6,
+        "barrel_pct": 19.0,
+        "hard_hit_pct": 50.5,
+        "exit_velo": 92.9,
         "sprint_speed": 26.0
       },
       "buy_low": false,
@@ -1997,16 +1997,16 @@
         }
       },
       "statcast": {
-        "xba": 0.258,
-        "xslg": 0.59,
+        "xba": 0.257,
+        "xslg": 0.584,
         "xwoba": 0.425,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 145.0,
-        "barrel_pct": 22.2,
-        "hard_hit_pct": 50.4,
-        "exit_velo": 91.7,
+        "barrel_pct": 21.7,
+        "hard_hit_pct": 50.8,
+        "exit_velo": 91.6,
         "sprint_speed": 28.8
       },
       "buy_low": false,
@@ -2023,7 +2023,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 91.6,
+      "ownership_pct": 91.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2108,16 +2108,16 @@
         }
       },
       "statcast": {
-        "xba": 0.232,
-        "xslg": 0.388,
+        "xba": 0.23,
+        "xslg": 0.384,
         "xwoba": 0.308,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 89.0,
         "barrel_pct": 7.8,
-        "hard_hit_pct": 45.3,
-        "exit_velo": 90.8,
+        "hard_hit_pct": 45.0,
+        "exit_velo": 90.7,
         "sprint_speed": 29.2
       },
       "buy_low": false,
@@ -2134,7 +2134,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 50.5,
+      "ownership_pct": 50.6,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2245,7 +2245,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 79.9,
+      "ownership_pct": 79.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2356,7 +2356,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 33.3,
+      "ownership_pct": 32.8,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2467,7 +2467,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 84.6,
+      "ownership_pct": 84.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2897,7 +2897,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 25.5,
+      "ownership_pct": 25.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3230,7 +3230,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 91.4,
+      "ownership_pct": 91.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3315,17 +3315,17 @@
         }
       },
       "statcast": {
-        "xba": 0.283,
-        "xslg": 0.438,
+        "xba": 0.285,
+        "xslg": 0.439,
         "xwoba": 0.358,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 151.0,
-        "barrel_pct": 6.9,
-        "hard_hit_pct": 36.9,
-        "exit_velo": 88.6,
-        "sprint_speed": 28.1
+        "barrel_pct": 6.7,
+        "hard_hit_pct": 36.0,
+        "exit_velo": 88.4,
+        "sprint_speed": 28.2
       },
       "buy_low": false,
       "sell_high": false,
@@ -3341,7 +3341,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 36.5,
+      "ownership_pct": 37.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3426,16 +3426,16 @@
         }
       },
       "statcast": {
-        "xba": 0.263,
-        "xslg": 0.367,
+        "xba": 0.26,
+        "xslg": 0.361,
         "xwoba": 0.324,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 121.0,
         "barrel_pct": 2.8,
-        "hard_hit_pct": 30.2,
-        "exit_velo": 85.5,
+        "hard_hit_pct": 30.7,
+        "exit_velo": 85.6,
         "sprint_speed": 27.3
       },
       "buy_low": false,
@@ -3452,7 +3452,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 26.2,
+      "ownership_pct": 26.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3538,16 +3538,16 @@
       },
       "statcast": {
         "xba": 0.264,
-        "xslg": 0.533,
+        "xslg": 0.528,
         "xwoba": 0.397,
         "xfip": null,
         "siera": null,
         "fip": null,
         "wrc_plus": 139.0,
-        "barrel_pct": 15.8,
-        "hard_hit_pct": 44.7,
+        "barrel_pct": 15.3,
+        "hard_hit_pct": 44.9,
         "exit_velo": 90.7,
-        "sprint_speed": 26.8
+        "sprint_speed": 26.9
       },
       "buy_low": false,
       "sell_high": false,
