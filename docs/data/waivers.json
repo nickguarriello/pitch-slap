@@ -115,6 +115,37 @@
       }
     }
   ],
-  "two_starters_fa": [],
+  "two_starters_fa": [
+    {
+      "player_id": "5006093",
+      "name": "Kyle Leahy",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "score": 3.42,
+      "stats": {
+        "era": null,
+        "siera": 4.676791164801451,
+        "xfip": 4.415098262798974,
+        "ip": null,
+        "k_pct_14d": null
+      }
+    },
+    {
+      "player_id": "5006093",
+      "name": "Kyle Leahy",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "score": 3.42,
+      "stats": {
+        "era": 3.941606058920202,
+        "siera": 4.676791164801451,
+        "xfip": 4.415098262798974,
+        "ip": 45.2,
+        "k_pct_14d": null
+      }
+    }
+  ],
   "ownership_alerts": []
 }
