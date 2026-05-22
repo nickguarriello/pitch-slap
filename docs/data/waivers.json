@@ -1,6 +1,25 @@
 {
   "buy_low_fa": [
     {
+      "player_id": "33247",
+      "name": "Ryan McMahon",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.253 below floor (0.260)",
+        "OBP (0.261) lags xwOBA (0.286)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.26056338,
+        "xwoba": 0.2862446744677047,
+        "babip": 0.253012048,
+        "sprint_speed": 25.9
+      }
+    },
+    {
       "player_id": "34975",
       "name": "Tyler Stephenson",
       "team": null,
@@ -9,33 +28,14 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.235 below floor (0.260)",
-        "OBP (0.291) lags xwOBA (0.326)"
+        "OBP (0.291) lags xwOBA (0.325)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.290780141,
-        "xwoba": 0.32555458511131397,
+        "xwoba": 0.32544511988543084,
         "babip": 0.234567901,
         "sprint_speed": 26.8
-      }
-    },
-    {
-      "player_id": "35062",
-      "name": "Harrison Bader",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.164 below floor (0.260)",
-        "OBP (0.184) lags xwOBA (0.268)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.183908045,
-        "xwoba": 0.26848025602452896,
-        "babip": 0.163636363,
-        "sprint_speed": 27.6
       }
     },
     {
@@ -52,7 +52,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.257142857,
-        "xwoba": 0.2918818610055106,
+        "xwoba": 0.29180821010044644,
         "babip": 0.225,
         "sprint_speed": 28.0
       }
@@ -71,28 +71,47 @@
       "score": 0.8,
       "stats": {
         "obp": 0.271929824,
-        "xwoba": 0.30478976065652413,
+        "xwoba": 0.30467180620160017,
         "babip": 0.178082191,
         "sprint_speed": 28.8
       }
     },
     {
-      "player_id": "41183",
-      "name": "Bo Naylor",
+      "player_id": "35062",
+      "name": "Harrison Bader",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.164 below floor (0.260)",
-        "OBP (0.200) lags xwOBA (0.296)"
+        "OBP (0.184) lags xwOBA (0.262)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.2,
-        "xwoba": 0.2957345789129084,
-        "babip": 0.163934426,
-        "sprint_speed": 27.3
+        "obp": 0.183908045,
+        "xwoba": 0.2623153554982153,
+        "babip": 0.163636363,
+        "sprint_speed": 27.6
+      }
+    },
+    {
+      "player_id": "41034",
+      "name": "Mark Vientos",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.259 below floor (0.260)",
+        "OBP (0.270) lags xwOBA (0.343)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.270440251,
+        "xwoba": 0.34324586016576997,
+        "babip": 0.258928571,
+        "sprint_speed": 25.8
       }
     }
   ],
