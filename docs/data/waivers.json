@@ -115,6 +115,37 @@
       }
     }
   ],
-  "two_starters_fa": [],
+  "two_starters_fa": [
+    {
+      "player_id": "4414339",
+      "name": "Brandon Young",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "score": 2.71,
+      "stats": {
+        "era": null,
+        "siera": 5.110478862845774,
+        "xfip": 5.292552945202804,
+        "ip": null,
+        "k_pct_14d": null
+      }
+    },
+    {
+      "player_id": "4414339",
+      "name": "Brandon Young",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "score": 2.71,
+      "stats": {
+        "era": 4.2471913753202095,
+        "siera": 5.110478862845774,
+        "xfip": 5.292552945202804,
+        "ip": 29.2,
+        "k_pct_14d": null
+      }
+    }
+  ],
   "ownership_alerts": []
 }
