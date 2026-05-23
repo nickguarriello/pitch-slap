@@ -8,14 +8,14 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.253 below floor (0.260)",
-        "OBP (0.261) lags xwOBA (0.286)"
+        "BABIP 0.247 below floor (0.260)",
+        "OBP (0.253) lags xwOBA (0.286)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.26056338,
+        "obp": 0.253424657,
         "xwoba": 0.2862446744677047,
-        "babip": 0.253012048,
+        "babip": 0.247058823,
         "sprint_speed": 25.9
       }
     },
@@ -36,25 +36,6 @@
         "xwoba": 0.32544511988543084,
         "babip": 0.234567901,
         "sprint_speed": 26.8
-      }
-    },
-    {
-      "player_id": "4683371",
-      "name": "Coby Mayo",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.225 below floor (0.240)",
-        "OBP (0.257) lags xwOBA (0.292)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.257142857,
-        "xwoba": 0.29180821010044644,
-        "babip": 0.225,
-        "sprint_speed": 28.0
       }
     },
     {
@@ -84,68 +65,37 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.164 below floor (0.260)",
-        "OBP (0.184) lags xwOBA (0.262)"
+        "BABIP 0.175 below floor (0.260)",
+        "OBP (0.198) lags xwOBA (0.262)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.183908045,
+        "obp": 0.197802197,
         "xwoba": 0.2623153554982153,
-        "babip": 0.163636363,
+        "babip": 0.175438596,
         "sprint_speed": 27.6
       }
     },
     {
-      "player_id": "41034",
-      "name": "Mark Vientos",
+      "player_id": "4683371",
+      "name": "Coby Mayo",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.259 below floor (0.260)",
-        "OBP (0.270) lags xwOBA (0.343)"
+        "BABIP 0.235 below floor (0.240)",
+        "OBP (0.259) lags xwOBA (0.292)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.270440251,
-        "xwoba": 0.34324586016576997,
-        "babip": 0.258928571,
-        "sprint_speed": 25.8
+        "obp": 0.258741258,
+        "xwoba": 0.29180821010044644,
+        "babip": 0.234567901,
+        "sprint_speed": 28.0
       }
     }
   ],
-  "two_starters_fa": [
-    {
-      "player_id": "5006093",
-      "name": "Kyle Leahy",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "score": 3.42,
-      "stats": {
-        "era": null,
-        "siera": 4.676791164801451,
-        "xfip": 4.415098262798974,
-        "ip": null,
-        "k_pct_14d": null
-      }
-    },
-    {
-      "player_id": "5006093",
-      "name": "Kyle Leahy",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "score": 3.42,
-      "stats": {
-        "era": 3.941606058920202,
-        "siera": 4.676791164801451,
-        "xfip": 4.415098262798974,
-        "ip": 45.2,
-        "k_pct_14d": null
-      }
-    }
-  ],
+  "two_starters_fa": [],
   "ownership_alerts": []
 }
