@@ -9,12 +9,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.247 below floor (0.260)",
-        "OBP (0.253) lags xwOBA (0.286)"
+        "OBP (0.253) lags xwOBA (0.280)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.253424657,
-        "xwoba": 0.2862446744677047,
+        "xwoba": 0.27977036776607983,
         "babip": 0.247058823,
         "sprint_speed": 25.9
       }
@@ -33,7 +33,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.290780141,
-        "xwoba": 0.32544511988543084,
+        "xwoba": 0.32532727891120355,
         "babip": 0.234567901,
         "sprint_speed": 26.8
       }
@@ -52,7 +52,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.271929824,
-        "xwoba": 0.30467180620160017,
+        "xwoba": 0.30454675774825246,
         "babip": 0.178082191,
         "sprint_speed": 28.8
       }
@@ -66,12 +66,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.175 below floor (0.260)",
-        "OBP (0.198) lags xwOBA (0.262)"
+        "OBP (0.198) lags xwOBA (0.271)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.197802197,
-        "xwoba": 0.2623153554982153,
+        "xwoba": 0.2705869250827365,
         "babip": 0.175438596,
         "sprint_speed": 27.6
       }
@@ -85,14 +85,33 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.235 below floor (0.240)",
-        "OBP (0.259) lags xwOBA (0.292)"
+        "OBP (0.259) lags xwOBA (0.290)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.258741258,
-        "xwoba": 0.29180821010044644,
+        "xwoba": 0.28969315215424224,
         "babip": 0.234567901,
         "sprint_speed": 28.0
+      }
+    },
+    {
+      "player_id": "41034",
+      "name": "Mark Vientos",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.254 below floor (0.260)",
+        "OBP (0.265) lags xwOBA (0.339)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.265432098,
+        "xwoba": 0.3387428566261574,
+        "babip": 0.254385964,
+        "sprint_speed": 25.8
       }
     }
   ],
