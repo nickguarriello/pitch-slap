@@ -1,9 +1,8 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
 Ryan McMahon,,buy_low_hitter,0.8,False,,,,0.253424657,0.27977036776607983,0.247058823,BABIP 0.247 below floor (0.260); OBP (0.253) lags xwOBA (0.280)
-Tyler Stephenson,,buy_low_hitter,0.8,False,,,,0.290780141,0.32532727891120355,0.234567901,BABIP 0.235 below floor (0.260); OBP (0.291) lags xwOBA (0.325)
+Harrison Bader,,buy_low_hitter,0.8,False,,,,0.210526315,0.2705869250827365,0.186440677,BABIP 0.186 below floor (0.260); OBP (0.211) lags xwOBA (0.271)
 Jake Cronenworth,,buy_low_hitter,0.8,False,,,,0.271929824,0.30454675774825246,0.178082191,BABIP 0.178 below floor (0.240); OBP (0.272) lags xwOBA (0.305)
-Harrison Bader,,buy_low_hitter,0.8,False,,,,0.197802197,0.2705869250827365,0.175438596,BABIP 0.175 below floor (0.260); OBP (0.198) lags xwOBA (0.271)
 Coby Mayo,,buy_low_hitter,0.8,False,,,,0.258741258,0.28969315215424224,0.234567901,BABIP 0.235 below floor (0.240); OBP (0.259) lags xwOBA (0.290)
-Mark Vientos,,buy_low_hitter,0.8,False,,,,0.265432098,0.3387428566261574,0.254385964,BABIP 0.254 below floor (0.260); OBP (0.265) lags xwOBA (0.339)
-Brandon Young,,two_starter,2.71,False,,5.292552945202804,5.110478862845774,,,,2 starts | SIERA 5.110478862845774 xFIP 5.292552945202804
-Brandon Young,,two_starter,2.71,False,4.2471913753202095,5.292552945202804,5.110478862845774,,,,2 starts | SIERA 5.110478862845774 xFIP 5.292552945202804
+Tyler Stephenson,,buy_low_hitter,0.8,False,,,,0.284722222,0.32532727891120355,0.228915662,BABIP 0.229 below floor (0.260); OBP (0.285) lags xwOBA (0.325)
+Josh Lowe,,buy_low_hitter,0.8,False,,,,0.225563909,0.2627622848166559,0.219512195,BABIP 0.220 below floor (0.260); OBP (0.226) lags xwOBA (0.263)
+Bo Naylor,,buy_low_hitter,0.8,False,,,,0.2,0.29562200199473987,0.163934426,BABIP 0.164 below floor (0.260); OBP (0.200) lags xwOBA (0.296)

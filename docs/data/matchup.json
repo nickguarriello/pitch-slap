@@ -2,21 +2,21 @@
   "cat_states": {
     "R": {
       "state": "WIN",
-      "my_val": 44.0,
-      "opp_val": 34.0,
-      "gap": 10.0
+      "my_val": 48.0,
+      "opp_val": 40.0,
+      "gap": 8.0
     },
     "HR": {
       "state": "FLIPPABLE",
-      "my_val": 10.0,
-      "opp_val": 11.0,
+      "my_val": 11.0,
+      "opp_val": 12.0,
       "gap": -1.0
     },
     "RBI": {
       "state": "WIN",
-      "my_val": 34.0,
-      "opp_val": 25.0,
-      "gap": 9.0
+      "my_val": 39.0,
+      "opp_val": 29.0,
+      "gap": 10.0
     },
     "SB": {
       "state": "FLOPPABLE",
@@ -26,39 +26,39 @@
     },
     "OBP": {
       "state": "WIN",
-      "my_val": 0.35769231,
-      "opp_val": 0.28571429,
-      "gap": 0.072
+      "my_val": 0.35714286,
+      "opp_val": 0.28478964,
+      "gap": 0.0724
     },
     "K": {
       "state": "FLIPPABLE",
-      "my_val": 43.0,
-      "opp_val": 45.0,
-      "gap": -2.0
+      "my_val": 51.0,
+      "opp_val": 55.0,
+      "gap": -4.0
     },
     "QS": {
       "state": "FLIPPABLE",
-      "my_val": 3.0,
-      "opp_val": 4.0,
+      "my_val": 4.0,
+      "opp_val": 5.0,
       "gap": -1.0
     },
     "ERA": {
-      "state": "FLIPPABLE",
-      "my_val": 3.15,
-      "opp_val": 2.94957983,
-      "gap": -0.2004
+      "state": "LOSS",
+      "my_val": 3.1875,
+      "opp_val": 2.4375,
+      "gap": -0.75
     },
     "WHIP": {
       "state": "LOSS",
-      "my_val": 1.225,
-      "opp_val": 0.90756303,
-      "gap": -0.3174
+      "my_val": 1.16666667,
+      "opp_val": 0.85416667,
+      "gap": -0.3125
     },
     "SvHd": {
       "state": "WIN",
-      "my_val": 4.0,
+      "my_val": 5.0,
       "opp_val": 2.0,
-      "gap": 2.0
+      "gap": 3.0
     }
   },
   "need_weights": {
