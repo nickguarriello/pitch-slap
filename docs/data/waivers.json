@@ -1,6 +1,25 @@
 {
   "buy_low_fa": [
     {
+      "player_id": "4917921",
+      "name": "Evan Carter",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.187 below floor (0.240)",
+        "OBP (0.287) lags xwOBA (0.314)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.286516853,
+        "xwoba": 0.31351177344161474,
+        "babip": 0.186915887,
+        "sprint_speed": 28.7
+      }
+    },
+    {
       "player_id": "33247",
       "name": "Ryan McMahon",
       "team": null,
@@ -14,7 +33,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.253424657,
-        "xwoba": 0.27977036776607983,
+        "xwoba": 0.27974659122832835,
         "babip": 0.247058823,
         "sprint_speed": 25.9
       }
@@ -28,12 +47,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.186 below floor (0.260)",
-        "OBP (0.211) lags xwOBA (0.271)"
+        "OBP (0.211) lags xwOBA (0.283)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.210526315,
-        "xwoba": 0.2705869250827365,
+        "xwoba": 0.2826386100367496,
         "babip": 0.186440677,
         "sprint_speed": 27.6
       }
@@ -52,7 +71,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.271929824,
-        "xwoba": 0.30454675774825246,
+        "xwoba": 0.3045052645499246,
         "babip": 0.178082191,
         "sprint_speed": 28.8
       }
@@ -71,7 +90,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.258741258,
-        "xwoba": 0.28969315215424224,
+        "xwoba": 0.2896673029119318,
         "babip": 0.234567901,
         "sprint_speed": 28.0
       }
@@ -85,12 +104,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.229 below floor (0.260)",
-        "OBP (0.285) lags xwOBA (0.325)"
+        "OBP (0.285) lags xwOBA (0.320)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.284722222,
-        "xwoba": 0.32532727891120355,
+        "xwoba": 0.32045867595266786,
         "babip": 0.228915662,
         "sprint_speed": 26.8
       }
@@ -109,28 +128,9 @@
       "score": 0.8,
       "stats": {
         "obp": 0.225563909,
-        "xwoba": 0.2627622848166559,
+        "xwoba": 0.2627475423024113,
         "babip": 0.219512195,
         "sprint_speed": 27.5
-      }
-    },
-    {
-      "player_id": "41183",
-      "name": "Bo Naylor",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.164 below floor (0.260)",
-        "OBP (0.200) lags xwOBA (0.296)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.2,
-        "xwoba": 0.29562200199473987,
-        "babip": 0.163934426,
-        "sprint_speed": 27.3
       }
     }
   ],
