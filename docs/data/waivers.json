@@ -1,22 +1,22 @@
 {
   "buy_low_fa": [
     {
-      "player_id": "4917921",
-      "name": "Evan Carter",
+      "player_id": "34975",
+      "name": "Tyler Stephenson",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.183 below floor (0.240)",
-        "OBP (0.283) lags xwOBA (0.310)"
+        "BABIP 0.244 below floor (0.260)",
+        "OBP (0.294) lags xwOBA (0.321)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.283333333,
-        "xwoba": 0.3100677490234375,
-        "babip": 0.183486238,
-        "sprint_speed": 28.7
+        "obp": 0.294117647,
+        "xwoba": 0.3213948216931573,
+        "babip": 0.244186046,
+        "sprint_speed": 26.7
       }
     },
     {
@@ -27,34 +27,34 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.188 below floor (0.260)",
-        "OBP (0.206) lags xwOBA (0.283)"
+        "BABIP 0.182 below floor (0.260)",
+        "OBP (0.198) lags xwOBA (0.283)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.205882352,
+        "obp": 0.198113207,
         "xwoba": 0.28279771991804536,
-        "babip": 0.1875,
+        "babip": 0.181818181,
         "sprint_speed": 27.6
       }
     },
     {
-      "player_id": "34975",
-      "name": "Tyler Stephenson",
+      "player_id": "5149064",
+      "name": "Bryce Eldridge",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.229 below floor (0.260)",
-        "OBP (0.284) lags xwOBA (0.321)"
+        "BABIP 0.233 below floor (0.260)",
+        "OBP (0.260) lags xwOBA (0.300)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.283783783,
-        "xwoba": 0.3213948216931573,
-        "babip": 0.228915662,
-        "sprint_speed": 26.8
+        "obp": 0.26,
+        "xwoba": 0.29974151187472875,
+        "babip": 0.233333333,
+        "sprint_speed": 25.0
       }
     },
     {
@@ -112,6 +112,44 @@
         "xwoba": 0.2627439570606203,
         "babip": 0.219512195,
         "sprint_speed": 27.5
+      }
+    },
+    {
+      "player_id": "41034",
+      "name": "Mark Vientos",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.256 below floor (0.260)",
+        "OBP (0.267) lags xwOBA (0.332)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.267045454,
+        "xwoba": 0.3315800853159236,
+        "babip": 0.256,
+        "sprint_speed": 25.6
+      }
+    },
+    {
+      "player_id": "41183",
+      "name": "Bo Naylor",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.164 below floor (0.260)",
+        "OBP (0.200) lags xwOBA (0.296)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.2,
+        "xwoba": 0.29559718478809704,
+        "babip": 0.163934426,
+        "sprint_speed": 27.3
       }
     }
   ],
