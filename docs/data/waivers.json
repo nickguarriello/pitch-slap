@@ -1,25 +1,6 @@
 {
   "buy_low_fa": [
     {
-      "player_id": "34975",
-      "name": "Tyler Stephenson",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.244 below floor (0.260)",
-        "OBP (0.294) lags xwOBA (0.321)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.294117647,
-        "xwoba": 0.3207621256510417,
-        "babip": 0.244186046,
-        "sprint_speed": 26.7
-      }
-    },
-    {
       "player_id": "35062",
       "name": "Harrison Bader",
       "team": null,
@@ -28,11 +9,11 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.182 below floor (0.260)",
-        "OBP (0.198) lags xwOBA (0.279)"
+        "OBP (0.196) lags xwOBA (0.279)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.198113207,
+        "obp": 0.196261682,
         "xwoba": 0.2791081554484817,
         "babip": 0.181818181,
         "sprint_speed": 27.6
@@ -46,14 +27,14 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.233 below floor (0.260)",
-        "OBP (0.260) lags xwOBA (0.327)"
+        "BABIP 0.219 below floor (0.260)",
+        "OBP (0.264) lags xwOBA (0.327)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.26,
+        "obp": 0.264150943,
         "xwoba": 0.3270911002645687,
-        "babip": 0.233333333,
+        "babip": 0.21875,
         "sprint_speed": 25.0
       }
     },
@@ -77,25 +58,6 @@
       }
     },
     {
-      "player_id": "4683371",
-      "name": "Coby Mayo",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.235 below floor (0.240)",
-        "OBP (0.259) lags xwOBA (0.290)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.258741258,
-        "xwoba": 0.2895939967015406,
-        "babip": 0.234567901,
-        "sprint_speed": 28.0
-      }
-    },
-    {
       "player_id": "40557",
       "name": "Josh Lowe",
       "team": null,
@@ -112,25 +74,6 @@
         "xwoba": 0.26270483490219687,
         "babip": 0.219512195,
         "sprint_speed": 27.5
-      }
-    },
-    {
-      "player_id": "41034",
-      "name": "Mark Vientos",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.256 below floor (0.260)",
-        "OBP (0.267) lags xwOBA (0.330)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.267045454,
-        "xwoba": 0.3302679495377974,
-        "babip": 0.256,
-        "sprint_speed": 25.6
       }
     },
     {
@@ -153,6 +96,25 @@
       }
     },
     {
+      "player_id": "41034",
+      "name": "Mark Vientos",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.252 below floor (0.260)",
+        "OBP (0.261) lags xwOBA (0.330)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.261111111,
+        "xwoba": 0.3302679495377974,
+        "babip": 0.251968503,
+        "sprint_speed": 25.6
+      }
+    },
+    {
       "player_id": "42411",
       "name": "Luisangel Acuna",
       "team": null,
@@ -160,15 +122,53 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.211 below floor (0.240)",
-        "OBP (0.225) lags xwOBA (0.267)"
+        "BABIP 0.212 below floor (0.240)",
+        "OBP (0.224) lags xwOBA (0.267)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.225490196,
+        "obp": 0.224299065,
         "xwoba": 0.2665955225626628,
-        "babip": 0.210526315,
+        "babip": 0.2125,
         "sprint_speed": 29.6
+      }
+    },
+    {
+      "player_id": "31668",
+      "name": "Marcell Ozuna",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.243 below floor (0.260)",
+        "OBP (0.271) lags xwOBA (0.307)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.270833333,
+        "xwoba": 0.30735036489125844,
+        "babip": 0.243243243,
+        "sprint_speed": 25.8
+      }
+    },
+    {
+      "player_id": "4917919",
+      "name": "Lawrence Butler",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.211 below floor (0.260)",
+        "OBP (0.258) lags xwOBA (0.291)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.257861635,
+        "xwoba": 0.2908835684417919,
+        "babip": 0.210526315,
+        "sprint_speed": 26.2
       }
     }
   ],

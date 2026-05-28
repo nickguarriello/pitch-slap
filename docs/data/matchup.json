@@ -2,39 +2,39 @@
   "cat_states": {
     "R": {
       "state": "LOSS",
-      "my_val": 9.0,
-      "opp_val": 17.0,
-      "gap": -8.0
+      "my_val": 16.0,
+      "opp_val": 25.0,
+      "gap": -9.0
     },
     "HR": {
       "state": "LOSS",
-      "my_val": 2.0,
-      "opp_val": 5.0,
-      "gap": -3.0
+      "my_val": 3.0,
+      "opp_val": 7.0,
+      "gap": -4.0
     },
     "RBI": {
-      "state": "FLIPPABLE",
-      "my_val": 8.0,
-      "opp_val": 13.0,
-      "gap": -5.0
+      "state": "LOSS",
+      "my_val": 12.0,
+      "opp_val": 20.0,
+      "gap": -8.0
     },
     "SB": {
       "state": "FLIPPABLE",
-      "my_val": 2.0,
-      "opp_val": 3.0,
+      "my_val": 4.0,
+      "opp_val": 5.0,
       "gap": -1.0
     },
     "OBP": {
       "state": "LOSS",
-      "my_val": 0.25,
-      "opp_val": 0.43877551,
-      "gap": -0.1888
+      "my_val": 0.28205128,
+      "opp_val": 0.38,
+      "gap": -0.0979
     },
     "K": {
-      "state": "FLIPPABLE",
-      "my_val": 3.0,
-      "opp_val": 7.0,
-      "gap": -4.0
+      "state": "LOSS",
+      "my_val": 4.0,
+      "opp_val": 18.0,
+      "gap": -14.0
     },
     "QS": {
       "state": "TIE",
@@ -44,21 +44,21 @@
     },
     "ERA": {
       "state": "WIN",
-      "my_val": 2.25,
-      "opp_val": 4.5,
-      "gap": 2.25
+      "my_val": 1.8,
+      "opp_val": 2.79310345,
+      "gap": 0.9931
     },
     "WHIP": {
       "state": "WIN",
-      "my_val": 1.0,
-      "opp_val": 1.25,
-      "gap": 0.25
+      "my_val": 0.8,
+      "opp_val": 1.34482759,
+      "gap": 0.5448
     },
     "SvHd": {
-      "state": "FLOPPABLE",
-      "my_val": 1.0,
-      "opp_val": 0.0,
-      "gap": 1.0
+      "state": "TIE",
+      "my_val": 2.0,
+      "opp_val": 2.0,
+      "gap": 0.0
     }
   },
   "need_weights": {
@@ -68,7 +68,7 @@
     "SB": 0.44,
     "OBP": 0.7,
     "K": 0.8,
-    "QS": 0.53,
+    "QS": 0.57,
     "ERA": 0.49,
     "WHIP": 0.49,
     "SvHd": 0.15
@@ -640,7 +640,7 @@
     "ip_remaining": 15.0,
     "waiver_priority": 3,
     "acq_alert": null,
-    "ip_alert": null,
+    "ip_alert": "IP PACE: only 0.0 IP by Thursday \u2014 at risk of minimum",
     "waiver_alert": "STRONG: waiver priority #3 \u2014 act early in week"
   }
 }
