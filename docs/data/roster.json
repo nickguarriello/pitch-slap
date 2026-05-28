@@ -10,7 +10,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 96.8,
+      "ownership_pct": 96.7,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -47,7 +47,7 @@
           "hr": 3.0,
           "rbi": 25.0,
           "sb": 3.0,
-          "obp": 0.451,
+          "obp": 0.437,
           "k": null,
           "qs": null,
           "era": null,
@@ -57,7 +57,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 122.0
+          "pa": 126.0
         },
         "14d": {
           "r": 9.0,
@@ -97,7 +97,7 @@
       "statcast": {
         "xba": 0.247,
         "xslg": 0.464,
-        "xwoba": 0.385,
+        "xwoba": 0.38,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -121,7 +121,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 81.3,
+      "ownership_pct": 81.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -154,11 +154,11 @@
           "pa": 235.0
         },
         "30d": {
-          "r": 16.0,
+          "r": 18.0,
           "hr": 6.0,
           "rbi": 17.0,
           "sb": 3.0,
-          "obp": 0.371,
+          "obp": 0.382,
           "k": null,
           "qs": null,
           "era": null,
@@ -168,7 +168,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 105.0
+          "pa": 110.0
         },
         "14d": {
           "r": 9.0,
@@ -268,11 +268,11 @@
           "pa": 252.0
         },
         "30d": {
-          "r": 7.0,
+          "r": 8.0,
           "hr": 0.0,
-          "rbi": 7.0,
+          "rbi": 8.0,
           "sb": 3.0,
-          "obp": 0.291,
+          "obp": 0.302,
           "k": null,
           "qs": null,
           "era": null,
@@ -282,7 +282,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 110.0
+          "pa": 116.0
         },
         "14d": {
           "r": 4.0,
@@ -322,7 +322,7 @@
       "statcast": {
         "xba": 0.288,
         "xslg": 0.372,
-        "xwoba": 0.331,
+        "xwoba": 0.333,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -346,7 +346,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 75.1,
+      "ownership_pct": 74.9,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -381,9 +381,9 @@
         "30d": {
           "r": 12.0,
           "hr": 1.0,
-          "rbi": 14.0,
+          "rbi": 15.0,
           "sb": 1.0,
-          "obp": 0.295,
+          "obp": 0.293,
           "k": null,
           "qs": null,
           "era": null,
@@ -393,7 +393,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 113.0
+          "pa": 117.0
         },
         "14d": {
           "r": 8.0,
@@ -433,7 +433,7 @@
       "statcast": {
         "xba": 0.291,
         "xslg": 0.412,
-        "xwoba": 0.319,
+        "xwoba": 0.32,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -457,7 +457,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 55.1,
+      "ownership_pct": 55.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -494,7 +494,7 @@
           "hr": 3.0,
           "rbi": 8.0,
           "sb": 0.0,
-          "obp": 0.329,
+          "obp": 0.314,
           "k": null,
           "qs": null,
           "era": null,
@@ -504,7 +504,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 82.0
+          "pa": 86.0
         },
         "14d": {
           "r": 9.0,
@@ -544,7 +544,7 @@
       "statcast": {
         "xba": 0.268,
         "xslg": 0.555,
-        "xwoba": 0.403,
+        "xwoba": 0.395,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -603,9 +603,9 @@
         "30d": {
           "r": 6.0,
           "hr": 3.0,
-          "rbi": 5.0,
+          "rbi": 6.0,
           "sb": 0.0,
-          "obp": 0.293,
+          "obp": 0.289,
           "k": null,
           "qs": null,
           "era": null,
@@ -615,7 +615,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 41.0
+          "pa": 45.0
         },
         "14d": {
           "r": 6.0,
@@ -655,7 +655,7 @@
       "statcast": {
         "xba": 0.21,
         "xslg": 0.391,
-        "xwoba": 0.287,
+        "xwoba": 0.283,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -679,7 +679,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 33.2,
+      "ownership_pct": 33.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -716,7 +716,7 @@
           "hr": 6.0,
           "rbi": 20.0,
           "sb": 1.0,
-          "obp": 0.376,
+          "obp": 0.368,
           "k": null,
           "qs": null,
           "era": null,
@@ -726,7 +726,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 109.0
+          "pa": 114.0
         },
         "14d": {
           "r": 8.0,
@@ -766,7 +766,7 @@
       "statcast": {
         "xba": 0.282,
         "xslg": 0.534,
-        "xwoba": 0.411,
+        "xwoba": 0.403,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -827,7 +827,7 @@
           "hr": 3.0,
           "rbi": 15.0,
           "sb": 1.0,
-          "obp": 0.405,
+          "obp": 0.402,
           "k": null,
           "qs": null,
           "era": null,
@@ -837,7 +837,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 84.0
+          "pa": 87.0
         },
         "14d": {
           "r": 5.0,
@@ -877,7 +877,7 @@
       "statcast": {
         "xba": 0.263,
         "xslg": 0.48,
-        "xwoba": 0.351,
+        "xwoba": 0.349,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -901,7 +901,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 95.3,
+      "ownership_pct": 95.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -938,7 +938,7 @@
           "hr": 4.0,
           "rbi": 8.0,
           "sb": 0.0,
-          "obp": 0.233,
+          "obp": 0.219,
           "k": null,
           "qs": null,
           "era": null,
@@ -948,7 +948,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 60.0
+          "pa": 64.0
         },
         "14d": {
           "r": 5.0,
@@ -988,7 +988,7 @@
       "statcast": {
         "xba": 0.254,
         "xslg": 0.448,
-        "xwoba": 0.337,
+        "xwoba": 0.325,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -1002,7 +1002,7 @@
       "sell_high": false,
       "buy_low_reasons": [
         "BABIP 0.141 below floor (0.260)",
-        "OBP (0.240) lags xwOBA (0.337)"
+        "OBP (0.240) lags xwOBA (0.325)"
       ],
       "sell_high_reasons": []
     },
@@ -1052,7 +1052,7 @@
           "hr": 2.0,
           "rbi": 8.0,
           "sb": 0.0,
-          "obp": 0.333,
+          "obp": 0.357,
           "k": null,
           "qs": null,
           "era": null,
@@ -1062,7 +1062,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 81.0
+          "pa": 84.0
         },
         "14d": {
           "r": 8.0,
@@ -1102,7 +1102,7 @@
       "statcast": {
         "xba": 0.273,
         "xslg": 0.485,
-        "xwoba": 0.375,
+        "xwoba": 0.381,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -1126,7 +1126,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 20.8,
+      "ownership_pct": 20.7,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1163,7 +1163,7 @@
           "hr": 0.0,
           "rbi": 7.0,
           "sb": 0.0,
-          "obp": 0.27,
+          "obp": 0.261,
           "k": null,
           "qs": null,
           "era": null,
@@ -1173,7 +1173,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 89.0
+          "pa": 92.0
         },
         "14d": {
           "r": 2.0,
@@ -1213,7 +1213,7 @@
       "statcast": {
         "xba": 0.194,
         "xslg": 0.33,
-        "xwoba": 0.282,
+        "xwoba": 0.277,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -1237,7 +1237,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 36.1,
+      "ownership_pct": 36.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1324,7 +1324,7 @@
       "statcast": {
         "xba": 0.264,
         "xslg": 0.481,
-        "xwoba": 0.341,
+        "xwoba": 0.344,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -1425,7 +1425,7 @@
       "injury_status": "FIFTEEN_DAY_DL",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 89.2,
+      "ownership_pct": 89.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1535,11 +1535,11 @@
           "pa": 222.0
         },
         "30d": {
-          "r": 16.0,
+          "r": 17.0,
           "hr": 4.0,
           "rbi": 11.0,
           "sb": 3.0,
-          "obp": 0.398,
+          "obp": 0.385,
           "k": null,
           "qs": null,
           "era": null,
@@ -1549,7 +1549,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 113.0
+          "pa": 117.0
         },
         "14d": {
           "r": 9.0,
@@ -1589,7 +1589,7 @@
       "statcast": {
         "xba": 0.27,
         "xslg": 0.498,
-        "xwoba": 0.381,
+        "xwoba": 0.377,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -1613,7 +1613,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 35.6,
+      "ownership_pct": 35.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1650,7 +1650,7 @@
           "hr": 2.0,
           "rbi": 7.0,
           "sb": 4.0,
-          "obp": 0.333,
+          "obp": 0.33,
           "k": null,
           "qs": null,
           "era": null,
@@ -1660,7 +1660,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 100.0
+          "pa": 104.0
         },
         "14d": {
           "r": 9.0,
@@ -1700,7 +1700,7 @@
       "statcast": {
         "xba": 0.209,
         "xslg": 0.303,
-        "xwoba": 0.296,
+        "xwoba": 0.297,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -1757,11 +1757,11 @@
           "pa": 167.0
         },
         "30d": {
-          "r": 20.0,
-          "hr": 10.0,
-          "rbi": 18.0,
+          "r": 21.0,
+          "hr": 11.0,
+          "rbi": 19.0,
           "sb": 5.0,
-          "obp": 0.37,
+          "obp": 0.378,
           "k": null,
           "qs": null,
           "era": null,
@@ -1771,7 +1771,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 108.0
+          "pa": 112.0
         },
         "14d": {
           "r": 13.0,
@@ -1811,7 +1811,7 @@
       "statcast": {
         "xba": 0.282,
         "xslg": 0.635,
-        "xwoba": 0.417,
+        "xwoba": 0.415,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -1872,7 +1872,7 @@
           "hr": 4.0,
           "rbi": 8.0,
           "sb": 1.0,
-          "obp": 0.361,
+          "obp": 0.366,
           "k": null,
           "qs": null,
           "era": null,
@@ -1882,7 +1882,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 108.0
+          "pa": 112.0
         },
         "14d": {
           "r": 7.0,
@@ -1922,7 +1922,7 @@
       "statcast": {
         "xba": 0.251,
         "xslg": 0.563,
-        "xwoba": 0.414,
+        "xwoba": 0.413,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -1979,9 +1979,9 @@
           "pa": 230.0
         },
         "30d": {
-          "r": 12.0,
+          "r": 13.0,
           "hr": 5.0,
-          "rbi": 16.0,
+          "rbi": 17.0,
           "sb": 6.0,
           "obp": 0.324,
           "k": null,
@@ -1993,7 +1993,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 105.0
+          "pa": 111.0
         },
         "14d": {
           "r": 5.0,
@@ -2033,7 +2033,7 @@
       "statcast": {
         "xba": 0.242,
         "xslg": 0.417,
-        "xwoba": 0.329,
+        "xwoba": 0.331,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -2168,7 +2168,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 84.7,
+      "ownership_pct": 84.8,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2450,7 +2450,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 89.3,
+      "ownership_pct": 89.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2544,7 +2544,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 33.6,
+      "ownership_pct": 33.7,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2582,15 +2582,15 @@
           "rbi": null,
           "sb": null,
           "obp": null,
-          "k": 11.0,
+          "k": 12.0,
           "qs": null,
-          "era": 3.48,
-          "whip": 0.677,
-          "svhd": 6.0,
+          "era": 3.18,
+          "whip": 0.618,
+          "svhd": 7.0,
           "babip": null,
           "k_pct": null,
           "bb_pct": null,
-          "ip": 10.1,
+          "ip": 11.1,
           "pa": null
         },
         "14d": {
@@ -2655,7 +2655,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 24.0,
+      "ownership_pct": 24.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2860,7 +2860,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 74.0,
+      "ownership_pct": 74.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3081,11 +3081,11 @@
           "pa": 241.0
         },
         "30d": {
-          "r": 18.0,
+          "r": 19.0,
           "hr": 5.0,
           "rbi": 10.0,
-          "sb": 2.0,
-          "obp": 0.33,
+          "sb": 4.0,
+          "obp": 0.353,
           "k": null,
           "qs": null,
           "era": null,
@@ -3095,7 +3095,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 112.0
+          "pa": 116.0
         },
         "14d": {
           "r": 10.0,
@@ -3135,7 +3135,7 @@
       "statcast": {
         "xba": 0.286,
         "xslg": 0.431,
-        "xwoba": 0.346,
+        "xwoba": 0.353,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -3159,7 +3159,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 42.5,
+      "ownership_pct": 42.4,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3196,7 +3196,7 @@
           "hr": 1.0,
           "rbi": 10.0,
           "sb": 8.0,
-          "obp": 0.415,
+          "obp": 0.408,
           "k": null,
           "qs": null,
           "era": null,
@@ -3206,7 +3206,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 95.0
+          "pa": 99.0
         },
         "14d": {
           "r": 8.0,
@@ -3246,7 +3246,7 @@
       "statcast": {
         "xba": 0.264,
         "xslg": 0.374,
-        "xwoba": 0.328,
+        "xwoba": 0.325,
         "xfip": null,
         "siera": null,
         "fip": null,
@@ -3270,7 +3270,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 34.9,
+      "ownership_pct": 35.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3307,7 +3307,7 @@
           "hr": 5.0,
           "rbi": 14.0,
           "sb": 1.0,
-          "obp": 0.383,
+          "obp": 0.374,
           "k": null,
           "qs": null,
           "era": null,
@@ -3317,7 +3317,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 94.0
+          "pa": 99.0
         },
         "14d": {
           "r": 6.0,
@@ -3357,7 +3357,7 @@
       "statcast": {
         "xba": 0.268,
         "xslg": 0.525,
-        "xwoba": 0.395,
+        "xwoba": 0.39,
         "xfip": null,
         "siera": null,
         "fip": null,

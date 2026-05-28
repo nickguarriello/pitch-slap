@@ -1,6 +1,25 @@
 {
   "buy_low_fa": [
     {
+      "player_id": "34975",
+      "name": "Tyler Stephenson",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.247 below floor (0.260)",
+        "OBP (0.299) lags xwOBA (0.326)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.299363057,
+        "xwoba": 0.326443337774896,
+        "babip": 0.247191011,
+        "sprint_speed": 26.7
+      }
+    },
+    {
       "player_id": "35062",
       "name": "Harrison Bader",
       "team": null,
@@ -9,12 +28,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.182 below floor (0.260)",
-        "OBP (0.196) lags xwOBA (0.279)"
+        "OBP (0.196) lags xwOBA (0.276)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.196261682,
-        "xwoba": 0.2791081554484817,
+        "xwoba": 0.27649091560149863,
         "babip": 0.181818181,
         "sprint_speed": 27.6
       }
@@ -28,12 +47,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.219 below floor (0.260)",
-        "OBP (0.264) lags xwOBA (0.327)"
+        "OBP (0.264) lags xwOBA (0.343)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.264150943,
-        "xwoba": 0.3270911002645687,
+        "xwoba": 0.34308000711294323,
         "babip": 0.21875,
         "sprint_speed": 25.0
       }
@@ -52,7 +71,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.271929824,
-        "xwoba": 0.30438393040707235,
+        "xwoba": 0.3043501000655325,
         "babip": 0.178082191,
         "sprint_speed": 28.8
       }
@@ -71,7 +90,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.225563909,
-        "xwoba": 0.26270483490219687,
+        "xwoba": 0.26269281717171344,
         "babip": 0.219512195,
         "sprint_speed": 27.5
       }
@@ -90,7 +109,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.2,
-        "xwoba": 0.295547680421309,
+        "xwoba": 0.29553172805092554,
         "babip": 0.163934426,
         "sprint_speed": 27.3
       }
@@ -104,12 +123,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.252 below floor (0.260)",
-        "OBP (0.261) lags xwOBA (0.330)"
+        "OBP (0.261) lags xwOBA (0.323)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.261111111,
-        "xwoba": 0.3302679495377974,
+        "xwoba": 0.32316184573703344,
         "babip": 0.251968503,
         "sprint_speed": 25.6
       }
@@ -123,12 +142,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.212 below floor (0.240)",
-        "OBP (0.224) lags xwOBA (0.267)"
+        "OBP (0.224) lags xwOBA (0.265)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.224299065,
-        "xwoba": 0.2665955225626628,
+        "xwoba": 0.26459948816032053,
         "babip": 0.2125,
         "sprint_speed": 29.6
       }
@@ -142,12 +161,12 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.243 below floor (0.260)",
-        "OBP (0.271) lags xwOBA (0.307)"
+        "OBP (0.271) lags xwOBA (0.308)"
       ],
       "score": 0.8,
       "stats": {
         "obp": 0.270833333,
-        "xwoba": 0.30735036489125844,
+        "xwoba": 0.3080870411383412,
         "babip": 0.243243243,
         "sprint_speed": 25.8
       }
@@ -166,7 +185,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.257861635,
-        "xwoba": 0.2908835684417919,
+        "xwoba": 0.29085825051471687,
         "babip": 0.210526315,
         "sprint_speed": 26.2
       }
