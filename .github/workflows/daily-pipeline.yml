@@ -60,7 +60,7 @@ jobs:
           fi
 
       - name: Run pipeline
-        run: python pipeline.py --mode ${{ steps.mode.outputs.mode }}
+        run: python main.py --mode ${{ steps.mode.outputs.mode }}
 
       - name: Commit dashboard data
         run: |
