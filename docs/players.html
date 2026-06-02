@@ -138,7 +138,7 @@ function renderTable(){
   const tbody=document.getElementById('player-table');
   tbody.innerHTML=rows.map(p=>{
     const flags=[];
-    if(p.buy_low) flags.push('<span class="tag tag-buy">BUY</span>');
+    if(p.buy_low) flags.push('<span class="tag tag-buy">BOUNCE</span>');
     if(p.sell_high) flags.push('<span class="tag tag-sell">SELL</span>');
     if(p.two_start) flags.push('<span class="tag tag-2s">2-ST</span>');
     if((p.roster_slot||'').toUpperCase()==='IL') flags.push('<span class="tag tag-il">IL</span>');
