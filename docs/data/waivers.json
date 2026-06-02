@@ -8,14 +8,14 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.238 below floor (0.240)",
-        "OBP (0.264) lags xwOBA (0.298)"
+        "BABIP 0.233 below floor (0.240)",
+        "OBP (0.264) lags xwOBA (0.303)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.264248704,
-        "xwoba": 0.2983018351342394,
-        "babip": 0.237762237,
+        "obp": 0.26395939,
+        "xwoba": 0.3031940557024806,
+        "babip": 0.232876712,
         "sprint_speed": 28.4
       }
     },
@@ -27,34 +27,15 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.250 below floor (0.260)",
-        "OBP (0.299) lags xwOBA (0.332)"
+        "BABIP 0.245 below floor (0.260)",
+        "OBP (0.292) lags xwOBA (0.327)"
       ],
       "score": 0.8,
       "stats": {
-        "obp": 0.298780487,
-        "xwoba": 0.3318444246090717,
-        "babip": 0.25,
-        "sprint_speed": 26.7
-      }
-    },
-    {
-      "player_id": "5149064",
-      "name": "Bryce Eldridge",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.243 below floor (0.260)",
-        "OBP (0.295) lags xwOBA (0.364)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.295081967,
-        "xwoba": 0.36432196299235026,
-        "babip": 0.243243243,
-        "sprint_speed": 25.4
+        "obp": 0.291666666,
+        "xwoba": 0.3272771661931818,
+        "babip": 0.244897959,
+        "sprint_speed": 26.9
       }
     },
     {
@@ -71,7 +52,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.271929824,
-        "xwoba": 0.30432239331697164,
+        "xwoba": 0.30438369617127536,
         "babip": 0.178082191,
         "sprint_speed": 28.8
       }
@@ -90,28 +71,9 @@
       "score": 0.8,
       "stats": {
         "obp": 0.198198198,
-        "xwoba": 0.2720441044987859,
+        "xwoba": 0.2720591742713172,
         "babip": 0.19117647,
         "sprint_speed": 27.5
-      }
-    },
-    {
-      "player_id": "41034",
-      "name": "Mark Vientos",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.248 below floor (0.260)",
-        "OBP (0.261) lags xwOBA (0.332)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.260638297,
-        "xwoba": 0.33169892493714676,
-        "babip": 0.2481203,
-        "sprint_speed": 25.7
       }
     },
     {
@@ -128,9 +90,28 @@
       "score": 0.8,
       "stats": {
         "obp": 0.225563909,
-        "xwoba": 0.2626833234514509,
+        "xwoba": 0.2627050356757372,
         "babip": 0.219512195,
         "sprint_speed": 27.5
+      }
+    },
+    {
+      "player_id": "41034",
+      "name": "Mark Vientos",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.250 below floor (0.260)",
+        "OBP (0.259) lags xwOBA (0.325)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.259067357,
+        "xwoba": 0.32454964039856904,
+        "babip": 0.25,
+        "sprint_speed": 25.7
       }
     },
     {
@@ -147,7 +128,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.2,
-        "xwoba": 0.2955209558660334,
+        "xwoba": 0.29554945772344415,
         "babip": 0.163934426,
         "sprint_speed": 27.3
       }
@@ -166,7 +147,7 @@
       "score": 0.8,
       "stats": {
         "obp": 0.214285714,
-        "xwoba": 0.25760609763009207,
+        "xwoba": 0.2576318808964321,
         "babip": 0.202380952,
         "sprint_speed": 29.6
       }
@@ -185,28 +166,9 @@
       "score": 0.8,
       "stats": {
         "obp": 0.270833333,
-        "xwoba": 0.3080695016043527,
+        "xwoba": 0.30811112015335645,
         "babip": 0.243243243,
         "sprint_speed": 25.8
-      }
-    },
-    {
-      "player_id": "4917919",
-      "name": "Lawrence Butler",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.208 below floor (0.260)",
-        "OBP (0.256) lags xwOBA (0.293)"
-      ],
-      "score": 0.8,
-      "stats": {
-        "obp": 0.25625,
-        "xwoba": 0.2927282067793834,
-        "babip": 0.208333333,
-        "sprint_speed": 26.2
       }
     }
   ],

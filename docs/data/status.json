@@ -1,22 +1,22 @@
 {
-  "as_of": "2026-05-31",
+  "as_of": "2026-06-02",
   "last_run_mode": "unknown",
   "last_full_run": null,
   "last_light_run": null,
-  "espn_last_fetch": "2026-05-31T22:53:10.535056+00:00",
+  "espn_last_fetch": "2026-06-02T14:54:18.320718+00:00",
   "validate_overall": "warn",
-  "validate_warnings": 3,
+  "validate_warnings": 4,
   "cats_winning": 2,
   "cats_losing": 2,
-  "cats_flippable": 3,
+  "cats_flippable": 4,
   "constraints": {
-    "acquisitions_used": 1,
-    "acquisitions_remaining": 6,
+    "acquisitions_used": 0,
+    "acquisitions_remaining": 7,
     "ip_accumulated": 0.0,
     "ip_remaining": 15.0,
     "waiver_priority": 3,
     "acq_alert": null,
-    "ip_alert": "IP PACE: only 0.0 IP by Thursday \u2014 at risk of minimum",
+    "ip_alert": null,
     "waiver_alert": "STRONG: waiver priority #3 \u2014 act early in week"
   }
 }
