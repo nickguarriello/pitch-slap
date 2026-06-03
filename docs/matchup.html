@@ -51,7 +51,7 @@ tr:last-child td{border-bottom:none}
   <h1>Matchup</h1>
 
   <div class="card">
-    <h2>Current Week — Category Scores</h2>
+    <h2 id="matchup-header">Current Week — Category Scores</h2>
     <table>
       <thead>
         <tr>
@@ -88,6 +88,12 @@ async function main(){
     (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
     (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
 
+  // Matchup header with opponent name
+  const oppName=matchup.current_opponent_name;
+  if(oppName){
+    document.getElementById('matchup-header').textContent=`Current Week — ${oppName} — Category Scores`;
+  }
+
   // Cat table
   const cats=matchup.cat_states||{};
   const needs=matchup.need_weights||{};
@@ -120,11 +126,14 @@ async function main(){
   if(!weeks.length){document.getElementById('history').innerHTML='<p style="color:var(--muted)">No completed matchup history yet.</p>';return;}
 
   const allCats=Object.keys(cats);
-  let tbl=`<table><thead><tr><th>Week</th>${allCats.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>`;
+  const opponents=matchup.history_opponents||{};
+  let tbl=`<table><thead><tr><th>Week</th><th>Opponent</th>${allCats.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>`;
   for(const wk of weeks){
     const weekData={};
     for(const row of hist[wk]){weekData[row.cat]=row.result;}
-    tbl+=`<tr><td style="color:var(--muted)">Wk ${wk}</td>`;
+    const oppInfo=opponents[wk]||{};
+    const oppLabel=oppInfo.abbrev||oppInfo.name||'—';
+    tbl+=`<tr><td style="color:var(--muted)">Wk ${wk}</td><td style="color:var(--muted);font-size:12px">${oppLabel}</td>`;
     for(const cat of allCats){
       const res=weekData[cat];
       tbl+=`<td>${res?`<span class="history-week ${res}">${res}</span>`:'—'}</td>`;

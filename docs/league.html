@@ -56,7 +56,6 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <tr>
           <th data-col="rank">#</th>
           <th data-col="team_name">Team</th>
-          <th data-col="value" id="val-header">Value</th>
           <th data-col="r">R</th>
           <th data-col="hr">HR</th>
           <th data-col="rbi">RBI</th>
@@ -108,9 +107,6 @@ function getTeamRank(team, cat){
 }
 
 function renderTable(){
-  const col=CAT_COLS[activeCat];
-  document.getElementById('val-header').textContent=activeCat;
-
   let rows=[...leagueData];
   rows.sort((a,b)=>{
     if(sortCol==='rank'){
@@ -119,12 +115,6 @@ function renderTable(){
       return (ra-rb)*sortDir;
     }
     if(sortCol==='team_name') return (a.team_name||'').localeCompare(b.team_name||'')*sortDir;
-    if(sortCol==='value'){
-      const av=a[col.toLowerCase()],bv=b[col.toLowerCase()];
-      if(av==null&&bv==null) return 0;
-      if(av==null) return 1; if(bv==null) return -1;
-      return LOWER_BETTER.has(activeCat)?(av-bv)*sortDir:(bv-av)*sortDir;
-    }
     const sc=CAT_COLS[sortCol]||sortCol;
     const av=a[sc],bv=b[sc];
     if(av==null&&bv==null) return 0;
@@ -137,9 +127,8 @@ function renderTable(){
     const isMe=t.espn_team_id===myTeamId;
     const rank=getTeamRank(t,activeCat);
     return `<tr class="${isMe?'my-team':''}">
-      <td><span class="rank ${rankClass(rank)}">${rank||'—'}</span></td>
+      <td style="color:var(--muted);font-weight:600;text-align:center;font-size:12px">${rank||'—'}</td>
       <td><b>${t.team_name||'—'}</b>${isMe?' <span style="font-size:11px;color:var(--accent)">(you)</span>':''}</td>
-      <td style="color:${rank===1?'var(--warn)':rank<=3?'var(--win)':'var(--text)'};font-weight:${rank<=3?700:400}">${fmt(t[col],activeCat)}</td>
       <td>${fmt(t.r,'R')}</td>
       <td>${fmt(t.hr,'HR')}</td>
       <td>${fmt(t.rbi,'RBI')}</td>
@@ -195,9 +184,8 @@ async function main(){
   // Sort headers
   document.querySelectorAll('th[data-col]').forEach(th=>{
     th.addEventListener('click',()=>{
-      const col=th.dataset.col;
-      if(sortCol===col) sortDir*=-1;
-      else{sortCol=col;sortDir=1;}
+      sortCol=th.dataset.col;
+      sortDir=1;
       document.querySelectorAll('th').forEach(t=>t.classList.remove('sorted'));
       th.classList.add('sorted');
       renderTable();

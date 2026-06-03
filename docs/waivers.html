@@ -32,6 +32,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .pos{font-size:11px;color:var(--muted);font-weight:600}
 .reason{font-size:11px;color:var(--muted)}
 .empty{color:var(--muted);font-size:13px;padding:12px 0}
+.section-desc{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -75,8 +76,10 @@ tr:hover td{background:rgba(255,255,255,.02)}
           <th>Player</th>
           <th>Pos</th>
           <th>Own%</th>
+          <th>OBP</th>
+          <th>xwOBA</th>
+          <th>BABIP</th>
           <th>Reasons</th>
-          <th>Tags</th>
         </tr>
       </thead>
       <tbody id="buy-table"></tbody>
@@ -85,6 +88,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
   <div class="card">
     <h2>Ownership Velocity Alerts</h2>
+    <p class="section-desc">Players whose ownership % jumped 10%+ since the last pipeline run — other managers are adding them fast. Likely triggered by a hot streak, injury to a teammate, or favorable schedule. Act before they're gone.</p>
     <table>
       <thead>
         <tr>
@@ -140,20 +144,23 @@ async function main(){
     }
   }
 
-  // Buy-low FA
-  const buyLow=(waivers.buy_low_fa||[]);
+  // Buy-low FA (top 5)
+  const buyLow=(waivers.buy_low_fa||[]).slice(0,5);
   const buyTbody=document.getElementById('buy-table');
   if(!buyLow.length){
-    buyTbody.innerHTML=`<tr><td colspan="5" class="empty">No buy-low targets on waivers.</td></tr>`;
+    buyTbody.innerHTML=`<tr><td colspan="7" class="empty">No buy-low targets on waivers.</td></tr>`;
   } else {
     for(const p of buyLow){
+      const st=p.stats||{};
       const reasons=(p.reasons||p.buy_low_reasons||[]).slice(0,3).join(' · ');
       buyTbody.innerHTML+=`<tr>
         <td><b>${p.name||'—'}</b></td>
         <td class="pos">${p.position||p.eligible_positions||'—'}</td>
         <td>${pct(p.ownership_pct)}</td>
+        <td>${fmt(st.obp,3)}</td>
+        <td>${fmt(st.xwoba,3)}</td>
+        <td>${fmt(st.babip,3)}</td>
         <td class="reason">${reasons||'—'}</td>
-        <td><span class="tag tag-buy">BUY</span><span class="tag tag-fa">FA</span></td>
       </tr>`;
     }
   }

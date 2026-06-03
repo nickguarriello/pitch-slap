@@ -11,6 +11,7 @@
   --win: #22c55e; --loss: #ef4444; --warn: #f59e0b; --flip: #a78bfa;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+.tag-trade { background: rgba(245,158,11,.15); color: var(--warn); }
 body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; font-size: 14px; }
 nav { display: flex; gap: 0; background: var(--surface); border-bottom: 1px solid var(--border); }
 nav a { padding: 12px 20px; text-decoration: none; color: var(--muted); font-weight: 500; }
@@ -84,11 +85,11 @@ h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
 
   <div class="grid2">
     <div class="card">
-      <h2>Buy Low (your roster)</h2>
+      <h2>Buy Low Targets</h2>
       <div id="buy-low-list"></div>
     </div>
     <div class="card">
-      <h2>Sell High (your roster)</h2>
+      <h2>Trade Away — Sell High</h2>
       <div id="sell-high-list"></div>
     </div>
   </div>
@@ -106,24 +107,36 @@ function fmt(v, digits=1) {
 }
 
 async function main() {
-  const [status, matchup, roster] = await Promise.all([
+  const [status, matchup, roster, waivers] = await Promise.all([
     load('data/status.json'),
     load('data/matchup.json'),
     load('data/roster.json'),
+    load('data/waivers.json'),
   ]);
 
   // Banner
   const valClass = status.validate_overall === 'pass' ? 'ok' : status.validate_overall === 'warn' ? 'warn' : 'fail';
   const c = status.constraints || {};
+  const warnCount = status.validate_warnings || 0;
+  const warnDetail = warnCount > 0 ? `${warnCount} stat checks flagged` : 'all checks passed';
+  const rawMode = status.last_run_mode;
+  const modeLabel = (!rawMode || rawMode === 'unknown')
+    ? 'unknown — pipeline may not have completed fully'
+    : rawMode;
   document.getElementById('banner').innerHTML =
     `<span>As of <b>${status.as_of || '—'}</b></span>` +
-    `<span class="${valClass}">Pipeline: ${status.validate_overall?.toUpperCase() || '?'} (${status.validate_warnings || 0} warnings)</span>` +
-    `<span>Mode: ${status.last_run_mode || '—'}</span>` +
+    `<span class="${valClass}" title="Checks data integrity: stat totals match ESPN, no unmatched player IDs, etc. Warnings are non-blocking but worth reviewing.">Data Quality: ${status.validate_overall?.toUpperCase() || '?'} — ${warnDetail}</span>` +
+    `<span title="'full' runs all fetchers including Statcast. 'light' skips the weekly Statcast pull and uses the cached version.">Mode: ${modeLabel}</span>` +
     (c.acq_alert ? `<span class="warn">${c.acq_alert}</span>` : '') +
     (c.ip_alert   ? `<span class="warn">${c.ip_alert}</span>` : '');
 
+  const catStateVals = Object.values(matchup.cat_states || {});
+  const catsW = catStateVals.filter(s => s.gap != null && s.gap > 0).length;
+  const catsL = catStateVals.filter(s => s.gap != null && s.gap < 0).length;
+  const catsT = catStateVals.filter(s => s.gap != null && s.gap === 0).length;
+  const tieStr = catsT > 0 ? ` / ${catsT}T` : '';
   document.getElementById('subtitle').textContent =
-    `${status.cats_winning}W / ${status.cats_flippable || 0}FLIP / ${status.cats_losing}L this week`;
+    `${catsW}W / ${catsL}L${tieStr} this week`;
 
   // Cat grid
   const cats = matchup.cat_states || {};
@@ -158,21 +171,31 @@ async function main() {
       <div class="value">${value}</div>
     </div>`).join('');
 
-  // Buy/sell from roster
-  const players = roster.players || [];
-  const buyLow  = players.filter(p => p.buy_low).slice(0, 8);
-  const sellHigh = players.filter(p => p.sell_high).slice(0, 8);
+  // Buy-low targets: wire pickups + trade targets from other teams
+  const wireTargets  = (waivers.buy_low_fa    || []).slice(0, 3).map(p => ({...p, _tag: 'WIRE',  _cls: 'tag-fa'}));
+  const tradeTargets = (waivers.buy_low_trade || []).slice(0, 3).map(p => ({...p, _tag: 'TRADE', _cls: 'tag-trade'}));
+  const buyLowTargets = [...wireTargets, ...tradeTargets].slice(0, 5);
 
-  const renderFlags = (list, type) => list.map(p => {
-    const reasons = type === 'buy' ? p.buy_low_reasons : p.sell_high_reasons;
+  const renderBuyLow = list => list.map(p => {
+    const reasons = (p.reasons || p.buy_low_reasons || []).slice(0, 2).join(' · ');
     return `<div class="flag-row">
-      <div class="flag-name">${p.name} <span class="tag tag-${type==='buy'?'buy':'sell'}">${type==='buy'?'BUY':'SELL'}</span></div>
-      <div class="flag-reason">${(reasons || []).slice(0,2).join(' · ')}</div>
+      <div class="flag-name">${p.name} <span class="tag ${p._cls}">${p._tag}</span></div>
+      <div class="flag-reason">${reasons || '—'}</div>
     </div>`;
-  }).join('') || '<div style="color:var(--muted);font-size:13px;padding:8px 0">No flags on your roster</div>';
+  }).join('') || '<div style="color:var(--muted);font-size:13px;padding:8px 0">No buy-low targets identified</div>';
 
-  document.getElementById('buy-low-list').innerHTML  = renderFlags(buyLow, 'buy');
-  document.getElementById('sell-high-list').innerHTML = renderFlags(sellHigh, 'sell');
+  // Sell-high from your roster (trade candidates)
+  const sellHighPlayers = (roster.players || []).filter(p => p.sell_high).slice(0, 5);
+  const renderSellHigh = list => list.map(p => {
+    const reasons = (p.sell_high_reasons || []).slice(0, 2).join(' · ');
+    return `<div class="flag-row">
+      <div class="flag-name">${p.name} <span class="tag tag-sell">SELL</span></div>
+      <div class="flag-reason">${reasons || '—'}</div>
+    </div>`;
+  }).join('') || '<div style="color:var(--muted);font-size:13px;padding:8px 0">No sell-high candidates on roster</div>';
+
+  document.getElementById('buy-low-list').innerHTML  = renderBuyLow(buyLowTargets);
+  document.getElementById('sell-high-list').innerHTML = renderSellHigh(sellHighPlayers);
 }
 
 main().catch(e => { document.getElementById('banner').innerHTML = `<span class="fail">Error loading data: ${e.message}</span>`; });

@@ -60,6 +60,15 @@ def _load_eval() -> dict:
     return {}
 
 
+def _load_espn_teams() -> dict:
+    """Return {team_id_str: {name, abbrev}} from data/espn_teams.json, or {}."""
+    path = os.path.join(DATA_DIR, 'espn_teams.json')
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    return {}
+
+
 def _write_json(path: str, data) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w") as f:
@@ -191,11 +200,18 @@ def build_roster(conn: sqlite3.Connection, eval_report: dict) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 def build_waivers(conn: sqlite3.Connection, eval_report: dict) -> dict:
-    """FA candidates: buy-low unrostered + two-starters + ownership alerts."""
+    """FA candidates: buy-low unrostered + two-starters + ownership alerts + trade targets."""
     buy_low_fa = [
         f for f in eval_report.get("buy_low", [])
         if not f.get("rostered")
     ][:30]
+
+    # Buy-low players on OTHER teams' rosters — trade acquisition targets
+    buy_low_trade = [
+        f for f in eval_report.get("buy_low", [])
+        if f.get("rostered") and f.get("espn_team_id") is not None
+        and f.get("espn_team_id") != TEAM_ID
+    ][:20]
 
     two_starters_fa = [
         p for p in eval_report.get("two_starters", [])
@@ -206,6 +222,7 @@ def build_waivers(conn: sqlite3.Connection, eval_report: dict) -> dict:
 
     return {
         "buy_low_fa":       buy_low_fa,
+        "buy_low_trade":    buy_low_trade,
         "two_starters_fa":  two_starters_fa,
         "ownership_alerts": ownership_alerts,
     }
@@ -260,12 +277,41 @@ def build_matchup(conn: sqlite3.Connection, eval_report: dict) -> dict:
         for r in records
     }
 
+    # Opponent info per history week
+    espn_teams = _load_espn_teams()
+    opp_rows = conn.execute(
+        "SELECT DISTINCT week, opp_team_id FROM fact_matchups WHERE my_team_id = ? AND is_final = 1",
+        (TEAM_ID,),
+    ).fetchall()
+    history_opponents = {
+        row["week"]: espn_teams.get(str(row["opp_team_id"]), {
+            "name": f"Team {row['opp_team_id']}",
+            "abbrev": str(row["opp_team_id"]),
+        })
+        for row in opp_rows
+    }
+
+    # Current week opponent from dedicated file (not pipeline-meta, which main.py overwrites)
+    opp_path = os.path.join(DATA_DIR, "current-opponent.json")
+    opp_meta: dict = {}
+    if os.path.exists(opp_path):
+        with open(opp_path) as f:
+            try:
+                opp_meta = json.load(f)
+            except Exception:
+                pass
+    raw_opp_id = opp_meta.get("current_opp_team_id")
+    current_opp = espn_teams.get(str(raw_opp_id), {}) if raw_opp_id is not None else {}
+
     return {
-        "cat_states":    eval_report.get("cat_states", {}),
-        "need_weights":  eval_report.get("need_weights", {}),
-        "cat_records":   cat_records,
-        "history":       history_by_week,
-        "constraints":   eval_report.get("constraints", {}),
+        "cat_states":              eval_report.get("cat_states", {}),
+        "need_weights":            eval_report.get("need_weights", {}),
+        "cat_records":             cat_records,
+        "history":                 history_by_week,
+        "history_opponents":       history_opponents,
+        "current_opponent_name":   current_opp.get("name"),
+        "current_opponent_abbrev": current_opp.get("abbrev"),
+        "constraints":             eval_report.get("constraints", {}),
     }
 
 
@@ -280,8 +326,8 @@ def build_league(conn: sqlite3.Connection) -> dict:
     ).fetchone()
     snapshot_date = snapshot_date_row[0] if snapshot_date_row else None
 
-    # Team names from ESPN rosters (use first player's espn_team_id)
-    # We don't store team names in DB — use team_id as label for now
+    espn_teams = _load_espn_teams()
+
     team_ids = conn.execute(
         "SELECT DISTINCT espn_team_id FROM fact_espn_rosters "
         "WHERE espn_team_id IS NOT NULL AND snapshot_date = ?",
@@ -336,10 +382,13 @@ def build_league(conn: sqlite3.Connection) -> dict:
                 ).fetchone()[0]
             team_stats[cat] = _f(val)
 
+        team_info = espn_teams.get(str(tid), {})
         teams.append({
-            "team_id":   tid,
+            "team_id":    tid,
+            "team_name":  team_info.get("name", f"Team {tid}"),
+            "team_abbrev": team_info.get("abbrev", str(tid)),
             "is_my_team": tid == TEAM_ID,
-            "stats":     team_stats,
+            "stats":      team_stats,
         })
 
     # Rank each team per cat (1=best)

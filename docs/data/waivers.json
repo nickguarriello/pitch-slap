@@ -3,7 +3,7 @@
     {
       "player_id": "42417",
       "name": "Bryson Stott",
-      "team": null,
+      "team": "",
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
@@ -22,7 +22,7 @@
     {
       "player_id": "34975",
       "name": "Tyler Stephenson",
-      "team": null,
+      "team": "",
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
@@ -41,7 +41,7 @@
     {
       "player_id": "36364",
       "name": "Jake Cronenworth",
-      "team": null,
+      "team": "",
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
@@ -60,7 +60,7 @@
     {
       "player_id": "35062",
       "name": "Harrison Bader",
-      "team": null,
+      "team": "",
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
@@ -79,7 +79,7 @@
     {
       "player_id": "40557",
       "name": "Josh Lowe",
-      "team": null,
+      "team": "",
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
@@ -98,7 +98,7 @@
     {
       "player_id": "41034",
       "name": "Mark Vientos",
-      "team": null,
+      "team": "",
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
@@ -117,7 +117,7 @@
     {
       "player_id": "41183",
       "name": "Bo Naylor",
-      "team": null,
+      "team": "",
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
@@ -136,7 +136,7 @@
     {
       "player_id": "42411",
       "name": "Luisangel Acuna",
-      "team": null,
+      "team": "",
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
@@ -155,7 +155,7 @@
     {
       "player_id": "31668",
       "name": "Marcell Ozuna",
-      "team": null,
+      "team": "",
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
@@ -169,6 +169,179 @@
         "xwoba": 0.30811112015335645,
         "babip": 0.243243243,
         "sprint_speed": 25.8
+      }
+    }
+  ],
+  "buy_low_trade": [
+    {
+      "player_id": "4345620",
+      "name": "Dillon Dingler",
+      "team": "",
+      "espn_team_id": 9,
+      "rostered": true,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.250 below floor (0.260)",
+        "OBP (0.324) lags xwOBA (0.408)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.324200913,
+        "xwoba": 0.40814061318674394,
+        "babip": 0.25,
+        "sprint_speed": 27.6
+      }
+    },
+    {
+      "player_id": "32801",
+      "name": "Jose Ramirez",
+      "team": "",
+      "espn_team_id": 8,
+      "rostered": true,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.234 below floor (0.260)",
+        "OBP (0.341) lags xwOBA (0.369)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.34082397,
+        "xwoba": 0.36933618304373206,
+        "babip": 0.233695652,
+        "sprint_speed": 27.4
+      }
+    },
+    {
+      "player_id": "42178",
+      "name": "Adley Rutschman",
+      "team": "",
+      "espn_team_id": 6,
+      "rostered": true,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.258 below floor (0.260)",
+        "OBP (0.333) lags xwOBA (0.370)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.333333333,
+        "xwoba": 0.36972524351992847,
+        "babip": 0.258064516,
+        "sprint_speed": 26.6
+      }
+    },
+    {
+      "player_id": "41292",
+      "name": "Cal Raleigh",
+      "team": "",
+      "espn_team_id": 2,
+      "rostered": true,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.192 below floor (0.260)",
+        "OBP (0.243) lags xwOBA (0.289)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.243093922,
+        "xwoba": 0.2887793061482972,
+        "babip": 0.191919191,
+        "sprint_speed": 25.8
+      }
+    },
+    {
+      "player_id": "31097",
+      "name": "Manny Machado",
+      "team": "",
+      "espn_team_id": 9,
+      "rostered": true,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.176 below floor (0.260)",
+        "OBP (0.267) lags xwOBA (0.317)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.267241379,
+        "xwoba": 0.3166501924589083,
+        "babip": 0.176056338,
+        "sprint_speed": 24.7
+      }
+    },
+    {
+      "player_id": "32691",
+      "name": "Corey Seager",
+      "team": "",
+      "espn_team_id": 3,
+      "rostered": true,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.208 below floor (0.260)",
+        "OBP (0.286) lags xwOBA (0.330)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.285714285,
+        "xwoba": 0.33042598300509984,
+        "babip": 0.207920792,
+        "sprint_speed": 25.0
+      }
+    },
+    {
+      "player_id": "38904",
+      "name": "Bo Bichette",
+      "team": "",
+      "espn_team_id": 7,
+      "rostered": true,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.241 below floor (0.260)",
+        "OBP (0.271) lags xwOBA (0.330)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.270992366,
+        "xwoba": 0.3296257484960192,
+        "babip": 0.241025641,
+        "sprint_speed": 25.8
+      }
+    },
+    {
+      "player_id": "40926",
+      "name": "Brent Rooker",
+      "team": "",
+      "espn_team_id": 5,
+      "rostered": true,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.237 below floor (0.260)",
+        "OBP (0.278) lags xwOBA (0.306)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.27840909,
+        "xwoba": 0.3057504397386696,
+        "babip": 0.236559139,
+        "sprint_speed": 27.7
+      }
+    },
+    {
+      "player_id": "31127",
+      "name": "Salvador Perez",
+      "team": "",
+      "espn_team_id": 9,
+      "rostered": true,
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.218 below floor (0.260)",
+        "OBP (0.257) lags xwOBA (0.295)"
+      ],
+      "score": 0.8,
+      "stats": {
+        "obp": 0.257383966,
+        "xwoba": 0.2945381746453754,
+        "babip": 0.218181818,
+        "sprint_speed": 24.1
       }
     }
   ],

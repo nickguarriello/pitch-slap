@@ -461,6 +461,22 @@ def _current_week_number() -> int:
     return 2 + days_since_w2 // 7
 
 
+def _save_team_names(league) -> None:
+    """Write {team_id: {name, abbrev}} to data/espn_teams.json for dashboard use."""
+    teams: dict = {}
+    for team in league.teams:
+        tid = str(team.team_id)
+        teams[tid] = {
+            'name':   getattr(team, 'team_name',   None) or f'Team {team.team_id}',
+            'abbrev': getattr(team, 'team_abbrev', None) or tid,
+        }
+    path = os.path.join(DATA_DIR, 'espn_teams.json')
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(path, 'w') as f:
+        json.dump(teams, f, indent=2)
+    print(f"  Team names: {[v['name'] for v in teams.values()]}")
+
+
 def _update_meta(status: str, fetch_ts: str) -> None:
     os.makedirs(DATA_DIR, exist_ok=True)
     meta: dict = {}
@@ -495,6 +511,10 @@ def run(mode: str = 'full') -> dict:
         _update_meta('AUTH_FAILURE', fetch_ts)
         raise
 
+    # Save team names for dashboard
+    print("  Saving team names...")
+    _save_team_names(league)
+
     # Rosters + FA pool
     print("  Fetching rosters...")
     roster_rows = fetch_rosters(league)
@@ -516,6 +536,18 @@ def run(mode: str = 'full') -> dict:
     write_rosters_to_db(roster_rows)
     write_constraints_to_db(constraints)
     write_matchups_to_db(matchup_data)
+
+    # Write current opponent to its own file so main.py's _save_meta can't clobber it
+    current_opp_id = None
+    for m in matchup_data.get('current_scores', []):
+        hid, aid = m['home_team_id'], m['away_team_id']
+        if TEAM_ID in (hid, aid):
+            current_opp_id = aid if hid == TEAM_ID else hid
+            break
+    opp_path = os.path.join(DATA_DIR, 'current-opponent.json')
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(opp_path, 'w') as f:
+        json.dump({'current_opp_team_id': current_opp_id}, f)
 
     _update_meta('ok', fetch_ts)
 
