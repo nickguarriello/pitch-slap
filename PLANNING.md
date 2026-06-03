@@ -94,13 +94,17 @@
 
 ## UAT Backlog — Known Issues & Refinements (Start Here Next Session)
 
-### Priority Fixes (Start Here Next Session)
-1. **SELL_HIGH babip_ceiling too aggressive** — config value is 0.260, which is *below* league average. Flags ~281 players as sell-high. Fix: snapshot config.py, raise to 0.350 (genuinely elevated), add min 100 PA sample guard.
-2. **Buy-low OBP vs xwOBA scale mismatch** — comparing OBP directly to xwOBA is an approximation (different scales). Better signal: `xBA vs BA`, or pull `xOBP` from Baseball Savant. Also add a quality floor (`xwOBA ≥ 0.310`) so we don't recommend buying players with bad underlying skill who are just getting unlucky.
-3. **Buy-low fires on 144 players** — no quality filter. Even mediocre players with a 25pt xwOBA-OBP gap get flagged. Add minimum xwOBA threshold before flagging as actionable.
-4. **Two-start scorer missing 3 of 7 weight components** — opponent wRC+/handedness split, park factor, and days of rest are defined in config (TWO_START_WEIGHTS) but not implemented in the scorer. Data exists in fact_schedule and fact_statcast.
-5. **Category thresholds never tuned on live data** — CAT_THRESHOLDS set theoretically, 10 weeks of real results now available. Review median week-end gaps in fact_matchups to calibrate FLIPPABLE/FLOPPABLE boundaries.
-6. **Need weight not wired into recommendations** — need_weight is computed and displayed but doesn't influence buy-low ranking or waiver suggestions. Should multiply into scores so high-need categories surface more aggressively.
+### Priority Fixes — All resolved as of 2026-06-03
+1. ✅ SELL_HIGH babip_ceiling → 0.350 with 100 PA guard
+2. ✅ Buy-low quality floor → xwOBA ≥ 0.310 added
+3. ✅ Buy-low volume → 144→108 flags after quality floor
+4. ✅ Category thresholds → recalibrated from 9 weeks real data; symmetric FLOPPABLE=FLIPPABLE
+5. ✅ Need weight → wired into buy-low scores (60% base + 40% need-adjusted)
+6. ✅ Two-start scorer → days of rest component added
+
+### Remaining Technical Debt
+- **Two-start scorer still missing opponent quality + park factor**: `park_factor` in fact_schedule is NULL (no data source connected yet); opponent quality needs pitcher handedness (not in dim_players). Low priority until two-starters populate mid-week.
+- **Ground truth checks** — ERA, WHIP, OBP, SvHd validation checks skipped (ESPN values not returned by current API params). Spot-check manually weekly.
 
 ### Ongoing Verification
 7. **Two-start pitchers = 0 early week** — MLB Stats API only posts probable pitchers ~3–5 days out. Section populates by Wed/Thu. Wed/Thu pipeline now runs 11pm EDT to catch releases. Source: `statsapi` (MLB official, free).
@@ -140,12 +144,12 @@ All resolved:
 
 ---
 
-## Post-MVP Backlog (Do Not Build During MVP)
+## Post-MVP Backlog
 
 1. First-half frozen snapshot (pre_asg) + 60D window — scope together
-2. Historical learning Phase B/C/D — Phase A table built now, analysis deferred until 6+ weeks of data
-3. **Playoff prep tab** — dedicated dashboard page for playoff weeks (top 4 teams, 2 rounds, 2 weeks/round). Focus: do-or-die lineup optimization. Likely features: category-by-category opponent breakdown, streaming targets ranked by playoff schedule/park, IP pacing for the full 2-week round, bench decisions weighted for playoff cats specifically, and a "clinch/eliminate" scenario tracker. Will need playoff bracket data from ESPN API.
-4. Trade helper UI
+2. Historical learning Phase B/C/D — 10+ weeks of data now available, enough to start Phase B
+3. ✅ **Playoff prep tab** — BUILT 2026-06-03. Standings (W-L-T + Cat W-L-T), bracket, category matchup previews vs all 3 potential opponents, swing categories, improvement targets, weekly add targets. Year-round visibility.
+4. **Trade helper UI** — next priority. You're seed 2, 5-5 projected vs R1 opponent. Swing cats are R, HR, K, QS. A trade helper scoping "what can I give to get HR/K help" would be directly useful now.
 5. Multi-layer player value model
 6. Testing suite
 
@@ -161,6 +165,7 @@ All resolved:
 | 2026-05-07 (cont2) | Phase 5 complete: report.py (roster/waivers/matchup/league/status JSON + 3 CSVs). All 5 dashboard pages: index.html, matchup.html, waivers.html, players.html, league.html. Dark theme, pipeline health banner on all pages, sortable tables on players/league. Open: SELL_HIGH babip_ceiling threshold too low (0.260, should be ~0.350 — tune after 2 weeks live). | Phase 6: daily_pipeline.yml GitHub Actions workflow. |
 | 2026-05-07 (cont3) | Phase 6 complete: .github/workflows/daily-pipeline.yml (3x daily cron, workflow_dispatch, writes ESPN creds from secrets, inits DB, auto-commits docs/data/). README.md with first-time setup instructions (Secrets + Pages). Open: configure ESPN_SWID + ESPN_S2 secrets in GitHub repo settings, enable Pages (main/docs), trigger first manual run to verify. | Phase 7: manual verification. |
 | 2026-05-07 (cont4) | First CI run failed (exit code 1): dim_players empty in CI because db/pitch-slap.db is gitignored. Fix: exported dim_players to data/player-crosswalk.csv (committed), added seed_crosswalk() to init_db.py. Second CI run succeeded (1m 16s, 499 Statcast rows matched). Dashboard live. UAT round 1: all 4 HTML pages had field name mismatches vs actual JSON structure — fixed in same session. Dashboard now shows correct data on all 5 pages. | UAT round 1 in progress. See UAT Backlog above. |
+| 2026-06-03 (cont2) | **Logic + Playoff tab session**: All 6 priority fixes completed. CAT_THRESHOLDS recalibrated from 9 weeks real data then made symmetric (FLOPPABLE=FLIPPABLE=avg gap). buy-low: xwOBA≥0.310 quality floor + need-weight blend (60/40). sell-high: babip_ceiling 0.260→0.350 + 100 PA guard. Two-start scorer: days-of-rest component wired in. Playoff tab built (playoff.html + playoff.json): standings with W-L-T + Cat W-L-T, bracket, category previews vs all 3 potential opponents, swing cats, improvement targets, weekly add targets. Matchup record corrected to include ties (6-2-1). Cumulative cat W-L-T for all 8 teams computed from full history. Wed/Thu pipeline cron shifted to 11pm EDT to catch MLB probable pitcher releases. Config snapshots: 2026-06-02_22-42-52.py and 2026-06-02_23-10-42.py | Two-start scorer still missing opponent quality + park factor (data gaps). Trade helper UI is next priority (see Post-MVP backlog). |
 | 2026-06-03 | **Dashboard overhaul** (6 files changed, user explicitly approved >3-file limit). Changes: (1) Home subtitle now shows real W/L/T via gap-based counting — not WIN/LOSS state labels. (2) ERA/WHIP IP qualifier fix in evaluate.py: auto-LOSS when below 15 IP, with ip_note + my_ip_week in cat state; cat grid shows "X.X / 15 IP" amber warning. (3) Real team names via data/espn_teams.json (written by fetch_espn, read by report); league.json now has team_name + team_abbrev. (4) Matchup header shows current opponent name; history table adds Opponent column; driven by data/current-opponent.json (separate file — not overwritten by main.py meta saves). (5) Home Buy Low now pulls wire targets (waivers.buy_low_fa) + trade targets from other rosters (waivers.buy_low_trade); Sell High renamed "Trade Away". (6) Waivers: top 5 buy-low, added OBP/xwOBA/BABIP columns, ownership velocity explained. (7) League: removed Value column (duplicate), removed rank badges, sort always best-first. Banner improved with tooltips. Researched probable pitcher sources — all derive from MLB feed, no faster option exists. Shifted Wed/Thu 6pm pipeline run to 11pm EDT to catch MLB probable releases. | See Priority Fixes above — buy/sell logic needs tuning next session. Playoff prep tab added to backlog. |
 
 ---

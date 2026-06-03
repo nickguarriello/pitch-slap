@@ -103,21 +103,21 @@ WAIVER_PRIORITY_AT_RISK   = (6, 8)   # bottom-3: flag AT RISK
 
 CAT_THRESHOLDS = {
     # Calibrated 2026-06-03 from 9 weeks of real fact_matchups data.
-    # Symmetric: FLOPPABLE == FLIPPABLE (equal danger/opportunity zones).
-    # A lead or deficit within this range is considered live — neither safe nor lost.
-    # LOSS ≈ 1.75× the avg weekly gap (too far back to realistically recover).
+    # FLOPPABLE ≈ half the avg weekly gap (comfortable lead)
+    # FLIPPABLE ≈ average weekly gap (catchable deficit)
+    # LOSS      ≈ 1.75× the avg weekly gap (too far back)
     # Avg gaps observed: R=11.5, HR=4.3, RBI=6.5, SB=4.9, OBP=.030,
     #                    K=8.9, QS=1.6, ERA=0.81, WHIP=0.20, SvHd=2.1
-    "R":    {"floppable": 12,    "flippable": 12,   "loss": 20},
-    "HR":   {"floppable": 4,     "flippable": 4,    "loss": 8},
-    "RBI":  {"floppable": 6,     "flippable": 6,    "loss": 14},
-    "SB":   {"floppable": 5,     "flippable": 5,    "loss": 9},
-    "OBP":  {"floppable": 0.030, "flippable": 0.030,"loss": 0.055},
-    "K":    {"floppable": 9,     "flippable": 9,    "loss": 16},
-    "QS":   {"floppable": 2,     "flippable": 2,    "loss": 4},
-    "ERA":  {"floppable": 0.80,  "flippable": 0.80, "loss": 1.50},
-    "WHIP": {"floppable": 0.20,  "flippable": 0.20, "loss": 0.38},
-    "SvHd": {"floppable": 2,     "flippable": 2,    "loss": 5},
+    "R":    {"floppable": 6,     "flippable": 12,   "loss": 20},
+    "HR":   {"floppable": 2,     "flippable": 4,    "loss": 8},
+    "RBI":  {"floppable": 4,     "flippable": 7,    "loss": 14},
+    "SB":   {"floppable": 2,     "flippable": 5,    "loss": 9},
+    "OBP":  {"floppable": 0.010, "flippable": 0.030,"loss": 0.055},
+    "K":    {"floppable": 5,     "flippable": 9,    "loss": 16},
+    "QS":   {"floppable": 1,     "flippable": 2,    "loss": 4},
+    "ERA":  {"floppable": 0.30,  "flippable": 0.80, "loss": 1.50},
+    "WHIP": {"floppable": 0.08,  "flippable": 0.20, "loss": 0.38},
+    "SvHd": {"floppable": 1,     "flippable": 2,    "loss": 5},
 }
 
 # ---------------------------------------------------------------------------
