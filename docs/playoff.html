@@ -89,8 +89,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
           <tr>
             <th>#</th>
             <th>Team</th>
-            <th>W</th>
-            <th>L</th>
+            <th title="Matchup record (W-L or W-L-T if ties exist)">Record</th>
             <th>PCT</th>
             <th title="Cumulative category wins-losses-ties across all matchup weeks">Cat W-L-T</th>
             <th></th>
@@ -121,14 +120,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
     <div class="card">
       <h2>Improvement Targets</h2>
-      <p class="section-note">Categories projected to lose vs your likely R1 opponent. Prioritize trades and wire adds here.</p>
+      <p class="section-note">Categories projected to lose vs your likely R1 opponent. Prioritize trades and Monday waiver adds here — your lineup locks at the first game of the week.</p>
       <div id="improvement-targets"></div>
     </div>
   </div>
 
   <div class="card">
-    <h2>Trade &amp; Streaming Focus</h2>
-    <p class="section-note">Buy-low targets from the wire whose contributions address your playoff weaknesses.</p>
+    <h2>Weekly Add Targets</h2>
+    <p class="section-note">Players to pick up before Monday's lineup lock. With weekly lineups, all adds must be made before the first game of the week — there is no mid-week streaming. These wire targets address your playoff swing categories and improvement areas.</p>
     <table>
       <thead>
         <tr><th>Player</th><th>Pos</th><th>Helps</th><th>OBP</th><th>xwOBA</th><th>BABIP</th><th>Reasons</th></tr>
@@ -267,8 +266,7 @@ async function main(){
     tbody.innerHTML += `<tr class="${isMe?'my-team':''}">
       <td><span class="seed ${seedClass(s.seed)}">${s.seed}</span></td>
       <td><b>${s.team_name}</b>${isMe?' <span style="font-size:11px;color:var(--accent)">(you)</span>':''}</td>
-      <td>${s.wins}</td>
-      <td>${s.losses}</td>
+      <td style="font-weight:600">${s.record||`${s.wins}-${s.losses}`}</td>
       <td>${s.pct.toFixed(3)}</td>
       <td style="font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums">${s.cat_record||'—'}</td>
       <td>${s.in_playoffs?'<span class="in-playoffs">IN</span>':'<span class="out-playoffs">out</span>'}</td>
@@ -311,7 +309,7 @@ async function main(){
   if(playoff.swing_categories && playoff.swing_categories.length){
     swingEl.innerHTML = playoff.swing_categories.map(c =>
       `<span class="swing-tag">${c}</span>`
-    ).join('') + `<p style="color:var(--muted);font-size:12px;margin-top:8px">These categories are competitive against multiple potential opponents — every player you add or trade for should help here first.</p>`;
+    ).join('') + `<p style="color:var(--muted);font-size:12px;margin-top:8px">Competitive across multiple potential opponents. Every trade and Monday add should target these first — lineups lock at the week's first game.</p>`;
   } else {
     swingEl.innerHTML = '<p style="color:var(--muted);font-size:12px">No swing categories identified yet.</p>';
   }

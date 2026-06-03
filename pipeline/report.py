@@ -398,6 +398,9 @@ def build_league(conn: sqlite3.Connection) -> dict:
             team_stats[cat] = _f(val)
 
         team_info = espn_teams.get(str(tid), {})
+        mw = team_info.get("matchup_wins",   team_info.get("wins",   0))
+        ml = team_info.get("matchup_losses", team_info.get("losses", 0))
+        mt = team_info.get("matchup_ties",   0)
         cat_w = team_info.get("cat_wins",   0)
         cat_l = team_info.get("cat_losses", 0)
         cat_t = team_info.get("cat_ties",   0)
@@ -405,8 +408,10 @@ def build_league(conn: sqlite3.Connection) -> dict:
             "team_id":    tid,
             "team_name":  team_info.get("name", f"Team {tid}"),
             "team_abbrev": team_info.get("abbrev", str(tid)),
-            "wins":       team_info.get("wins",   0),
-            "losses":     team_info.get("losses", 0),
+            "wins":       mw,
+            "losses":     ml,
+            "ties":       mt,
+            "record":     f"{mw}-{ml}-{mt}" if mt > 0 else f"{mw}-{ml}",
             "cat_wins":   cat_w,
             "cat_losses": cat_l,
             "cat_ties":   cat_t,
@@ -477,24 +482,34 @@ def build_playoff(league_data: dict) -> dict:
         losses   = et.get("losses", 0)
         ties     = et.get("ties",   0)
         pct      = et.get("pct",    round(wins / max(wins + losses, 1), 3))
+        # Use computed matchup W/L/T (more reliable than ESPN library team.ties)
+        mw = et.get("matchup_wins",   wins)
+        ml = et.get("matchup_losses", losses)
+        mt = et.get("matchup_ties",   ties)
+        total = max(mw + ml + mt, 1)
+        computed_pct = round((mw + 0.5 * mt) / total, 3)
+        record_str = f"{mw}-{ml}-{mt}" if mt > 0 else f"{mw}-{ml}"
+
         cat_w = et.get("cat_wins",   0)
         cat_l = et.get("cat_losses", 0)
         cat_t = et.get("cat_ties",   0)
         cat_record = f"{cat_w}-{cat_l}-{cat_t}" if (cat_w + cat_l + cat_t) > 0 else "—"
+
         standings.append({
-            "team_id":   t["team_id"],
-            "team_name": t.get("team_name", f"Team {t['team_id']}"),
-            "abbrev":    t.get("team_abbrev", str(t["team_id"])),
-            "wins":      wins,
-            "losses":    losses,
-            "ties":      ties,
-            "pct":       pct,
-            "cat_wins":  cat_w,
+            "team_id":    t["team_id"],
+            "team_name":  t.get("team_name", f"Team {t['team_id']}"),
+            "abbrev":     t.get("team_abbrev", str(t["team_id"])),
+            "wins":       mw,
+            "losses":     ml,
+            "ties":       mt,
+            "pct":        computed_pct,
+            "record":     record_str,
+            "cat_wins":   cat_w,
             "cat_losses": cat_l,
-            "cat_ties":  cat_t,
+            "cat_ties":   cat_t,
             "cat_record": cat_record,
             "is_my_team": t.get("is_my_team", False),
-            "ranks":     t.get("ranks", {}),
+            "ranks":      t.get("ranks", {}),
         })
 
     # Sort by pct desc, then fewer losses as tiebreaker

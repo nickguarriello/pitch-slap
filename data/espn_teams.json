@@ -9,7 +9,10 @@
       "pct": 0.75,
       "cat_wins": 47,
       "cat_losses": 39,
-      "cat_ties": 4
+      "cat_ties": 4,
+      "matchup_wins": 6,
+      "matchup_losses": 2,
+      "matchup_ties": 1
     },
     "2": {
       "name": "Lunch",
@@ -20,7 +23,10 @@
       "pct": 0.778,
       "cat_wins": 50,
       "cat_losses": 36,
-      "cat_ties": 4
+      "cat_ties": 4,
+      "matchup_wins": 7,
+      "matchup_losses": 2,
+      "matchup_ties": 0
     },
     "3": {
       "name": "I Robbed A Nuke",
@@ -31,7 +37,10 @@
       "pct": 0.429,
       "cat_wins": 47,
       "cat_losses": 41,
-      "cat_ties": 2
+      "cat_ties": 2,
+      "matchup_wins": 3,
+      "matchup_losses": 4,
+      "matchup_ties": 2
     },
     "5": {
       "name": "2010 State Sectional Champ",
@@ -42,7 +51,10 @@
       "pct": 0.571,
       "cat_wins": 41,
       "cat_losses": 42,
-      "cat_ties": 7
+      "cat_ties": 7,
+      "matchup_wins": 4,
+      "matchup_losses": 3,
+      "matchup_ties": 2
     },
     "6": {
       "name": "All Rise Run Club",
@@ -53,7 +65,10 @@
       "pct": 0.286,
       "cat_wins": 30,
       "cat_losses": 52,
-      "cat_ties": 8
+      "cat_ties": 8,
+      "matchup_wins": 2,
+      "matchup_losses": 5,
+      "matchup_ties": 2
     },
     "7": {
       "name": "Jazz In Her Batters Box",
@@ -64,7 +79,10 @@
       "pct": 0.375,
       "cat_wins": 40,
       "cat_losses": 46,
-      "cat_ties": 4
+      "cat_ties": 4,
+      "matchup_wins": 3,
+      "matchup_losses": 5,
+      "matchup_ties": 1
     },
     "8": {
       "name": "ChicksDigTheLongBall",
@@ -75,7 +93,10 @@
       "pct": 0.5,
       "cat_wins": 44,
       "cat_losses": 42,
-      "cat_ties": 4
+      "cat_ties": 4,
+      "matchup_wins": 3,
+      "matchup_losses": 3,
+      "matchup_ties": 3
     },
     "9": {
       "name": "ICECOLDBEERHERE! ",
@@ -86,7 +107,10 @@
       "pct": 0.25,
       "cat_wins": 42,
       "cat_losses": 43,
-      "cat_ties": 5
+      "cat_ties": 5,
+      "matchup_wins": 2,
+      "matchup_losses": 6,
+      "matchup_ties": 1
     }
   },
   "league_meta": {

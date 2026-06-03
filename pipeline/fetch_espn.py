@@ -463,16 +463,18 @@ def _current_week_number() -> int:
 
 def _compute_cat_records(history: list[dict]) -> dict[int, dict]:
     """
-    Compute cumulative category W/L/T records for all teams from matchup history.
-    history: list of {home_team_id, away_team_id, home_cats, away_cats, ...}
-    Returns {team_id_int: {cat_wins, cat_losses, cat_ties}}
+    Compute cumulative category W/L/T AND matchup W/L/T for all teams from history.
+    Matchup W/L/T is derived from per-category results each week (more cats won = W).
+    ESPN library team.ties is unreliable; this gives the true record including ties.
     """
     records: dict[int, dict] = {}
 
-    def _inc(tid, field):
+    def _ensure(tid):
         if tid not in records:
-            records[tid] = {'cat_wins': 0, 'cat_losses': 0, 'cat_ties': 0}
-        records[tid][field] += 1
+            records[tid] = {
+                'cat_wins': 0, 'cat_losses': 0, 'cat_ties': 0,
+                'matchup_wins': 0, 'matchup_losses': 0, 'matchup_ties': 0,
+            }
 
     for m in history:
         home_id   = m.get('home_team_id')
@@ -481,6 +483,11 @@ def _compute_cat_records(history: list[dict]) -> dict[int, dict]:
         away_cats = m.get('away_cats', {})
         if home_id is None or away_id is None:
             continue
+
+        _ensure(home_id)
+        _ensure(away_id)
+
+        home_cw = home_cl = 0
         for cat in ALL_CATS:
             hv = home_cats.get(cat)
             av = away_cats.get(cat)
@@ -488,14 +495,27 @@ def _compute_cat_records(history: list[dict]) -> dict[int, dict]:
                 continue
             lower_better = cat in CATS_LOWER_IS_BETTER
             if hv == av:
-                _inc(home_id, 'cat_ties')
-                _inc(away_id, 'cat_ties')
+                records[home_id]['cat_ties'] += 1
+                records[away_id]['cat_ties'] += 1
             elif (lower_better and hv < av) or (not lower_better and hv > av):
-                _inc(home_id, 'cat_wins')
-                _inc(away_id, 'cat_losses')
+                records[home_id]['cat_wins']   += 1
+                records[away_id]['cat_losses'] += 1
+                home_cw += 1
             else:
-                _inc(home_id, 'cat_losses')
-                _inc(away_id, 'cat_wins')
+                records[home_id]['cat_losses'] += 1
+                records[away_id]['cat_wins']   += 1
+                home_cl += 1
+
+        # Matchup-level result from who won more categories
+        if home_cw > home_cl:
+            records[home_id]['matchup_wins']    += 1
+            records[away_id]['matchup_losses']  += 1
+        elif home_cw < home_cl:
+            records[home_id]['matchup_losses']  += 1
+            records[away_id]['matchup_wins']    += 1
+        else:
+            records[home_id]['matchup_ties']    += 1
+            records[away_id]['matchup_ties']    += 1
 
     return records
 
