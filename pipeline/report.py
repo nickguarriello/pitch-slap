@@ -398,10 +398,19 @@ def build_league(conn: sqlite3.Connection) -> dict:
             team_stats[cat] = _f(val)
 
         team_info = espn_teams.get(str(tid), {})
+        cat_w = team_info.get("cat_wins",   0)
+        cat_l = team_info.get("cat_losses", 0)
+        cat_t = team_info.get("cat_ties",   0)
         teams.append({
             "team_id":    tid,
             "team_name":  team_info.get("name", f"Team {tid}"),
             "team_abbrev": team_info.get("abbrev", str(tid)),
+            "wins":       team_info.get("wins",   0),
+            "losses":     team_info.get("losses", 0),
+            "cat_wins":   cat_w,
+            "cat_losses": cat_l,
+            "cat_ties":   cat_t,
+            "cat_record": f"{cat_w}-{cat_l}-{cat_t}" if (cat_w + cat_l + cat_t) > 0 else "—",
             "is_my_team": tid == TEAM_ID,
             "stats":      team_stats,
         })
@@ -468,6 +477,10 @@ def build_playoff(league_data: dict) -> dict:
         losses   = et.get("losses", 0)
         ties     = et.get("ties",   0)
         pct      = et.get("pct",    round(wins / max(wins + losses, 1), 3))
+        cat_w = et.get("cat_wins",   0)
+        cat_l = et.get("cat_losses", 0)
+        cat_t = et.get("cat_ties",   0)
+        cat_record = f"{cat_w}-{cat_l}-{cat_t}" if (cat_w + cat_l + cat_t) > 0 else "—"
         standings.append({
             "team_id":   t["team_id"],
             "team_name": t.get("team_name", f"Team {t['team_id']}"),
@@ -476,6 +489,10 @@ def build_playoff(league_data: dict) -> dict:
             "losses":    losses,
             "ties":      ties,
             "pct":       pct,
+            "cat_wins":  cat_w,
+            "cat_losses": cat_l,
+            "cat_ties":  cat_t,
+            "cat_record": cat_record,
             "is_my_team": t.get("is_my_team", False),
             "ranks":     t.get("ranks", {}),
         })

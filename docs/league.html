@@ -57,6 +57,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <tr>
           <th data-col="rank">#</th>
           <th data-col="team_name">Team</th>
+          <th data-col="cat_wins" title="Cumulative category wins-losses-ties across all matchup weeks">Cat W-L-T</th>
           <th data-col="r">R</th>
           <th data-col="hr">HR</th>
           <th data-col="rbi">RBI</th>
@@ -130,6 +131,7 @@ function renderTable(){
     return `<tr class="${isMe?'my-team':''}">
       <td style="color:var(--muted);font-weight:600;text-align:center;font-size:12px">${rank||'—'}</td>
       <td><b>${t.team_name||'—'}</b>${isMe?' <span style="font-size:11px;color:var(--accent)">(you)</span>':''}</td>
+      <td style="font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums">${t.cat_record||'—'}</td>
       <td>${fmt(t.r,'R')}</td>
       <td>${fmt(t.hr,'HR')}</td>
       <td>${fmt(t.rbi,'RBI')}</td>
@@ -158,6 +160,7 @@ async function main(){
     ...t,
     espn_team_id: t.team_id,
     team_name: t.team_name||('Team '+t.team_id),
+    cat_wins: t.cat_wins||0,
     r: (t.stats||{}).R, hr: (t.stats||{}).HR, rbi: (t.stats||{}).RBI,
     sb: (t.stats||{}).SB, obp: (t.stats||{}).OBP, k: (t.stats||{}).K,
     qs: (t.stats||{}).QS, era: (t.stats||{}).ERA, whip: (t.stats||{}).WHIP,

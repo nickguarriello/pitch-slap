@@ -6,7 +6,10 @@
       "wins": 6,
       "losses": 2,
       "ties": 1,
-      "pct": 0.75
+      "pct": 0.75,
+      "cat_wins": 47,
+      "cat_losses": 39,
+      "cat_ties": 4
     },
     "2": {
       "name": "Lunch",
@@ -14,7 +17,10 @@
       "wins": 7,
       "losses": 2,
       "ties": 0,
-      "pct": 0.778
+      "pct": 0.778,
+      "cat_wins": 50,
+      "cat_losses": 36,
+      "cat_ties": 4
     },
     "3": {
       "name": "I Robbed A Nuke",
@@ -22,7 +28,10 @@
       "wins": 3,
       "losses": 4,
       "ties": 2,
-      "pct": 0.429
+      "pct": 0.429,
+      "cat_wins": 47,
+      "cat_losses": 41,
+      "cat_ties": 2
     },
     "5": {
       "name": "2010 State Sectional Champ",
@@ -30,7 +39,10 @@
       "wins": 4,
       "losses": 3,
       "ties": 2,
-      "pct": 0.571
+      "pct": 0.571,
+      "cat_wins": 41,
+      "cat_losses": 42,
+      "cat_ties": 7
     },
     "6": {
       "name": "All Rise Run Club",
@@ -38,7 +50,10 @@
       "wins": 2,
       "losses": 5,
       "ties": 2,
-      "pct": 0.286
+      "pct": 0.286,
+      "cat_wins": 30,
+      "cat_losses": 52,
+      "cat_ties": 8
     },
     "7": {
       "name": "Jazz In Her Batters Box",
@@ -46,7 +61,10 @@
       "wins": 3,
       "losses": 5,
       "ties": 1,
-      "pct": 0.375
+      "pct": 0.375,
+      "cat_wins": 40,
+      "cat_losses": 46,
+      "cat_ties": 4
     },
     "8": {
       "name": "ChicksDigTheLongBall",
@@ -54,7 +72,10 @@
       "wins": 3,
       "losses": 3,
       "ties": 3,
-      "pct": 0.5
+      "pct": 0.5,
+      "cat_wins": 44,
+      "cat_losses": 42,
+      "cat_ties": 4
     },
     "9": {
       "name": "ICECOLDBEERHERE! ",
@@ -62,7 +83,10 @@
       "wins": 2,
       "losses": 6,
       "ties": 1,
-      "pct": 0.25
+      "pct": 0.25,
+      "cat_wins": 42,
+      "cat_losses": 43,
+      "cat_ties": 5
     }
   },
   "league_meta": {

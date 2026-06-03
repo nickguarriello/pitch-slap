@@ -79,68 +79,128 @@
   },
   "cat_records": {
     "ERA": {
-      "wins": 33,
-      "losses": 36,
+      "wins": 37,
+      "losses": 41,
       "ties": 0,
-      "win_rate": 0.478
+      "win_rate": 0.474
     },
     "HR": {
-      "wins": 12,
-      "losses": 51,
-      "ties": 6,
-      "win_rate": 0.174
+      "wins": 14,
+      "losses": 57,
+      "ties": 7,
+      "win_rate": 0.179
     },
     "K": {
-      "wins": 30,
-      "losses": 39,
+      "wins": 34,
+      "losses": 44,
       "ties": 0,
-      "win_rate": 0.435
+      "win_rate": 0.436
     },
     "OBP": {
-      "wins": 45,
-      "losses": 24,
+      "wins": 51,
+      "losses": 27,
       "ties": 0,
-      "win_rate": 0.652
+      "win_rate": 0.654
     },
     "QS": {
-      "wins": 42,
-      "losses": 21,
-      "ties": 6,
-      "win_rate": 0.609
+      "wins": 47,
+      "losses": 24,
+      "ties": 7,
+      "win_rate": 0.603
     },
     "R": {
-      "wins": 36,
-      "losses": 33,
+      "wins": 41,
+      "losses": 37,
       "ties": 0,
-      "win_rate": 0.522
+      "win_rate": 0.526
     },
     "RBI": {
-      "wins": 42,
-      "losses": 18,
-      "ties": 9,
-      "win_rate": 0.609
+      "wins": 48,
+      "losses": 20,
+      "ties": 10,
+      "win_rate": 0.615
     },
     "SB": {
-      "wins": 36,
-      "losses": 33,
+      "wins": 41,
+      "losses": 37,
       "ties": 0,
-      "win_rate": 0.522
+      "win_rate": 0.526
     },
     "SvHd": {
-      "wins": 48,
-      "losses": 15,
-      "ties": 6,
-      "win_rate": 0.696
+      "wins": 54,
+      "losses": 17,
+      "ties": 7,
+      "win_rate": 0.692
     },
     "WHIP": {
-      "wins": 33,
-      "losses": 36,
+      "wins": 37,
+      "losses": 41,
       "ties": 0,
-      "win_rate": 0.478
+      "win_rate": 0.474
     }
   },
   "history": {
     "9": [
+      {
+        "cat": "R",
+        "result": "L",
+        "my_val": 48.0,
+        "opp_val": 50.0
+      },
+      {
+        "cat": "HR",
+        "result": "T",
+        "my_val": 13.0,
+        "opp_val": 13.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "my_val": 42.0,
+        "opp_val": 38.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "my_val": 6.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "my_val": 0.348,
+        "opp_val": 0.341
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "my_val": 45.0,
+        "opp_val": 39.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "my_val": 1.0,
+        "opp_val": 0.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "my_val": 3.971,
+        "opp_val": 3.979
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "my_val": 1.125,
+        "opp_val": 1.484
+      },
+      {
+        "cat": "SvHd",
+        "result": "L",
+        "my_val": 5.0,
+        "opp_val": 7.0
+      },
       {
         "cat": "R",
         "result": "L",
@@ -862,9 +922,129 @@
         "result": "W",
         "my_val": 5.0,
         "opp_val": 2.0
+      },
+      {
+        "cat": "R",
+        "result": "W",
+        "my_val": 55.0,
+        "opp_val": 49.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 13.0,
+        "opp_val": 15.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "my_val": 50.0,
+        "opp_val": 45.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "my_val": 6.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "my_val": 0.373,
+        "opp_val": 0.299
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "my_val": 73.0,
+        "opp_val": 75.0
+      },
+      {
+        "cat": "QS",
+        "result": "T",
+        "my_val": 7.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "my_val": 3.134,
+        "opp_val": 2.565
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "my_val": 1.192,
+        "opp_val": 0.945
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 5.0,
+        "opp_val": 2.0
       }
     ],
     "7": [
+      {
+        "cat": "R",
+        "result": "W",
+        "my_val": 60.0,
+        "opp_val": 39.0
+      },
+      {
+        "cat": "HR",
+        "result": "W",
+        "my_val": 17.0,
+        "opp_val": 3.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "my_val": 54.0,
+        "opp_val": 33.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "my_val": 14.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "my_val": 0.391,
+        "opp_val": 0.324
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "my_val": 63.0,
+        "opp_val": 60.0
+      },
+      {
+        "cat": "QS",
+        "result": "L",
+        "my_val": 4.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "my_val": 3.78,
+        "opp_val": 3.068
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "my_val": 1.18,
+        "opp_val": 1.159
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 5.0,
+        "opp_val": 3.0
+      },
       {
         "cat": "R",
         "result": "W",
@@ -1586,9 +1766,129 @@
         "result": "T",
         "my_val": 1.0,
         "opp_val": 1.0
+      },
+      {
+        "cat": "R",
+        "result": "W",
+        "my_val": 47.0,
+        "opp_val": 40.0
+      },
+      {
+        "cat": "HR",
+        "result": "W",
+        "my_val": 12.0,
+        "opp_val": 10.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "my_val": 42.0,
+        "opp_val": 41.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "my_val": 13.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "my_val": 0.316,
+        "opp_val": 0.338
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "my_val": 57.0,
+        "opp_val": 70.0
+      },
+      {
+        "cat": "QS",
+        "result": "L",
+        "my_val": 4.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "my_val": 4.37,
+        "opp_val": 4.235
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "my_val": 1.127,
+        "opp_val": 1.074
+      },
+      {
+        "cat": "SvHd",
+        "result": "T",
+        "my_val": 1.0,
+        "opp_val": 1.0
       }
     ],
     "5": [
+      {
+        "cat": "R",
+        "result": "L",
+        "my_val": 39.0,
+        "opp_val": 55.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 9.0,
+        "opp_val": 13.0
+      },
+      {
+        "cat": "RBI",
+        "result": "L",
+        "my_val": 39.0,
+        "opp_val": 45.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "my_val": 4.0,
+        "opp_val": 10.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "my_val": 0.359,
+        "opp_val": 0.379
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "my_val": 61.0,
+        "opp_val": 66.0
+      },
+      {
+        "cat": "QS",
+        "result": "L",
+        "my_val": 5.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "my_val": 4.154,
+        "opp_val": 3.321
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "my_val": 1.319,
+        "opp_val": 1.38
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 1.0,
+        "opp_val": 0.0
+      },
       {
         "cat": "R",
         "result": "L",
@@ -2670,9 +2970,129 @@
         "result": "W",
         "my_val": 2.0,
         "opp_val": 1.0
+      },
+      {
+        "cat": "R",
+        "result": "L",
+        "my_val": 52.0,
+        "opp_val": 58.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 14.0,
+        "opp_val": 17.0
+      },
+      {
+        "cat": "RBI",
+        "result": "L",
+        "my_val": 41.0,
+        "opp_val": 45.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "my_val": 11.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "my_val": 0.372,
+        "opp_val": 0.351
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "my_val": 36.0,
+        "opp_val": 21.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "my_val": 3.0,
+        "opp_val": 1.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "my_val": 4.836,
+        "opp_val": 7.105
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "my_val": 1.209,
+        "opp_val": 1.579
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 2.0,
+        "opp_val": 1.0
       }
     ],
     "3": [
+      {
+        "cat": "R",
+        "result": "W",
+        "my_val": 49.0,
+        "opp_val": 47.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 13.0,
+        "opp_val": 19.0
+      },
+      {
+        "cat": "RBI",
+        "result": "T",
+        "my_val": 54.0,
+        "opp_val": 54.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "my_val": 5.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "my_val": 0.352,
+        "opp_val": 0.342
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "my_val": 62.0,
+        "opp_val": 67.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "my_val": 7.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "my_val": 2.883,
+        "opp_val": 2.905
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "my_val": 1.194,
+        "opp_val": 0.949
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 7.0,
+        "opp_val": 5.0
+      },
       {
         "cat": "R",
         "result": "W",
@@ -3754,9 +4174,129 @@
         "result": "L",
         "my_val": 1.0,
         "opp_val": 4.0
+      },
+      {
+        "cat": "R",
+        "result": "L",
+        "my_val": 43.0,
+        "opp_val": 57.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 7.0,
+        "opp_val": 14.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "my_val": 44.0,
+        "opp_val": 38.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "my_val": 5.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "my_val": 0.389,
+        "opp_val": 0.394
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "my_val": 43.0,
+        "opp_val": 35.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "my_val": 4.0,
+        "opp_val": 1.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "my_val": 4.125,
+        "opp_val": 5.598
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "my_val": 1.312,
+        "opp_val": 1.463
+      },
+      {
+        "cat": "SvHd",
+        "result": "L",
+        "my_val": 1.0,
+        "opp_val": 4.0
       }
     ],
     "1": [
+      {
+        "cat": "R",
+        "result": "W",
+        "my_val": 81.0,
+        "opp_val": 55.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "my_val": 14.0,
+        "opp_val": 15.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "my_val": 59.0,
+        "opp_val": 46.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "my_val": 16.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "my_val": 0.351,
+        "opp_val": 0.298
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "my_val": 94.0,
+        "opp_val": 113.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "my_val": 7.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "my_val": 4.328,
+        "opp_val": 3.738
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "my_val": 1.254,
+        "opp_val": 1.027
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "my_val": 10.0,
+        "opp_val": 6.0
+      },
       {
         "cat": "R",
         "result": "W",
@@ -4306,7 +4846,10 @@
       "wins": 2,
       "losses": 6,
       "ties": 1,
-      "pct": 0.25
+      "pct": 0.25,
+      "cat_wins": 42,
+      "cat_losses": 43,
+      "cat_ties": 5
     },
     "2": {
       "name": "ChicksDigTheLongBall",
@@ -4314,7 +4857,10 @@
       "wins": 3,
       "losses": 3,
       "ties": 3,
-      "pct": 0.5
+      "pct": 0.5,
+      "cat_wins": 44,
+      "cat_losses": 42,
+      "cat_ties": 4
     },
     "3": {
       "name": "2010 State Sectional Champ",
@@ -4322,7 +4868,10 @@
       "wins": 4,
       "losses": 3,
       "ties": 2,
-      "pct": 0.571
+      "pct": 0.571,
+      "cat_wins": 41,
+      "cat_losses": 42,
+      "cat_ties": 7
     },
     "4": {
       "name": "Jazz In Her Batters Box",
@@ -4330,7 +4879,10 @@
       "wins": 3,
       "losses": 5,
       "ties": 1,
-      "pct": 0.375
+      "pct": 0.375,
+      "cat_wins": 40,
+      "cat_losses": 46,
+      "cat_ties": 4
     },
     "5": {
       "name": "I Robbed A Nuke",
@@ -4338,7 +4890,10 @@
       "wins": 3,
       "losses": 4,
       "ties": 2,
-      "pct": 0.429
+      "pct": 0.429,
+      "cat_wins": 47,
+      "cat_losses": 41,
+      "cat_ties": 2
     },
     "6": {
       "name": "All Rise Run Club",
@@ -4346,7 +4901,10 @@
       "wins": 2,
       "losses": 5,
       "ties": 2,
-      "pct": 0.286
+      "pct": 0.286,
+      "cat_wins": 30,
+      "cat_losses": 52,
+      "cat_ties": 8
     },
     "7": {
       "name": "Lunch",
@@ -4354,7 +4912,10 @@
       "wins": 7,
       "losses": 2,
       "ties": 0,
-      "pct": 0.778
+      "pct": 0.778,
+      "cat_wins": 50,
+      "cat_losses": 36,
+      "cat_ties": 4
     },
     "8": {
       "name": "ICECOLDBEERHERE! ",
@@ -4362,7 +4923,10 @@
       "wins": 2,
       "losses": 6,
       "ties": 1,
-      "pct": 0.25
+      "pct": 0.25,
+      "cat_wins": 42,
+      "cat_losses": 43,
+      "cat_ties": 5
     },
     "9": {
       "name": "ChicksDigTheLongBall",
@@ -4370,7 +4934,10 @@
       "wins": 3,
       "losses": 3,
       "ties": 3,
-      "pct": 0.5
+      "pct": 0.5,
+      "cat_wins": 44,
+      "cat_losses": 42,
+      "cat_ties": 4
     }
   },
   "current_opponent_name": "2010 State Sectional Champ",

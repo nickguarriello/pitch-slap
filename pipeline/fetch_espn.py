@@ -21,7 +21,7 @@ from config import (
     DB_PATH, DATA_DIR, LEAGUE_ID, SEASON, TEAM_ID,
     ESPN_S2, ESPN_SWID,
     ESPN_PRO_TEAM_MAP, ESPN_LINEUP_SLOT_MAP, ESPN_STAT_IDS, ESPN_RATE_STAT_IDS,
-    WEEKLY_ACQUISITION_LIMIT, API_CONFIG, ALL_CATS,
+    WEEKLY_ACQUISITION_LIMIT, API_CONFIG, ALL_CATS, CATS_LOWER_IS_BETTER,
 )
 
 ESPN_API_BASE = f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/flb/seasons/{SEASON}/segments/0/leagues/{LEAGUE_ID}"
@@ -461,6 +461,66 @@ def _current_week_number() -> int:
     return 2 + days_since_w2 // 7
 
 
+def _compute_cat_records(history: list[dict]) -> dict[int, dict]:
+    """
+    Compute cumulative category W/L/T records for all teams from matchup history.
+    history: list of {home_team_id, away_team_id, home_cats, away_cats, ...}
+    Returns {team_id_int: {cat_wins, cat_losses, cat_ties}}
+    """
+    records: dict[int, dict] = {}
+
+    def _inc(tid, field):
+        if tid not in records:
+            records[tid] = {'cat_wins': 0, 'cat_losses': 0, 'cat_ties': 0}
+        records[tid][field] += 1
+
+    for m in history:
+        home_id   = m.get('home_team_id')
+        away_id   = m.get('away_team_id')
+        home_cats = m.get('home_cats', {})
+        away_cats = m.get('away_cats', {})
+        if home_id is None or away_id is None:
+            continue
+        for cat in ALL_CATS:
+            hv = home_cats.get(cat)
+            av = away_cats.get(cat)
+            if hv is None or av is None:
+                continue
+            lower_better = cat in CATS_LOWER_IS_BETTER
+            if hv == av:
+                _inc(home_id, 'cat_ties')
+                _inc(away_id, 'cat_ties')
+            elif (lower_better and hv < av) or (not lower_better and hv > av):
+                _inc(home_id, 'cat_wins')
+                _inc(away_id, 'cat_losses')
+            else:
+                _inc(home_id, 'cat_losses')
+                _inc(away_id, 'cat_wins')
+
+    return records
+
+
+def _update_team_cat_records(cat_records: dict[int, dict]) -> None:
+    """Merge per-team category W/L/T into espn_teams.json."""
+    path = os.path.join(DATA_DIR, 'espn_teams.json')
+    if not os.path.exists(path):
+        return
+    with open(path) as f:
+        data = json.load(f)
+    teams = data.get('teams', data)
+    for tid_int, rec in cat_records.items():
+        tid_str = str(tid_int)
+        if tid_str in teams:
+            teams[tid_str].update(rec)
+    if 'teams' in data:
+        data['teams'] = teams
+    else:
+        data = {'teams': teams, 'league_meta': {}}
+    with open(path, 'w') as f:
+        json.dump(data, f, indent=2)
+    print(f"  Category records stored for {len(cat_records)} teams")
+
+
 def _save_team_names(league) -> None:
     """Write team names, abbrevs, W/L records, and league meta to data/espn_teams.json."""
     teams: dict = {}
@@ -559,6 +619,10 @@ def run(mode: str = 'full') -> dict:
     write_rosters_to_db(roster_rows)
     write_constraints_to_db(constraints)
     write_matchups_to_db(matchup_data)
+
+    # Compute + store cumulative category W/L/T records for all teams
+    cat_records = _compute_cat_records(matchup_data.get('history', []))
+    _update_team_cat_records(cat_records)
 
     # Write current opponent to its own file so main.py's _save_meta can't clobber it
     current_opp_id = None

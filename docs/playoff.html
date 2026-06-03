@@ -92,6 +92,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
             <th>W</th>
             <th>L</th>
             <th>PCT</th>
+            <th title="Cumulative category wins-losses-ties across all matchup weeks">Cat W-L-T</th>
             <th></th>
           </tr>
         </thead>
@@ -269,6 +270,7 @@ async function main(){
       <td>${s.wins}</td>
       <td>${s.losses}</td>
       <td>${s.pct.toFixed(3)}</td>
+      <td style="font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums">${s.cat_record||'—'}</td>
       <td>${s.in_playoffs?'<span class="in-playoffs">IN</span>':'<span class="out-playoffs">out</span>'}</td>
     </tr>`;
   }
