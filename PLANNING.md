@@ -3,7 +3,7 @@
 
 ---
 
-## Project Status: LIVE — Phases 1–6 complete. Phase 7 (manual verification) in progress.
+## Project Status: LIVE — Phases 1–6 complete. Dashboard overhauled 2026-06-03. Phase 7 (manual verification) ongoing.
 
 ---
 
@@ -18,7 +18,7 @@
 - `pipeline/validate.py` — 23 checks (typically 19 pass / 3 warn / 0 fail)
 - `pipeline/evaluate.py` — cat states, need weights, buy/sell, 2-start, constraints
 - `pipeline/report.py` — writes docs/data/*.json + CSVs
-- `pipeline.py` — orchestrator (--mode full/light)
+- `main.py` — orchestrator (--mode full/light, renamed from pipeline.py)
 - `docs/*.html` — 5 dashboard pages (index, matchup, waivers, players, league)
 - `docs/data/*.json` — live data, auto-committed by GitHub Actions after each run
 - `data/player-crosswalk.csv` — 556-player crosswalk (committed); seeds DB in CI
@@ -96,12 +96,11 @@
 
 ### Priority Fixes
 1. **SELL_HIGH babip_ceiling too aggressive** — config value is 0.260, should be ~0.350. Almost all hitters flag as sell-high. Fix: snapshot config.py, update `SELL_HIGH["babip_ceiling"]` to 0.350.
-2. **League page: "Team N" labels** — no team names in league.json because build_league() in report.py doesn't store them. Fix: pull team names from fetch_espn.py (ESPN provides them) and include in the league output.
 
-### Verify During Week 6
-3. **Two-start pitchers = 0** — MLB hasn't posted probables for games >4 days out. Expected to populate Wed/Thu. Check waivers page later in the week.
-4. **IP accumulated = 0.0** — correct for Monday; verify it accumulates properly as games are played.
-5. **Current week cat scores** — ERA 5.68, WHIP 1.24, OBP 0.284 visible on matchup page. Spot-check these against ESPN.
+### Ongoing Verification
+2. **Two-start pitchers = 0 early week** — MLB Stats API only posts probable pitchers ~3–5 days out. Section populates by Wed/Thu each week. Source: `statsapi` (MLB official, free). Window: today + 6 days.
+3. **IP accumulated tracking** — `constraint_log.ip_accumulated` always 0.0 (never written by fetch_espn). ERA/WHIP qualifier now computed live from `fact_player_stats.current` window in evaluate.py instead. If IP tracking is needed elsewhere, fix write_constraints_to_db.
+4. **Ground truth checks** — ERA, WHIP, OBP, SvHd ground truth checks skipped (ESPN values not returned in API params used). Spot-check manually weekly.
 
 ### Data Structure Notes (resolved — for future reference)
 - `roster.json` stats are nested: `players[].stats.season.r` not `players[].r_season`
@@ -157,6 +156,7 @@ All resolved:
 | 2026-05-07 (cont2) | Phase 5 complete: report.py (roster/waivers/matchup/league/status JSON + 3 CSVs). All 5 dashboard pages: index.html, matchup.html, waivers.html, players.html, league.html. Dark theme, pipeline health banner on all pages, sortable tables on players/league. Open: SELL_HIGH babip_ceiling threshold too low (0.260, should be ~0.350 — tune after 2 weeks live). | Phase 6: daily_pipeline.yml GitHub Actions workflow. |
 | 2026-05-07 (cont3) | Phase 6 complete: .github/workflows/daily-pipeline.yml (3x daily cron, workflow_dispatch, writes ESPN creds from secrets, inits DB, auto-commits docs/data/). README.md with first-time setup instructions (Secrets + Pages). Open: configure ESPN_SWID + ESPN_S2 secrets in GitHub repo settings, enable Pages (main/docs), trigger first manual run to verify. | Phase 7: manual verification. |
 | 2026-05-07 (cont4) | First CI run failed (exit code 1): dim_players empty in CI because db/pitch-slap.db is gitignored. Fix: exported dim_players to data/player-crosswalk.csv (committed), added seed_crosswalk() to init_db.py. Second CI run succeeded (1m 16s, 499 Statcast rows matched). Dashboard live. UAT round 1: all 4 HTML pages had field name mismatches vs actual JSON structure — fixed in same session. Dashboard now shows correct data on all 5 pages. | UAT round 1 in progress. See UAT Backlog above. |
+| 2026-06-03 | **Dashboard overhaul** (6 files changed, user explicitly approved >3-file limit). Changes: (1) Home subtitle now shows real W/L/T via gap-based counting — not WIN/LOSS state labels. (2) ERA/WHIP IP qualifier fix in evaluate.py: auto-LOSS when below 15 IP, with ip_note + my_ip_week in cat state; cat grid shows "X.X / 15 IP" warning. (3) Real team names via data/espn_teams.json (written by fetch_espn, read by report); league.json now has team_name + team_abbrev. (4) Matchup header shows current opponent name; history table adds Opponent column; driven by data/current-opponent.json (separate file — not overwritten by main.py meta saves). (5) Home Buy Low now pulls wire targets (waivers.buy_low_fa) + trade targets from other rosters (waivers.buy_low_trade); Sell High renamed "Trade Away". (6) Waivers: top 5 buy-low, added OBP/xwOBA/BABIP columns, ownership velocity explained. (7) League: removed Value column (duplicate), removed rank badges, sort always best-first. Banner improved with tooltips explaining pipeline warnings and run mode. W/L/T subtitle includes T only when ties exist. Resolved: "Team N" labels (fixed via espn_teams.json), mode showing "unknown" (main.py already sets it; was stale meta). | SELL_HIGH babip_ceiling still too aggressive (see Priority Fixes). Two-starters empty early week is expected. |
 
 ---
 

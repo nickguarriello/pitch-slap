@@ -142,11 +142,12 @@ def compute_cat_states(conn: sqlite3.Connection) -> dict:
             if opp is not None and opp > 0:
                 # Opponent has pitched; we're unqualified → auto-loss
                 states[cat] = {
-                    "state":   "LOSS",
-                    "my_val":  my,
-                    "opp_val": opp,
-                    "gap":     round(-opp, 4),  # negative gap = loss
-                    "ip_note": f"Need {IP_MINIMUM_PER_WEEK:.0f} IP to qualify ({my_ip_week:.1f} so far)",
+                    "state":      "LOSS",
+                    "my_val":     my,
+                    "opp_val":    opp,
+                    "gap":        round(-opp, 4),  # negative gap = loss
+                    "ip_note":    f"Need {IP_MINIMUM_PER_WEEK:.0f} IP to qualify ({my_ip_week:.1f} so far)",
+                    "my_ip_week": my_ip_week,
                 }
             else:
                 # Neither team has pitched yet — genuinely unknown
