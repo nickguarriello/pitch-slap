@@ -3,115 +3,96 @@
     {
       "player_id": "34975",
       "name": "Tyler Stephenson",
-      "team": "",
+      "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.245 below floor (0.260)",
-        "OBP (0.292) lags xwOBA (0.327)"
+        "BABIP 0.242 below floor (0.260)",
+        "OBP (0.287) lags xwOBA (0.321)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.291666666,
-        "xwoba": 0.3272771661931818,
-        "babip": 0.244897959,
+        "obp": 0.286549707,
+        "xwoba": 0.321463562193371,
+        "babip": 0.242424242,
         "sprint_speed": 26.9
       }
     },
     {
       "player_id": "41034",
       "name": "Mark Vientos",
-      "team": "",
+      "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.250 below floor (0.260)",
-        "OBP (0.259) lags xwOBA (0.325)"
+        "BABIP 0.245 below floor (0.260)",
+        "OBP (0.254) lags xwOBA (0.320)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.259067357,
-        "xwoba": 0.32454964039856904,
-        "babip": 0.25,
-        "sprint_speed": 25.7
+        "obp": 0.253807106,
+        "xwoba": 0.31971080412114333,
+        "babip": 0.244604316,
+        "sprint_speed": 25.6
       }
     },
     {
       "player_id": "4326697",
       "name": "Reid Detmers",
-      "team": "",
+      "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.63) >> xFIP (3.51), gap=1.12",
-        "ERA (4.63) >> SIERA (3.29), gap=1.35"
+        "ERA (4.63) >> xFIP (3.52), gap=1.11",
+        "ERA (4.63) >> SIERA (3.30), gap=1.33"
       ],
       "score": 0.69,
       "stats": {
         "era": 4.632352941176471,
-        "xfip": 3.511701947823167,
-        "siera": 3.2857421355442664,
+        "xfip": 3.5246262568761324,
+        "siera": 3.299281300802674,
         "ip": 68.0
       }
     },
     {
       "player_id": "40921",
       "name": "David Peterson",
-      "team": "",
+      "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.18) >> xFIP (3.76), gap=1.42",
-        "ERA (5.18) >> SIERA (3.85), gap=1.33"
+        "ERA (5.18) >> xFIP (3.77), gap=1.41",
+        "ERA (5.18) >> SIERA (3.87), gap=1.31"
       ],
       "score": 0.69,
       "stats": {
         "era": 5.180232673029183,
-        "xfip": 3.7567016047539985,
-        "siera": 3.8523480831512558,
+        "xfip": 3.7687767810910877,
+        "siera": 3.8658872484096634,
         "ip": 57.1
       }
     },
     {
       "player_id": "40917",
       "name": "Adrian Morejon",
-      "team": "",
+      "team": null,
       "espn_team_id": null,
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (3.90) >> xFIP (2.11), gap=1.79",
-        "ERA (3.90) >> SIERA (1.99), gap=1.91"
+        "ERA (3.90) >> xFIP (2.12), gap=1.78",
+        "ERA (3.90) >> SIERA (2.00), gap=1.90"
       ],
       "score": 0.69,
       "stats": {
         "era": 3.9000009918215413,
-        "xfip": 2.111810347850029,
-        "siera": 1.9878794809121612,
+        "xfip": 2.122906547999727,
+        "siera": 2.0014186461705687,
         "ip": 30.0
-      }
-    },
-    {
-      "player_id": "4418686",
-      "name": "Jack Perkins",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (5.46) >> xFIP (3.79), gap=1.67",
-        "ERA (5.46) >> SIERA (2.88), gap=2.58"
-      ],
-      "score": 0.69,
-      "stats": {
-        "era": 5.464286830960716,
-        "xfip": 3.7941803031746932,
-        "siera": 2.8836438940415343,
-        "ip": 28.0
       }
     }
   ],
@@ -119,83 +100,64 @@
     {
       "player_id": "4345620",
       "name": "Dillon Dingler",
-      "team": "",
+      "team": null,
       "espn_team_id": 9,
       "rostered": true,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.250 below floor (0.260)",
-        "OBP (0.324) lags xwOBA (0.408)"
+        "BABIP 0.241 below floor (0.260)",
+        "OBP (0.317) lags xwOBA (0.404)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.324200913,
-        "xwoba": 0.40814061318674394,
-        "babip": 0.25,
+        "obp": 0.316964285,
+        "xwoba": 0.40368669527071016,
+        "babip": 0.241134751,
         "sprint_speed": 27.6
-      }
-    },
-    {
-      "player_id": "32801",
-      "name": "Jose Ramirez",
-      "team": "",
-      "espn_team_id": 8,
-      "rostered": true,
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.234 below floor (0.260)",
-        "OBP (0.341) lags xwOBA (0.369)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.34082397,
-        "xwoba": 0.36933618304373206,
-        "babip": 0.233695652,
-        "sprint_speed": 27.4
       }
     },
     {
       "player_id": "42178",
       "name": "Adley Rutschman",
-      "team": "",
+      "team": null,
       "espn_team_id": 6,
       "rostered": true,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.258 below floor (0.260)",
-        "OBP (0.333) lags xwOBA (0.370)"
+        "BABIP 0.260 below floor (0.260)",
+        "OBP (0.337) lags xwOBA (0.370)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.333333333,
-        "xwoba": 0.36972524351992847,
-        "babip": 0.258064516,
+        "obp": 0.337016574,
+        "xwoba": 0.36970355629262347,
+        "babip": 0.259842519,
         "sprint_speed": 26.6
       }
     },
     {
       "player_id": "31097",
       "name": "Manny Machado",
-      "team": "",
+      "team": null,
       "espn_team_id": 9,
       "rostered": true,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.176 below floor (0.260)",
-        "OBP (0.267) lags xwOBA (0.317)"
+        "BABIP 0.172 below floor (0.260)",
+        "OBP (0.263) lags xwOBA (0.314)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.267241379,
-        "xwoba": 0.3166501924589083,
-        "babip": 0.176056338,
-        "sprint_speed": 24.7
+        "obp": 0.262711864,
+        "xwoba": 0.3137590448907081,
+        "babip": 0.172413793,
+        "sprint_speed": 24.6
       }
     },
     {
       "player_id": "32691",
       "name": "Corey Seager",
-      "team": "",
+      "team": null,
       "espn_team_id": 3,
       "rostered": true,
       "flag_type": "buy_low_hitter",
@@ -206,7 +168,7 @@
       "score": 0.7,
       "stats": {
         "obp": 0.285714285,
-        "xwoba": 0.33042598300509984,
+        "xwoba": 0.3304261949327257,
         "babip": 0.207920792,
         "sprint_speed": 25.0
       }
@@ -214,115 +176,153 @@
     {
       "player_id": "38904",
       "name": "Bo Bichette",
-      "team": "",
+      "team": null,
       "espn_team_id": 7,
       "rostered": true,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.241 below floor (0.260)",
-        "OBP (0.271) lags xwOBA (0.330)"
+        "BABIP 0.239 below floor (0.260)",
+        "OBP (0.271) lags xwOBA (0.331)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.270992366,
-        "xwoba": 0.3296257484960192,
-        "babip": 0.241025641,
+        "obp": 0.270676691,
+        "xwoba": 0.3306031764898085,
+        "babip": 0.23857868,
         "sprint_speed": 25.8
       }
     },
     {
       "player_id": "39667",
       "name": "Jesus Luzardo",
-      "team": "",
+      "team": null,
       "espn_team_id": 2,
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.30) >> xFIP (2.82), gap=1.48",
-        "ERA (4.30) >> SIERA (3.08), gap=1.22"
+        "ERA (4.30) >> xFIP (2.84), gap=1.46",
+        "ERA (4.30) >> SIERA (3.10), gap=1.20"
       ],
       "score": 0.69,
       "stats": {
         "era": 4.298507462686567,
-        "xfip": 2.8233759367866305,
-        "siera": 3.0814952997634864,
+        "xfip": 2.835139978198863,
+        "siera": 3.095034465021894,
         "ip": 67.0
       }
     },
     {
       "player_id": "4433874",
       "name": "Nolan McLean",
-      "team": "",
+      "team": null,
       "espn_team_id": 2,
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.21) >> xFIP (3.41), gap=0.80",
-        "ERA (4.21) >> SIERA (3.37), gap=0.84"
+        "ERA (4.21) >> xFIP (3.42), gap=0.79",
+        "ERA (4.21) >> SIERA (3.38), gap=0.83"
       ],
       "score": 0.69,
       "stats": {
         "era": 4.206030473260964,
-        "xfip": 3.4081813347357235,
-        "siera": 3.367265057268349,
+        "xfip": 3.420230193692596,
+        "siera": 3.3808042225267565,
         "ip": 66.1
       }
     },
     {
       "player_id": "40080",
       "name": "Trevor Megill",
-      "team": "",
+      "team": null,
       "espn_team_id": 8,
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.29) >> xFIP (3.07), gap=1.22",
-        "ERA (4.29) >> SIERA (2.56), gap=1.73"
+        "ERA (4.09) >> xFIP (3.12), gap=0.97",
+        "ERA (4.09) >> SIERA (2.56), gap=1.53"
       ],
       "score": 0.69,
       "stats": {
-        "era": 4.285714285714286,
-        "xfip": 3.0684210191879955,
-        "siera": 2.556580896009863,
-        "ip": 21.0
+        "era": 4.090909090909091,
+        "xfip": 3.120264407992363,
+        "siera": 2.5573554111102212,
+        "ip": 22.0
       }
     },
     {
       "player_id": "34401",
       "name": "Matthew Boyd",
-      "team": "",
+      "team": null,
       "espn_team_id": 8,
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (6.00) >> xFIP (2.61), gap=3.39",
-        "ERA (6.00) >> SIERA (2.79), gap=3.21"
+        "ERA (6.00) >> xFIP (2.62), gap=3.38",
+        "ERA (6.00) >> SIERA (2.81), gap=3.19"
       ],
       "score": 0.69,
       "stats": {
         "era": 6.000000476837196,
-        "xfip": 2.6116466153639646,
-        "siera": 2.792937027208076,
+        "xfip": 2.623983406428255,
+        "siera": 2.8064761924664836,
         "ip": 24.0
+      }
+    },
+    {
+      "player_id": "33709",
+      "name": "Aaron Nola",
+      "team": null,
+      "espn_team_id": 3,
+      "rostered": true,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.55) >> xFIP (3.49), gap=2.06",
+        "ERA (5.55) >> SIERA (3.60), gap=1.94"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 5.545946174660602,
+        "xfip": 3.486298767979847,
+        "siera": 3.6040097105594704,
+        "ip": 61.2
       }
     },
     {
       "player_id": "4417806",
       "name": "Emmet Sheehan",
-      "team": "",
+      "team": null,
       "espn_team_id": 6,
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.50) >> xFIP (3.44), gap=1.06",
-        "ERA (4.50) >> SIERA (3.34), gap=1.16"
+        "ERA (4.50) >> xFIP (3.50), gap=1.00",
+        "ERA (4.50) >> SIERA (3.36), gap=1.14"
       ],
       "score": 0.69,
       "stats": {
         "era": 4.500000295967911,
-        "xfip": 3.441997856889025,
-        "siera": 3.342702839011137,
+        "xfip": 3.503957425768358,
+        "siera": 3.364464829698467,
         "ip": 58.0
+      }
+    },
+    {
+      "player_id": "41509",
+      "name": "Riley O'Brien",
+      "team": null,
+      "espn_team_id": 9,
+      "rostered": true,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.10) >> xFIP (2.68), gap=1.42",
+        "ERA (4.10) >> SIERA (2.32), gap=1.79"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 4.101266317882576,
+        "xfip": 2.6773059493673914,
+        "siera": 2.3150344496277655,
+        "ip": 26.1
       }
     }
   ],
