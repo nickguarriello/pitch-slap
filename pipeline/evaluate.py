@@ -104,8 +104,27 @@ def compute_cat_states(conn: sqlite3.Connection) -> dict:
     """
     Return {cat: {state, my_val, opp_val, gap}} for each scoring category.
     State: 'WIN' | 'FLOPPABLE' | 'FLIPPABLE' | 'LOSS' | 'TIE' | 'UNKNOWN'
+
+    ERA and WHIP have a weekly IP minimum qualifier. If we haven't reached it,
+    we automatically lose those categories regardless of current ERA/WHIP values.
     """
     scores = _get_current_matchup_scores(conn)
+
+    # Current-week IP for my team (to apply ERA/WHIP qualifier)
+    ip_row = conn.execute(
+        """
+        SELECT COALESCE(SUM(fps.ip), 0.0) AS total_ip
+        FROM fact_player_stats fps
+        JOIN fact_espn_rosters fer ON fps.player_id = fer.player_id
+        WHERE fps.window = 'current'
+          AND fps.ip IS NOT NULL AND fps.ip > 0
+          AND fer.espn_team_id = ?
+          AND fer.snapshot_date = (SELECT MAX(snapshot_date) FROM fact_espn_rosters)
+        """,
+        (TEAM_ID,),
+    ).fetchone()
+    my_ip_week = _f(ip_row["total_ip"]) or 0.0
+
     states: dict[str, dict] = {}
 
     for cat in ALL_CATS:
@@ -117,12 +136,28 @@ def compute_cat_states(conn: sqlite3.Connection) -> dict:
             states[cat] = {"state": "UNKNOWN", "my_val": my, "opp_val": opp, "gap": None}
             continue
 
+        # IP qualifier: ERA and WHIP require IP_MINIMUM_PER_WEEK innings pitched.
+        # If we haven't reached it, we auto-lose regardless of current ERA/WHIP.
+        if cat in ("ERA", "WHIP") and my_ip_week < IP_MINIMUM_PER_WEEK:
+            if opp is not None and opp > 0:
+                # Opponent has pitched; we're unqualified → auto-loss
+                states[cat] = {
+                    "state":   "LOSS",
+                    "my_val":  my,
+                    "opp_val": opp,
+                    "gap":     round(-opp, 4),  # negative gap = loss
+                    "ip_note": f"Need {IP_MINIMUM_PER_WEEK:.0f} IP to qualify ({my_ip_week:.1f} so far)",
+                }
+            else:
+                # Neither team has pitched yet — genuinely unknown
+                states[cat] = {"state": "UNKNOWN", "my_val": my, "opp_val": opp, "gap": None}
+            continue
+
         lower_better = cat in CATS_LOWER_IS_BETTER
         gap          = (opp - my) if lower_better else (my - opp)  # positive = I'm ahead
         thresholds   = CAT_THRESHOLDS.get(cat, {})
         floppable    = thresholds.get("floppable", 0)
         flippable    = thresholds.get("flippable", 0)
-        loss_thresh  = thresholds.get("loss", 0)
 
         if gap > floppable:
             state = "WIN"
