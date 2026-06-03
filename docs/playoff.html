@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Slap — Playoffs</title>
+<style>
+:root { --bg:#0f1117;--surface:#1a1d27;--border:#2a2d3a;--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--win:#22c55e;--loss:#ef4444;--warn:#f59e0b;--flip:#a78bfa; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:14px}
+nav{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
+nav a{padding:12px 20px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a.active,nav a:hover{color:var(--text);border-bottom:2px solid var(--accent)}
+.banner{padding:8px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap}
+.banner .warn{color:var(--warn)}
+.container{max-width:1100px;margin:0 auto;padding:24px 20px}
+h1{font-size:22px;font-weight:700;margin-bottom:4px}
+.subtitle{color:var(--muted);font-size:13px;margin-bottom:24px}
+h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:12px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:8px 12px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+th:hover{color:var(--text)}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.my-team td{background:rgba(59,130,246,.06)}
+.seed{display:inline-block;width:22px;height:22px;border-radius:4px;text-align:center;line-height:22px;font-size:11px;font-weight:700}
+.s1{background:rgba(245,158,11,.2);color:var(--warn)}
+.s2{background:rgba(59,130,246,.2);color:var(--accent)}
+.s3,.s4{background:rgba(34,197,94,.12);color:var(--win)}
+.s-out{background:var(--border);color:var(--muted)}
+.in-playoffs{color:var(--win);font-size:11px;font-weight:700}
+.out-playoffs{color:var(--muted);font-size:11px}
+.playoff-line{border-top:2px dashed var(--accent);margin:0}
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.cat-box{text-align:center;padding:10px 6px;border-radius:6px;border:1px solid var(--border)}
+.cat-label{font-size:11px;font-weight:700;text-transform:uppercase;color:var(--muted)}
+.cat-rank{font-size:20px;font-weight:800;margin:4px 0}
+.cat-tag{font-size:10px;font-weight:600;text-transform:uppercase}
+.rank-elite{border-color:var(--win);background:rgba(34,197,94,.08)}.rank-elite .cat-rank{color:var(--win)}.rank-elite .cat-tag{color:var(--win)}
+.rank-good{border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.04)}.rank-good .cat-rank{color:rgba(34,197,94,.8)}
+.rank-mid{border-color:var(--border)}.rank-mid .cat-rank{color:var(--muted)}
+.rank-weak{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.04)}.rank-weak .cat-rank{color:var(--warn)}
+.rank-poor{border-color:var(--loss);background:rgba(239,68,68,.08)}.rank-poor .cat-rank{color:var(--loss)}.rank-poor .cat-tag{color:var(--loss)}
+.opp-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.opp-tab{padding:6px 16px;border:1px solid var(--border);border-radius:20px;background:none;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
+.opp-tab.active,.opp-tab:hover{border-color:var(--accent);color:var(--text);background:rgba(59,130,246,.1)}
+.opp-tab.likely{border-color:var(--warn);color:var(--warn)}
+.opp-tab.likely.active{background:rgba(245,158,11,.1)}
+.matchup-row-mine{color:var(--win);font-weight:600}
+.matchup-row-theirs{color:var(--loss)}
+.matchup-row-toss{color:var(--warn)}
+.rank-badge{display:inline-block;width:20px;height:20px;border-radius:3px;text-align:center;line-height:20px;font-size:10px;font-weight:700}
+.rb-mine{background:rgba(34,197,94,.15);color:var(--win)}
+.rb-theirs{background:rgba(239,68,68,.15);color:var(--loss)}
+.rb-toss{background:rgba(245,158,11,.15);color:var(--warn)}
+.swing-tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin:2px;background:rgba(245,158,11,.15);color:var(--warn)}
+.target-tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin:2px;background:rgba(239,68,68,.15);color:var(--loss)}
+.proj-win{color:var(--win);font-size:18px;font-weight:800}
+.proj-loss{color:var(--loss);font-size:18px;font-weight:800}
+.countdown{font-size:32px;font-weight:800;color:var(--accent);text-align:center;padding:8px 0}
+.countdown-label{font-size:12px;color:var(--muted);text-align:center;margin-top:2px}
+.section-note{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="matchup.html">Matchup</a>
+  <a href="waivers.html">Waivers</a>
+  <a href="players.html">Players</a>
+  <a href="league.html">League</a>
+  <a href="playoff.html" class="active">Playoffs</a>
+</nav>
+<div class="banner" id="banner">Loading...</div>
+
+<div class="container">
+  <h1>Playoffs</h1>
+  <div class="subtitle" id="subtitle">Loading...</div>
+
+  <div class="grid2" style="margin-bottom:20px">
+    <div class="card">
+      <h2>Playoff Picture</h2>
+      <table id="standings-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Team</th>
+            <th>W</th>
+            <th>L</th>
+            <th>PCT</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="standings-body"></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>My Category Profile</h2>
+      <p class="section-note">Season rank (1 = best in league, 8 = worst). Elite = top 2, Poor = bottom 2.</p>
+      <div class="cat-grid" id="cat-profile"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Opponent Previews</h2>
+    <p class="section-note">Category-by-category projection based on season ranks. <span style="color:var(--warn)">★ = likely Round 1 opponent</span> based on current seeding.</p>
+    <div class="opp-tabs" id="opp-tabs"></div>
+    <div id="opp-content"></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>Swing Categories</h2>
+      <p class="section-note">Categories where rank gap ≤ 2 vs 2+ potential opponents — these decide who wins the playoff matchup. Target these on waivers.</p>
+      <div id="swing-cats"></div>
+    </div>
+    <div class="card">
+      <h2>Improvement Targets</h2>
+      <p class="section-note">Categories projected to lose vs your likely R1 opponent. Prioritize trades and wire adds here.</p>
+      <div id="improvement-targets"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Trade &amp; Streaming Focus</h2>
+    <p class="section-note">Buy-low targets from the wire whose contributions address your playoff weaknesses.</p>
+    <table>
+      <thead>
+        <tr><th>Player</th><th>Pos</th><th>Helps</th><th>OBP</th><th>xwOBA</th><th>BABIP</th><th>Reasons</th></tr>
+      </thead>
+      <tbody id="trade-stream-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
+function fmt(v,d=1){if(v==null)return'—';return typeof v==='number'?v.toFixed(d):v}
+function pct(v){if(v==null)return'—';return(v*100).toFixed(0)+'%'}
+
+const HITTING_CATS  = ['R','HR','RBI','SB','OBP'];
+const PITCHING_CATS = ['K','QS','ERA','WHIP','SvHd'];
+const ALL_CATS = [...HITTING_CATS, ...PITCHING_CATS];
+
+function rankClass(rank, total=8){
+  if(rank<=2) return 'rank-elite';
+  if(rank<=3) return 'rank-good';
+  if(rank<=5) return 'rank-mid';
+  if(rank<=6) return 'rank-weak';
+  return 'rank-poor';
+}
+
+function rankLabel(rank, total=8){
+  if(rank<=2) return 'Elite';
+  if(rank<=3) return 'Strong';
+  if(rank<=5) return 'Mid';
+  if(rank<=6) return 'Weak';
+  return 'Poor';
+}
+
+function seedClass(seed){
+  if(seed===1) return 's1';
+  if(seed===2) return 's2';
+  if(seed<=4)  return 's3';
+  return 's-out';
+}
+
+let activeOppIdx = 0;
+let playoffData  = null;
+let waiversData  = null;
+
+function renderOppContent(idx){
+  activeOppIdx = idx;
+  const opp = playoffData.opponent_previews[idx];
+  if(!opp){return;}
+
+  const cats = opp.category_matchup || {};
+  const swings = new Set(opp.swing_categories || []);
+
+  let proj_w=0, proj_l=0, proj_t=0;
+  for(const v of Object.values(cats)){
+    if(v.winner==='mine') proj_w++;
+    else if(v.winner==='theirs') proj_l++;
+    else if(v.winner==='toss') proj_t++;
+  }
+
+  let html = `<div style="margin-bottom:16px;display:flex;align-items:center;gap:24px">
+    <div>
+      <div style="font-size:12px;color:var(--muted)">Projected Score</div>
+      <div><span class="proj-win">${proj_w}</span><span style="color:var(--muted);font-size:14px"> — </span><span class="proj-loss">${proj_l}</span>${proj_t>0?`<span style="font-size:12px;color:var(--warn)"> (${proj_t} toss-up)</span>`:''}</div>
+    </div>
+    <div>
+      <div style="font-size:12px;color:var(--muted)">Swing Cats</div>
+      <div>${(opp.swing_categories||[]).map(c=>`<span class="swing-tag">${c}</span>`).join('')||'<span style="color:var(--muted);font-size:12px">none</span>'}</div>
+    </div>
+  </div>
+  <table>
+    <thead><tr>
+      <th>Category</th>
+      <th>My Rank</th>
+      <th>Their Rank</th>
+      <th>Edge</th>
+      <th>Swing?</th>
+    </tr></thead>
+    <tbody>`;
+
+  for(const cat of ALL_CATS){
+    const v = cats[cat] || {};
+    const isMine   = v.winner === 'mine';
+    const isTheirs = v.winner === 'theirs';
+    const isToss   = v.winner === 'toss';
+    const rowClass = isMine ? 'matchup-row-mine' : isTheirs ? 'matchup-row-theirs' : 'matchup-row-toss';
+    const badge    = isMine ? `<span class="rank-badge rb-mine">WIN</span>`
+                   : isTheirs ? `<span class="rank-badge rb-theirs">LOSS</span>`
+                   : `<span class="rank-badge rb-toss">TOSS</span>`;
+    const swingMark = swings.has(cat) ? '<span style="color:var(--warn);font-size:11px">⬛ close</span>' : '';
+    html += `<tr class="${rowClass}">
+      <td><b>${cat}</b></td>
+      <td>${v.my_rank||'—'}</td>
+      <td>${v.their_rank||'—'}</td>
+      <td>${badge}</td>
+      <td>${swingMark}</td>
+    </tr>`;
+  }
+  html += '</tbody></table>';
+  document.getElementById('opp-content').innerHTML = html;
+}
+
+async function main(){
+  const [playoff, status, waivers] = await Promise.all([
+    load('data/playoff.json'),
+    load('data/status.json'),
+    load('data/waivers.json'),
+  ]);
+  playoffData = playoff;
+  waiversData = waivers;
+
+  // Banner
+  const c = status.constraints || {};
+  document.getElementById('banner').innerHTML =
+    `<span>As of <b>${status.as_of||'—'}</b></span>`+
+    (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
+    (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
+
+  // Subtitle
+  const wks = playoff.weeks_until_playoffs;
+  const seedOrdinal = ['','1st','2nd','3rd','4th'][playoff.my_seed] || `${playoff.my_seed}th`;
+  const subtitleText = playoff.in_playoff_weeks
+    ? `PLAYOFF MODE — Seeded ${seedOrdinal} | Week ${playoff.current_week}`
+    : `${seedOrdinal} seed | ${wks} week${wks!==1?'s':''} until playoffs (Week ${playoff.playoff_start_week})`;
+  document.getElementById('subtitle').textContent = subtitleText;
+
+  // Standings
+  const tbody = document.getElementById('standings-body');
+  let passedCutline = false;
+  for(const s of playoff.standings){
+    if(!s.in_playoffs && !passedCutline){
+      passedCutline = true;
+      tbody.innerHTML += `<tr><td colspan="6" style="padding:0"><hr class="playoff-line"></td></tr>`;
+    }
+    const isMe = s.is_my_team;
+    tbody.innerHTML += `<tr class="${isMe?'my-team':''}">
+      <td><span class="seed ${seedClass(s.seed)}">${s.seed}</span></td>
+      <td><b>${s.team_name}</b>${isMe?' <span style="font-size:11px;color:var(--accent)">(you)</span>':''}</td>
+      <td>${s.wins}</td>
+      <td>${s.losses}</td>
+      <td>${s.pct.toFixed(3)}</td>
+      <td>${s.in_playoffs?'<span class="in-playoffs">IN</span>':'<span class="out-playoffs">out</span>'}</td>
+    </tr>`;
+  }
+
+  // My category profile
+  const myRanks = playoff.my_category_ranks || {};
+  const catEl = document.getElementById('cat-profile');
+  for(const cat of ALL_CATS){
+    const rank = myRanks[cat];
+    const rc = rank ? rankClass(rank) : 'rank-mid';
+    const rl = rank ? rankLabel(rank) : '—';
+    catEl.innerHTML += `<div class="cat-box ${rc}">
+      <div class="cat-label">${cat}</div>
+      <div class="cat-rank">${rank||'—'}</div>
+      <div class="cat-tag">${rl}</div>
+    </div>`;
+  }
+
+  // Opponent tabs + content
+  const tabsEl = document.getElementById('opp-tabs');
+  playoff.opponent_previews.forEach((opp, i) => {
+    const isLikely = opp.is_likely_r1_opp;
+    const btn = document.createElement('button');
+    btn.className = `opp-tab${isLikely?' likely':''}${i===0?' active':''}`;
+    btn.textContent = `${isLikely?'★ ':''}#${opp.seed} ${opp.abbrev}`;
+    btn.title = opp.team_name;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.opp-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderOppContent(i);
+    });
+    tabsEl.appendChild(btn);
+  });
+  if(playoff.opponent_previews.length) renderOppContent(0);
+
+  // Swing categories
+  const swingEl = document.getElementById('swing-cats');
+  if(playoff.swing_categories && playoff.swing_categories.length){
+    swingEl.innerHTML = playoff.swing_categories.map(c =>
+      `<span class="swing-tag">${c}</span>`
+    ).join('') + `<p style="color:var(--muted);font-size:12px;margin-top:8px">These categories are competitive against multiple potential opponents — every player you add or trade for should help here first.</p>`;
+  } else {
+    swingEl.innerHTML = '<p style="color:var(--muted);font-size:12px">No swing categories identified yet.</p>';
+  }
+
+  // Improvement targets
+  const targEl = document.getElementById('improvement-targets');
+  if(playoff.improvement_targets && playoff.improvement_targets.length){
+    targEl.innerHTML = playoff.improvement_targets.map(c =>
+      `<span class="target-tag">${c}</span>`
+    ).join('') + `<p style="color:var(--muted);font-size:12px;margin-top:8px">Projected losses vs your likely R1 opponent. These are your trade/waiver priority.</p>`;
+  } else {
+    targEl.innerHTML = '<p style="color:var(--muted);font-size:12px;padding:8px 0">No targets — you project to win or split evenly.</p>';
+  }
+
+  // Trade & streaming focus — buy-low FA that help swing/target cats
+  const swingSet = new Set([...(playoff.swing_categories||[]), ...(playoff.improvement_targets||[])]);
+  const pitchingCatSet = new Set(PITCHING_CATS);
+  const hittingCatSet  = new Set(HITTING_CATS);
+  const needsPitching  = [...swingSet].some(c => pitchingCatSet.has(c));
+  const needsHitting   = [...swingSet].some(c => hittingCatSet.has(c));
+
+  const buyLow = (waivers.buy_low_fa || []).slice(0, 8);
+  const streamBody = document.getElementById('trade-stream-body');
+  if(!buyLow.length){
+    streamBody.innerHTML = '<tr><td colspan="7" style="color:var(--muted);padding:12px">No buy-low wire targets available.</td></tr>';
+  } else {
+    for(const p of buyLow){
+      const st = p.stats || {};
+      const isPitcher = (p.position||'').match(/SP|RP|P/);
+      const helps = isPitcher
+        ? [...swingSet].filter(c => pitchingCatSet.has(c))
+        : [...swingSet].filter(c => hittingCatSet.has(c));
+      if(helps.length === 0) continue;
+      const reasons = (p.reasons||[]).slice(0,2).join(' · ');
+      streamBody.innerHTML += `<tr>
+        <td><b>${p.name||'—'}</b></td>
+        <td style="font-size:11px;color:var(--muted)">${p.position||'—'}</td>
+        <td>${helps.map(c=>`<span class="swing-tag">${c}</span>`).join('')}</td>
+        <td>${fmt(st.obp,3)}</td>
+        <td>${fmt(st.xwoba,3)}</td>
+        <td>${fmt(st.babip,3)}</td>
+        <td style="font-size:11px;color:var(--muted)">${reasons||'—'}</td>
+      </tr>`;
+    }
+    if(!streamBody.innerHTML){
+      streamBody.innerHTML = '<tr><td colspan="7" style="color:var(--muted);padding:12px">No matching wire targets for your swing categories right now.</td></tr>';
+    }
+  }
+}
+
+main().catch(e=>{document.getElementById('banner').innerHTML=`<span style="color:var(--loss)">Error: ${e.message}</span>`;});
+</script>
+</body>
+</html>

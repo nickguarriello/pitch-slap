@@ -300,14 +300,26 @@ def _estimate_cat_ranks(conn: sqlite3.Connection) -> dict[str, int]:
 # 3 & 4. Buy-low and sell-high flags
 # ---------------------------------------------------------------------------
 
-def compute_buy_low_flags(conn: sqlite3.Connection) -> list[dict]:
+_HITTER_CATS  = {"R", "HR", "RBI", "SB", "OBP"}
+_PITCHER_CATS = {"K", "QS", "ERA", "WHIP", "SvHd"}
+
+
+def compute_buy_low_flags(
+    conn: sqlite3.Connection,
+    need_weights: dict[str, float] | None = None,
+) -> list[dict]:
     """
     Flag players underperforming their expected stats.
-    Returns list sorted by need-weighted opportunity score.
+    need_weights: if provided, scores are multiplied by category need so targets
+    that address your weakest categories surface first.
     """
+    need_weights = need_weights or {}
+    hitter_need  = max((need_weights.get(c, 0.5) for c in _HITTER_CATS),  default=0.5)
+    pitcher_need = max((need_weights.get(c, 0.5) for c in _PITCHER_CATS), default=0.5)
+
     flags: list[dict] = []
 
-    # Hitters: low BABIP or large xBA - BA gap
+    # Hitters: depressed BABIP or OBP lagging xwOBA
     rows = conn.execute(
         """
         SELECT p.player_id, p.name, p.mlb_team, fer.espn_team_id,
@@ -318,44 +330,50 @@ def compute_buy_low_flags(conn: sqlite3.Connection) -> list[dict]:
         JOIN fact_statcast fs      ON p.player_id = fs.player_id
         LEFT JOIN fact_espn_rosters fer ON p.player_id = fer.player_id
           AND fer.snapshot_date = (SELECT MAX(snapshot_date) FROM fact_espn_rosters)
-        WHERE fps.pa >= ? AND fs.xba IS NOT NULL
+        WHERE fps.pa >= ? AND fs.xwoba IS NOT NULL
         """,
         (BUY_LOW["min_pa"],),
     ).fetchall()
 
     for r in rows:
+        xwoba = _f(r["xwoba"])
+
+        # Quality floor: only flag hitters with real underlying upside
+        if not xwoba or xwoba < BUY_LOW["min_xwoba"]:
+            continue
+
         reasons = []
         score   = 0.0
 
-        xba   = _f(r["xba"])
-        xwoba = _f(r["xwoba"])
         obp   = _f(r["obp"])
-        babip = _f(r["babip"])   # from fact_player_stats
+        babip = _f(r["babip"])
         speed = _f(r["sprint_speed"])
 
         # BABIP depressed without speed explanation
         babip_floor = BUY_LOW["hitter_babip_floor"]
         if speed and speed >= BUY_LOW["elite_sprint_speed"]:
-            babip_floor -= 0.020  # elite speed can sustain lower BABIP
+            babip_floor -= 0.020
         if babip and babip < babip_floor:
             reasons.append(f"BABIP {babip:.3f} below floor ({babip_floor:.3f})")
             score += 0.4
 
-        # OBP lags xwOBA by a meaningful margin
-        if xwoba and obp and (xwoba - obp) > BUY_LOW["hitter_xba_gap"]:
+        # OBP lags xwOBA
+        if obp and (xwoba - obp) > BUY_LOW["hitter_xba_gap"]:
             reasons.append(f"OBP ({obp:.3f}) lags xwOBA ({xwoba:.3f})")
             score += 0.4
 
         if reasons:
+            # Blend: 60% base score, 40% need-adjusted so weak-cat targets surface higher
+            need_adjusted = round(score * (0.6 + 0.4 * hitter_need), 2)
             flags.append({
-                "player_id":   r["player_id"],
-                "name":        r["name"],
-                "team":        r["mlb_team"],
+                "player_id":    r["player_id"],
+                "name":         r["name"],
+                "team":         r["mlb_team"],
                 "espn_team_id": r["espn_team_id"],
-                "rostered":    r["espn_team_id"] is not None,
-                "flag_type":   "buy_low_hitter",
-                "reasons":     reasons,
-                "score":       round(score, 2),
+                "rostered":     r["espn_team_id"] is not None,
+                "flag_type":    "buy_low_hitter",
+                "reasons":      reasons,
+                "score":        need_adjusted,
                 "stats": {
                     "obp": obp, "xwoba": xwoba, "babip": babip, "sprint_speed": speed,
                 },
@@ -395,15 +413,16 @@ def compute_buy_low_flags(conn: sqlite3.Connection) -> list[dict]:
             score += 0.3
 
         if reasons:
+            need_adjusted = round(score * (0.6 + 0.4 * pitcher_need), 2)
             flags.append({
-                "player_id":   r["player_id"],
-                "name":        r["name"],
-                "team":        r["mlb_team"],
+                "player_id":    r["player_id"],
+                "name":         r["name"],
+                "team":         r["mlb_team"],
                 "espn_team_id": r["espn_team_id"],
-                "rostered":    r["espn_team_id"] is not None,
-                "flag_type":   "buy_low_pitcher",
-                "reasons":     reasons,
-                "score":       round(score, 2),
+                "rostered":     r["espn_team_id"] is not None,
+                "flag_type":    "buy_low_pitcher",
+                "reasons":      reasons,
+                "score":        need_adjusted,
                 "stats": {
                     "era": era, "xfip": xfip, "siera": siera, "ip": _f(r["ip"]),
                 },
@@ -448,7 +467,9 @@ def compute_sell_high_flags(conn: sqlite3.Connection) -> list[dict]:
             reasons.append(f"OBP ({obp:.3f}) >> xwOBA ({xwoba:.3f}), gap={obp-xwoba:.3f}")
             score += 0.4
 
-        if babip and babip > SELL_HIGH["babip_ceiling"]:
+        pa = _f(r["pa"])
+        min_pa = SELL_HIGH.get("min_babip_pa", 100)
+        if babip and babip > SELL_HIGH["babip_ceiling"] and pa and pa >= min_pa:
             reasons.append(f"BABIP ({babip:.3f}) elevated — contact luck likely to normalize")
             score += 0.3
 
@@ -549,7 +570,23 @@ def compute_two_start_pitchers(
     if not two_starter_mlb_ids:
         return []
 
-    # Fetch their stats
+    # Get start dates per pitcher from fact_schedule for days-of-rest scoring
+    placeholders_ids = ",".join("?" * len(two_starter_mlb_ids))
+    schedule_rows = conn.execute(
+        f"""
+        SELECT probable_pitcher_id, game_date
+        FROM fact_schedule
+        WHERE probable_pitcher_id IN ({placeholders_ids})
+          AND probable_pitcher_id IS NOT NULL
+        ORDER BY probable_pitcher_id, game_date
+        """,
+        list(two_starter_mlb_ids),
+    ).fetchall()
+    start_dates: dict[int, list[str]] = {}
+    for sr in schedule_rows:
+        start_dates.setdefault(sr["probable_pitcher_id"], []).append(sr["game_date"])
+
+    # Fetch pitcher stats
     placeholders = ",".join("?" * len(two_starter_mlb_ids))
     rows = conn.execute(
         f"""
@@ -575,27 +612,43 @@ def compute_two_start_pitchers(
         xfip   = _f(r["xfip"])  or 5.0
         k_pct  = _f(r["k_pct_14d"])
         bb_pct = _f(r["bb_pct_14d"])
+        mlb_id = r["mlb_id"]
 
-        # Simple composite score (lower siera/xfip = better)
         # Score: 0-10, higher is better
         siera_score = max(0, 10 - siera * 1.5)
         xfip_score  = max(0, 10 - xfip * 1.5)
 
-        # K% stability: reward high K%, penalize high BB%
+        # K/BB ratio stability (14-day window)
         stability_score = 5.0
         if k_pct and bb_pct:
             kbb_ratio = k_pct / max(bb_pct, 0.01)
             stability_score = min(10, kbb_ratio * 2)
 
-        composite = (
-            siera_score  * TWO_START_WEIGHTS["siera"] +
-            xfip_score   * TWO_START_WEIGHTS["xfip"] +
-            stability_score * TWO_START_WEIGHTS["k_pct_stability"]
-        ) / (
+        # Days of rest between starts (4+ days = regular rest = best)
+        rest_score = 5.0
+        if mlb_id in start_dates and len(start_dates[mlb_id]) >= 2:
+            from datetime import date as _date
+            dates = sorted(start_dates[mlb_id])
+            try:
+                d1 = _date.fromisoformat(dates[0])
+                d2 = _date.fromisoformat(dates[1])
+                days_between = (d2 - d1).days
+                rest_score = 10.0 if days_between >= 4 else (7.0 if days_between == 3 else 3.0)
+            except ValueError:
+                pass
+
+        used_weights = (
             TWO_START_WEIGHTS["siera"] +
             TWO_START_WEIGHTS["xfip"] +
-            TWO_START_WEIGHTS["k_pct_stability"]
+            TWO_START_WEIGHTS["k_pct_stability"] +
+            TWO_START_WEIGHTS["days_of_rest"]
         )
+        composite = (
+            siera_score     * TWO_START_WEIGHTS["siera"] +
+            xfip_score      * TWO_START_WEIGHTS["xfip"] +
+            stability_score * TWO_START_WEIGHTS["k_pct_stability"] +
+            rest_score      * TWO_START_WEIGHTS["days_of_rest"]
+        ) / used_weights
 
         scored.append({
             "player_id":   r["player_id"],
@@ -751,7 +804,7 @@ def run(two_starter_mlb_ids: set[int] | None = None) -> dict:
     need_weights = compute_need_weights(conn)
 
     print("  computing buy-low flags...")
-    buy_low = compute_buy_low_flags(conn)
+    buy_low = compute_buy_low_flags(conn, need_weights=need_weights)
 
     print("  computing sell-high flags...")
     sell_high = compute_sell_high_flags(conn)

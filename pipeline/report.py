@@ -7,6 +7,7 @@ Writes to docs/data/:
   waivers.json     -- FA buy-low candidates + two-starters + ownership alerts
   matchup.json     -- current week cat states + need weights
   league.json      -- all-team cat standings
+  playoff.json     -- playoff picture, bracket, opponent previews, swing categories
   status.json      -- pipeline health banner data
 
 Also writes CSVs to docs/data/:
@@ -61,12 +62,26 @@ def _load_eval() -> dict:
 
 
 def _load_espn_teams() -> dict:
-    """Return {team_id_str: {name, abbrev}} from data/espn_teams.json, or {}."""
+    """Return {team_id_str: {name, abbrev, wins, losses, ...}} from data/espn_teams.json."""
     path = os.path.join(DATA_DIR, 'espn_teams.json')
-    if os.path.exists(path):
-        with open(path) as f:
-            return json.load(f)
-    return {}
+    if not os.path.exists(path):
+        return {}
+    with open(path) as f:
+        raw = json.load(f)
+    # Support both old flat format and new nested {teams: {}, league_meta: {}} format
+    if 'teams' in raw and isinstance(raw['teams'], dict):
+        return raw['teams']
+    return raw
+
+
+def _load_league_meta() -> dict:
+    """Return league_meta block from espn_teams.json (playoff week, season length)."""
+    path = os.path.join(DATA_DIR, 'espn_teams.json')
+    if not os.path.exists(path):
+        return {}
+    with open(path) as f:
+        raw = json.load(f)
+    return raw.get('league_meta', {})
 
 
 def _write_json(path: str, data) -> None:
@@ -404,6 +419,170 @@ def build_league(conn: sqlite3.Connection) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# playoff.json
+# ---------------------------------------------------------------------------
+
+def build_playoff(league_data: dict) -> dict:
+    """
+    Build playoff picture: standings, bracket, category matchup previews vs
+    each potential opponent, swing categories, and improvement targets.
+    Reads from espn_teams.json (W/L records + league_meta) and league.json output.
+    """
+    from config import PLAYOFFS, PLAYOFF_START_WEEK
+
+    espn_teams  = _load_espn_teams()
+    league_meta = _load_league_meta()
+
+    playoff_start = (
+        league_meta.get("playoff_start_week")
+        or PLAYOFF_START_WEEK
+        or 22
+    )
+    playoff_teams = PLAYOFFS["teams"]
+
+    # Current week from fact_matchups max week
+    # (already computed by the time report.py runs)
+    # We use the league data's as_of date as a proxy
+    from config import WEEK_1_START, WEEK_1_END, WEEK_2_START
+    from datetime import date, timedelta
+    today = date.today()
+    w1_end   = date.fromisoformat(WEEK_1_END)
+    w2_start = date.fromisoformat(WEEK_2_START)
+    if today <= w1_end:
+        current_week = 1
+    else:
+        current_week = 2 + (today - w2_start).days // 7
+
+    weeks_until_playoffs = max(0, playoff_start - current_week - 1)
+    in_playoff_weeks     = current_week >= playoff_start
+
+    # Build standings from espn_teams W/L records
+    all_teams = league_data.get("teams", [])
+    team_map  = {t["team_id"]: t for t in all_teams}
+
+    standings = []
+    for t in all_teams:
+        tid_str  = str(t["team_id"])
+        et       = espn_teams.get(tid_str, {})
+        wins     = et.get("wins",   0)
+        losses   = et.get("losses", 0)
+        ties     = et.get("ties",   0)
+        pct      = et.get("pct",    round(wins / max(wins + losses, 1), 3))
+        standings.append({
+            "team_id":   t["team_id"],
+            "team_name": t.get("team_name", f"Team {t['team_id']}"),
+            "abbrev":    t.get("team_abbrev", str(t["team_id"])),
+            "wins":      wins,
+            "losses":    losses,
+            "ties":      ties,
+            "pct":       pct,
+            "is_my_team": t.get("is_my_team", False),
+            "ranks":     t.get("ranks", {}),
+        })
+
+    # Sort by pct desc, then fewer losses as tiebreaker
+    standings.sort(key=lambda x: (-x["pct"], x["losses"]))
+    for i, s in enumerate(standings):
+        s["seed"] = i + 1
+        s["in_playoffs"] = i < playoff_teams
+
+    my_entry  = next((s for s in standings if s["is_my_team"]), standings[0])
+    my_seed   = my_entry["seed"]
+    my_ranks  = my_entry.get("ranks", {})
+
+    # Standard bracket: 1 vs 4, 2 vs 3
+    bracket_map = {1: 4, 4: 1, 2: 3, 3: 2}
+
+    # Build matchup previews vs all 3 other potential playoff opponents
+    playoff_entries  = [s for s in standings if s["in_playoffs"] and not s["is_my_team"]]
+    opponent_previews = []
+
+    for opp in playoff_entries:
+        opp_ranks = opp.get("ranks", {})
+        cat_matchup: dict = {}
+        swing_cats: list = []
+        proj_wins = 0
+        proj_losses = 0
+
+        from config import ALL_CATS, CATS_LOWER_IS_BETTER
+        for cat in ALL_CATS:
+            my_r   = my_ranks.get(cat)
+            opp_r  = opp_ranks.get(cat)
+            if my_r is None or opp_r is None:
+                cat_matchup[cat] = {"my_rank": my_r, "their_rank": opp_r, "winner": "unknown"}
+                continue
+
+            lower_better = cat in CATS_LOWER_IS_BETTER
+            # Lower rank number = better (rank 1 is best)
+            if my_r < opp_r:
+                winner = "mine"
+                proj_wins += 1
+            elif my_r > opp_r:
+                winner = "theirs"
+                proj_losses += 1
+            else:
+                winner = "toss"
+
+            rank_gap = abs(my_r - opp_r)
+            if rank_gap <= 2:
+                swing_cats.append(cat)
+
+            cat_matchup[cat] = {
+                "my_rank":    my_r,
+                "their_rank": opp_r,
+                "winner":     winner,
+                "rank_gap":   rank_gap,
+            }
+
+        is_likely_r1 = bracket_map.get(my_seed) == opp["seed"]
+        opponent_previews.append({
+            "seed":             opp["seed"],
+            "team_id":          opp["team_id"],
+            "team_name":        opp["team_name"],
+            "abbrev":           opp["abbrev"],
+            "is_likely_r1_opp": is_likely_r1,
+            "projected_score":  f"{proj_wins}-{proj_losses}",
+            "category_matchup": cat_matchup,
+            "swing_categories": swing_cats,
+        })
+
+    # Sort: likely R1 opp first, then others
+    opponent_previews.sort(key=lambda x: (0 if x["is_likely_r1_opp"] else 1, x["seed"]))
+
+    # Overall swing categories across all potential opponents (appear in swing for 2+ opps)
+    from collections import Counter
+    swing_counter = Counter(c for p in opponent_previews for c in p["swing_categories"])
+    global_swings = [c for c, cnt in swing_counter.most_common() if cnt >= 2]
+
+    # Categories where I'm projected to lose vs my likely R1 opponent
+    likely_r1 = next((p for p in opponent_previews if p["is_likely_r1_opp"]), None)
+    improvement_targets = (
+        [c for c, v in (likely_r1 or {}).get("category_matchup", {}).items()
+         if v.get("winner") in ("theirs", "toss")]
+        if likely_r1 else []
+    )
+
+    return {
+        "as_of":                   league_data.get("as_of", ""),
+        "playoff_start_week":      playoff_start,
+        "current_week":            current_week,
+        "weeks_until_playoffs":    weeks_until_playoffs,
+        "in_playoff_weeks":        in_playoff_weeks,
+        "my_seed":                 my_seed,
+        "in_playoffs":             my_seed <= playoff_teams,
+        "standings":               standings,
+        "bracket":                 [
+            {"seed_high": 1, "seed_low": 4},
+            {"seed_high": 2, "seed_low": 3},
+        ],
+        "my_category_ranks":       my_ranks,
+        "opponent_previews":       opponent_previews,
+        "swing_categories":        global_swings,
+        "improvement_targets":     improvement_targets,
+    }
+
+
+# ---------------------------------------------------------------------------
 # status.json (pipeline health banner)
 # ---------------------------------------------------------------------------
 
@@ -564,6 +743,10 @@ def run() -> dict:
     print("  league.json...")
     league = build_league(conn)
     _write_json(os.path.join(DOCS_DATA_DIR, "league.json"), league)
+
+    print("  playoff.json...")
+    playoff = build_playoff(league)
+    _write_json(os.path.join(DOCS_DATA_DIR, "playoff.json"), playoff)
 
     print("  status.json...")
     status = build_status(eval_report)

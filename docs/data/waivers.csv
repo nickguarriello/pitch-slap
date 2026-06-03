@@ -1,10 +1,7 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
-Bryson Stott,,buy_low_hitter,0.8,False,,,,0.26395939,0.3031940557024806,0.232876712,BABIP 0.233 below floor (0.240); OBP (0.264) lags xwOBA (0.303)
-Tyler Stephenson,,buy_low_hitter,0.8,False,,,,0.291666666,0.3272771661931818,0.244897959,BABIP 0.245 below floor (0.260); OBP (0.292) lags xwOBA (0.327)
-Jake Cronenworth,,buy_low_hitter,0.8,False,,,,0.271929824,0.30438369617127536,0.178082191,BABIP 0.178 below floor (0.240); OBP (0.272) lags xwOBA (0.304)
-Harrison Bader,,buy_low_hitter,0.8,False,,,,0.198198198,0.2720591742713172,0.19117647,BABIP 0.191 below floor (0.260); OBP (0.198) lags xwOBA (0.272)
-Josh Lowe,,buy_low_hitter,0.8,False,,,,0.225563909,0.2627050356757372,0.219512195,BABIP 0.220 below floor (0.260); OBP (0.226) lags xwOBA (0.263)
-Mark Vientos,,buy_low_hitter,0.8,False,,,,0.259067357,0.32454964039856904,0.25,BABIP 0.250 below floor (0.260); OBP (0.259) lags xwOBA (0.325)
-Bo Naylor,,buy_low_hitter,0.8,False,,,,0.2,0.29554945772344415,0.163934426,BABIP 0.164 below floor (0.260); OBP (0.200) lags xwOBA (0.296)
-Luisangel Acuna,,buy_low_hitter,0.8,False,,,,0.214285714,0.2576318808964321,0.202380952,BABIP 0.202 below floor (0.240); OBP (0.214) lags xwOBA (0.258)
-Marcell Ozuna,,buy_low_hitter,0.8,False,,,,0.270833333,0.30811112015335645,0.243243243,BABIP 0.243 below floor (0.260); OBP (0.271) lags xwOBA (0.308)
+Tyler Stephenson,,buy_low_hitter,0.7,False,,,,0.291666666,0.3272771661931818,0.244897959,BABIP 0.245 below floor (0.260); OBP (0.292) lags xwOBA (0.327)
+Mark Vientos,,buy_low_hitter,0.7,False,,,,0.259067357,0.32454964039856904,0.25,BABIP 0.250 below floor (0.260); OBP (0.259) lags xwOBA (0.325)
+Reid Detmers,,buy_low_pitcher,0.69,False,4.632352941176471,3.511701947823167,3.2857421355442664,,,,"ERA (4.63) >> xFIP (3.51), gap=1.12; ERA (4.63) >> SIERA (3.29), gap=1.35"
+David Peterson,,buy_low_pitcher,0.69,False,5.180232673029183,3.7567016047539985,3.8523480831512558,,,,"ERA (5.18) >> xFIP (3.76), gap=1.42; ERA (5.18) >> SIERA (3.85), gap=1.33"
+Adrian Morejon,,buy_low_pitcher,0.69,False,3.9000009918215413,2.111810347850029,1.9878794809121612,,,,"ERA (3.90) >> xFIP (2.11), gap=1.79; ERA (3.90) >> SIERA (1.99), gap=1.91"
+Jack Perkins,,buy_low_pitcher,0.69,False,5.464286830960716,3.7941803031746932,2.8836438940415343,,,,"ERA (5.46) >> xFIP (3.79), gap=1.67; ERA (5.46) >> SIERA (2.88), gap=2.58"

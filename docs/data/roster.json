@@ -104,7 +104,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 86.2,
+      "ownership_pct": 86.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -312,7 +312,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 71.9,
+      "ownership_pct": 71.8,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -645,7 +645,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 49.5,
+      "ownership_pct": 49.6,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -756,7 +756,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 40.3,
+      "ownership_pct": 40.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1203,7 +1203,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 39.3,
+      "ownership_pct": 39.4,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2100,7 +2100,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 88.9,
+      "ownership_pct": 89.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2180,9 +2180,12 @@
         "exit_velo": null,
         "sprint_speed": null
       },
-      "buy_low": false,
+      "buy_low": true,
       "sell_high": false,
-      "buy_low_reasons": [],
+      "buy_low_reasons": [
+        "ERA (4.82) >> xFIP (3.47), gap=1.34",
+        "ERA (4.82) >> SIERA (3.67), gap=1.15"
+      ],
       "sell_high_reasons": []
     },
     {
@@ -2382,7 +2385,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 88.6,
+      "ownership_pct": 88.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2681,7 +2684,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 70.5,
+      "ownership_pct": 70.9,
       "espn_rating": 0.0,
       "projections": {
         "r": null,

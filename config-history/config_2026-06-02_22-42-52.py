@@ -102,22 +102,16 @@ WAIVER_PRIORITY_AT_RISK   = (6, 8)   # bottom-3: flag AT RISK
 # ---------------------------------------------------------------------------
 
 CAT_THRESHOLDS = {
-    # Calibrated 2026-06-03 from 9 weeks of real fact_matchups data.
-    # FLOPPABLE ≈ half the avg weekly gap (comfortable lead)
-    # FLIPPABLE ≈ average weekly gap (catchable deficit)
-    # LOSS      ≈ 1.75× the avg weekly gap (too far back)
-    # Avg gaps observed: R=11.5, HR=4.3, RBI=6.5, SB=4.9, OBP=.030,
-    #                    K=8.9, QS=1.6, ERA=0.81, WHIP=0.20, SvHd=2.1
-    "R":    {"floppable": 6,     "flippable": 12,   "loss": 20},
-    "HR":   {"floppable": 2,     "flippable": 4,    "loss": 8},
-    "RBI":  {"floppable": 4,     "flippable": 7,    "loss": 14},
-    "SB":   {"floppable": 2,     "flippable": 5,    "loss": 9},
-    "OBP":  {"floppable": 0.010, "flippable": 0.030,"loss": 0.055},
-    "K":    {"floppable": 5,     "flippable": 9,    "loss": 16},
-    "QS":   {"floppable": 1,     "flippable": 2,    "loss": 4},
-    "ERA":  {"floppable": 0.30,  "flippable": 0.80, "loss": 1.50},
-    "WHIP": {"floppable": 0.08,  "flippable": 0.20, "loss": 0.38},
-    "SvHd": {"floppable": 1,     "flippable": 2,    "loss": 5},
+    "R":    {"floppable": 3,    "flippable": 5,    "loss": 10},
+    "HR":   {"floppable": 1,    "flippable": 2,    "loss": 4},
+    "RBI":  {"floppable": 3,    "flippable": 5,    "loss": 10},
+    "SB":   {"floppable": 1,    "flippable": 2,    "loss": 4},
+    "OBP":  {"floppable": 0.005,"flippable": 0.010,"loss": 0.025},
+    "K":    {"floppable": 5,    "flippable": 10,   "loss": 20},
+    "QS":   {"floppable": 1,    "flippable": 2,    "loss": 3},
+    "ERA":  {"floppable": 0.20, "flippable": 0.30, "loss": 0.75},
+    "WHIP": {"floppable": 0.05, "flippable": 0.10, "loss": 0.25},
+    "SvHd": {"floppable": 1,    "flippable": 2,    "loss": 5},
 }
 
 # ---------------------------------------------------------------------------
@@ -138,20 +132,18 @@ NEED_WIN_RATE_LOW        = 0.65
 # ---------------------------------------------------------------------------
 
 BUY_LOW = {
-    "hitter_xba_gap":      0.025,   # OBP lags xwOBA by more than this
-    "hitter_babip_floor":  0.260,   # BABIP below this without speed explanation
+    "hitter_xba_gap":      0.025,   # actual BA/OBP lags xBA by more than this
+    "hitter_babip_floor":  0.260,   # BABIP below this without skill explanation
     "pitcher_era_xfip_gap":0.75,    # ERA exceeds xFIP or SIERA by more than this
     "min_pa":              50,      # minimum PA before hitter flag shown
     "min_ip":              20,      # minimum IP before pitcher flag shown
-    "elite_sprint_speed":  28.0,    # ft/sec — adjusts BABIP floor down by .020
-    "min_xwoba":           0.310,   # quality floor — only flag hitters with real upside
+    "elite_sprint_speed":  28.0,    # ft/sec — adjusts BABIP threshold
 }
 
 SELL_HIGH = {
-    "hitter_xba_gap":      0.025,   # OBP exceeds xwOBA by more than this
+    "hitter_xba_gap":      0.025,   # actual BA/OBP exceeds xBA by more than this
     "pitcher_era_xfip_gap":0.50,    # ERA significantly better than xFIP/SIERA
-    "babip_ceiling":       0.350,   # elevated BABIP — luck-driven, likely to normalize
-    "min_babip_pa":        100,     # min PA before elevated BABIP flag fires
+    "babip_ceiling":       0.260,   # BABIP inflated below this on contact
 }
 
 # ---------------------------------------------------------------------------
@@ -337,9 +329,6 @@ PLAYOFFS = {
     "weeks_per_round":  2,
     "tiebreaker":       "h2h_record",
 }
-
-# Set after ESPN posts the full schedule; auto-detected from ESPN settings when possible.
-PLAYOFF_START_WEEK = 22   # override if ESPN shows a different value
 
 # ---------------------------------------------------------------------------
 # Config versioning — call snapshot() before any change to this file

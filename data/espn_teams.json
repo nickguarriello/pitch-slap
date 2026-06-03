@@ -1,34 +1,73 @@
 {
-  "1": {
-    "name": "Pitch Slap",
-    "abbrev": "GUAR"
+  "teams": {
+    "1": {
+      "name": "Pitch Slap",
+      "abbrev": "GUAR",
+      "wins": 6,
+      "losses": 2,
+      "ties": 1,
+      "pct": 0.75
+    },
+    "2": {
+      "name": "Lunch",
+      "abbrev": "LCH",
+      "wins": 7,
+      "losses": 2,
+      "ties": 0,
+      "pct": 0.778
+    },
+    "3": {
+      "name": "I Robbed A Nuke",
+      "abbrev": "IRAN",
+      "wins": 3,
+      "losses": 4,
+      "ties": 2,
+      "pct": 0.429
+    },
+    "5": {
+      "name": "2010 State Sectional Champ",
+      "abbrev": "BJL",
+      "wins": 4,
+      "losses": 3,
+      "ties": 2,
+      "pct": 0.571
+    },
+    "6": {
+      "name": "All Rise Run Club",
+      "abbrev": "RUN",
+      "wins": 2,
+      "losses": 5,
+      "ties": 2,
+      "pct": 0.286
+    },
+    "7": {
+      "name": "Jazz In Her Batters Box",
+      "abbrev": "Jhf",
+      "wins": 3,
+      "losses": 5,
+      "ties": 1,
+      "pct": 0.375
+    },
+    "8": {
+      "name": "ChicksDigTheLongBall",
+      "abbrev": "CDLB",
+      "wins": 3,
+      "losses": 3,
+      "ties": 3,
+      "pct": 0.5
+    },
+    "9": {
+      "name": "ICECOLDBEERHERE! ",
+      "abbrev": "BEER",
+      "wins": 2,
+      "losses": 6,
+      "ties": 1,
+      "pct": 0.25
+    }
   },
-  "2": {
-    "name": "Lunch",
-    "abbrev": "LCH"
-  },
-  "3": {
-    "name": "I Robbed A Nuke",
-    "abbrev": "IRAN"
-  },
-  "5": {
-    "name": "2010 State Sectional Champ",
-    "abbrev": "BJL"
-  },
-  "6": {
-    "name": "All Rise Run Club",
-    "abbrev": "RUN"
-  },
-  "7": {
-    "name": "Jazz In Her Batters Box",
-    "abbrev": "Jhf"
-  },
-  "8": {
-    "name": "ChicksDigTheLongBall",
-    "abbrev": "CDLB"
-  },
-  "9": {
-    "name": "ICECOLDBEERHERE! ",
-    "abbrev": "BEER"
+  "league_meta": {
+    "playoff_start_week": 22,
+    "regular_season_weeks": 21,
+    "playoff_weeks_per_round": 2
   }
 }

@@ -462,19 +462,42 @@ def _current_week_number() -> int:
 
 
 def _save_team_names(league) -> None:
-    """Write {team_id: {name, abbrev}} to data/espn_teams.json for dashboard use."""
+    """Write team names, abbrevs, W/L records, and league meta to data/espn_teams.json."""
     teams: dict = {}
     for team in league.teams:
-        tid = str(team.team_id)
+        tid  = str(team.team_id)
+        wins   = int(getattr(team, 'wins',   0) or 0)
+        losses = int(getattr(team, 'losses', 0) or 0)
+        ties   = int(getattr(team, 'ties',   0) or 0)
         teams[tid] = {
             'name':   getattr(team, 'team_name',   None) or f'Team {team.team_id}',
             'abbrev': getattr(team, 'team_abbrev', None) or tid,
+            'wins':   wins,
+            'losses': losses,
+            'ties':   ties,
+            'pct':    round(wins / max(wins + losses, 1), 3),
         }
+
+    # Try to detect playoff start week from league settings
+    league_meta: dict = {}
+    try:
+        data = _espn_get(['mSettings'])
+        sched = data.get('settings', {}).get('scheduleSettings', {})
+        reg_weeks = sched.get('matchupPeriodCount')
+        playoff_len = sched.get('playoffMatchupPeriodLength', 2)
+        if reg_weeks:
+            league_meta['playoff_start_week']      = reg_weeks + 1
+            league_meta['regular_season_weeks']    = reg_weeks
+            league_meta['playoff_weeks_per_round'] = playoff_len
+            print(f"  Playoff start week detected: {reg_weeks + 1}")
+    except Exception as e:
+        print(f"  WARNING: Could not detect playoff week from mSettings: {e}")
+
     path = os.path.join(DATA_DIR, 'espn_teams.json')
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(path, 'w') as f:
-        json.dump(teams, f, indent=2)
-    print(f"  Team names: {[v['name'] for v in teams.values()]}")
+        json.dump({'teams': teams, 'league_meta': league_meta}, f, indent=2)
+    print(f"  Team names + records saved ({len(teams)} teams)")
 
 
 def _update_meta(status: str, fetch_ts: str) -> None:
