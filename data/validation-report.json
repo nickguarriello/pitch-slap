@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-06-03T03:12:17.586077+00:00",
+  "run_ts": "2026-06-04T19:50:29.958424+00:00",
   "overall": "warn",
   "checks": [
     {
@@ -83,8 +83,8 @@
     {
       "check": "completeness.fact_player_stats",
       "status": "pass",
-      "detail": "1842 rows across 4 windows",
-      "row_count": 1842
+      "detail": "2228 rows across 5 windows",
+      "row_count": 2228
     },
     {
       "check": "completeness.schedule",
@@ -95,8 +95,8 @@
     {
       "check": "completeness.transform_coverage",
       "status": "pass",
-      "detail": "277/255 (109%) rostered players have season stats",
-      "row_count": 277
+      "detail": "278/255 (109%) rostered players have season stats",
+      "row_count": 278
     },
     {
       "check": "crosswalk.integrity",
@@ -131,24 +131,24 @@
     {
       "check": "staleness.statcast",
       "status": "pass",
-      "detail": "Statcast data is 2.6h old",
+      "detail": "Statcast data is 43.2h old",
       "row_count": 0
     }
   ],
   "meta": {
-    "espn_last_fetch": "2026-06-03T03:12:01.046433+00:00",
+    "espn_last_fetch": "2026-06-04T19:49:40.836391+00:00",
     "espn_status": "ok",
     "espn_rows": 555,
-    "mlb_last_fetch": "2026-06-03T03:12:02.465353+00:00",
-    "transform_last_run": "2026-06-03T03:12:17.571622+00:00",
-    "validate_last_run": "2026-06-03T03:03:13.444191+00:00",
+    "mlb_last_fetch": "2026-06-04T19:49:42.250634+00:00",
+    "transform_last_run": "2026-06-04T19:50:29.936653+00:00",
+    "validate_last_run": "2026-06-03T03:12:17.587335+00:00",
     "validate_overall": "warn",
-    "evaluate_last_run": "2026-06-03T03:03:13.462984+00:00",
+    "evaluate_last_run": "2026-06-03T03:12:17.606248+00:00",
     "cats_winning": 0,
-    "last_light_run": "2026-06-03T03:02:28.789913+00:00",
+    "last_light_run": "2026-06-03T03:11:48.323858+00:00",
     "last_run_mode": "light",
     "schedule_rows": 184,
     "statcast_last_fetch": "2026-06-03T00:36:58.927099+00:00",
-    "report_last_run": "2026-06-03T03:03:13.575496+00:00"
+    "report_last_run": "2026-06-03T03:12:17.713112+00:00"
   }
 }
