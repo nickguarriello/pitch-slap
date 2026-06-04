@@ -1,6 +1,1 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
-Tyler Stephenson,,buy_low_hitter,0.7,False,,,,0.286549707,0.321463562193371,0.242424242,BABIP 0.242 below floor (0.260); OBP (0.287) lags xwOBA (0.321)
-Mark Vientos,,buy_low_hitter,0.7,False,,,,0.253807106,0.31971080412114333,0.244604316,BABIP 0.245 below floor (0.260); OBP (0.254) lags xwOBA (0.320)
-Reid Detmers,,buy_low_pitcher,0.69,False,4.632352941176471,3.5246262568761324,3.299281300802674,,,,"ERA (4.63) >> xFIP (3.52), gap=1.11; ERA (4.63) >> SIERA (3.30), gap=1.33"
-David Peterson,,buy_low_pitcher,0.69,False,5.180232673029183,3.7687767810910877,3.8658872484096634,,,,"ERA (5.18) >> xFIP (3.77), gap=1.41; ERA (5.18) >> SIERA (3.87), gap=1.31"
-Adrian Morejon,,buy_low_pitcher,0.69,False,3.9000009918215413,2.122906547999727,2.0014186461705687,,,,"ERA (3.90) >> xFIP (2.12), gap=1.78; ERA (3.90) >> SIERA (2.00), gap=1.90"
