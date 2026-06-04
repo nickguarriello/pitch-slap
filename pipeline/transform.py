@@ -3,7 +3,7 @@ pipeline/transform.py -- Phase 3
 Joins all data sources on player_id (ESPN) and writes fact_player_stats.
 
 Windows computed:
-  'season'  -- full season to date (FanGraphs JSON API, month=0)
+  'season'  -- full season to date (MLB Stats API)
   '30d'     -- last 30 days (pybaseball batting/pitching_stats_range)
   '14d'     -- last 14 days
   '7d'      -- last 7 days
@@ -32,8 +32,7 @@ from config import (
     SEASON_START, WEEK_1_END, WEEK_2_START,
 )
 
-_FG_API    = "https://www.fangraphs.com/api/leaders/major-league/data"
-_FG_HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+_MLB_STATS_API = "https://statsapi.mlb.com/api/v1"
 
 
 # ---------------------------------------------------------------------------
@@ -68,73 +67,116 @@ def _current_week_start() -> date:
 
 
 # ---------------------------------------------------------------------------
-# FanGraphs season stats (month=0 -- full season, has QS + HLD)
+# MLB Stats API season stats (replaces FanGraphs, no IP blocking)
 # ---------------------------------------------------------------------------
 
-def _fg_batting_season() -> pd.DataFrame:
-    """Full-season batting stats from FanGraphs."""
-    params = {
-        "pos": "all", "stats": "bat", "lg": "all",
-        "qual": 0, "season": SEASON, "season1": SEASON,
-        "month": 0, "team": 0, "pageitems": 3000, "pagenum": 1,
-        "ind": 0, "rost": 0, "players": 0, "type": 0,
-    }
-    resp = requests.get(_FG_API, params=params, headers=_FG_HEADERS, timeout=20)
+def _ip_to_float(ip_str) -> float:
+    """Convert '6.2' (6 innings + 2 outs) to fractional innings (6.667)."""
+    try:
+        parts = str(ip_str).split(".")
+        return int(parts[0]) + (int(parts[1]) if len(parts) > 1 else 0) / 3
+    except (ValueError, IndexError):
+        return 0.0
+
+
+def _mlb_batting_season() -> pd.DataFrame:
+    """Full-season batting stats from MLB Stats API."""
+    resp = requests.get(
+        f"{_MLB_STATS_API}/stats",
+        params={"stats": "season", "group": "hitting", "season": SEASON,
+                "playerPool": "all", "limit": 2000},
+        timeout=30,
+    )
     resp.raise_for_status()
-    rows = resp.json().get("data", [])
+    splits = resp.json().get("stats", [{}])[0].get("splits", [])
+    rows = []
+    for s in splits:
+        st = s.get("stat", {})
+        rows.append({
+            "mlb_id": s["player"]["id"],
+            "r":      st.get("runs", 0),
+            "hr":     st.get("homeRuns", 0),
+            "rbi":    st.get("rbi", 0),
+            "sb":     st.get("stolenBases", 0),
+            "obp":    pd.to_numeric(st.get("obp"), errors="coerce"),
+            "babip":  pd.to_numeric(st.get("babip"), errors="coerce"),
+            "pa":     st.get("plateAppearances", 0),
+            "svhd":   None,
+            "qs":     None,
+            "ip":     None,
+        })
     df = pd.DataFrame(rows)
-    if df.empty:
-        return pd.DataFrame()
-
-    df = df.rename(columns={"xMLBAMID": "mlb_id", "SO": "k", "PA": "pa"})
-    df["mlb_id"] = pd.to_numeric(df["mlb_id"], errors="coerce")
-    df["svhd"]   = None
-    df["qs"]     = None
-    df["ip"]     = None
-
-    keep = ["mlb_id", "R", "HR", "RBI", "SB", "OBP", "BABIP", "pa", "svhd", "qs", "ip"]
-    cols_present = [c for c in keep if c in df.columns]
-    return df[cols_present].rename(columns={
-        "R": "r", "HR": "hr", "RBI": "rbi", "SB": "sb", "OBP": "obp",
-        "BABIP": "babip",
-    }).drop_duplicates("mlb_id")
+    return df.drop_duplicates("mlb_id") if not df.empty else df
 
 
-def _fg_pitching_season() -> pd.DataFrame:
-    """Full-season pitching stats from FanGraphs (includes QS, HLD, SV)."""
-    params = {
-        "pos": "all", "stats": "pit", "lg": "all",
-        "qual": 0, "season": SEASON, "season1": SEASON,
-        "month": 0, "team": 0, "pageitems": 3000, "pagenum": 1,
-        "ind": 0, "rost": 0, "players": 0, "type": 0,
-    }
-    resp = requests.get(_FG_API, params=params, headers=_FG_HEADERS, timeout=20)
+def _compute_qs_from_gamelogs(pitcher_ids: list[int]) -> dict[int, int]:
+    """Fetch game logs in batches and count quality starts (6+ IP, <=3 ER)."""
+    qs_map: dict[int, int] = {}
+    batch_size = 50
+    for i in range(0, len(pitcher_ids), batch_size):
+        ids = ",".join(str(p) for p in pitcher_ids[i:i + batch_size])
+        resp = requests.get(
+            f"{_MLB_STATS_API}/people",
+            params={"personIds": ids,
+                    "hydrate": f"stats(group=pitching,type=gameLog,season={SEASON})"},
+            timeout=30,
+        )
+        if not resp.ok:
+            continue
+        for person in resp.json().get("people", []):
+            qs = 0
+            for grp in person.get("stats", []):
+                for game in grp.get("splits", []):
+                    st = game.get("stat", {})
+                    if st.get("gamesStarted", 0):
+                        if _ip_to_float(st.get("inningsPitched", 0)) >= 6.0 and st.get("earnedRuns", 0) <= 3:
+                            qs += 1
+            qs_map[person["id"]] = qs
+    return qs_map
+
+
+def _mlb_pitching_season() -> pd.DataFrame:
+    """Full-season pitching stats from MLB Stats API (K, ERA, WHIP, SvHd, QS, IP)."""
+    resp = requests.get(
+        f"{_MLB_STATS_API}/stats",
+        params={"stats": "season", "group": "pitching", "season": SEASON,
+                "playerPool": "all", "limit": 2000},
+        timeout=30,
+    )
     resp.raise_for_status()
-    rows = resp.json().get("data", [])
+    splits = resp.json().get("stats", [{}])[0].get("splits", [])
+
+    rows = []
+    starter_ids = []
+    for s in splits:
+        st = s.get("stat", {})
+        pid = s["player"]["id"]
+        sv  = st.get("saves", 0) or 0
+        hld = st.get("holds", 0) or 0
+        ip  = _ip_to_float(st.get("inningsPitched", 0))
+        rows.append({
+            "mlb_id": pid,
+            "k":      st.get("strikeOuts", 0),
+            "era":    pd.to_numeric(st.get("era"), errors="coerce"),
+            "whip":   pd.to_numeric(st.get("whip"), errors="coerce"),
+            "svhd":   sv + hld,
+            "ip":     ip,
+            "babip":  None,
+            "k_pct":  None,
+            "bb_pct": None,
+            "qs":     0,
+        })
+        if st.get("gamesStarted", 0) > 0:
+            starter_ids.append(pid)
+
+    if starter_ids:
+        qs_map = _compute_qs_from_gamelogs(starter_ids)
+        for row in rows:
+            if row["mlb_id"] in qs_map:
+                row["qs"] = qs_map[row["mlb_id"]]
+
     df = pd.DataFrame(rows)
-    if df.empty:
-        return pd.DataFrame()
-
-    df = df.rename(columns={"xMLBAMID": "mlb_id"})
-    df["mlb_id"] = pd.to_numeric(df["mlb_id"], errors="coerce")
-
-    # SvHd = SV + HLD
-    sv  = pd.to_numeric(df.get("SV",  0), errors="coerce").fillna(0)
-    hld = pd.to_numeric(df.get("HLD", 0), errors="coerce").fillna(0)
-    df["svhd"] = sv + hld
-
-    # K% and BB% (FanGraphs returns as decimal: 0.25 = 25%)
-    df["k_pct"]  = pd.to_numeric(df.get("K%",  None), errors="coerce")
-    df["bb_pct"] = pd.to_numeric(df.get("BB%", None), errors="coerce")
-
-    df = df.rename(columns={
-        "SO": "k", "QS": "qs", "ERA": "era", "WHIP": "whip",
-        "IP": "ip", "BAbip": "babip",
-    })
-
-    keep = ["mlb_id", "k", "qs", "era", "whip", "svhd", "ip", "babip", "k_pct", "bb_pct"]
-    cols_present = [c for c in keep if c in df.columns]
-    return df[cols_present].drop_duplicates("mlb_id")
+    return df.drop_duplicates("mlb_id") if not df.empty else df
 
 
 # ---------------------------------------------------------------------------
@@ -279,7 +321,7 @@ def run() -> dict:
 
     # Season window (FanGraphs -- has QS, HLD)
     print("  Season stats (FanGraphs)...")
-    windows["season"] = (_fg_batting_season(), _fg_pitching_season())
+    windows["season"] = (_mlb_batting_season(), _mlb_pitching_season())
 
     # Rolling windows (BBRef range)
     for label, start in [
