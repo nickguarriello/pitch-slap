@@ -33,6 +33,10 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .rank-2{background:rgba(34,197,94,.15);color:var(--win)}
 .rank-3{background:rgba(59,130,246,.15);color:var(--accent)}
 .rank-other{background:var(--border);color:var(--muted)}
+.tip-wrap{position:relative;display:inline-block;margin-left:6px;vertical-align:middle}
+.tip-btn{width:15px;height:15px;border-radius:50%;background:var(--border);color:var(--muted);font-size:9px;font-weight:700;border:none;cursor:default;display:inline-flex;align-items:center;justify-content:center}
+.tip-box{display:none;position:absolute;left:20px;top:-4px;z-index:200;background:#1e2130;border:1px solid var(--border);border-radius:8px;padding:12px 14px;width:300px;font-size:11px;line-height:1.6;color:var(--text);box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:normal}
+.tip-box b{color:var(--accent)}.tip-wrap:hover .tip-box{display:block}
 </style>
 </head>
 <body>
@@ -51,7 +55,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <h1>League</h1>
 
   <div class="card">
-    <h2>Category Rankings</h2>
+    <h2>Category Rankings <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>League-wide stat standings with strength/weakness heat map.</b><br><br><b>Cat tabs</b> — click any category to sort by rank in that cat. Click a column header to sort by that stat directly. Click the same column again to reverse.<br><br><b>Heat map</b> — each stat cell is color-coded by league rank: <span style="color:#22c55e">■ green = top of league</span>, neutral = middle, <span style="color:#ef4444">■ red = bottom</span>. Lets you scan team strengths and weaknesses at a glance without sorting.<br><br><b>Record</b> — actual matchup W-L-T used for seeding.<br><b>Roto Record</b> — cumulative category W-L-T across all weeks (10 cats per week).</div></span></h2>
     <div class="cat-tabs" id="cat-tabs"></div>
     <table>
       <thead>
@@ -59,7 +63,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
           <th data-col="rank">#</th>
           <th data-col="team_name">Team</th>
           <th data-col="record" title="Matchup W-L-T record">Record</th>
-          <th data-col="cat_wins" title="Cumulative category wins-losses-ties across all matchup weeks">Cat W-L-T</th>
+          <th data-col="cat_wins" title="Cumulative category wins-losses-ties across all matchup weeks">Roto Record</th>
           <th data-col="r">R</th>
           <th data-col="hr">HR</th>
           <th data-col="rbi">RBI</th>

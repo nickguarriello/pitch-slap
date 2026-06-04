@@ -31,6 +31,10 @@ tr:last-child td{border-bottom:none}
 .need-bar{width:80px;height:6px;background:var(--border);border-radius:3px;display:inline-block;vertical-align:middle}
 .need-fill{height:6px;border-radius:3px;background:var(--accent)}
 .record{font-size:12px;color:var(--muted)}
+.tip-wrap{position:relative;display:inline-block;margin-left:6px;vertical-align:middle}
+.tip-btn{width:15px;height:15px;border-radius:50%;background:var(--border);color:var(--muted);font-size:9px;font-weight:700;border:none;cursor:default;display:inline-flex;align-items:center;justify-content:center}
+.tip-box{display:none;position:absolute;left:20px;top:-4px;z-index:200;background:#1e2130;border:1px solid var(--border);border-radius:8px;padding:12px 14px;width:300px;font-size:11px;line-height:1.6;color:var(--text);box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:normal}
+.tip-box b{color:var(--accent)}.tip-wrap:hover .tip-box{display:block}
 .history-week{display:inline-block;width:28px;height:28px;border-radius:4px;text-align:center;line-height:28px;font-size:11px;font-weight:700;margin:2px}
 .W{background:rgba(34,197,94,.2);color:var(--win)}
 .L{background:rgba(239,68,68,.2);color:var(--loss)}
@@ -53,7 +57,7 @@ tr:last-child td{border-bottom:none}
   <h1>Matchup</h1>
 
   <div class="card">
-    <h2 id="matchup-header">Current Week — Category Scores</h2>
+    <h2 id="matchup-header">Current Week — Category Scores <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Category Scoring</b><br>Each row = one of your 10 scoring categories vs this week's opponent.<br><br><b>State</b> — gap-based: WIN / FLOPPABLE (thin lead) / FLIPPABLE (close deficit) / LOSS<br><b>Gap</b> — your value minus opponent (negative = trailing)<br><b>Need</b> — how much you need this cat (0–100%). Based on your season rank and historical win rate. Higher = prioritize on waivers.<br><b>Season W/L/T</b> — your record in this cat across all completed weeks this season.</div></span></h2>
     <table>
       <thead>
         <tr>
@@ -63,7 +67,7 @@ tr:last-child td{border-bottom:none}
           <th>Opp Score</th>
           <th>Gap</th>
           <th>Need</th>
-          <th>Season W/L</th>
+          <th>Season W/L/T</th>
         </tr>
       </thead>
       <tbody id="cat-table"></tbody>
@@ -71,7 +75,7 @@ tr:last-child td{border-bottom:none}
   </div>
 
   <div class="card">
-    <h2>Weekly Results History</h2>
+    <h2>Weekly Results History <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Past matchup results by category.</b><br><br>Each cell = <b>W</b>in / <b>L</b>oss / <b>T</b>ie for that category that week.<br><br>Hover a cell to see the state (WIN/FLOPPABLE/FLIPPABLE/LOSS) — this tells you <i>how</i> you won or lost: a FLOPPABLE win was barely held, a FLIPPABLE loss was close. Green = won that cat, Red = lost, Grey = tied.</div></span></h2>
     <div id="history"></div>
   </div>
 </div>
@@ -105,7 +109,7 @@ async function main(){
 
   for(const[cat,s]of Object.entries(cats)){
     const state=s.state||'UNKNOWN';
-    const digits=cat==='OBP'?3:(cat==='ERA'||cat==='WHIP')?2:1;
+    const digits=(cat==='OBP'||cat==='ERA'||cat==='WHIP')?4:0;
     const label=CAT_LABELS[cat]||cat;
     const need=needs[cat]||0;
     const cr=records[cat]||{};
@@ -119,7 +123,7 @@ async function main(){
         <div class="need-bar"><div class="need-fill" style="width:${need*100}%"></div></div>
         <span style="font-size:11px;color:var(--muted);margin-left:6px">${(need*100).toFixed(0)}%</span>
       </td>
-      <td class="record">${cr.wins||0}-${cr.losses||0} (${cr.win_rate!=null?(cr.win_rate*100).toFixed(0)+'%':'—'})</td>
+      <td class="record">${cr.wins||0}-${cr.losses||0}-${cr.ties||0} (${cr.win_rate!=null?(cr.win_rate*100).toFixed(0)+'%':'—'})</td>
     </tr>`;
   }
 

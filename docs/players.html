@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pitch Slap — Players</title>
 <style>
-:root { --bg:#0f1117;--surface:#1a1d27;--border:#2a2d3a;--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--win:#22c55e;--loss:#ef4444;--warn:#f59e0b;--flip:#a78bfa; }
+:root{--bg:#0f1117;--surface:#1a1d27;--border:#2a2d3a;--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--win:#22c55e;--loss:#ef4444;--warn:#f59e0b;--flip:#a78bfa}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:14px}
 nav{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
@@ -13,30 +13,37 @@ nav a{padding:12px 20px;text-decoration:none;color:var(--muted);font-weight:500}
 nav a.active,nav a:hover{color:var(--text);border-bottom:2px solid var(--accent)}
 .banner{padding:8px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap}
 .banner .warn{color:var(--warn)}
-.container{max-width:1200px;margin:0 auto;padding:24px 20px}
-h1{font-size:22px;font-weight:700;margin-bottom:8px}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-.filter-btn{padding:5px 14px;border:1px solid var(--border);border-radius:20px;background:none;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer}
-.filter-btn.active,.filter-btn:hover{border-color:var(--accent);color:var(--text);background:rgba(59,130,246,.1)}
-.search-wrap{display:flex;align-items:center;gap:8px;margin-bottom:16px}
-.search-wrap input{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:7px 12px;color:var(--text);font-size:13px;width:220px}
+.container{max-width:1300px;margin:0 auto;padding:24px 20px}
+h1{font-size:22px;font-weight:700;margin-bottom:16px}
+.controls{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.win-btn{padding:5px 14px;border:1px solid var(--border);border-radius:20px;background:none;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
+.win-btn.active,.win-btn:hover{border-color:var(--accent);color:var(--text);background:rgba(59,130,246,.1)}
+.search-wrap input{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:7px 12px;color:var(--text);font-size:13px;width:200px;outline:none}
 .search-wrap input::placeholder{color:var(--muted)}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:12px 0 6px;margin-top:4px;display:flex;align-items:center;gap:8px}
+.stat-note{font-size:10px;color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:8px}
 table{width:100%;border-collapse:collapse}
-th{text-align:left;padding:8px 10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;cursor:pointer;user-select:none}
-th:hover{color:var(--text)}
-th.sorted{color:var(--accent)}
-td{padding:8px 10px;border-bottom:1px solid var(--border);font-size:12px;white-space:nowrap}
+th{text-align:right;padding:7px 10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap}
+th.left,td.left{text-align:left}
+td{padding:8px 10px;border-bottom:1px solid var(--border);font-size:12px;white-space:nowrap;text-align:right}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(255,255,255,.02)}
+.section-row td{background:rgba(0,0,0,.25);color:var(--muted);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;text-align:left!important}
 .tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:700;margin-right:2px}
 .tag-buy{background:rgba(34,197,94,.15);color:var(--win)}
 .tag-sell{background:rgba(239,68,68,.15);color:var(--loss)}
 .tag-2s{background:rgba(167,139,250,.15);color:var(--flip)}
 .tag-il{background:rgba(239,68,68,.1);color:var(--loss)}
-.pos{color:var(--muted);font-size:11px;font-weight:600}
-.slot{color:var(--accent);font-size:11px}
-.count{font-size:12px;color:var(--muted);margin-bottom:8px}
+.slot{color:var(--accent);font-size:11px;font-weight:600}
+.pos{color:var(--muted);font-size:11px}
+.bn-row td{opacity:.8}
+.il-row td{opacity:.6}
+.tip-wrap{position:relative;display:inline-block;margin-left:6px;vertical-align:middle}
+.tip-btn{width:15px;height:15px;border-radius:50%;background:var(--border);color:var(--muted);font-size:9px;font-weight:700;border:none;cursor:default;display:inline-flex;align-items:center;justify-content:center}
+.tip-box{display:none;position:absolute;left:20px;top:-4px;z-index:200;background:#1e2130;border:1px solid var(--border);border-radius:8px;padding:12px 14px;width:300px;font-size:11px;line-height:1.6;color:var(--text);box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:normal}
+.tip-box b{color:var(--accent)}.tip-box code{color:var(--warn);font-size:10px}
+.tip-wrap:hover .tip-box{display:block}
 </style>
 </head>
 <body>
@@ -54,153 +61,147 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <div class="container">
   <h1>Players</h1>
 
-  <div class="filters" id="filters">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="hitter">Hitters</button>
-    <button class="filter-btn" data-filter="pitcher">Pitchers</button>
-    <button class="filter-btn" data-filter="buy">Buy Low</button>
-    <button class="filter-btn" data-filter="sell">Sell High</button>
-    <button class="filter-btn" data-filter="il">IL</button>
+  <div class="controls">
+    <div style="display:flex;gap:6px" id="window-btns">
+      <button class="win-btn" data-win="current">Current Matchup</button>
+      <button class="win-btn" data-win="7d">7D</button>
+      <button class="win-btn" data-win="14d">14D</button>
+      <button class="win-btn" data-win="30d">30D</button>
+      <button class="win-btn active" data-win="season">Season</button>
+    </div>
+    <div class="search-wrap">
+      <input type="text" id="search" placeholder="Search players...">
+    </div>
   </div>
 
-  <div class="search-wrap">
-    <input type="text" id="search" placeholder="Search players...">
-    <span class="count" id="count"></span>
-  </div>
-
-  <div class="card">
-    <table>
-      <thead><tr id="header-row"></tr></thead>
-      <tbody id="player-table"></tbody>
-    </table>
-  </div>
+  <div id="roster-content"></div>
 </div>
 
 <script>
 async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
-function fmt(v,d=1){if(v==null||v===undefined)return'—';return typeof v==='number'?v.toFixed(d):v}
+function fmt(v,d=0){if(v==null||v===undefined)return'—';return typeof v==='number'?v.toFixed(d):String(v)}
 
 let allPlayers=[];
-let sortCol='name';
-let sortDir=1;
-let activeFilter='all';
+let activeWindow='season';
+let searchStr='';
 
-// Column definitions per mode
-const COLS = {
-  hitter: [
-    {col:'name',      label:'Player',  d:null},
-    {col:'roster_slot',label:'Slot',   d:null},
-    {col:'eligible_positions',label:'Pos',d:null},
-    {col:'r_season',  label:'R',       d:0,   title:'Runs (season)'},
-    {col:'hr_season', label:'HR',      d:0,   title:'Home Runs (season)'},
-    {col:'rbi_season',label:'RBI',     d:0,   title:'RBI (season)'},
-    {col:'sb_season', label:'SB',      d:0,   title:'Stolen Bases (season)'},
-    {col:'obp_season',label:'OBP',     d:3,   title:'On-Base % (season)'},
-    {col:'xwoba',     label:'xwOBA',   d:3,   title:'Expected wOBA (Statcast)'},
-    {col:'babip',     label:'BABIP',   d:3,   title:'BABIP (season)'},
-    {col:'flags',     label:'Flags',   d:null},
-  ],
-  pitcher: [
-    {col:'name',      label:'Player',  d:null},
-    {col:'roster_slot',label:'Slot',   d:null},
-    {col:'eligible_positions',label:'Pos',d:null},
-    {col:'k_season',  label:'K',       d:0,   title:'Strikeouts (season)'},
-    {col:'qs_season', label:'QS',      d:0,   title:'Quality Starts (season)'},
-    {col:'era_season',label:'ERA',     d:2,   title:'ERA (season)'},
-    {col:'whip_season',label:'WHIP',   d:2,   title:'WHIP (season)'},
-    {col:'svhd_season',label:'SVHD',   d:0,   title:'Saves+Holds (season)'},
-    {col:'xfip',      label:'xFIP',    d:2,   title:'Expected FIP (Statcast)'},
-    {col:'siera',     label:'SIERA',   d:2,   title:'SIERA (Statcast)'},
-    {col:'flags',     label:'Flags',   d:null},
-  ],
-  all: [
-    {col:'name',      label:'Player',  d:null},
-    {col:'roster_slot',label:'Slot',   d:null},
-    {col:'eligible_positions',label:'Pos',d:null},
-    {col:'r_season',  label:'R',       d:0,   title:'Runs (season)'},
-    {col:'hr_season', label:'HR',      d:0,   title:'Home Runs (season)'},
-    {col:'obp_season',label:'OBP',     d:3,   title:'OBP (season)'},
-    {col:'k_season',  label:'K',       d:0,   title:'Strikeouts (season)'},
-    {col:'era_season',label:'ERA',     d:2,   title:'ERA (season)'},
-    {col:'whip_season',label:'WHIP',   d:2,   title:'WHIP (season)'},
-    {col:'xwoba',     label:'xwOBA',   d:3,   title:'Expected wOBA'},
-    {col:'xfip',      label:'xFIP',    d:2,   title:'Expected FIP'},
-    {col:'flags',     label:'Flags',   d:null},
-  ],
+// ESPN active-hitter slot order
+const SLOT_RANK={
+  'C':0,'1B':2,'2B':3,'3B':4,'SS':5,
+  '2B/SS':6,'1B/3B':7,'OF':8,'UTIL':10
 };
 
-function colMode(){
-  if(activeFilter==='hitter') return 'hitter';
-  if(activeFilter==='pitcher') return 'pitcher';
-  return 'all';
+function isPitcher(p){return /SP|RP/i.test(p.eligible_positions||'')}
+function slotGroup(p){
+  const s=(p.roster_slot||'').toUpperCase();
+  const pit=isPitcher(p);
+  if(s==='IL')  return pit?'il-p':'il-h';
+  if(s==='BE')  return pit?'bn-p':'bn-h';
+  if(s==='P')   return 'active-p';
+  return 'active-h';
+}
+function slotRank(p){return SLOT_RANK[p.roster_slot]??15}
+function spFirst(p){return /SP/i.test(p.eligible_positions||'')?0:1}
+function getW(p){return (p.stats||{})[activeWindow]||{}}
+
+function hRow(p,cls=''){
+  const s=getW(p);const sc=p.statcast||{};
+  const tags=[
+    p.buy_low?'<span class="tag tag-buy">BOUNCE</span>':'',
+    p.sell_high?'<span class="tag tag-sell">SELL</span>':'',
+    p.two_start?'<span class="tag tag-2s">2-ST</span>':'',
+  ].join('');
+  return `<tr class="${cls}">
+    <td class="slot left">${p.roster_slot||'—'}</td>
+    <td class="left"><b>${p.name||'—'}</b></td>
+    <td class="pos left">${p.eligible_positions||'—'}</td>
+    <td>${fmt(s.r)}</td><td>${fmt(s.hr)}</td><td>${fmt(s.rbi)}</td>
+    <td>${fmt(s.sb)}</td><td>${fmt(s.obp,4)}</td>
+    <td>${fmt(sc.xwoba,3)}</td><td>${fmt(s.babip,3)}</td>
+    <td class="left">${tags||'—'}</td>
+  </tr>`;
 }
 
-function isHitter(p){
-  const pos=(p.eligible_positions||'').toUpperCase();
-  return /C|1B|2B|3B|SS|OF|MI|CI|UTIL/.test(pos) && !/^SP$|^RP$/.test(pos);
-}
-function isPitcher(p){
-  return /SP|RP/.test((p.eligible_positions||'').toUpperCase());
-}
-
-function renderHeader(cols){
-  document.getElementById('header-row').innerHTML=cols.map(c=>
-    `<th data-col="${c.col}"${c.title?` title="${c.title}"`:''}${c.col===sortCol?' class="sorted"':''}>${c.label}</th>`
-  ).join('');
-  document.querySelectorAll('th[data-col]').forEach(th=>{
-    th.addEventListener('click',()=>{
-      const col=th.dataset.col;
-      if(col==='flags') return;
-      if(sortCol===col) sortDir*=-1;
-      else{sortCol=col;sortDir=col==='name'?1:-1;}
-      renderTable();
-    });
-  });
+function pRow(p,cls=''){
+  const s=getW(p);const sc=p.statcast||{};
+  const tags=[
+    p.buy_low?'<span class="tag tag-buy">BOUNCE</span>':'',
+    p.sell_high?'<span class="tag tag-sell">SELL</span>':'',
+    p.two_start?'<span class="tag tag-2s">2-ST</span>':'',
+  ].join('');
+  return `<tr class="${cls}">
+    <td class="slot left">${p.roster_slot||'—'}</td>
+    <td class="left"><b>${p.name||'—'}</b></td>
+    <td class="pos left">${p.eligible_positions||'—'}</td>
+    <td>${fmt(s.k)}</td><td>${fmt(s.qs)}</td>
+    <td>${fmt(s.era,4)}</td><td>${fmt(s.whip,4)}</td>
+    <td>${fmt(s.svhd)}</td><td>${fmt(s.ip,1)}</td>
+    <td>${fmt(sc.xfip,2)}</td><td>${fmt(sc.siera,2)}</td>
+    <td class="left">${tags||'—'}</td>
+  </tr>`;
 }
 
-function renderTable(){
-  const search=document.getElementById('search').value.toLowerCase();
-  let rows=allPlayers.filter(p=>{
-    if(search && !p.name?.toLowerCase().includes(search)) return false;
-    if(activeFilter==='hitter')  return isHitter(p);
-    if(activeFilter==='pitcher') return isPitcher(p);
-    if(activeFilter==='buy')     return p.buy_low;
-    if(activeFilter==='sell')    return p.sell_high;
-    if(activeFilter==='il')      return (p.roster_slot||'').toUpperCase()==='IL';
-    return true;
-  });
+const H_HEAD=`<tr>
+  <th class="left">Slot</th><th class="left">Player</th><th class="left">Pos</th>
+  <th title="Runs">R</th><th title="Home Runs">HR</th><th title="RBI">RBI</th>
+  <th title="Stolen Bases">SB</th><th title="On-Base Percentage">OBP</th>
+  <th title="Expected wOBA — Statcast, season only">xwOBA</th>
+  <th title="Batting Avg on Balls in Play — luck indicator">BABIP</th>
+  <th class="left">Flags</th>
+</tr>`;
 
-  rows.sort((a,b)=>{
-    let av=a[sortCol],bv=b[sortCol];
-    if(av==null && bv==null) return 0;
-    if(av==null) return 1;
-    if(bv==null) return -1;
-    if(typeof av==='string') return av.localeCompare(bv)*sortDir;
-    return (av-bv)*sortDir;
-  });
+const P_HEAD=`<tr>
+  <th class="left">Slot</th><th class="left">Player</th><th class="left">Pos</th>
+  <th title="Strikeouts">K</th><th title="Quality Starts (6+ IP, ≤3 ER)">QS</th>
+  <th title="Earned Run Average">ERA</th>
+  <th title="Walks + Hits per Inning Pitched">WHIP</th>
+  <th title="Saves + Holds">SVHD</th>
+  <th title="Innings Pitched">IP</th>
+  <th title="Expected FIP — Statcast, season only">xFIP</th>
+  <th title="Skill-Interactive ERA — Statcast, season only">SIERA</th>
+  <th class="left">Flags</th>
+</tr>`;
 
-  document.getElementById('count').textContent=`${rows.length} players`;
+function secRow(label,cols){
+  return `<tr class="section-row"><td colspan="${cols}">${label}</td></tr>`;
+}
 
-  const cols=COLS[colMode()];
-  renderHeader(cols);
+function section(label,head,body,cols){
+  if(!body)return'';
+  return`<div class="section-label">${label}</div><div class="card"><table><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
+}
 
-  const tbody=document.getElementById('player-table');
-  tbody.innerHTML=rows.map(p=>{
-    const flags=[];
-    if(p.buy_low)  flags.push('<span class="tag tag-buy">BOUNCE</span>');
-    if(p.sell_high) flags.push('<span class="tag tag-sell">SELL</span>');
-    if(p.two_start) flags.push('<span class="tag tag-2s">2-ST</span>');
-    if((p.roster_slot||'').toUpperCase()==='IL') flags.push('<span class="tag tag-il">IL</span>');
-    const flagCell=flags.join('')||'—';
+function render(){
+  const q=searchStr.toLowerCase();
+  const players=allPlayers.filter(p=>!q||p.name.toLowerCase().includes(q));
 
-    return `<tr>${cols.map(c=>{
-      if(c.col==='name')               return `<td><b>${p.name||'—'}</b></td>`;
-      if(c.col==='roster_slot')        return `<td class="slot">${p.roster_slot||'—'}</td>`;
-      if(c.col==='eligible_positions') return `<td class="pos">${p.eligible_positions||'—'}</td>`;
-      if(c.col==='flags')              return `<td>${flagCell}</td>`;
-      return `<td>${fmt(p[c.col],c.d)}</td>`;
-    }).join('')}</tr>`;
-  }).join('');
+  const aH=players.filter(p=>slotGroup(p)==='active-h').sort((a,b)=>slotRank(a)-slotRank(b));
+  const aP=players.filter(p=>slotGroup(p)==='active-p').sort((a,b)=>spFirst(a)-spFirst(b));
+  const bnP=players.filter(p=>slotGroup(p)==='bn-p').sort((a,b)=>spFirst(a)-spFirst(b));
+  const bnH=players.filter(p=>slotGroup(p)==='bn-h');
+  const ilP=players.filter(p=>slotGroup(p)==='il-p').sort((a,b)=>spFirst(a)-spFirst(b));
+  const ilH=players.filter(p=>slotGroup(p)==='il-h');
+
+  const winLabel={
+    season:'Season to date',current:'Current matchup',
+    '7d':'Last 7 days','14d':'Last 14 days','30d':'Last 30 days'
+  }[activeWindow]||activeWindow;
+
+  const statNote=`<span class="stat-note">— ${winLabel}</span>`;
+  const pitNote=`<span class="stat-note">— ${winLabel} &nbsp;·&nbsp; xFIP/SIERA always season</span>`;
+
+  const TIP_H=`<span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Hitter stats</b><br><br><b>xwOBA</b> — expected wOBA from exit velocity/launch angle (Statcast). Reflects true contact quality independent of luck. Season only.<br><br><b>BABIP</b> — batting avg on balls in play. League avg ~.295. Below .260 = likely bouncing back. Above .340 = likely to regress.<br><br><b>BOUNCE</b> — underperforming true skill (buy/trade for).<br><b>SELL</b> — overperforming (trade away before regression).<br><b>2-ST</b> — two starts this week.</div></span>`;
+  const TIP_P=`<span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Pitcher stats</b><br><br><b>xFIP</b> — FIP with HR/FB rate normalized to league avg. Removes park and fly-ball luck. Season only.<br><br><b>SIERA</b> — accounts for GB rate and K/BB quality. Most predictive ERA estimator available. Season only.<br><br><b>BOUNCE</b> — ERA inflated vs xFIP (regression candidate, buy).<br><b>SELL</b> — ERA well below xFIP (due for regression up, sell).<br><b>2-ST</b> — two starts this week (high streaming value).</div></span>`;
+
+  let html='';
+  if(aH.length)  html+=section(`Active Batters ${statNote} ${TIP_H}`,H_HEAD,aH.map(p=>hRow(p)).join(''));
+  if(aP.length)  html+=section(`Active Pitchers ${pitNote} ${TIP_P}`,P_HEAD,aP.map(p=>pRow(p)).join(''));
+  if(bnP.length) html+=section(`Bench — Pitchers ${pitNote} ${TIP_P}`,P_HEAD,bnP.map(p=>pRow(p,'bn-row')).join(''));
+  if(bnH.length) html+=section(`Bench — Batters ${statNote} ${TIP_H}`,H_HEAD,bnH.map(p=>hRow(p,'bn-row')).join(''));
+  if(ilP.length) html+=section(`IL — Pitchers ${pitNote} ${TIP_P}`,P_HEAD,ilP.map(p=>pRow(p,'il-row')).join(''));
+  if(ilH.length) html+=section(`IL — Batters ${statNote} ${TIP_H}`,H_HEAD,ilH.map(p=>hRow(p,'il-row')).join(''));
+
+  document.getElementById('roster-content').innerHTML=html;
 }
 
 async function main(){
@@ -212,34 +213,26 @@ async function main(){
     (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
     (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
 
-  allPlayers=(roster.players||[]).map(p=>{
-    const s=p.stats||{}; const ss=s.season||{}; const sc=p.statcast||{};
-    return {
-      ...p,
-      roster_slot:        p.lineup_slot,
-      eligible_positions: p.position,
-      r_season:   ss.r,    hr_season:  ss.hr,  rbi_season: ss.rbi,
-      sb_season:  ss.sb,   obp_season: ss.obp, k_season:   ss.k,
-      qs_season:  ss.qs,   era_season: ss.era, whip_season: ss.whip,
-      svhd_season: ss.svhd, babip: ss.babip,
-      xwoba: sc.xwoba, xfip: sc.xfip, siera: sc.siera,
-    };
-  });
+  allPlayers=(roster.players||[]).map(p=>({
+    ...p,
+    roster_slot:        p.lineup_slot,
+    eligible_positions: p.position,
+  }));
 
-  document.querySelectorAll('.filter-btn').forEach(btn=>{
+  document.querySelectorAll('.win-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{
-      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.win-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
-      activeFilter=btn.dataset.filter;
-      // reset sort to sensible default per mode
-      sortCol='name'; sortDir=1;
-      renderTable();
+      activeWindow=btn.dataset.win;
+      render();
     });
   });
 
-  document.getElementById('search').addEventListener('input',renderTable);
+  document.getElementById('search').addEventListener('input',e=>{
+    searchStr=e.target.value;render();
+  });
 
-  renderTable();
+  render();
 }
 
 main().catch(e=>{document.getElementById('banner').innerHTML=`<span style="color:var(--loss)">Error: ${e.message}</span>`;});

@@ -56,6 +56,12 @@ h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
 .tag-fa { background: rgba(59,130,246,.15); color: var(--accent); }
 .need-bar { height: 4px; border-radius: 2px; background: var(--border); margin-top: 4px; }
 .need-fill { height: 4px; border-radius: 2px; background: var(--accent); }
+/* Tooltips */
+.tip-wrap{position:relative;display:inline-block;margin-left:6px;vertical-align:middle}
+.tip-btn{width:15px;height:15px;border-radius:50%;background:var(--border);color:var(--muted);font-size:9px;font-weight:700;border:none;cursor:default;display:inline-flex;align-items:center;justify-content:center}
+.tip-box{display:none;position:absolute;left:20px;top:-4px;z-index:200;background:#1e2130;border:1px solid var(--border);border-radius:8px;padding:12px 14px;width:300px;font-size:11px;line-height:1.6;color:var(--text);box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:normal}
+.tip-box b{color:var(--accent)}.tip-box code{color:var(--warn);font-size:10px}
+.tip-wrap:hover .tip-box{display:block}
 </style>
 </head>
 <body>
@@ -76,22 +82,22 @@ h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
 
   <div class="grid2" style="margin-bottom:20px">
     <div class="card">
-      <h2>This Week's Matchup</h2>
+      <h2>This Week's Matchup <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Category States</b><br>Each box shows your current gap vs opponent.<br><br><b>WIN</b> — comfortable lead<br><b>FLOPPABLE</b> — leading, but close enough to lose<br><b>FLIPPABLE</b> — trailing, but within reach<br><b>LOSS</b> — too far back to catch up<br><br><b>Thresholds:</b> R ±5 · HR ±2 · RBI ±5 · SB ±2 · OBP ±.010 · K ±10 · QS ±2 · ERA ±0.30 · WHIP ±0.10 · SVHD ±2<br><br>The bar below each cat = <b>Need Weight</b> — how important that category is based on your season rank and win rate. Higher bar = prioritize on waivers.</div></span></h2>
       <div class="cat-grid" id="cat-grid"></div>
     </div>
     <div class="card">
-      <h2>Constraints</h2>
+      <h2>Constraints <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Weekly Limits</b><br><br><b>Acquisitions</b> — ESPN allows 7 adds/drops per week, resetting Monday. Every add counts even if you immediately drop the player.<br><br><b>IP Accumulated</b> — You need 15+ IP in a week for ERA and WHIP to qualify. Below 15 IP, those cats auto-LOSS regardless of actual ERA/WHIP. The amber warning fires below 10 IP remaining.<br><br><b>Waiver Priority</b> — You drop to last position after each claim. Lower number = better position in the priority queue. Resets at season start.</div></span></h2>
       <div id="constraints"></div>
     </div>
   </div>
 
   <div class="grid2">
     <div class="card">
-      <h2>Buy Low Targets</h2>
+      <h2>Buy Low Targets <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Players underperforming their true skill</b> — buy or trade for before results catch up.<br><br><b>WIRE</b> — free agent available now<br><b>TRADE</b> — on another team's roster<br><br><b>Hitter criteria:</b> BABIP below .260 (luck-driven slump — avg is ~.295) OR xwOBA exceeds OBP by 25+ pts (exit velocity better than results show). Quality floor: xwOBA ≥ .310.<br><br><b>Pitcher criteria:</b> ERA exceeds xFIP by 0.75+ (defense/sequencing luck inflating runs allowed).</div></span></h2>
       <div id="buy-low-list"></div>
     </div>
     <div class="card">
-      <h2>Trade Away — Sell High</h2>
+      <h2>Trade Away — Sell High <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Your players outperforming their true skill</b> — trade while their value is inflated.<br><br><b>Hitter criteria:</b> OBP exceeds xwOBA by 25+ pts (due for regression) OR BABIP above .350 with 100+ PA (unsustainably lucky on balls in play).<br><br><b>Pitcher criteria:</b> xFIP or SIERA exceeds ERA by 0.50+ (ERA is unsustainably low — underlying metrics say regression is coming).<br><br>These aren't bad players — they're players whose <i>current value</i> exceeds what the metrics project forward.</div></span></h2>
       <div id="sell-high-list"></div>
     </div>
   </div>
@@ -144,7 +150,7 @@ async function main() {
     const state = s.state || 'UNKNOWN';
     const needW = needs[cat] || 0;
     const label = CAT_LABELS[cat] || cat;
-    const digits = cat === 'OBP' ? 3 : (cat === 'ERA' || cat === 'WHIP') ? 2 : 1;
+    const digits = cat === 'OBP' ? 3 : (cat === 'ERA' || cat === 'WHIP') ? 2 : 0;
     const ipLine = s.ip_note
       ? `<div class="vals" style="color:var(--warn);font-size:10px">${(s.my_ip_week||0).toFixed(1)} / ${15} IP</div>`
       : '';

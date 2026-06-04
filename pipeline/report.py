@@ -135,7 +135,7 @@ def build_roster(conn: sqlite3.Connection, eval_report: dict) -> list[dict]:
                r, hr, rbi, sb, obp, k, qs, era, whip, svhd,
                babip, k_pct, bb_pct, ip, pa
         FROM fact_player_stats
-        WHERE window IN ('season', '14d', '30d', 'current')
+        WHERE window IN ('season', '7d', '14d', '30d', 'current')
         """,
     ).fetchall()
 

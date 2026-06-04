@@ -33,6 +33,10 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .reason{font-size:11px;color:var(--muted)}
 .empty{color:var(--muted);font-size:13px;padding:12px 0}
 .section-desc{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5}
+.tip-wrap{position:relative;display:inline-block;margin-left:6px;vertical-align:middle}
+.tip-btn{width:15px;height:15px;border-radius:50%;background:var(--border);color:var(--muted);font-size:9px;font-weight:700;border:none;cursor:default;display:inline-flex;align-items:center;justify-content:center}
+.tip-box{display:none;position:absolute;left:20px;top:-4px;z-index:200;background:#1e2130;border:1px solid var(--border);border-radius:8px;padding:12px 14px;width:300px;font-size:11px;line-height:1.6;color:var(--text);box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:normal}
+.tip-box b{color:var(--accent)}.tip-wrap:hover .tip-box{display:block}
 </style>
 </head>
 <body>
@@ -51,7 +55,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <h1>Waivers</h1>
 
   <div class="card">
-    <h2>Two-Start Pitchers Available</h2>
+    <h2>Two-Start Pitchers Available <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Pitchers with 2+ probable starts this week, available on waivers.</b><br><br><b>Score</b> — composite 0–100 based on: SIERA (35%), xFIP (15%), recent K/BB stability (10%). Higher = better two-start add.<br><br><b>Why it populates late:</b> MLB only posts probable starters 3–5 days in advance. Section is typically empty Mon/Tue and fills in Wed/Thu as the weekend rotation is confirmed.<br><br><b>Source:</b> MLB Stats API (official, free). All other data sources ultimately pull from the same feed — there is no faster source.</div></span></h2>
     <table>
       <thead>
         <tr>
@@ -71,7 +75,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   </div>
 
   <div class="card">
-    <h2>Buy-Low Targets (Free Agents)</h2>
+    <h2>Buy-Low Targets (Free Agents) <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Free agents underperforming their true skill — add before results improve.</b><br><br><b>Hitter signals:</b><br>· BABIP below .260 — luck is suppressing results (league avg ~.295)<br>· xwOBA exceeds OBP by 25+ pts — exit velocity/launch angle better than actual outcomes<br><br><b>Pitcher signals:</b><br>· ERA exceeds xFIP by 0.75+ — defense/sequencing inflating runs<br>· ERA exceeds SIERA by 0.75+ — corroborating regression signal<br><br><b>Quality floor:</b> xwOBA ≥ .310 required — only flags players with real underlying skill. Top 5 shown, sorted by composite score.</div></span></h2>
     <table>
       <thead>
         <tr>
@@ -89,7 +93,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   </div>
 
   <div class="card">
-    <h2>Ownership Velocity Alerts</h2>
+    <h2>Ownership Velocity Alerts <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Players whose ownership % jumped 5%+ in the last 2 days.</b><br><br>Other managers are adding fast — typically triggered by injury to a teammate (opening a lineup spot), a hot streak, or favorable upcoming schedule.<br><br><b>ROSTERED</b> — already on a team. Monitor for a trade opportunity or potential drop.<br><b>FA</b> — still available. Act before they're claimed.<br><br><b>Lookback:</b> 2-day window. We run the pipeline 3x/day, so consecutive-snapshot comparisons are noisy — a 2-day gap captures meaningful pickup spikes.</div></span></h2>
     <p class="section-desc">Players whose ownership % jumped 5%+ over the last 2 days — other managers are adding them fast. Likely triggered by a hot streak, injury to a teammate, or favorable schedule. Act before they're gone.</p>
     <table>
       <thead>

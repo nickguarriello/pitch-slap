@@ -64,6 +64,10 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .countdown{font-size:32px;font-weight:800;color:var(--accent);text-align:center;padding:8px 0}
 .countdown-label{font-size:12px;color:var(--muted);text-align:center;margin-top:2px}
 .section-note{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5}
+.tip-wrap{position:relative;display:inline-block;margin-left:6px;vertical-align:middle}
+.tip-btn{width:15px;height:15px;border-radius:50%;background:var(--border);color:var(--muted);font-size:9px;font-weight:700;border:none;cursor:default;display:inline-flex;align-items:center;justify-content:center}
+.tip-box{display:none;position:absolute;left:20px;top:-4px;z-index:200;background:#1e2130;border:1px solid var(--border);border-radius:8px;padding:12px 14px;width:300px;font-size:11px;line-height:1.6;color:var(--text);box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:normal}
+.tip-box b{color:var(--accent)}.tip-wrap:hover .tip-box{display:block}
 </style>
 </head>
 <body>
@@ -92,7 +96,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
             <th>Team</th>
             <th title="Matchup record (W-L or W-L-T if ties exist)">Record</th>
             <th>PCT</th>
-            <th title="Cumulative category wins-losses-ties across all matchup weeks">Cat W-L-T</th>
+            <th title="Cumulative category wins-losses-ties across all matchup weeks">Roto Record</th>
             <th></th>
           </tr>
         </thead>
@@ -100,14 +104,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
       </table>
     </div>
     <div class="card">
-      <h2>My Category Profile</h2>
+      <h2>My Category Profile <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Your season rank in each category (1 = best in league, 8 = worst).</b><br><br><b>Elite</b> — ranks 1–2. Top of league, hard to beat here.<br><b>Strong</b> — rank 3. Competitive advantage.<br><b>Mid</b> — ranks 4–5. Coin flip most weeks.<br><b>Weak</b> — rank 6. Likely losing this cat.<br><b>Poor</b> — ranks 7–8. Near certainty of losing this cat.<br><br>Focus your trades and waiver adds on Weak/Poor cats that are also Swing categories vs your likely opponent.</div></span></h2>
       <p class="section-note">Season rank (1 = best in league, 8 = worst). Elite = top 2, Poor = bottom 2.</p>
       <div class="cat-grid" id="cat-profile"></div>
     </div>
   </div>
 
   <div class="card">
-    <h2>Opponent Previews</h2>
+    <h2>Opponent Previews <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Projected cat-by-cat matchup based on season ranks.</b><br><br><b>WIN</b> — you rank better in this cat<br><b>TOSS</b> — within 1 rank (coin flip)<br><b>LOSS</b> — opponent ranks better<br><b>SWING</b> — within 2 ranks; competitive. Prioritize these.<br><br>★ = likely Round 1 opponent (seed 1 vs 4, seed 2 vs 3).<br><br>Projected score = sum of WIN/LOSS/TOSS across all 10 categories.</div></span></h2>
     <p class="section-note">Category-by-category projection based on season ranks. <span style="color:var(--warn)">★ = likely Round 1 opponent</span> based on current seeding.</p>
     <div class="opp-tabs" id="opp-tabs"></div>
     <div id="opp-content"></div>
@@ -115,7 +119,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
   <div class="grid2">
     <div class="card">
-      <h2>Swing Categories</h2>
+      <h2>Swing Categories <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Categories where you and a potential opponent are within 2 league ranks of each other.</b><br><br>These are the cats that actually decide the playoff matchup — not the ones you clearly win or clearly lose, but the ones in the middle where your waiver adds and trades can tip the outcome.<br><br>Every Monday waiver add should target these first. With weekly lineup lock, the decision has to be made before the first game of the week.</div></span></h2>
       <p class="section-note">Categories where rank gap ≤ 2 vs 2+ potential opponents — these decide who wins the playoff matchup. Target these on waivers.</p>
       <div id="swing-cats"></div>
     </div>
@@ -268,7 +272,7 @@ async function main(){
     tbody.innerHTML += `<tr class="${isMe?'my-team':''}">
       <td><span class="seed ${seedClass(s.seed)}">${s.seed}</span></td>
       <td><b>${s.team_name}</b>${isMe?' <span style="font-size:11px;color:var(--accent)">(you)</span>':''}</td>
-      <td style="font-weight:600">${s.record||`${s.wins}-${s.losses}`}</td>
+      <td style="font-weight:600">${s.record||`${s.wins}-${s.losses}-0`}</td>
       <td>${s.pct.toFixed(3)}</td>
       <td style="font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums">${s.cat_record||'—'}</td>
       <td>${s.in_playoffs?'<span class="in-playoffs">IN</span>':'<span class="out-playoffs">out</span>'}</td>
