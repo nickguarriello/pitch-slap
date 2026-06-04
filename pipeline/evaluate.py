@@ -19,7 +19,7 @@ import math
 import os
 import sqlite3
 import sys
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import (
@@ -676,17 +676,28 @@ def compute_two_start_pitchers(
 
 def compute_ownership_velocity(conn: sqlite3.Connection) -> list[dict]:
     """
-    Flag players whose ownership % jumped significantly (>10%) recently.
-    Uses the last 2 distinct snapshot_dates in fact_espn_rosters.
+    Flag players whose ownership % jumped 5%+ in the last 2 days.
+    Compares the most recent snapshot to the nearest snapshot from ~2 days ago.
+    Running the pipeline 3x/day makes consecutive-snapshot comparisons noisy;
+    a 2-day window captures meaningful pickup spikes (injury news, hot streaks).
     """
-    dates = conn.execute(
-        "SELECT DISTINCT snapshot_date FROM fact_espn_rosters ORDER BY snapshot_date DESC LIMIT 2"
-    ).fetchall()
-
-    if len(dates) < 2:
+    recent_row = conn.execute(
+        "SELECT MAX(snapshot_date) FROM fact_espn_rosters"
+    ).fetchone()
+    if not recent_row or not recent_row[0]:
         return []
+    recent = recent_row[0]
 
-    recent, prev = dates[0]["snapshot_date"], dates[1]["snapshot_date"]
+    # Find the nearest snapshot at or before 2 days ago
+    two_days_ago = (date.fromisoformat(recent) - timedelta(days=2)).isoformat()
+    prev_row = conn.execute(
+        "SELECT MAX(snapshot_date) FROM fact_espn_rosters WHERE snapshot_date <= ?",
+        (two_days_ago,),
+    ).fetchone()
+    if not prev_row or not prev_row[0]:
+        return []
+    prev = prev_row[0]
+
     rows = conn.execute(
         """
         SELECT p.player_id, p.name, p.mlb_team,
@@ -697,7 +708,7 @@ def compute_ownership_velocity(conn: sqlite3.Connection) -> list[dict]:
         JOIN dim_players p         ON r.player_id = p.player_id
         WHERE r.snapshot_date = ?
           AND r.ownership_pct IS NOT NULL AND pr.ownership_pct IS NOT NULL
-          AND (r.ownership_pct - pr.ownership_pct) >= 10.0
+          AND (r.ownership_pct - pr.ownership_pct) >= 5.0
         ORDER BY (r.ownership_pct - pr.ownership_pct) DESC
         """,
         (prev, recent),
@@ -705,14 +716,15 @@ def compute_ownership_velocity(conn: sqlite3.Connection) -> list[dict]:
 
     return [
         {
-            "player_id":   r["player_id"],
-            "name":        r["name"],
-            "team":        r["mlb_team"],
-            "espn_team_id": r["espn_team_id"],
-            "rostered":    r["espn_team_id"] is not None,
-            "ownership_now": _f(r["recent_pct"]),
+            "player_id":      r["player_id"],
+            "name":           r["name"],
+            "team":           r["mlb_team"],
+            "espn_team_id":   r["espn_team_id"],
+            "rostered":       r["espn_team_id"] is not None,
+            "ownership_now":  _f(r["recent_pct"]),
             "ownership_prev": _f(r["prev_pct"]),
-            "delta": round((_f(r["recent_pct"]) or 0) - (_f(r["prev_pct"]) or 0), 1),
+            "delta":          round((_f(r["recent_pct"]) or 0) - (_f(r["prev_pct"]) or 0), 1),
+            "lookback_days":  (date.fromisoformat(recent) - date.fromisoformat(prev)).days,
         }
         for r in rows
     ]
@@ -746,9 +758,25 @@ def compute_constraint_state(conn: sqlite3.Connection) -> dict:
 
     used      = row["acquisitions_used"]
     remaining = row["acquisitions_remaining"]
-    ip_accum  = _f(row["ip_accumulated"])
-    ip_remain = _f(row["ip_remaining"])
     priority  = row["waiver_priority"]
+
+    # Compute IP from fact_player_stats.current — constraint_log.ip_accumulated
+    # is never written by fetch_espn, so it stays 0. Use the same query as the
+    # ERA/WHIP IP qualifier check for consistency.
+    ip_row = conn.execute(
+        """
+        SELECT COALESCE(SUM(fps.ip), 0.0) AS total_ip
+        FROM fact_player_stats fps
+        JOIN fact_espn_rosters fer ON fps.player_id = fer.player_id
+        WHERE fps.window = 'current'
+          AND fps.ip IS NOT NULL AND fps.ip > 0
+          AND fer.espn_team_id = ?
+          AND fer.snapshot_date = (SELECT MAX(snapshot_date) FROM fact_espn_rosters)
+        """,
+        (TEAM_ID,),
+    ).fetchone()
+    ip_accum  = _f(ip_row["total_ip"]) if ip_row else 0.0
+    ip_remain = round(max(0.0, IP_MINIMUM_PER_WEEK - ip_accum), 1)
 
     acq_alert = None
     if used >= ACQ_URGENCY_LAST:

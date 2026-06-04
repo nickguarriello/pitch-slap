@@ -5,7 +5,8 @@ Joins all data sources on player_id (ESPN) and writes fact_player_stats.
 Windows computed:
   'season'  -- full season to date (FanGraphs JSON API, month=0)
   '30d'     -- last 30 days (pybaseball batting/pitching_stats_range)
-  '14d'     -- last 14 days (pybaseball batting/pitching_stats_range)
+  '14d'     -- last 14 days
+  '7d'      -- last 7 days
   'current' -- current week start to today (same range functions)
 
 Hitter stats:  R, HR, RBI, SB, OBP, BABIP, K%, BB%, PA
@@ -284,6 +285,7 @@ def run() -> dict:
     for label, start in [
         ("30d",     today - timedelta(days=30)),
         ("14d",     today - timedelta(days=14)),
+        ("7d",      today - timedelta(days=7)),
         ("current", week_start),
     ]:
         print(f"  {label} stats ({start} to {today})...")

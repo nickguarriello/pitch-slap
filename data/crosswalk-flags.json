@@ -1,0 +1,138 @@
+[
+  {
+    "player_id": "4719300",
+    "name": "Jacob Wilson",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 2 players share the normalized name 'jacob wilson'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "40459",
+    "name": "Luis Garcia Jr.",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 5 players share the normalized name 'luis garcia'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "32675",
+    "name": "Eduardo Rodriguez",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 2 players share the normalized name 'eduardo rodriguez'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "32517",
+    "name": "Josh Bell",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 2 players share the normalized name 'josh bell'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "5080753",
+    "name": "Robby Snelling",
+    "team": "",
+    "rostered": false,
+    "status": "unmatched",
+    "note": "No match found for 'Robby Snelling' (norm: 'robby snelling')"
+  },
+  {
+    "player_id": "4722925",
+    "name": "Juan Morillo",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 2 players share the normalized name 'juan morillo'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "4872686",
+    "name": "Max Muncy",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 2 players share the normalized name 'max muncy'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "32764",
+    "name": "Lance McCullers Jr.",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 2 players share the normalized name 'lance mccullers'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "5010500",
+    "name": "Jose Fernandez",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 5 players share the normalized name 'jose fernandez'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "5148964",
+    "name": "Max Clark",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Fuzzy match 'clark' (score=90) is ambiguous \u2014 4 players. Add to crosswalk-overrides.json."
+  },
+  {
+    "player_id": "39957",
+    "name": "Jesus Sanchez",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 2 players share the normalized name 'jesus sanchez'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "42884",
+    "name": "Josh Smith",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Exact match ambiguous \u2014 3 players share the normalized name 'josh smith'. Add to crosswalk-overrides.json with the correct mlb_id."
+  },
+  {
+    "player_id": "5129344",
+    "name": "Ryan Waldschmidt",
+    "team": "",
+    "rostered": false,
+    "status": "unmatched",
+    "note": "No match found for 'Ryan Waldschmidt' (norm: 'ryan waldschmidt')"
+  },
+  {
+    "player_id": "5033089",
+    "name": "Charlie Condon",
+    "team": "",
+    "rostered": false,
+    "status": "unmatched",
+    "note": "No match found for 'Charlie Condon' (norm: 'charlie condon')"
+  },
+  {
+    "player_id": "5196211",
+    "name": "Jesus Made",
+    "team": "",
+    "rostered": false,
+    "status": "unmatched",
+    "note": "No match found for 'Jesus Made' (norm: 'jesus made')"
+  },
+  {
+    "player_id": "5015255",
+    "name": "Jesus Rodriguez",
+    "team": "",
+    "rostered": false,
+    "status": "unmatched",
+    "note": "No match found for 'Jesus Rodriguez' (norm: 'jesus rodriguez')"
+  },
+  {
+    "player_id": "4867424",
+    "name": "Spencer Jones",
+    "team": "",
+    "rostered": false,
+    "status": "flagged",
+    "note": "Fuzzy match 'jones' (score=90) is ambiguous \u2014 10 players. Add to crosswalk-overrides.json."
+  }
+]

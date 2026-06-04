@@ -1,0 +1,16 @@
+{
+  "espn_last_fetch": "2026-06-03T15:28:26.293018+00:00",
+  "espn_status": "ok",
+  "espn_rows": 555,
+  "mlb_last_fetch": "2026-06-03T15:28:27.801836+00:00",
+  "transform_last_run": "2026-06-03T03:12:17.571622+00:00",
+  "validate_last_run": "2026-06-03T03:12:17.587335+00:00",
+  "validate_overall": "warn",
+  "evaluate_last_run": "2026-06-03T03:12:17.606248+00:00",
+  "cats_winning": 0,
+  "last_light_run": "2026-06-03T03:11:48.323858+00:00",
+  "last_run_mode": "light",
+  "schedule_rows": 184,
+  "statcast_last_fetch": "2026-06-03T00:36:58.927099+00:00",
+  "report_last_run": "2026-06-03T03:12:17.713112+00:00"
+}

@@ -1,0 +1,154 @@
+{
+  "run_ts": "2026-06-03T03:12:17.586077+00:00",
+  "overall": "warn",
+  "checks": [
+    {
+      "check": "schema.dim_players",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "schema.fact_player_stats",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "schema.fact_statcast",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "range.era",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "range.whip",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "range.obp",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "range.ownership",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "range.barrel_pct",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "range.xfip_siera",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "completeness.rosters",
+      "status": "pass",
+      "detail": "8 team rosters",
+      "row_count": 8
+    },
+    {
+      "check": "completeness.my_roster",
+      "status": "pass",
+      "detail": "31 players on roster",
+      "row_count": 31
+    },
+    {
+      "check": "completeness.fa_pool",
+      "status": "pass",
+      "detail": "300 FA players",
+      "row_count": 300
+    },
+    {
+      "check": "completeness.statcast",
+      "status": "pass",
+      "detail": "513 players with Statcast data",
+      "row_count": 513
+    },
+    {
+      "check": "completeness.fact_player_stats",
+      "status": "pass",
+      "detail": "1842 rows across 4 windows",
+      "row_count": 1842
+    },
+    {
+      "check": "completeness.schedule",
+      "status": "pass",
+      "detail": "184 upcoming team-game slots",
+      "row_count": 184
+    },
+    {
+      "check": "completeness.transform_coverage",
+      "status": "pass",
+      "detail": "277/255 (109%) rostered players have season stats",
+      "row_count": 277
+    },
+    {
+      "check": "crosswalk.integrity",
+      "status": "warn",
+      "detail": "1 rostered players without MLB ID \u2014 check data-gap section",
+      "row_count": 1
+    },
+    {
+      "check": "ground_truth.era",
+      "status": "warn",
+      "detail": "ESPN ERA not provided for comparison \u2014 skipping ground truth check",
+      "row_count": 0
+    },
+    {
+      "check": "ground_truth.svhd",
+      "status": "warn",
+      "detail": "ESPN SvHd not provided for comparison \u2014 skipping ground truth check",
+      "row_count": 0
+    },
+    {
+      "check": "ground_truth.obp_definition",
+      "status": "pass",
+      "detail": "",
+      "row_count": 0
+    },
+    {
+      "check": "staleness.espn",
+      "status": "pass",
+      "detail": "ESPN data is 0.0h old",
+      "row_count": 0
+    },
+    {
+      "check": "staleness.statcast",
+      "status": "pass",
+      "detail": "Statcast data is 2.6h old",
+      "row_count": 0
+    }
+  ],
+  "meta": {
+    "espn_last_fetch": "2026-06-03T03:12:01.046433+00:00",
+    "espn_status": "ok",
+    "espn_rows": 555,
+    "mlb_last_fetch": "2026-06-03T03:12:02.465353+00:00",
+    "transform_last_run": "2026-06-03T03:12:17.571622+00:00",
+    "validate_last_run": "2026-06-03T03:03:13.444191+00:00",
+    "validate_overall": "warn",
+    "evaluate_last_run": "2026-06-03T03:03:13.462984+00:00",
+    "cats_winning": 0,
+    "last_light_run": "2026-06-03T03:02:28.789913+00:00",
+    "last_run_mode": "light",
+    "schedule_rows": 184,
+    "statcast_last_fetch": "2026-06-03T00:36:58.927099+00:00",
+    "report_last_run": "2026-06-03T03:03:13.575496+00:00"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "as_of": "2026-06-03T15:28:26.293018+00:00",
+  "last_run_mode": "light",
+  "last_full_run": null,
+  "last_light_run": "2026-06-03T03:11:48.323858+00:00",
+  "espn_last_fetch": "2026-06-03T15:28:26.293018+00:00",
+  "mlb_last_fetch": "2026-06-03T15:28:27.801836+00:00",
+  "statcast_last_fetch": "2026-06-03T00:36:58.927099+00:00",
+  "validate_overall": "warn",
+  "row_counts": {
+    "fact_espn_rosters": 1666,
+    "fact_player_stats": 1842,
+    "fact_statcast": 513,
+    "fact_matchups": 1230,
+    "stats_season": 769,
+    "stats_30d": 487,
+    "stats_14d": 445,
+    "stats_7d": 0,
+    "stats_current": 141
+  },
+  "validation_checks": [
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "8 team rosters"
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "31 players on roster"
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "300 FA players"
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "513 players with Statcast data"
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "1842 rows across 4 windows"
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "184 upcoming team-game slots"
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "277/255 (109%) rostered players have season stats"
+    },
+    {
+      "name": "",
+      "status": "warn",
+      "detail": "1 rostered players without MLB ID \u2014 check data-gap section"
+    },
+    {
+      "name": "",
+      "status": "warn",
+      "detail": "ESPN ERA not provided for comparison \u2014 skipping ground truth check"
+    },
+    {
+      "name": "",
+      "status": "warn",
+      "detail": "ESPN SvHd not provided for comparison \u2014 skipping ground truth check"
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "ESPN data is 0.0h old"
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "Statcast data is 2.6h old"
+    }
+  ]
+}

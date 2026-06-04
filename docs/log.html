@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Slap — Pipeline Log</title>
+<style>
+:root{--bg:#0f1117;--surface:#1a1d27;--border:#2a2d3a;--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--win:#22c55e;--loss:#ef4444;--warn:#f59e0b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:14px}
+nav{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
+nav a{padding:12px 20px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a.active,nav a:hover{color:var(--text);border-bottom:2px solid var(--accent)}
+.banner{padding:8px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap}
+.container{max-width:900px;margin:0 auto;padding:24px 20px}
+h1{font-size:22px;font-weight:700;margin-bottom:4px}
+.subtitle{color:var(--muted);font-size:13px;margin-bottom:24px}
+h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:12px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:8px 12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border)}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.status-pass{color:var(--win);font-weight:700}
+.status-warn{color:var(--warn);font-weight:700}
+.status-fail{color:var(--loss);font-weight:700}
+.status-unknown{color:var(--muted);font-weight:600}
+.meta-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.meta-row:last-child{border-bottom:none}
+.meta-label{color:var(--muted)}
+.meta-value{font-weight:500}
+.overall-badge{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700}
+.badge-pass{background:rgba(34,197,94,.15);color:var(--win)}
+.badge-warn{background:rgba(245,158,11,.15);color:var(--warn)}
+.badge-fail{background:rgba(239,68,68,.15);color:var(--loss)}
+.badge-unknown{background:var(--border);color:var(--muted)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="matchup.html">Matchup</a>
+  <a href="waivers.html">Waivers</a>
+  <a href="players.html">Players</a>
+  <a href="league.html">League</a>
+  <a href="playoff.html">Playoffs</a>
+  <a href="log.html" class="active">Log</a>
+</nav>
+<div class="banner" id="banner">Loading...</div>
+
+<div class="container">
+  <h1>Pipeline Log</h1>
+  <div class="subtitle" id="subtitle">Pipeline run history and data validation results</div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>Last Run</h2>
+      <div id="run-meta"></div>
+    </div>
+    <div class="card">
+      <h2>Row Counts</h2>
+      <div id="row-counts"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Validation Checks <span id="overall-badge"></span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Check</th>
+          <th>Status</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody id="checks-table"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
+
+function fmtTs(ts){
+  if(!ts) return '—';
+  try{
+    return new Date(ts).toLocaleString('en-US',{
+      month:'short',day:'numeric',hour:'numeric',minute:'2-digit',
+      timeZone:'America/New_York',timeZoneName:'short'
+    });
+  }catch{return ts;}
+}
+
+async function main(){
+  const [log, status] = await Promise.all([
+    load('data/pipeline-log.json'),
+    load('data/status.json'),
+  ]);
+
+  document.getElementById('banner').innerHTML =
+    `<span>Last synced: <b>${fmtTs(status.espn_last_fetch)}</b></span>`;
+
+  document.getElementById('subtitle').textContent =
+    `Overall validation: ${(log.validate_overall||'unknown').toUpperCase()} · ${log.validation_checks?.length||0} checks`;
+
+  // Run meta
+  const meta = document.getElementById('run-meta');
+  const rows = [
+    ['Mode', log.last_run_mode || '—'],
+    ['ESPN fetched', fmtTs(log.espn_last_fetch)],
+    ['MLB fetched', fmtTs(log.mlb_last_fetch)],
+    ['Statcast fetched', fmtTs(log.statcast_last_fetch)],
+    ['Last full run', fmtTs(log.last_full_run)],
+    ['Last light run', fmtTs(log.last_light_run)],
+  ];
+  meta.innerHTML = rows.map(([l,v]) =>
+    `<div class="meta-row"><span class="meta-label">${l}</span><span class="meta-value">${v}</span></div>`
+  ).join('');
+
+  // Row counts
+  const rc = log.row_counts || {};
+  const rcEl = document.getElementById('row-counts');
+  const rcRows = [
+    ['ESPN rosters', rc.fact_espn_rosters],
+    ['Statcast rows', rc.fact_statcast],
+    ['Stats — season', rc.stats_season],
+    ['Stats — 30d', rc.stats_30d],
+    ['Stats — 14d', rc.stats_14d],
+    ['Stats — 7d', rc.stats_7d],
+    ['Stats — current week', rc.stats_current],
+    ['Matchup records', rc.fact_matchups],
+  ];
+  rcEl.innerHTML = rcRows.map(([l,v]) =>
+    `<div class="meta-row"><span class="meta-label">${l}</span><span class="meta-value">${v ?? '—'}</span></div>`
+  ).join('');
+
+  // Overall badge
+  const ov = log.validate_overall || 'unknown';
+  document.getElementById('overall-badge').innerHTML =
+    `<span class="overall-badge badge-${ov}">${ov.toUpperCase()}</span>`;
+
+  // Validation checks
+  const tbody = document.getElementById('checks-table');
+  const checks = log.validation_checks || [];
+  if(!checks.length){
+    tbody.innerHTML = '<tr><td colspan="3" style="color:var(--muted);padding:12px">No validation data available.</td></tr>';
+  } else {
+    tbody.innerHTML = checks.map(c => {
+      const cls = `status-${c.status||'unknown'}`;
+      return `<tr>
+        <td>${c.name||'—'}</td>
+        <td><span class="${cls}">${(c.status||'?').toUpperCase()}</span></td>
+        <td style="color:var(--muted);font-size:12px">${c.detail||'—'}</td>
+      </tr>`;
+    }).join('');
+  }
+}
+
+main().catch(e=>{document.getElementById('banner').innerHTML=`<span style="color:var(--loss)">Error: ${e.message}</span>`;});
+</script>
+</body>
+</html>

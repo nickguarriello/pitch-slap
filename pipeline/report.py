@@ -9,6 +9,7 @@ Writes to docs/data/:
   league.json      -- all-team cat standings
   playoff.json     -- playoff picture, bracket, opponent previews, swing categories
   status.json      -- pipeline health banner data
+  pipeline-log.json -- last run details + validation check results
 
 Also writes CSVs to docs/data/:
   roster.csv, waivers.csv, matchup.csv
@@ -260,14 +261,34 @@ def build_matchup(conn: sqlite3.Connection, eval_report: dict) -> dict:
         (TEAM_ID,),
     ).fetchall()
 
+    from config import CAT_THRESHOLDS, CATS_LOWER_IS_BETTER as _LOWER
+
+    def _history_state(cat: str, my_val, opp_val) -> str:
+        """Compute WIN/FLOPPABLE/FLIPPABLE/LOSS for a completed cat result."""
+        if my_val is None or opp_val is None:
+            return "UNKNOWN"
+        lower = cat in _LOWER
+        gap   = (opp_val - my_val) if lower else (my_val - opp_val)
+        t     = CAT_THRESHOLDS.get(cat, {})
+        fp, fl = t.get("floppable", 0), t.get("flippable", 0)
+        if gap > fp:    return "WIN"
+        if gap > 0:     return "FLOPPABLE"
+        if gap == 0:    return "TIE"
+        if abs(gap) <= fl: return "FLIPPABLE"
+        return "LOSS"
+
     history_by_week: dict[int, list] = {}
     for row in history:
-        wk = row["week"]
+        wk  = row["week"]
+        mv  = _f(row["my_val"])
+        ov  = _f(row["opp_val"])
+        cat = row["cat_name"]
         history_by_week.setdefault(wk, []).append({
-            "cat": row["cat_name"],
+            "cat":    cat,
             "result": row["result"],
-            "my_val": _f(row["my_val"]),
-            "opp_val": _f(row["opp_val"]),
+            "state":  _history_state(cat, mv, ov),
+            "my_val": mv,
+            "opp_val": ov,
         })
 
     # Overall W/L/T record per cat
@@ -411,7 +432,7 @@ def build_league(conn: sqlite3.Connection) -> dict:
             "wins":       mw,
             "losses":     ml,
             "ties":       mt,
-            "record":     f"{mw}-{ml}-{mt}" if mt > 0 else f"{mw}-{ml}",
+            "record":     f"{mw}-{ml}-{mt}",  # always include ties
             "cat_wins":   cat_w,
             "cat_losses": cat_l,
             "cat_ties":   cat_t,
@@ -488,7 +509,7 @@ def build_playoff(league_data: dict) -> dict:
         mt = et.get("matchup_ties",   ties)
         total = max(mw + ml + mt, 1)
         computed_pct = round((mw + 0.5 * mt) / total, 3)
-        record_str = f"{mw}-{ml}-{mt}" if mt > 0 else f"{mw}-{ml}"
+        record_str = f"{mw}-{ml}-{mt}"  # always show ties for consistency
 
         cat_w = et.get("cat_wins",   0)
         cat_l = et.get("cat_losses", 0)
@@ -650,6 +671,67 @@ def build_status(eval_report: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# pipeline-log.json
+# ---------------------------------------------------------------------------
+
+def build_pipeline_log(conn: sqlite3.Connection) -> dict:
+    """Build a comprehensive pipeline run log for the Log dashboard tab."""
+    meta_path = os.path.join(DATA_DIR, "pipeline-meta.json")
+    meta: dict = {}
+    if os.path.exists(meta_path):
+        with open(meta_path) as f:
+            try:
+                meta = json.load(f)
+            except Exception:
+                pass
+
+    val_path = os.path.join(DATA_DIR, "validation-report.json")
+    val_data: dict = {}
+    if os.path.exists(val_path):
+        with open(val_path) as f:
+            try:
+                val_data = json.load(f)
+            except Exception:
+                pass
+
+    # Row counts from DB
+    row_counts: dict = {}
+    try:
+        for table in ("fact_espn_rosters", "fact_player_stats", "fact_statcast", "fact_matchups"):
+            n = conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+            row_counts[table] = n
+        # Players by window
+        for w in ("season", "30d", "14d", "7d", "current"):
+            n = conn.execute(
+                "SELECT COUNT(*) FROM fact_player_stats WHERE window=?", (w,)
+            ).fetchone()[0]
+            row_counts[f"stats_{w}"] = n
+    except Exception:
+        pass
+
+    checks = []
+    for c in val_data.get("checks", []):
+        checks.append({
+            "name":   c.get("check_name") or c.get("name", ""),
+            "status": c.get("status", "unknown"),
+            "detail": c.get("detail", ""),
+        })
+
+    return {
+        "as_of":              meta.get("espn_last_fetch", ""),
+        "last_run_mode":      meta.get("last_run_mode", "unknown"),
+        "last_full_run":      meta.get("last_full_run"),
+        "last_light_run":     meta.get("last_light_run"),
+        "espn_last_fetch":    meta.get("espn_last_fetch"),
+        "mlb_last_fetch":     meta.get("mlb_last_fetch"),
+        "statcast_last_fetch": meta.get("statcast_last_fetch"),
+        "validate_overall":   val_data.get("overall", "unknown"),
+        "row_counts":         row_counts,
+        "validation_checks":  checks,
+    }
+
+
+# ---------------------------------------------------------------------------
 # CSVs
 # ---------------------------------------------------------------------------
 
@@ -783,6 +865,10 @@ def run() -> dict:
     print("  status.json...")
     status = build_status(eval_report)
     _write_json(os.path.join(DOCS_DATA_DIR, "status.json"), status)
+
+    print("  pipeline-log.json...")
+    pipeline_log = build_pipeline_log(conn)
+    _write_json(os.path.join(DOCS_DATA_DIR, "pipeline-log.json"), pipeline_log)
 
     conn.close()
 
