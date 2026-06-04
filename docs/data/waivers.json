@@ -295,15 +295,15 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.50) >> xFIP (3.17), gap=1.33",
-        "ERA (4.50) >> SIERA (3.07), gap=1.43"
+        "ERA (4.32) >> xFIP (3.17), gap=1.15",
+        "ERA (4.32) >> SIERA (3.07), gap=1.25"
       ],
       "score": 0.69,
       "stats": {
-        "era": 4.5,
+        "era": 4.32,
         "xfip": 3.1724644833686337,
         "siera": 3.065774471159177,
-        "ip": 24.0
+        "ip": 25.0
       }
     },
     {

@@ -68,6 +68,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <button class="win-btn" data-win="14d">14D</button>
       <button class="win-btn" data-win="30d">30D</button>
       <button class="win-btn active" data-win="season">Season</button>
+      <button class="win-btn" data-win="first_half" id="btn-first-half">1st Half</button>
+      <button class="win-btn" data-win="second_half" id="btn-second-half" style="display:none">2nd Half</button>
     </div>
     <div class="search-wrap">
       <input type="text" id="search" placeholder="Search players...">
@@ -184,7 +186,9 @@ function render(){
 
   const winLabel={
     season:'Season to date',current:'Current matchup',
-    '7d':'Last 7 days','14d':'Last 14 days','30d':'Last 30 days'
+    '7d':'Last 7 days','14d':'Last 14 days','30d':'Last 30 days',
+    first_half:'1st Half (thru All-Star break)',
+    second_half:'2nd Half (post All-Star break)',
   }[activeWindow]||activeWindow;
 
   const statNote=`<span class="stat-note">— ${winLabel}</span>`;
@@ -218,6 +222,10 @@ async function main(){
     roster_slot:        p.lineup_slot,
     eligible_positions: p.position,
   }));
+
+  // Show 2nd Half button only if any player has second_half data
+  const hasSecondHalf=(roster.players||[]).some(p=>p.stats&&p.stats.second_half);
+  document.getElementById('btn-second-half').style.display=hasSecondHalf?'':'none';
 
   document.querySelectorAll('.win-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{

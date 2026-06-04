@@ -1,16 +1,16 @@
 {
-  "espn_last_fetch": "2026-06-04T19:49:40.836391+00:00",
+  "espn_last_fetch": "2026-06-04T20:06:36.343730+00:00",
   "espn_status": "ok",
   "espn_rows": 555,
-  "mlb_last_fetch": "2026-06-04T19:49:42.250634+00:00",
-  "transform_last_run": "2026-06-04T19:50:29.936653+00:00",
-  "validate_last_run": "2026-06-04T19:50:29.960043+00:00",
+  "mlb_last_fetch": "2026-06-04T20:06:45.019228+00:00",
+  "transform_last_run": "2026-06-04T20:07:10.103163+00:00",
+  "validate_last_run": "2026-06-04T20:07:10.128469+00:00",
   "validate_overall": "warn",
-  "evaluate_last_run": "2026-06-04T19:50:29.983973+00:00",
+  "evaluate_last_run": "2026-06-04T20:07:10.153103+00:00",
   "cats_winning": 1,
-  "last_light_run": "2026-06-04T19:49:25.855816+00:00",
+  "last_light_run": "2026-06-04T20:06:19.861277+00:00",
   "last_run_mode": "light",
   "schedule_rows": 184,
   "statcast_last_fetch": "2026-06-03T00:36:58.927099+00:00",
-  "report_last_run": "2026-06-04T19:50:30.136612+00:00"
+  "report_last_run": "2026-06-04T20:07:10.289097+00:00"
 }

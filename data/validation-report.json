@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-06-04T19:50:29.958424+00:00",
+  "run_ts": "2026-06-04T20:07:10.127022+00:00",
   "overall": "warn",
   "checks": [
     {
@@ -83,8 +83,8 @@
     {
       "check": "completeness.fact_player_stats",
       "status": "pass",
-      "detail": "2228 rows across 5 windows",
-      "row_count": 2228
+      "detail": "2771 rows across 6 windows",
+      "row_count": 2771
     },
     {
       "check": "completeness.schedule",
@@ -131,24 +131,24 @@
     {
       "check": "staleness.statcast",
       "status": "pass",
-      "detail": "Statcast data is 43.2h old",
+      "detail": "Statcast data is 43.5h old",
       "row_count": 0
     }
   ],
   "meta": {
-    "espn_last_fetch": "2026-06-04T19:49:40.836391+00:00",
+    "espn_last_fetch": "2026-06-04T20:06:36.343730+00:00",
     "espn_status": "ok",
     "espn_rows": 555,
-    "mlb_last_fetch": "2026-06-04T19:49:42.250634+00:00",
-    "transform_last_run": "2026-06-04T19:50:29.936653+00:00",
-    "validate_last_run": "2026-06-03T03:12:17.587335+00:00",
+    "mlb_last_fetch": "2026-06-04T20:06:45.019228+00:00",
+    "transform_last_run": "2026-06-04T20:07:10.103163+00:00",
+    "validate_last_run": "2026-06-04T19:50:29.960043+00:00",
     "validate_overall": "warn",
-    "evaluate_last_run": "2026-06-03T03:12:17.606248+00:00",
-    "cats_winning": 0,
-    "last_light_run": "2026-06-03T03:11:48.323858+00:00",
+    "evaluate_last_run": "2026-06-04T19:50:29.983973+00:00",
+    "cats_winning": 1,
+    "last_light_run": "2026-06-04T19:49:25.855816+00:00",
     "last_run_mode": "light",
     "schedule_rows": 184,
     "statcast_last_fetch": "2026-06-03T00:36:58.927099+00:00",
-    "report_last_run": "2026-06-03T03:12:17.713112+00:00"
+    "report_last_run": "2026-06-04T19:50:30.136612+00:00"
   }
 }

@@ -21,11 +21,6 @@ WEEK_1_START   = "2026-03-25"
 WEEK_1_END     = "2026-04-05"   # First week was 12 days
 WEEK_2_START   = "2026-04-06"   # Standard 7-day weeks from here
 
-# All-Star break: last first-half game Jul 12, ASG Jul 14, play resumes Jul 16
-# Adjust if ESPN shows different dates.
-ASG_BREAK_END  = "2026-07-16"   # First day of second-half games
-FIRST_HALF_END = "2026-07-12"   # Last day of first-half games
-
 # ---------------------------------------------------------------------------
 # Scoring categories
 # ---------------------------------------------------------------------------

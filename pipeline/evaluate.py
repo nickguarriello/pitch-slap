@@ -760,9 +760,7 @@ def compute_constraint_state(conn: sqlite3.Connection) -> dict:
     remaining = row["acquisitions_remaining"]
     priority  = row["waiver_priority"]
 
-    # Compute IP from fact_player_stats.current — constraint_log.ip_accumulated
-    # is never written by fetch_espn, so it stays 0. Use the same query as the
-    # ERA/WHIP IP qualifier check for consistency.
+    # Compute IP from fact_player_stats.current window (pitchers on our roster).
     ip_row = conn.execute(
         """
         SELECT COALESCE(SUM(fps.ip), 0.0) AS total_ip

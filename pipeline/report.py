@@ -135,7 +135,7 @@ def build_roster(conn: sqlite3.Connection, eval_report: dict) -> list[dict]:
                r, hr, rbi, sb, obp, k, qs, era, whip, svhd,
                babip, k_pct, bb_pct, ip, pa
         FROM fact_player_stats
-        WHERE window IN ('season', '7d', '14d', '30d', 'current')
+        WHERE window IN ('season', 'first_half', 'second_half', '7d', '14d', '30d', 'current')
         """,
     ).fetchall()
 
@@ -701,7 +701,7 @@ def build_pipeline_log(conn: sqlite3.Connection) -> dict:
             n = conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
             row_counts[table] = n
         # Players by window
-        for w in ("season", "30d", "14d", "7d", "current"):
+        for w in ("season", "first_half", "second_half", "30d", "14d", "7d", "current"):
             n = conn.execute(
                 "SELECT COUNT(*) FROM fact_player_stats WHERE window=?", (w,)
             ).fetchone()[0]

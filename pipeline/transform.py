@@ -30,6 +30,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import (
     DB_PATH, SEASON,
     SEASON_START, WEEK_1_END, WEEK_2_START,
+    FIRST_HALF_END, ASG_BREAK_END,
 )
 
 _MLB_STATS_API = "https://statsapi.mlb.com/api/v1"
@@ -319,9 +320,30 @@ def run() -> dict:
 
     windows: dict[str, tuple[pd.DataFrame, pd.DataFrame]] = {}
 
-    # Season window (FanGraphs -- has QS, HLD)
-    print("  Season stats (FanGraphs)...")
+    # Season window (MLB Stats API)
+    print("  Season stats (MLB Stats API)...")
     windows["season"] = (_mlb_batting_season(), _mlb_pitching_season())
+
+    # Half-season splits
+    first_half_end  = date.fromisoformat(FIRST_HALF_END)
+    second_half_start = date.fromisoformat(ASG_BREAK_END)
+    if today <= first_half_end:
+        # Pre-break: first half == season (no extra fetch needed)
+        print("  First half stats (pre-break, aliased to season)...")
+        windows["first_half"] = windows["season"]
+    else:
+        # Post-break: first half is frozen date range via BBRef
+        season_start = date.fromisoformat(SEASON_START)
+        print(f"  First half stats ({season_start} to {first_half_end})...")
+        windows["first_half"] = (
+            _bbref_batting(season_start, first_half_end),
+            _bbref_pitching(season_start, first_half_end),
+        )
+        print(f"  Second half stats ({second_half_start} to {today})...")
+        windows["second_half"] = (
+            _bbref_batting(second_half_start, today),
+            _bbref_pitching(second_half_start, today),
+        )
 
     # Rolling windows (BBRef range)
     for label, start in [

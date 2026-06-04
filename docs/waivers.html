@@ -128,7 +128,7 @@ async function main(){
   const twoStarters=(waivers.two_starters_fa||[]);
   const tsTbody=document.getElementById('two-start-table');
   if(!twoStarters.length){
-    tsTbody.innerHTML=`<tr><td colspan="9" class="empty">No two-start pitchers available on waivers this week.</td></tr>`;
+    tsTbody.innerHTML=`<tr><td colspan="9" class="empty">No two-start pitchers on waivers yet — MLB posts probable starters 3–5 days out, so this populates Wed/Thu. Check back mid-week.</td></tr>`;
   } else {
     for(const p of twoStarters){
       const score=p.score||p.composite_score||0;
