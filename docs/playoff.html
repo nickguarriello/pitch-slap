@@ -74,6 +74,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <a href="players.html">Players</a>
   <a href="league.html">League</a>
   <a href="playoff.html" class="active">Playoffs</a>
+  <a href="log.html">Log</a>
 </nav>
 <div class="banner" id="banner">Loading...</div>
 
@@ -145,6 +146,7 @@ function pct(v){if(v==null)return'—';return(v*100).toFixed(0)+'%'}
 const HITTING_CATS  = ['R','HR','RBI','SB','OBP'];
 const PITCHING_CATS = ['K','QS','ERA','WHIP','SvHd'];
 const ALL_CATS = [...HITTING_CATS, ...PITCHING_CATS];
+const CAT_LABELS = {SvHd:'SVHD'};
 
 function rankClass(rank, total=8){
   if(rank<=2) return 'rank-elite';
@@ -195,7 +197,7 @@ function renderOppContent(idx){
     </div>
     <div>
       <div style="font-size:12px;color:var(--muted)">Swing Cats</div>
-      <div>${(opp.swing_categories||[]).map(c=>`<span class="swing-tag">${c}</span>`).join('')||'<span style="color:var(--muted);font-size:12px">none</span>'}</div>
+      <div>${(opp.swing_categories||[]).map(c=>`<span class="swing-tag">${CAT_LABELS[c]||c}</span>`).join('')||'<span style="color:var(--muted);font-size:12px">none</span>'}</div>
     </div>
   </div>
   <table>
@@ -212,14 +214,14 @@ function renderOppContent(idx){
     const v = cats[cat] || {};
     const isMine   = v.winner === 'mine';
     const isTheirs = v.winner === 'theirs';
-    const isToss   = v.winner === 'toss';
     const rowClass = isMine ? 'matchup-row-mine' : isTheirs ? 'matchup-row-theirs' : 'matchup-row-toss';
     const badge    = isMine ? `<span class="rank-badge rb-mine">WIN</span>`
                    : isTheirs ? `<span class="rank-badge rb-theirs">LOSS</span>`
                    : `<span class="rank-badge rb-toss">TOSS</span>`;
-    const swingMark = swings.has(cat) ? '<span style="color:var(--warn);font-size:11px">⬛ close</span>' : '';
+    const swingMark = swings.has(cat)
+      ? '<span style="color:var(--warn);font-size:11px;font-weight:600">SWING</span>' : '';
     html += `<tr class="${rowClass}">
-      <td><b>${cat}</b></td>
+      <td><b>${CAT_LABELS[cat]||cat}</b></td>
       <td>${v.my_rank||'—'}</td>
       <td>${v.their_rank||'—'}</td>
       <td>${badge}</td>
@@ -281,7 +283,7 @@ async function main(){
     const rc = rank ? rankClass(rank) : 'rank-mid';
     const rl = rank ? rankLabel(rank) : '—';
     catEl.innerHTML += `<div class="cat-box ${rc}">
-      <div class="cat-label">${cat}</div>
+      <div class="cat-label">${CAT_LABELS[cat]||cat}</div>
       <div class="cat-rank">${rank||'—'}</div>
       <div class="cat-tag">${rl}</div>
     </div>`;
@@ -308,7 +310,7 @@ async function main(){
   const swingEl = document.getElementById('swing-cats');
   if(playoff.swing_categories && playoff.swing_categories.length){
     swingEl.innerHTML = playoff.swing_categories.map(c =>
-      `<span class="swing-tag">${c}</span>`
+      `<span class="swing-tag">${CAT_LABELS[c]||c}</span>`
     ).join('') + `<p style="color:var(--muted);font-size:12px;margin-top:8px">Competitive across multiple potential opponents. Every trade and Monday add should target these first — lineups lock at the week's first game.</p>`;
   } else {
     swingEl.innerHTML = '<p style="color:var(--muted);font-size:12px">No swing categories identified yet.</p>';
@@ -318,7 +320,7 @@ async function main(){
   const targEl = document.getElementById('improvement-targets');
   if(playoff.improvement_targets && playoff.improvement_targets.length){
     targEl.innerHTML = playoff.improvement_targets.map(c =>
-      `<span class="target-tag">${c}</span>`
+      `<span class="target-tag">${CAT_LABELS[c]||c}</span>`
     ).join('') + `<p style="color:var(--muted);font-size:12px;margin-top:8px">Projected losses vs your likely R1 opponent. These are your trade/waiver priority.</p>`;
   } else {
     targEl.innerHTML = '<p style="color:var(--muted);font-size:12px;padding:8px 0">No targets — you project to win or split evenly.</p>';
@@ -347,7 +349,7 @@ async function main(){
       streamBody.innerHTML += `<tr>
         <td><b>${p.name||'—'}</b></td>
         <td style="font-size:11px;color:var(--muted)">${p.position||'—'}</td>
-        <td>${helps.map(c=>`<span class="swing-tag">${c}</span>`).join('')}</td>
+        <td>${helps.map(c=>`<span class="swing-tag">${CAT_LABELS[c]||c}</span>`).join('')}</td>
         <td>${fmt(st.obp,3)}</td>
         <td>${fmt(st.xwoba,3)}</td>
         <td>${fmt(st.babip,3)}</td>

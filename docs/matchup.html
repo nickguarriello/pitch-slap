@@ -45,6 +45,7 @@ tr:last-child td{border-bottom:none}
   <a href="players.html">Players</a>
   <a href="league.html">League</a>
   <a href="playoff.html">Playoffs</a>
+  <a href="log.html">Log</a>
 </nav>
 <div class="banner" id="banner">Loading...</div>
 
@@ -99,16 +100,17 @@ async function main(){
   const cats=matchup.cat_states||{};
   const needs=matchup.need_weights||{};
   const records=matchup.cat_records||{};
-  const rateCats=new Set(['OBP','ERA','WHIP']);
+  const CAT_LABELS={SvHd:'SVHD'};
   const tbody=document.getElementById('cat-table');
 
   for(const[cat,s]of Object.entries(cats)){
     const state=s.state||'UNKNOWN';
-    const digits=rateCats.has(cat)?3:1;
+    const digits=cat==='OBP'?3:(cat==='ERA'||cat==='WHIP')?2:1;
+    const label=CAT_LABELS[cat]||cat;
     const need=needs[cat]||0;
     const cr=records[cat]||{};
     tbody.innerHTML+=`<tr>
-      <td><b>${cat}</b></td>
+      <td><b>${label}</b></td>
       <td><span class="state ${state}">${state}</span></td>
       <td>${fmt(s.my_val,digits)}</td>
       <td>${fmt(s.opp_val,digits)}</td>
@@ -128,16 +130,18 @@ async function main(){
 
   const allCats=Object.keys(cats);
   const opponents=matchup.history_opponents||{};
-  let tbl=`<table><thead><tr><th>Week</th><th>Opponent</th>${allCats.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>`;
+  let tbl=`<table><thead><tr><th>Week</th><th>Opponent</th>${allCats.map(c=>`<th>${CAT_LABELS[c]||c}</th>`).join('')}</tr></thead><tbody>`;
   for(const wk of weeks){
     const weekData={};
-    for(const row of hist[wk]){weekData[row.cat]=row.result;}
+    for(const row of hist[wk]){weekData[row.cat]={result:row.result,state:row.state};}
     const oppInfo=opponents[wk]||{};
     const oppLabel=oppInfo.abbrev||oppInfo.name||'—';
     tbl+=`<tr><td style="color:var(--muted)">Wk ${wk}</td><td style="color:var(--muted);font-size:12px">${oppLabel}</td>`;
     for(const cat of allCats){
-      const res=weekData[cat];
-      tbl+=`<td>${res?`<span class="history-week ${res}">${res}</span>`:'—'}</td>`;
+      const d=weekData[cat];
+      const res=d?.result;
+      const st=d?.state||res;
+      tbl+=`<td>${res?`<span class="history-week ${res}" title="${st||''}">${res}</span>`:'—'}</td>`;
     }
     tbl+=`</tr>`;
   }

@@ -43,6 +43,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <a href="players.html">Players</a>
   <a href="league.html" class="active">League</a>
   <a href="playoff.html">Playoffs</a>
+  <a href="log.html">Log</a>
 </nav>
 <div class="banner" id="banner">Loading...</div>
 
@@ -57,6 +58,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <tr>
           <th data-col="rank">#</th>
           <th data-col="team_name">Team</th>
+          <th data-col="record" title="Matchup W-L-T record">Record</th>
           <th data-col="cat_wins" title="Cumulative category wins-losses-ties across all matchup weeks">Cat W-L-T</th>
           <th data-col="r">R</th>
           <th data-col="hr">HR</th>
@@ -67,7 +69,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
           <th data-col="qs">QS</th>
           <th data-col="era">ERA</th>
           <th data-col="whip">WHIP</th>
-          <th data-col="svhd">SvHd</th>
+          <th data-col="svhd">SVHD</th>
         </tr>
       </thead>
       <tbody id="league-table"></tbody>
@@ -79,21 +81,28 @@ tr:hover td{background:rgba(255,255,255,.02)}
 async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
 
 const CATS=['R','HR','RBI','SB','OBP','K','QS','ERA','WHIP','SvHd'];
+const CAT_LABELS={SvHd:'SVHD'};
 const CAT_COLS={R:'r',HR:'hr',RBI:'rbi',SB:'sb',OBP:'obp',K:'k',QS:'qs',ERA:'era',WHIP:'whip',SvHd:'svhd'};
 const LOWER_BETTER=new Set(['ERA','WHIP']);
-const RATE_CATS=new Set(['OBP','ERA','WHIP']);
 
 function fmt(v,cat){
   if(v==null||v===undefined) return '—';
-  if(RATE_CATS.has(cat)) return v.toFixed(3);
+  if(cat==='OBP') return v.toFixed(3);
+  if(cat==='ERA'||cat==='WHIP') return v.toFixed(2);
   return typeof v==='number'?v.toFixed(0):v;
 }
 
-function rankClass(rank){
-  if(rank===1) return 'rank-1';
-  if(rank===2) return 'rank-2';
-  if(rank===3) return 'rank-3';
-  return 'rank-other';
+// Heat color: rank 1=best green, rank n=worst red
+function heatBg(rank, n){
+  if(!rank||!n||n<2) return '';
+  const t=(rank-1)/(n-1); // 0=best,1=worst
+  if(t<=0.5){
+    const intensity=0.28*(1-t*2);
+    return `background:rgba(34,197,94,${intensity.toFixed(2)})`;
+  } else {
+    const intensity=0.28*((t-0.5)*2);
+    return `background:rgba(239,68,68,${intensity.toFixed(2)})`;
+  }
 }
 
 let leagueData=[];
@@ -102,23 +111,22 @@ let myTeamId=null;
 let sortCol='rank';
 let sortDir=1;
 
-function getTeamRank(team, cat){
-  const col=CAT_COLS[cat];
-  const ranks=team.ranks||{};
-  return ranks[cat]||null;
-}
+function getTeamRank(team,cat){return (team.ranks||{})[cat]||null;}
 
 function renderTable(){
+  const n=leagueData.length;
   let rows=[...leagueData];
   rows.sort((a,b)=>{
     if(sortCol==='rank'){
-      const ra=getTeamRank(a,activeCat)||99;
-      const rb=getTeamRank(b,activeCat)||99;
-      return (ra-rb)*sortDir;
+      return ((getTeamRank(a,activeCat)||99)-(getTeamRank(b,activeCat)||99))*sortDir;
     }
     if(sortCol==='team_name') return (a.team_name||'').localeCompare(b.team_name||'')*sortDir;
-    const sc=CAT_COLS[sortCol]||sortCol;
-    const av=a[sc],bv=b[sc];
+    if(sortCol==='record'||sortCol==='cat_wins'){
+      const av=a[sortCol]??-1, bv=b[sortCol]??-1;
+      return (bv-av)*sortDir;
+    }
+    const field=CAT_COLS[sortCol]||sortCol;
+    const av=a[field],bv=b[field];
     if(av==null&&bv==null) return 0;
     if(av==null) return 1; if(bv==null) return -1;
     return LOWER_BETTER.has(sortCol)?(av-bv)*sortDir:(bv-av)*sortDir;
@@ -128,22 +136,24 @@ function renderTable(){
   tbody.innerHTML=rows.map(t=>{
     const isMe=t.espn_team_id===myTeamId;
     const rank=getTeamRank(t,activeCat);
+    const catCells=CATS.map(cat=>{
+      const r=getTeamRank(t,cat);
+      const bg=heatBg(r,n);
+      return `<td style="text-align:right;${bg}">${fmt(t[CAT_COLS[cat]],cat)}</td>`;
+    }).join('');
     return `<tr class="${isMe?'my-team':''}">
       <td style="color:var(--muted);font-weight:600;text-align:center;font-size:12px">${rank||'—'}</td>
       <td><b>${t.team_name||'—'}</b>${isMe?' <span style="font-size:11px;color:var(--accent)">(you)</span>':''}</td>
-      <td style="font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap">${t.cat_record||'—'}</td>
-      <td>${fmt(t.r,'R')}</td>
-      <td>${fmt(t.hr,'HR')}</td>
-      <td>${fmt(t.rbi,'RBI')}</td>
-      <td>${fmt(t.sb,'SB')}</td>
-      <td>${fmt(t.obp,'OBP')}</td>
-      <td>${fmt(t.k,'K')}</td>
-      <td>${fmt(t.qs,'QS')}</td>
-      <td>${fmt(t.era,'ERA')}</td>
-      <td>${fmt(t.whip,'WHIP')}</td>
-      <td>${fmt(t.svhd,'SvHd')}</td>
+      <td style="font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums">${t.record||'—'}</td>
+      <td style="font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums">${t.cat_record||'—'}</td>
+      ${catCells}
     </tr>`;
   }).join('');
+
+  // Update sorted header highlight
+  document.querySelectorAll('th[data-col]').forEach(th=>{
+    th.classList.toggle('sorted', th.dataset.col===sortCol);
+  });
 }
 
 async function main(){
@@ -155,43 +165,40 @@ async function main(){
     (c.acq_alert?`<span class="warn">${c.acq_alert}</span>`:'')+
     (c.ip_alert?`<span class="warn">${c.ip_alert}</span>`:'');
 
-  // Flatten nested stats into top-level fields for sorting/display
   leagueData=(league.teams||[]).map(t=>({
     ...t,
     espn_team_id: t.team_id,
     team_name: t.team_name||('Team '+t.team_id),
     cat_wins: t.cat_wins||0,
-    r: (t.stats||{}).R, hr: (t.stats||{}).HR, rbi: (t.stats||{}).RBI,
-    sb: (t.stats||{}).SB, obp: (t.stats||{}).OBP, k: (t.stats||{}).K,
-    qs: (t.stats||{}).QS, era: (t.stats||{}).ERA, whip: (t.stats||{}).WHIP,
-    svhd: (t.stats||{}).SvHd,
+    wins: t.wins||0,
+    r:t.stats?.R, hr:t.stats?.HR, rbi:t.stats?.RBI, sb:t.stats?.SB,
+    obp:t.stats?.OBP, k:t.stats?.K, qs:t.stats?.QS, era:t.stats?.ERA,
+    whip:t.stats?.WHIP, svhd:t.stats?.SvHd,
   }));
   myTeamId=(leagueData.find(t=>t.is_my_team)||{}).espn_team_id||null;
 
-  // Cat tabs
+  // Cat tabs — clicking re-sorts by that cat's rank
   const tabContainer=document.getElementById('cat-tabs');
   for(const cat of CATS){
     const btn=document.createElement('button');
     btn.className='cat-tab'+(cat===activeCat?' active':'');
-    btn.textContent=cat;
+    btn.textContent=CAT_LABELS[cat]||cat;
     btn.addEventListener('click',()=>{
       activeCat=cat;
       document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
-      sortCol='rank';sortDir=1;
-      document.querySelectorAll('th').forEach(t=>t.classList.remove('sorted'));
+      sortCol='rank'; sortDir=1;
       renderTable();
     });
     tabContainer.appendChild(btn);
   }
 
-  // Sort headers
+  // Sort headers — same col toggles direction, different col resets to best-first
   document.querySelectorAll('th[data-col]').forEach(th=>{
     th.addEventListener('click',()=>{
-      sortCol=th.dataset.col;
-      sortDir=1;
-      document.querySelectorAll('th').forEach(t=>t.classList.remove('sorted'));
-      th.classList.add('sorted');
+      const col=th.dataset.col;
+      if(sortCol===col) sortDir*=-1;
+      else{ sortCol=col; sortDir=1; }
       renderTable();
     });
   });

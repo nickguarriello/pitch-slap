@@ -66,6 +66,7 @@ h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
   <a href="players.html">Players</a>
   <a href="league.html">League</a>
   <a href="playoff.html">Playoffs</a>
+  <a href="log.html">Log</a>
 </nav>
 <div class="banner" id="banner">Loading...</div>
 
@@ -120,14 +121,9 @@ async function main() {
   const c = status.constraints || {};
   const warnCount = status.validate_warnings || 0;
   const warnDetail = warnCount > 0 ? `${warnCount} stat checks flagged` : 'all checks passed';
-  const rawMode = status.last_run_mode;
-  const modeLabel = (!rawMode || rawMode === 'unknown')
-    ? 'unknown — pipeline may not have completed fully'
-    : rawMode;
   document.getElementById('banner').innerHTML =
     `<span>As of <b>${status.as_of || '—'}</b></span>` +
     `<span class="${valClass}" title="Checks data integrity: stat totals match ESPN, no unmatched player IDs, etc. Warnings are non-blocking but worth reviewing.">Data Quality: ${status.validate_overall?.toUpperCase() || '?'} — ${warnDetail}</span>` +
-    `<span title="'full' runs all fetchers including Statcast. 'light' skips the weekly Statcast pull and uses the cached version.">Mode: ${modeLabel}</span>` +
     (c.acq_alert ? `<span class="warn">${c.acq_alert}</span>` : '') +
     (c.ip_alert   ? `<span class="warn">${c.ip_alert}</span>` : '');
 
@@ -143,16 +139,18 @@ async function main() {
   const cats = matchup.cat_states || {};
   const needs = matchup.need_weights || {};
   const catEl = document.getElementById('cat-grid');
+  const CAT_LABELS = { SvHd: 'SVHD' };
   for (const [cat, s] of Object.entries(cats)) {
     const state = s.state || 'UNKNOWN';
     const needW = needs[cat] || 0;
+    const label = CAT_LABELS[cat] || cat;
     const digits = cat === 'OBP' ? 3 : (cat === 'ERA' || cat === 'WHIP') ? 2 : 1;
     const ipLine = s.ip_note
       ? `<div class="vals" style="color:var(--warn);font-size:10px">${(s.my_ip_week||0).toFixed(1)} / ${15} IP</div>`
       : '';
     catEl.innerHTML += `
       <div class="cat ${state}">
-        <div class="label">${cat}</div>
+        <div class="label">${label}</div>
         <div class="state">${state}</div>
         <div class="vals">${fmt(s.my_val, digits)} / ${fmt(s.opp_val, digits)}</div>
         ${ipLine}

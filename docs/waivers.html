@@ -43,6 +43,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <a href="players.html">Players</a>
   <a href="league.html">League</a>
   <a href="playoff.html">Playoffs</a>
+  <a href="log.html">Log</a>
 </nav>
 <div class="banner" id="banner">Loading...</div>
 
@@ -89,7 +90,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
   <div class="card">
     <h2>Ownership Velocity Alerts</h2>
-    <p class="section-desc">Players whose ownership % jumped 10%+ since the last pipeline run — other managers are adding them fast. Likely triggered by a hot streak, injury to a teammate, or favorable schedule. Act before they're gone.</p>
+    <p class="section-desc">Players whose ownership % jumped 5%+ over the last 2 days — other managers are adding them fast. Likely triggered by a hot streak, injury to a teammate, or favorable schedule. Act before they're gone.</p>
     <table>
       <thead>
         <tr>
@@ -173,14 +174,16 @@ async function main(){
     velTbody.innerHTML=`<tr><td colspan="5" class="empty">No significant ownership movement detected.</td></tr>`;
   } else {
     for(const p of vel){
-      const delta=p.ownership_delta||0;
+      const delta=p.delta||0;
       const color=delta>0?'var(--win)':'var(--loss)';
+      const days=p.lookback_days||2;
+      const rosteredTag=p.rostered?`<span class="tag" style="background:rgba(239,68,68,.12);color:var(--loss)">ROSTERED</span>`:`<span class="tag tag-fa">FA</span>`;
       velTbody.innerHTML+=`<tr>
         <td><b>${p.name||'—'}</b></td>
-        <td class="pos">${p.position||p.eligible_positions||'—'}</td>
-        <td style="color:${color};font-weight:600">${delta>0?'+':''}${pct(delta)}</td>
-        <td>${pct(p.ownership_pct)}</td>
-        <td><span class="tag tag-vel">TRENDING</span></td>
+        <td class="pos">${p.team||'—'}</td>
+        <td style="color:${color};font-weight:600">${delta>0?'+':''}${delta.toFixed(1)}% <span style="color:var(--muted);font-size:11px;font-weight:400">(${days}d)</span></td>
+        <td>${(p.ownership_now||0).toFixed(1)}%</td>
+        <td><span class="tag tag-vel">TRENDING</span>${rosteredTag}</td>
       </tr>`;
     }
   }

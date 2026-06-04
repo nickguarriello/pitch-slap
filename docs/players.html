@@ -47,6 +47,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <a href="players.html" class="active">Players</a>
   <a href="league.html">League</a>
   <a href="playoff.html">Playoffs</a>
+  <a href="log.html">Log</a>
 </nav>
 <div class="banner" id="banner">Loading...</div>
 
@@ -69,27 +70,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
   <div class="card">
     <table>
-      <thead>
-        <tr id="header-row">
-          <th data-col="name">Player</th>
-          <th data-col="roster_slot">Slot</th>
-          <th data-col="eligible_positions">Pos</th>
-          <th data-col="r_season" title="Runs (season)">R</th>
-          <th data-col="hr_season" title="Home Runs (season)">HR</th>
-          <th data-col="rbi_season" title="RBI (season)">RBI</th>
-          <th data-col="sb_season" title="Stolen Bases (season)">SB</th>
-          <th data-col="obp_season" title="OBP (season)">OBP</th>
-          <th data-col="k_season" title="Strikeouts (season)">K</th>
-          <th data-col="qs_season" title="Quality Starts (season)">QS</th>
-          <th data-col="era_season" title="ERA (season)">ERA</th>
-          <th data-col="whip_season" title="WHIP (season)">WHIP</th>
-          <th data-col="svhd_season" title="Saves+Holds (season)">SvHd</th>
-          <th data-col="xwoba" title="Expected wOBA">xwOBA</th>
-          <th data-col="xfip" title="Expected FIP">xFIP</th>
-          <th data-col="siera" title="SIERA">SIERA</th>
-          <th data-col="flags">Flags</th>
-        </tr>
-      </thead>
+      <thead><tr id="header-row"></tr></thead>
       <tbody id="player-table"></tbody>
     </table>
   </div>
@@ -104,24 +85,88 @@ let sortCol='name';
 let sortDir=1;
 let activeFilter='all';
 
+// Column definitions per mode
+const COLS = {
+  hitter: [
+    {col:'name',      label:'Player',  d:null},
+    {col:'roster_slot',label:'Slot',   d:null},
+    {col:'eligible_positions',label:'Pos',d:null},
+    {col:'r_season',  label:'R',       d:0,   title:'Runs (season)'},
+    {col:'hr_season', label:'HR',      d:0,   title:'Home Runs (season)'},
+    {col:'rbi_season',label:'RBI',     d:0,   title:'RBI (season)'},
+    {col:'sb_season', label:'SB',      d:0,   title:'Stolen Bases (season)'},
+    {col:'obp_season',label:'OBP',     d:3,   title:'On-Base % (season)'},
+    {col:'xwoba',     label:'xwOBA',   d:3,   title:'Expected wOBA (Statcast)'},
+    {col:'babip',     label:'BABIP',   d:3,   title:'BABIP (season)'},
+    {col:'flags',     label:'Flags',   d:null},
+  ],
+  pitcher: [
+    {col:'name',      label:'Player',  d:null},
+    {col:'roster_slot',label:'Slot',   d:null},
+    {col:'eligible_positions',label:'Pos',d:null},
+    {col:'k_season',  label:'K',       d:0,   title:'Strikeouts (season)'},
+    {col:'qs_season', label:'QS',      d:0,   title:'Quality Starts (season)'},
+    {col:'era_season',label:'ERA',     d:2,   title:'ERA (season)'},
+    {col:'whip_season',label:'WHIP',   d:2,   title:'WHIP (season)'},
+    {col:'svhd_season',label:'SVHD',   d:0,   title:'Saves+Holds (season)'},
+    {col:'xfip',      label:'xFIP',    d:2,   title:'Expected FIP (Statcast)'},
+    {col:'siera',     label:'SIERA',   d:2,   title:'SIERA (Statcast)'},
+    {col:'flags',     label:'Flags',   d:null},
+  ],
+  all: [
+    {col:'name',      label:'Player',  d:null},
+    {col:'roster_slot',label:'Slot',   d:null},
+    {col:'eligible_positions',label:'Pos',d:null},
+    {col:'r_season',  label:'R',       d:0,   title:'Runs (season)'},
+    {col:'hr_season', label:'HR',      d:0,   title:'Home Runs (season)'},
+    {col:'obp_season',label:'OBP',     d:3,   title:'OBP (season)'},
+    {col:'k_season',  label:'K',       d:0,   title:'Strikeouts (season)'},
+    {col:'era_season',label:'ERA',     d:2,   title:'ERA (season)'},
+    {col:'whip_season',label:'WHIP',   d:2,   title:'WHIP (season)'},
+    {col:'xwoba',     label:'xwOBA',   d:3,   title:'Expected wOBA'},
+    {col:'xfip',      label:'xFIP',    d:2,   title:'Expected FIP'},
+    {col:'flags',     label:'Flags',   d:null},
+  ],
+};
+
+function colMode(){
+  if(activeFilter==='hitter') return 'hitter';
+  if(activeFilter==='pitcher') return 'pitcher';
+  return 'all';
+}
+
 function isHitter(p){
   const pos=(p.eligible_positions||'').toUpperCase();
-  return /C|1B|2B|3B|SS|OF|MI|CI|UTIL/.test(pos) && !/^SP$|^RP$|^P$/.test(pos);
+  return /C|1B|2B|3B|SS|OF|MI|CI|UTIL/.test(pos) && !/^SP$|^RP$/.test(pos);
 }
 function isPitcher(p){
-  const pos=(p.eligible_positions||'').toUpperCase();
-  return /SP|RP/.test(pos);
+  return /SP|RP/.test((p.eligible_positions||'').toUpperCase());
+}
+
+function renderHeader(cols){
+  document.getElementById('header-row').innerHTML=cols.map(c=>
+    `<th data-col="${c.col}"${c.title?` title="${c.title}"`:''}${c.col===sortCol?' class="sorted"':''}>${c.label}</th>`
+  ).join('');
+  document.querySelectorAll('th[data-col]').forEach(th=>{
+    th.addEventListener('click',()=>{
+      const col=th.dataset.col;
+      if(col==='flags') return;
+      if(sortCol===col) sortDir*=-1;
+      else{sortCol=col;sortDir=col==='name'?1:-1;}
+      renderTable();
+    });
+  });
 }
 
 function renderTable(){
   const search=document.getElementById('search').value.toLowerCase();
   let rows=allPlayers.filter(p=>{
     if(search && !p.name?.toLowerCase().includes(search)) return false;
-    if(activeFilter==='hitter') return isHitter(p);
+    if(activeFilter==='hitter')  return isHitter(p);
     if(activeFilter==='pitcher') return isPitcher(p);
-    if(activeFilter==='buy') return p.buy_low;
-    if(activeFilter==='sell') return p.sell_high;
-    if(activeFilter==='il') return (p.roster_slot||'').toUpperCase()==='IL';
+    if(activeFilter==='buy')     return p.buy_low;
+    if(activeFilter==='sell')    return p.sell_high;
+    if(activeFilter==='il')      return (p.roster_slot||'').toUpperCase()==='IL';
     return true;
   });
 
@@ -136,32 +181,25 @@ function renderTable(){
 
   document.getElementById('count').textContent=`${rows.length} players`;
 
+  const cols=COLS[colMode()];
+  renderHeader(cols);
+
   const tbody=document.getElementById('player-table');
   tbody.innerHTML=rows.map(p=>{
     const flags=[];
-    if(p.buy_low) flags.push('<span class="tag tag-buy">BOUNCE</span>');
+    if(p.buy_low)  flags.push('<span class="tag tag-buy">BOUNCE</span>');
     if(p.sell_high) flags.push('<span class="tag tag-sell">SELL</span>');
     if(p.two_start) flags.push('<span class="tag tag-2s">2-ST</span>');
     if((p.roster_slot||'').toUpperCase()==='IL') flags.push('<span class="tag tag-il">IL</span>');
-    return `<tr>
-      <td><b>${p.name||'—'}</b></td>
-      <td class="slot">${p.roster_slot||'—'}</td>
-      <td class="pos">${p.eligible_positions||'—'}</td>
-      <td>${fmt(p.r_season,0)}</td>
-      <td>${fmt(p.hr_season,0)}</td>
-      <td>${fmt(p.rbi_season,0)}</td>
-      <td>${fmt(p.sb_season,0)}</td>
-      <td>${fmt(p.obp_season,3)}</td>
-      <td>${fmt(p.k_season,0)}</td>
-      <td>${fmt(p.qs_season,0)}</td>
-      <td>${fmt(p.era_season,2)}</td>
-      <td>${fmt(p.whip_season,3)}</td>
-      <td>${fmt(p.svhd_season,0)}</td>
-      <td>${fmt(p.xwoba,3)}</td>
-      <td>${fmt(p.xfip,2)}</td>
-      <td>${fmt(p.siera,2)}</td>
-      <td>${flags.join('')||'—'}</td>
-    </tr>`;
+    const flagCell=flags.join('')||'—';
+
+    return `<tr>${cols.map(c=>{
+      if(c.col==='name')               return `<td><b>${p.name||'—'}</b></td>`;
+      if(c.col==='roster_slot')        return `<td class="slot">${p.roster_slot||'—'}</td>`;
+      if(c.col==='eligible_positions') return `<td class="pos">${p.eligible_positions||'—'}</td>`;
+      if(c.col==='flags')              return `<td>${flagCell}</td>`;
+      return `<td>${fmt(p[c.col],c.d)}</td>`;
+    }).join('')}</tr>`;
   }).join('');
 }
 
@@ -178,11 +216,12 @@ async function main(){
     const s=p.stats||{}; const ss=s.season||{}; const sc=p.statcast||{};
     return {
       ...p,
-      roster_slot: p.lineup_slot,
+      roster_slot:        p.lineup_slot,
       eligible_positions: p.position,
-      r_season: ss.r, hr_season: ss.hr, rbi_season: ss.rbi, sb_season: ss.sb,
-      obp_season: ss.obp, k_season: ss.k, qs_season: ss.qs, era_season: ss.era,
-      whip_season: ss.whip, svhd_season: ss.svhd,
+      r_season:   ss.r,    hr_season:  ss.hr,  rbi_season: ss.rbi,
+      sb_season:  ss.sb,   obp_season: ss.obp, k_season:   ss.k,
+      qs_season:  ss.qs,   era_season: ss.era, whip_season: ss.whip,
+      svhd_season: ss.svhd, babip: ss.babip,
       xwoba: sc.xwoba, xfip: sc.xfip, siera: sc.siera,
     };
   });
@@ -192,22 +231,13 @@ async function main(){
       document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
       activeFilter=btn.dataset.filter;
+      // reset sort to sensible default per mode
+      sortCol='name'; sortDir=1;
       renderTable();
     });
   });
 
   document.getElementById('search').addEventListener('input',renderTable);
-
-  document.querySelectorAll('th[data-col]').forEach(th=>{
-    th.addEventListener('click',()=>{
-      const col=th.dataset.col;
-      if(sortCol===col) sortDir*=-1;
-      else{sortCol=col;sortDir=1;}
-      document.querySelectorAll('th').forEach(t=>t.classList.remove('sorted'));
-      th.classList.add('sorted');
-      renderTable();
-    });
-  });
 
   renderTable();
 }
