@@ -3,26 +3,33 @@
 
 ---
 
-## Project Status: LIVE — Phases 1–6 complete. Dashboard overhauled 2026-06-03. Phase 7 (manual verification) ongoing.
+## Project Status: LIVE — Phases 1–6 complete. Full dashboard + pipeline overhaul complete 2026-06-04. Phase 7 (manual verification) ongoing.
 
 ---
 
-## What Exists Right Now (Full Build — Live as of 2026-05-07)
+## What Exists Right Now (Full Build — Live as of 2026-06-04)
 
 - `config.py` — full league config, ESPN mappings, all PRD thresholds
 - `pipeline/init_db.py` — 11-table SQLite schema + seed_crosswalk() for CI
-- `pipeline/fetch_espn.py` — ESPN roster, matchup, constraints (556 players)
+- `pipeline/fetch_espn.py` — ESPN roster, matchup, constraints, team names, cat records (556 players)
 - `pipeline/fetch_mlb.py` — schedule, transactions, two-start detection
 - `pipeline/fetch_statcast.py` — Statcast + FanGraphs (499 rows, 7-day cache)
-- `pipeline/transform.py` — 4 windows: season / 30d / 14d / current (~2000 rows)
+- `pipeline/transform.py` — 5 windows: season / 30d / 14d / 7d / current (~2500 rows)
 - `pipeline/validate.py` — 23 checks (typically 19 pass / 3 warn / 0 fail)
-- `pipeline/evaluate.py` — cat states, need weights, buy/sell, 2-start, constraints
-- `pipeline/report.py` — writes docs/data/*.json + CSVs
-- `main.py` — orchestrator (--mode full/light, renamed from pipeline.py)
-- `docs/*.html` — 5 dashboard pages (index, matchup, waivers, players, league)
+- `pipeline/evaluate.py` — cat states, need weights, buy/sell, 2-start, constraints (IP live from DB), ownership velocity (2-day/5%)
+- `pipeline/report.py` — writes docs/data/*.json + CSVs + pipeline-log.json; history states; 7d in roster
+- `main.py` — orchestrator (--mode full/light)
+- `docs/index.html` — home: real W/L/T, buy-low wire+trade, sell-high, constraints, ? tooltips
+- `docs/matchup.html` — cat scores + history; opponent name; 4-decimal rate stats; ? tooltips
+- `docs/waivers.html` — two-starters, buy-low FA, ownership velocity; ? tooltips
+- `docs/players.html` — ESPN slot-order layout; separate batter/pitcher tables; 5 window buttons (Current/7D/14D/30D/Season)
+- `docs/league.html` — heat map rank colors; Record + Roto Record columns; sort toggle; ? tooltip
+- `docs/playoff.html` — standings, bracket, opponent previews, swing cats, improvement targets; ? tooltips
+- `docs/log.html` — pipeline log tab: run metadata, row counts, validation checks
 - `docs/data/*.json` — live data, auto-committed by GitHub Actions after each run
 - `data/player-crosswalk.csv` — 556-player crosswalk (committed); seeds DB in CI
-- `.github/workflows/daily-pipeline.yml` — 3x daily cron (7am full, 12pm/6pm light)
+- `data/espn_teams.json` — real team names/abbreviations (written by fetch_espn each run)
+- `.github/workflows/daily-pipeline.yml` — 3x daily cron (7am full, 12pm light; 6pm light Mon/Tue/Fri-Sun; 11pm light Wed/Thu to catch MLB probables)
 - `README.md` — setup instructions (Secrets, Pages, local dev)
 - Dashboard live: https://nickguarriello.github.io/pitch-slap/
 - Repo: https://github.com/nickguarriello/pitch-slap

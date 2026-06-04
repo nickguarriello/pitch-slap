@@ -16,7 +16,7 @@ This file governs every Claude Code session on this project. These rules exist b
 
 ## Hard Limits — Never Do These Without Explicit Instruction
 
-- Do not change `.github/workflows/daily_pipeline.yml` (runs 3x daily: 7am full, 12pm light, 6pm light)
+- Do not change `.github/workflows/daily-pipeline.yml` (runs 3x daily: 7am full, 12pm light; 6pm light Mon/Tue/Fri-Sun; 11pm light Wed/Thu)
 - Do not change the SQLite schema (add/remove/rename columns or tables)
 - Do not change CSV output column names or structure
 - Do not remove or weaken any check in `pipeline/validate.py`
@@ -107,4 +107,4 @@ PLAYOFFS = {
 
 ---
 
-*Last updated: May 2026 — v2.0*
+*Last updated: June 2026 — v2.1*
