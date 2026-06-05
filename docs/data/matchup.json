@@ -918,7 +918,7 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 19.2,
+    "ip_accumulated": 20.2,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,
