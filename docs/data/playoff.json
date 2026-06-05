@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-04",
+  "as_of": "2026-06-05",
   "playoff_start_week": 22,
   "current_week": 10,
   "weeks_until_playoffs": 11,
@@ -23,7 +23,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 2,
-        "HR": 5,
+        "HR": 4,
         "RBI": 3,
         "SB": 1,
         "OBP": 7,
@@ -53,7 +53,7 @@
       "ranks": {
         "R": 1,
         "HR": 3,
-        "RBI": 2,
+        "RBI": 1,
         "SB": 2,
         "OBP": 1,
         "K": 7,
@@ -142,7 +142,7 @@
         "HR": 7,
         "RBI": 8,
         "SB": 3,
-        "OBP": 4,
+        "OBP": 3,
         "K": 1,
         "QS": 1,
         "SvHd": 8,
@@ -171,7 +171,7 @@
         "HR": 6,
         "RBI": 5,
         "SB": 8,
-        "OBP": 3,
+        "OBP": 4,
         "K": 5,
         "QS": 4,
         "SvHd": 3,
@@ -226,8 +226,8 @@
       "is_my_team": false,
       "ranks": {
         "R": 6,
-        "HR": 4,
-        "RBI": 1,
+        "HR": 5,
+        "RBI": 2,
         "SB": 4,
         "OBP": 8,
         "K": 2,
@@ -253,7 +253,7 @@
   "my_category_ranks": {
     "R": 1,
     "HR": 3,
-    "RBI": 2,
+    "RBI": 1,
     "SB": 2,
     "OBP": 1,
     "K": 7,
@@ -284,10 +284,10 @@
           "rank_gap": 2
         },
         "RBI": {
-          "my_rank": 2,
+          "my_rank": 1,
           "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 3
         },
         "SB": {
           "my_rank": 2,
@@ -335,7 +335,6 @@
       "swing_categories": [
         "R",
         "HR",
-        "RBI",
         "K",
         "QS"
       ]
@@ -356,15 +355,15 @@
         },
         "HR": {
           "my_rank": 3,
-          "their_rank": 5,
-          "winner": "mine",
-          "rank_gap": 2
-        },
-        "RBI": {
-          "my_rank": 2,
-          "their_rank": 3,
+          "their_rank": 4,
           "winner": "mine",
           "rank_gap": 1
+        },
+        "RBI": {
+          "my_rank": 1,
+          "their_rank": 3,
+          "winner": "mine",
+          "rank_gap": 2
         },
         "SB": {
           "my_rank": 2,
@@ -439,10 +438,10 @@
           "rank_gap": 1
         },
         "RBI": {
-          "my_rank": 2,
+          "my_rank": 1,
           "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 5
         },
         "SB": {
           "my_rank": 2,
@@ -497,7 +496,6 @@
   "swing_categories": [
     "HR",
     "R",
-    "RBI",
     "K",
     "QS"
   ],
