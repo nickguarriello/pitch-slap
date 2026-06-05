@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-06-05T13:52:46.885066+00:00",
+  "as_of": "2026-06-05T17:52:02.597864+00:00",
   "last_run_mode": "light",
   "last_full_run": null,
   "last_light_run": "2026-06-04T20:06:19.861277+00:00",
-  "espn_last_fetch": "2026-06-05T13:52:46.885066+00:00",
-  "mlb_last_fetch": "2026-06-05T13:52:47.348900+00:00",
+  "espn_last_fetch": "2026-06-05T17:52:02.597864+00:00",
+  "mlb_last_fetch": "2026-06-05T17:52:03.052907+00:00",
   "statcast_last_fetch": "2026-06-03T00:36:58.927099+00:00",
   "validate_overall": "warn",
   "row_counts": {
@@ -129,7 +129,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "Statcast data is 61.3h old"
+      "detail": "Statcast data is 65.3h old"
     }
   ]
 }
