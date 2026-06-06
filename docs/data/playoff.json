@@ -30,8 +30,8 @@
         "K": 3,
         "QS": 7,
         "SvHd": 5,
-        "ERA": 4,
-        "WHIP": 7
+        "ERA": 5,
+        "WHIP": 8
       },
       "seed": 1,
       "in_playoffs": true
@@ -59,7 +59,7 @@
         "K": 7,
         "QS": 5,
         "SvHd": 2,
-        "ERA": 5,
+        "ERA": 4,
         "WHIP": 4
       },
       "seed": 2,
@@ -118,7 +118,7 @@
         "QS": 8,
         "SvHd": 1,
         "ERA": 8,
-        "WHIP": 8
+        "WHIP": 7
       },
       "seed": 4,
       "in_playoffs": true
@@ -171,10 +171,10 @@
         "HR": 6,
         "RBI": 5,
         "SB": 8,
-        "OBP": 2,
+        "OBP": 3,
         "K": 5,
         "QS": 4,
-        "SvHd": 3,
+        "SvHd": 4,
         "ERA": 3,
         "WHIP": 5
       },
@@ -200,7 +200,7 @@
         "HR": 8,
         "RBI": 7,
         "SB": 7,
-        "OBP": 3,
+        "OBP": 2,
         "K": 4,
         "QS": 3,
         "SvHd": 7,
@@ -232,7 +232,7 @@
         "OBP": 8,
         "K": 2,
         "QS": 2,
-        "SvHd": 4,
+        "SvHd": 3,
         "ERA": 1,
         "WHIP": 2
       },
@@ -259,7 +259,7 @@
     "K": 7,
     "QS": 5,
     "SvHd": 2,
-    "ERA": 5,
+    "ERA": 4,
     "WHIP": 4
   },
   "opponent_previews": [
@@ -314,10 +314,10 @@
           "rank_gap": 1
         },
         "ERA": {
-          "my_rank": 5,
+          "my_rank": 4,
           "their_rank": 2,
           "winner": "theirs",
-          "rank_gap": 3
+          "rank_gap": 2
         },
         "WHIP": {
           "my_rank": 4,
@@ -337,7 +337,8 @@
         "HR",
         "RBI",
         "K",
-        "QS"
+        "QS",
+        "ERA"
       ]
     },
     {
@@ -346,7 +347,7 @@
       "team_name": "Lunch",
       "abbrev": "LCH",
       "is_likely_r1_opp": false,
-      "projected_score": "7-3",
+      "projected_score": "8-2",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -391,16 +392,16 @@
           "rank_gap": 2
         },
         "ERA": {
-          "my_rank": 5,
-          "their_rank": 4,
-          "winner": "theirs",
+          "my_rank": 4,
+          "their_rank": 5,
+          "winner": "mine",
           "rank_gap": 1
         },
         "WHIP": {
           "my_rank": 4,
-          "their_rank": 7,
+          "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 4
         },
         "SvHd": {
           "my_rank": 2,
@@ -469,16 +470,16 @@
           "rank_gap": 3
         },
         "ERA": {
-          "my_rank": 5,
-          "their_rank": 8,
-          "winner": "mine",
-          "rank_gap": 3
-        },
-        "WHIP": {
           "my_rank": 4,
           "their_rank": 8,
           "winner": "mine",
           "rank_gap": 4
+        },
+        "WHIP": {
+          "my_rank": 4,
+          "their_rank": 7,
+          "winner": "mine",
+          "rank_gap": 3
         },
         "SvHd": {
           "my_rank": 2,
@@ -499,7 +500,8 @@
     "R",
     "RBI",
     "K",
-    "QS"
+    "QS",
+    "ERA"
   ],
   "improvement_targets": [
     "HR",
