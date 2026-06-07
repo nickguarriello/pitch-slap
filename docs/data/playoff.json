@@ -23,8 +23,8 @@
       "is_my_team": false,
       "ranks": {
         "R": 2,
-        "HR": 5,
-        "RBI": 4,
+        "HR": 4,
+        "RBI": 3,
         "SB": 1,
         "OBP": 7,
         "K": 3,
@@ -52,8 +52,8 @@
       "is_my_team": true,
       "ranks": {
         "R": 1,
-        "HR": 3,
-        "RBI": 1,
+        "HR": 2,
+        "RBI": 2,
         "SB": 2,
         "OBP": 1,
         "K": 7,
@@ -82,7 +82,7 @@
       "ranks": {
         "R": 3,
         "HR": 1,
-        "RBI": 3,
+        "RBI": 4,
         "SB": 5,
         "OBP": 6,
         "K": 6,
@@ -110,7 +110,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 5,
-        "HR": 2,
+        "HR": 3,
         "RBI": 6,
         "SB": 6,
         "OBP": 5,
@@ -226,8 +226,8 @@
       "is_my_team": false,
       "ranks": {
         "R": 6,
-        "HR": 4,
-        "RBI": 2,
+        "HR": 5,
+        "RBI": 1,
         "SB": 4,
         "OBP": 8,
         "K": 2,
@@ -252,8 +252,8 @@
   ],
   "my_category_ranks": {
     "R": 1,
-    "HR": 3,
-    "RBI": 1,
+    "HR": 2,
+    "RBI": 2,
     "SB": 2,
     "OBP": 1,
     "K": 7,
@@ -278,14 +278,14 @@
           "rank_gap": 2
         },
         "HR": {
-          "my_rank": 3,
+          "my_rank": 2,
           "their_rank": 1,
           "winner": "theirs",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "RBI": {
-          "my_rank": 1,
-          "their_rank": 3,
+          "my_rank": 2,
+          "their_rank": 4,
           "winner": "mine",
           "rank_gap": 2
         },
@@ -356,16 +356,16 @@
           "rank_gap": 1
         },
         "HR": {
-          "my_rank": 3,
-          "their_rank": 5,
+          "my_rank": 2,
+          "their_rank": 4,
           "winner": "mine",
           "rank_gap": 2
         },
         "RBI": {
-          "my_rank": 1,
-          "their_rank": 4,
+          "my_rank": 2,
+          "their_rank": 3,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 1
         },
         "SB": {
           "my_rank": 2,
@@ -413,6 +413,7 @@
       "swing_categories": [
         "R",
         "HR",
+        "RBI",
         "SB",
         "QS",
         "ERA"
@@ -424,7 +425,7 @@
       "team_name": "ChicksDigTheLongBall",
       "abbrev": "CDLB",
       "is_likely_r1_opp": false,
-      "projected_score": "8-2",
+      "projected_score": "9-1",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -433,16 +434,16 @@
           "rank_gap": 4
         },
         "HR": {
-          "my_rank": 3,
-          "their_rank": 2,
-          "winner": "theirs",
+          "my_rank": 2,
+          "their_rank": 3,
+          "winner": "mine",
           "rank_gap": 1
         },
         "RBI": {
-          "my_rank": 1,
+          "my_rank": 2,
           "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 5
+          "rank_gap": 4
         },
         "SB": {
           "my_rank": 2,
@@ -497,6 +498,7 @@
   "swing_categories": [
     "HR",
     "R",
+    "RBI",
     "K",
     "QS",
     "ERA"
