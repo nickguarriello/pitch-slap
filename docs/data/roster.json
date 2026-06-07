@@ -143,7 +143,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 88.0,
+      "ownership_pct": 88.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -406,10 +406,10 @@
       "position": "2B",
       "team": null,
       "lineup_slot": "2B/SS",
-      "injury_status": "DAY_TO_DAY",
+      "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 60.5,
+      "ownership_pct": 59.6,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -675,7 +675,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 76.6,
+      "ownership_pct": 76.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -808,7 +808,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 48.4,
+      "ownership_pct": 48.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -941,7 +941,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 46.4,
+      "ownership_pct": 48.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1074,7 +1074,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 94.9,
+      "ownership_pct": 94.8,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1207,7 +1207,7 @@
       "injury_status": "DAY_TO_DAY",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 89.5,
+      "ownership_pct": 89.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1340,7 +1340,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 20.4,
+      "ownership_pct": 20.6,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1470,10 +1470,10 @@
       "position": "C",
       "team": null,
       "lineup_slot": "C",
-      "injury_status": "DAY_TO_DAY",
+      "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 38.3,
+      "ownership_pct": 38.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2203,7 +2203,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 93.4,
+      "ownership_pct": 93.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2469,7 +2469,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 81.3,
+      "ownership_pct": 81.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2602,7 +2602,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 90.1,
+      "ownership_pct": 90.2,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2868,7 +2868,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 87.4,
+      "ownership_pct": 87.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3001,7 +3001,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 85.0,
+      "ownership_pct": 84.9,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3134,7 +3134,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 39.4,
+      "ownership_pct": 39.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3267,7 +3267,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 83.3,
+      "ownership_pct": 83.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3400,7 +3400,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 58.2,
+      "ownership_pct": 57.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3799,7 +3799,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 40.8,
+      "ownership_pct": 40.7,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3932,7 +3932,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 32.7,
+      "ownership_pct": 33.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
