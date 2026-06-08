@@ -352,20 +352,28 @@ def check_staleness_statcast(pipeline_meta: dict, conn: sqlite3.Connection) -> d
 
 
 def check_completeness_fact_player_stats(conn: sqlite3.Connection) -> dict:
-    """All four windows (season, 30d, 14d, current) must have rows."""
+    """All required windows must have rows. 'current' may be 0 on week-start Mondays."""
+    from datetime import date
     name = "completeness.fact_player_stats"
     required_windows = {"season", "30d", "14d", "current"}
     rows = conn.execute(
         "SELECT window, COUNT(*) FROM fact_player_stats GROUP BY window"
     ).fetchall()
-    present = {r[0] for r in rows}
-    missing = required_windows - present
+    present   = {r[0] for r in rows}
+    counts    = {r[0]: r[1] for r in rows}
+    missing   = required_windows - present
+    # 'current' window is legitimately empty on Mondays (week just started, no games yet)
+    is_monday = date.today().weekday() == 0
+    if missing == {"current"} and is_monday:
+        missing = set()
+        present.add("current")
+        counts["current"] = 0
     if missing:
         return _fail(name, f"Missing windows: {missing} — transform.py may not have run", 0)
-    counts = {r[0]: r[1] for r in rows}
-    min_rows = min(counts.values())
+    non_current = {w: c for w, c in counts.items() if w != "current"}
+    min_rows = min(non_current.values()) if non_current else 0
     if min_rows < 100:
-        return _warn(name, f"Smallest window has only {min_rows} rows — transform output thin", min_rows)
+        return _warn(name, f"Smallest non-current window has only {min_rows} rows — transform output thin", min_rows)
     total = sum(counts.values())
     return _pass(name, f"{total} rows across {len(present)} windows", total)
 

@@ -24,7 +24,6 @@ from datetime import date, datetime, timedelta, timezone
 
 import pandas as pd
 import requests
-from pybaseball import batting_stats_range, pitching_stats_range
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import (
@@ -181,55 +180,69 @@ def _mlb_pitching_season() -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
-# BBRef rolling window stats (14d / 30d / current-week)
+# MLB Stats API date-range stats (replaces BBRef/pybaseball, no IP blocking)
 # ---------------------------------------------------------------------------
 
-def _bbref_batting(start: date, end: date) -> pd.DataFrame:
-    """Batting stats for a date range from Baseball Reference via pybaseball."""
-    df = batting_stats_range(start.strftime("%Y-%m-%d"), end.strftime("%Y-%m-%d"))
-    if df.empty:
+def _mlb_batting_range(start: date, end: date) -> pd.DataFrame:
+    """Batting stats for a date range from MLB Stats API."""
+    resp = requests.get(
+        f"{_MLB_STATS_API}/stats",
+        params={"stats": "byDateRange", "group": "hitting", "playerPool": "all",
+                "startDate": start.isoformat(), "endDate": end.isoformat(), "limit": 2000},
+        timeout=30,
+    )
+    if not resp.ok:
         return pd.DataFrame()
+    splits = resp.json().get("stats", [{}])[0].get("splits", [])
+    rows = []
+    for s in splits:
+        st = s.get("stat", {})
+        rows.append({
+            "mlb_id": s["player"]["id"],
+            "r":      st.get("runs", 0),
+            "hr":     st.get("homeRuns", 0),
+            "rbi":    st.get("rbi", 0),
+            "sb":     st.get("stolenBases", 0),
+            "obp":    pd.to_numeric(st.get("obp"), errors="coerce"),
+            "babip":  pd.to_numeric(st.get("babip"), errors="coerce"),
+            "pa":     st.get("plateAppearances", 0),
+            "k_pct":  None,
+            "bb_pct": None,
+        })
+    df = pd.DataFrame(rows)
+    return df.drop_duplicates("mlb_id") if not df.empty else df
 
-    df = df.rename(columns={"mlbID": "mlb_id"})
-    df["mlb_id"] = pd.to_numeric(df["mlb_id"], errors="coerce")
 
-    # Compute K% and BB% where possible (not in BBRef range data -- set None)
-    df["k_pct"]  = None
-    df["bb_pct"] = None
-    df["babip"]  = None
-
-    keep = ["mlb_id", "R", "HR", "RBI", "SB", "OBP", "PA", "k_pct", "bb_pct", "babip"]
-    cols_present = [c for c in keep if c in df.columns]
-    return df[cols_present].rename(columns={
-        "R": "r", "HR": "hr", "RBI": "rbi", "SB": "sb",
-        "OBP": "obp", "PA": "pa",
-    }).drop_duplicates("mlb_id")
-
-
-def _bbref_pitching(start: date, end: date) -> pd.DataFrame:
-    """Pitching stats for a date range from Baseball Reference via pybaseball."""
-    df = pitching_stats_range(start.strftime("%Y-%m-%d"), end.strftime("%Y-%m-%d"))
-    if df.empty:
+def _mlb_pitching_range(start: date, end: date) -> pd.DataFrame:
+    """Pitching stats for a date range from MLB Stats API."""
+    resp = requests.get(
+        f"{_MLB_STATS_API}/stats",
+        params={"stats": "byDateRange", "group": "pitching", "playerPool": "all",
+                "startDate": start.isoformat(), "endDate": end.isoformat(), "limit": 2000},
+        timeout=30,
+    )
+    if not resp.ok:
         return pd.DataFrame()
-
-    df = df.rename(columns={"mlbID": "mlb_id", "SO": "k"})
-    df["mlb_id"] = pd.to_numeric(df["mlb_id"], errors="coerce")
-
-    # SvHd: BBRef range only has SV (no HLD) -- use SV as best available
-    df["svhd"] = pd.to_numeric(df.get("SV", 0), errors="coerce").fillna(0)
-
-    # QS, k_pct, bb_pct, babip not in BBRef range data
-    df["qs"]     = None
-    df["k_pct"]  = None
-    df["bb_pct"] = None
-    df["babip"]  = None
-
-    keep = ["mlb_id", "k", "qs", "era", "whip", "svhd", "ip",
-            "k_pct", "bb_pct", "babip"]
-    col_map = {"ERA": "era", "WHIP": "whip", "IP": "ip", "BAbip": "babip"}
-    df = df.rename(columns=col_map)
-    cols_present = [c for c in keep if c in df.columns]
-    return df[cols_present].drop_duplicates("mlb_id")
+    splits = resp.json().get("stats", [{}])[0].get("splits", [])
+    rows = []
+    for s in splits:
+        st = s.get("stat", {})
+        sv  = st.get("saves", 0) or 0
+        hld = st.get("holds", 0) or 0
+        rows.append({
+            "mlb_id": s["player"]["id"],
+            "k":      st.get("strikeOuts", 0),
+            "era":    pd.to_numeric(st.get("era"), errors="coerce"),
+            "whip":   pd.to_numeric(st.get("whip"), errors="coerce"),
+            "svhd":   sv + hld,
+            "ip":     _ip_to_float(st.get("inningsPitched", 0)),
+            "qs":     None,
+            "babip":  None,
+            "k_pct":  None,
+            "bb_pct": None,
+        })
+    df = pd.DataFrame(rows)
+    return df.drop_duplicates("mlb_id") if not df.empty else df
 
 
 # ---------------------------------------------------------------------------
@@ -336,13 +349,13 @@ def run() -> dict:
         season_start = date.fromisoformat(SEASON_START)
         print(f"  First half stats ({season_start} to {first_half_end})...")
         windows["first_half"] = (
-            _bbref_batting(season_start, first_half_end),
-            _bbref_pitching(season_start, first_half_end),
+            _mlb_batting_range(season_start, first_half_end),
+            _mlb_pitching_range(season_start, first_half_end),
         )
         print(f"  Second half stats ({second_half_start} to {today})...")
         windows["second_half"] = (
-            _bbref_batting(second_half_start, today),
-            _bbref_pitching(second_half_start, today),
+            _mlb_batting_range(second_half_start, today),
+            _mlb_pitching_range(second_half_start, today),
         )
 
     # Rolling windows (BBRef range)
@@ -354,8 +367,8 @@ def run() -> dict:
     ]:
         print(f"  {label} stats ({start} to {today})...")
         windows[label] = (
-            _bbref_batting(start, today),
-            _bbref_pitching(start, today),
+            _mlb_batting_range(start, today),
+            _mlb_pitching_range(start, today),
         )
 
     # Build all rows
