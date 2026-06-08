@@ -85,10 +85,27 @@ def _load_league_meta() -> dict:
     return raw.get('league_meta', {})
 
 
+class _SafeEncoder(json.JSONEncoder):
+    """Encodes float Infinity and NaN as null (valid JSON)."""
+    def iterencode(self, o, _one_shot=False):
+        # Walk the output and replace non-finite floats before writing
+        return super().iterencode(self._sanitize(o), _one_shot)
+
+    def _sanitize(self, obj):
+        import math
+        if isinstance(obj, float):
+            return None if (math.isnan(obj) or math.isinf(obj)) else obj
+        if isinstance(obj, dict):
+            return {k: self._sanitize(v) for k, v in obj.items()}
+        if isinstance(obj, list):
+            return [self._sanitize(v) for v in obj]
+        return obj
+
+
 def _write_json(path: str, data) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w") as f:
-        json.dump(data, f, indent=2, default=str)
+        json.dump(data, f, indent=2, cls=_SafeEncoder)
 
 
 def _write_csv(path: str, rows: list[dict], fieldnames: list[str]) -> None:

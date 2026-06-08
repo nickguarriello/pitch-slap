@@ -5,7 +5,7 @@
       "player_id": "4966637",
       "name": "Nick Kurtz",
       "position": "1B",
-      "team": null,
+      "team": "",
       "lineup_slot": "1B",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -111,7 +111,19 @@
           "pa": 26.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.256,
+        "xslg": 0.496,
+        "xwoba": 0.392,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 161.0,
+        "barrel_pct": 18.3,
+        "hard_hit_pct": 58.0,
+        "exit_velo": 94.2,
+        "sprint_speed": 26.7
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -121,7 +133,7 @@
       "player_id": "42453",
       "name": "Miguel Vargas",
       "position": "3B",
-      "team": null,
+      "team": "",
       "lineup_slot": "1B/3B",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -227,7 +239,19 @@
           "pa": 30.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.256,
+        "xslg": 0.534,
+        "xwoba": 0.394,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 143.0,
+        "barrel_pct": 15.3,
+        "hard_hit_pct": 46.5,
+        "exit_velo": 90.4,
+        "sprint_speed": 28.1
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -237,12 +261,12 @@
       "player_id": "41217",
       "name": "Brayan Rocchio",
       "position": "SS",
-      "team": null,
+      "team": "",
       "lineup_slot": "2B",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 41.2,
+      "ownership_pct": 41.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -343,7 +367,19 @@
           "pa": 22.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.258,
+        "xslg": 0.364,
+        "xwoba": 0.319,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 127.0,
+        "barrel_pct": 3.0,
+        "hard_hit_pct": 33.1,
+        "exit_velo": 86.5,
+        "sprint_speed": 27.4
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -353,7 +389,7 @@
       "player_id": "41219",
       "name": "Nico Hoerner",
       "position": "2B",
-      "team": null,
+      "team": "",
       "lineup_slot": "2B/SS",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -459,7 +495,19 @@
           "pa": 24.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.296,
+        "xslg": 0.378,
+        "xwoba": 0.337,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 101.0,
+        "barrel_pct": 1.4,
+        "hard_hit_pct": 28.1,
+        "exit_velo": 85.7,
+        "sprint_speed": 28.4
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -469,7 +517,7 @@
       "player_id": "33303",
       "name": "Max Muncy",
       "position": "3B",
-      "team": null,
+      "team": "",
       "lineup_slot": "3B",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -575,7 +623,19 @@
           "pa": 23.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.267,
+        "xslg": 0.557,
+        "xwoba": 0.393,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 144.0,
+        "barrel_pct": 17.6,
+        "hard_hit_pct": 48.8,
+        "exit_velo": 91.1,
+        "sprint_speed": 27.1
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -585,12 +645,12 @@
       "player_id": "32985",
       "name": "Ildemaro Vargas",
       "position": "2B",
-      "team": null,
+      "team": "",
       "lineup_slot": "BE",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 57.7,
+      "ownership_pct": 57.5,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -691,7 +751,19 @@
           "pa": 16.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.291,
+        "xslg": 0.411,
+        "xwoba": 0.318,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 113.0,
+        "barrel_pct": 4.3,
+        "hard_hit_pct": 32.1,
+        "exit_velo": 86.8,
+        "sprint_speed": 27.0
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -701,7 +773,7 @@
       "player_id": "4866735",
       "name": "Jakob Marsee",
       "position": "CF",
-      "team": null,
+      "team": "",
       "lineup_slot": "BE",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -807,7 +879,19 @@
           "pa": 17.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.211,
+        "xslg": 0.305,
+        "xwoba": 0.297,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 81.0,
+        "barrel_pct": 3.9,
+        "hard_hit_pct": 36.4,
+        "exit_velo": 87.1,
+        "sprint_speed": 27.9
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -817,12 +901,12 @@
       "player_id": "33039",
       "name": "Mookie Betts",
       "position": "SS",
-      "team": null,
+      "team": "",
       "lineup_slot": "BE",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 94.7,
+      "ownership_pct": 94.6,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -923,17 +1007,32 @@
           "pa": 25.0
         }
       },
-      "statcast": {},
-      "buy_low": false,
+      "statcast": {
+        "xba": 0.266,
+        "xslg": 0.44,
+        "xwoba": 0.332,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 83.0,
+        "barrel_pct": 9.0,
+        "hard_hit_pct": 37.1,
+        "exit_velo": 89.9,
+        "sprint_speed": 26.4
+      },
+      "buy_low": true,
       "sell_high": false,
-      "buy_low_reasons": [],
+      "buy_low_reasons": [
+        "BABIP 0.162 below floor (0.260)",
+        "OBP (0.256) lags xwOBA (0.332)"
+      ],
       "sell_high_reasons": []
     },
     {
       "player_id": "33618",
       "name": "Raisel Iglesias",
       "position": "RP",
-      "team": null,
+      "team": "",
       "lineup_slot": "BE",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -1039,22 +1138,37 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 2.663,
+        "siera": 2.239,
+        "fip": 1.213,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
-      "sell_high": false,
+      "sell_high": true,
       "buy_low_reasons": [],
-      "sell_high_reasons": []
+      "sell_high_reasons": [
+        "ERA (0.87) << xFIP (2.66), gap=1.79",
+        "ERA (0.87) << SIERA (2.24), gap=1.37"
+      ]
     },
     {
       "player_id": "38309",
       "name": "Will Smith",
       "position": "C",
-      "team": null,
+      "team": "",
       "lineup_slot": "BE",
       "injury_status": "DAY_TO_DAY",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 88.2,
+      "ownership_pct": 88.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1155,7 +1269,19 @@
           "pa": 16.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.274,
+        "xslg": 0.502,
+        "xwoba": 0.386,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 105.0,
+        "barrel_pct": 14.1,
+        "hard_hit_pct": 40.0,
+        "exit_velo": 90.2,
+        "sprint_speed": 27.2
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -1165,12 +1291,12 @@
       "player_id": "4917812",
       "name": "Carter Jensen",
       "position": "C",
-      "team": null,
+      "team": "",
       "lineup_slot": "C",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 20.7,
+      "ownership_pct": 20.6,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1271,7 +1397,19 @@
           "pa": 29.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.193,
+        "xslg": 0.334,
+        "xwoba": 0.277,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 90.0,
+        "barrel_pct": 8.3,
+        "hard_hit_pct": 40.5,
+        "exit_velo": 89.6,
+        "sprint_speed": 27.7
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -1281,7 +1419,7 @@
       "player_id": "4917646",
       "name": "Samuel Basallo",
       "position": "C",
-      "team": null,
+      "team": "",
       "lineup_slot": "C",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -1387,7 +1525,19 @@
           "pa": 19.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.274,
+        "xslg": 0.495,
+        "xwoba": 0.356,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 138.0,
+        "barrel_pct": 12.1,
+        "hard_hit_pct": 48.3,
+        "exit_velo": 92.7,
+        "sprint_speed": 25.2
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -1397,7 +1547,7 @@
       "player_id": "33403",
       "name": "Emilio Pagan",
       "position": "RP",
-      "team": null,
+      "team": "",
       "lineup_slot": "IL",
       "injury_status": "FIFTEEN_DAY_DL",
       "is_active": true,
@@ -1452,7 +1602,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 5.653,
+        "siera": 4.943,
+        "fip": 5.795,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -1462,7 +1624,7 @@
       "player_id": "42404",
       "name": "Corbin Carroll",
       "position": "RF",
-      "team": null,
+      "team": "",
       "lineup_slot": "OF",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -1568,7 +1730,19 @@
           "pa": 28.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.267,
+        "xslg": 0.482,
+        "xwoba": 0.366,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 152.0,
+        "barrel_pct": 12.9,
+        "hard_hit_pct": 49.7,
+        "exit_velo": 91.5,
+        "sprint_speed": 29.7
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -1578,12 +1752,12 @@
       "player_id": "35013",
       "name": "Jake Bauers",
       "position": "1B",
-      "team": null,
+      "team": "",
       "lineup_slot": "OF",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 51.7,
+      "ownership_pct": 52.1,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -1684,7 +1858,19 @@
           "pa": 27.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.26,
+        "xslg": 0.473,
+        "xwoba": 0.352,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 137.0,
+        "barrel_pct": 12.2,
+        "hard_hit_pct": 52.7,
+        "exit_velo": 92.0,
+        "sprint_speed": 27.0
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -1694,7 +1880,7 @@
       "player_id": "36969",
       "name": "Juan Soto",
       "position": "RF",
-      "team": null,
+      "team": "",
       "lineup_slot": "OF",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -1800,7 +1986,19 @@
           "pa": 26.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.289,
+        "xslg": 0.632,
+        "xwoba": 0.418,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 168.0,
+        "barrel_pct": 18.2,
+        "hard_hit_pct": 50.8,
+        "exit_velo": 93.2,
+        "sprint_speed": 25.8
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -1810,7 +2008,7 @@
       "player_id": "30836",
       "name": "Mike Trout",
       "position": "DH",
-      "team": null,
+      "team": "",
       "lineup_slot": "OF",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -1916,7 +2114,19 @@
           "pa": 27.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.259,
+        "xslg": 0.575,
+        "xwoba": 0.422,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 150.0,
+        "barrel_pct": 20.9,
+        "hard_hit_pct": 49.3,
+        "exit_velo": 91.1,
+        "sprint_speed": 28.7
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -1926,7 +2136,7 @@
       "player_id": "4717833",
       "name": "Pete Crow-Armstrong",
       "position": "CF",
-      "team": null,
+      "team": "",
       "lineup_slot": "OF",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -2032,7 +2242,19 @@
           "pa": 27.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.249,
+        "xslg": 0.452,
+        "xwoba": 0.345,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 105.0,
+        "barrel_pct": 10.2,
+        "hard_hit_pct": 50.3,
+        "exit_velo": 91.8,
+        "sprint_speed": 29.2
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -2042,7 +2264,7 @@
       "player_id": "40884",
       "name": "Bryan Baker",
       "position": "RP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -2148,7 +2370,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 3.399,
+        "siera": 3.214,
+        "fip": 2.588,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -2158,12 +2392,12 @@
       "player_id": "36581",
       "name": "Framber Valdez",
       "position": "SP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 80.9,
+      "ownership_pct": 80.8,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2264,7 +2498,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 4.266,
+        "siera": 4.359,
+        "fip": 4.16,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -2274,12 +2520,12 @@
       "player_id": "41216",
       "name": "Logan Webb",
       "position": "SP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 91.7,
+      "ownership_pct": 91.8,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2380,7 +2626,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 3.471,
+        "siera": 3.665,
+        "fip": 3.539,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -2390,7 +2648,7 @@
       "player_id": "4730225",
       "name": "Mason Miller",
       "position": "RP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -2496,7 +2754,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 1.05,
+        "siera": 1.415,
+        "fip": 0.481,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -2506,12 +2776,12 @@
       "player_id": "40429",
       "name": "Michael King",
       "position": "SP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 86.8,
+      "ownership_pct": 86.7,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2612,7 +2882,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 3.988,
+        "siera": 4.061,
+        "fip": 3.816,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -2622,7 +2904,7 @@
       "player_id": "31174",
       "name": "Nathan Eovaldi",
       "position": "SP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -2728,7 +3010,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 3.374,
+        "siera": 3.383,
+        "fip": 4.508,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -2738,7 +3032,7 @@
       "player_id": "35009",
       "name": "Paul Sewald",
       "position": "RP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -2844,7 +3138,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 4.358,
+        "siera": 3.715,
+        "fip": 4.2,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -2854,7 +3160,7 @@
       "player_id": "32082",
       "name": "Sonny Gray",
       "position": "SP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -2960,7 +3266,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 3.742,
+        "siera": 3.924,
+        "fip": 3.501,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -2970,12 +3288,12 @@
       "player_id": "42480",
       "name": "Taj Bradley",
       "position": "SP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 57.1,
+      "ownership_pct": 57.0,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3076,7 +3394,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 3.669,
+        "siera": 3.536,
+        "fip": 3.384,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -3086,7 +3416,7 @@
       "player_id": "4872587",
       "name": "Yoshinobu Yamamoto",
       "position": "SP",
-      "team": null,
+      "team": "",
       "lineup_slot": "P",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -3192,7 +3522,19 @@
           "pa": null
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": null,
+        "xslg": null,
+        "xwoba": null,
+        "xfip": 3.183,
+        "siera": 3.251,
+        "fip": 3.557,
+        "wrc_plus": null,
+        "barrel_pct": null,
+        "hard_hit_pct": null,
+        "exit_velo": null,
+        "sprint_speed": null
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -3202,7 +3544,7 @@
       "player_id": "41326",
       "name": "Xavier Edwards",
       "position": "2B",
-      "team": null,
+      "team": "",
       "lineup_slot": "SS",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -3308,7 +3650,19 @@
           "pa": 25.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.282,
+        "xslg": 0.429,
+        "xwoba": 0.354,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 147.0,
+        "barrel_pct": 6.6,
+        "hard_hit_pct": 33.3,
+        "exit_velo": 87.5,
+        "sprint_speed": 28.0
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -3318,7 +3672,7 @@
       "player_id": "31283",
       "name": "Christian Yelich",
       "position": "DH",
-      "team": null,
+      "team": "",
       "lineup_slot": "UTIL",
       "injury_status": "ACTIVE",
       "is_active": true,
@@ -3424,7 +3778,19 @@
           "pa": 32.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.211,
+        "xslg": 0.371,
+        "xwoba": 0.283,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 120.0,
+        "barrel_pct": 6.8,
+        "hard_hit_pct": 36.5,
+        "exit_velo": 88.6,
+        "sprint_speed": 27.2
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],
@@ -3434,12 +3800,12 @@
       "player_id": "32532",
       "name": "Willson Contreras",
       "position": "1B",
-      "team": null,
+      "team": "",
       "lineup_slot": "UTIL",
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 34.2,
+      "ownership_pct": 34.3,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3540,7 +3906,19 @@
           "pa": 21.0
         }
       },
-      "statcast": {},
+      "statcast": {
+        "xba": 0.28,
+        "xslg": 0.53,
+        "xwoba": 0.399,
+        "xfip": null,
+        "siera": null,
+        "fip": null,
+        "wrc_plus": 144.0,
+        "barrel_pct": 14.2,
+        "hard_hit_pct": 44.0,
+        "exit_velo": 90.2,
+        "sprint_speed": 27.0
+      },
       "buy_low": false,
       "sell_high": false,
       "buy_low_reasons": [],

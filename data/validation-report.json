@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-06-08T15:35:22.165057+00:00",
+  "run_ts": "2026-06-08T15:53:11.936940+00:00",
   "overall": "warn",
   "checks": [
     {
@@ -131,25 +131,25 @@
     {
       "check": "staleness.statcast",
       "status": "pass",
-      "detail": "Statcast data is 135.0h old",
+      "detail": "Statcast data is 135.3h old",
       "row_count": 0
     }
   ],
   "meta": {
-    "espn_last_fetch": "2026-06-08T15:35:02.467288+00:00",
+    "espn_last_fetch": "2026-06-08T15:52:55.680422+00:00",
     "espn_status": "ok",
     "espn_rows": 555,
-    "mlb_last_fetch": "2026-06-08T15:35:03.944362+00:00",
-    "transform_last_run": "2026-06-08T15:35:22.148627+00:00",
-    "validate_last_run": "2026-06-08T13:39:15.325653+00:00",
+    "mlb_last_fetch": "2026-06-08T15:52:57.079065+00:00",
+    "transform_last_run": "2026-06-08T15:53:11.919726+00:00",
+    "validate_last_run": "2026-06-08T15:35:22.166417+00:00",
     "validate_overall": "warn",
-    "evaluate_last_run": "2026-06-08T13:39:15.348836+00:00",
+    "evaluate_last_run": "2026-06-08T15:35:22.187829+00:00",
     "cats_winning": 0,
-    "last_light_run": "2026-06-04T20:06:19.861277+00:00",
-    "last_run_mode": "full",
+    "last_light_run": "2026-06-08T15:34:46.534605+00:00",
+    "last_run_mode": "light",
     "schedule_rows": 182,
     "statcast_last_fetch": "2026-06-03T00:36:58.927099+00:00",
-    "report_last_run": "2026-06-08T13:39:15.536444+00:00",
+    "report_last_run": "2026-06-08T15:35:22.378989+00:00",
     "transform_rows": 2454,
     "cats_losing": 2,
     "last_full_run": "2026-06-08T13:38:49.701404+00:00"
