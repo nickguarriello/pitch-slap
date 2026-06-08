@@ -50,7 +50,7 @@ def _f(val, digits: int = 3):
     try:
         import math
         v = float(val)
-        return None if math.isnan(v) else round(v, digits)
+        return None if (math.isnan(v) or math.isinf(v)) else round(v, digits)
     except (TypeError, ValueError):
         return None
 
