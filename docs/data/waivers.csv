@@ -1,1 +1,12 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
+Adrian Morejon,,buy_low_pitcher,0.74,False,4.36,2.232505410842867,2.133380083098834,,,,"ERA (4.36) >> xFIP (2.23), gap=2.13; ERA (4.36) >> SIERA (2.13), gap=2.23"
+Edward Cabrera,,buy_low_pitcher,0.74,False,4.99,3.916431302626539,4.122869958187081,,,,"ERA (4.99) >> xFIP (3.92), gap=1.07; ERA (4.99) >> SIERA (4.12), gap=0.87"
+Sean Manaea,,buy_low_pitcher,0.74,False,5.02,4.125138033489849,3.6513459154442227,,,,"ERA (5.02) >> xFIP (4.13), gap=0.89; ERA (5.02) >> SIERA (3.65), gap=1.37"
+Connor Prielipp,,buy_low_pitcher,0.74,False,5.15,3.956854231384726,3.8420381659519047,,,,"ERA (5.15) >> xFIP (3.96), gap=1.19; ERA (5.15) >> SIERA (3.84), gap=1.31"
+David Peterson,,buy_low_pitcher,0.74,False,5.18,3.801229914686666,3.9037007032760727,,,,"ERA (5.18) >> xFIP (3.80), gap=1.38; ERA (5.18) >> SIERA (3.90), gap=1.28"
+Jake Irvin,,buy_low_pitcher,0.74,False,5.23,4.137154451938637,3.871390002069582,,,,"ERA (5.23) >> xFIP (4.14), gap=1.09; ERA (5.23) >> SIERA (3.87), gap=1.36"
+Jack Flaherty,,buy_low_pitcher,0.74,False,5.31,4.404653557278371,4.073330527455026,,,,"ERA (5.31) >> xFIP (4.40), gap=0.91; ERA (5.31) >> SIERA (4.07), gap=1.24"
+Steven Matz,,buy_low_pitcher,0.74,False,5.55,4.622261522805437,4.728197015204549,,,,"ERA (5.55) >> xFIP (4.62), gap=0.93; ERA (5.55) >> SIERA (4.73), gap=0.82"
+Devin Williams,,buy_low_pitcher,0.74,False,5.57,3.202666217971137,3.2016152742673745,,,,"ERA (5.57) >> xFIP (3.20), gap=2.37; ERA (5.57) >> SIERA (3.20), gap=2.37"
+Mike Burrows,,buy_low_pitcher,0.74,False,5.77,4.688586638727742,4.607589299468455,,,,"ERA (5.77) >> xFIP (4.69), gap=1.08; ERA (5.77) >> SIERA (4.61), gap=1.16"
+Yusei Kikuchi,,buy_low_pitcher,0.74,False,5.81,4.200124564093929,4.161079040122157,,,,"ERA (5.81) >> xFIP (4.20), gap=1.61; ERA (5.81) >> SIERA (4.16), gap=1.65"
