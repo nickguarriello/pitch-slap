@@ -1002,8 +1002,8 @@
   "current_opponent_name": "Jazz In Her Batters Box",
   "current_opponent_abbrev": "Jhf",
   "constraints": {
-    "acquisitions_used": 1,
-    "acquisitions_remaining": 6,
+    "acquisitions_used": 2,
+    "acquisitions_remaining": 5,
     "ip_accumulated": 35.333333333333336,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
