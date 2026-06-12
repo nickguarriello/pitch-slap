@@ -59,7 +59,7 @@
         "K": 6,
         "QS": 5,
         "SvHd": 2,
-        "ERA": 3,
+        "ERA": 4,
         "WHIP": 4
       },
       "seed": 2,
@@ -147,7 +147,7 @@
         "QS": 1,
         "SvHd": 8,
         "ERA": 7,
-        "WHIP": 6
+        "WHIP": 5
       },
       "seed": 5,
       "in_playoffs": false
@@ -175,8 +175,8 @@
         "K": 5,
         "QS": 2,
         "SvHd": 6,
-        "ERA": 4,
-        "WHIP": 5
+        "ERA": 3,
+        "WHIP": 6
       },
       "seed": 6,
       "in_playoffs": false
@@ -259,7 +259,7 @@
     "K": 6,
     "QS": 5,
     "SvHd": 2,
-    "ERA": 3,
+    "ERA": 4,
     "WHIP": 4
   },
   "opponent_previews": [
@@ -314,10 +314,10 @@
           "rank_gap": 1
         },
         "ERA": {
-          "my_rank": 3,
+          "my_rank": 4,
           "their_rank": 2,
           "winner": "theirs",
-          "rank_gap": 1
+          "rank_gap": 2
         },
         "WHIP": {
           "my_rank": 4,
@@ -392,10 +392,10 @@
           "rank_gap": 2
         },
         "ERA": {
-          "my_rank": 3,
+          "my_rank": 4,
           "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "WHIP": {
           "my_rank": 4,
@@ -471,10 +471,10 @@
           "rank_gap": 3
         },
         "ERA": {
-          "my_rank": 3,
+          "my_rank": 4,
           "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 5
+          "rank_gap": 4
         },
         "WHIP": {
           "my_rank": 4,
