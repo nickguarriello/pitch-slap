@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-11",
+  "as_of": "2026-06-12",
   "playoff_start_week": 22,
   "current_week": 11,
   "weeks_until_playoffs": 10,
@@ -59,7 +59,7 @@
         "K": 6,
         "QS": 5,
         "SvHd": 2,
-        "ERA": 4,
+        "ERA": 3,
         "WHIP": 4
       },
       "seed": 2,
@@ -109,7 +109,7 @@
       "cat_record": "49-46-5",
       "is_my_team": false,
       "ranks": {
-        "R": 5,
+        "R": 6,
         "HR": 2,
         "RBI": 6,
         "SB": 6,
@@ -167,7 +167,7 @@
       "cat_record": "45-50-5",
       "is_my_team": false,
       "ranks": {
-        "R": 6,
+        "R": 4,
         "HR": 6,
         "RBI": 5,
         "SB": 8,
@@ -175,7 +175,7 @@
         "K": 5,
         "QS": 2,
         "SvHd": 6,
-        "ERA": 3,
+        "ERA": 4,
         "WHIP": 5
       },
       "seed": 6,
@@ -225,7 +225,7 @@
       "cat_record": "46-48-6",
       "is_my_team": false,
       "ranks": {
-        "R": 4,
+        "R": 5,
         "HR": 4,
         "RBI": 1,
         "SB": 3,
@@ -259,7 +259,7 @@
     "K": 6,
     "QS": 5,
     "SvHd": 2,
-    "ERA": 4,
+    "ERA": 3,
     "WHIP": 4
   },
   "opponent_previews": [
@@ -314,10 +314,10 @@
           "rank_gap": 1
         },
         "ERA": {
-          "my_rank": 4,
+          "my_rank": 3,
           "their_rank": 2,
           "winner": "theirs",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "WHIP": {
           "my_rank": 4,
@@ -392,10 +392,10 @@
           "rank_gap": 2
         },
         "ERA": {
-          "my_rank": 4,
+          "my_rank": 3,
           "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 1
+          "rank_gap": 2
         },
         "WHIP": {
           "my_rank": 4,
@@ -430,9 +430,9 @@
       "category_matchup": {
         "R": {
           "my_rank": 1,
-          "their_rank": 5,
+          "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 5
         },
         "HR": {
           "my_rank": 3,
@@ -471,10 +471,10 @@
           "rank_gap": 3
         },
         "ERA": {
-          "my_rank": 4,
+          "my_rank": 3,
           "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 5
         },
         "WHIP": {
           "my_rank": 4,

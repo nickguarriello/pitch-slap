@@ -2,39 +2,39 @@
   "cat_states": {
     "R": {
       "state": "FLIPPABLE",
-      "my_val": 22.0,
-      "opp_val": 27.0,
-      "gap": -5.0
+      "my_val": 26.0,
+      "opp_val": 33.0,
+      "gap": -7.0
     },
     "HR": {
       "state": "FLOPPABLE",
-      "my_val": 7.0,
-      "opp_val": 4.0,
-      "gap": 3.0
+      "my_val": 8.0,
+      "opp_val": 7.0,
+      "gap": 1.0
     },
     "RBI": {
-      "state": "FLOPPABLE",
-      "my_val": 20.0,
-      "opp_val": 18.0,
-      "gap": 2.0
+      "state": "FLIPPABLE",
+      "my_val": 22.0,
+      "opp_val": 25.0,
+      "gap": -3.0
     },
     "SB": {
-      "state": "FLIPPABLE",
-      "my_val": 2.0,
+      "state": "TIE",
+      "my_val": 3.0,
       "opp_val": 3.0,
-      "gap": -1.0
+      "gap": 0.0
     },
     "OBP": {
       "state": "LOSS",
-      "my_val": 0.36423841,
-      "opp_val": 0.41258741,
-      "gap": -0.0483
+      "my_val": 0.35135135,
+      "opp_val": 0.42168675,
+      "gap": -0.0703
     },
     "K": {
       "state": "FLOPPABLE",
-      "my_val": 24.0,
-      "opp_val": 18.0,
-      "gap": 6.0
+      "my_val": 25.0,
+      "opp_val": 22.0,
+      "gap": 3.0
     },
     "QS": {
       "state": "FLOPPABLE",
@@ -43,16 +43,16 @@
       "gap": 1.0
     },
     "ERA": {
-      "state": "LOSS",
-      "my_val": 4.54455446,
-      "opp_val": 3.375,
-      "gap": -1.1696
+      "state": "WIN",
+      "my_val": 4.41346154,
+      "opp_val": 5.32394366,
+      "gap": 0.9105
     },
     "WHIP": {
       "state": "FLOPPABLE",
-      "my_val": 1.21782178,
-      "opp_val": 1.23214286,
-      "gap": 0.0143
+      "my_val": 1.21153846,
+      "opp_val": 1.30985915,
+      "gap": 0.0983
     },
     "SvHd": {
       "state": "FLOPPABLE",
@@ -69,7 +69,7 @@
     "OBP": 0.7,
     "K": 0.8,
     "QS": 0.57,
-    "ERA": 0.53,
+    "ERA": 0.49,
     "WHIP": 0.53,
     "SvHd": 0.44
   },
@@ -1004,7 +1004,7 @@
   "constraints": {
     "acquisitions_used": 2,
     "acquisitions_remaining": 5,
-    "ip_accumulated": 35.333333333333336,
+    "ip_accumulated": 36.333333333333336,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,

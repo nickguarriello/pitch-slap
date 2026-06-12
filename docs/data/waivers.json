@@ -20,25 +20,6 @@
       }
     },
     {
-      "player_id": "40944",
-      "name": "Edward Cabrera",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.99) >> xFIP (3.92), gap=1.07",
-        "ERA (4.99) >> SIERA (4.13), gap=0.86"
-      ],
-      "score": 0.74,
-      "stats": {
-        "era": 4.99,
-        "xfip": 3.9214074681097593,
-        "siera": 4.132085402513482,
-        "ip": 57.666666666666664
-      }
-    },
-    {
       "player_id": "33244",
       "name": "Sean Manaea",
       "team": null,
@@ -122,15 +103,15 @@
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.57) >> xFIP (3.21), gap=2.36",
-        "ERA (5.57) >> SIERA (3.21), gap=2.36"
+        "ERA (5.32) >> xFIP (3.21), gap=2.11",
+        "ERA (5.32) >> SIERA (3.21), gap=2.11"
       ],
       "score": 0.74,
       "stats": {
-        "era": 5.57,
+        "era": 5.32,
         "xfip": 3.206063104377463,
         "siera": 3.2108307185937752,
-        "ip": 21.0
+        "ip": 22.0
       }
     },
     {
@@ -380,6 +361,25 @@
         "xfip": 3.065442821684296,
         "siera": 2.9025373266349814,
         "ip": 24.666666666666668
+      }
+    },
+    {
+      "player_id": "33841",
+      "name": "Jeff Hoffman",
+      "team": null,
+      "espn_team_id": 8,
+      "rostered": true,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.83) >> xFIP (2.12), gap=3.71",
+        "ERA (5.83) >> SIERA (2.14), gap=3.69"
+      ],
+      "score": 0.74,
+      "stats": {
+        "era": 5.83,
+        "xfip": 2.1171248818049273,
+        "siera": 2.1384266090834503,
+        "ip": 29.333333333333332
       }
     }
   ],
