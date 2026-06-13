@@ -3,7 +3,7 @@
   "last_run_mode": "light",
   "last_full_run": "2026-06-08T13:38:49.701404+00:00",
   "last_light_run": "2026-06-08T15:52:40.743988+00:00",
-  "espn_last_fetch": "2026-06-13T17:20:23.783137+00:00",
+  "espn_last_fetch": "2026-06-13T23:04:49.110982+00:00",
   "validate_overall": "warn",
   "validate_warnings": 3,
   "cats_winning": 2,
@@ -12,7 +12,7 @@
   "constraints": {
     "acquisitions_used": 2,
     "acquisitions_remaining": 5,
-    "ip_accumulated": 43.333333333333336,
+    "ip_accumulated": 52.666666666666664,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,
