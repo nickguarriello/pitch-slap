@@ -8,15 +8,53 @@
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.19) >> xFIP (2.09), gap=2.10",
-        "ERA (4.19) >> SIERA (2.03), gap=2.16"
+        "ERA (4.19) >> xFIP (2.10), gap=2.09",
+        "ERA (4.19) >> SIERA (2.05), gap=2.14"
       ],
       "score": 0.74,
       "stats": {
         "era": 4.19,
-        "xfip": 2.0918386418043977,
-        "siera": 2.034344728967347,
+        "xfip": 2.099799445290633,
+        "siera": 2.045449282905259,
         "ip": 34.333333333333336
+      }
+    },
+    {
+      "player_id": "4622181",
+      "name": "Jack Leiter",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.97) >> xFIP (4.16), gap=0.81",
+        "ERA (4.97) >> SIERA (4.15), gap=0.82"
+      ],
+      "score": 0.74,
+      "stats": {
+        "era": 4.97,
+        "xfip": 4.161576895788312,
+        "siera": 4.147182554129299,
+        "ip": 76.0
+      }
+    },
+    {
+      "player_id": "33224",
+      "name": "Devin Williams",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.01) >> xFIP (2.99), gap=2.02",
+        "ERA (5.01) >> SIERA (2.96), gap=2.05"
+      ],
+      "score": 0.74,
+      "stats": {
+        "era": 5.01,
+        "xfip": 2.988703154061503,
+        "siera": 2.959573485659215,
+        "ip": 23.333333333333332
       }
     },
     {
@@ -28,13 +66,13 @@
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.02) >> xFIP (4.14), gap=0.88",
-        "ERA (5.02) >> SIERA (3.67), gap=1.35"
+        "ERA (5.02) >> SIERA (3.68), gap=1.34"
       ],
       "score": 0.74,
       "stats": {
         "era": 5.02,
-        "xfip": 4.135499978688721,
-        "siera": 3.665281719811288,
+        "xfip": 4.144496584370761,
+        "siera": 3.6763862737492,
         "ip": 43.0
       }
     },
@@ -46,14 +84,14 @@
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.15) >> xFIP (3.97), gap=1.18",
-        "ERA (5.15) >> SIERA (3.86), gap=1.29"
+        "ERA (5.15) >> xFIP (3.98), gap=1.17",
+        "ERA (5.15) >> SIERA (3.87), gap=1.28"
       ],
       "score": 0.74,
       "stats": {
         "era": 5.15,
-        "xfip": 3.9680002803153034,
-        "siera": 3.85597397031897,
+        "xfip": 3.9770757878298433,
+        "siera": 3.867078524256882,
         "ip": 43.666666666666664
       }
     },
@@ -65,14 +103,14 @@
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.23) >> xFIP (4.15), gap=1.08",
-        "ERA (5.23) >> SIERA (3.89), gap=1.34"
+        "ERA (5.23) >> xFIP (4.16), gap=1.07",
+        "ERA (5.23) >> SIERA (3.90), gap=1.33"
       ],
       "score": 0.74,
       "stats": {
         "era": 5.23,
-        "xfip": 4.147553085422139,
-        "siera": 3.8853258064366476,
+        "xfip": 4.1565533829280685,
+        "siera": 3.8964303603745596,
         "ip": 51.666666666666664
       }
     },
@@ -84,34 +122,15 @@
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.31) >> xFIP (4.42), gap=0.89",
-        "ERA (5.31) >> SIERA (4.09), gap=1.22"
+        "ERA (5.35) >> xFIP (4.52), gap=0.83",
+        "ERA (5.35) >> SIERA (4.19), gap=1.16"
       ],
       "score": 0.74,
       "stats": {
-        "era": 5.31,
-        "xfip": 4.418085763625706,
-        "siera": 4.087266331822091,
-        "ip": 62.666666666666664
-      }
-    },
-    {
-      "player_id": "33224",
-      "name": "Devin Williams",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (5.32) >> xFIP (3.09), gap=2.23",
-        "ERA (5.32) >> SIERA (3.05), gap=2.27"
-      ],
-      "score": 0.74,
-      "stats": {
-        "era": 5.32,
-        "xfip": 3.088312212993603,
-        "siera": 3.0527741828288972,
-        "ip": 22.0
+        "era": 5.35,
+        "xfip": 4.515772314013211,
+        "siera": 4.18531422921548,
+        "ip": 65.66666666666667
       }
     },
     {
@@ -122,14 +141,14 @@
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.61) >> xFIP (4.60), gap=1.01",
-        "ERA (5.61) >> SIERA (4.60), gap=1.01"
+        "ERA (5.61) >> xFIP (4.61), gap=1.00",
+        "ERA (5.61) >> SIERA (4.61), gap=1.00"
       ],
       "score": 0.74,
       "stats": {
         "era": 5.61,
-        "xfip": 4.604326976322737,
-        "siera": 4.595317923345764,
+        "xfip": 4.613588009896826,
+        "siera": 4.606422477283676,
         "ip": 61.0
       }
     },
@@ -141,14 +160,14 @@
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.70) >> xFIP (4.51), gap=1.19",
-        "ERA (5.70) >> SIERA (4.46), gap=1.24"
+        "ERA (5.70) >> xFIP (4.52), gap=1.18",
+        "ERA (5.70) >> SIERA (4.47), gap=1.23"
       ],
       "score": 0.74,
       "stats": {
         "era": 5.7,
-        "xfip": 4.5071367442204195,
-        "siera": 4.459596913886471,
+        "xfip": 4.5160212855183595,
+        "siera": 4.470701467824383,
         "ip": 60.0
       }
     },
@@ -160,76 +179,19 @@
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.75) >> xFIP (3.97), gap=1.78",
-        "ERA (5.75) >> SIERA (4.03), gap=1.72"
+        "ERA (5.75) >> xFIP (3.98), gap=1.77",
+        "ERA (5.75) >> SIERA (4.04), gap=1.71"
       ],
       "score": 0.74,
       "stats": {
         "era": 5.75,
-        "xfip": 3.973839720891494,
-        "siera": 4.033495680475398,
+        "xfip": 3.982470465968964,
+        "siera": 4.04460023441331,
         "ip": 61.0
-      }
-    },
-    {
-      "player_id": "4918155",
-      "name": "Mike Burrows",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (5.77) >> xFIP (4.70), gap=1.07",
-        "ERA (5.77) >> SIERA (4.62), gap=1.15"
-      ],
-      "score": 0.74,
-      "stats": {
-        "era": 5.77,
-        "xfip": 4.702165174657576,
-        "siera": 4.621525103835521,
-        "ip": 73.33333333333333
-      }
-    },
-    {
-      "player_id": "41415",
-      "name": "Yusei Kikuchi",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (5.81) >> xFIP (4.21), gap=1.60",
-        "ERA (5.81) >> SIERA (4.18), gap=1.63"
-      ],
-      "score": 0.74,
-      "stats": {
-        "era": 5.81,
-        "xfip": 4.211805017628977,
-        "siera": 4.1750148444892226,
-        "ip": 31.0
       }
     }
   ],
   "buy_low_trade": [
-    {
-      "player_id": "4987924",
-      "name": "Cade Smith",
-      "team": null,
-      "espn_team_id": 8,
-      "rostered": true,
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (2.67) >> xFIP (1.91), gap=0.76",
-        "ERA (2.67) >> SIERA (1.64), gap=1.03"
-      ],
-      "score": 0.74,
-      "stats": {
-        "era": 2.67,
-        "xfip": 1.9092653586285426,
-        "siera": 1.6401161860723086,
-        "ip": 30.333333333333332
-      }
-    },
     {
       "player_id": "38303",
       "name": "David Bednar",
@@ -238,14 +200,14 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (3.90) >> xFIP (3.02), gap=0.88",
-        "ERA (3.90) >> SIERA (2.99), gap=0.91"
+        "ERA (3.90) >> xFIP (3.03), gap=0.87",
+        "ERA (3.90) >> SIERA (3.00), gap=0.90"
       ],
       "score": 0.74,
       "stats": {
         "era": 3.9,
-        "xfip": 3.0217366254563167,
-        "siera": 2.987528811987429,
+        "xfip": 3.0299257128953,
+        "siera": 2.998633365925341,
         "ip": 27.666666666666668
       }
     },
@@ -257,15 +219,34 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.35) >> xFIP (3.16), gap=1.19",
-        "ERA (4.35) >> SIERA (3.38), gap=0.97"
+        "ERA (4.35) >> xFIP (3.17), gap=1.18",
+        "ERA (4.35) >> SIERA (3.39), gap=0.96"
       ],
       "score": 0.74,
       "stats": {
         "era": 4.35,
-        "xfip": 3.157709653888229,
-        "siera": 3.3836059306502806,
+        "xfip": 3.166165841029157,
+        "siera": 3.3947104845881926,
         "ip": 78.66666666666667
+      }
+    },
+    {
+      "player_id": "41178",
+      "name": "Ryan Weathers",
+      "team": null,
+      "espn_team_id": 2,
+      "rostered": true,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.36) >> xFIP (3.41), gap=0.95",
+        "ERA (4.36) >> SIERA (3.43), gap=0.93"
+      ],
+      "score": 0.74,
+      "stats": {
+        "era": 4.36,
+        "xfip": 3.4081480848192816,
+        "siera": 3.4294601111007776,
+        "ip": 74.33333333333333
       }
     },
     {
@@ -276,14 +257,14 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.50) >> xFIP (3.16), gap=1.34",
-        "ERA (4.50) >> SIERA (2.67), gap=1.83"
+        "ERA (4.50) >> xFIP (3.17), gap=1.33",
+        "ERA (4.50) >> SIERA (2.68), gap=1.82"
       ],
       "score": 0.74,
       "stats": {
         "era": 4.5,
-        "xfip": 3.158876015308003,
-        "siera": 2.6733294925074387,
+        "xfip": 3.167850267576675,
+        "siera": 2.6844340464453507,
         "ip": 24.0
       }
     },
@@ -295,15 +276,34 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.70) >> xFIP (3.65), gap=1.05",
-        "ERA (4.70) >> SIERA (3.50), gap=1.20"
+        "ERA (4.70) >> xFIP (3.66), gap=1.04",
+        "ERA (4.70) >> SIERA (3.51), gap=1.19"
       ],
       "score": 0.74,
       "stats": {
         "era": 4.7,
-        "xfip": 3.6500434418061376,
-        "siera": 3.49972922867069,
+        "xfip": 3.6591278530967664,
+        "siera": 3.510833782608602,
         "ip": 59.333333333333336
+      }
+    },
+    {
+      "player_id": "5134638",
+      "name": "Roki Sasaki",
+      "team": null,
+      "espn_team_id": 3,
+      "rostered": true,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.76) >> xFIP (4.00), gap=0.76",
+        "ERA (4.76) >> SIERA (3.95), gap=0.81"
+      ],
+      "score": 0.74,
+      "stats": {
+        "era": 4.76,
+        "xfip": 3.9955310294503756,
+        "siera": 3.9546375074256015,
+        "ip": 62.333333333333336
       }
     },
     {
@@ -314,14 +314,14 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.16) >> xFIP (4.27), gap=0.89",
-        "ERA (5.16) >> SIERA (4.06), gap=1.10"
+        "ERA (5.16) >> xFIP (4.28), gap=0.88",
+        "ERA (5.16) >> SIERA (4.07), gap=1.09"
       ],
       "score": 0.74,
       "stats": {
         "era": 5.16,
-        "xfip": 4.271672192159466,
-        "siera": 4.0583744766009335,
+        "xfip": 4.280807168105573,
+        "siera": 4.0694790305388455,
         "ip": 61.0
       }
     },
@@ -334,13 +334,13 @@
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.18) >> xFIP (2.68), gap=2.50",
-        "ERA (5.18) >> SIERA (2.54), gap=2.64"
+        "ERA (5.18) >> SIERA (2.55), gap=2.63"
       ],
       "score": 0.74,
       "stats": {
         "era": 5.18,
-        "xfip": 2.675199836503565,
-        "siera": 2.538207703739373,
+        "xfip": 2.683771179127254,
+        "siera": 2.549312257677285,
         "ip": 24.333333333333332
       }
     },
@@ -352,34 +352,34 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.47) >> xFIP (3.07), gap=2.40",
-        "ERA (5.47) >> SIERA (2.91), gap=2.56"
+        "ERA (5.26) >> xFIP (3.10), gap=2.16",
+        "ERA (5.26) >> SIERA (2.97), gap=2.29"
       ],
       "score": 0.74,
       "stats": {
-        "era": 5.47,
-        "xfip": 3.0677830548734595,
-        "siera": 2.907257686675646,
-        "ip": 24.666666666666668
+        "era": 5.26,
+        "xfip": 3.0954592603498545,
+        "siera": 2.971588243953614,
+        "ip": 25.666666666666668
       }
     },
     {
-      "player_id": "33841",
-      "name": "Jeff Hoffman",
+      "player_id": "4307825",
+      "name": "Spencer Strider",
       "team": null,
       "espn_team_id": 8,
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.83) >> xFIP (2.12), gap=3.71",
-        "ERA (5.83) >> SIERA (2.14), gap=3.69"
+        "ERA (5.31) >> xFIP (4.31), gap=1.00",
+        "ERA (5.31) >> SIERA (4.09), gap=1.22"
       ],
       "score": 0.74,
       "stats": {
-        "era": 5.83,
-        "xfip": 2.1186049461861334,
-        "siera": 2.143146969124115,
-        "ip": 29.333333333333332
+        "era": 5.31,
+        "xfip": 4.311745303257918,
+        "siera": 4.093641747398776,
+        "ip": 39.0
       }
     }
   ],
