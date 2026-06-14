@@ -1,64 +1,64 @@
 {
   "cat_states": {
     "R": {
-      "state": "FLIPPABLE",
-      "my_val": 36.0,
-      "opp_val": 40.0,
-      "gap": -4.0
+      "state": "TIE",
+      "my_val": 47.0,
+      "opp_val": 47.0,
+      "gap": 0.0
     },
     "HR": {
-      "state": "FLOPPABLE",
-      "my_val": 13.0,
-      "opp_val": 9.0,
-      "gap": 4.0
+      "state": "WIN",
+      "my_val": 17.0,
+      "opp_val": 11.0,
+      "gap": 6.0
     },
     "RBI": {
       "state": "FLOPPABLE",
-      "my_val": 36.0,
-      "opp_val": 33.0,
-      "gap": 3.0
+      "my_val": 46.0,
+      "opp_val": 41.0,
+      "gap": 5.0
     },
     "SB": {
+      "state": "FLOPPABLE",
+      "my_val": 6.0,
+      "opp_val": 3.0,
+      "gap": 3.0
+    },
+    "OBP": {
+      "state": "FLIPPABLE",
+      "my_val": 0.36875,
+      "opp_val": 0.38202247,
+      "gap": -0.0133
+    },
+    "K": {
+      "state": "LOSS",
+      "my_val": 40.0,
+      "opp_val": 52.0,
+      "gap": -12.0
+    },
+    "QS": {
       "state": "FLOPPABLE",
       "my_val": 4.0,
       "opp_val": 3.0,
       "gap": 1.0
     },
-    "OBP": {
-      "state": "FLIPPABLE",
-      "my_val": 0.36904762,
-      "opp_val": 0.38604651,
-      "gap": -0.017
-    },
-    "K": {
-      "state": "FLIPPABLE",
-      "my_val": 33.0,
-      "opp_val": 35.0,
-      "gap": -2.0
-    },
-    "QS": {
-      "state": "FLOPPABLE",
-      "my_val": 3.0,
-      "opp_val": 2.0,
-      "gap": 1.0
-    },
     "ERA": {
       "state": "WIN",
-      "my_val": 3.888,
-      "opp_val": 5.15454545,
-      "gap": 1.2665
+      "my_val": 3.42,
+      "opp_val": 4.34899329,
+      "gap": 0.929
     },
     "WHIP": {
       "state": "FLOPPABLE",
-      "my_val": 1.128,
-      "opp_val": 1.28181818,
-      "gap": 0.1538
+      "my_val": 0.96,
+      "opp_val": 1.14765101,
+      "gap": 0.1877
     },
     "SvHd": {
-      "state": "WIN",
+      "state": "FLOPPABLE",
       "my_val": 3.0,
-      "opp_val": 0.0,
-      "gap": 3.0
+      "opp_val": 1.0,
+      "gap": 2.0
     }
   },
   "need_weights": {
