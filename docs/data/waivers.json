@@ -383,6 +383,22 @@
       }
     }
   ],
-  "two_starters_fa": [],
+  "two_starters_fa": [
+    {
+      "player_id": "41167",
+      "name": "Casey Mize",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "score": 4.88,
+      "stats": {
+        "era": 2.27,
+        "siera": 3.509391849411957,
+        "xfip": 3.714531259573385,
+        "ip": 47.666666666666664,
+        "k_pct_14d": null
+      }
+    }
+  ],
   "ownership_alerts": []
 }
