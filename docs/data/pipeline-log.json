@@ -1,15 +1,15 @@
 {
-  "as_of": "2026-06-14T17:19:02.229018+00:00",
+  "as_of": "2026-06-14T23:10:05.645489+00:00",
   "last_run_mode": "light",
   "last_full_run": "2026-06-08T13:38:49.701404+00:00",
   "last_light_run": "2026-06-08T15:52:40.743988+00:00",
-  "espn_last_fetch": "2026-06-14T17:19:02.229018+00:00",
-  "mlb_last_fetch": "2026-06-14T17:19:02.464738+00:00",
-  "statcast_last_fetch": "2026-06-14T17:19:05.476762+00:00",
+  "espn_last_fetch": "2026-06-14T23:10:05.645489+00:00",
+  "mlb_last_fetch": "2026-06-14T23:10:06.153450+00:00",
+  "statcast_last_fetch": "2026-06-14T23:10:11.541003+00:00",
   "validate_overall": "warn",
   "row_counts": {
     "fact_espn_rosters": 553,
-    "fact_player_stats": 2868,
+    "fact_player_stats": 2874,
     "fact_statcast": 515,
     "fact_matchups": 100,
     "stats_season": 548,
@@ -17,8 +17,8 @@
     "stats_second_half": 0,
     "stats_30d": 489,
     "stats_14d": 442,
-    "stats_7d": 425,
-    "stats_current": 416
+    "stats_7d": 426,
+    "stats_current": 421
   },
   "validation_checks": [
     {
@@ -89,7 +89,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "2868 rows across 6 windows"
+      "detail": "2874 rows across 6 windows"
     },
     {
       "name": "",

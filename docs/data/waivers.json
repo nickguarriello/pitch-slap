@@ -8,15 +8,15 @@
       "rostered": false,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.15) >> xFIP (2.11), gap=2.04",
-        "ERA (4.15) >> SIERA (2.05), gap=2.10"
+        "ERA (4.00) >> xFIP (2.11), gap=1.89",
+        "ERA (4.00) >> SIERA (2.05), gap=1.95"
       ],
       "score": 0.74,
       "stats": {
-        "era": 4.15,
+        "era": 4.0,
         "xfip": 2.109224595126409,
         "siera": 2.049429699073788,
-        "ip": 34.666666666666664
+        "ip": 36.0
       }
     },
     {
@@ -115,6 +115,25 @@
       }
     },
     {
+      "player_id": "33950",
+      "name": "Colin Rea",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.35) >> xFIP (4.58), gap=0.77",
+        "ERA (5.35) >> SIERA (4.53), gap=0.82"
+      ],
+      "score": 0.74,
+      "stats": {
+        "era": 5.35,
+        "xfip": 4.580133115712421,
+        "siera": 4.525922293875395,
+        "ip": 74.0
+      }
+    },
+    {
       "player_id": "41172",
       "name": "Brady Singer",
       "team": null,
@@ -189,25 +208,6 @@
         "siera": 4.051342890644237,
         "ip": 61.0
       }
-    },
-    {
-      "player_id": "41415",
-      "name": "Yusei Kikuchi",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (5.81) >> xFIP (4.23), gap=1.58",
-        "ERA (5.81) >> SIERA (4.19), gap=1.62"
-      ],
-      "score": 0.74,
-      "stats": {
-        "era": 5.81,
-        "xfip": 4.226538291765798,
-        "siera": 4.192862054658061,
-        "ip": 31.0
-      }
     }
   ],
   "buy_low_trade": [
@@ -219,15 +219,15 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (3.77) >> xFIP (2.82), gap=0.95",
-        "ERA (3.77) >> SIERA (2.82), gap=0.95"
+        "ERA (3.64) >> xFIP (2.82), gap=0.82",
+        "ERA (3.64) >> SIERA (2.82), gap=0.82"
       ],
       "score": 0.74,
       "stats": {
-        "era": 3.77,
+        "era": 3.64,
         "xfip": 2.8241088545453,
         "siera": 2.8214691800332257,
-        "ip": 28.666666666666668
+        "ip": 29.666666666666668
       }
     },
     {
@@ -295,15 +295,15 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.70) >> xFIP (3.66), gap=1.04",
-        "ERA (4.70) >> SIERA (3.52), gap=1.18"
+        "ERA (4.76) >> xFIP (3.66), gap=1.10",
+        "ERA (4.76) >> SIERA (3.52), gap=1.24"
       ],
       "score": 0.74,
       "stats": {
-        "era": 4.7,
+        "era": 4.76,
         "xfip": 3.6645073504677974,
         "siera": 3.5175764388395283,
-        "ip": 59.333333333333336
+        "ip": 64.33333333333333
       }
     },
     {
@@ -326,25 +326,6 @@
       }
     },
     {
-      "player_id": "40939",
-      "name": "Andres Munoz",
-      "team": null,
-      "espn_team_id": 5,
-      "rostered": true,
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (5.18) >> xFIP (2.69), gap=2.49",
-        "ERA (5.18) >> SIERA (2.56), gap=2.62"
-      ],
-      "score": 0.74,
-      "stats": {
-        "era": 5.18,
-        "xfip": 2.6865837821309615,
-        "siera": 2.5560549139082114,
-        "ip": 24.333333333333332
-      }
-    },
-    {
       "player_id": "41337",
       "name": "Camilo Doval",
       "team": null,
@@ -352,15 +333,15 @@
       "rostered": true,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.26) >> xFIP (3.10), gap=2.16",
-        "ERA (5.26) >> SIERA (2.98), gap=2.28"
+        "ERA (5.06) >> xFIP (3.10), gap=1.96",
+        "ERA (5.06) >> SIERA (2.98), gap=2.08"
       ],
       "score": 0.74,
       "stats": {
-        "era": 5.26,
+        "era": 5.06,
         "xfip": 3.097926919941302,
         "siera": 2.9783309001845404,
-        "ip": 25.666666666666668
+        "ip": 26.666666666666668
       }
     },
     {
@@ -380,6 +361,25 @@
         "xfip": 4.318176624560968,
         "siera": 4.100384403629702,
         "ip": 39.0
+      }
+    },
+    {
+      "player_id": "33841",
+      "name": "Jeff Hoffman",
+      "team": null,
+      "espn_team_id": 8,
+      "rostered": true,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.64) >> xFIP (2.13), gap=3.51",
+        "ERA (5.64) >> SIERA (2.16), gap=3.48"
+      ],
+      "score": 0.74,
+      "stats": {
+        "era": 5.64,
+        "xfip": 2.128316081440403,
+        "siera": 2.1609941792929535,
+        "ip": 30.333333333333332
       }
     }
   ],

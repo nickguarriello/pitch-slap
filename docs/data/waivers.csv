@@ -1,13 +1,13 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
-Adrian Morejon,,buy_low_pitcher,0.74,False,4.15,2.109224595126409,2.049429699073788,,,,"ERA (4.15) >> xFIP (2.11), gap=2.04; ERA (4.15) >> SIERA (2.05), gap=2.10"
+Adrian Morejon,,buy_low_pitcher,0.74,False,4.0,2.109224595126409,2.049429699073788,,,,"ERA (4.00) >> xFIP (2.11), gap=1.89; ERA (4.00) >> SIERA (2.05), gap=1.95"
 Sean Manaea,,buy_low_pitcher,0.74,False,4.78,4.016252644815157,3.581115931820718,,,,"ERA (4.78) >> xFIP (4.02), gap=0.76; ERA (4.78) >> SIERA (3.58), gap=1.20"
 Devin Williams,,buy_low_pitcher,0.74,False,5.01,2.9914705858444983,2.9663161418901414,,,,"ERA (5.01) >> xFIP (2.99), gap=2.02; ERA (5.01) >> SIERA (2.97), gap=2.04"
 Jake Irvin,,buy_low_pitcher,0.74,False,5.23,4.161512057095363,3.903173016605486,,,,"ERA (5.23) >> xFIP (4.16), gap=1.07; ERA (5.23) >> SIERA (3.90), gap=1.33"
 Connor Prielipp,,buy_low_pitcher,0.74,False,5.26,4.2134738473254405,4.093690170980713,,,,"ERA (5.26) >> xFIP (4.21), gap=1.05; ERA (5.26) >> SIERA (4.09), gap=1.17"
 Jack Flaherty,,buy_low_pitcher,0.74,False,5.35,4.522490051523875,4.192056885446407,,,,"ERA (5.35) >> xFIP (4.52), gap=0.83; ERA (5.35) >> SIERA (4.19), gap=1.16"
+Colin Rea,,buy_low_pitcher,0.74,False,5.35,4.580133115712421,4.525922293875395,,,,"ERA (5.35) >> xFIP (4.58), gap=0.77; ERA (5.35) >> SIERA (4.53), gap=0.82"
 Brady Singer,,buy_low_pitcher,0.74,False,5.61,4.619851152623286,4.6131651335146024,,,,"ERA (5.61) >> xFIP (4.62), gap=0.99; ERA (5.61) >> SIERA (4.61), gap=1.00"
 Tony Santillan,,buy_low_pitcher,0.74,False,5.67,4.708715524754584,4.2934979816133385,,,,"ERA (5.67) >> xFIP (4.71), gap=0.96; ERA (5.67) >> SIERA (4.29), gap=1.38"
 Brandon Sproat,,buy_low_pitcher,0.74,False,5.7,4.520400828708814,4.477444124055309,,,,"ERA (5.70) >> xFIP (4.52), gap=1.18; ERA (5.70) >> SIERA (4.48), gap=1.22"
 David Peterson,,buy_low_pitcher,0.74,False,5.75,3.9855802608182103,4.051342890644237,,,,"ERA (5.75) >> xFIP (3.99), gap=1.76; ERA (5.75) >> SIERA (4.05), gap=1.70"
-Yusei Kikuchi,,buy_low_pitcher,0.74,False,5.81,4.226538291765798,4.192862054658061,,,,"ERA (5.81) >> xFIP (4.23), gap=1.58; ERA (5.81) >> SIERA (4.19), gap=1.62"
 Casey Mize,,two_starter,4.88,False,2.27,3.714531259573385,3.509391849411957,,,,2 starts | SIERA 3.509391849411957 xFIP 3.714531259573385

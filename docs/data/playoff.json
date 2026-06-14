@@ -23,7 +23,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 2,
-        "HR": 5,
+        "HR": 4,
         "RBI": 2,
         "SB": 1,
         "OBP": 7,
@@ -59,8 +59,8 @@
         "K": 6,
         "QS": 5,
         "SvHd": 2,
-        "ERA": 3,
-        "WHIP": 3
+        "ERA": 2,
+        "WHIP": 2
       },
       "seed": 2,
       "in_playoffs": true
@@ -88,7 +88,7 @@
         "K": 7,
         "QS": 6,
         "SvHd": 5,
-        "ERA": 2,
+        "ERA": 3,
         "WHIP": 1
       },
       "seed": 3,
@@ -142,7 +142,7 @@
         "HR": 7,
         "RBI": 7,
         "SB": 4,
-        "OBP": 4,
+        "OBP": 3,
         "K": 1,
         "QS": 1,
         "SvHd": 8,
@@ -200,7 +200,7 @@
         "HR": 8,
         "RBI": 8,
         "SB": 7,
-        "OBP": 3,
+        "OBP": 4,
         "K": 4,
         "QS": 4,
         "SvHd": 7,
@@ -226,7 +226,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 4,
-        "HR": 4,
+        "HR": 5,
         "RBI": 1,
         "SB": 3,
         "OBP": 8,
@@ -234,7 +234,7 @@
         "QS": 3,
         "SvHd": 3,
         "ERA": 1,
-        "WHIP": 2
+        "WHIP": 3
       },
       "seed": 8,
       "in_playoffs": false
@@ -259,8 +259,8 @@
     "K": 6,
     "QS": 5,
     "SvHd": 2,
-    "ERA": 3,
-    "WHIP": 3
+    "ERA": 2,
+    "WHIP": 2
   },
   "opponent_previews": [
     {
@@ -269,7 +269,7 @@
       "team_name": "2010 State Sectional Champ",
       "abbrev": "BJL",
       "is_likely_r1_opp": true,
-      "projected_score": "7-3",
+      "projected_score": "8-2",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -314,16 +314,16 @@
           "rank_gap": 1
         },
         "ERA": {
-          "my_rank": 3,
-          "their_rank": 2,
-          "winner": "theirs",
+          "my_rank": 2,
+          "their_rank": 3,
+          "winner": "mine",
           "rank_gap": 1
         },
         "WHIP": {
-          "my_rank": 3,
+          "my_rank": 2,
           "their_rank": 1,
           "winner": "theirs",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "SvHd": {
           "my_rank": 2,
@@ -358,9 +358,9 @@
         },
         "HR": {
           "my_rank": 3,
-          "their_rank": 5,
+          "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "RBI": {
           "my_rank": 3,
@@ -393,16 +393,16 @@
           "rank_gap": 2
         },
         "ERA": {
-          "my_rank": 3,
+          "my_rank": 2,
           "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 3
         },
         "WHIP": {
-          "my_rank": 3,
+          "my_rank": 2,
           "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 5
+          "rank_gap": 6
         },
         "SvHd": {
           "my_rank": 2,
@@ -417,7 +417,6 @@
         "RBI",
         "SB",
         "QS",
-        "ERA",
         "SvHd"
       ]
     },
@@ -472,16 +471,16 @@
           "rank_gap": 3
         },
         "ERA": {
-          "my_rank": 3,
+          "my_rank": 2,
           "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 5
+          "rank_gap": 6
         },
         "WHIP": {
-          "my_rank": 3,
+          "my_rank": 2,
           "their_rank": 7,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 5
         },
         "SvHd": {
           "my_rank": 2,
@@ -503,12 +502,10 @@
     "RBI",
     "K",
     "QS",
-    "ERA",
     "SvHd"
   ],
   "improvement_targets": [
     "HR",
-    "ERA",
     "WHIP"
   ]
 }
