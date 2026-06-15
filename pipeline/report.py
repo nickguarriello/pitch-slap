@@ -86,9 +86,11 @@ def _load_league_meta() -> dict:
 
 
 class _SafeEncoder(json.JSONEncoder):
-    """Encodes float Infinity and NaN as null (valid JSON)."""
+    """Encodes float Infinity and NaN as null; falls back to str for other non-serializable types."""
+    def default(self, obj):
+        return str(obj)
+
     def iterencode(self, o, _one_shot=False):
-        # Walk the output and replace non-finite floats before writing
         return super().iterencode(self._sanitize(o), _one_shot)
 
     def _sanitize(self, obj):

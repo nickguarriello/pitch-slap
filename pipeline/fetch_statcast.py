@@ -219,9 +219,17 @@ def fetch_and_write(force: bool = False) -> dict:
     # Fetch all sources (FanGraphs first -- 403 fails fast if blocked)
     fg_pitch  = _fg_pitching()
     fg_bat    = _fg_batting()
-    sv_exp    = _savant_expected()
-    sv_ev     = _savant_exitvelo()
-    sv_sprint = _savant_sprint()
+
+    # Baseball Savant via pybaseball — scraper can break without warning.
+    # On failure: warn and fall back to existing DB data rather than crashing.
+    try:
+        sv_exp    = _savant_expected()
+        sv_ev     = _savant_exitvelo()
+        sv_sprint = _savant_sprint()
+    except Exception as e:
+        print(f"  WARNING: Baseball Savant fetch failed ({e})")
+        print("  Keeping existing statcast data in DB — pipeline continues.")
+        return {"skipped": True, "error": str(e)}
 
     # Merge on mlb_id
     merged = (
