@@ -57,6 +57,10 @@ def score(incoming, outgoing):
     return total, breakdown
 ```
 
+> `contrib`/`score` above are the **normalization primitives** only. The decided scoring
+> model (§6) feeds incoming/outgoing through `optimize_lineup` first, then scores the
+> before/after **active-lineup** delta — not raw totals. This `score()` is the v1 baseline.
+
 ---
 
 ## 3. Pipeline (6 steps)
@@ -98,20 +102,53 @@ playoff-window when computing `contrib`).
 
 ---
 
-## 6. OPEN — highest-priority v2 refinement: replacement-level marginal value
+## 6. DECIDED (2026-06-16): marginal value = **lineup-aware** (model v3)
 
-**Problem:** v1 debits an outgoing player's *full* stat line. But a surplus bat (e.g. your
-8th–9th hitter) mostly rides the bench — his real contribution to your weekly category
-totals is only **(player − bench/replacement level)**, which is small.
+**Problem the model must solve:** v1 debits an outgoing player's *full* stat line, but a
+surplus bat (your 8th–9th hitter) mostly rides the bench — trading him changes your actual
+weekly totals very little. The score must reflect change in **active-lineup** output, not
+raw totals.
 
-**Fix:** score outgoing players at **marginal value over replacement**, not raw totals:
-`contrib_out(p,cat) = max(0, contrib(p,cat) − replacement_level[cat,slot])`.
+**Decision:** the TradeScore measures the change in **expected weekly ACTIVE-lineup
+production**, computed by re-optimizing the lineup before and after the trade.
+(Chosen over the simpler VORP/replacement-level model — VORP is a good ~90% approximation,
+but the lineup-aware model is exact and avoids replacement-baseline guesswork.)
 
-**Effect:** bat-for-arm packages (giving a redundant hitter for an ace) currently grade
-neutral/negative purely because of phantom hitting "loss." With replacement-level applied,
-the K/QS gain stays while that loss shrinks → ace-for-surplus-bat deals re-rank upward.
-This is the single biggest accuracy upgrade. Needs a `replacement_level` estimate per
-cat × roster slot (e.g., median of freely-available FAs at that slot, or your own bench).
+```
+before = optimize_lineup(roster)
+after  = optimize_lineup(roster − outgoing + incoming)
+Δ[cat] = after[cat] − before[cat]
+TradeScore = Σ_cat  NEED[cat] × normalize(Δ[cat])
+```
+
+**Why it's correct by construction:**
+- A benched surplus player isn't in the optimal lineup before *or* after → his removal
+  moves the score ~0. The phantom-loss problem disappears with no special-casing.
+- An incoming player is credited only for what he *adds to the active lineup*, net of
+  whomever he bumps to the bench (Δ = incoming − displaced player).
+- Slot scarcity (only N OF, 10 P, etc.) is enforced, so you can't "count" production that
+  would never reach your lineup.
+
+**`optimize_lineup(roster)` — the new component to build:**
+- Assign rostered players to active slots per `ROSTER_SLOTS` (config.py), respecting ESPN
+  slot eligibility, to **maximize need-weighted production**; return the active per-cat vector.
+- **Hitters:** weighted bipartite assignment (player→slot) with eligibility. Greedy-by-value
+  is a fine first cut; upgrade to Hungarian/LP if greedy mis-assigns multi-eligible players.
+- **Pitchers (10 P slots, ~12–13 arms):** K/QS/SvHd are additive counting cats; **ERA/WHIP
+  are IP-weighted rates → nonlinear in the chosen set.** Score each arm by need-weighted
+  value and fill the 10 slots, IP-weighting the rate cats over the chosen set. In practice
+  only the weakest 1–2 arms sit, so the marginal effect of an acquisition is "bump the
+  weakest active arm."
+- **Cadence:** lineup locks weekly (Monday) → use per-week pace; optionally fold in
+  two-start weeks for QS/K (already detected in `fetch_mlb`). Keep the optimizer
+  deterministic and fast — it runs once per candidate package.
+
+**Build order / safety net:** implement VORP (production over best-available-wire at slot)
+as a quick **sanity baseline** to validate the optimizer's outputs against — but v3
+(lineup-aware) is the scoring model of record.
+
+**Possible v4 (future, only if needed):** probabilistic lineup (injury/role uncertainty),
+opponent-adjusted swing (score Δ against the specific week's opponent, not league-average).
 
 ---
 
@@ -133,8 +170,12 @@ cat × roster slot (e.g., median of freely-available FAs at that slot, or your o
 
 ## 8. How to pick this up next session
 
-1. Re-read this spec + the 2026-06-16 PLANNING.md row.
-2. Decide v2 replacement-level approach (§6) — that unblocks accurate bat-for-arm scoring.
+1. Re-read this spec + the 2026-06-16 PLANNING.md rows.
+2. **Build `optimize_lineup(roster)`** (§6, the decided lineup-aware model) — this is the
+   core dependency for scoring. Start with greedy-by-value + eligibility; add the pitcher
+   rate-cat IP-weighting. Stand up VORP alongside as a sanity baseline.
 3. Generalize `evaluate.py` need-weights to per-team (§7) for the acceptance gate.
-4. Implement `pipeline/trade.py` with the §2 function + §3 pipeline; write `trades.json`.
-5. Build `trades.html`. Validate against a hand-scored example before trusting output.
+4. Implement `pipeline/trade.py`: §3 pipeline, scoring via before/after `optimize_lineup`
+   (§6); write `trades.json`.
+5. Build `trades.html`. Validate the optimizer + scores against a hand-scored example
+   before trusting output.
