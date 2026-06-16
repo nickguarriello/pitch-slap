@@ -160,8 +160,14 @@ opponent-adjusted swing (score Δ against the specific week's opponent, not leag
 - **Inferring opponent need-weights** — `evaluate.py` computes `need_weights` for *my* team
   only. To run the acceptance gate we need the same computation per team (generalize
   `evaluate.py` to accept a team_id, or approximate from standings/roster).
-- **Multi-cat rate handling** — finalize the OBP/ERA/WHIP rate-cat term (currently
-  approximate; low-need right now so low impact, but needed for correctness).
+- **Multi-cat rate handling / value calibration** — finalize the OBP/ERA/WHIP rate-cat
+  term. **Observed 2026-06-16:** with the current `player_value`, elite-ratio relievers
+  outscore QS-producing starters, so `optimize_lineup` benches a QS source (e.g. Taj
+  Bradley) and active QS drops below the full-staff total. The rate term over-weights
+  ERA/WHIP vs the counting QS need (.61). **Must calibrate before trusting trade scores**
+  (else a QS-starter acquisition may not change the active lineup → invisible to the score).
+  Likely fix: normalize the rate term into the same category-units as counting cats and/or
+  weight by category competitiveness; consider a minimum-SP floor for the P slots.
 - **Output surface** — likely a `trades.html` dashboard page + a `trades.json` writer in
   `report.py`, fed by a new `pipeline/trade.py` (or a section in `evaluate.py`). Respect
   CLAUDE.md: new file is fine; touching evaluate/report logic needs the usual agreement.
@@ -171,9 +177,11 @@ opponent-adjusted swing (score Δ against the specific week's opponent, not leag
 ## 8. How to pick this up next session
 
 1. Re-read this spec + the 2026-06-16 PLANNING.md rows.
-2. **Build `optimize_lineup(roster)`** (§6, the decided lineup-aware model) — this is the
-   core dependency for scoring. Start with greedy-by-value + eligibility; add the pitcher
-   rate-cat IP-weighting. Stand up VORP alongside as a sanity baseline.
+2. ✅ **`optimize_lineup(roster)` built** in `pipeline/trade.py` (2026-06-16) — transversal-
+   matroid greedy assigns hitters to slots by eligibility (uses `eligible_slots`), top-10 by
+   value for P; returns active per-cat production vector. **Self-test passes** on my roster.
+   ⚠️ OPEN before it's trustworthy: calibrate `player_value` rate term (§7) — currently
+   benches QS starters for ratio relievers.
 3. Generalize `evaluate.py` need-weights to per-team (§7) for the acceptance gate.
 4. Implement `pipeline/trade.py`: §3 pipeline, scoring via before/after `optimize_lineup`
    (§6); write `trades.json`.
