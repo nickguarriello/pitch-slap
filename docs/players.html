@@ -198,12 +198,13 @@ function render(){
   const TIP_P=`<span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Pitcher stats</b><br><br><b>xFIP</b> — FIP with HR/FB rate normalized to league avg. Removes park and fly-ball luck. Season only.<br><br><b>SIERA</b> — accounts for GB rate and K/BB quality. Most predictive ERA estimator available. Season only.<br><br><b>BOUNCE</b> — ERA inflated vs xFIP (regression candidate, buy).<br><b>SELL</b> — ERA well below xFIP (due for regression up, sell).<br><b>2-ST</b> — two starts this week (high streaming value).</div></span>`;
 
   let html='';
+  // Batters first (active → bench → IL), then pitchers in the same order.
   if(aH.length)  html+=section(`Active Batters ${statNote} ${TIP_H}`,H_HEAD,aH.map(p=>hRow(p)).join(''));
+  if(bnH.length) html+=section(`Bench — Batters ${statNote} ${TIP_H}`,H_HEAD,bnH.map(p=>hRow(p,'bn-row')).join(''));
+  if(ilH.length) html+=section(`IL — Batters ${statNote} ${TIP_H}`,H_HEAD,ilH.map(p=>hRow(p,'il-row')).join(''));
   if(aP.length)  html+=section(`Active Pitchers ${pitNote} ${TIP_P}`,P_HEAD,aP.map(p=>pRow(p)).join(''));
   if(bnP.length) html+=section(`Bench — Pitchers ${pitNote} ${TIP_P}`,P_HEAD,bnP.map(p=>pRow(p,'bn-row')).join(''));
-  if(bnH.length) html+=section(`Bench — Batters ${statNote} ${TIP_H}`,H_HEAD,bnH.map(p=>hRow(p,'bn-row')).join(''));
   if(ilP.length) html+=section(`IL — Pitchers ${pitNote} ${TIP_P}`,P_HEAD,ilP.map(p=>pRow(p,'il-row')).join(''));
-  if(ilH.length) html+=section(`IL — Batters ${statNote} ${TIP_H}`,H_HEAD,ilH.map(p=>hRow(p,'il-row')).join(''));
 
   document.getElementById('roster-content').innerHTML=html;
 }
@@ -219,8 +220,11 @@ async function main(){
 
   allPlayers=(roster.players||[]).map(p=>({
     ...p,
-    roster_slot:        p.lineup_slot,
-    eligible_positions: p.position,
+    roster_slot:        p.lineup_slot,   // SLOT = actual lineup position (incl BN/IL)
+    // POS = every slot the player is eligible for (drop BN/IL — not positions)
+    eligible_positions: (p.eligible_slots
+        ? p.eligible_slots.split(',').filter(s=>s!=='BN'&&s!=='IL').join(',')
+        : p.position) || '—',
   }));
 
   // Show 2nd Half button only if any player has second_half data

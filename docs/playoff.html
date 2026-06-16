@@ -68,6 +68,9 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .tip-btn{width:15px;height:15px;border-radius:50%;background:var(--border);color:var(--muted);font-size:9px;font-weight:700;border:none;cursor:default;display:inline-flex;align-items:center;justify-content:center}
 .tip-box{display:none;position:absolute;left:20px;top:-4px;z-index:200;background:#1e2130;border:1px solid var(--border);border-radius:8px;padding:12px 14px;width:300px;font-size:11px;line-height:1.6;color:var(--text);box-shadow:0 4px 24px rgba(0,0,0,.5);white-space:normal}
 .tip-box b{color:var(--accent)}.tip-wrap:hover .tip-box{display:block}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--text)}
+th.sortable .arr{font-size:9px;opacity:.8}
 </style>
 </head>
 <body>
@@ -92,12 +95,12 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <table id="standings-table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Team</th>
-            <th title="Matchup record (W-L or W-L-T if ties exist)">Record</th>
-            <th>PCT</th>
-            <th title="Cumulative category wins-losses-ties across all matchup weeks">Roto Record</th>
-            <th></th>
+            <th class="sortable" data-k="seed">#</th>
+            <th class="sortable" data-k="team">Team</th>
+            <th class="sortable" data-k="record" title="Matchup record (W-L or W-L-T if ties exist)">Record</th>
+            <th class="sortable" data-k="pct">PCT</th>
+            <th class="sortable" data-k="roto" title="Cumulative category wins-losses-ties across all matchup weeks">Roto Record</th>
+            <th class="sortable" data-k="in">Status</th>
           </tr>
         </thead>
         <tbody id="standings-body"></tbody>
@@ -260,16 +263,20 @@ async function main(){
     : `${seedOrdinal} seed | ${wks} week${wks!==1?'s':''} until playoffs (Week ${playoff.playoff_start_week})`;
   document.getElementById('subtitle').textContent = subtitleText;
 
-  // Standings
-  const tbody = document.getElementById('standings-body');
-  let passedCutline = false;
-  for(const s of playoff.standings){
-    if(!s.in_playoffs && !passedCutline){
-      passedCutline = true;
-      tbody.innerHTML += `<tr><td colspan="6" style="padding:0"><hr class="playoff-line"></td></tr>`;
-    }
+  // Standings — sortable on every column (click header to toggle asc/desc)
+  const standingsData = playoff.standings.slice();
+  let stSort = {k:'seed', dir:1};          // default: seed ascending
+  const stVal = (s,k)=>({
+    seed:   s.seed,
+    team:   (s.team_name||'').toLowerCase(),
+    record: (s.wins!=null?s.wins:0),
+    pct:    s.pct,
+    roto:   (parseInt((s.cat_record||'0').split('-')[0])||0),
+    in:     (s.in_playoffs?1:0),
+  }[k]);
+  function stRow(s){
     const isMe = s.is_my_team;
-    tbody.innerHTML += `<tr class="${isMe?'my-team':''}">
+    return `<tr class="${isMe?'my-team':''}">
       <td><span class="seed ${seedClass(s.seed)}">${s.seed}</span></td>
       <td><b>${s.team_name}</b>${isMe?' <span style="font-size:11px;color:var(--accent)">(you)</span>':''}</td>
       <td style="font-weight:600">${s.record||`${s.wins}-${s.losses}-0`}</td>
@@ -278,6 +285,39 @@ async function main(){
       <td>${s.in_playoffs?'<span class="in-playoffs">IN</span>':'<span class="out-playoffs">out</span>'}</td>
     </tr>`;
   }
+  function renderStandings(){
+    const rows = standingsData.slice().sort((a,b)=>{
+      const va=stVal(a,stSort.k), vb=stVal(b,stSort.k);
+      return (va<vb?-1:va>vb?1:0)*stSort.dir;
+    });
+    const tbody = document.getElementById('standings-body');
+    tbody.innerHTML='';
+    let passed=false;
+    for(const s of rows){
+      // playoff cutline only makes sense in the default seed-ascending order
+      if(stSort.k==='seed' && stSort.dir===1 && !s.in_playoffs && !passed){
+        passed=true;
+        tbody.innerHTML += `<tr><td colspan="6" style="padding:0"><hr class="playoff-line"></td></tr>`;
+      }
+      tbody.innerHTML += stRow(s);
+    }
+    document.querySelectorAll('#standings-table th.sortable').forEach(th=>{
+      th.querySelector('.arr')?.remove();
+      if(th.dataset.k===stSort.k){
+        const a=document.createElement('span'); a.className='arr';
+        a.textContent = stSort.dir===1?' ▲':' ▼'; th.appendChild(a);
+      }
+    });
+  }
+  document.querySelectorAll('#standings-table th.sortable').forEach(th=>{
+    th.addEventListener('click',()=>{
+      const k=th.dataset.k;
+      if(stSort.k===k) stSort.dir*=-1;
+      else stSort={k, dir:(k==='team'?1:-1)};   // text default asc, numbers default desc
+      renderStandings();
+    });
+  });
+  renderStandings();
 
   // My category profile
   const myRanks = playoff.my_category_ranks || {};

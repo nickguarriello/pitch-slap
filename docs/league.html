@@ -55,12 +55,11 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <h1>League</h1>
 
   <div class="card">
-    <h2>Category Rankings <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>League-wide stat standings with strength/weakness heat map.</b><br><br><b>Cat tabs</b> — click any category to sort by rank in that cat. Click a column header to sort by that stat directly. Click the same column again to reverse.<br><br><b>Heat map</b> — each stat cell is color-coded by league rank: <span style="color:#22c55e">■ green = top of league</span>, neutral = middle, <span style="color:#ef4444">■ red = bottom</span>. Lets you scan team strengths and weaknesses at a glance without sorting.<br><br><b>Record</b> — actual matchup W-L-T used for seeding.<br><b>Roto Record</b> — cumulative category W-L-T across all weeks (10 cats per week).</div></span></h2>
-    <div class="cat-tabs" id="cat-tabs"></div>
+    <h2>Category Rankings <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>League-wide stat standings with strength/weakness heat map.</b><br><br><b>Sorting</b> — click any column header to sort by that stat. Click the same header again to reverse. Default sort is Roto Record (overall strength).<br><br><b>Heat map</b> — each stat cell is color-coded by league rank: <span style="color:#22c55e">■ green = top of league</span>, neutral = middle, <span style="color:#ef4444">■ red = bottom</span>. Lets you scan team strengths and weaknesses at a glance without sorting.<br><br><b>Record</b> — actual matchup W-L-T used for seeding.<br><b>Roto Record</b> — cumulative category W-L-T across all weeks (10 cats per week).</div></span></h2>
     <table>
       <thead>
         <tr>
-          <th data-col="rank">#</th>
+          <th>#</th>
           <th data-col="team_name">Team</th>
           <th data-col="record" title="Matchup W-L-T record">Record</th>
           <th data-col="cat_wins" title="Cumulative category wins-losses-ties across all matchup weeks">Roto Record</th>
@@ -110,9 +109,8 @@ function heatBg(rank, n){
 }
 
 let leagueData=[];
-let activeCat='R';
 let myTeamId=null;
-let sortCol='rank';
+let sortCol='cat_wins';   // default: Roto Record (overall strength), descending
 let sortDir=1;
 
 function getTeamRank(team,cat){return (team.ranks||{})[cat]||null;}
@@ -121,9 +119,6 @@ function renderTable(){
   const n=leagueData.length;
   let rows=[...leagueData];
   rows.sort((a,b)=>{
-    if(sortCol==='rank'){
-      return ((getTeamRank(a,activeCat)||99)-(getTeamRank(b,activeCat)||99))*sortDir;
-    }
     if(sortCol==='team_name') return (a.team_name||'').localeCompare(b.team_name||'')*sortDir;
     if(sortCol==='record'||sortCol==='cat_wins'){
       const av=a[sortCol]??-1, bv=b[sortCol]??-1;
@@ -137,16 +132,15 @@ function renderTable(){
   });
 
   const tbody=document.getElementById('league-table');
-  tbody.innerHTML=rows.map(t=>{
+  tbody.innerHTML=rows.map((t,i)=>{
     const isMe=t.espn_team_id===myTeamId;
-    const rank=getTeamRank(t,activeCat);
     const catCells=CATS.map(cat=>{
       const r=getTeamRank(t,cat);
       const bg=heatBg(r,n);
       return `<td style="text-align:right;${bg}">${fmt(t[CAT_COLS[cat]],cat)}</td>`;
     }).join('');
     return `<tr class="${isMe?'my-team':''}">
-      <td style="color:var(--muted);font-weight:600;text-align:center;font-size:12px">${rank||'—'}</td>
+      <td style="color:var(--muted);font-weight:600;text-align:center;font-size:12px">${i+1}</td>
       <td><b>${t.team_name||'—'}</b>${isMe?' <span style="font-size:11px;color:var(--accent)">(you)</span>':''}</td>
       <td style="font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums">${t.record||'—'}</td>
       <td style="font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums">${t.cat_record||'—'}</td>
@@ -180,22 +174,6 @@ async function main(){
     whip:t.stats?.WHIP, svhd:t.stats?.SvHd,
   }));
   myTeamId=(leagueData.find(t=>t.is_my_team)||{}).espn_team_id||null;
-
-  // Cat tabs — clicking re-sorts by that cat's rank
-  const tabContainer=document.getElementById('cat-tabs');
-  for(const cat of CATS){
-    const btn=document.createElement('button');
-    btn.className='cat-tab'+(cat===activeCat?' active':'');
-    btn.textContent=CAT_LABELS[cat]||cat;
-    btn.addEventListener('click',()=>{
-      activeCat=cat;
-      document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      sortCol='rank'; sortDir=1;
-      renderTable();
-    });
-    tabContainer.appendChild(btn);
-  }
 
   // Sort headers — same col toggles direction, different col resets to best-first
   document.querySelectorAll('th[data-col]').forEach(th=>{

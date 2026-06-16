@@ -133,7 +133,7 @@ def build_roster(conn: sqlite3.Connection, eval_report: dict) -> list[dict]:
     roster_rows = conn.execute(
         """
         SELECT p.player_id, p.name, p.position, p.mlb_team,
-               r.lineup_slot, r.injury_status, r.is_active, r.is_il,
+               r.lineup_slot, r.eligible_slots, r.injury_status, r.is_active, r.is_il,
                r.ownership_pct, r.espn_rating,
                r.espn_proj_r, r.espn_proj_hr, r.espn_proj_rbi,
                r.espn_proj_sb, r.espn_proj_obp,
@@ -205,6 +205,7 @@ def build_roster(conn: sqlite3.Connection, eval_report: dict) -> list[dict]:
             "position":     row["position"],
             "team":         row["mlb_team"],
             "lineup_slot":  row["lineup_slot"],
+            "eligible_slots": row["eligible_slots"],
             "injury_status": row["injury_status"],
             "is_active":    bool(row["is_active"]),
             "is_il":        bool(row["is_il"]),
