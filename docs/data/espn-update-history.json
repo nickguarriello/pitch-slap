@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "run_ts": "2026-06-16T23:39:05.484655+00:00",
+      "espn_standings_update": "2026-06-16T08:35:43.663000+00:00",
+      "espn_waiver_execution": "2026-06-16T08:35:42.940000+00:00",
+      "scoring_period": 84,
+      "games_final_date": "2026-06-15",
+      "all_games_final": true,
+      "last_game": "TB@LAD"
+    }
+  ]
+}

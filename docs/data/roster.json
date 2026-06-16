@@ -876,7 +876,7 @@
           "hr": 3.0,
           "rbi": 17.0,
           "sb": 17.0,
-          "obp": 0.329,
+          "obp": 0.328,
           "k": null,
           "qs": null,
           "era": null,
@@ -886,14 +886,14 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 293.0
+          "pa": 294.0
         },
         "first_half": {
           "r": 37.0,
           "hr": 3.0,
           "rbi": 17.0,
           "sb": 17.0,
-          "obp": 0.329,
+          "obp": 0.328,
           "k": null,
           "qs": null,
           "era": null,
@@ -903,7 +903,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 293.0
+          "pa": 294.0
         },
         "30d": {
           "r": 12.0,
@@ -1423,7 +1423,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 34.4,
+      "ownership_pct": 34.3,
       "espn_rating": 0.0,
       "projections": {
         "r": 48.0,
@@ -1630,7 +1630,7 @@
       "injury_status": "TEN_DAY_DL",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 81.4,
+      "ownership_pct": 81.3,
       "espn_rating": 0.0,
       "projections": {
         "r": 72.0,
@@ -2037,7 +2037,7 @@
           "hr": 15.0,
           "rbi": 34.0,
           "sb": 6.0,
-          "obp": 0.389,
+          "obp": 0.387,
           "k": null,
           "qs": null,
           "era": null,
@@ -2047,14 +2047,14 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 235.0
+          "pa": 236.0
         },
         "first_half": {
           "r": 32.0,
           "hr": 15.0,
           "rbi": 34.0,
           "sb": 6.0,
-          "obp": 0.389,
+          "obp": 0.387,
           "k": null,
           "qs": null,
           "era": null,
@@ -2064,7 +2064,7 @@
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 235.0
+          "pa": 236.0
         },
         "30d": {
           "r": 17.0,
@@ -2699,7 +2699,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 86.0,
+      "ownership_pct": 85.9,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -2828,7 +2828,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 83.8,
+      "ownership_pct": 83.7,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3235,7 +3235,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 84.7,
+      "ownership_pct": 84.8,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3364,7 +3364,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 45.5,
+      "ownership_pct": 45.4,
       "espn_rating": 0.0,
       "projections": {
         "r": null,
@@ -3642,34 +3642,34 @@
           "hr": 6.0,
           "rbi": 25.0,
           "sb": 11.0,
-          "obp": 0.382,
+          "obp": 0.381,
           "k": null,
           "qs": null,
           "era": null,
           "whip": null,
           "svhd": null,
-          "babip": 0.324,
+          "babip": 0.323,
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 310.0
+          "pa": 311.0
         },
         "first_half": {
           "r": 43.0,
           "hr": 6.0,
           "rbi": 25.0,
           "sb": 11.0,
-          "obp": 0.382,
+          "obp": 0.381,
           "k": null,
           "qs": null,
           "era": null,
           "whip": null,
           "svhd": null,
-          "babip": 0.324,
+          "babip": 0.323,
           "k_pct": null,
           "bb_pct": null,
           "ip": null,
-          "pa": 310.0
+          "pa": 311.0
         },
         "30d": {
           "r": 11.0,
@@ -3897,7 +3897,7 @@
       "injury_status": "ACTIVE",
       "is_active": true,
       "is_il": false,
-      "ownership_pct": 38.4,
+      "ownership_pct": 38.5,
       "espn_rating": 0.0,
       "projections": {
         "r": 72.0,

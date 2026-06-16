@@ -192,11 +192,11 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.236 below floor (0.240)",
-        "OBP (0.291) lags xwOBA (0.320)"
+        "OBP (0.290) lags xwOBA (0.320)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.291,
+        "obp": 0.29,
         "xwoba": 0.31978471400374076,
         "babip": 0.236,
         "sprint_speed": 28.2
@@ -271,15 +271,15 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.24) >> xFIP (3.17), gap=1.07",
-        "ERA (4.24) >> SIERA (3.41), gap=0.83"
+        "ERA (4.19) >> xFIP (3.17), gap=1.02",
+        "ERA (4.19) >> SIERA (3.41), gap=0.78"
       ],
       "score": 0.68,
       "stats": {
-        "era": 4.24,
+        "era": 4.19,
         "xfip": 3.174654892534483,
         "siera": 3.4103558693767058,
-        "ip": 80.66666666666667
+        "ip": 81.66666666666667
       }
     },
     {
@@ -391,9 +391,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 57.24,
+      "ownership_now": 57.07,
       "ownership_prev": 26.05,
-      "delta": 31.2,
+      "delta": 31.0,
       "lookback_days": 8
     },
     {
@@ -402,9 +402,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 33.3,
+      "ownership_now": 33.38,
       "ownership_prev": 9.22,
-      "delta": 24.1,
+      "delta": 24.2,
       "lookback_days": 8
     },
     {
@@ -413,20 +413,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 22.51,
+      "ownership_now": 22.3,
       "ownership_prev": 4.43,
-      "delta": 18.1,
-      "lookback_days": 8
-    },
-    {
-      "player_id": "33773",
-      "name": "Foster Griffin",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "ownership_now": 52.91,
-      "ownership_prev": 37.86,
-      "delta": 15.0,
+      "delta": 17.9,
       "lookback_days": 8
     },
     {
@@ -435,20 +424,20 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 66.04,
+      "ownership_now": 66.05,
       "ownership_prev": 51.11,
       "delta": 14.9,
       "lookback_days": 8
     },
     {
-      "player_id": "35013",
-      "name": "Jake Bauers",
+      "player_id": "33773",
+      "name": "Foster Griffin",
       "team": "",
-      "espn_team_id": 1,
-      "rostered": true,
-      "ownership_now": 65.88,
-      "ownership_prev": 52.1,
-      "delta": 13.8,
+      "espn_team_id": null,
+      "rostered": false,
+      "ownership_now": 52.59,
+      "ownership_prev": 37.86,
+      "delta": 14.7,
       "lookback_days": 8
     },
     {
@@ -457,8 +446,19 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 20.72,
+      "ownership_now": 20.76,
       "ownership_prev": 6.97,
+      "delta": 13.8,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "35013",
+      "name": "Jake Bauers",
+      "team": "",
+      "espn_team_id": 1,
+      "rostered": true,
+      "ownership_now": 65.89,
+      "ownership_prev": 52.1,
       "delta": 13.8,
       "lookback_days": 8
     },
@@ -468,7 +468,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 34.22,
+      "ownership_now": 34.23,
       "ownership_prev": 21.01,
       "delta": 13.2,
       "lookback_days": 8
@@ -485,25 +485,25 @@
       "lookback_days": 8
     },
     {
-      "player_id": "4686066",
-      "name": "Tyler Soderstrom",
-      "team": "",
-      "espn_team_id": 2,
-      "rostered": true,
-      "ownership_now": 81.71,
-      "ownership_prev": 70.67,
-      "delta": 11.0,
-      "lookback_days": 8
-    },
-    {
       "player_id": "34230",
       "name": "Willi Castro",
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 17.19,
+      "ownership_now": 17.3,
       "ownership_prev": 6.19,
-      "delta": 11.0,
+      "delta": 11.1,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "4686066",
+      "name": "Tyler Soderstrom",
+      "team": "",
+      "espn_team_id": 2,
+      "rostered": true,
+      "ownership_now": 81.73,
+      "ownership_prev": 70.67,
+      "delta": 11.1,
       "lookback_days": 8
     },
     {
@@ -512,7 +512,7 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 31.91,
+      "ownership_now": 31.92,
       "ownership_prev": 21.0,
       "delta": 10.9,
       "lookback_days": 8
@@ -523,7 +523,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 30.12,
+      "ownership_now": 30.16,
       "ownership_prev": 19.46,
       "delta": 10.7,
       "lookback_days": 8
@@ -534,9 +534,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 38.23,
+      "ownership_now": 38.4,
       "ownership_prev": 28.72,
-      "delta": 9.5,
+      "delta": 9.7,
       "lookback_days": 8
     },
     {
@@ -545,7 +545,7 @@
       "team": "",
       "espn_team_id": 1,
       "rostered": true,
-      "ownership_now": 64.19,
+      "ownership_now": 64.2,
       "ownership_prev": 54.99,
       "delta": 9.2,
       "lookback_days": 8
@@ -556,7 +556,7 @@
       "team": "",
       "espn_team_id": 2,
       "rostered": true,
-      "ownership_now": 67.51,
+      "ownership_now": 67.53,
       "ownership_prev": 58.38,
       "delta": 9.1,
       "lookback_days": 8
@@ -567,9 +567,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 67.5,
+      "ownership_now": 67.53,
       "ownership_prev": 58.87,
-      "delta": 8.6,
+      "delta": 8.7,
       "lookback_days": 8
     },
     {
@@ -578,9 +578,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 12.22,
+      "ownership_now": 12.03,
       "ownership_prev": 3.92,
-      "delta": 8.3,
+      "delta": 8.1,
       "lookback_days": 8
     },
     {
@@ -589,7 +589,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 12.43,
+      "ownership_now": 12.44,
       "ownership_prev": 4.35,
       "delta": 8.1,
       "lookback_days": 8
@@ -600,7 +600,7 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 67.89,
+      "ownership_now": 67.91,
       "ownership_prev": 60.02,
       "delta": 7.9,
       "lookback_days": 8
@@ -611,9 +611,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 13.8,
+      "ownership_now": 13.79,
       "ownership_prev": 5.94,
-      "delta": 7.9,
+      "delta": 7.8,
       "lookback_days": 8
     },
     {
@@ -622,9 +622,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 19.02,
+      "ownership_now": 18.9,
       "ownership_prev": 11.37,
-      "delta": 7.7,
+      "delta": 7.5,
       "lookback_days": 8
     },
     {
@@ -633,7 +633,7 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 79.12,
+      "ownership_now": 79.15,
       "ownership_prev": 71.71,
       "delta": 7.4,
       "lookback_days": 8
@@ -644,9 +644,9 @@
       "team": "",
       "espn_team_id": 9,
       "rostered": true,
-      "ownership_now": 79.61,
+      "ownership_now": 79.57,
       "ownership_prev": 72.55,
-      "delta": 7.1,
+      "delta": 7.0,
       "lookback_days": 8
     },
     {
@@ -655,7 +655,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 12.5,
+      "ownership_now": 12.53,
       "ownership_prev": 6.73,
       "delta": 5.8,
       "lookback_days": 8
@@ -666,7 +666,7 @@
       "team": "",
       "espn_team_id": 9,
       "rostered": true,
-      "ownership_now": 81.87,
+      "ownership_now": 81.88,
       "ownership_prev": 76.32,
       "delta": 5.6,
       "lookback_days": 8
@@ -677,9 +677,9 @@
       "team": "",
       "espn_team_id": 9,
       "rostered": true,
-      "ownership_now": 36.74,
+      "ownership_now": 36.62,
       "ownership_prev": 31.45,
-      "delta": 5.3,
+      "delta": 5.2,
       "lookback_days": 8
     }
   ]

@@ -80,7 +80,7 @@
       "cat_record": "56-48-6",
       "is_my_team": false,
       "ranks": {
-        "R": 6,
+        "R": 5,
         "HR": 2,
         "RBI": 6,
         "SB": 6,
@@ -142,7 +142,7 @@
         "HR": 7,
         "RBI": 7,
         "SB": 4,
-        "OBP": 3,
+        "OBP": 4,
         "K": 1,
         "QS": 1,
         "SvHd": 8,
@@ -167,7 +167,7 @@
       "cat_record": "46-59-5",
       "is_my_team": false,
       "ranks": {
-        "R": 5,
+        "R": 6,
         "HR": 6,
         "RBI": 5,
         "SB": 8,
@@ -229,7 +229,7 @@
         "HR": 8,
         "RBI": 8,
         "SB": 7,
-        "OBP": 4,
+        "OBP": 3,
         "K": 4,
         "QS": 4,
         "SvHd": 7,
@@ -273,9 +273,9 @@
       "category_matchup": {
         "R": {
           "my_rank": 2,
-          "their_rank": 6,
+          "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 3
         },
         "HR": {
           "my_rank": 3,
