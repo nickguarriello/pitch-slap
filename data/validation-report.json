@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-06-16T01:02:19.508675+00:00",
+  "run_ts": "2026-06-16T17:31:03.522120+00:00",
   "overall": "warn",
   "checks": [
     {
@@ -83,14 +83,14 @@
     {
       "check": "completeness.fact_player_stats",
       "status": "pass",
-      "detail": "2443 rows across 6 windows",
-      "row_count": 2443
+      "detail": "2599 rows across 6 windows",
+      "row_count": 2599
     },
     {
       "check": "completeness.schedule",
       "status": "pass",
-      "detail": "182 upcoming team-game slots",
-      "row_count": 182
+      "detail": "188 upcoming team-game slots",
+      "row_count": 188
     },
     {
       "check": "completeness.transform_coverage",
@@ -131,28 +131,28 @@
     {
       "check": "staleness.statcast",
       "status": "pass",
-      "detail": "Statcast data is 1.1h old",
+      "detail": "Statcast data is 17.6h old",
       "row_count": 0
     }
   ],
   "meta": {
-    "espn_last_fetch": "2026-06-16T01:02:02.227211+00:00",
+    "espn_last_fetch": "2026-06-16T17:30:47.952557+00:00",
     "espn_status": "ok",
     "espn_rows": 554,
-    "mlb_last_fetch": "2026-06-16T01:02:03.900345+00:00",
-    "transform_last_run": "2026-06-16T01:02:19.489399+00:00",
-    "validate_last_run": "2026-06-15T23:56:11.577441+00:00",
+    "mlb_last_fetch": "2026-06-16T17:30:49.562224+00:00",
+    "transform_last_run": "2026-06-16T17:31:03.504133+00:00",
+    "validate_last_run": "2026-06-16T01:02:19.510318+00:00",
     "validate_overall": "warn",
-    "evaluate_last_run": "2026-06-15T23:56:11.603064+00:00",
+    "evaluate_last_run": "2026-06-16T01:02:19.533890+00:00",
     "cats_winning": 0,
     "last_light_run": "2026-06-08T15:52:40.743988+00:00",
     "last_run_mode": "full",
-    "schedule_rows": 182,
+    "schedule_rows": 188,
     "statcast_last_fetch": "2026-06-15T23:55:54.730796+00:00",
-    "report_last_run": "2026-06-15T23:56:11.769999+00:00",
-    "transform_rows": 2443,
+    "report_last_run": "2026-06-16T01:02:19.710715+00:00",
+    "transform_rows": 2599,
     "cats_losing": 2,
-    "last_full_run": "2026-06-15T23:55:31.042456+00:00",
+    "last_full_run": "2026-06-16T01:01:46.533169+00:00",
     "statcast_rows": 515
   }
 }
