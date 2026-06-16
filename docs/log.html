@@ -59,6 +59,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <h2>Data As Of</h2>
     <div style="font-size:21px;font-weight:700" id="fresh-asof">—</div>
     <div id="fresh-age" style="font-size:13px;margin-top:4px"></div>
+    <div id="fresh-settle" style="font-size:12px;margin-top:8px;line-height:1.5"></div>
     <div style="font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5">
       This is the last ESPN sync. Upstream sites update on their own cadence — ESPN fantasy
       scores and Statcast often lag, so even a recent sync can show stale numbers. The full
@@ -127,6 +128,14 @@ async function main(){
   const asof = log.espn_last_fetch || status.espn_last_fetch;
   document.getElementById('fresh-asof').textContent = fmtTs(asof);
   document.getElementById('fresh-age').innerHTML = relAge(asof);
+
+  // Yesterday's slate settle check (set by the 6am full run)
+  const gs = log.games_settled, settleEl = document.getElementById('fresh-settle');
+  if(gs && typeof gs.all_settled === 'boolean'){
+    settleEl.innerHTML = gs.all_settled
+      ? `<span style="color:var(--win)">✓ Yesterday's slate complete</span> — all ${gs.games} games on ${gs.date} Final${gs.last_game?` (last: ${gs.last_game})`:''}.`
+      : `<span style="color:var(--warn)">⚠ Stats may still be settling</span> — ${gs.incomplete.length}/${gs.games} games on ${gs.date} not Final${gs.incomplete.length?': '+gs.incomplete.slice(0,4).join(', '):''}.`;
+  }
 
   document.getElementById('banner').innerHTML =
     `<span>Last synced: <b>${fmtTs(status.espn_last_fetch)}</b></span>`;

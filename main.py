@@ -49,7 +49,7 @@ def _save_meta(meta: dict) -> None:
 def run_full() -> dict:
     """Full pipeline: crosswalk refresh + all fetchers + transform + validate + evaluate + report."""
     from pipeline.fetch_espn import run as fetch_espn
-    from pipeline.fetch_mlb import run as fetch_mlb, get_two_start_pitchers
+    from pipeline.fetch_mlb import run as fetch_mlb, get_two_start_pitchers, check_recent_games_settled
     from pipeline.fetch_statcast import run as fetch_statcast
     from pipeline.transform import run as transform
     from pipeline.validate import run as validate
@@ -74,6 +74,22 @@ def run_full() -> dict:
     meta["mlb_last_fetch"] = _ts()
     meta["schedule_rows"] = mlb_result.get("schedule_rows", 0)
     _save_meta(meta)
+
+    # Soft freshness check: confirm yesterday's slate is Final (data should be settled).
+    # Non-blocking — just warns; we never abort over it.
+    try:
+        settle = check_recent_games_settled()
+        meta["games_settled"] = settle
+        if settle["all_settled"]:
+            print(f"  Freshness OK — all {settle['games']} games on {settle['date']} Final "
+                  f"(last: {settle['last_game'] or 'n/a'}).")
+        else:
+            print(f"  WARNING: {len(settle['incomplete'])}/{settle['games']} games on "
+                  f"{settle['date']} not Final — stats may still be settling: "
+                  f"{', '.join(settle['incomplete'][:5])}")
+        _save_meta(meta)
+    except Exception as e:
+        print(f"  (freshness check skipped: {e})")
 
     # Phase 2c: Statcast + FanGraphs (7-day cache)
     print("\n--- fetch_statcast ---")

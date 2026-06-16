@@ -236,6 +236,41 @@ def get_two_start_pitchers(week_start: date, week_end: date) -> set[int]:
 # Main
 # ---------------------------------------------------------------------------
 
+def check_recent_games_settled(ref_date: date | None = None) -> dict:
+    """Soft freshness check: are all of *yesterday's* MLB games Final?
+
+    Run at ~6am ET, this confirms the prior day's slate — including the
+    last-starting game (e.g. a late West-coast game like LAD/TB) — has finished
+    and posted, so ESPN/stat data should be settled. Non-blocking: returns a
+    summary dict; callers decide whether to warn.
+    """
+    if ref_date is None:
+        ref_date = date.today()
+    yday = (ref_date - timedelta(days=1)).strftime("%Y-%m-%d")
+    games = _raw_schedule(yday, yday)
+
+    incomplete, last_game, last_dt = [], None, ""
+    for g in games:
+        status  = g.get("status", {}) or {}
+        state   = status.get("abstractGameState", "")
+        teams   = g.get("teams", {})
+        matchup = f"{_team_abbr(teams.get('away', {}))}@{_team_abbr(teams.get('home', {}))}"
+        gd      = g.get("gameDate", "")            # ISO UTC — string max == latest start
+        if gd > last_dt:
+            last_dt, last_game = gd, matchup
+        if state != "Final":
+            incomplete.append(f"{matchup} ({status.get('detailedState', state) or 'unknown'})")
+
+    return {
+        "date":        yday,
+        "games":       len(games),
+        "final":       len(games) - len(incomplete),
+        "incomplete":  incomplete,
+        "last_game":   last_game,
+        "all_settled": len(incomplete) == 0,        # True on off-days (0 games) too
+    }
+
+
 def run() -> dict:
     """Fetch schedule + transactions, write schedule to DB."""
     schedule_rows = fetch_schedule()

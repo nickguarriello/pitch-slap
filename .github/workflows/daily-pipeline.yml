@@ -2,11 +2,10 @@ name: Daily Pipeline
 
 on:
   schedule:
-    # All times UTC. EDT = UTC-4.
-    - cron: '0 11 * * *'     # 7:00am EDT daily        — full run
-    - cron: '0 16 * * *'     # 12:00pm EDT daily       — light run
-    - cron: '0 22 * * 0,1,2,5,6'  # 6:00pm EDT Mon/Tue/Fri/Sat/Sun — light run
-    - cron: '0 3 * * 4,5'   # 11:00pm EDT Wed/Thu     — light run (MLB probables posted Wed/Thu evenings)
+    # Once daily, 6:00am EDT (UTC-4). Rationale: last MLB game starts ~10pm ET;
+    # ~3h game + ~1h stat posting + ~1h buffer ≈ 3am settle, so 6am is safely clear.
+    # (Cron is fixed-UTC and does not track DST — in EST this fires at 5am ET.)
+    - cron: '0 10 * * *'     # 6:00am EDT daily — full run
   workflow_dispatch:
     inputs:
       mode:
@@ -48,16 +47,11 @@ jobs:
       - name: Determine pipeline mode
         id: mode
         run: |
-          # workflow_dispatch overrides schedule
+          # Scheduled runs are always full (once daily). workflow_dispatch can override.
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "mode=${{ inputs.mode }}" >> $GITHUB_OUTPUT
           else
-            HOUR=$(date -u +%H)
-            if [ "$HOUR" = "11" ]; then
-              echo "mode=full" >> $GITHUB_OUTPUT
-            else
-              echo "mode=light" >> $GITHUB_OUTPUT
-            fi
+            echo "mode=full" >> $GITHUB_OUTPUT
           fi
 
       - name: Run pipeline

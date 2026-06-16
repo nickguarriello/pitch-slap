@@ -746,6 +746,7 @@ def build_pipeline_log(conn: sqlite3.Connection) -> dict:
         "mlb_last_fetch":     meta.get("mlb_last_fetch"),
         "statcast_last_fetch": meta.get("statcast_last_fetch"),
         "validate_overall":   val_data.get("overall", "unknown"),
+        "games_settled":      meta.get("games_settled"),
         "row_counts":         row_counts,
         "validation_checks":  checks,
     }
