@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-06-16T17:31:03.542604+00:00",
+  "run_ts": "2026-06-16T18:12:41.276547+00:00",
   "as_of": "2026-06-16",
   "cat_states": {
     "R": {
@@ -849,9 +849,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 55.29,
+      "ownership_now": 55.62,
       "ownership_prev": 26.05,
-      "delta": 29.2,
+      "delta": 29.6,
       "lookback_days": 8
     },
     {
@@ -860,9 +860,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 32.81,
+      "ownership_now": 32.9,
       "ownership_prev": 9.22,
-      "delta": 23.6,
+      "delta": 23.7,
       "lookback_days": 8
     },
     {
@@ -871,9 +871,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 20.51,
+      "ownership_now": 20.91,
       "ownership_prev": 4.43,
-      "delta": 16.1,
+      "delta": 16.5,
       "lookback_days": 8
     },
     {
@@ -882,20 +882,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 65.88,
+      "ownership_now": 65.9,
       "ownership_prev": 51.11,
       "delta": 14.8,
-      "lookback_days": 8
-    },
-    {
-      "player_id": "35013",
-      "name": "Jake Bauers",
-      "team": "",
-      "espn_team_id": 1,
-      "rostered": true,
-      "ownership_now": 65.75,
-      "ownership_prev": 52.1,
-      "delta": 13.6,
       "lookback_days": 8
     },
     {
@@ -904,9 +893,20 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 51.46,
+      "ownership_now": 51.74,
       "ownership_prev": 37.86,
-      "delta": 13.6,
+      "delta": 13.9,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "35013",
+      "name": "Jake Bauers",
+      "team": "",
+      "espn_team_id": 1,
+      "rostered": true,
+      "ownership_now": 65.78,
+      "ownership_prev": 52.1,
+      "delta": 13.7,
       "lookback_days": 8
     },
     {
@@ -915,7 +915,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 20.34,
+      "ownership_now": 20.38,
       "ownership_prev": 6.97,
       "delta": 13.4,
       "lookback_days": 8
@@ -926,9 +926,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 33.6,
+      "ownership_now": 33.7,
       "ownership_prev": 21.01,
-      "delta": 12.6,
+      "delta": 12.7,
       "lookback_days": 8
     },
     {
@@ -948,7 +948,7 @@
       "team": "",
       "espn_team_id": 2,
       "rostered": true,
-      "ownership_now": 81.55,
+      "ownership_now": 81.58,
       "ownership_prev": 70.67,
       "delta": 10.9,
       "lookback_days": 8
@@ -959,7 +959,7 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 31.76,
+      "ownership_now": 31.78,
       "ownership_prev": 21.0,
       "delta": 10.8,
       "lookback_days": 8
@@ -970,9 +970,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 29.7,
+      "ownership_now": 29.76,
       "ownership_prev": 19.46,
-      "delta": 10.2,
+      "delta": 10.3,
       "lookback_days": 8
     },
     {
@@ -981,9 +981,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 15.84,
+      "ownership_now": 16.04,
       "ownership_prev": 6.19,
-      "delta": 9.6,
+      "delta": 9.8,
       "lookback_days": 8
     },
     {
@@ -1003,7 +1003,7 @@
       "team": "",
       "espn_team_id": 1,
       "rostered": true,
-      "ownership_now": 64.04,
+      "ownership_now": 64.07,
       "ownership_prev": 54.99,
       "delta": 9.1,
       "lookback_days": 8
@@ -1014,9 +1014,9 @@
       "team": "",
       "espn_team_id": 2,
       "rostered": true,
-      "ownership_now": 67.33,
+      "ownership_now": 67.37,
       "ownership_prev": 58.38,
-      "delta": 8.9,
+      "delta": 9.0,
       "lookback_days": 8
     },
     {
@@ -1025,7 +1025,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 67.22,
+      "ownership_now": 67.26,
       "ownership_prev": 58.87,
       "delta": 8.4,
       "lookback_days": 8
@@ -1036,7 +1036,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 19.49,
+      "ownership_now": 19.44,
       "ownership_prev": 11.37,
       "delta": 8.1,
       "lookback_days": 8
@@ -1058,7 +1058,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 13.8,
+      "ownership_now": 13.81,
       "ownership_prev": 5.94,
       "delta": 7.9,
       "lookback_days": 8
@@ -1069,9 +1069,20 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 67.82,
+      "ownership_now": 67.84,
       "ownership_prev": 60.02,
       "delta": 7.8,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "4109034",
+      "name": "Andre Pallante",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "ownership_now": 11.35,
+      "ownership_prev": 3.92,
+      "delta": 7.4,
       "lookback_days": 8
     },
     {
@@ -1086,25 +1097,14 @@
       "lookback_days": 8
     },
     {
-      "player_id": "4109034",
-      "name": "Andre Pallante",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "ownership_now": 11.14,
-      "ownership_prev": 3.92,
-      "delta": 7.2,
-      "lookback_days": 8
-    },
-    {
       "player_id": "38904",
       "name": "Bo Bichette",
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 78.69,
+      "ownership_now": 78.77,
       "ownership_prev": 71.71,
-      "delta": 7.0,
+      "delta": 7.1,
       "lookback_days": 8
     },
     {
@@ -1113,9 +1113,9 @@
       "team": "",
       "espn_team_id": 9,
       "rostered": true,
-      "ownership_now": 37.45,
+      "ownership_now": 37.39,
       "ownership_prev": 31.45,
-      "delta": 6.0,
+      "delta": 5.9,
       "lookback_days": 8
     },
     {
@@ -1124,9 +1124,9 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 12.28,
+      "ownership_now": 12.31,
       "ownership_prev": 6.73,
-      "delta": 5.5,
+      "delta": 5.6,
       "lookback_days": 8
     },
     {
@@ -1135,7 +1135,7 @@
       "team": "",
       "espn_team_id": 9,
       "rostered": true,
-      "ownership_now": 81.8,
+      "ownership_now": 81.81,
       "ownership_prev": 76.32,
       "delta": 5.5,
       "lookback_days": 8
