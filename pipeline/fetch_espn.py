@@ -131,7 +131,14 @@ def _extract_projections(player) -> dict:
             cat = ESPN_STAT_IDS[sid]
             col = f'espn_proj_{cat}'
             if col in proj:
-                proj[col] = float(val) if val is not None else None
+                # ESPN sometimes returns a scoring-period container dict
+                # ({'points':..., 'breakdown':...}) instead of a scalar.
+                # Skip non-numeric shapes rather than crashing the fetch.
+                if isinstance(val, (int, float)) or (isinstance(val, str) and val.strip()):
+                    try:
+                        proj[col] = float(val)
+                    except (TypeError, ValueError):
+                        proj[col] = None
     return proj
 
 
