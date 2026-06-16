@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS fact_espn_rosters (
     espn_proj_svhd        REAL,
     acquisition_type      TEXT,   -- 'draft' | 'waiver' | 'trade'
     injury_status         TEXT,
+    eligible_slots        TEXT,   -- comma-joined ROSTER_SLOTS codes (multi-position eligibility)
     FOREIGN KEY (player_id) REFERENCES dim_players(player_id)
 );
 
@@ -234,7 +235,29 @@ def init_db(db_path: str = DB_PATH) -> None:
     conn.commit()
     conn.close()
     print(f"Database initialised: {db_path}")
+    _migrate(db_path)
     _verify(db_path)
+
+
+# Additive column migrations for already-existing dbs. CREATE TABLE IF NOT EXISTS
+# won't add columns to a table that already exists, so apply them explicitly.
+# Each entry: (table, column, type). Idempotent — only ALTERs when missing.
+_MIGRATIONS = [
+    ("fact_espn_rosters", "eligible_slots", "TEXT"),
+]
+
+
+def _migrate(db_path: str = DB_PATH) -> None:
+    conn = sqlite3.connect(db_path)
+    try:
+        for table, column, coltype in _MIGRATIONS:
+            cols = {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}
+            if column not in cols:
+                conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {coltype}")
+                print(f"  [migrate] added {table}.{column} {coltype}")
+        conn.commit()
+    finally:
+        conn.close()
 
 
 def _verify(db_path: str) -> None:

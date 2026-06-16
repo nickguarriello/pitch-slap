@@ -81,6 +81,31 @@ def fetch_rosters(league) -> list[dict]:
     return rows
 
 
+# ESPN eligibleSlots (espn_api position names) -> our ROSTER_SLOTS codes.
+_ESPN_SLOT_TO_ROSTER = {
+    'C': 'C', '1B': '1B', '2B': '2B', '3B': '3B', 'SS': 'SS',
+    '1B/3B': 'CI', '2B/SS': 'MI',
+    'OF': 'OF', 'LF': 'OF', 'CF': 'OF', 'RF': 'OF',
+    'DH': 'UTIL', 'UTIL': 'UTIL',
+    'P': 'P', 'SP': 'P', 'RP': 'P',
+    'BE': 'BN', 'IL': 'IL',
+    # 'IF' (generic infield) intentionally dropped — specific IF slots already present.
+}
+
+
+def _normalize_eligible(player) -> str:
+    """Comma-joined ROSTER_SLOTS codes a player is eligible for (multi-position)."""
+    raw = getattr(player, 'eligibleSlots', None) or []
+    out = []
+    for s in raw:
+        # espn_api usually returns slot-name strings; tolerate ints defensively.
+        name = ESPN_LINEUP_SLOT_MAP.get(s, str(s)) if isinstance(s, int) else s
+        code = _ESPN_SLOT_TO_ROSTER.get(name)
+        if code and code not in out:
+            out.append(code)
+    return ','.join(out)
+
+
 def _build_player_row(player, espn_team_id, snapshot_date: str, is_fa: bool) -> dict:
     slot_id    = getattr(player, 'lineupSlot', None)
     lineup_slot = ESPN_LINEUP_SLOT_MAP.get(slot_id, str(slot_id) if slot_id is not None else '')
@@ -118,6 +143,7 @@ def _build_player_row(player, espn_team_id, snapshot_date: str, is_fa: bool) -> 
         'espn_rating':        espn_rating,
         'injury_status':      injury.upper() if injury else '',
         'acquisition_type':   acq_type.upper() if acq_type else '',
+        'eligible_slots':     _normalize_eligible(player),
         **proj,
     }
 
@@ -360,13 +386,13 @@ def write_rosters_to_db(rows: list[dict]) -> None:
         INSERT INTO fact_espn_rosters (
             snapshot_date, player_id, espn_team_id, lineup_slot, is_active, is_il,
             ownership_pct, ownership_delta_7d, start_pct, espn_rating, injury_status,
-            acquisition_type,
+            acquisition_type, eligible_slots,
             espn_proj_r, espn_proj_hr, espn_proj_rbi, espn_proj_sb, espn_proj_obp,
             espn_proj_k, espn_proj_qs, espn_proj_era, espn_proj_whip, espn_proj_svhd
         ) VALUES (
             :snapshot_date, :player_id, :espn_team_id, :lineup_slot, :is_active, :is_il,
             :ownership_pct, :ownership_delta_7d, :start_pct, :espn_rating, :injury_status,
-            :acquisition_type,
+            :acquisition_type, :eligible_slots,
             :espn_proj_r, :espn_proj_hr, :espn_proj_rbi, :espn_proj_sb, :espn_proj_obp,
             :espn_proj_k, :espn_proj_qs, :espn_proj_era, :espn_proj_whip, :espn_proj_svhd
         )
