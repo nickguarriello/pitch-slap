@@ -6,6 +6,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
+      "eligible_slots": "3B,CI,UTIL,BN,IL,1B",
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.245 below floor (0.260)",
@@ -25,6 +26,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
+      "eligible_slots": "OF,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.197 below floor (0.240)",
@@ -44,6 +46,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (4.00) >> xFIP (2.15), gap=1.85",
@@ -63,6 +66,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (4.36) >> xFIP (3.42), gap=0.94",
@@ -82,6 +86,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (4.78) >> xFIP (4.03), gap=0.75",
@@ -101,6 +106,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.01) >> xFIP (3.00), gap=2.01",
@@ -120,6 +126,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.13) >> xFIP (4.37), gap=0.76",
@@ -139,6 +146,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
+      "eligible_slots": null,
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.23) >> xFIP (4.17), gap=1.06",
@@ -158,6 +166,7 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.26) >> xFIP (4.22), gap=1.04",
@@ -179,6 +188,7 @@
       "team": "",
       "espn_team_id": 6,
       "rostered": true,
+      "eligible_slots": "C,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.236 below floor (0.240)",
@@ -198,6 +208,7 @@
       "team": "",
       "espn_team_id": 5,
       "rostered": true,
+      "eligible_slots": "OF,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.243 below floor (0.260)",
@@ -217,6 +228,7 @@
       "team": "",
       "espn_team_id": 5,
       "rostered": true,
+      "eligible_slots": "2B,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.239 below floor (0.240)",
@@ -236,6 +248,7 @@
       "team": "",
       "espn_team_id": 3,
       "rostered": true,
+      "eligible_slots": "SS,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.207 below floor (0.260)",
@@ -255,6 +268,7 @@
       "team": "",
       "espn_team_id": 8,
       "rostered": true,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (4.32) >> xFIP (3.06), gap=1.26",
@@ -274,6 +288,7 @@
       "team": "",
       "espn_team_id": 2,
       "rostered": true,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (4.35) >> xFIP (3.17), gap=1.18",
@@ -293,6 +308,7 @@
       "team": "",
       "espn_team_id": 6,
       "rostered": true,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (4.76) >> xFIP (3.61), gap=1.15",
@@ -312,6 +328,7 @@
       "team": "",
       "espn_team_id": 3,
       "rostered": true,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (4.76) >> xFIP (4.01), gap=0.75",
@@ -331,6 +348,7 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.06) >> xFIP (2.95), gap=2.11",
@@ -350,6 +368,7 @@
       "team": "",
       "espn_team_id": 8,
       "rostered": true,
+      "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.31) >> xFIP (4.33), gap=0.98",

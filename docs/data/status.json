@@ -1,9 +1,9 @@
 {
   "as_of": "2026-06-16",
-  "last_run_mode": "full",
+  "last_run_mode": "light",
   "last_full_run": "2026-06-16T18:12:08.405986+00:00",
-  "last_light_run": "2026-06-08T15:52:40.743988+00:00",
-  "espn_last_fetch": "2026-06-16T18:36:22.826270+00:00",
+  "last_light_run": "2026-06-16T18:36:05.860705+00:00",
+  "espn_last_fetch": "2026-06-16T18:56:46.084491+00:00",
   "validate_overall": "warn",
   "validate_warnings": 3,
   "cats_winning": 2,
