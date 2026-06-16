@@ -186,8 +186,23 @@ opponent-adjusted swing (score Δ against the specific week's opponent, not leag
    Validated: bat-for-ace flipped −0.10 (v1) → +0.33 (v3), confirming the lineup-aware model.
    ⚠️ OPEN calibration: scorer `RATE_MARGIN` (esp. ERA=0.20) over-weights rate swings vs
    counting cats — widen the rate margins / tune against more examples before shipping.
-4. **Package enumeration** (§3 steps 2–4) — auto-generate candidate give/get packages from
-   surplus→need, respecting protected list + roster legality; rank by `score_trade`.
-5. Generalize `evaluate.py` need-weights to **per-team** (§7) → wire the **acceptance gate**
-   (mirror score from the other team's need vector). `score_trade` is my-side only today.
-6. **Output surface** — `trades.json` writer (in report.py or trade.py) + `trades.html`.
+4. ✅ **Package enumeration built** — `enumerate_trades()` generates 1-for-1 over both active
+   rosters + bounded 2-for-2 (extend top anchors), scores both sides, de-dups, ranks. Added a
+   **talent-balance gate** (neutral-need valuation, `FAIR_TOL`) to block lopsided fleece offers.
+5. ✅ **Acceptance gate wired** — `evaluate.compute_need_weights(conn, team_id)` now
+   parameterized per team (backward-compatible); `_evaluate_package` requires the other team's
+   need-weighted score ≥ `ACCEPT_TOL`. Per-team needs validated (e.g. I Robbed A Nuke → SvHd .70).
+6. ✅ **Output surface shipped** — `trade.run()` writes `docs/data/trades.json` (ranked,
+   gated proposals per team); `docs/trades.html` renders them; wired into `main.py` Phase 6
+   (non-blocking) for both full + light runs.
+
+**Trade analyzer is functional end-to-end.** Remaining = calibration & polish, not plumbing:
+- **Rate-scale calibration** (the big one): scorer `RATE_MARGIN` + `player_value` rate terms
+  inflate ERA-driven swings → absolute scores run large (1.0+). Widen margins / normalize and
+  re-validate against hand examples. Ranking is sensible; magnitudes are not yet trustworthy.
+- **Asset/upside valuation:** the model prices players by current-season category production,
+  so it under-values ace pedigree / prospect upside — a category-fair deal may be declined on
+  talent (the talent gate only partially mitigates). Consider blending in ESPN projections /
+  ownership / a scarcity term.
+- **Nav link:** add `trades.html` to the `<nav>` on the other 6 pages (only trades.html has it).
+- **Polish:** protected-players param, value-window blend (§7), `replacement`/VORP sanity baseline.

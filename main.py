@@ -111,6 +111,16 @@ def run_full() -> dict:
     report()
     meta["report_last_run"] = _ts()
 
+    # Phase 6: Trade analyzer (non-blocking — never fail the pipeline over trades)
+    print("\n--- trades ---")
+    try:
+        from pipeline.trade import run as trades
+        trades()
+        meta["trades_last_run"] = _ts()
+    except Exception as e:
+        print(f"  WARNING: trade analyzer failed ({e}) — skipping trades.json")
+    _save_meta(meta)
+
     meta["last_full_run"] = start_ts
     meta["last_run_mode"] = "full"
     _save_meta(meta)
@@ -172,6 +182,16 @@ def run_light() -> dict:
     print("\n--- report ---")
     report()
     meta["report_last_run"] = _ts()
+
+    # Phase 6: Trade analyzer (non-blocking)
+    print("\n--- trades ---")
+    try:
+        from pipeline.trade import run as trades
+        trades()
+        meta["trades_last_run"] = _ts()
+    except Exception as e:
+        print(f"  WARNING: trade analyzer failed ({e}) — skipping trades.json")
+    _save_meta(meta)
 
     meta["last_light_run"] = start_ts
     meta["last_run_mode"] = "light"

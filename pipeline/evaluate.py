@@ -185,15 +185,18 @@ def compute_cat_states(conn: sqlite3.Connection) -> dict:
 # 2. Category need weights
 # ---------------------------------------------------------------------------
 
-def compute_need_weights(conn: sqlite3.Connection) -> dict[str, float]:
+def compute_need_weights(conn: sqlite3.Connection, team_id: int = TEAM_ID) -> dict[str, float]:
     """
-    Return {cat: weight (0.1–1.0)} derived from:
+    Return {cat: weight (0.1–1.0)} for `team_id` (defaults to my team) derived from:
       - Historical rank (1-10 across league) in each cat this season
       - Win rate in each cat from fact_matchups
+
+    Parameterized by team_id so the trade analyzer can score the *other* team's
+    needs for the acceptance gate.
     """
     weights: dict[str, float] = {}
 
-    # Get my season win rates per cat from fact_matchups (final matchups only)
+    # Get the team's season win rates per cat from fact_matchups (final matchups only)
     win_rates = {}
     rows = conn.execute(
         """
@@ -204,14 +207,14 @@ def compute_need_weights(conn: sqlite3.Connection) -> dict[str, float]:
         WHERE my_team_id = ? AND is_final = 1
         GROUP BY cat_name
         """,
-        (TEAM_ID,),
+        (team_id,),
     ).fetchall()
     for r in rows:
         win_rates[r["cat_name"]] = _f(r["win_rate"]) or 0.5
 
     # Get current standings rank approximation per cat from season stats
     # (rank among all teams: avg their rostered players' season stats)
-    cat_ranks = _estimate_cat_ranks(conn)
+    cat_ranks = _estimate_cat_ranks(conn, team_id)
 
     for cat in ALL_CATS:
         rank     = cat_ranks.get(cat, 5)         # 1=best, 8=worst
@@ -235,9 +238,9 @@ def compute_need_weights(conn: sqlite3.Connection) -> dict[str, float]:
     return weights
 
 
-def _estimate_cat_ranks(conn: sqlite3.Connection) -> dict[str, int]:
+def _estimate_cat_ranks(conn: sqlite3.Connection, team_id: int = TEAM_ID) -> dict[str, int]:
     """
-    Approximate team rank (1-8) per category by summing rostered players'
+    Approximate `team_id`'s rank (1-8) per category by summing rostered players'
     season stats per team, then ranking.
     """
     stat_cols = {
@@ -285,10 +288,10 @@ def _estimate_cat_ranks(conn: sqlite3.Connection) -> dict[str, int]:
                 """
             ).fetchall()
 
-        # Find my rank
+        # Find this team's rank
         my_rank = 5  # default mid
         for i, r in enumerate(rows):
-            if r["espn_team_id"] == TEAM_ID:
+            if r["espn_team_id"] == team_id:
                 my_rank = i + 1
                 break
         ranks[cat] = my_rank

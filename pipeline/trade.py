@@ -11,6 +11,7 @@ Run as a script to sanity-check the optimizer against my current roster:
     python -m pipeline.trade
 """
 
+import itertools
 import json
 import os
 import sqlite3
@@ -18,6 +19,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import DB_PATH, DATA_DIR, TEAM_ID, ROSTER_SLOTS
+from pipeline.evaluate import compute_need_weights
 
 # --- parameters (see design spec §2/§4) -----------------------------------
 WEEKS = 11.5                                                   # season weeks elapsed
@@ -26,6 +28,11 @@ RATE_BASE = {'OBP': 0.345, 'ERA': 3.90, 'WHIP': 1.25}          # league rate bas
 IP_WEEK = 55.0          # team weekly IP scale — rate impact is weighted by volume share
 PA_WEEK = 230.0         # team weekly PA scale
 RATE_MARGIN = {'OBP': 0.010, 'ERA': 0.20, 'WHIP': 0.04}   # one "unit" of weekly rate swing
+MY_MIN_SCORE = 0.03     # only surface trades that meaningfully help me
+ACCEPT_TOL = -0.02      # other team must net ~>= 0 (small tolerance) to plausibly accept
+FAIR_TOL = 0.15         # max raw-talent edge I may receive (blocks lopsided "fleece" offers)
+TOP_N = 5               # ranked trades kept per target team
+NEUTRAL_NEED = {c: 0.5 for c in ('R', 'HR', 'RBI', 'SB', 'OBP', 'K', 'QS', 'ERA', 'WHIP', 'SvHd')}
 
 HIT_COUNT = {'R': 'r', 'HR': 'hr', 'RBI': 'rbi', 'SB': 'sb'}   # cat -> stats column
 PIT_COUNT = {'K': 'k', 'QS': 'qs', 'SvHd': 'svhd'}
@@ -228,6 +235,145 @@ def score_trade(my_players: list[dict], incoming: list[dict], outgoing_names: se
         'drivers': {k: v for k, v in contrib.items() if abs(v) >= 0.005},
         'delta': delta,
     }
+
+
+def _team_names(db_path: str = DB_PATH) -> dict:
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'espn_teams.json')
+    try:
+        teams = json.load(open(path))['teams']
+        return {int(k): v['name'].strip() for k, v in teams.items()}
+    except Exception:
+        return {}
+
+
+def _active(players):
+    return [p for p in players if not p['is_il']]
+
+
+def _evaluate_package(my_roster, my_need, their_roster, their_need,
+                      gives, gets, pool):
+    """Score one package from both sides; return dict or None if it fails the gates."""
+    give_names = {p['name'] for p in gives}
+    get_names = {p['name'] for p in gets}
+    mine = score_trade(my_roster, gets, give_names, my_need)
+    if mine['score'] < MY_MIN_SCORE:
+        return None
+    theirs = score_trade(their_roster, gives, get_names, their_need)
+    if theirs['score'] < ACCEPT_TOL:
+        return None
+    # Talent-balance gate: block deals where I receive far more raw (need-neutral)
+    # talent than I give — those are category-rational but no manager would accept.
+    talent_edge = (sum(player_value(p, NEUTRAL_NEED) for p in gets)
+                   - sum(player_value(p, NEUTRAL_NEED) for p in gives))
+    if talent_edge > FAIR_TOL:
+        return None
+    return {
+        'give': sorted(give_names), 'get': sorted(get_names),
+        'my_score': mine['score'], 'their_score': theirs['score'],
+        'drivers': mine['drivers'], 'delta': mine['delta'],
+    }
+
+
+def enumerate_trades(my_team_id: int, target_team_id: int, pool: dict,
+                     my_roster=None, my_need=None) -> list[dict]:
+    """Generate, score, and acceptance-gate candidate packages with one target team.
+
+    1-for-1 over both active rosters, then 2-for-2 by extending the top anchors
+    (bounded so it stays fast). Returns accepted trades ranked by my_score.
+    """
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    if my_roster is None:
+        my_roster = load_team(my_team_id)
+    if my_need is None:
+        my_need = compute_need_weights(conn, my_team_id)
+    their_roster = load_team(target_team_id)
+    their_need = compute_need_weights(conn, target_team_id)
+    conn.close()
+
+    mine_pool = _active(my_roster)
+    theirs_pool = _active(their_roster)
+
+    accepted = []
+    # 1-for-1
+    for g in mine_pool:
+        for t in theirs_pool:
+            r = _evaluate_package(my_roster, my_need, their_roster, their_need, [g], [t], pool)
+            if r:
+                accepted.append(r)
+
+    # 2-for-2: extend the top 1-for-1 anchors with my cheapest give + their best-for-me get
+    anchors = sorted(accepted, key=lambda r: -r['my_score'])[:3]
+    give2 = sorted(mine_pool, key=lambda p: player_value(p, my_need))[:6]      # my cheapest
+    get2 = sorted(theirs_pool, key=lambda p: -player_value(p, my_need))[:6]    # most valuable to me
+    seen = set()
+    for a in anchors:
+        g1 = next(p for p in mine_pool if p['name'] == a['give'][0])
+        t1 = next(p for p in theirs_pool if p['name'] == a['get'][0])
+        for g2 in give2:
+            for t2 in get2:
+                names = (g1['name'], g2['name'], t1['name'], t2['name'])
+                if len({g1['name'], g2['name']}) < 2 or len({t1['name'], t2['name']}) < 2:
+                    continue
+                key = (frozenset((g1['name'], g2['name'])), frozenset((t1['name'], t2['name'])))
+                if key in seen:
+                    continue
+                seen.add(key)
+                r = _evaluate_package(my_roster, my_need, their_roster, their_need,
+                                      [g1, g2], [t1, t2], pool)
+                if r:
+                    accepted.append(r)
+
+    # de-dup identical give/get sets, keep best, rank
+    best = {}
+    for r in accepted:
+        key = (tuple(r['give']), tuple(r['get']))
+        if key not in best or r['my_score'] > best[key]['my_score']:
+            best[key] = r
+    ranked = sorted(best.values(), key=lambda r: -r['my_score'])
+    return ranked[:TOP_N]
+
+
+def run(my_team_id: int = TEAM_ID, target_team_ids: list = None) -> dict:
+    """Pipeline entry: build ranked, acceptance-gated trade proposals → docs/data/trades.json."""
+    names = _team_names()
+    pool = load_rostered()
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    my_need = compute_need_weights(conn, my_team_id)
+    snapshot = conn.execute("SELECT MAX(snapshot_date) FROM fact_espn_rosters").fetchone()[0]
+    conn.close()
+    if target_team_ids is None:
+        target_team_ids = [tid for tid in names if tid != my_team_id]
+    my_roster = load_team(my_team_id)
+
+    out_teams = []
+    for tid in target_team_ids:
+        trades = enumerate_trades(my_team_id, tid, pool, my_roster, my_need)
+        _c = sqlite3.connect(DB_PATH); _c.row_factory = sqlite3.Row
+        tneed = compute_need_weights(_c, tid); _c.close()
+        out_teams.append({
+            'team_id': tid,
+            'team_name': names.get(tid, str(tid)),
+            'their_top_needs': sorted(tneed, key=lambda c: -tneed[c])[:3],
+            'trades': trades,
+        })
+    out_teams.sort(key=lambda t: -(t['trades'][0]['my_score'] if t['trades'] else 0))
+
+    result = {
+        'generated_for_snapshot': snapshot,
+        'my_team_id': my_team_id,
+        'my_team_name': names.get(my_team_id, str(my_team_id)),
+        'my_need_weights': my_need,
+        'teams': out_teams,
+    }
+    out_path = os.path.join(os.path.dirname(os.path.dirname(__file__)),
+                            'docs', 'data', 'trades.json')
+    with open(out_path, 'w') as f:
+        json.dump(result, f, indent=2)
+    total = sum(len(t['trades']) for t in out_teams)
+    print(f"trade.py: wrote {total} ranked trades across {len(out_teams)} teams -> {out_path}")
+    return result
 
 
 if __name__ == "__main__":

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Slap — Trades</title>
+<style>
+:root { --bg:#0f1117;--surface:#1a1d27;--border:#2a2d3a;--text:#e2e8f0;--muted:#64748b;--accent:#3b82f6;--win:#22c55e;--loss:#ef4444;--warn:#f59e0b;--flip:#a78bfa; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:14px}
+nav{display:flex;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap}
+nav a{padding:12px 20px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a.active,nav a:hover{color:var(--text);border-bottom:2px solid var(--accent)}
+.banner{padding:8px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap}
+.container{max-width:1040px;margin:0 auto;padding:24px 20px}
+h1{font-size:22px;font-weight:700;margin-bottom:6px}
+h2{font-size:15px;font-weight:700;margin-bottom:4px}
+.needpill{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-right:4px;background:rgba(59,130,246,.15);color:var(--accent)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:20px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:8px 12px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border)}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.give{color:var(--loss)}.get{color:var(--win);font-weight:600}
+.score{font-weight:700}.score.pos{color:var(--win)}.score.neg{color:var(--loss)}
+.driver{font-size:11px;color:var(--muted)}
+.driver .up{color:var(--win)}.driver .down{color:var(--loss)}
+.empty{color:var(--muted);font-size:13px;padding:12px 0}
+.section-desc{font-size:12px;color:var(--muted);margin-bottom:18px;line-height:1.6}
+.caveat{font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px;border-top:1px solid var(--border);padding-top:12px}
+.teamhdr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="matchup.html">Matchup</a>
+  <a href="waivers.html">Waivers</a>
+  <a href="players.html">Players</a>
+  <a href="league.html">League</a>
+  <a href="playoff.html">Playoffs</a>
+  <a href="trades.html" class="active">Trades</a>
+  <a href="log.html">Log</a>
+</nav>
+<div class="banner" id="banner">Loading...</div>
+
+<div class="container">
+  <h1>Trade Targets</h1>
+  <p class="section-desc" id="intro">
+    Ranked, mutually-acceptable trade proposals. Each is scored by the change in my
+    <b>need-weighted active-lineup production</b> (the lineup is re-optimized before vs. after the
+    swap, so benched depth and roster slots are accounted for). Only deals that also score
+    non-negative for the <b>other team's</b> needs — and that are roughly balanced on raw talent —
+    are shown. <b>My Δ</b> = how much it helps me; <b>Their Δ</b> = how much it helps them.
+  </p>
+  <div id="needs" style="margin-bottom:18px;font-size:12px;color:var(--muted)"></div>
+  <div id="teams"></div>
+
+  <p class="caveat" id="caveats"></p>
+</div>
+
+<script>
+async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
+const CATS=['R','HR','RBI','SB','OBP','K','QS','ERA','WHIP','SvHd'];
+const LOWER=new Set(['ERA','WHIP']);
+
+function drivers(d){
+  // d: {cat: need-weighted contribution}. Show the biggest movers.
+  const items=Object.entries(d).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).slice(0,4);
+  return items.map(([c,v])=>{
+    const cls=v>=0?'up':'down';const sign=v>=0?'+':'';
+    return `<span class="${cls}">${c} ${sign}${v.toFixed(2)}</span>`;
+  }).join(' · ');
+}
+
+async function main(){
+  let trades,status;
+  try{[trades,status]=await Promise.all([load('data/trades.json'),load('data/status.json')]);}
+  catch(e){document.getElementById('teams').innerHTML='<div class="empty">No trades.json yet — run the pipeline.</div>';return;}
+
+  document.getElementById('banner').innerHTML=
+    `<span>As of <b>${(status&&status.as_of)||trades.generated_for_snapshot||'—'}</b></span>`+
+    `<span>My team: <b>${trades.my_team_name||'—'}</b></span>`;
+
+  const nw=trades.my_need_weights||{};
+  document.getElementById('needs').innerHTML='<b>My category needs:</b> '+
+    CATS.filter(c=>nw[c]!=null).sort((a,b)=>nw[b]-nw[a])
+        .map(c=>`<span class="needpill">${c} ${nw[c].toFixed(2)}</span>`).join('');
+
+  const host=document.getElementById('teams');
+  const teams=(trades.teams||[]).filter(t=>t.trades&&t.trades.length);
+  if(!teams.length){host.innerHTML='<div class="empty">No acceptable trades found this run.</div>';}
+  for(const t of teams){
+    let rows='';
+    for(const tr of t.trades){
+      const mc=tr.my_score>=0?'pos':'neg';
+      rows+=`<tr>
+        <td class="give">${tr.give.join(', ')}</td>
+        <td class="get">${tr.get.join(', ')}</td>
+        <td class="score ${mc}">${tr.my_score>=0?'+':''}${tr.my_score.toFixed(2)}</td>
+        <td class="score ${tr.their_score>=0?'pos':'neg'}">${tr.their_score>=0?'+':''}${tr.their_score.toFixed(2)}</td>
+        <td class="driver">${drivers(tr.drivers||{})}</td>
+      </tr>`;
+    }
+    host.innerHTML+=`<div class="card">
+      <div class="teamhdr">
+        <h2>${t.team_name}</h2>
+        <div>${(t.their_top_needs||[]).map(c=>`<span class="needpill">needs ${c}</span>`).join('')}</div>
+      </div>
+      <table>
+        <thead><tr><th>I Give</th><th>I Get</th><th>My Δ</th><th>Their Δ</th><th>Category drivers (need-weighted)</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+  }
+
+  document.getElementById('caveats').innerHTML=
+    '<b>Method & limits:</b> Scores are need-weighted category-unit swings from a re-optimized lineup '+
+    '(v3 lineup-aware). The acceptance gate uses the other team\'s estimated need-weights. '+
+    'Known limitations: (1) the model values players by current-season category production, so it '+
+    'under-prices ace pedigree / prospect upside — a "fair" category deal may still be declined on '+
+    'talent perception; (2) rate-category scaling (ERA/WHIP) is still being calibrated and can inflate '+
+    'absolute scores. Use the ranking as a shortlist, not gospel.';
+}
+main();
+</script>
+</body>
+</html>
