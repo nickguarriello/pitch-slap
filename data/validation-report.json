@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-06-16T18:57:00.475006+00:00",
+  "run_ts": "2026-06-16T23:15:27.124081+00:00",
   "overall": "warn",
   "checks": [
     {
@@ -83,8 +83,8 @@
     {
       "check": "completeness.fact_player_stats",
       "status": "pass",
-      "detail": "2599 rows across 6 windows",
-      "row_count": 2599
+      "detail": "2611 rows across 6 windows",
+      "row_count": 2611
     },
     {
       "check": "completeness.schedule",
@@ -131,29 +131,37 @@
     {
       "check": "staleness.statcast",
       "status": "pass",
-      "detail": "Statcast data is 19.0h old",
+      "detail": "Statcast data is 23.3h old",
       "row_count": 0
     }
   ],
   "meta": {
-    "espn_last_fetch": "2026-06-16T18:56:46.084491+00:00",
+    "espn_last_fetch": "2026-06-16T23:15:05.233045+00:00",
     "espn_status": "ok",
     "espn_rows": 554,
-    "mlb_last_fetch": "2026-06-16T18:56:47.582606+00:00",
-    "transform_last_run": "2026-06-16T18:57:00.456305+00:00",
-    "validate_last_run": "2026-06-16T18:36:39.360221+00:00",
+    "mlb_last_fetch": "2026-06-16T23:15:06.765673+00:00",
+    "transform_last_run": "2026-06-16T23:15:27.096220+00:00",
+    "validate_last_run": "2026-06-16T18:57:00.476913+00:00",
     "validate_overall": "warn",
-    "evaluate_last_run": "2026-06-16T18:36:39.382576+00:00",
+    "evaluate_last_run": "2026-06-16T18:57:00.500058+00:00",
     "cats_winning": 2,
-    "last_light_run": "2026-06-16T18:36:05.860705+00:00",
+    "last_light_run": "2026-06-16T18:56:29.968301+00:00",
     "last_run_mode": "light",
     "schedule_rows": 188,
     "statcast_last_fetch": "2026-06-15T23:55:54.730796+00:00",
-    "report_last_run": "2026-06-16T18:36:39.572966+00:00",
-    "transform_rows": 2599,
+    "report_last_run": "2026-06-16T18:57:00.696799+00:00",
+    "transform_rows": 2611,
     "cats_losing": 1,
     "last_full_run": "2026-06-16T18:12:08.405986+00:00",
     "statcast_rows": 515,
-    "trades_last_run": "2026-06-16T18:36:46.689609+00:00"
+    "trades_last_run": "2026-06-16T18:57:08.305997+00:00",
+    "games_settled": {
+      "date": "2026-06-15",
+      "games": 10,
+      "final": 10,
+      "incomplete": [],
+      "last_game": "TB@LAD",
+      "all_settled": true
+    }
   }
 }
