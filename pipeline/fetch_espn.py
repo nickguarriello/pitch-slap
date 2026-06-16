@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import (
     DB_PATH, DATA_DIR, LEAGUE_ID, SEASON, TEAM_ID,
     ESPN_S2, ESPN_SWID,
-    ESPN_PRO_TEAM_MAP, ESPN_LINEUP_SLOT_MAP, ESPN_STAT_IDS, ESPN_RATE_STAT_IDS,
+    ESPN_PRO_TEAM_MAP, ESPN_LINEUP_SLOT_MAP, ESPN_PROJ_KEYS,
     WEEKLY_ACQUISITION_LIMIT, API_CONFIG, ALL_CATS, CATS_LOWER_IS_BETTER,
 )
 
@@ -124,21 +124,25 @@ def _build_player_row(player, espn_team_id, snapshot_date: str, is_fa: bool) -> 
 
 def _extract_projections(player) -> dict:
     proj = {f'espn_proj_{cat}': None for cat in ['r','hr','rbi','sb','obp','k','qs','era','whip','svhd']}
+    # Projections live in the season period entry (key 0) under
+    # 'projected_breakdown', keyed by stat abbreviations (R, HR, ERA, SVHD...).
     stats = getattr(player, 'stats', {}) or {}
-    for key, val in stats.items():
-        sid = str(key)
-        if sid in ESPN_STAT_IDS:
-            cat = ESPN_STAT_IDS[sid]
-            col = f'espn_proj_{cat}'
-            if col in proj:
-                # ESPN sometimes returns a scoring-period container dict
-                # ({'points':..., 'breakdown':...}) instead of a scalar.
-                # Skip non-numeric shapes rather than crashing the fetch.
-                if isinstance(val, (int, float)) or (isinstance(val, str) and val.strip()):
-                    try:
-                        proj[col] = float(val)
-                    except (TypeError, ValueError):
-                        proj[col] = None
+    breakdown = (stats.get(0) or {}).get('projected_breakdown')
+    if not breakdown:
+        # Fallback: any period entry that carries a projection breakdown.
+        for entry in stats.values():
+            if isinstance(entry, dict) and entry.get('projected_breakdown'):
+                breakdown = entry['projected_breakdown']
+                break
+    breakdown = breakdown or {}
+    for abbr, cat in ESPN_PROJ_KEYS.items():
+        val = breakdown.get(abbr)
+        if val is None:
+            continue
+        try:
+            proj[f'espn_proj_{cat}'] = float(val)
+        except (TypeError, ValueError):
+            proj[f'espn_proj_{cat}'] = None
     return proj
 
 

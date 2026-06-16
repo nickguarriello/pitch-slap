@@ -243,21 +243,20 @@ except ImportError:
 # ESPN API field mappings (confirmed via live API inspection)
 # ---------------------------------------------------------------------------
 
-# ESPN season projections live in player.stats[0]['projected_breakdown'],
-# keyed by stat ABBREVIATIONS (not numeric stat IDs). Map abbrev -> our cat code.
-# (The old numeric-ID map never matched these keys, so projections were always null.)
-ESPN_PROJ_KEYS = {
-    "R":    "r",
-    "HR":   "hr",
-    "RBI":  "rbi",
-    "SB":   "sb",
-    "OBP":  "obp",
-    "K":    "k",
-    "QS":   "qs",
-    "ERA":  "era",
-    "WHIP": "whip",
-    "SVHD": "svhd",   # ESPN provides saves + holds pre-summed
+ESPN_STAT_IDS = {
+    "20": "runs",
+    "5":  "home_runs",
+    "21": "rbis",
+    "23": "stolen_bases",
+    "17": "obp",
+    "48": "strikeouts",
+    "63": "quality_starts",
+    "47": "era",
+    "41": "whip",
+    "83": "svhd",
 }
+
+ESPN_RATE_STAT_IDS = {"47", "41", "17"}   # ERA, WHIP, OBP — stored as floats, not summed
 
 ESPN_PRO_TEAM_MAP = {
     0:  "FA",
