@@ -179,11 +179,15 @@ opponent-adjusted swing (score Δ against the specific week's opponent, not leag
 1. Re-read this spec + the 2026-06-16 PLANNING.md rows.
 2. ✅ **`optimize_lineup(roster)` built** in `pipeline/trade.py` (2026-06-16) — transversal-
    matroid greedy assigns hitters to slots by eligibility (uses `eligible_slots`), top-10 by
-   value for P; returns active per-cat production vector. **Self-test passes** on my roster.
-   ⚠️ OPEN before it's trustworthy: calibrate `player_value` rate term (§7) — currently
-   benches QS starters for ratio relievers.
-3. Generalize `evaluate.py` need-weights to per-team (§7) for the acceptance gate.
-4. Implement `pipeline/trade.py`: §3 pipeline, scoring via before/after `optimize_lineup`
-   (§6); write `trades.json`.
-5. Build `trades.html`. Validate the optimizer + scores against a hand-scored example
-   before trusting output.
+   value for P; returns active per-cat production vector. Self-test passes.
+   ✅ **`player_value` rate term calibrated** — rate cats now volume-weighted (IP/PA share),
+   so QS starters stay active (active QS 38→43). `IP_WEEK`/`PA_WEEK` params added.
+3. ✅ **`score_trade(...)` built** — re-optimizes before/after, scores need-weighted Δ.
+   Validated: bat-for-ace flipped −0.10 (v1) → +0.33 (v3), confirming the lineup-aware model.
+   ⚠️ OPEN calibration: scorer `RATE_MARGIN` (esp. ERA=0.20) over-weights rate swings vs
+   counting cats — widen the rate margins / tune against more examples before shipping.
+4. **Package enumeration** (§3 steps 2–4) — auto-generate candidate give/get packages from
+   surplus→need, respecting protected list + roster legality; rank by `score_trade`.
+5. Generalize `evaluate.py` need-weights to **per-team** (§7) → wire the **acceptance gate**
+   (mirror score from the other team's need vector). `score_trade` is my-side only today.
+6. **Output surface** — `trades.json` writer (in report.py or trade.py) + `trades.html`.

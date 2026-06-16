@@ -23,6 +23,9 @@ from config import DB_PATH, DATA_DIR, TEAM_ID, ROSTER_SLOTS
 WEEKS = 11.5                                                   # season weeks elapsed
 SCALE = {'R': 32, 'HR': 11, 'RBI': 32, 'SB': 8, 'K': 45, 'QS': 5, 'SvHd': 5}
 RATE_BASE = {'OBP': 0.345, 'ERA': 3.90, 'WHIP': 1.25}          # league rate baselines
+IP_WEEK = 55.0          # team weekly IP scale — rate impact is weighted by volume share
+PA_WEEK = 230.0         # team weekly PA scale
+RATE_MARGIN = {'OBP': 0.010, 'ERA': 0.20, 'WHIP': 0.04}   # one "unit" of weekly rate swing
 
 HIT_COUNT = {'R': 'r', 'HR': 'hr', 'RBI': 'rbi', 'SB': 'sb'}   # cat -> stats column
 PIT_COUNT = {'K': 'k', 'QS': 'qs', 'SvHd': 'svhd'}
@@ -61,6 +64,29 @@ def load_team(team_id: int, db_path: str = DB_PATH, snapshot: str = None) -> lis
     return players
 
 
+def load_rostered(db_path: str = DB_PATH, snapshot: str = None) -> dict:
+    """{name: player_dict} for every rostered player (any team) — the trade-piece pool."""
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    if snapshot is None:
+        snapshot = conn.execute("SELECT MAX(snapshot_date) FROM fact_espn_rosters").fetchone()[0]
+    rows = conn.execute(
+        """SELECT r.player_id, p.name, p.position, r.eligible_slots, r.is_il, r.espn_team_id
+           FROM fact_espn_rosters r JOIN dim_players p ON p.player_id = r.player_id
+           WHERE r.espn_team_id IS NOT NULL AND r.snapshot_date = ?""",
+        (snapshot,),
+    ).fetchall()
+    out = {}
+    for r in rows:
+        s = conn.execute(
+            "SELECT * FROM fact_player_stats WHERE player_id=? AND window='season' "
+            "ORDER BY stat_date DESC LIMIT 1", (r['player_id'],)
+        ).fetchone()
+        out[r['name']] = _make_player(r, s)
+    conn.close()
+    return out
+
+
 def _make_player(r, s) -> dict:
     elig = set((r['eligible_slots'] or '').split(',')) - {''}
     s = s or {}
@@ -79,19 +105,27 @@ def _make_player(r, s) -> dict:
 # --- player value (objective the optimizer maximizes) ----------------------
 
 def player_value(p: dict, need: dict) -> float:
-    """Need-weighted, normalized weekly value of a single player."""
+    """Need-weighted weekly value of a single player, in comparable category-units.
+
+    Counting cats: per-week pace / team-weekly scale.
+    Rate cats: signed deviation from baseline, *scaled by the player's volume share*
+    (weekly IP/PA over team-weekly volume) so a low-inning reliever can't swing a rate
+    category like a full starter — keeps rate and counting terms the same magnitude.
+    """
     v = 0.0
     if p['is_pitcher']:
         for cat in PIT_COUNT:
             v += need[cat] * (p['wk'][cat] / SCALE[cat])
-        if p['ip'] > 0:                       # rate cats: reward lower ERA/WHIP
-            v += need['ERA'] * (RATE_BASE['ERA'] - p['era']) / RATE_BASE['ERA']
-            v += need['WHIP'] * (RATE_BASE['WHIP'] - p['whip']) / RATE_BASE['WHIP']
+        if p['ip'] > 0:                       # rate cats: reward lower ERA/WHIP, volume-weighted
+            ip_share = (p['ip'] / WEEKS) / IP_WEEK
+            v += need['ERA'] * (RATE_BASE['ERA'] - p['era']) / RATE_BASE['ERA'] * ip_share
+            v += need['WHIP'] * (RATE_BASE['WHIP'] - p['whip']) / RATE_BASE['WHIP'] * ip_share
     else:
         for cat in HIT_COUNT:
             v += need[cat] * (p['wk'][cat] / SCALE[cat])
-        if p['pa'] > 0:                       # OBP: reward higher
-            v += need['OBP'] * (p['obp'] - RATE_BASE['OBP']) / RATE_BASE['OBP']
+        if p['pa'] > 0:                       # OBP: reward higher, volume-weighted
+            pa_share = (p['pa'] / WEEKS) / PA_WEEK
+            v += need['OBP'] * (p['obp'] - RATE_BASE['OBP']) / RATE_BASE['OBP'] * pa_share
     return v
 
 
@@ -167,6 +201,35 @@ def _production(h_active, p_active) -> dict:
     return prod
 
 
+def score_trade(my_players: list[dict], incoming: list[dict], outgoing_names: set,
+                need: dict) -> dict:
+    """Need-weighted category swing from re-optimizing the active lineup before vs after.
+
+    Positive score = the trade improves my need-weighted active production.
+    (My-side value only — the acceptance gate using the other team's need vector is
+    a separate step, pending per-team need-weights; see design §7.)
+    """
+    before = optimize_lineup(my_players, need)
+    after_roster = [p for p in my_players if p['name'] not in outgoing_names] + incoming
+    after = optimize_lineup(after_roster, need)
+
+    delta = {c: round(after['production'][c] - before['production'][c], 2)
+             for c in before['production']}
+    contrib, total = {}, 0.0
+    for c in ('R', 'HR', 'RBI', 'SB', 'K', 'QS', 'SvHd'):          # counting cats
+        u = need[c] * ((delta[c] / WEEKS) / SCALE[c])
+        contrib[c] = round(u, 3); total += u
+    for c, lower_better in (('OBP', False), ('ERA', True), ('WHIP', True)):  # rate cats
+        signed = (-delta[c] if lower_better else delta[c]) / RATE_MARGIN[c]
+        u = need[c] * signed
+        contrib[c] = round(u, 3); total += u
+    return {
+        'score': round(total, 3),
+        'drivers': {k: v for k, v in contrib.items() if abs(v) >= 0.005},
+        'delta': delta,
+    }
+
+
 if __name__ == "__main__":
     need = load_need_weights()
     roster = load_team(TEAM_ID)
@@ -180,3 +243,18 @@ if __name__ == "__main__":
     print(f"  BENCH {', '.join(result['bench'])}")
     print("  active production:", result['production'])
     print("  lineup value:", result['value'])
+
+    # --- trade-scorer demo (validation) ---
+    pool = load_rostered()
+    demos = [
+        ("Jhoan Duran -> Davis Martin (surplus RP for QS starter)", ["Davis Martin"], {"Jhoan Duran"}),
+        ("Max Muncy -> Chase Burns (redundant bat for ace)",        ["Chase Burns"],  {"Max Muncy"}),
+    ]
+    print("\n=== trade scorer ===")
+    for label, inc, out in demos:
+        incoming = [pool[n] for n in inc if n in pool]
+        if len(incoming) != len(inc):
+            print(f"  [skip] {label} — missing: {[n for n in inc if n not in pool]}")
+            continue
+        r = score_trade(roster, incoming, out, need)
+        print(f"  {label}\n    score {r['score']:+.3f}  drivers={r['drivers']}")
