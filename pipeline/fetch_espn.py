@@ -192,6 +192,31 @@ def _espn_get(views: list[str], params: dict | None = None) -> dict:
     return resp.json()
 
 
+def get_espn_update_status() -> dict:
+    """ESPN's own 'last updated' timestamps from the league status view.
+
+    `standingsUpdateDate` is ESPN's nightly batch — it reprocesses the prior
+    day's results (posting fantasy stats), updates standings, then runs waivers
+    (`waiverLastExecutionDate`, same instant). So standings_update ≈ "when ESPN
+    finished posting last night's stats". Tracked over time to learn ESPN's
+    nightly update timing — directly readable, no polling required.
+    """
+    d  = _espn_get(['mStatus'])
+    st = d.get('status', {}) or {}
+
+    def _iso(ms):
+        if isinstance(ms, (int, float)) and ms > 1e12:
+            return datetime.fromtimestamp(ms / 1000, tz=timezone.utc).isoformat()
+        return None
+
+    return {
+        "standings_update":      _iso(st.get('standingsUpdateDate')),
+        "waiver_last_execution": _iso(st.get('waiverLastExecutionDate')),
+        "scoring_period":        d.get('scoringPeriodId'),
+        "checked_at":            datetime.now(timezone.utc).isoformat(),
+    }
+
+
 # ---------------------------------------------------------------------------
 # Matchup fetch (live per-cat + historical)
 # ---------------------------------------------------------------------------

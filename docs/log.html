@@ -129,12 +129,12 @@ async function main(){
   document.getElementById('fresh-asof').textContent = fmtTs(asof);
   document.getElementById('fresh-age').innerHTML = relAge(asof);
 
-  // Yesterday's slate settle check (set by the 6am full run)
-  const gs = log.games_settled, settleEl = document.getElementById('fresh-settle');
-  if(gs && typeof gs.all_settled === 'boolean'){
-    settleEl.innerHTML = gs.all_settled
-      ? `<span style="color:var(--win)">✓ Yesterday's slate complete</span> — all ${gs.games} games on ${gs.date} Final${gs.last_game?` (last: ${gs.last_game})`:''}.`
-      : `<span style="color:var(--warn)">⚠ Stats may still be settling</span> — ${gs.incomplete.length}/${gs.games} games on ${gs.date} not Final${gs.incomplete.length?': '+gs.incomplete.slice(0,4).join(', '):''}.`;
+  // ESPN's own nightly stat-update time (standingsUpdateDate) — the signal that
+  // matters: when ESPN actually posted last night's stats. Tracked over time in
+  // docs/data/espn-update-history.json.
+  const eu = log.espn_update, settleEl = document.getElementById('fresh-settle');
+  if(eu && eu.standings_update){
+    settleEl.innerHTML = `ESPN last posted stats (standings update): <b>${fmtTs(eu.standings_update)}</b>`;
   }
 
   document.getElementById('banner').innerHTML =

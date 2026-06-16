@@ -27,6 +27,11 @@ from datetime import datetime, timezone
 from config import DATA_DIR, DB_PATH
 
 PIPELINE_META_PATH = os.path.join(DATA_DIR, "pipeline-meta.json")
+# docs/data/ is the only dir the CI commit step persists across runs, so the
+# ESPN-update history (used to learn ESPN's nightly stat-posting time) lives here.
+ESPN_UPDATE_HISTORY_PATH = os.path.join(
+    os.path.dirname(__file__), "docs", "data", "espn-update-history.json"
+)
 
 
 def _ts() -> str:
@@ -46,9 +51,24 @@ def _save_meta(meta: dict) -> None:
         json.dump(meta, f, indent=2)
 
 
+def _append_espn_update_history(record: dict, cap: int = 60) -> None:
+    """Append one run's freshness record to the rolling history (last `cap`)."""
+    runs = []
+    if os.path.exists(ESPN_UPDATE_HISTORY_PATH):
+        try:
+            with open(ESPN_UPDATE_HISTORY_PATH) as f:
+                runs = json.load(f).get("runs", [])
+        except Exception:
+            runs = []
+    runs.append(record)
+    os.makedirs(os.path.dirname(ESPN_UPDATE_HISTORY_PATH), exist_ok=True)
+    with open(ESPN_UPDATE_HISTORY_PATH, "w") as f:
+        json.dump({"runs": runs[-cap:]}, f, indent=2)
+
+
 def run_full() -> dict:
     """Full pipeline: crosswalk refresh + all fetchers + transform + validate + evaluate + report."""
-    from pipeline.fetch_espn import run as fetch_espn
+    from pipeline.fetch_espn import run as fetch_espn, get_espn_update_status
     from pipeline.fetch_mlb import run as fetch_mlb, get_two_start_pitchers, check_recent_games_settled
     from pipeline.fetch_statcast import run as fetch_statcast
     from pipeline.transform import run as transform
@@ -66,6 +86,15 @@ def run_full() -> dict:
     espn_result = fetch_espn()
     meta["espn_last_fetch"] = _ts()
     meta["espn_rows"] = len(espn_result.get("roster_rows") or [])
+    # Capture ESPN's own nightly update timestamp (when it last posted stats).
+    espn_update = {}
+    try:
+        espn_update = get_espn_update_status()
+        meta["espn_update"] = espn_update
+        if espn_update.get("standings_update"):
+            print(f"  ESPN stats last updated (standingsUpdateDate): {espn_update['standings_update']}")
+    except Exception as e:
+        print(f"  (espn update-status check skipped: {e})")
     _save_meta(meta)
 
     # Phase 2b: MLB schedule + transactions
@@ -77,6 +106,7 @@ def run_full() -> dict:
 
     # Soft freshness check: confirm yesterday's slate is Final (data should be settled).
     # Non-blocking — just warns; we never abort over it.
+    settle = {}
     try:
         settle = check_recent_games_settled()
         meta["games_settled"] = settle
@@ -90,6 +120,21 @@ def run_full() -> dict:
         _save_meta(meta)
     except Exception as e:
         print(f"  (freshness check skipped: {e})")
+
+    # Record this run's freshness signals to the rolling history — over days this
+    # reveals ESPN's nightly stat-update time (standings_update) and its variance.
+    try:
+        _append_espn_update_history({
+            "run_ts":                 start_ts,
+            "espn_standings_update":  espn_update.get("standings_update"),
+            "espn_waiver_execution":  espn_update.get("waiver_last_execution"),
+            "scoring_period":         espn_update.get("scoring_period"),
+            "games_final_date":       settle.get("date"),
+            "all_games_final":        settle.get("all_settled"),
+            "last_game":              settle.get("last_game"),
+        })
+    except Exception as e:
+        print(f"  (freshness history append skipped: {e})")
 
     # Phase 2c: Statcast + FanGraphs (7-day cache)
     print("\n--- fetch_statcast ---")
