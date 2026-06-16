@@ -148,6 +148,12 @@ th.sortable .arr{font-size:9px;opacity:.8}
 <script>
 async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
 function fmt(v,d=1){if(v==null)return'—';return typeof v==='number'?v.toFixed(d):v}
+// POS = all eligible slots (strip BN/IL); fall back to single position
+function posSlots(p){
+  const e=p.eligible_slots;
+  if(e) return e.split(',').filter(s=>s!=='BN'&&s!=='IL').join(',')||'—';
+  return p.position||'—';
+}
 function pct(v){if(v==null)return'—';return(v*100).toFixed(0)+'%'}
 
 const HITTING_CATS  = ['R','HR','RBI','SB','OBP'];
@@ -384,7 +390,7 @@ async function main(){
   } else {
     for(const p of buyLow){
       const st = p.stats || {};
-      const isPitcher = (p.position||'').match(/SP|RP|P/);
+      const isPitcher = (p.eligible_slots||'').split(',').includes('P') || /SP|RP|P/.test(p.position||'');
       const helps = isPitcher
         ? [...swingSet].filter(c => pitchingCatSet.has(c))
         : [...swingSet].filter(c => hittingCatSet.has(c));
@@ -392,7 +398,7 @@ async function main(){
       const reasons = (p.reasons||[]).slice(0,2).join(' · ');
       streamBody.innerHTML += `<tr>
         <td><b>${p.name||'—'}</b></td>
-        <td style="font-size:11px;color:var(--muted)">${p.position||'—'}</td>
+        <td style="font-size:11px;color:var(--muted)">${posSlots(p)}</td>
         <td>${helps.map(c=>`<span class="swing-tag">${CAT_LABELS[c]||c}</span>`).join('')}</td>
         <td>${fmt(st.obp,3)}</td>
         <td>${fmt(st.xwoba,3)}</td>

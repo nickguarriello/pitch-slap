@@ -114,6 +114,12 @@ tr:hover td{background:rgba(255,255,255,.02)}
 async function load(url){const r=await fetch(url+'?t='+Date.now());return r.json()}
 function fmt(v,d=1){if(v==null)return'—';return typeof v==='number'?v.toFixed(d):v}
 function pct(v){if(v==null)return'—';return(v*100).toFixed(0)+'%'}
+// POS = all eligible slots (strip BN/IL); fall back to single position
+function posSlots(p){
+  const e=p.eligible_slots;
+  if(e) return e.split(',').filter(s=>s!=='BN'&&s!=='IL').join(',')||'—';
+  return p.position||p.eligible_positions||'—';
+}
 
 async function main(){
   const [waivers,status]=await Promise.all([load('data/waivers.json'),load('data/status.json')]);
@@ -135,7 +141,7 @@ async function main(){
       const st=p.stats||{};
       tsTbody.innerHTML+=`<tr>
         <td><b>${p.name||'—'}</b></td>
-        <td class="pos">${p.position||p.eligible_positions||'—'}</td>
+        <td class="pos">${posSlots(p)}</td>
         <td>
           <div class="score-bar"><div class="score-fill" style="width:${score*100}%"></div></div>
           <span style="font-size:11px;color:var(--muted);margin-left:6px">${(score*100).toFixed(0)}</span>
@@ -161,7 +167,7 @@ async function main(){
       const reasons=(p.reasons||p.buy_low_reasons||[]).slice(0,3).join(' · ');
       buyTbody.innerHTML+=`<tr>
         <td><b>${p.name||'—'}</b></td>
-        <td class="pos">${p.position||p.eligible_positions||'—'}</td>
+        <td class="pos">${posSlots(p)}</td>
         <td>${pct(p.ownership_pct)}</td>
         <td>${fmt(st.obp,3)}</td>
         <td>${fmt(st.xwoba,3)}</td>

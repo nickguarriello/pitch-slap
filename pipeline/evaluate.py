@@ -325,7 +325,7 @@ def compute_buy_low_flags(
     # Hitters: depressed BABIP or OBP lagging xwOBA
     rows = conn.execute(
         """
-        SELECT p.player_id, p.name, p.mlb_team, fer.espn_team_id,
+        SELECT p.player_id, p.name, p.mlb_team, fer.espn_team_id, fer.eligible_slots,
                fps.obp, fps.pa, fps.babip,
                fs.xba, fs.xwoba, fs.sprint_speed, fs.wrc_plus
         FROM dim_players p
@@ -374,6 +374,7 @@ def compute_buy_low_flags(
                 "team":         r["mlb_team"],
                 "espn_team_id": r["espn_team_id"],
                 "rostered":     r["espn_team_id"] is not None,
+                "eligible_slots": r["eligible_slots"],
                 "flag_type":    "buy_low_hitter",
                 "reasons":      reasons,
                 "score":        need_adjusted,
@@ -385,7 +386,7 @@ def compute_buy_low_flags(
     # Pitchers: ERA >> xFIP or SIERA (bad luck, will regress down)
     rows2 = conn.execute(
         """
-        SELECT p.player_id, p.name, p.mlb_team, fer.espn_team_id,
+        SELECT p.player_id, p.name, p.mlb_team, fer.espn_team_id, fer.eligible_slots,
                fps.era, fps.whip, fps.ip,
                fs.xfip, fs.siera, fs.fip
         FROM dim_players p
@@ -423,6 +424,7 @@ def compute_buy_low_flags(
                 "team":         r["mlb_team"],
                 "espn_team_id": r["espn_team_id"],
                 "rostered":     r["espn_team_id"] is not None,
+                "eligible_slots": r["eligible_slots"],
                 "flag_type":    "buy_low_pitcher",
                 "reasons":      reasons,
                 "score":        need_adjusted,
@@ -445,7 +447,7 @@ def compute_sell_high_flags(conn: sqlite3.Connection) -> list[dict]:
     # Hitters: OBP >> xwOBA (luck-driven, likely to regress)
     rows = conn.execute(
         """
-        SELECT p.player_id, p.name, p.mlb_team, fer.espn_team_id,
+        SELECT p.player_id, p.name, p.mlb_team, fer.espn_team_id, fer.eligible_slots,
                fps.obp, fps.pa, fps.babip,
                fs.xwoba
         FROM dim_players p
@@ -483,6 +485,7 @@ def compute_sell_high_flags(conn: sqlite3.Connection) -> list[dict]:
                 "team":        r["mlb_team"],
                 "espn_team_id": r["espn_team_id"],
                 "rostered":    r["espn_team_id"] is not None,
+                "eligible_slots": r["eligible_slots"],
                 "flag_type":   "sell_high_hitter",
                 "reasons":     reasons,
                 "score":       round(score, 2),
@@ -494,7 +497,7 @@ def compute_sell_high_flags(conn: sqlite3.Connection) -> list[dict]:
     # Pitchers: ERA << xFIP/SIERA (due for regression up)
     rows2 = conn.execute(
         """
-        SELECT p.player_id, p.name, p.mlb_team, fer.espn_team_id,
+        SELECT p.player_id, p.name, p.mlb_team, fer.espn_team_id, fer.eligible_slots,
                fps.era, fps.ip,
                fs.xfip, fs.siera
         FROM dim_players p
@@ -530,6 +533,7 @@ def compute_sell_high_flags(conn: sqlite3.Connection) -> list[dict]:
                 "team":        r["mlb_team"],
                 "espn_team_id": r["espn_team_id"],
                 "rostered":    r["espn_team_id"] is not None,
+                "eligible_slots": r["eligible_slots"],
                 "flag_type":   "sell_high_pitcher",
                 "reasons":     reasons,
                 "score":       round(score, 2),
