@@ -79,68 +79,138 @@
   },
   "cat_records": {
     "ERA": {
-      "wins": 100,
-      "losses": 111,
+      "wins": 106,
+      "losses": 116,
       "ties": 0,
-      "win_rate": 0.474
+      "win_rate": 0.477
     },
     "HR": {
-      "wins": 43,
-      "losses": 147,
-      "ties": 21,
-      "win_rate": 0.204
+      "wins": 46,
+      "losses": 154,
+      "ties": 22,
+      "win_rate": 0.207
     },
     "K": {
-      "wins": 91,
-      "losses": 120,
+      "wins": 96,
+      "losses": 126,
       "ties": 0,
-      "win_rate": 0.431
+      "win_rate": 0.432
     },
     "OBP": {
-      "wins": 135,
-      "losses": 76,
+      "wins": 141,
+      "losses": 81,
       "ties": 0,
-      "win_rate": 0.64
+      "win_rate": 0.635
     },
     "QS": {
-      "wins": 124,
-      "losses": 66,
-      "ties": 21,
-      "win_rate": 0.588
+      "wins": 131,
+      "losses": 69,
+      "ties": 22,
+      "win_rate": 0.59
     },
     "R": {
-      "wins": 112,
-      "losses": 99,
+      "wins": 118,
+      "losses": 104,
       "ties": 0,
-      "win_rate": 0.531
+      "win_rate": 0.532
     },
     "RBI": {
-      "wins": 133,
-      "losses": 54,
-      "ties": 24,
-      "win_rate": 0.63
+      "wins": 140,
+      "losses": 57,
+      "ties": 25,
+      "win_rate": 0.631
     },
     "SB": {
-      "wins": 118,
-      "losses": 93,
+      "wins": 125,
+      "losses": 97,
       "ties": 0,
-      "win_rate": 0.559
+      "win_rate": 0.563
     },
     "SvHd": {
-      "wins": 139,
-      "losses": 45,
-      "ties": 27,
-      "win_rate": 0.659
+      "wins": 146,
+      "losses": 47,
+      "ties": 29,
+      "win_rate": 0.658
     },
     "WHIP": {
-      "wins": 94,
-      "losses": 117,
+      "wins": 99,
+      "losses": 123,
       "ties": 0,
-      "win_rate": 0.445
+      "win_rate": 0.446
     }
   },
   "history": {
     "11": [
+      {
+        "cat": "R",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 53.0,
+        "opp_val": 52.0
+      },
+      {
+        "cat": "HR",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 19.0,
+        "opp_val": 14.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 53.0,
+        "opp_val": 46.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 8.0,
+        "opp_val": 4.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 0.371,
+        "opp_val": 0.378
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 66.0,
+        "opp_val": 61.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 6.0,
+        "opp_val": 4.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 3.12,
+        "opp_val": 4.405
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 0.92,
+        "opp_val": 1.2
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 5.0,
+        "opp_val": 1.0
+      },
       {
         "cat": "R",
         "result": "W",
@@ -632,9 +702,149 @@
         "state": "TIE",
         "my_val": 2.0,
         "opp_val": 2.0
+      },
+      {
+        "cat": "R",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 38.0,
+        "opp_val": 47.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 15.0,
+        "opp_val": 18.0
+      },
+      {
+        "cat": "RBI",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 36.0,
+        "opp_val": 46.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 12.0,
+        "opp_val": 11.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 0.304,
+        "opp_val": 0.308
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 36.0,
+        "opp_val": 50.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 3.0,
+        "opp_val": 2.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 3.399,
+        "opp_val": 4.445
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 1.154,
+        "opp_val": 1.098
+      },
+      {
+        "cat": "SvHd",
+        "result": "T",
+        "state": "TIE",
+        "my_val": 2.0,
+        "opp_val": 2.0
       }
     ],
     "9": [
+      {
+        "cat": "R",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 48.0,
+        "opp_val": 50.0
+      },
+      {
+        "cat": "HR",
+        "result": "T",
+        "state": "TIE",
+        "my_val": 13.0,
+        "opp_val": 13.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 42.0,
+        "opp_val": 38.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 6.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 0.348,
+        "opp_val": 0.341
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 45.0,
+        "opp_val": 39.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 1.0,
+        "opp_val": 0.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 3.971,
+        "opp_val": 3.979
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 1.125,
+        "opp_val": 1.484
+      },
+      {
+        "cat": "SvHd",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 5.0,
+        "opp_val": 7.0
+      },
       {
         "cat": "R",
         "result": "L",
@@ -3576,9 +3786,149 @@
         "state": "WIN",
         "my_val": 5.0,
         "opp_val": 2.0
+      },
+      {
+        "cat": "R",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 55.0,
+        "opp_val": 49.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 13.0,
+        "opp_val": 15.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 50.0,
+        "opp_val": 45.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 6.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 0.373,
+        "opp_val": 0.299
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 73.0,
+        "opp_val": 75.0
+      },
+      {
+        "cat": "QS",
+        "result": "T",
+        "state": "TIE",
+        "my_val": 7.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 3.134,
+        "opp_val": 2.565
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 1.192,
+        "opp_val": 0.945
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 5.0,
+        "opp_val": 2.0
       }
     ],
     "7": [
+      {
+        "cat": "R",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 60.0,
+        "opp_val": 39.0
+      },
+      {
+        "cat": "HR",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 17.0,
+        "opp_val": 3.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 54.0,
+        "opp_val": 33.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 14.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 0.391,
+        "opp_val": 0.324
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 63.0,
+        "opp_val": 60.0
+      },
+      {
+        "cat": "QS",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 4.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 3.78,
+        "opp_val": 3.068
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 1.18,
+        "opp_val": 1.159
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 5.0,
+        "opp_val": 3.0
+      },
       {
         "cat": "R",
         "result": "W",
@@ -6520,9 +6870,149 @@
         "state": "TIE",
         "my_val": 1.0,
         "opp_val": 1.0
+      },
+      {
+        "cat": "R",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 47.0,
+        "opp_val": 40.0
+      },
+      {
+        "cat": "HR",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 12.0,
+        "opp_val": 10.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 42.0,
+        "opp_val": 41.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 13.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 0.316,
+        "opp_val": 0.338
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 57.0,
+        "opp_val": 70.0
+      },
+      {
+        "cat": "QS",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 4.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 4.37,
+        "opp_val": 4.235
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 1.127,
+        "opp_val": 1.074
+      },
+      {
+        "cat": "SvHd",
+        "result": "T",
+        "state": "TIE",
+        "my_val": 1.0,
+        "opp_val": 1.0
       }
     ],
     "5": [
+      {
+        "cat": "R",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 39.0,
+        "opp_val": 55.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 9.0,
+        "opp_val": 13.0
+      },
+      {
+        "cat": "RBI",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 39.0,
+        "opp_val": 45.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 4.0,
+        "opp_val": 10.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 0.359,
+        "opp_val": 0.379
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 61.0,
+        "opp_val": 66.0
+      },
+      {
+        "cat": "QS",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 5.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 4.154,
+        "opp_val": 3.321
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 1.319,
+        "opp_val": 1.38
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 1.0,
+        "opp_val": 0.0
+      },
       {
         "cat": "R",
         "result": "L",
@@ -9884,9 +10374,149 @@
         "state": "FLOPPABLE",
         "my_val": 2.0,
         "opp_val": 1.0
+      },
+      {
+        "cat": "R",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 52.0,
+        "opp_val": 58.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 14.0,
+        "opp_val": 17.0
+      },
+      {
+        "cat": "RBI",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 41.0,
+        "opp_val": 45.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 11.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 0.372,
+        "opp_val": 0.351
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 36.0,
+        "opp_val": 21.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 3.0,
+        "opp_val": 1.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 4.836,
+        "opp_val": 7.105
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 1.209,
+        "opp_val": 1.579
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 2.0,
+        "opp_val": 1.0
       }
     ],
     "3": [
+      {
+        "cat": "R",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 49.0,
+        "opp_val": 47.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 13.0,
+        "opp_val": 19.0
+      },
+      {
+        "cat": "RBI",
+        "result": "T",
+        "state": "TIE",
+        "my_val": 54.0,
+        "opp_val": 54.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 5.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 0.352,
+        "opp_val": 0.342
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 62.0,
+        "opp_val": 67.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 7.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 2.883,
+        "opp_val": 2.905
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 1.194,
+        "opp_val": 0.949
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 7.0,
+        "opp_val": 5.0
+      },
       {
         "cat": "R",
         "result": "W",
@@ -13248,9 +13878,149 @@
         "state": "LOSS",
         "my_val": 1.0,
         "opp_val": 4.0
+      },
+      {
+        "cat": "R",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 43.0,
+        "opp_val": 57.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 7.0,
+        "opp_val": 14.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 44.0,
+        "opp_val": 38.0
+      },
+      {
+        "cat": "SB",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 5.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 0.389,
+        "opp_val": 0.394
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 43.0,
+        "opp_val": 35.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 4.0,
+        "opp_val": 1.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 4.125,
+        "opp_val": 5.598
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 1.312,
+        "opp_val": 1.463
+      },
+      {
+        "cat": "SvHd",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 1.0,
+        "opp_val": 4.0
       }
     ],
     "1": [
+      {
+        "cat": "R",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 81.0,
+        "opp_val": 55.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 14.0,
+        "opp_val": 15.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 59.0,
+        "opp_val": 46.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 16.0,
+        "opp_val": 6.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 0.351,
+        "opp_val": 0.298
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 94.0,
+        "opp_val": 113.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 7.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "ERA",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 4.328,
+        "opp_val": 3.738
+      },
+      {
+        "cat": "WHIP",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 1.254,
+        "opp_val": 1.027
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 10.0,
+        "opp_val": 6.0
+      },
       {
         "cat": "R",
         "result": "W",

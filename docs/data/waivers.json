@@ -27,14 +27,14 @@
       "rostered": false,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.200 below floor (0.240)",
-        "OBP (0.233) lags xwOBA (0.330)"
+        "BABIP 0.197 below floor (0.240)",
+        "OBP (0.239) lags xwOBA (0.330)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.233,
+        "obp": 0.239,
         "xwoba": 0.3299669287670618,
-        "babip": 0.2,
+        "babip": 0.197,
         "sprint_speed": 29.3
       }
     },
@@ -93,25 +93,6 @@
         "xfip": 4.025474227616201,
         "siera": 3.5900186603783046,
         "ip": 49.0
-      }
-    },
-    {
-      "player_id": "39716",
-      "name": "Tobias Myers",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.93) >> xFIP (4.12), gap=0.81",
-        "ERA (4.93) >> SIERA (3.87), gap=1.06"
-      ],
-      "score": 0.68,
-      "stats": {
-        "era": 4.93,
-        "xfip": 4.122660290111968,
-        "siera": 3.8660731965049866,
-        "ip": 34.666666666666664
       }
     },
     {
@@ -200,14 +181,14 @@
       "rostered": true,
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.238 below floor (0.240)",
-        "OBP (0.291) lags xwOBA (0.320)"
+        "BABIP 0.236 below floor (0.240)",
+        "OBP (0.293) lags xwOBA (0.320)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.291,
+        "obp": 0.293,
         "xwoba": 0.31978471400374076,
-        "babip": 0.238,
+        "babip": 0.236,
         "sprint_speed": 28.2
       }
     },
@@ -362,6 +343,25 @@
         "siera": 2.834600676990904,
         "ip": 26.666666666666668
       }
+    },
+    {
+      "player_id": "4307825",
+      "name": "Spencer Strider",
+      "team": "",
+      "espn_team_id": 8,
+      "rostered": true,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.31) >> xFIP (4.33), gap=0.98",
+        "ERA (5.31) >> SIERA (4.11), gap=1.20"
+      ],
+      "score": 0.68,
+      "stats": {
+        "era": 5.31,
+        "xfip": 4.3287442300564205,
+        "siera": 4.109287132187289,
+        "ip": 39.0
+      }
     }
   ],
   "two_starters_fa": [],
@@ -372,10 +372,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 48.08,
+      "ownership_now": 48.55,
       "ownership_prev": 26.05,
-      "delta": 22.0,
-      "lookback_days": 7
+      "delta": 22.5,
+      "lookback_days": 8
     },
     {
       "player_id": "40937",
@@ -383,10 +383,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 30.11,
+      "ownership_now": 29.78,
       "ownership_prev": 9.22,
-      "delta": 20.9,
-      "lookback_days": 7
+      "delta": 20.6,
+      "lookback_days": 8
     },
     {
       "player_id": "4654313",
@@ -394,10 +394,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 65.27,
+      "ownership_now": 65.33,
       "ownership_prev": 51.11,
       "delta": 14.2,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "35013",
@@ -405,10 +405,10 @@
       "team": "",
       "espn_team_id": 1,
       "rostered": true,
-      "ownership_now": 65.27,
+      "ownership_now": 65.29,
       "ownership_prev": 52.1,
       "delta": 13.2,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "5149064",
@@ -416,10 +416,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 19.45,
+      "ownership_now": 19.49,
       "ownership_prev": 6.97,
       "delta": 12.5,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "5134621",
@@ -427,10 +427,10 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 59.11,
+      "ownership_now": 59.13,
       "ownership_prev": 47.9,
       "delta": 11.2,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "3210625",
@@ -438,10 +438,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 31.86,
+      "ownership_now": 31.96,
       "ownership_prev": 21.01,
-      "delta": 10.8,
-      "lookback_days": 7
+      "delta": 10.9,
+      "lookback_days": 8
     },
     {
       "player_id": "4926296",
@@ -449,10 +449,10 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 31.53,
+      "ownership_now": 31.54,
       "ownership_prev": 21.0,
       "delta": 10.5,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "4686066",
@@ -460,10 +460,10 @@
       "team": "",
       "espn_team_id": 2,
       "rostered": true,
-      "ownership_now": 81.06,
+      "ownership_now": 81.08,
       "ownership_prev": 70.67,
       "delta": 10.4,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "41167",
@@ -471,10 +471,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 38.56,
+      "ownership_now": 38.54,
       "ownership_prev": 28.72,
       "delta": 9.8,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "5014349",
@@ -482,10 +482,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 28.53,
+      "ownership_now": 28.64,
       "ownership_prev": 19.46,
-      "delta": 9.1,
-      "lookback_days": 7
+      "delta": 9.2,
+      "lookback_days": 8
     },
     {
       "player_id": "4619839",
@@ -493,32 +493,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 20.3,
+      "ownership_now": 20.26,
       "ownership_prev": 11.37,
       "delta": 8.9,
-      "lookback_days": 7
-    },
-    {
-      "player_id": "33303",
-      "name": "Max Muncy",
-      "team": "",
-      "espn_team_id": 1,
-      "rostered": true,
-      "ownership_now": 63.61,
-      "ownership_prev": 54.99,
-      "delta": 8.6,
-      "lookback_days": 7
-    },
-    {
-      "player_id": "4917889",
-      "name": "Daylen Lile",
-      "team": "",
-      "espn_team_id": 2,
-      "rostered": true,
-      "ownership_now": 66.91,
-      "ownership_prev": 58.38,
-      "delta": 8.5,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "4414339",
@@ -526,10 +504,32 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 12.77,
+      "ownership_now": 13.27,
       "ownership_prev": 4.43,
-      "delta": 8.3,
-      "lookback_days": 7
+      "delta": 8.8,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "33303",
+      "name": "Max Muncy",
+      "team": "",
+      "espn_team_id": 1,
+      "rostered": true,
+      "ownership_now": 63.63,
+      "ownership_prev": 54.99,
+      "delta": 8.6,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "4917889",
+      "name": "Daylen Lile",
+      "team": "",
+      "espn_team_id": 2,
+      "rostered": true,
+      "ownership_now": 66.92,
+      "ownership_prev": 58.38,
+      "delta": 8.5,
+      "lookback_days": 8
     },
     {
       "player_id": "4345621",
@@ -537,43 +537,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 12.24,
+      "ownership_now": 12.26,
       "ownership_prev": 4.35,
       "delta": 7.9,
-      "lookback_days": 7
-    },
-    {
-      "player_id": "40635",
-      "name": "Royce Lewis",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "ownership_now": 13.68,
-      "ownership_prev": 5.94,
-      "delta": 7.7,
-      "lookback_days": 7
-    },
-    {
-      "player_id": "33857",
-      "name": "Matt Chapman",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "ownership_now": 66.45,
-      "ownership_prev": 58.87,
-      "delta": 7.6,
-      "lookback_days": 7
-    },
-    {
-      "player_id": "4345620",
-      "name": "Dillon Dingler",
-      "team": "",
-      "espn_team_id": 9,
-      "rostered": true,
-      "ownership_now": 80.06,
-      "ownership_prev": 72.55,
-      "delta": 7.5,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "33773",
@@ -581,10 +548,43 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 45.3,
+      "ownership_now": 45.71,
       "ownership_prev": 37.86,
-      "delta": 7.4,
-      "lookback_days": 7
+      "delta": 7.9,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "40635",
+      "name": "Royce Lewis",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "ownership_now": 13.7,
+      "ownership_prev": 5.94,
+      "delta": 7.8,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "33857",
+      "name": "Matt Chapman",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "ownership_now": 66.49,
+      "ownership_prev": 58.87,
+      "delta": 7.6,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "4345620",
+      "name": "Dillon Dingler",
+      "team": "",
+      "espn_team_id": 9,
+      "rostered": true,
+      "ownership_now": 80.02,
+      "ownership_prev": 72.55,
+      "delta": 7.5,
+      "lookback_days": 8
     },
     {
       "player_id": "34984",
@@ -592,21 +592,10 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 67.33,
+      "ownership_now": 67.37,
       "ownership_prev": 60.02,
-      "delta": 7.3,
-      "lookback_days": 7
-    },
-    {
-      "player_id": "42464",
-      "name": "Gabriel Moreno",
-      "team": "",
-      "espn_team_id": 9,
-      "rostered": true,
-      "ownership_now": 38.39,
-      "ownership_prev": 31.45,
-      "delta": 6.9,
-      "lookback_days": 7
+      "delta": 7.4,
+      "lookback_days": 8
     },
     {
       "player_id": "34230",
@@ -614,10 +603,21 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 12.94,
+      "ownership_now": 13.07,
       "ownership_prev": 6.19,
-      "delta": 6.7,
-      "lookback_days": 7
+      "delta": 6.9,
+      "lookback_days": 8
+    },
+    {
+      "player_id": "42464",
+      "name": "Gabriel Moreno",
+      "team": "",
+      "espn_team_id": 9,
+      "rostered": true,
+      "ownership_now": 38.33,
+      "ownership_prev": 31.45,
+      "delta": 6.9,
+      "lookback_days": 8
     },
     {
       "player_id": "38904",
@@ -625,10 +625,10 @@
       "team": "",
       "espn_team_id": 7,
       "rostered": true,
-      "ownership_now": 77.59,
+      "ownership_now": 77.64,
       "ownership_prev": 71.71,
       "delta": 5.9,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "41516",
@@ -636,10 +636,10 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 50.17,
+      "ownership_now": 50.13,
       "ownership_prev": 44.81,
-      "delta": 5.4,
-      "lookback_days": 7
+      "delta": 5.3,
+      "lookback_days": 8
     },
     {
       "player_id": "4345164",
@@ -647,10 +647,10 @@
       "team": "",
       "espn_team_id": 9,
       "rostered": true,
-      "ownership_now": 81.62,
+      "ownership_now": 81.63,
       "ownership_prev": 76.32,
       "delta": 5.3,
-      "lookback_days": 7
+      "lookback_days": 8
     },
     {
       "player_id": "5134630",
@@ -658,10 +658,10 @@
       "team": "",
       "espn_team_id": 5,
       "rostered": true,
-      "ownership_now": 83.89,
+      "ownership_now": 83.76,
       "ownership_prev": 78.7,
-      "delta": 5.2,
-      "lookback_days": 7
+      "delta": 5.1,
+      "lookback_days": 8
     }
   ]
 }
