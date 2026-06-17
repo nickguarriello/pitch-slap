@@ -1,25 +1,27 @@
 {
-  "as_of": "2026-06-17T11:59:13.063556+00:00",
+  "as_of": "2026-06-17T12:02:47.607936+00:00",
   "last_run_mode": "light",
   "last_full_run": "2026-06-16T23:39:05.484655+00:00",
-  "last_light_run": "2026-06-17T01:10:04.091516+00:00",
-  "espn_last_fetch": "2026-06-17T11:59:13.063556+00:00",
-  "mlb_last_fetch": "2026-06-17T11:59:14.638261+00:00",
+  "last_light_run": "2026-06-17T11:58:57.391981+00:00",
+  "espn_last_fetch": "2026-06-17T12:02:47.607936+00:00",
+  "mlb_last_fetch": "2026-06-17T12:02:49.544946+00:00",
   "statcast_last_fetch": "2026-06-15T23:55:54.730796+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-06-15",
-    "games": 10,
-    "final": 10,
-    "incomplete": [],
+    "date": "2026-06-16",
+    "games": 15,
+    "final": 14,
+    "incomplete": [
+      "SF@ATL (Suspended)"
+    ],
     "last_game": "TB@LAD",
-    "all_settled": true
+    "all_settled": false
   },
   "espn_update": {
-    "standings_update": "2026-06-16T08:35:43.663000+00:00",
-    "waiver_last_execution": "2026-06-16T08:35:42.940000+00:00",
-    "scoring_period": 84,
-    "checked_at": "2026-06-16T23:39:21.430542+00:00"
+    "standings_update": "2026-06-17T09:21:26.262000+00:00",
+    "waiver_last_execution": "2026-06-17T09:21:26.076000+00:00",
+    "scoring_period": 85,
+    "checked_at": "2026-06-17T12:02:48.127538+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 4438,

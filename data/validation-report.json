@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-06-17T11:59:31.199096+00:00",
+  "run_ts": "2026-06-17T12:02:58.898848+00:00",
   "overall": "warn",
   "checks": [
     {
@@ -136,38 +136,40 @@
     }
   ],
   "meta": {
-    "espn_last_fetch": "2026-06-17T11:59:13.063556+00:00",
+    "espn_last_fetch": "2026-06-17T12:02:47.607936+00:00",
     "espn_status": "ok",
     "espn_rows": 554,
-    "mlb_last_fetch": "2026-06-17T11:59:14.638261+00:00",
-    "transform_last_run": "2026-06-17T11:59:31.172994+00:00",
-    "validate_last_run": "2026-06-17T01:10:40.076307+00:00",
+    "mlb_last_fetch": "2026-06-17T12:02:49.544946+00:00",
+    "transform_last_run": "2026-06-17T12:02:58.880567+00:00",
+    "validate_last_run": "2026-06-17T11:59:31.200649+00:00",
     "validate_overall": "warn",
-    "evaluate_last_run": "2026-06-17T01:10:40.104207+00:00",
-    "cats_winning": 2,
-    "last_light_run": "2026-06-17T01:10:04.091516+00:00",
+    "evaluate_last_run": "2026-06-17T11:59:31.229466+00:00",
+    "cats_winning": 1,
+    "last_light_run": "2026-06-17T11:58:57.391981+00:00",
     "last_run_mode": "light",
-    "schedule_rows": 188,
+    "schedule_rows": 190,
     "statcast_last_fetch": "2026-06-15T23:55:54.730796+00:00",
-    "report_last_run": "2026-06-17T01:10:40.296264+00:00",
-    "transform_rows": 2605,
+    "report_last_run": "2026-06-17T11:59:31.365662+00:00",
+    "transform_rows": 2712,
     "cats_losing": 1,
     "last_full_run": "2026-06-16T23:39:05.484655+00:00",
     "statcast_rows": 515,
-    "trades_last_run": "2026-06-17T01:10:47.512474+00:00",
+    "trades_last_run": "2026-06-17T11:59:37.486843+00:00",
     "games_settled": {
-      "date": "2026-06-15",
-      "games": 10,
-      "final": 10,
-      "incomplete": [],
+      "date": "2026-06-16",
+      "games": 15,
+      "final": 14,
+      "incomplete": [
+        "SF@ATL (Suspended)"
+      ],
       "last_game": "TB@LAD",
-      "all_settled": true
+      "all_settled": false
     },
     "espn_update": {
-      "standings_update": "2026-06-16T08:35:43.663000+00:00",
-      "waiver_last_execution": "2026-06-16T08:35:42.940000+00:00",
-      "scoring_period": 84,
-      "checked_at": "2026-06-16T23:39:21.430542+00:00"
+      "standings_update": "2026-06-17T09:21:26.262000+00:00",
+      "waiver_last_execution": "2026-06-17T09:21:26.076000+00:00",
+      "scoring_period": 85,
+      "checked_at": "2026-06-17T12:02:48.127538+00:00"
     }
   }
 }
