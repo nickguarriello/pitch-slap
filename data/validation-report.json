@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-06-17T01:10:40.074641+00:00",
+  "run_ts": "2026-06-17T11:59:31.199096+00:00",
   "overall": "warn",
   "checks": [
     {
@@ -83,14 +83,14 @@
     {
       "check": "completeness.fact_player_stats",
       "status": "pass",
-      "detail": "2603 rows across 6 windows",
-      "row_count": 2603
+      "detail": "2712 rows across 6 windows",
+      "row_count": 2712
     },
     {
       "check": "completeness.schedule",
       "status": "pass",
-      "detail": "188 upcoming team-game slots",
-      "row_count": 188
+      "detail": "190 upcoming team-game slots",
+      "row_count": 190
     },
     {
       "check": "completeness.transform_coverage",
@@ -131,30 +131,30 @@
     {
       "check": "staleness.statcast",
       "status": "pass",
-      "detail": "Statcast data is 25.2h old",
+      "detail": "Statcast data is 36.1h old",
       "row_count": 0
     }
   ],
   "meta": {
-    "espn_last_fetch": "2026-06-17T01:10:21.122566+00:00",
+    "espn_last_fetch": "2026-06-17T11:59:13.063556+00:00",
     "espn_status": "ok",
     "espn_rows": 554,
-    "mlb_last_fetch": "2026-06-17T01:10:22.847156+00:00",
-    "transform_last_run": "2026-06-17T01:10:40.048340+00:00",
-    "validate_last_run": "2026-06-16T23:39:38.730884+00:00",
+    "mlb_last_fetch": "2026-06-17T11:59:14.638261+00:00",
+    "transform_last_run": "2026-06-17T11:59:31.172994+00:00",
+    "validate_last_run": "2026-06-17T01:10:40.076307+00:00",
     "validate_overall": "warn",
-    "evaluate_last_run": "2026-06-16T23:39:38.754876+00:00",
+    "evaluate_last_run": "2026-06-17T01:10:40.104207+00:00",
     "cats_winning": 2,
-    "last_light_run": "2026-06-16T18:56:29.968301+00:00",
-    "last_run_mode": "full",
+    "last_light_run": "2026-06-17T01:10:04.091516+00:00",
+    "last_run_mode": "light",
     "schedule_rows": 188,
     "statcast_last_fetch": "2026-06-15T23:55:54.730796+00:00",
-    "report_last_run": "2026-06-16T23:39:38.945014+00:00",
+    "report_last_run": "2026-06-17T01:10:40.296264+00:00",
     "transform_rows": 2605,
     "cats_losing": 1,
     "last_full_run": "2026-06-16T23:39:05.484655+00:00",
     "statcast_rows": 515,
-    "trades_last_run": "2026-06-16T23:39:46.026862+00:00",
+    "trades_last_run": "2026-06-17T01:10:47.512474+00:00",
     "games_settled": {
       "date": "2026-06-15",
       "games": 10,

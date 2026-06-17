@@ -10,11 +10,11 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.245 below floor (0.260)",
-        "OBP (0.251) lags xwOBA (0.310)"
+        "OBP (0.250) lags xwOBA (0.310)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.251,
+        "obp": 0.25,
         "xwoba": 0.3101984904362605,
         "babip": 0.245,
         "sprint_speed": 25.7
@@ -101,26 +101,6 @@
       }
     },
     {
-      "player_id": "40944",
-      "name": "Edward Cabrera",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.97) >> xFIP (3.88), gap=1.09",
-        "ERA (4.97) >> SIERA (4.15), gap=0.82"
-      ],
-      "score": 0.68,
-      "stats": {
-        "era": 4.97,
-        "xfip": 3.8820760796097322,
-        "siera": 4.1513460312736346,
-        "ip": 67.0
-      }
-    },
-    {
       "player_id": "33224",
       "name": "Devin Williams",
       "team": "",
@@ -158,6 +138,26 @@
         "xfip": 4.368666855538193,
         "siera": 4.2833249101433335,
         "ip": 79.0
+      }
+    },
+    {
+      "player_id": "40944",
+      "name": "Edward Cabrera",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.21) >> xFIP (3.88), gap=1.33",
+        "ERA (5.21) >> SIERA (4.15), gap=1.06"
+      ],
+      "score": 0.68,
+      "stats": {
+        "era": 5.21,
+        "xfip": 3.8820760796097322,
+        "siera": 4.1513460312736346,
+        "ip": 67.33333333333333
       }
     },
     {
@@ -251,14 +251,14 @@
       "eligible_slots": "2B,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.239 below floor (0.240)",
-        "OBP (0.280) lags xwOBA (0.329)"
+        "BABIP 0.234 below floor (0.240)",
+        "OBP (0.271) lags xwOBA (0.329)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.28,
+        "obp": 0.271,
         "xwoba": 0.3290620664270913,
-        "babip": 0.239,
+        "babip": 0.234,
         "sprint_speed": 28.0
       }
     },
@@ -283,6 +283,26 @@
       }
     },
     {
+      "player_id": "40080",
+      "name": "Trevor Megill",
+      "team": "",
+      "espn_team_id": 8,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.15) >> xFIP (3.06), gap=1.09",
+        "ERA (4.15) >> SIERA (2.62), gap=1.53"
+      ],
+      "score": 0.68,
+      "stats": {
+        "era": 4.15,
+        "xfip": 3.0585315892100335,
+        "siera": 2.62059830457105,
+        "ip": 26.0
+      }
+    },
+    {
       "player_id": "39667",
       "name": "Jesus Luzardo",
       "team": "",
@@ -300,26 +320,6 @@
         "xfip": 3.174654892534483,
         "siera": 3.4103558693767058,
         "ip": 85.66666666666667
-      }
-    },
-    {
-      "player_id": "40080",
-      "name": "Trevor Megill",
-      "team": "",
-      "espn_team_id": 8,
-      "rostered": true,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.32) >> xFIP (3.06), gap=1.26",
-        "ERA (4.32) >> SIERA (2.62), gap=1.70"
-      ],
-      "score": 0.68,
-      "stats": {
-        "era": 4.32,
-        "xfip": 3.0585315892100335,
-        "siera": 2.62059830457105,
-        "ip": 25.0
       }
     },
     {
@@ -386,25 +386,36 @@
   "two_starters_fa": [],
   "ownership_alerts": [
     {
-      "player_id": "4414339",
-      "name": "Brandon Young",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "ownership_now": 22.13,
-      "ownership_prev": 12.77,
-      "delta": 9.4,
-      "lookback_days": 2
-    },
-    {
       "player_id": "4326697",
       "name": "Reid Detmers",
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 56.96,
+      "ownership_now": 56.62,
       "ownership_prev": 48.08,
-      "delta": 8.9,
+      "delta": 8.5,
+      "lookback_days": 2
+    },
+    {
+      "player_id": "34230",
+      "name": "Willi Castro",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "ownership_now": 19.57,
+      "ownership_prev": 12.94,
+      "delta": 6.6,
+      "lookback_days": 2
+    },
+    {
+      "player_id": "4414339",
+      "name": "Brandon Young",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "ownership_now": 18.57,
+      "ownership_prev": 12.77,
+      "delta": 5.8,
       "lookback_days": 2
     },
     {
@@ -413,9 +424,20 @@
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "ownership_now": 52.38,
+      "ownership_now": 50.44,
       "ownership_prev": 45.3,
-      "delta": 7.1,
+      "delta": 5.1,
+      "lookback_days": 2
+    },
+    {
+      "player_id": "39898",
+      "name": "Peter Lambert",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "ownership_now": 14.58,
+      "ownership_prev": 9.51,
+      "delta": 5.1,
       "lookback_days": 2
     }
   ]
