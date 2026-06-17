@@ -204,6 +204,8 @@ All resolved:
 
 | 2026-06-16 (cont10) | **UI feedback round 2.** (1) **ERA/WHIP IP-qualifier rewrite** (`evaluate.compute_cat_states`): now considers BOTH teams' weekly IP (added opponent IP via `current-opponent.json` → opp roster current-window IP). Logic: neither team ≥15 IP → TIE (with dual counter); only one ≥15 → that team wins (other forfeits); both ≥15 → normal value comparison. Checked before the None-guard so early-week null rates still show TIE. `index.html` IP line now shows the full note ("You X/15 IP · Opp Y/15 IP"). Verified: ERA/WHIP → TIE, "You 1.0/15 · Opp 5.0/15". (2) **league.html record sort fixed** — clicking Record did nothing because it sorted a string ("6-3-1"); now sorts by numeric score (wins + 0.5·ties). (3) Matchup "Season W/L/T" question answered (no change): it's the per-category weekly W-L-T record across completed weeks (from cat_records/fact_matchups), e.g. weeks you won the HR category — not the overall matchup record. | — |
 
+| 2026-06-17 | **Bug fix: fact_matchups duplicate accumulation** (matchup tab "Season W/L/T" showed e.g. R 160-139). Root cause: `write_matchups_to_db` used `INSERT OR IGNORE INTO fact_matchups` but the table has no unique constraint, so every run re-inserted the full re-fetched season history → ~30× duplicates (win_rate looked fine because ratios were preserved, hiding it). Fix: full-refresh my final rows (`DELETE FROM fact_matchups WHERE my_team_id=? AND is_final=1`) before the history insert — idempotent, no schema change, and auto-cleans existing dupes on next run. Verified: fact_matchups 2990→110 rows (11 weeks × 10 cats); R now 6-5-0, all cats sum to 11 completed weeks. Need-weights unaffected (ratio-preserved). | — |
+
 ---
 
 *Update this table at the end of every session.*

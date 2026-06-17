@@ -469,7 +469,12 @@ def write_matchups_to_db(matchup_data: dict) -> None:
             )
         break   # only one matchup involves my team
 
-    # Historical matchup results → fact_matchups
+    # Historical matchup results → fact_matchups.
+    # Full-refresh my final rows first: the entire season history is re-fetched
+    # every run, so without this the table accumulates a duplicate copy per run
+    # (INSERT OR IGNORE can't dedup — there's no unique constraint), inflating
+    # the per-category W/L records ~Nx where N = number of runs.
+    conn.execute("DELETE FROM fact_matchups WHERE my_team_id = ? AND is_final = 1", (TEAM_ID,))
     for m in matchup_data.get('history', []):
         home_id = m['home_team_id']
         away_id = m['away_team_id']
