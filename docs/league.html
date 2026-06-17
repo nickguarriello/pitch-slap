@@ -120,8 +120,13 @@ function renderTable(){
   let rows=[...leagueData];
   rows.sort((a,b)=>{
     if(sortCol==='team_name') return (a.team_name||'').localeCompare(b.team_name||'')*sortDir;
-    if(sortCol==='record'||sortCol==='cat_wins'){
-      const av=a[sortCol]??-1, bv=b[sortCol]??-1;
+    if(sortCol==='record'){
+      // 'record' is a string ("6-3-1") — sort by a numeric score (wins + half-ties)
+      const rs=t=>(t.wins||0)+0.5*(t.ties||0);
+      return (rs(b)-rs(a))*sortDir;
+    }
+    if(sortCol==='cat_wins'){
+      const av=a.cat_wins??-1, bv=b.cat_wins??-1;
       return (bv-av)*sortDir;
     }
     const field=CAT_COLS[sortCol]||sortCol;

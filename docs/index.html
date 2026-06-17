@@ -152,7 +152,7 @@ async function main() {
     const label = CAT_LABELS[cat] || cat;
     const digits = cat === 'OBP' ? 3 : (cat === 'ERA' || cat === 'WHIP') ? 2 : 0;
     const ipLine = s.ip_note
-      ? `<div class="vals" style="color:var(--warn);font-size:10px">${(s.my_ip_week||0).toFixed(1)} / ${15} IP</div>`
+      ? `<div class="vals" style="color:var(--warn);font-size:10px">${s.ip_note}</div>`
       : '';
     catEl.innerHTML += `
       <div class="cat ${state}">

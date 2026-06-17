@@ -125,6 +125,31 @@ def compute_cat_states(conn: sqlite3.Connection) -> dict:
     ).fetchone()
     my_ip_week = _f(ip_row["total_ip"]) or 0.0
 
+    # Opponent's current-week IP — needed for the ERA/WHIP qualifier (each team
+    # must reach IP_MINIMUM_PER_WEEK to qualify in the rate categories).
+    opp_team_id = None
+    opp_path = os.path.join(DATA_DIR, "current-opponent.json")
+    if os.path.exists(opp_path):
+        try:
+            opp_team_id = json.load(open(opp_path)).get("current_opp_team_id")
+        except Exception:
+            opp_team_id = None
+    opp_ip_week = 0.0
+    if opp_team_id is not None:
+        opp_row = conn.execute(
+            """
+            SELECT COALESCE(SUM(fps.ip), 0.0) AS total_ip
+            FROM fact_player_stats fps
+            JOIN fact_espn_rosters fer ON fps.player_id = fer.player_id
+            WHERE fps.window = 'current'
+              AND fps.ip IS NOT NULL AND fps.ip > 0
+              AND fer.espn_team_id = ?
+              AND fer.snapshot_date = (SELECT MAX(snapshot_date) FROM fact_espn_rosters)
+            """,
+            (opp_team_id,),
+        ).fetchone()
+        opp_ip_week = _f(opp_row["total_ip"]) or 0.0
+
     states: dict[str, dict] = {}
 
     for cat in ALL_CATS:
@@ -132,26 +157,29 @@ def compute_cat_states(conn: sqlite3.Connection) -> dict:
         my   = data.get("my_val")
         opp  = data.get("opp_val")
 
+        # ERA/WHIP IP qualifier (checked before the None guard — early in the week
+        # the rate values can be null while IP is still accruing). Each team must
+        # reach IP_MINIMUM_PER_WEEK to qualify in the rate category:
+        #   neither qualified  -> TIE (show the IP counter)
+        #   only one qualified -> that team wins (the other forfeits the cat)
+        #   both qualified     -> compare actual ERA/WHIP values (fall through)
+        if cat in ("ERA", "WHIP"):
+            my_q  = my_ip_week  >= IP_MINIMUM_PER_WEEK
+            opp_q = opp_ip_week >= IP_MINIMUM_PER_WEEK
+            ip_note = (f"You {my_ip_week:.1f}/{IP_MINIMUM_PER_WEEK:.0f} IP · "
+                       f"Opp {opp_ip_week:.1f}/{IP_MINIMUM_PER_WEEK:.0f} IP")
+            if not (my_q and opp_q):
+                state = "WIN" if (my_q and not opp_q) else ("LOSS" if (opp_q and not my_q) else "TIE")
+                states[cat] = {
+                    "state": state, "my_val": my, "opp_val": opp, "gap": None,
+                    "ip_note": ip_note,
+                    "my_ip_week": my_ip_week, "opp_ip_week": opp_ip_week,
+                }
+                continue
+            # both qualified -> fall through to the normal value comparison below
+
         if my is None or opp is None:
             states[cat] = {"state": "UNKNOWN", "my_val": my, "opp_val": opp, "gap": None}
-            continue
-
-        # IP qualifier: ERA and WHIP require IP_MINIMUM_PER_WEEK innings pitched.
-        # If we haven't reached it, we auto-lose regardless of current ERA/WHIP.
-        if cat in ("ERA", "WHIP") and my_ip_week < IP_MINIMUM_PER_WEEK:
-            if opp is not None and opp > 0:
-                # Opponent has pitched; we're unqualified → auto-loss
-                states[cat] = {
-                    "state":      "LOSS",
-                    "my_val":     my,
-                    "opp_val":    opp,
-                    "gap":        round(-opp, 4),  # negative gap = loss
-                    "ip_note":    f"Need {IP_MINIMUM_PER_WEEK:.0f} IP to qualify ({my_ip_week:.1f} so far)",
-                    "my_ip_week": my_ip_week,
-                }
-            else:
-                # Neither team has pitched yet — genuinely unknown
-                states[cat] = {"state": "UNKNOWN", "my_val": my, "opp_val": opp, "gap": None}
             continue
 
         lower_better = cat in CATS_LOWER_IS_BETTER
