@@ -1,40 +1,38 @@
 {
-  "as_of": "2026-06-17T13:37:11.244469+00:00",
+  "as_of": "2026-06-18T12:46:31.538624+00:00",
   "last_run_mode": "full",
   "last_full_run": "2026-06-17T12:02:32.382414+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-06-17T13:37:11.244469+00:00",
-  "mlb_last_fetch": "2026-06-17T13:37:11.617627+00:00",
+  "espn_last_fetch": "2026-06-18T12:46:31.538624+00:00",
+  "mlb_last_fetch": "2026-06-18T12:46:32.186956+00:00",
   "statcast_last_fetch": "2026-06-15T23:55:54.730796+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-06-16",
+    "date": "2026-06-17",
     "games": 15,
-    "final": 14,
-    "incomplete": [
-      "SF@ATL (Suspended)"
-    ],
-    "last_game": "TB@LAD",
-    "all_settled": false
+    "final": 15,
+    "incomplete": [],
+    "last_game": "PIT@OAK",
+    "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-06-17T09:21:26.262000+00:00",
-    "waiver_last_execution": "2026-06-17T09:21:26.076000+00:00",
-    "scoring_period": 85,
-    "checked_at": "2026-06-17T13:37:11.351189+00:00"
+    "standings_update": "2026-06-18T08:36:18.006000+00:00",
+    "waiver_last_execution": "2026-06-18T08:36:17.747000+00:00",
+    "scoring_period": 86,
+    "checked_at": "2026-06-18T12:46:31.634326+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 554,
-    "fact_player_stats": 2712,
+    "fact_player_stats": 2779,
     "fact_statcast": 0,
     "fact_matchups": 110,
-    "stats_season": 549,
-    "stats_first_half": 549,
+    "stats_season": 552,
+    "stats_first_half": 552,
     "stats_second_half": 0,
-    "stats_30d": 486,
-    "stats_14d": 444,
-    "stats_7d": 423,
-    "stats_current": 261
+    "stats_30d": 485,
+    "stats_14d": 448,
+    "stats_7d": 426,
+    "stats_current": 316
   },
   "validation_checks": [
     {
@@ -105,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "2712 rows across 6 windows"
+      "detail": "2779 rows across 6 windows"
     },
     {
       "name": "",
@@ -145,7 +143,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "Statcast data is 37.7h old"
+      "detail": "Statcast data is 60.8h old"
     }
   ]
 }

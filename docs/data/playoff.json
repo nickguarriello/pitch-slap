@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-17",
+  "as_of": "2026-06-18",
   "playoff_start_week": 22,
   "current_week": 12,
   "weeks_until_playoffs": 9,
@@ -56,7 +56,7 @@
         "RBI": 4,
         "SB": 2,
         "OBP": 1,
-        "K": 6,
+        "K": 7,
         "QS": 6,
         "SvHd": 1,
         "ERA": 2,
@@ -114,7 +114,7 @@
         "RBI": 3,
         "SB": 5,
         "OBP": 6,
-        "K": 7,
+        "K": 6,
         "QS": 5,
         "SvHd": 5,
         "ERA": 3,
@@ -142,7 +142,7 @@
         "HR": 7,
         "RBI": 7,
         "SB": 4,
-        "OBP": 3,
+        "OBP": 4,
         "K": 1,
         "QS": 1,
         "SvHd": 8,
@@ -174,7 +174,7 @@
         "OBP": 2,
         "K": 5,
         "QS": 2,
-        "SvHd": 6,
+        "SvHd": 7,
         "ERA": 4,
         "WHIP": 5
       },
@@ -229,10 +229,10 @@
         "HR": 8,
         "RBI": 8,
         "SB": 7,
-        "OBP": 4,
+        "OBP": 3,
         "K": 4,
         "QS": 4,
-        "SvHd": 7,
+        "SvHd": 6,
         "ERA": 5,
         "WHIP": 4
       },
@@ -256,7 +256,7 @@
     "RBI": 4,
     "SB": 2,
     "OBP": 1,
-    "K": 6,
+    "K": 7,
     "QS": 6,
     "SvHd": 1,
     "ERA": 2,
@@ -302,10 +302,10 @@
           "rank_gap": 4
         },
         "K": {
-          "my_rank": 6,
+          "my_rank": 7,
           "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "QS": {
           "my_rank": 6,
@@ -379,10 +379,10 @@
           "rank_gap": 6
         },
         "K": {
-          "my_rank": 6,
+          "my_rank": 7,
           "their_rank": 3,
           "winner": "theirs",
-          "rank_gap": 3
+          "rank_gap": 4
         },
         "QS": {
           "my_rank": 6,
@@ -422,7 +422,7 @@
       "team_name": "2010 State Sectional Champ",
       "abbrev": "BJL",
       "is_likely_r1_opp": false,
-      "projected_score": "7-3",
+      "projected_score": "6-4",
       "category_matchup": {
         "R": {
           "my_rank": 2,
@@ -455,9 +455,9 @@
           "rank_gap": 5
         },
         "K": {
-          "my_rank": 6,
-          "their_rank": 7,
-          "winner": "mine",
+          "my_rank": 7,
+          "their_rank": 6,
+          "winner": "theirs",
           "rank_gap": 1
         },
         "QS": {
