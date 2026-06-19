@@ -1,22 +1,22 @@
 {
   "cat_states": {
     "R": {
-      "state": "FLOPPABLE",
-      "my_val": 23.0,
+      "state": "WIN",
+      "my_val": 29.0,
       "opp_val": 14.0,
-      "gap": 9.0
+      "gap": 15.0
     },
     "HR": {
-      "state": "FLOPPABLE",
-      "my_val": 10.0,
+      "state": "WIN",
+      "my_val": 12.0,
       "opp_val": 6.0,
-      "gap": 4.0
+      "gap": 6.0
     },
     "RBI": {
-      "state": "FLOPPABLE",
-      "my_val": 25.0,
+      "state": "WIN",
+      "my_val": 29.0,
       "opp_val": 22.0,
-      "gap": 3.0
+      "gap": 7.0
     },
     "SB": {
       "state": "FLOPPABLE",
@@ -26,39 +26,39 @@
     },
     "OBP": {
       "state": "FLOPPABLE",
-      "my_val": 0.34545455,
-      "opp_val": 0.3359375,
-      "gap": 0.0095
+      "my_val": 0.34146341,
+      "opp_val": 0.32413793,
+      "gap": 0.0173
     },
     "K": {
       "state": "LOSS",
-      "my_val": 3.0,
-      "opp_val": 24.0,
-      "gap": -21.0
+      "my_val": 7.0,
+      "opp_val": 30.0,
+      "gap": -23.0
     },
     "QS": {
-      "state": "FLIPPABLE",
-      "my_val": 0.0,
+      "state": "TIE",
+      "my_val": 1.0,
       "opp_val": 1.0,
-      "gap": -1.0
+      "gap": 0.0
     },
     "ERA": {
       "state": "LOSS",
-      "my_val": 6.75,
-      "opp_val": 6.51724138,
+      "my_val": 5.10810811,
+      "opp_val": 5.91780822,
       "gap": null,
-      "ip_note": "You 5.3/15 IP \u00b7 Opp 25.3/15 IP",
-      "my_ip_week": 5.333333333333333,
-      "opp_ip_week": 25.333333333333332
+      "ip_note": "You 12.3/15 IP \u00b7 Opp 30.3/15 IP",
+      "my_ip_week": 12.333333333333332,
+      "opp_ip_week": 30.333333333333332
     },
     "WHIP": {
       "state": "LOSS",
-      "my_val": 1.6875,
-      "opp_val": 1.81034483,
+      "my_val": 1.2972973,
+      "opp_val": 1.76712329,
       "gap": null,
-      "ip_note": "You 5.3/15 IP \u00b7 Opp 25.3/15 IP",
-      "my_ip_week": 5.333333333333333,
-      "opp_ip_week": 25.333333333333332
+      "ip_note": "You 12.3/15 IP \u00b7 Opp 30.3/15 IP",
+      "my_ip_week": 12.333333333333332,
+      "opp_ip_week": 30.333333333333332
     },
     "SvHd": {
       "state": "FLOPPABLE",
@@ -1096,11 +1096,11 @@
   "constraints": {
     "acquisitions_used": 1,
     "acquisitions_remaining": 6,
-    "ip_accumulated": 5.333333333333333,
-    "ip_remaining": 9.7,
+    "ip_accumulated": 12.333333333333332,
+    "ip_remaining": 2.7,
     "waiver_priority": 3,
     "acq_alert": null,
-    "ip_alert": "IP PACE: only 5.3 IP by Thursday \u2014 at risk of minimum",
+    "ip_alert": null,
     "waiver_alert": "STRONG: waiver priority #3 \u2014 act early in week"
   }
 }
