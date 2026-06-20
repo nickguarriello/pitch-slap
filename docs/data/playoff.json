@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-19",
+  "as_of": "2026-06-20",
   "playoff_start_week": 22,
   "current_week": 12,
   "weeks_until_playoffs": 9,
@@ -28,7 +28,7 @@
         "SB": 1,
         "OBP": 7,
         "K": 3,
-        "QS": 7,
+        "QS": 6,
         "SvHd": 4,
         "ERA": 6,
         "WHIP": 8
@@ -57,7 +57,7 @@
         "SB": 2,
         "OBP": 1,
         "K": 7,
-        "QS": 6,
+        "QS": 7,
         "SvHd": 1,
         "ERA": 2,
         "WHIP": 1
@@ -257,7 +257,7 @@
     "SB": 2,
     "OBP": 1,
     "K": 7,
-    "QS": 6,
+    "QS": 7,
     "SvHd": 1,
     "ERA": 2,
     "WHIP": 1
@@ -308,10 +308,10 @@
           "rank_gap": 1
         },
         "QS": {
-          "my_rank": 6,
+          "my_rank": 7,
           "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "ERA": {
           "my_rank": 2,
@@ -346,7 +346,7 @@
       "team_name": "Lunch",
       "abbrev": "LCH",
       "is_likely_r1_opp": false,
-      "projected_score": "6-4",
+      "projected_score": "5-5",
       "category_matchup": {
         "R": {
           "my_rank": 2,
@@ -385,9 +385,9 @@
           "rank_gap": 4
         },
         "QS": {
-          "my_rank": 6,
-          "their_rank": 7,
-          "winner": "mine",
+          "my_rank": 7,
+          "their_rank": 6,
+          "winner": "theirs",
           "rank_gap": 1
         },
         "ERA": {
@@ -461,10 +461,10 @@
           "rank_gap": 1
         },
         "QS": {
-          "my_rank": 6,
+          "my_rank": 7,
           "their_rank": 5,
           "winner": "theirs",
-          "rank_gap": 1
+          "rank_gap": 2
         },
         "ERA": {
           "my_rank": 2,

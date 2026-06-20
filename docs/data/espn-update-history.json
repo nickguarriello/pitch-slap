@@ -44,6 +44,15 @@
       "games_final_date": "2026-06-18",
       "all_games_final": true,
       "last_game": "LAA@OAK"
+    },
+    {
+      "run_ts": "2026-06-20T11:51:30.031599+00:00",
+      "espn_standings_update": "2026-06-20T08:47:15.073000+00:00",
+      "espn_waiver_execution": "2026-06-20T08:47:13.907000+00:00",
+      "scoring_period": 88,
+      "games_final_date": "2026-06-19",
+      "all_games_final": true,
+      "last_game": "BAL@LAD"
     }
   ]
 }

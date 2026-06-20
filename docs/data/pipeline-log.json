@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-06-19T13:28:53.169587+00:00",
+  "as_of": "2026-06-20T11:51:36.010280+00:00",
   "last_run_mode": "full",
   "last_full_run": "2026-06-17T12:02:32.382414+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-06-19T13:28:53.169587+00:00",
-  "mlb_last_fetch": "2026-06-19T13:28:53.814266+00:00",
+  "espn_last_fetch": "2026-06-20T11:51:36.010280+00:00",
+  "mlb_last_fetch": "2026-06-20T11:51:36.309287+00:00",
   "statcast_last_fetch": "2026-06-15T23:55:54.730796+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-06-18",
-    "games": 9,
-    "final": 9,
+    "date": "2026-06-19",
+    "games": 14,
+    "final": 14,
     "incomplete": [],
-    "last_game": "LAA@OAK",
+    "last_game": "BAL@LAD",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-06-19T09:06:39.994000+00:00",
-    "waiver_last_execution": "2026-06-19T09:06:39.339000+00:00",
-    "scoring_period": 87,
-    "checked_at": "2026-06-19T13:28:53.296299+00:00"
+    "standings_update": "2026-06-20T08:47:15.073000+00:00",
+    "waiver_last_execution": "2026-06-20T08:47:13.907000+00:00",
+    "scoring_period": 88,
+    "checked_at": "2026-06-20T11:51:36.078584+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 554,
-    "fact_player_stats": 2795,
+    "fact_player_stats": 2830,
     "fact_statcast": 0,
     "fact_matchups": 110,
     "stats_season": 552,
     "stats_first_half": 552,
     "stats_second_half": 0,
-    "stats_30d": 483,
-    "stats_14d": 447,
-    "stats_7d": 424,
-    "stats_current": 337
+    "stats_30d": 482,
+    "stats_14d": 445,
+    "stats_7d": 420,
+    "stats_current": 379
   },
   "validation_checks": [
     {
@@ -57,8 +57,8 @@
     },
     {
       "name": "",
-      "status": "pass",
-      "detail": ""
+      "status": "warn",
+      "detail": "1 pitchers with WHIP > 3.50"
     },
     {
       "name": "",
@@ -103,12 +103,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "2795 rows across 6 windows"
+      "detail": "2830 rows across 6 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "190 upcoming team-game slots"
+      "detail": "192 upcoming team-game slots"
     },
     {
       "name": "",
@@ -143,7 +143,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "Statcast data is 85.6h old"
+      "detail": "Statcast data is 107.9h old"
     }
   ]
 }
