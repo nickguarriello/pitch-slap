@@ -1,157 +1,86 @@
 {
-  "generated_for_snapshot": "2026-06-21",
+  "generated_for_snapshot": "2026-06-22",
   "my_team_id": 1,
   "my_team_name": "Pitch Slap",
   "my_need_weights": {
-    "R": 0.44,
+    "R": 0.4,
     "HR": 0.49,
-    "RBI": 0.53,
+    "RBI": 0.2,
     "SB": 0.44,
     "OBP": 0.7,
     "K": 0.66,
     "QS": 0.66,
     "ERA": 0.44,
     "WHIP": 0.4,
-    "SvHd": 0.4
+    "SvHd": 0.1
   },
   "teams": [
     {
-      "team_id": 6,
-      "team_name": "All Rise Run Club",
+      "team_id": 9,
+      "team_name": "ICECOLDBEERHERE!",
       "their_top_needs": [
         "HR",
-        "RBI",
-        "R"
+        "R",
+        "SB"
       ],
       "trades": [
         {
           "give": [
-            "Sonny Gray"
-          ],
-          "get": [
-            "Kevin McGonigle"
-          ],
-          "my_score": 1.035,
-          "their_score": 0.022,
-          "drivers": {
-            "R": 0.023,
-            "HR": 0.008,
-            "RBI": -0.013,
-            "SB": -0.014,
-            "K": -0.034,
-            "QS": -0.092,
-            "SvHd": 0.104,
-            "OBP": 0.7,
-            "ERA": 0.154,
-            "WHIP": 0.2
-          },
-          "delta": {
-            "R": 19.0,
-            "HR": 2.0,
-            "RBI": -9.0,
-            "SB": -3.0,
-            "K": -27.0,
-            "QS": -8.0,
-            "SvHd": 15.0,
-            "OBP": 0.01,
-            "ERA": -0.07,
-            "WHIP": -0.02
-          }
-        },
-        {
-          "give": [
+            "Raisel Iglesias",
             "Taj Bradley"
           ],
           "get": [
-            "Andy Pages"
+            "Drew Rasmussen",
+            "Manny Machado"
           ],
-          "my_score": 0.879,
-          "their_score": -0.004,
+          "my_score": 0.952,
+          "their_score": 0.223,
           "drivers": {
-            "R": -0.005,
-            "RBI": 0.039,
-            "SB": 0.033,
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
+            "QS": 0.034,
+            "ERA": 0.418,
+            "WHIP": 0.5
           },
           "delta": {
-            "R": -4.0,
-            "HR": -1.0,
-            "RBI": 27.0,
-            "SB": 7.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": -0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Trea Turner"
-          ],
-          "my_score": 0.844,
-          "their_score": 0.045,
-          "drivers": {
-            "R": 0.022,
-            "HR": 0.012,
-            "RBI": -0.019,
-            "SB": 0.014,
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 18.0,
-            "HR": 3.0,
-            "RBI": -13.0,
-            "SB": 3.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": -0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Adley Rutschman"
-          ],
-          "my_score": 0.821,
-          "their_score": 0.148,
-          "drivers": {
-            "HR": -0.008,
-            "RBI": 0.014,
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": -1.0,
-            "HR": -2.0,
-            "RBI": 10.0,
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
             "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
+            "K": 0.0,
+            "QS": 3.0,
+            "SvHd": 0.0,
             "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
+            "ERA": -0.19,
+            "WHIP": -0.05
+          }
+        },
+        {
+          "give": [
+            "Raisel Iglesias",
+            "Taj Bradley"
+          ],
+          "get": [
+            "Chris Sale",
+            "Manny Machado"
+          ],
+          "my_score": 0.937,
+          "their_score": 0.307,
+          "drivers": {
+            "K": 0.019,
+            "QS": 0.046,
+            "ERA": 0.572,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": 15.0,
+            "QS": 4.0,
+            "SvHd": 0.0,
+            "OBP": 0.0,
+            "ERA": -0.26,
+            "WHIP": -0.03
           }
         },
         {
@@ -159,16 +88,16 @@
             "Taj Bradley"
           ],
           "get": [
-            "Giancarlo Stanton"
+            "Manny Machado"
           ],
-          "my_score": 0.816,
-          "their_score": 0.196,
+          "my_score": 0.637,
+          "their_score": 0.376,
           "drivers": {
             "K": -0.071,
             "QS": -0.057,
-            "SvHd": 0.104,
+            "SvHd": 0.026,
             "ERA": 0.44,
-            "WHIP": 0.4
+            "WHIP": 0.3
           },
           "delta": {
             "R": 0.0,
@@ -180,7 +109,237 @@
             "SvHd": 15.0,
             "OBP": 0.0,
             "ERA": -0.2,
+            "WHIP": -0.03
+          }
+        },
+        {
+          "give": [
+            "Taj Bradley"
+          ],
+          "get": [
+            "Salvador Perez"
+          ],
+          "my_score": 0.637,
+          "their_score": 0.0,
+          "drivers": {
+            "K": -0.071,
+            "QS": -0.057,
+            "SvHd": 0.026,
+            "ERA": 0.44,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -56.0,
+            "QS": -5.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.2,
+            "WHIP": -0.03
+          }
+        },
+        {
+          "give": [
+            "Taj Bradley"
+          ],
+          "get": [
+            "Rafael Devers"
+          ],
+          "my_score": 0.637,
+          "their_score": 0.0,
+          "drivers": {
+            "K": -0.071,
+            "QS": -0.057,
+            "SvHd": 0.026,
+            "ERA": 0.44,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -56.0,
+            "QS": -5.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.2,
+            "WHIP": -0.03
+          }
+        }
+      ]
+    },
+    {
+      "team_id": 6,
+      "team_name": "All Rise Run Club",
+      "their_top_needs": [
+        "R",
+        "HR",
+        "RBI"
+      ],
+      "trades": [
+        {
+          "give": [
+            "Raisel Iglesias",
+            "Taj Bradley"
+          ],
+          "get": [
+            "Justin Wrobleski",
+            "Travis Bazzana"
+          ],
+          "my_score": 0.796,
+          "their_score": 0.014,
+          "drivers": {
+            "R": -0.015,
+            "HR": 0.012,
+            "SB": 0.01,
+            "K": -0.043,
+            "QS": 0.034,
+            "ERA": 0.396,
+            "WHIP": 0.4
+          },
+          "delta": {
+            "R": -14.0,
+            "HR": 3.0,
+            "RBI": 5.0,
+            "SB": 2.0,
+            "K": -34.0,
+            "QS": 3.0,
+            "SvHd": 0.0,
+            "OBP": -0.0,
+            "ERA": -0.18,
             "WHIP": -0.04
+          }
+        },
+        {
+          "give": [
+            "Carter Jensen",
+            "Raisel Iglesias"
+          ],
+          "get": [
+            "Cody Bellinger",
+            "Ryan Jeffers"
+          ],
+          "my_score": 0.708,
+          "their_score": 0.335,
+          "drivers": {
+            "R": -0.012,
+            "HR": -0.031,
+            "SB": 0.048,
+            "OBP": 0.7
+          },
+          "delta": {
+            "R": -11.0,
+            "HR": -8.0,
+            "RBI": 5.0,
+            "SB": 10.0,
+            "K": 0.0,
+            "QS": 0.0,
+            "SvHd": 0.0,
+            "OBP": 0.01,
+            "ERA": 0.0,
+            "WHIP": 0.0
+          }
+        },
+        {
+          "give": [
+            "Raisel Iglesias",
+            "Taj Bradley"
+          ],
+          "get": [
+            "Andy Pages",
+            "Logan Gilbert"
+          ],
+          "my_score": 0.703,
+          "their_score": 0.053,
+          "drivers": {
+            "RBI": 0.014,
+            "SB": 0.033,
+            "K": 0.02,
+            "QS": 0.023,
+            "ERA": 0.22,
+            "WHIP": 0.4
+          },
+          "delta": {
+            "R": -4.0,
+            "HR": -1.0,
+            "RBI": 26.0,
+            "SB": 7.0,
+            "K": 16.0,
+            "QS": 2.0,
+            "SvHd": 0.0,
+            "OBP": -0.0,
+            "ERA": -0.1,
+            "WHIP": -0.04
+          }
+        },
+        {
+          "give": [
+            "Carter Jensen",
+            "Raisel Iglesias"
+          ],
+          "get": [
+            "Logan Gilbert",
+            "Ryan Jeffers"
+          ],
+          "my_score": 0.684,
+          "their_score": 0.12,
+          "drivers": {
+            "R": -0.011,
+            "HR": -0.012,
+            "RBI": -0.007,
+            "K": 0.087,
+            "QS": 0.08,
+            "SvHd": -0.031,
+            "OBP": 0.7,
+            "ERA": -0.022,
+            "WHIP": -0.1
+          },
+          "delta": {
+            "R": -10.0,
+            "HR": -3.0,
+            "RBI": -13.0,
+            "SB": 0.0,
+            "K": 68.0,
+            "QS": 7.0,
+            "SvHd": -18.0,
+            "OBP": 0.01,
+            "ERA": 0.01,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Taj Bradley"
+          ],
+          "get": [
+            "Andy Pages"
+          ],
+          "my_score": 0.677,
+          "their_score": -0.006,
+          "drivers": {
+            "RBI": 0.014,
+            "SB": 0.033,
+            "K": -0.071,
+            "QS": -0.057,
+            "SvHd": 0.026,
+            "ERA": 0.44,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": -4.0,
+            "HR": -1.0,
+            "RBI": 26.0,
+            "SB": 7.0,
+            "K": -56.0,
+            "QS": -5.0,
+            "SvHd": 15.0,
+            "OBP": -0.0,
+            "ERA": -0.2,
+            "WHIP": -0.03
           }
         }
       ]
@@ -196,140 +355,239 @@
       "trades": [
         {
           "give": [
-            "Christian Yelich",
             "Taj Bradley"
           ],
           "get": [
-            "Jeff Hoffman",
             "Zach Neto"
           ],
-          "my_score": 0.89,
-          "their_score": 0.054,
+          "my_score": 0.728,
+          "their_score": 0.126,
           "drivers": {
-            "R": 0.03,
-            "HR": 0.046,
-            "SB": -0.005,
+            "R": 0.02,
+            "HR": 0.05,
+            "RBI": 0.011,
+            "SB": 0.01,
             "K": -0.071,
             "QS": -0.057,
-            "SvHd": 0.104,
+            "SvHd": 0.026,
             "ERA": 0.44,
-            "WHIP": 0.4
+            "WHIP": 0.3
           },
           "delta": {
-            "R": 25.0,
-            "HR": 12.0,
-            "RBI": 2.0,
-            "SB": -1.0,
+            "R": 18.0,
+            "HR": 13.0,
+            "RBI": 20.0,
+            "SB": 2.0,
+            "K": -56.0,
+            "QS": -5.0,
+            "SvHd": 15.0,
+            "OBP": -0.0,
+            "ERA": -0.2,
+            "WHIP": -0.03
+          }
+        },
+        {
+          "give": [
+            "Taj Bradley"
+          ],
+          "get": [
+            "Byron Buxton"
+          ],
+          "my_score": 0.712,
+          "their_score": 0.008,
+          "drivers": {
+            "R": 0.005,
+            "HR": 0.031,
+            "RBI": 0.005,
+            "SB": 0.033,
+            "K": -0.071,
+            "QS": -0.057,
+            "SvHd": 0.026,
+            "ERA": 0.44,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 5.0,
+            "HR": 8.0,
+            "RBI": 9.0,
+            "SB": 7.0,
+            "K": -56.0,
+            "QS": -5.0,
+            "SvHd": 15.0,
+            "OBP": -0.0,
+            "ERA": -0.2,
+            "WHIP": -0.03
+          }
+        },
+        {
+          "give": [
+            "Taj Bradley"
+          ],
+          "get": [
+            "Kyle Schwarber"
+          ],
+          "my_score": 0.708,
+          "their_score": 0.138,
+          "drivers": {
+            "HR": 0.05,
+            "RBI": 0.011,
+            "SB": 0.005,
+            "K": -0.071,
+            "QS": -0.057,
+            "SvHd": 0.026,
+            "ERA": 0.44,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 4.0,
+            "HR": 13.0,
+            "RBI": 21.0,
+            "SB": 1.0,
             "K": -56.0,
             "QS": -5.0,
             "SvHd": 15.0,
             "OBP": 0.0,
             "ERA": -0.2,
-            "WHIP": -0.04
+            "WHIP": -0.03
           }
         },
         {
           "give": [
-            "Carter Jensen",
             "Taj Bradley"
           ],
           "get": [
-            "Cole Ragans",
-            "Kyle Schwarber"
+            "Brandon Lowe"
           ],
-          "my_score": 0.847,
-          "their_score": 0.001,
+          "my_score": 0.677,
+          "their_score": 0.067,
           "drivers": {
-            "R": -0.01,
-            "HR": 0.035,
-            "RBI": 0.006,
+            "R": 0.012,
+            "HR": 0.054,
+            "RBI": 0.016,
+            "SB": -0.043,
             "K": -0.071,
             "QS": -0.057,
-            "SvHd": 0.104,
+            "SvHd": 0.026,
             "ERA": 0.44,
-            "WHIP": 0.4
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 11.0,
+            "HR": 14.0,
+            "RBI": 30.0,
+            "SB": -9.0,
+            "K": -56.0,
+            "QS": -5.0,
+            "SvHd": 15.0,
+            "OBP": -0.0,
+            "ERA": -0.2,
+            "WHIP": -0.03
+          }
+        },
+        {
+          "give": [
+            "Taj Bradley"
+          ],
+          "get": [
+            "Drake Baldwin"
+          ],
+          "my_score": 0.677,
+          "their_score": 0.165,
+          "drivers": {
+            "R": 0.015,
+            "HR": 0.015,
+            "SB": 0.005,
+            "K": -0.071,
+            "QS": -0.057,
+            "SvHd": 0.026,
+            "ERA": 0.44,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 14.0,
+            "HR": 4.0,
+            "RBI": 8.0,
+            "SB": 1.0,
+            "K": -56.0,
+            "QS": -5.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.2,
+            "WHIP": -0.03
+          }
+        }
+      ]
+    },
+    {
+      "team_id": 3,
+      "team_name": "I Robbed A Nuke",
+      "their_top_needs": [
+        "SvHd",
+        "R",
+        "HR"
+      ],
+      "trades": [
+        {
+          "give": [
+            "Taj Bradley"
+          ],
+          "get": [
+            "Jose Caballero"
+          ],
+          "my_score": 0.677,
+          "their_score": -0.003,
+          "drivers": {
+            "R": -0.009,
+            "HR": 0.012,
+            "SB": 0.033,
+            "K": -0.071,
+            "QS": -0.057,
+            "SvHd": 0.026,
+            "ERA": 0.44,
+            "WHIP": 0.3
           },
           "delta": {
             "R": -8.0,
-            "HR": 9.0,
-            "RBI": 4.0,
-            "SB": 0.0,
+            "HR": 3.0,
+            "RBI": 7.0,
+            "SB": 7.0,
             "K": -56.0,
             "QS": -5.0,
             "SvHd": 15.0,
-            "OBP": 0.0,
+            "OBP": -0.0,
             "ERA": -0.2,
-            "WHIP": -0.04
+            "WHIP": -0.03
           }
         },
         {
           "give": [
-            "Carter Jensen",
             "Taj Bradley"
           ],
           "get": [
-            "Jeff Hoffman",
-            "Zach Neto"
+            "Fernando Tatis Jr."
           ],
-          "my_score": 0.84,
-          "their_score": 0.109,
+          "my_score": 0.672,
+          "their_score": 0.005,
           "drivers": {
-            "R": 0.018,
-            "HR": 0.035,
-            "RBI": -0.019,
-            "SB": -0.01,
+            "HR": -0.008,
+            "SB": 0.043,
             "K": -0.071,
             "QS": -0.057,
-            "SvHd": 0.104,
+            "SvHd": 0.026,
             "ERA": 0.44,
-            "WHIP": 0.4
+            "WHIP": 0.3
           },
           "delta": {
-            "R": 15.0,
-            "HR": 9.0,
-            "RBI": -13.0,
-            "SB": -2.0,
+            "R": -4.0,
+            "HR": -2.0,
+            "RBI": 7.0,
+            "SB": 9.0,
             "K": -56.0,
             "QS": -5.0,
             "SvHd": 15.0,
-            "OBP": 0.0,
+            "OBP": -0.0,
             "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Carter Jensen",
-            "Taj Bradley"
-          ],
-          "get": [
-            "Cole Ragans",
-            "Zach Neto"
-          ],
-          "my_score": 0.84,
-          "their_score": -0.015,
-          "drivers": {
-            "R": 0.018,
-            "HR": 0.035,
-            "RBI": -0.019,
-            "SB": -0.01,
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 15.0,
-            "HR": 9.0,
-            "RBI": -13.0,
-            "SB": -2.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
+            "WHIP": -0.03
           }
         },
         {
@@ -337,16 +595,16 @@
             "Taj Bradley"
           ],
           "get": [
-            "Jeff Hoffman"
+            "Corey Seager"
           ],
-          "my_score": 0.816,
-          "their_score": 0.177,
+          "my_score": 0.637,
+          "their_score": 0.082,
           "drivers": {
             "K": -0.071,
             "QS": -0.057,
-            "SvHd": 0.104,
+            "SvHd": 0.026,
             "ERA": 0.44,
-            "WHIP": 0.4
+            "WHIP": 0.3
           },
           "delta": {
             "R": 0.0,
@@ -358,7 +616,239 @@
             "SvHd": 15.0,
             "OBP": 0.0,
             "ERA": -0.2,
-            "WHIP": -0.04
+            "WHIP": -0.03
+          }
+        },
+        {
+          "give": [
+            "Taj Bradley"
+          ],
+          "get": [
+            "Willy Adames"
+          ],
+          "my_score": 0.637,
+          "their_score": 0.027,
+          "drivers": {
+            "K": -0.071,
+            "QS": -0.057,
+            "SvHd": 0.026,
+            "ERA": 0.44,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -56.0,
+            "QS": -5.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.2,
+            "WHIP": -0.03
+          }
+        },
+        {
+          "give": [
+            "Taj Bradley"
+          ],
+          "get": [
+            "Ryan O'Hearn"
+          ],
+          "my_score": 0.637,
+          "their_score": 0.027,
+          "drivers": {
+            "K": -0.071,
+            "QS": -0.057,
+            "SvHd": 0.026,
+            "ERA": 0.44,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -56.0,
+            "QS": -5.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.2,
+            "WHIP": -0.03
+          }
+        }
+      ]
+    },
+    {
+      "team_id": 2,
+      "team_name": "Lunch",
+      "their_top_needs": [
+        "WHIP",
+        "QS",
+        "ERA"
+      ],
+      "trades": [
+        {
+          "give": [
+            "Bryan Baker"
+          ],
+          "get": [
+            "Ivan Herrera"
+          ],
+          "my_score": 0.638,
+          "their_score": -0.02,
+          "drivers": {
+            "R": 0.028,
+            "SB": 0.024,
+            "K": -0.006,
+            "SvHd": -0.01,
+            "OBP": 0.7,
+            "WHIP": -0.1
+          },
+          "delta": {
+            "R": 26.0,
+            "HR": 0.0,
+            "RBI": 4.0,
+            "SB": 5.0,
+            "K": -5.0,
+            "QS": 0.0,
+            "SvHd": -6.0,
+            "OBP": 0.01,
+            "ERA": 0.0,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Bryan Baker",
+            "Raisel Iglesias"
+          ],
+          "get": [
+            "Ivan Herrera",
+            "Nolan McLean"
+          ],
+          "my_score": 0.516,
+          "their_score": 0.139,
+          "drivers": {
+            "R": 0.028,
+            "SB": 0.024,
+            "K": 0.082,
+            "QS": 0.08,
+            "SvHd": -0.037,
+            "OBP": 0.7,
+            "ERA": -0.264,
+            "WHIP": -0.1
+          },
+          "delta": {
+            "R": 26.0,
+            "HR": 0.0,
+            "RBI": 4.0,
+            "SB": 5.0,
+            "K": 64.0,
+            "QS": 7.0,
+            "SvHd": -21.0,
+            "OBP": 0.01,
+            "ERA": 0.12,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Mason Miller"
+          ],
+          "get": [
+            "Ivan Herrera"
+          ],
+          "my_score": 0.394,
+          "their_score": 0.295,
+          "drivers": {
+            "R": 0.028,
+            "SB": 0.024,
+            "K": -0.042,
+            "SvHd": -0.009,
+            "OBP": 0.7,
+            "ERA": -0.11,
+            "WHIP": -0.2
+          },
+          "delta": {
+            "R": 26.0,
+            "HR": 0.0,
+            "RBI": 4.0,
+            "SB": 5.0,
+            "K": -33.0,
+            "QS": 0.0,
+            "SvHd": -5.0,
+            "OBP": 0.01,
+            "ERA": 0.05,
+            "WHIP": 0.02
+          }
+        },
+        {
+          "give": [
+            "Emilio Pagan",
+            "Mason Miller"
+          ],
+          "get": [
+            "Ivan Herrera",
+            "Nolan McLean"
+          ],
+          "my_score": 0.294,
+          "their_score": 0.007,
+          "drivers": {
+            "R": 0.028,
+            "SB": 0.024,
+            "K": 0.046,
+            "QS": 0.08,
+            "SvHd": -0.035,
+            "OBP": 0.7,
+            "ERA": -0.352,
+            "WHIP": -0.2
+          },
+          "delta": {
+            "R": 26.0,
+            "HR": 0.0,
+            "RBI": 4.0,
+            "SB": 5.0,
+            "K": 36.0,
+            "QS": 7.0,
+            "SvHd": -20.0,
+            "OBP": 0.01,
+            "ERA": 0.16,
+            "WHIP": 0.02
+          }
+        },
+        {
+          "give": [
+            "Mason Miller",
+            "Will Smith"
+          ],
+          "get": [
+            "Ivan Herrera",
+            "Nolan McLean"
+          ],
+          "my_score": 0.294,
+          "their_score": 0.005,
+          "drivers": {
+            "R": 0.028,
+            "SB": 0.024,
+            "K": 0.046,
+            "QS": 0.08,
+            "SvHd": -0.035,
+            "OBP": 0.7,
+            "ERA": -0.352,
+            "WHIP": -0.2
+          },
+          "delta": {
+            "R": 26.0,
+            "HR": 0.0,
+            "RBI": 4.0,
+            "SB": 5.0,
+            "K": 36.0,
+            "QS": 7.0,
+            "SvHd": -20.0,
+            "OBP": 0.01,
+            "ERA": 0.16,
+            "WHIP": 0.02
           }
         }
       ]
@@ -374,87 +864,19 @@
       "trades": [
         {
           "give": [
-            "Christian Yelich",
-            "Taj Bradley"
-          ],
-          "get": [
-            "Bo Bichette",
-            "Matt Olson"
-          ],
-          "my_score": 0.878,
-          "their_score": 0.166,
-          "drivers": {
-            "R": 0.007,
-            "HR": 0.015,
-            "RBI": 0.03,
-            "SB": 0.01,
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 6.0,
-            "HR": 4.0,
-            "RBI": 21.0,
-            "SB": 2.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": -0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Samuel Basallo",
-            "Taj Bradley"
-          ],
-          "get": [
-            "Bo Bichette",
-            "Matt Olson"
-          ],
-          "my_score": 0.848,
-          "their_score": 0.157,
-          "drivers": {
-            "RBI": 0.02,
-            "SB": 0.01,
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 2.0,
-            "HR": 0.0,
-            "RBI": 14.0,
-            "SB": 2.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": -0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
             "Taj Bradley"
           ],
           "get": [
             "Bo Bichette"
           ],
-          "my_score": 0.816,
-          "their_score": 0.29,
+          "my_score": 0.637,
+          "their_score": 0.314,
           "drivers": {
             "K": -0.071,
             "QS": -0.057,
-            "SvHd": 0.104,
+            "SvHd": 0.026,
             "ERA": 0.44,
-            "WHIP": 0.4
+            "WHIP": 0.3
           },
           "delta": {
             "R": 0.0,
@@ -466,23 +888,83 @@
             "SvHd": 15.0,
             "OBP": 0.0,
             "ERA": -0.2,
-            "WHIP": -0.04
+            "WHIP": -0.03
           }
         },
         {
           "give": [
+            "Raisel Iglesias",
             "Taj Bradley"
           ],
           "get": [
-            "Jackson Merrill"
+            "Bo Bichette",
+            "Michael Soroka"
           ],
-          "my_score": 0.816,
-          "their_score": 0.221,
+          "my_score": 0.603,
+          "their_score": 0.483,
           "drivers": {
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
+            "K": -0.006,
+            "QS": 0.023,
+            "ERA": 0.286,
+            "WHIP": 0.3
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -5.0,
+            "QS": 2.0,
+            "SvHd": 0.0,
+            "OBP": 0.0,
+            "ERA": -0.13,
+            "WHIP": -0.03
+          }
+        },
+        {
+          "give": [
+            "Nathan Eovaldi"
+          ],
+          "get": [
+            "Bo Bichette"
+          ],
+          "my_score": 0.525,
+          "their_score": 0.383,
+          "drivers": {
+            "K": -0.082,
+            "QS": -0.092,
+            "SvHd": 0.026,
+            "ERA": 0.572,
+            "WHIP": 0.1
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -64.0,
+            "QS": -8.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.26,
+            "WHIP": -0.01
+          }
+        },
+        {
+          "give": [
+            "Emilio Pagan",
+            "Taj Bradley"
+          ],
+          "get": [
+            "Bo Bichette",
+            "Bryan Woo"
+          ],
+          "my_score": 0.473,
+          "their_score": 0.024,
+          "drivers": {
+            "K": 0.005,
+            "QS": 0.046,
+            "ERA": 0.022,
             "WHIP": 0.4
           },
           "delta": {
@@ -490,72 +972,29 @@
             "HR": 0.0,
             "RBI": 0.0,
             "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
+            "K": 4.0,
+            "QS": 4.0,
+            "SvHd": 0.0,
             "OBP": 0.0,
-            "ERA": -0.2,
+            "ERA": -0.01,
             "WHIP": -0.04
           }
         },
         {
           "give": [
-            "Nathan Eovaldi",
+            "Taj Bradley",
             "Will Smith"
           ],
           "get": [
             "Bo Bichette",
-            "Matt Olson"
+            "Bryan Woo"
           ],
-          "my_score": 0.766,
-          "their_score": 0.197,
+          "my_score": 0.473,
+          "their_score": 0.024,
           "drivers": {
-            "R": 0.007,
-            "HR": 0.015,
-            "RBI": 0.03,
-            "SB": 0.01,
-            "K": -0.07,
-            "QS": -0.08,
-            "SvHd": 0.104,
-            "ERA": 0.55,
-            "WHIP": 0.2
-          },
-          "delta": {
-            "R": 6.0,
-            "HR": 4.0,
-            "RBI": 21.0,
-            "SB": 2.0,
-            "K": -55.0,
-            "QS": -7.0,
-            "SvHd": 15.0,
-            "OBP": -0.0,
-            "ERA": -0.25,
-            "WHIP": -0.02
-          }
-        }
-      ]
-    },
-    {
-      "team_id": 9,
-      "team_name": "ICECOLDBEERHERE!",
-      "their_top_needs": [
-        "R",
-        "HR",
-        "SB"
-      ],
-      "trades": [
-        {
-          "give": [
-            "Raisel Iglesias"
-          ],
-          "get": [
-            "Kyle Harrison"
-          ],
-          "my_score": 0.855,
-          "their_score": 0.087,
-          "drivers": {
-            "QS": 0.011,
-            "ERA": 0.44,
+            "K": 0.005,
+            "QS": 0.046,
+            "ERA": 0.022,
             "WHIP": 0.4
           },
           "delta": {
@@ -563,290 +1002,11 @@
             "HR": 0.0,
             "RBI": 0.0,
             "SB": 0.0,
-            "K": 3.0,
-            "QS": 1.0,
+            "K": 4.0,
+            "QS": 4.0,
             "SvHd": 0.0,
             "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Manny Machado"
-          ],
-          "my_score": 0.816,
-          "their_score": 0.38,
-          "drivers": {
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Salvador Perez"
-          ],
-          "my_score": 0.816,
-          "their_score": 0.0,
-          "drivers": {
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Rafael Devers"
-          ],
-          "my_score": 0.816,
-          "their_score": 0.0,
-          "drivers": {
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Lucas Erceg"
-          ],
-          "my_score": 0.816,
-          "their_score": 0.0,
-          "drivers": {
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        }
-      ]
-    },
-    {
-      "team_id": 3,
-      "team_name": "I Robbed A Nuke",
-      "their_top_needs": [
-        "R",
-        "SvHd",
-        "HR"
-      ],
-      "trades": [
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Jose Caballero"
-          ],
-          "my_score": 0.833,
-          "their_score": -0.003,
-          "drivers": {
-            "HR": 0.012,
-            "RBI": -0.013,
-            "SB": 0.019,
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 3.0,
-            "RBI": -9.0,
-            "SB": 4.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Fernando Tatis Jr."
-          ],
-          "my_score": 0.828,
-          "their_score": 0.004,
-          "drivers": {
-            "R": 0.005,
-            "HR": -0.008,
-            "RBI": -0.013,
-            "SB": 0.029,
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 4.0,
-            "HR": -2.0,
-            "RBI": -9.0,
-            "SB": 6.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Xander Bogaerts"
-          ],
-          "my_score": 0.816,
-          "their_score": 0.025,
-          "drivers": {
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Corey Seager"
-          ],
-          "my_score": 0.816,
-          "their_score": 0.082,
-          "drivers": {
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Willy Adames"
-          ],
-          "my_score": 0.816,
-          "their_score": 0.026,
-          "drivers": {
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
+            "ERA": -0.01,
             "WHIP": -0.04
           }
         }
@@ -863,339 +1023,147 @@
       "trades": [
         {
           "give": [
-            "Taj Bradley"
-          ],
-          "get": [
-            "Robbie Ray"
-          ],
-          "my_score": 0.816,
-          "their_score": 0.022,
-          "drivers": {
-            "K": -0.071,
-            "QS": -0.057,
-            "SvHd": 0.104,
-            "ERA": 0.44,
-            "WHIP": 0.4
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": -56.0,
-            "QS": -5.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.2,
-            "WHIP": -0.04
-          }
-        },
-        {
-          "give": [
-            "Emilio Pagan",
-            "Nathan Eovaldi"
-          ],
-          "get": [
-            "Hunter Goodman",
-            "Robbie Ray"
-          ],
-          "my_score": 0.806,
-          "their_score": -0.003,
-          "drivers": {
-            "R": 0.023,
-            "HR": 0.043,
-            "RBI": 0.013,
-            "SB": 0.024,
-            "K": -0.07,
-            "QS": -0.08,
-            "SvHd": 0.104,
-            "ERA": 0.55,
-            "WHIP": 0.2
-          },
-          "delta": {
-            "R": 19.0,
-            "HR": 11.0,
-            "RBI": 9.0,
-            "SB": 5.0,
-            "K": -55.0,
-            "QS": -7.0,
-            "SvHd": 15.0,
-            "OBP": -0.0,
-            "ERA": -0.25,
-            "WHIP": -0.02
-          }
-        },
-        {
-          "give": [
-            "Carter Jensen",
-            "Nathan Eovaldi"
-          ],
-          "get": [
-            "Hunter Goodman",
-            "Robbie Ray"
-          ],
-          "my_score": 0.786,
-          "their_score": -0.008,
-          "drivers": {
-            "R": 0.016,
-            "HR": 0.046,
-            "SB": 0.019,
-            "K": -0.07,
-            "QS": -0.08,
-            "SvHd": 0.104,
-            "ERA": 0.55,
-            "WHIP": 0.2
-          },
-          "delta": {
-            "R": 13.0,
-            "HR": 12.0,
-            "RBI": 1.0,
-            "SB": 4.0,
-            "K": -55.0,
-            "QS": -7.0,
-            "SvHd": 15.0,
-            "OBP": 0.0,
-            "ERA": -0.25,
-            "WHIP": -0.02
-          }
-        },
-        {
-          "give": [
-            "Emilio Pagan",
-            "Nathan Eovaldi"
-          ],
-          "get": [
-            "Robbie Ray",
-            "Sal Stewart"
-          ],
-          "my_score": 0.773,
-          "their_score": 0.083,
-          "drivers": {
-            "R": -0.008,
-            "HR": -0.008,
-            "RBI": 0.033,
-            "SB": 0.053,
-            "K": -0.07,
-            "QS": -0.08,
-            "SvHd": 0.104,
-            "ERA": 0.55,
-            "WHIP": 0.2
-          },
-          "delta": {
-            "R": -7.0,
-            "HR": -2.0,
-            "RBI": 23.0,
-            "SB": 11.0,
-            "K": -55.0,
-            "QS": -7.0,
-            "SvHd": 15.0,
-            "OBP": -0.0,
-            "ERA": -0.25,
-            "WHIP": -0.02
-          }
-        },
-        {
-          "give": [
             "Nathan Eovaldi"
           ],
           "get": [
             "Brandon Nimmo"
           ],
-          "my_score": 0.704,
-          "their_score": -0.001,
+          "my_score": 0.525,
+          "their_score": 0.02,
           "drivers": {
-            "K": -0.07,
-            "QS": -0.08,
-            "SvHd": 0.104,
-            "ERA": 0.55,
-            "WHIP": 0.2
+            "K": -0.082,
+            "QS": -0.092,
+            "SvHd": 0.026,
+            "ERA": 0.572,
+            "WHIP": 0.1
           },
           "delta": {
             "R": 0.0,
             "HR": 0.0,
             "RBI": 0.0,
             "SB": 0.0,
-            "K": -55.0,
-            "QS": -7.0,
+            "K": -64.0,
+            "QS": -8.0,
             "SvHd": 15.0,
             "OBP": 0.0,
-            "ERA": -0.25,
-            "WHIP": -0.02
-          }
-        }
-      ]
-    },
-    {
-      "team_id": 2,
-      "team_name": "Lunch",
-      "their_top_needs": [
-        "WHIP",
-        "QS",
-        "ERA"
-      ],
-      "trades": [
-        {
-          "give": [
-            "Carter Jensen"
-          ],
-          "get": [
-            "Geraldo Perdomo"
-          ],
-          "my_score": 0.642,
-          "their_score": 0.002,
-          "drivers": {
-            "HR": -0.012,
-            "RBI": -0.033,
-            "SB": -0.01,
-            "OBP": 0.7
-          },
-          "delta": {
-            "R": -3.0,
-            "HR": -3.0,
-            "RBI": -23.0,
-            "SB": -2.0,
-            "K": 0.0,
-            "QS": 0.0,
-            "SvHd": 0.0,
-            "OBP": 0.01,
-            "ERA": 0.0,
-            "WHIP": 0.0
+            "ERA": -0.26,
+            "WHIP": -0.01
           }
         },
         {
           "give": [
-            "Carter Jensen",
-            "Mason Miller"
+            "Nathan Eovaldi"
           ],
           "get": [
-            "Ivan Herrera",
-            "Oneil Cruz"
+            "Teoscar Hernandez"
           ],
-          "my_score": 0.554,
-          "their_score": 0.234,
+          "my_score": 0.525,
+          "their_score": 0.011,
           "drivers": {
-            "R": 0.018,
-            "HR": -0.008,
-            "RBI": 0.012,
-            "SB": 0.12,
-            "K": -0.042,
-            "SvHd": -0.035,
-            "OBP": 0.7,
-            "ERA": -0.11,
-            "WHIP": -0.1
+            "K": -0.082,
+            "QS": -0.092,
+            "SvHd": 0.026,
+            "ERA": 0.572,
+            "WHIP": 0.1
           },
           "delta": {
-            "R": 15.0,
-            "HR": -2.0,
-            "RBI": 8.0,
-            "SB": 25.0,
-            "K": -33.0,
-            "QS": 0.0,
-            "SvHd": -5.0,
-            "OBP": 0.01,
-            "ERA": 0.05,
-            "WHIP": 0.01
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -64.0,
+            "QS": -8.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.26,
+            "WHIP": -0.01
           }
         },
         {
           "give": [
-            "Christian Yelich",
-            "Raisel Iglesias"
+            "Nathan Eovaldi"
           ],
           "get": [
-            "Jordan Walker",
-            "Nolan McLean"
+            "Carlos Estevez"
           ],
-          "my_score": 0.544,
-          "their_score": 0.023,
+          "my_score": 0.525,
+          "their_score": 0.02,
           "drivers": {
-            "HR": 0.008,
-            "RBI": 0.04,
-            "SB": 0.048,
-            "K": 0.017,
-            "QS": 0.023,
-            "ERA": 0.11,
-            "WHIP": 0.3
+            "K": -0.082,
+            "QS": -0.092,
+            "SvHd": 0.026,
+            "ERA": 0.572,
+            "WHIP": 0.1
           },
           "delta": {
-            "R": -1.0,
-            "HR": 2.0,
-            "RBI": 28.0,
-            "SB": 10.0,
-            "K": 13.0,
-            "QS": 2.0,
-            "SvHd": 0.0,
-            "OBP": -0.0,
-            "ERA": -0.05,
-            "WHIP": -0.03
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -64.0,
+            "QS": -8.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.26,
+            "WHIP": -0.01
           }
         },
         {
           "give": [
-            "Emilio Pagan",
-            "Mason Miller"
+            "Nathan Eovaldi"
           ],
           "get": [
-            "Ivan Herrera",
-            "Jazz Chisholm Jr."
+            "Austin Riley"
           ],
-          "my_score": 0.541,
-          "their_score": 0.197,
+          "my_score": 0.525,
+          "their_score": -0.013,
           "drivers": {
-            "R": 0.041,
-            "HR": 0.023,
-            "SB": 0.067,
-            "K": -0.042,
-            "SvHd": -0.035,
-            "OBP": 0.7,
-            "ERA": -0.11,
-            "WHIP": -0.1
+            "K": -0.082,
+            "QS": -0.092,
+            "SvHd": 0.026,
+            "ERA": 0.572,
+            "WHIP": 0.1
           },
           "delta": {
-            "R": 34.0,
-            "HR": 6.0,
-            "RBI": -2.0,
-            "SB": 14.0,
-            "K": -33.0,
-            "QS": 0.0,
-            "SvHd": -5.0,
-            "OBP": 0.01,
-            "ERA": 0.05,
-            "WHIP": 0.01
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -64.0,
+            "QS": -8.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.26,
+            "WHIP": -0.01
           }
         },
         {
           "give": [
-            "Mason Miller",
-            "Will Smith"
+            "Nathan Eovaldi"
           ],
           "get": [
-            "Ivan Herrera",
-            "Jazz Chisholm Jr."
+            "Vladimir Guerrero Jr."
           ],
-          "my_score": 0.541,
-          "their_score": 0.194,
+          "my_score": 0.525,
+          "their_score": -0.013,
           "drivers": {
-            "R": 0.041,
-            "HR": 0.023,
-            "SB": 0.067,
-            "K": -0.042,
-            "SvHd": -0.035,
-            "OBP": 0.7,
-            "ERA": -0.11,
-            "WHIP": -0.1
+            "K": -0.082,
+            "QS": -0.092,
+            "SvHd": 0.026,
+            "ERA": 0.572,
+            "WHIP": 0.1
           },
           "delta": {
-            "R": 34.0,
-            "HR": 6.0,
-            "RBI": -2.0,
-            "SB": 14.0,
-            "K": -33.0,
-            "QS": 0.0,
-            "SvHd": -5.0,
-            "OBP": 0.01,
-            "ERA": 0.05,
-            "WHIP": 0.01
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": -64.0,
+            "QS": -8.0,
+            "SvHd": 15.0,
+            "OBP": 0.0,
+            "ERA": -0.26,
+            "WHIP": -0.01
           }
         }
       ]
