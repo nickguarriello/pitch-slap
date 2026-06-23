@@ -2,8 +2,8 @@
   "cat_states": {
     "R": {
       "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
+      "my_val": 3.0,
+      "opp_val": 3.0,
       "gap": 0.0
     },
     "HR": {
@@ -13,58 +13,58 @@
       "gap": 0.0
     },
     "RBI": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLOPPABLE",
+      "my_val": 5.0,
+      "opp_val": 4.0,
+      "gap": 1.0
     },
     "SB": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLOPPABLE",
+      "my_val": 2.0,
+      "opp_val": 1.0,
+      "gap": 1.0
     },
     "OBP": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLIPPABLE",
+      "my_val": 0.34210526,
+      "opp_val": 0.36585366,
+      "gap": -0.0237
     },
     "K": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLOPPABLE",
+      "my_val": 5.0,
+      "opp_val": 1.0,
+      "gap": 4.0
     },
     "QS": {
-      "state": "TIE",
-      "my_val": 0.0,
+      "state": "FLOPPABLE",
+      "my_val": 1.0,
       "opp_val": 0.0,
-      "gap": 0.0
+      "gap": 1.0
     },
     "ERA": {
       "state": "TIE",
-      "my_val": null,
-      "opp_val": null,
+      "my_val": 0.0,
+      "opp_val": 0.0,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "ip_note": "You 8.0/15 IP \u00b7 Opp 1.0/15 IP",
+      "my_ip_week": 8.0,
+      "opp_ip_week": 1.0
     },
     "WHIP": {
       "state": "TIE",
-      "my_val": null,
-      "opp_val": null,
+      "my_val": 0.85714286,
+      "opp_val": 1.0,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "ip_note": "You 8.0/15 IP \u00b7 Opp 1.0/15 IP",
+      "my_ip_week": 8.0,
+      "opp_ip_week": 1.0
     },
     "SvHd": {
-      "state": "TIE",
+      "state": "FLIPPABLE",
       "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "opp_val": 1.0,
+      "gap": -1.0
     }
   },
   "need_weights": {
@@ -74,7 +74,7 @@
     "SB": 0.44,
     "OBP": 0.7,
     "K": 0.66,
-    "QS": 0.66,
+    "QS": 0.61,
     "ERA": 0.44,
     "WHIP": 0.4,
     "SvHd": 0.1
@@ -1182,8 +1182,8 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 0.0,
-    "ip_remaining": 15.0,
+    "ip_accumulated": 8.0,
+    "ip_remaining": 7.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,

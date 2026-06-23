@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-22",
+  "as_of": "2026-06-23",
   "playoff_start_week": 22,
   "current_week": 13,
   "weeks_until_playoffs": 8,
@@ -28,9 +28,9 @@
         "SB": 1,
         "OBP": 7,
         "K": 3,
-        "QS": 7,
+        "QS": 6,
         "SvHd": 4,
-        "ERA": 6,
+        "ERA": 5,
         "WHIP": 8
       },
       "seed": 1,
@@ -82,7 +82,7 @@
       "ranks": {
         "R": 5,
         "HR": 1,
-        "RBI": 5,
+        "RBI": 6,
         "SB": 6,
         "OBP": 5,
         "K": 8,
@@ -115,9 +115,9 @@
         "SB": 5,
         "OBP": 6,
         "K": 6,
-        "QS": 6,
+        "QS": 7,
         "SvHd": 5,
-        "ERA": 3,
+        "ERA": 4,
         "WHIP": 2
       },
       "seed": 4,
@@ -140,14 +140,14 @@
       "ranks": {
         "R": 6,
         "HR": 6,
-        "RBI": 6,
+        "RBI": 7,
         "SB": 8,
         "OBP": 2,
         "K": 5,
         "QS": 2,
         "SvHd": 7,
-        "ERA": 4,
-        "WHIP": 5
+        "ERA": 3,
+        "WHIP": 4
       },
       "seed": 5,
       "in_playoffs": false
@@ -169,7 +169,7 @@
       "ranks": {
         "R": 7,
         "HR": 7,
-        "RBI": 7,
+        "RBI": 5,
         "SB": 4,
         "OBP": 4,
         "K": 1,
@@ -204,8 +204,8 @@
         "K": 4,
         "QS": 4,
         "SvHd": 6,
-        "ERA": 5,
-        "WHIP": 4
+        "ERA": 6,
+        "WHIP": 5
       },
       "seed": 7,
       "in_playoffs": false
@@ -285,9 +285,9 @@
         },
         "RBI": {
           "my_rank": 3,
-          "their_rank": 5,
+          "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 3
         },
         "SB": {
           "my_rank": 2,
@@ -334,7 +334,6 @@
       },
       "swing_categories": [
         "HR",
-        "RBI",
         "K",
         "SvHd"
       ]
@@ -385,15 +384,15 @@
         },
         "QS": {
           "my_rank": 5,
-          "their_rank": 7,
+          "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "ERA": {
           "my_rank": 2,
-          "their_rank": 6,
+          "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 3
         },
         "WHIP": {
           "my_rank": 1,
@@ -462,15 +461,15 @@
         },
         "QS": {
           "my_rank": 5,
-          "their_rank": 6,
+          "their_rank": 7,
           "winner": "mine",
-          "rank_gap": 1
+          "rank_gap": 2
         },
         "ERA": {
           "my_rank": 2,
-          "their_rank": 3,
+          "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 1
+          "rank_gap": 2
         },
         "WHIP": {
           "my_rank": 1,
@@ -498,9 +497,9 @@
   ],
   "swing_categories": [
     "HR",
-    "RBI",
     "K",
     "R",
+    "RBI",
     "QS"
   ],
   "improvement_targets": [

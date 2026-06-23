@@ -71,6 +71,15 @@
       "games_final_date": "2026-06-21",
       "all_games_final": true,
       "last_game": "NYM@PHI"
+    },
+    {
+      "run_ts": "2026-06-23T12:28:55.875993+00:00",
+      "espn_standings_update": "2026-06-23T09:08:35.271000+00:00",
+      "espn_waiver_execution": "2026-06-23T09:08:34.860000+00:00",
+      "scoring_period": 91,
+      "games_final_date": "2026-06-22",
+      "all_games_final": true,
+      "last_game": "ATL@SD"
     }
   ]
 }
