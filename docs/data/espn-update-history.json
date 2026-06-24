@@ -80,6 +80,15 @@
       "games_final_date": "2026-06-22",
       "all_games_final": true,
       "last_game": "ATL@SD"
+    },
+    {
+      "run_ts": "2026-06-24T12:14:40.817399+00:00",
+      "espn_standings_update": "2026-06-24T08:46:28.663000+00:00",
+      "espn_waiver_execution": "2026-06-24T08:46:28.469000+00:00",
+      "scoring_period": 92,
+      "games_final_date": "2026-06-23",
+      "all_games_final": true,
+      "last_game": "OAK@SF"
     }
   ]
 }

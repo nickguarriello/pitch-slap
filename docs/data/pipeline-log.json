@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-06-23T12:29:02.321021+00:00",
+  "as_of": "2026-06-24T12:14:48.456299+00:00",
   "last_run_mode": "full",
   "last_full_run": "2026-06-17T12:02:32.382414+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-06-23T12:29:02.321021+00:00",
-  "mlb_last_fetch": "2026-06-23T12:29:02.767609+00:00",
-  "statcast_last_fetch": "2026-06-23T12:29:05.840632+00:00",
+  "espn_last_fetch": "2026-06-24T12:14:48.456299+00:00",
+  "mlb_last_fetch": "2026-06-24T12:14:48.997203+00:00",
+  "statcast_last_fetch": "2026-06-24T12:14:51.935705+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-06-22",
-    "games": 13,
-    "final": 13,
+    "date": "2026-06-23",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
-    "last_game": "ATL@SD",
+    "last_game": "OAK@SF",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-06-23T09:08:35.271000+00:00",
-    "waiver_last_execution": "2026-06-23T09:08:34.860000+00:00",
-    "scoring_period": 91,
-    "checked_at": "2026-06-23T12:29:02.395708+00:00"
+    "standings_update": "2026-06-24T08:46:28.663000+00:00",
+    "waiver_last_execution": "2026-06-24T08:46:28.469000+00:00",
+    "scoring_period": 92,
+    "checked_at": "2026-06-24T12:14:48.561537+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 2677,
-    "fact_statcast": 517,
+    "fact_player_stats": 2768,
+    "fact_statcast": 518,
     "fact_matchups": 120,
-    "stats_season": 557,
-    "stats_first_half": 557,
+    "stats_season": 558,
+    "stats_first_half": 558,
     "stats_second_half": 0,
-    "stats_30d": 484,
+    "stats_30d": 483,
     "stats_14d": 448,
-    "stats_7d": 423,
-    "stats_current": 208
+    "stats_7d": 424,
+    "stats_current": 297
   },
   "validation_checks": [
     {
@@ -98,12 +98,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "517 players with Statcast data"
+      "detail": "518 players with Statcast data"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "2677 rows across 6 windows"
+      "detail": "2768 rows across 6 windows"
     },
     {
       "name": "",
