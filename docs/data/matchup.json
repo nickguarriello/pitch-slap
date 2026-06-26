@@ -2,21 +2,21 @@
   "cat_states": {
     "R": {
       "state": "FLOPPABLE",
-      "my_val": 23.0,
-      "opp_val": 19.0,
-      "gap": 4.0
+      "my_val": 25.0,
+      "opp_val": 24.0,
+      "gap": 1.0
     },
     "HR": {
       "state": "WIN",
-      "my_val": 6.0,
+      "my_val": 8.0,
       "opp_val": 0.0,
-      "gap": 6.0
+      "gap": 8.0
     },
     "RBI": {
       "state": "WIN",
-      "my_val": 22.0,
-      "opp_val": 14.0,
-      "gap": 8.0
+      "my_val": 29.0,
+      "opp_val": 16.0,
+      "gap": 13.0
     },
     "SB": {
       "state": "FLOPPABLE",
@@ -26,9 +26,9 @@
     },
     "OBP": {
       "state": "FLOPPABLE",
-      "my_val": 0.3373494,
-      "opp_val": 0.33116883,
-      "gap": 0.0062
+      "my_val": 0.33505155,
+      "opp_val": 0.30569948,
+      "gap": 0.0294
     },
     "K": {
       "state": "FLOPPABLE",
