@@ -2,63 +2,63 @@
   "cat_states": {
     "R": {
       "state": "FLOPPABLE",
-      "my_val": 25.0,
-      "opp_val": 24.0,
-      "gap": 1.0
+      "my_val": 33.0,
+      "opp_val": 30.0,
+      "gap": 3.0
     },
     "HR": {
       "state": "WIN",
-      "my_val": 8.0,
+      "my_val": 9.0,
       "opp_val": 0.0,
-      "gap": 8.0
+      "gap": 9.0
     },
     "RBI": {
       "state": "WIN",
-      "my_val": 29.0,
-      "opp_val": 16.0,
-      "gap": 13.0
+      "my_val": 33.0,
+      "opp_val": 18.0,
+      "gap": 15.0
     },
     "SB": {
+      "state": "FLOPPABLE",
+      "my_val": 5.0,
+      "opp_val": 4.0,
+      "gap": 1.0
+    },
+    "OBP": {
+      "state": "FLOPPABLE",
+      "my_val": 0.33858268,
+      "opp_val": 0.32258065,
+      "gap": 0.016
+    },
+    "K": {
+      "state": "WIN",
+      "my_val": 40.0,
+      "opp_val": 26.0,
+      "gap": 14.0
+    },
+    "QS": {
+      "state": "TIE",
+      "my_val": 4.0,
+      "opp_val": 4.0,
+      "gap": 0.0
+    },
+    "ERA": {
+      "state": "WIN",
+      "my_val": 1.87128713,
+      "opp_val": 2.77570093,
+      "gap": 0.9044
+    },
+    "WHIP": {
+      "state": "FLOPPABLE",
+      "my_val": 1.03960396,
+      "opp_val": 1.17757009,
+      "gap": 0.138
+    },
+    "SvHd": {
       "state": "FLOPPABLE",
       "my_val": 4.0,
       "opp_val": 2.0,
       "gap": 2.0
-    },
-    "OBP": {
-      "state": "FLOPPABLE",
-      "my_val": 0.33505155,
-      "opp_val": 0.30569948,
-      "gap": 0.0294
-    },
-    "K": {
-      "state": "FLOPPABLE",
-      "my_val": 23.0,
-      "opp_val": 20.0,
-      "gap": 3.0
-    },
-    "QS": {
-      "state": "FLIPPABLE",
-      "my_val": 2.0,
-      "opp_val": 3.0,
-      "gap": -1.0
-    },
-    "ERA": {
-      "state": "FLIPPABLE",
-      "my_val": 2.54716981,
-      "opp_val": 2.04545455,
-      "gap": -0.5017
-    },
-    "WHIP": {
-      "state": "FLIPPABLE",
-      "my_val": 1.24528302,
-      "opp_val": 1.13636364,
-      "gap": -0.1089
-    },
-    "SvHd": {
-      "state": "TIE",
-      "my_val": 2.0,
-      "opp_val": 2.0,
-      "gap": 0.0
     }
   },
   "need_weights": {
@@ -170,7 +170,7 @@
         "result": "W",
         "state": "WIN",
         "my_val": 0.366,
-        "opp_val": 0.321
+        "opp_val": 0.324
       },
       {
         "cat": "K",
@@ -1176,7 +1176,7 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 20.666666666666668,
+    "ip_accumulated": 36.666666666666664,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,

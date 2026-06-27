@@ -107,6 +107,15 @@
       "games_final_date": "2026-06-25",
       "all_games_final": true,
       "last_game": "ARI@STL"
+    },
+    {
+      "run_ts": "2026-06-27T11:21:21.178009+00:00",
+      "espn_standings_update": "2026-06-27T08:52:53.625000+00:00",
+      "espn_waiver_execution": "2026-06-27T08:52:53.430000+00:00",
+      "scoring_period": 95,
+      "games_final_date": "2026-06-26",
+      "all_games_final": true,
+      "last_game": "ATL@SF"
     }
   ]
 }
