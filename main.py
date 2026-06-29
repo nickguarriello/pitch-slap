@@ -167,6 +167,13 @@ def run_full() -> dict:
     meta["cats_losing"]  = eval_report["summary"]["cats_losing"]
     _save_meta(meta)
 
+    # Mark the run BEFORE report() so build_pipeline_log captures it in the
+    # committed pipeline-log.json (data/pipeline-meta.json isn't committed by CI,
+    # so the log file is the only place these timestamps persist).
+    meta["last_full_run"] = start_ts
+    meta["last_run_mode"] = "full"
+    _save_meta(meta)
+
     # Phase 5: Report
     print("\n--- report ---")
     report()
@@ -180,10 +187,6 @@ def run_full() -> dict:
         meta["trades_last_run"] = _ts()
     except Exception as e:
         print(f"  WARNING: trade analyzer failed ({e}) — skipping trades.json")
-    _save_meta(meta)
-
-    meta["last_full_run"] = start_ts
-    meta["last_run_mode"] = "full"
     _save_meta(meta)
 
     print(f"\n[{_ts()}] Full pipeline complete.")
@@ -240,6 +243,11 @@ def run_light() -> dict:
     meta["cats_winning"] = eval_report["summary"]["cats_winning"]
     _save_meta(meta)
 
+    # Mark the run BEFORE report() so it lands in the committed pipeline-log.json.
+    meta["last_light_run"] = start_ts
+    meta["last_run_mode"] = "light"
+    _save_meta(meta)
+
     print("\n--- report ---")
     report()
     meta["report_last_run"] = _ts()
@@ -252,10 +260,6 @@ def run_light() -> dict:
         meta["trades_last_run"] = _ts()
     except Exception as e:
         print(f"  WARNING: trade analyzer failed ({e}) — skipping trades.json")
-    _save_meta(meta)
-
-    meta["last_light_run"] = start_ts
-    meta["last_run_mode"] = "light"
     _save_meta(meta)
 
     print(f"\n[{_ts()}] Light pipeline complete.")
