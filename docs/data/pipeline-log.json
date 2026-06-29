@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-06-28T11:43:15.464094+00:00",
+  "as_of": "2026-06-29T13:59:06.936141+00:00",
   "last_run_mode": "full",
   "last_full_run": "2026-06-17T12:02:32.382414+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-06-28T11:43:15.464094+00:00",
-  "mlb_last_fetch": "2026-06-28T11:43:15.986672+00:00",
-  "statcast_last_fetch": "2026-06-28T11:43:18.983326+00:00",
+  "espn_last_fetch": "2026-06-29T13:59:06.936141+00:00",
+  "mlb_last_fetch": "2026-06-29T13:59:07.658966+00:00",
+  "statcast_last_fetch": "2026-06-29T13:59:11.744356+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-06-27",
+    "date": "2026-06-28",
     "games": 15,
     "final": 15,
     "incomplete": [],
-    "last_game": "OAK@LAA",
+    "last_game": "NYY@BOS",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-06-28T08:57:39.117000+00:00",
-    "waiver_last_execution": "2026-06-28T08:57:38.933000+00:00",
-    "scoring_period": 96,
-    "checked_at": "2026-06-28T11:43:15.618519+00:00"
+    "standings_update": "2026-06-29T08:49:21.509000+00:00",
+    "waiver_last_execution": "2026-06-29T08:49:20.956000+00:00",
+    "scoring_period": 97,
+    "checked_at": "2026-06-29T13:59:07.092982+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 2879,
+    "fact_player_stats": 2488,
     "fact_statcast": 519,
-    "fact_matchups": 120,
-    "stats_season": 560,
-    "stats_first_half": 560,
+    "fact_matchups": 130,
+    "stats_season": 563,
+    "stats_first_half": 563,
     "stats_second_half": 0,
-    "stats_30d": 482,
-    "stats_14d": 443,
-    "stats_7d": 420,
-    "stats_current": 414
+    "stats_30d": 484,
+    "stats_14d": 450,
+    "stats_7d": 428,
+    "stats_current": 0
   },
   "validation_checks": [
     {
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "2879 rows across 6 windows"
+      "detail": "2488 rows across 6 windows"
     },
     {
       "name": "",
@@ -113,12 +113,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "254/256 (99%) rostered players have season stats"
+      "detail": "253/256 (99%) rostered players have season stats"
     },
     {
       "name": "",
       "status": "warn",
-      "detail": "2 rostered players without MLB ID \u2014 check data-gap section"
+      "detail": "3 rostered players without MLB ID \u2014 check data-gap section"
     },
     {
       "name": "",
