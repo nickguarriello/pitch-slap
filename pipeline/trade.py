@@ -27,12 +27,18 @@ SCALE = {'R': 32, 'HR': 11, 'RBI': 32, 'SB': 8, 'K': 45, 'QS': 5, 'SvHd': 5}
 RATE_BASE = {'OBP': 0.345, 'ERA': 3.90, 'WHIP': 1.25}          # league rate baselines
 IP_WEEK = 55.0          # team weekly IP scale — rate impact is weighted by volume share
 PA_WEEK = 230.0         # team weekly PA scale
-RATE_MARGIN = {'OBP': 0.010, 'ERA': 0.20, 'WHIP': 0.04}   # one "unit" of weekly rate swing
+# One "unit" of team-rate swing. Calibrated 2026-06-29: the prior values
+# (ERA 0.20 / WHIP 0.04 / OBP 0.010) let a single-trade rate swing dwarf the
+# counting cats — e.g. Muncy->Burns scored ERA+WHIP 0.30 vs only 0.08 from all
+# counting cats combined, inflating totals past 1.0. Widened ~2.5x so a realistic
+# one-trade team-rate swing contributes on the same order as a counting-cat gain.
+RATE_MARGIN = {'OBP': 0.025, 'ERA': 0.50, 'WHIP': 0.10}
 MY_MIN_SCORE = 0.03     # only surface trades that meaningfully help me
 ACCEPT_TOL = -0.02      # other team must net ~>= 0 (small tolerance) to plausibly accept
 FAIR_TOL = 0.15         # max raw-talent edge I may receive (blocks lopsided "fleece" offers)
 TOP_N = 5               # ranked trades kept per target team
 NEUTRAL_NEED = {c: 0.5 for c in ('R', 'HR', 'RBI', 'SB', 'OBP', 'K', 'QS', 'ERA', 'WHIP', 'SvHd')}
+PROTECTED_PLAYERS: set[str] = set()   # players I will never offer (by name); never appear on the give side
 
 HIT_COUNT = {'R': 'r', 'HR': 'hr', 'RBI': 'rbi', 'SB': 'sb'}   # cat -> stats column
 PIT_COUNT = {'K': 'k', 'QS': 'qs', 'SvHd': 'svhd'}
@@ -275,12 +281,15 @@ def _evaluate_package(my_roster, my_need, their_roster, their_need,
 
 
 def enumerate_trades(my_team_id: int, target_team_id: int, pool: dict,
-                     my_roster=None, my_need=None) -> list[dict]:
+                     my_roster=None, my_need=None, protected: set = None) -> list[dict]:
     """Generate, score, and acceptance-gate candidate packages with one target team.
 
     1-for-1 over both active rosters, then 2-for-2 by extending the top anchors
     (bounded so it stays fast). Returns accepted trades ranked by my_score.
+    `protected` players (default PROTECTED_PLAYERS) are never offered on the give side.
     """
+    if protected is None:
+        protected = PROTECTED_PLAYERS
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     if my_roster is None:
@@ -291,7 +300,7 @@ def enumerate_trades(my_team_id: int, target_team_id: int, pool: dict,
     their_need = compute_need_weights(conn, target_team_id)
     conn.close()
 
-    mine_pool = _active(my_roster)
+    mine_pool = [p for p in _active(my_roster) if p['name'] not in protected]
     theirs_pool = _active(their_roster)
 
     accepted = []
