@@ -626,7 +626,7 @@ def compute_two_start_pitchers(
     rows = conn.execute(
         f"""
         SELECT p.player_id, p.name, p.mlb_team, p.mlb_id,
-               fer.espn_team_id,
+               fer.espn_team_id, fer.eligible_slots,
                fps_s.era, fps_s.whip, fps_s.ip,
                fps_14.k_pct as k_pct_14d, fps_14.bb_pct as bb_pct_14d,
                fs.xfip, fs.siera, fs.fip
@@ -690,6 +690,7 @@ def compute_two_start_pitchers(
             "name":        r["name"],
             "team":        r["mlb_team"],
             "espn_team_id": r["espn_team_id"],
+            "eligible_slots": r["eligible_slots"],
             "rostered":    r["espn_team_id"] is not None,
             "score":       round(composite, 2),
             "stats": {
@@ -737,7 +738,7 @@ def compute_ownership_velocity(conn: sqlite3.Connection) -> list[dict]:
         """
         SELECT p.player_id, p.name, p.mlb_team,
                r.ownership_pct as recent_pct, pr.ownership_pct as prev_pct,
-               r.espn_team_id
+               r.espn_team_id, r.eligible_slots
         FROM fact_espn_rosters r
         JOIN fact_espn_rosters pr ON r.player_id = pr.player_id AND pr.snapshot_date = ?
         JOIN dim_players p         ON r.player_id = p.player_id
@@ -755,6 +756,7 @@ def compute_ownership_velocity(conn: sqlite3.Connection) -> list[dict]:
             "name":           r["name"],
             "team":           r["mlb_team"],
             "espn_team_id":   r["espn_team_id"],
+            "eligible_slots": r["eligible_slots"],
             "rostered":       r["espn_team_id"] is not None,
             "ownership_now":  _f(r["recent_pct"]),
             "ownership_prev": _f(r["prev_pct"]),

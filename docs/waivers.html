@@ -190,7 +190,7 @@ async function main(){
       const rosteredTag=p.rostered?`<span class="tag" style="background:rgba(239,68,68,.12);color:var(--loss)">ROSTERED</span>`:`<span class="tag tag-fa">FA</span>`;
       velTbody.innerHTML+=`<tr>
         <td><b>${p.name||'—'}</b></td>
-        <td class="pos">${p.team||'—'}</td>
+        <td class="pos">${posSlots(p)}</td>
         <td style="color:${color};font-weight:600">${delta>0?'+':''}${delta.toFixed(1)}% <span style="color:var(--muted);font-size:11px;font-weight:400">(${days}d)</span></td>
         <td>${(p.ownership_now||0).toFixed(1)}%</td>
         <td><span class="tag tag-vel">TRENDING</span>${rosteredTag}</td>
