@@ -184,6 +184,34 @@ def _savant_sprint() -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
+# Existing Savant columns (fallback when the live Savant scraper breaks)
+# ---------------------------------------------------------------------------
+
+def _existing_savant_frames() -> tuple:
+    """Read the Savant columns already in the DB, keyed by mlb_id, shaped like the
+    three _savant_* fetchers. Used as a fallback so a Savant fetch failure preserves
+    the prior Savant values instead of nulling them out on the full-refresh write
+    (FanGraphs metrics are still refreshed live)."""
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    rows = conn.execute(
+        """SELECT d.mlb_id, s.xba, s.xslg, s.xwoba, s.exit_velo, s.launch_angle,
+                  s.barrel_pct, s.hard_hit_pct, s.sprint_speed
+           FROM fact_statcast s JOIN dim_players d ON d.player_id = s.player_id
+           WHERE d.mlb_id IS NOT NULL AND d.mlb_id > 0"""
+    ).fetchall()
+    conn.close()
+    cols = ["mlb_id", "xba", "xslg", "xwoba", "exit_velo", "launch_angle",
+            "barrel_pct", "hard_hit_pct", "sprint_speed"]
+    df = pd.DataFrame([dict(r) for r in rows], columns=cols)
+    sv_exp    = df[["mlb_id", "xba", "xslg", "xwoba"]].copy()
+    sv_ev     = df[["mlb_id", "exit_velo", "launch_angle", "barrel_pct", "hard_hit_pct"]].copy()
+    sv_sprint = df[["mlb_id", "sprint_speed"]].copy()
+    print(f"  Fallback: preserved {len(df)} existing Savant rows from DB")
+    return sv_exp, sv_ev, sv_sprint
+
+
+# ---------------------------------------------------------------------------
 # Load dim_players mlb_id -> player_id (ESPN) mapping
 # ---------------------------------------------------------------------------
 
@@ -221,15 +249,21 @@ def fetch_and_write(force: bool = False) -> dict:
     fg_bat    = _fg_batting()
 
     # Baseball Savant via pybaseball — scraper can break without warning.
-    # On failure: warn and fall back to existing DB data rather than crashing.
+    # On failure: preserve the existing Savant columns from the DB and continue,
+    # so the freshly-fetched FanGraphs metrics (xFIP/SIERA/wRC+, which power the
+    # two-start scorer and buy/sell flags) are still written rather than discarded.
+    savant_skipped = False
+    savant_error = None
     try:
         sv_exp    = _savant_expected()
         sv_ev     = _savant_exitvelo()
         sv_sprint = _savant_sprint()
     except Exception as e:
         print(f"  WARNING: Baseball Savant fetch failed ({e})")
-        print("  Keeping existing statcast data in DB — pipeline continues.")
-        return {"skipped": True, "error": str(e)}
+        print("  Preserving existing Savant columns; refreshing FanGraphs only.")
+        sv_exp, sv_ev, sv_sprint = _existing_savant_frames()
+        savant_skipped = True
+        savant_error = str(e)
 
     # Merge on mlb_id
     merged = (
@@ -302,14 +336,18 @@ def fetch_and_write(force: bool = False) -> dict:
         "rows_written":    rows_inserted,
         "total_mlb":       total,
         "matched_espn":    len(matched),
+        "savant_skipped":  savant_skipped,
     })
 
-    print(f"  Wrote {rows_inserted} rows to fact_statcast")
+    note = " (Savant preserved from DB; FanGraphs refreshed)" if savant_skipped else ""
+    print(f"  Wrote {rows_inserted} rows to fact_statcast{note}")
     return {
-        "skipped":       False,
-        "rows_written":  rows_inserted,
-        "total_mlb":     total,
-        "matched_espn":  len(matched),
+        "skipped":        False,
+        "rows_written":   rows_inserted,
+        "total_mlb":      total,
+        "matched_espn":   len(matched),
+        "savant_skipped": savant_skipped,
+        "savant_error":   savant_error,
     }
 
 
