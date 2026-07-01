@@ -66,6 +66,30 @@ def _append_espn_update_history(record: dict, cap: int = 60) -> None:
         json.dump({"runs": runs[-cap:]}, f, indent=2)
 
 
+def _heal_crosswalk() -> dict:
+    """Self-heal newly-rostered players missing an MLB ID, before validate can
+    hard-stop on them (crosswalk drift is what broke the 2026-07-01 run).
+    Non-fatal — on any failure the pipeline continues and validate gates."""
+    print("\n--- crosswalk self-heal ---")
+    try:
+        from pipeline.crosswalk_refresh import heal
+        result = heal()
+        if not result["checked"]:
+            print("  all rostered players have MLB IDs — nothing to do")
+        else:
+            if result["resolved"]:
+                print(f"  resolved {len(result['resolved'])} player(s): "
+                      + ", ".join(f"{m['name']}({m['mlb_id']})" for m in result["resolved"]))
+            if result["unresolved"]:
+                print(f"  WARNING: {len(result['unresolved'])} still unresolved — "
+                      "add to crosswalk-overrides.json: "
+                      + ", ".join(f"{u['name']} [{u['note']}]" for u in result["unresolved"]))
+        return result
+    except Exception as e:
+        print(f"  WARNING: crosswalk self-heal failed ({e}) — continuing; validate will gate.")
+        return {"resolved": [], "unresolved": [], "checked": 0, "error": str(e)}
+
+
 def run_full() -> dict:
     """Full pipeline: crosswalk refresh + all fetchers + transform + validate + evaluate + report."""
     from pipeline.fetch_espn import run as fetch_espn, get_espn_update_status
@@ -95,6 +119,13 @@ def run_full() -> dict:
             print(f"  ESPN stats last updated (standingsUpdateDate): {espn_update['standings_update']}")
     except Exception as e:
         print(f"  (espn update-status check skipped: {e})")
+    _save_meta(meta)
+
+    # Phase 2a+: self-heal crosswalk — resolve newly-rostered players missing an
+    # MLB ID so validate.check_crosswalk_integrity doesn't hard-stop the run.
+    heal_result = _heal_crosswalk()
+    meta["crosswalk_heal"] = {"resolved": len(heal_result["resolved"]),
+                              "unresolved": len(heal_result["unresolved"])}
     _save_meta(meta)
 
     # Phase 2b: MLB schedule + transactions
@@ -211,6 +242,12 @@ def run_light() -> dict:
     espn_result = fetch_espn()
     meta["espn_last_fetch"] = _ts()
     meta["espn_rows"] = len(espn_result.get("roster_rows") or [])
+    _save_meta(meta)
+
+    # Self-heal crosswalk before validate (same as the full run).
+    heal_result = _heal_crosswalk()
+    meta["crosswalk_heal"] = {"resolved": len(heal_result["resolved"]),
+                              "unresolved": len(heal_result["unresolved"])}
     _save_meta(meta)
 
     print("\n--- fetch_mlb ---")
