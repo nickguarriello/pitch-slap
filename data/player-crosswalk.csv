@@ -296,7 +296,7 @@ player_id,mlb_id,fg_id,bbref_id,name,position,mlb_team,crosswalk_status,crosswal
 5080754,702273,-1,schulno01,Noah Schultz,SP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 32558,624585,14221,solerjo01,Jorge Soler,RF,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 42488,676282,23335,cantijo01,Joey Cantillo,RP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
-40459,,,,Luis Garcia Jr.,2B,,flagged,Exact match ambiguous — 5 players share the normalized name 'luis garcia'. Add to crosswalk-overrides.json with the correct mlb_id.,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
+40459,671277,20391,,Luis Garcia Jr.,2B,,manual,manual 2026-07-01 - WSH INF Luis Garcia Jr 671277 (not P Luis Garcia 472610/677651),2026-07-01T00:00:00.000000,2026-07-01T00:00:00.000000
 32968,518876,11156,kellyme01,Merrill Kelly,SP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 41595,666126,21842,corteca01,Carlos Cortes,RF,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 40912,669456,19427,biebesh01,Shane Bieber,SP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
@@ -309,7 +309,7 @@ player_id,mlb_id,fg_id,bbref_id,name,position,mlb_team,crosswalk_status,crosswal
 5000950,676254,20423,walkery01,Ryan Walker,RP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 41253,682626,26121,alvarfr01,Francisco Alvarez,C,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 4872683,691725,-1,paintan01,Andrew Painter,SP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
-32675,,,,Eduardo Rodriguez,SP,,flagged,Exact match ambiguous — 2 players share the normalized name 'eduardo rodriguez'. Add to crosswalk-overrides.json with the correct mlb_id.,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
+32675,593958,13164,,Eduardo Rodriguez,SP,,manual,manual 2026-07-01 - current LHP Eduardo Rodriguez 593958 (not 1970s 121350),2026-07-01T00:00:00.000000,2026-07-01T00:00:00.000000
 40803,669016,20202,marshbr02,Brandon Marsh,CF,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 31261,571448,9777,arenano01,Nolan Arenado,3B,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 39642,671218,22515,ramoshe02,Heliot Ramos,LF,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
@@ -555,3 +555,5 @@ player_id,mlb_id,fg_id,bbref_id,name,position,mlb_team,crosswalk_status,crosswal
 40557,666139,19953,lowejo01,Josh Lowe,RF,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 5116843,676775,23499,winnke01,Keaton Winn,RP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 35026,660853,18403,delosen01,Enyel De Los Santos,RP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
+41197,664983,21622,mccarja02,Jake McCarthy,LF,,manual,manual 2026-07-01 - ARI OF added since May crosswalk,2026-07-01T00:00:00.000000,2026-07-01T00:00:00.000000
+5023852,695611,,,Gage Jump,SP,,manual,manual 2026-07-01 - ATH LHP debut 2026-05-26 not in pybaseball register,2026-07-01T00:00:00.000000,2026-07-01T00:00:00.000000

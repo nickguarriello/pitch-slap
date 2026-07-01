@@ -55,5 +55,24 @@
     "mlb_id": 571510,
     "fg_id": "15440",
     "note": "Matthew Boyd — ESPN uses full 'Matthew', pybaseball stores as 'matt' causing no-match"
+  },
+  "40459": {
+    "mlb_id": 671277,
+    "fg_id": "20391",
+    "note": "Luis Garcia Jr. — WSH INF (not P Luis Garcia 472610/677651 nor 2002 408202); ambiguous exact name"
+  },
+  "32675": {
+    "mlb_id": 593958,
+    "fg_id": "13164",
+    "note": "Eduardo Rodriguez — current LHP (not 1970s Eduardo Rodriguez 121350); ambiguous exact name"
+  },
+  "41197": {
+    "mlb_id": 664983,
+    "fg_id": "21622",
+    "note": "Jake McCarthy — ARI OF; unique name match but was missing from the May crosswalk CSV"
+  },
+  "5023852": {
+    "mlb_id": 695611,
+    "note": "Gage Jump — ATH LHP, debut 2026-05-26; too new for the pybaseball register (no fuzzy match)"
   }
 }
