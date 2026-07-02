@@ -134,6 +134,15 @@
       "games_final_date": "2026-06-28",
       "all_games_final": true,
       "last_game": "NYY@BOS"
+    },
+    {
+      "run_ts": "2026-07-02T12:03:15.253509+00:00",
+      "espn_standings_update": "2026-07-02T08:38:52.042000+00:00",
+      "espn_waiver_execution": "2026-07-02T08:38:51.660000+00:00",
+      "scoring_period": 100,
+      "games_final_date": "2026-07-01",
+      "all_games_final": true,
+      "last_game": "LAD@OAK"
     }
   ]
 }

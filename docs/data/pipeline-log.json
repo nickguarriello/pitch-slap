@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-06-29T13:59:06.936141+00:00",
+  "as_of": "2026-07-02T12:03:23.347161+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-06-17T12:02:32.382414+00:00",
+  "last_full_run": "2026-07-02T12:03:15.253509+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-06-29T13:59:06.936141+00:00",
-  "mlb_last_fetch": "2026-06-29T13:59:07.658966+00:00",
-  "statcast_last_fetch": "2026-06-29T13:59:11.744356+00:00",
+  "espn_last_fetch": "2026-07-02T12:03:23.347161+00:00",
+  "mlb_last_fetch": "2026-07-02T12:03:24.214768+00:00",
+  "statcast_last_fetch": "2026-07-02T12:03:28.404411+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-06-28",
-    "games": 15,
-    "final": 15,
+    "date": "2026-07-01",
+    "games": 14,
+    "final": 14,
     "incomplete": [],
-    "last_game": "NYY@BOS",
+    "last_game": "LAD@OAK",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-06-29T08:49:21.509000+00:00",
-    "waiver_last_execution": "2026-06-29T08:49:20.956000+00:00",
-    "scoring_period": 97,
-    "checked_at": "2026-06-29T13:59:07.092982+00:00"
+    "standings_update": "2026-07-02T08:38:52.042000+00:00",
+    "waiver_last_execution": "2026-07-02T08:38:51.660000+00:00",
+    "scoring_period": 100,
+    "checked_at": "2026-07-02T12:03:23.475521+00:00"
   },
   "row_counts": {
-    "fact_espn_rosters": 556,
-    "fact_player_stats": 2488,
-    "fact_statcast": 519,
+    "fact_espn_rosters": 555,
+    "fact_player_stats": 2841,
+    "fact_statcast": 523,
     "fact_matchups": 130,
-    "stats_season": 563,
-    "stats_first_half": 563,
+    "stats_season": 567,
+    "stats_first_half": 567,
     "stats_second_half": 0,
-    "stats_30d": 484,
-    "stats_14d": 450,
-    "stats_7d": 428,
-    "stats_current": 0
+    "stats_30d": 490,
+    "stats_14d": 452,
+    "stats_7d": 429,
+    "stats_current": 336
   },
   "validation_checks": [
     {
@@ -98,27 +98,27 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "519 players with Statcast data"
+      "detail": "523 players with Statcast data"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "2488 rows across 6 windows"
+      "detail": "2841 rows across 6 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "188 upcoming team-game slots"
+      "detail": "182 upcoming team-game slots"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "253/256 (99%) rostered players have season stats"
+      "detail": "255/255 (100%) rostered players have season stats"
     },
     {
       "name": "",
-      "status": "warn",
-      "detail": "3 rostered players without MLB ID \u2014 check data-gap section"
+      "status": "pass",
+      "detail": "All rostered players have matched MLB IDs"
     },
     {
       "name": "",
