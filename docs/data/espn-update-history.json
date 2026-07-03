@@ -143,6 +143,15 @@
       "games_final_date": "2026-07-01",
       "all_games_final": true,
       "last_game": "LAD@OAK"
+    },
+    {
+      "run_ts": "2026-07-03T12:01:19.244669+00:00",
+      "espn_standings_update": "2026-07-03T08:50:10.894000+00:00",
+      "espn_waiver_execution": "2026-07-03T08:50:10.559000+00:00",
+      "scoring_period": 101,
+      "games_final_date": "2026-07-02",
+      "all_games_final": true,
+      "last_game": "SD@LAD"
     }
   ]
 }
