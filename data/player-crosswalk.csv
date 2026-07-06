@@ -557,3 +557,4 @@ player_id,mlb_id,fg_id,bbref_id,name,position,mlb_team,crosswalk_status,crosswal
 35026,660853,18403,delosen01,Enyel De Los Santos,RP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 41197,664983,21622,mccarja02,Jake McCarthy,LF,,manual,manual 2026-07-01 - ARI OF added since May crosswalk,2026-07-01T00:00:00.000000,2026-07-01T00:00:00.000000
 5023852,695611,,,Gage Jump,SP,,manual,manual 2026-07-01 - ATH LHP debut 2026-05-26 not in pybaseball register,2026-07-01T00:00:00.000000,2026-07-01T00:00:00.000000
+41311,665019,20572,clemeko01,Kody Clemens,1B,,matched,exact,2026-07-06T13:38:49.275832+00:00,2026-07-06T13:38:49.275832+00:00
