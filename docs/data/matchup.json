@@ -1,40 +1,40 @@
 {
   "cat_states": {
     "R": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLIPPABLE",
+      "my_val": 3.0,
+      "opp_val": 7.0,
+      "gap": -4.0
     },
     "HR": {
       "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
+      "my_val": 1.0,
+      "opp_val": 1.0,
       "gap": 0.0
     },
     "RBI": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLOPPABLE",
+      "my_val": 6.0,
+      "opp_val": 3.0,
+      "gap": 3.0
     },
     "SB": {
-      "state": "TIE",
-      "my_val": 0.0,
+      "state": "FLOPPABLE",
+      "my_val": 1.0,
       "opp_val": 0.0,
-      "gap": 0.0
+      "gap": 1.0
     },
     "OBP": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLIPPABLE",
+      "my_val": 0.39285714,
+      "opp_val": 0.42105263,
+      "gap": -0.0282
     },
     "K": {
-      "state": "TIE",
-      "my_val": 0.0,
+      "state": "FLOPPABLE",
+      "my_val": 1.0,
       "opp_val": 0.0,
-      "gap": 0.0
+      "gap": 1.0
     },
     "QS": {
       "state": "TIE",
@@ -44,21 +44,21 @@
     },
     "ERA": {
       "state": "TIE",
-      "my_val": null,
+      "my_val": 27.0,
       "opp_val": null,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "ip_note": "You 1.0/15 IP \u00b7 Opp 4.7/15 IP",
+      "my_ip_week": 1.0,
+      "opp_ip_week": 4.666666666666667
     },
     "WHIP": {
       "state": "TIE",
-      "my_val": null,
+      "my_val": 3.0,
       "opp_val": null,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "ip_note": "You 1.0/15 IP \u00b7 Opp 4.7/15 IP",
+      "my_ip_week": 1.0,
+      "opp_ip_week": 4.666666666666667
     },
     "SvHd": {
       "state": "TIE",
@@ -75,7 +75,7 @@
     "OBP": 0.7,
     "K": 0.66,
     "QS": 0.61,
-    "ERA": 0.4,
+    "ERA": 0.44,
     "WHIP": 0.4,
     "SvHd": 0.1
   },
@@ -197,7 +197,7 @@
         "result": "W",
         "state": "FLOPPABLE",
         "my_val": 3.541,
-        "opp_val": 4.299
+        "opp_val": 4.164
       },
       {
         "cat": "WHIP",
@@ -1354,8 +1354,8 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 0.0,
-    "ip_remaining": 15.0,
+    "ip_accumulated": 1.0,
+    "ip_remaining": 14.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,
