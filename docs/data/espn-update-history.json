@@ -188,6 +188,15 @@
       "games_final_date": "2026-07-06",
       "all_games_final": true,
       "last_game": "COL@LAD"
+    },
+    {
+      "run_ts": "2026-07-08T11:42:51.391152+00:00",
+      "espn_standings_update": "2026-07-08T08:33:20.612000+00:00",
+      "espn_waiver_execution": "2026-07-08T08:33:20.341000+00:00",
+      "scoring_period": 106,
+      "games_final_date": "2026-07-07",
+      "all_games_final": true,
+      "last_game": "COL@LAD"
     }
   ]
 }
