@@ -206,6 +206,15 @@
       "games_final_date": "2026-07-09",
       "all_games_final": true,
       "last_game": "COL@SF"
+    },
+    {
+      "run_ts": "2026-07-11T10:55:43.396135+00:00",
+      "espn_standings_update": "2026-07-11T09:16:39.070000+00:00",
+      "espn_waiver_execution": "2026-07-11T09:16:38.742000+00:00",
+      "scoring_period": 109,
+      "games_final_date": "2026-07-10",
+      "all_games_final": true,
+      "last_game": "COL@SF"
     }
   ]
 }
