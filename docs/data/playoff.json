@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-07-12",
+  "as_of": "2026-07-13",
   "playoff_start_week": 22,
-  "current_week": 15,
-  "weeks_until_playoffs": 6,
+  "current_week": 16,
+  "weeks_until_playoffs": 5,
   "in_playoff_weeks": false,
   "my_seed": 1,
   "in_playoffs": true,
@@ -53,7 +53,7 @@
       "ranks": {
         "R": 2,
         "HR": 4,
-        "RBI": 1,
+        "RBI": 2,
         "SB": 1,
         "OBP": 7,
         "K": 3,
@@ -139,7 +139,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 5,
-        "HR": 6,
+        "HR": 7,
         "RBI": 6,
         "SB": 8,
         "OBP": 3,
@@ -197,7 +197,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 4,
-        "HR": 7,
+        "HR": 6,
         "RBI": 4,
         "SB": 4,
         "OBP": 2,
@@ -227,7 +227,7 @@
       "ranks": {
         "R": 3,
         "HR": 5,
-        "RBI": 2,
+        "RBI": 1,
         "SB": 3,
         "OBP": 5,
         "K": 2,
@@ -362,9 +362,9 @@
         },
         "RBI": {
           "my_rank": 3,
-          "their_rank": 1,
+          "their_rank": 2,
           "winner": "theirs",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "SB": {
           "my_rank": 2,

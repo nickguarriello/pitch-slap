@@ -1,64 +1,70 @@
 {
   "cat_states": {
     "R": {
-      "state": "LOSS",
-      "my_val": 27.0,
-      "opp_val": 45.0,
-      "gap": -18.0
+      "state": "UNKNOWN",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null
     },
     "HR": {
-      "state": "FLOPPABLE",
-      "my_val": 9.0,
-      "opp_val": 6.0,
-      "gap": 3.0
+      "state": "UNKNOWN",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null
     },
     "RBI": {
-      "state": "FLOPPABLE",
-      "my_val": 36.0,
-      "opp_val": 33.0,
-      "gap": 3.0
+      "state": "UNKNOWN",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null
     },
     "SB": {
-      "state": "FLIPPABLE",
-      "my_val": 7.0,
-      "opp_val": 9.0,
-      "gap": -2.0
+      "state": "UNKNOWN",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null
     },
     "OBP": {
-      "state": "LOSS",
-      "my_val": 0.31081081,
-      "opp_val": 0.39534884,
-      "gap": -0.0845
+      "state": "UNKNOWN",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null
     },
     "K": {
-      "state": "FLOPPABLE",
-      "my_val": 51.0,
-      "opp_val": 49.0,
-      "gap": 2.0
+      "state": "UNKNOWN",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null
     },
     "QS": {
-      "state": "FLOPPABLE",
-      "my_val": 4.0,
-      "opp_val": 2.0,
-      "gap": 2.0
+      "state": "UNKNOWN",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null
     },
     "ERA": {
-      "state": "FLOPPABLE",
-      "my_val": 3.82978723,
-      "opp_val": 4.23966942,
-      "gap": 0.4099
+      "state": "TIE",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "WHIP": {
-      "state": "FLIPPABLE",
-      "my_val": 1.0212766,
-      "opp_val": 0.94214876,
-      "gap": -0.0791
+      "state": "TIE",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "SvHd": {
-      "state": "WIN",
-      "my_val": 8.0,
-      "opp_val": 4.0,
-      "gap": 4.0
+      "state": "UNKNOWN",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null
     }
   },
   "need_weights": {
@@ -1343,13 +1349,13 @@
       "matchup_ties": 0
     }
   },
-  "current_opponent_name": "ICECOLDBEERHERE! ",
-  "current_opponent_abbrev": "BEER",
+  "current_opponent_name": "ChicksDigTheLongBall",
+  "current_opponent_abbrev": "CDLB",
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 56.0,
-    "ip_remaining": 0.0,
+    "ip_accumulated": 0.0,
+    "ip_remaining": 15.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,
