@@ -47,18 +47,18 @@
       "my_val": null,
       "opp_val": null,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "ip_note": "You 6.3/15 IP \u00b7 Opp 1.0/15 IP",
+      "my_ip_week": 6.333333333333333,
+      "opp_ip_week": 1.0
     },
     "WHIP": {
       "state": "TIE",
       "my_val": null,
       "opp_val": null,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "ip_note": "You 6.3/15 IP \u00b7 Opp 1.0/15 IP",
+      "my_ip_week": 6.333333333333333,
+      "opp_ip_week": 1.0
     },
     "SvHd": {
       "state": "UNKNOWN",
@@ -1354,11 +1354,11 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 0.0,
-    "ip_remaining": 15.0,
+    "ip_accumulated": 6.333333333333333,
+    "ip_remaining": 8.7,
     "waiver_priority": 3,
     "acq_alert": null,
-    "ip_alert": "IP PACE: only 0.0 IP by Thursday \u2014 at risk of minimum",
+    "ip_alert": "IP PACE: only 6.3 IP by Thursday \u2014 at risk of minimum",
     "waiver_alert": "STRONG: waiver priority #3 \u2014 act early in week"
   }
 }

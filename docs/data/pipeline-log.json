@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-07-17T11:15:45.501315+00:00",
+  "as_of": "2026-07-18T10:56:25.354955+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-07-17T11:15:36.684493+00:00",
+  "last_full_run": "2026-07-18T10:56:16.357014+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-07-17T11:15:45.501315+00:00",
-  "mlb_last_fetch": "2026-07-17T11:15:46.458093+00:00",
-  "statcast_last_fetch": "2026-07-17T11:15:50.190914+00:00",
+  "espn_last_fetch": "2026-07-18T10:56:25.354955+00:00",
+  "mlb_last_fetch": "2026-07-18T10:56:25.905808+00:00",
+  "statcast_last_fetch": "2026-07-18T10:56:28.961500+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-07-16",
-    "games": 1,
-    "final": 1,
+    "date": "2026-07-17",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
-    "last_game": "NYM@PHI",
+    "last_game": "SF@SEA",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-07-17T08:45:14.468000+00:00",
-    "waiver_last_execution": "2026-07-17T08:45:14.179000+00:00",
-    "scoring_period": 115,
-    "checked_at": "2026-07-17T11:15:45.622783+00:00"
+    "standings_update": "2026-07-18T09:16:47.901000+00:00",
+    "waiver_last_execution": "2026-07-18T09:16:47.590000+00:00",
+    "scoring_period": 116,
+    "checked_at": "2026-07-18T10:56:25.523734+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 2436,
+    "fact_player_stats": 2882,
     "fact_statcast": 525,
     "fact_matchups": 140,
     "stats_season": 569,
     "stats_first_half": 569,
-    "stats_second_half": 19,
-    "stats_30d": 473,
-    "stats_14d": 429,
-    "stats_7d": 358,
-    "stats_current": 19
+    "stats_second_half": 249,
+    "stats_30d": 470,
+    "stats_14d": 428,
+    "stats_7d": 348,
+    "stats_current": 249
   },
   "validation_checks": [
     {
@@ -102,13 +102,13 @@
     },
     {
       "name": "",
-      "status": "warn",
-      "detail": "Smallest non-current window has only 19 rows \u2014 transform output thin"
+      "status": "pass",
+      "detail": "2882 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "190 upcoming team-game slots"
+      "detail": "192 upcoming team-game slots"
     },
     {
       "name": "",

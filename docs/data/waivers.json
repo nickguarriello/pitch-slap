@@ -29,15 +29,15 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (3.42) >> xFIP (2.36), gap=1.06",
-        "ERA (3.42) >> SIERA (2.24), gap=1.18"
+        "ERA (3.46) >> xFIP (2.46), gap=1.00",
+        "ERA (3.46) >> SIERA (2.34), gap=1.12"
       ],
       "score": 0.69,
       "stats": {
-        "era": 3.42,
-        "xfip": 2.356418243741919,
-        "siera": 2.2365301826382615,
-        "ip": 50.0
+        "era": 3.46,
+        "xfip": 2.462998789316824,
+        "siera": 2.3431193039984577,
+        "ip": 52.0
       }
     },
     {
@@ -50,34 +50,14 @@
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (4.37) >> xFIP (3.44), gap=0.93",
-        "ERA (4.37) >> SIERA (3.52), gap=0.85"
+        "ERA (4.37) >> SIERA (3.53), gap=0.84"
       ],
       "score": 0.69,
       "stats": {
         "era": 4.37,
-        "xfip": 3.4352054502282825,
-        "siera": 3.523855219032951,
+        "xfip": 3.4362060546875,
+        "siera": 3.52624056711454,
         "ip": 35.0
-      }
-    },
-    {
-      "player_id": "33224",
-      "name": "Devin Williams",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.68) >> xFIP (3.53), gap=1.15",
-        "ERA (4.68) >> SIERA (3.56), gap=1.12"
-      ],
-      "score": 0.69,
-      "stats": {
-        "era": 4.68,
-        "xfip": 3.5253410456046548,
-        "siera": 3.557367337222582,
-        "ip": 32.666666666666664
       }
     },
     {
@@ -89,15 +69,35 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.74) >> xFIP (3.74), gap=1.00",
-        "ERA (4.74) >> SIERA (3.43), gap=1.31"
+        "ERA (4.62) >> xFIP (3.71), gap=0.91",
+        "ERA (4.62) >> SIERA (3.40), gap=1.22"
       ],
       "score": 0.69,
       "stats": {
-        "era": 4.74,
-        "xfip": 3.7403218863192778,
-        "siera": 3.4261436392124183,
-        "ip": 38.0
+        "era": 4.62,
+        "xfip": 3.712925585909278,
+        "siera": 3.3993806945699885,
+        "ip": 39.0
+      }
+    },
+    {
+      "player_id": "33224",
+      "name": "Devin Williams",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.68) >> xFIP (3.45), gap=1.23",
+        "ERA (4.68) >> SIERA (3.51), gap=1.17"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 4.68,
+        "xfip": 3.4517483508657727,
+        "siera": 3.513746238784422,
+        "ip": 32.666666666666664
       }
     },
     {
@@ -109,14 +109,14 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.00) >> xFIP (4.11), gap=0.89",
-        "ERA (5.00) >> SIERA (3.97), gap=1.03"
+        "ERA (5.00) >> xFIP (4.12), gap=0.88",
+        "ERA (5.00) >> SIERA (3.98), gap=1.02"
       ],
       "score": 0.69,
       "stats": {
         "era": 5.0,
-        "xfip": 4.1138791914805655,
-        "siera": 3.974905907360011,
+        "xfip": 4.115127931238483,
+        "siera": 3.9772912554415996,
         "ip": 66.66666666666667
       }
     },
@@ -135,8 +135,8 @@
       "score": 0.69,
       "stats": {
         "era": 5.16,
-        "xfip": 4.248802086472908,
-        "siera": 4.179186068132652,
+        "xfip": 4.2496502399528495,
+        "siera": 4.181571416214241,
         "ip": 82.0
       }
     },
@@ -155,8 +155,8 @@
       "score": 0.69,
       "stats": {
         "era": 5.23,
-        "xfip": 4.231514045204741,
-        "siera": 3.976118104753603,
+        "xfip": 4.232701080481313,
+        "siera": 3.978503452835192,
         "ip": 51.666666666666664
       }
     },
@@ -170,14 +170,34 @@
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.29) >> xFIP (4.29), gap=1.00",
-        "ERA (5.29) >> SIERA (4.25), gap=1.04"
+        "ERA (5.29) >> SIERA (4.26), gap=1.03"
       ],
       "score": 0.69,
       "stats": {
         "era": 5.29,
-        "xfip": 4.289041911810637,
-        "siera": 4.2529320686564045,
+        "xfip": 4.290301644802094,
+        "siera": 4.255317416737993,
         "ip": 80.0
+      }
+    },
+    {
+      "player_id": "34973",
+      "name": "Tyler Mahle",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": null,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.31) >> xFIP (4.19), gap=1.12",
+        "ERA (5.31) >> SIERA (4.37), gap=0.94"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 5.31,
+        "xfip": 4.189957552689773,
+        "siera": 4.368961507605848,
+        "ip": 78.0
       }
     }
   ],
@@ -192,34 +212,14 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.224 below floor (0.260)",
-        "OBP (0.291) lags xwOBA (0.342)"
+        "OBP (0.291) lags xwOBA (0.338)"
       ],
       "score": 0.7,
       "stats": {
         "obp": 0.291,
-        "xwoba": 0.34248456899185625,
+        "xwoba": 0.3376106480189732,
         "babip": 0.224,
         "sprint_speed": 26.6
-      }
-    },
-    {
-      "player_id": "32177",
-      "name": "J.T. Realmuto",
-      "team": null,
-      "espn_team_id": 6,
-      "rostered": true,
-      "eligible_slots": "C,UTIL,BN,IL",
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.237 below floor (0.240)",
-        "OBP (0.288) lags xwOBA (0.313)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.288,
-        "xwoba": 0.31324836880553003,
-        "babip": 0.237,
-        "sprint_speed": 28.2
       }
     },
     {
@@ -231,14 +231,14 @@
       "eligible_slots": "3B,CI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.209 below floor (0.260)",
-        "OBP (0.290) lags xwOBA (0.321)"
+        "BABIP 0.206 below floor (0.260)",
+        "OBP (0.289) lags xwOBA (0.321)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.29,
+        "obp": 0.289,
         "xwoba": 0.3206564370687906,
-        "babip": 0.209,
+        "babip": 0.206,
         "sprint_speed": 25.1
       }
     },
@@ -297,8 +297,8 @@
       "score": 0.69,
       "stats": {
         "era": 4.19,
-        "xfip": 2.82246350506375,
-        "siera": 2.7198858068590765,
+        "xfip": 2.822996931114089,
+        "siera": 2.7222711549406653,
         "ip": 34.333333333333336
       }
     },
@@ -317,8 +317,8 @@
       "score": 0.69,
       "stats": {
         "era": 4.5,
-        "xfip": 3.7318791346569133,
-        "siera": 3.736440082992821,
+        "xfip": 3.7328018983204094,
+        "siera": 3.73882543107441,
         "ip": 46.0
       }
     },
@@ -337,8 +337,8 @@
       "score": 0.69,
       "stats": {
         "era": 4.57,
-        "xfip": 2.5324653934124943,
-        "siera": 2.4079590356859892,
+        "xfip": 2.532790693414854,
+        "siera": 2.410344383767578,
         "ip": 41.333333333333336
       }
     },
@@ -357,8 +357,8 @@
       "score": 0.69,
       "stats": {
         "era": 4.81,
-        "xfip": 3.9070938455944786,
-        "siera": 3.6586884443462595,
+        "xfip": 3.9085474085527525,
+        "siera": 3.6610737924278483,
         "ip": 82.33333333333333
       }
     },
@@ -377,8 +377,8 @@
       "score": 0.69,
       "stats": {
         "era": 5.09,
-        "xfip": 3.4812842726481654,
-        "siera": 3.3566395978693113,
+        "xfip": 3.481765138916412,
+        "siera": 3.3590249459509,
         "ip": 35.333333333333336
       }
     }
