@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-07-18T10:56:25.354955+00:00",
+  "as_of": "2026-07-19T11:05:14.377441+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-07-18T10:56:16.357014+00:00",
+  "last_full_run": "2026-07-19T11:05:06.802381+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-07-18T10:56:25.354955+00:00",
-  "mlb_last_fetch": "2026-07-18T10:56:25.905808+00:00",
-  "statcast_last_fetch": "2026-07-18T10:56:28.961500+00:00",
+  "espn_last_fetch": "2026-07-19T11:05:14.377441+00:00",
+  "mlb_last_fetch": "2026-07-19T11:05:14.916379+00:00",
+  "statcast_last_fetch": "2026-07-19T11:05:19.281212+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-07-17",
-    "games": 15,
-    "final": 15,
+    "date": "2026-07-18",
+    "games": 16,
+    "final": 16,
     "incomplete": [],
-    "last_game": "SF@SEA",
+    "last_game": "DET@LAA",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-07-18T09:16:47.901000+00:00",
-    "waiver_last_execution": "2026-07-18T09:16:47.590000+00:00",
-    "scoring_period": 116,
-    "checked_at": "2026-07-18T10:56:25.523734+00:00"
+    "standings_update": "2026-07-19T09:04:39.238000+00:00",
+    "waiver_last_execution": "2026-07-19T09:04:38.759000+00:00",
+    "scoring_period": 117,
+    "checked_at": "2026-07-19T11:05:14.473716+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 2882,
+    "fact_player_stats": 3024,
     "fact_statcast": 525,
     "fact_matchups": 140,
     "stats_season": 569,
     "stats_first_half": 569,
-    "stats_second_half": 249,
-    "stats_30d": 470,
-    "stats_14d": 428,
-    "stats_7d": 348,
-    "stats_current": 249
+    "stats_second_half": 321,
+    "stats_30d": 469,
+    "stats_14d": 432,
+    "stats_7d": 343,
+    "stats_current": 321
   },
   "validation_checks": [
     {
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "2882 rows across 7 windows"
+      "detail": "3024 rows across 7 windows"
     },
     {
       "name": "",

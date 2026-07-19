@@ -251,6 +251,15 @@
       "games_final_date": "2026-07-17",
       "all_games_final": true,
       "last_game": "SF@SEA"
+    },
+    {
+      "run_ts": "2026-07-19T11:05:06.802381+00:00",
+      "espn_standings_update": "2026-07-19T09:04:39.238000+00:00",
+      "espn_waiver_execution": "2026-07-19T09:04:38.759000+00:00",
+      "scoring_period": 117,
+      "games_final_date": "2026-07-18",
+      "all_games_final": true,
+      "last_game": "DET@LAA"
     }
   ]
 }

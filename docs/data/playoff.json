@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-18",
+  "as_of": "2026-07-19",
   "playoff_start_week": 22,
   "current_week": 16,
   "weeks_until_playoffs": 5,
@@ -53,7 +53,7 @@
       "ranks": {
         "R": 2,
         "HR": 4,
-        "RBI": 1,
+        "RBI": 2,
         "SB": 1,
         "OBP": 7,
         "K": 3,
@@ -83,7 +83,7 @@
         "R": 7,
         "HR": 2,
         "RBI": 7,
-        "SB": 6,
+        "SB": 5,
         "OBP": 6,
         "K": 8,
         "QS": 8,
@@ -112,7 +112,7 @@
         "R": 6,
         "HR": 1,
         "RBI": 5,
-        "SB": 5,
+        "SB": 6,
         "OBP": 8,
         "K": 5,
         "QS": 3,
@@ -227,7 +227,7 @@
       "ranks": {
         "R": 3,
         "HR": 5,
-        "RBI": 2,
+        "RBI": 1,
         "SB": 3,
         "OBP": 5,
         "K": 2,
@@ -291,9 +291,9 @@
         },
         "SB": {
           "my_rank": 2,
-          "their_rank": 5,
+          "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 4
         },
         "OBP": {
           "my_rank": 1,
@@ -362,9 +362,9 @@
         },
         "RBI": {
           "my_rank": 3,
-          "their_rank": 1,
+          "their_rank": 2,
           "winner": "theirs",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "SB": {
           "my_rank": 2,
@@ -445,9 +445,9 @@
         },
         "SB": {
           "my_rank": 2,
-          "their_rank": 6,
+          "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 3
         },
         "OBP": {
           "my_rank": 1,
