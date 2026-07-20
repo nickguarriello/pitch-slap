@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-07-19T11:05:14.377441+00:00",
+  "as_of": "2026-07-20T12:09:52.245874+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-07-19T11:05:06.802381+00:00",
+  "last_full_run": "2026-07-20T12:09:43.344444+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-07-19T11:05:14.377441+00:00",
-  "mlb_last_fetch": "2026-07-19T11:05:14.916379+00:00",
-  "statcast_last_fetch": "2026-07-19T11:05:19.281212+00:00",
+  "espn_last_fetch": "2026-07-20T12:09:52.245874+00:00",
+  "mlb_last_fetch": "2026-07-20T12:09:56.523246+00:00",
+  "statcast_last_fetch": "2026-07-20T12:09:59.541391+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-07-18",
+    "date": "2026-07-19",
     "games": 16,
     "final": 16,
     "incomplete": [],
-    "last_game": "DET@LAA",
+    "last_game": "LAD@NYY",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-07-19T09:04:39.238000+00:00",
-    "waiver_last_execution": "2026-07-19T09:04:38.759000+00:00",
-    "scoring_period": 117,
-    "checked_at": "2026-07-19T11:05:14.473716+00:00"
+    "standings_update": "2026-07-20T08:57:54.837000+00:00",
+    "waiver_last_execution": "2026-07-20T08:57:54.278000+00:00",
+    "scoring_period": 118,
+    "checked_at": "2026-07-20T12:09:52.398927+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 3024,
-    "fact_statcast": 525,
-    "fact_matchups": 140,
-    "stats_season": 569,
-    "stats_first_half": 569,
-    "stats_second_half": 321,
-    "stats_30d": 469,
-    "stats_14d": 432,
-    "stats_7d": 343,
-    "stats_current": 321
+    "fact_player_stats": 2761,
+    "fact_statcast": 526,
+    "fact_matchups": 150,
+    "stats_season": 571,
+    "stats_first_half": 570,
+    "stats_second_half": 361,
+    "stats_30d": 467,
+    "stats_14d": 431,
+    "stats_7d": 361,
+    "stats_current": 0
   },
   "validation_checks": [
     {
@@ -98,17 +98,17 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "525 players with Statcast data"
+      "detail": "526 players with Statcast data"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "3024 rows across 7 windows"
+      "detail": "2761 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "192 upcoming team-game slots"
+      "detail": "190 upcoming team-game slots"
     },
     {
       "name": "",
