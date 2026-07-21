@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-07-20T12:09:52.245874+00:00",
+  "as_of": "2026-07-21T11:42:29.417173+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-07-20T12:09:43.344444+00:00",
+  "last_full_run": "2026-07-21T11:42:20.177532+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-07-20T12:09:52.245874+00:00",
-  "mlb_last_fetch": "2026-07-20T12:09:56.523246+00:00",
-  "statcast_last_fetch": "2026-07-20T12:09:59.541391+00:00",
+  "espn_last_fetch": "2026-07-21T11:42:29.417173+00:00",
+  "mlb_last_fetch": "2026-07-21T11:42:29.909388+00:00",
+  "statcast_last_fetch": "2026-07-21T11:42:33.555287+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-07-19",
-    "games": 16,
-    "final": 16,
+    "date": "2026-07-20",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
-    "last_game": "LAD@NYY",
+    "last_game": "STL@LAA",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-07-20T08:57:54.837000+00:00",
-    "waiver_last_execution": "2026-07-20T08:57:54.278000+00:00",
-    "scoring_period": 118,
-    "checked_at": "2026-07-20T12:09:52.398927+00:00"
+    "standings_update": "2026-07-21T08:38:50.919000+00:00",
+    "waiver_last_execution": "2026-07-21T08:38:50.274000+00:00",
+    "scoring_period": 119,
+    "checked_at": "2026-07-21T11:42:29.531394+00:00"
   },
   "row_counts": {
-    "fact_espn_rosters": 556,
-    "fact_player_stats": 2761,
+    "fact_espn_rosters": 555,
+    "fact_player_stats": 3071,
     "fact_statcast": 526,
     "fact_matchups": 150,
     "stats_season": 571,
     "stats_first_half": 570,
-    "stats_second_half": 361,
-    "stats_30d": 467,
-    "stats_14d": 431,
-    "stats_7d": 361,
-    "stats_current": 0
+    "stats_second_half": 391,
+    "stats_30d": 468,
+    "stats_14d": 433,
+    "stats_7d": 391,
+    "stats_current": 247
   },
   "validation_checks": [
     {
@@ -103,17 +103,17 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "2761 rows across 7 windows"
+      "detail": "3071 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "190 upcoming team-game slots"
+      "detail": "184 upcoming team-game slots"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "256/256 (100%) rostered players have season stats"
+      "detail": "255/255 (100%) rostered players have season stats"
     },
     {
       "name": "",
