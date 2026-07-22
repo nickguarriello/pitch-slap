@@ -49,15 +49,15 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (3.46) >> xFIP (2.47), gap=0.99",
-        "ERA (3.46) >> SIERA (2.36), gap=1.10"
+        "ERA (3.40) >> xFIP (2.51), gap=0.89",
+        "ERA (3.40) >> SIERA (2.42), gap=0.98"
       ],
       "score": 0.69,
       "stats": {
-        "era": 3.46,
-        "xfip": 2.4724384004287323,
-        "siera": 2.3616773591608875,
-        "ip": 52.0
+        "era": 3.4,
+        "xfip": 2.5125136155491683,
+        "siera": 2.416307778479356,
+        "ip": 53.0
       }
     },
     {
@@ -75,8 +75,8 @@
       "score": 0.69,
       "stats": {
         "era": 4.05,
-        "xfip": 3.1103290576487783,
-        "siera": 3.253163049126856,
+        "xfip": 3.1088283855468037,
+        "siera": 3.2520619725239204,
         "ip": 40.0
       }
     },
@@ -89,14 +89,14 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.40) >> xFIP (3.31), gap=1.09",
+        "ERA (4.40) >> xFIP (3.30), gap=1.10",
         "ERA (4.40) >> SIERA (3.46), gap=0.94"
       ],
       "score": 0.69,
       "stats": {
         "era": 4.4,
-        "xfip": 3.3051670318899244,
-        "siera": 3.463582912229959,
+        "xfip": 3.303642571015222,
+        "siera": 3.462481835627023,
         "ip": 102.33333333333333
       }
     },
@@ -109,15 +109,35 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.68) >> xFIP (3.47), gap=1.21",
-        "ERA (4.68) >> SIERA (3.53), gap=1.15"
+        "ERA (4.54) >> xFIP (3.54), gap=1.00",
+        "ERA (4.54) >> SIERA (3.57), gap=0.97"
       ],
       "score": 0.69,
       "stats": {
-        "era": 4.68,
-        "xfip": 3.465300529068129,
-        "siera": 3.5323042939468516,
-        "ip": 32.666666666666664
+        "era": 4.54,
+        "xfip": 3.544919142329794,
+        "siera": 3.5669929415720785,
+        "ip": 33.666666666666664
+      }
+    },
+    {
+      "player_id": "4875969",
+      "name": "Caleb Kilian",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.69) >> xFIP (3.82), gap=0.87",
+        "ERA (4.69) >> SIERA (3.49), gap=1.20"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 4.69,
+        "xfip": 3.8208804523320072,
+        "siera": 3.4873371875643375,
+        "ip": 40.333333333333336
       }
     },
     {
@@ -135,29 +155,9 @@
       "score": 0.69,
       "stats": {
         "era": 4.78,
-        "xfip": 3.9049906564002135,
-        "siera": 3.997498890240924,
+        "xfip": 3.903440303096966,
+        "siera": 3.996397813637988,
         "ip": 98.0
-      }
-    },
-    {
-      "player_id": "4875969",
-      "name": "Caleb Kilian",
-      "team": null,
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.81) >> xFIP (3.76), gap=1.05",
-        "ERA (4.81) >> SIERA (3.46), gap=1.35"
-      ],
-      "score": 0.69,
-      "stats": {
-        "era": 4.81,
-        "xfip": 3.762207632930272,
-        "siera": 3.455735884013658,
-        "ip": 39.333333333333336
       }
     },
     {
@@ -170,18 +170,38 @@
       "flag_type": "buy_low_pitcher",
       "reasons": [
         "ERA (5.00) >> xFIP (4.13), gap=0.87",
-        "ERA (5.00) >> SIERA (4.00), gap=1.00"
+        "ERA (5.00) >> SIERA (3.99), gap=1.01"
       ],
       "score": 0.69,
       "stats": {
         "era": 5.0,
-        "xfip": 4.131673625437201,
-        "siera": 3.9958493106040294,
+        "xfip": 4.129959603228793,
+        "siera": 3.9947482340010936,
         "ip": 66.66666666666667
       }
     }
   ],
   "buy_low_trade": [
+    {
+      "player_id": "32129",
+      "name": "Francisco Lindor",
+      "team": null,
+      "espn_team_id": 7,
+      "rostered": true,
+      "eligible_slots": "SS,MI,UTIL,BN,IL",
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.254 below floor (0.260)",
+        "OBP (0.316) lags xwOBA (0.342)"
+      ],
+      "score": 0.7,
+      "stats": {
+        "obp": 0.316,
+        "xwoba": 0.34163673887861534,
+        "babip": 0.254,
+        "sprint_speed": 26.6
+      }
+    },
     {
       "player_id": "34995",
       "name": "Trent Grisham",
@@ -203,26 +223,6 @@
       }
     },
     {
-      "player_id": "32129",
-      "name": "Francisco Lindor",
-      "team": null,
-      "espn_team_id": 7,
-      "rostered": true,
-      "eligible_slots": "SS,MI,UTIL,BN,IL",
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.237 below floor (0.260)",
-        "OBP (0.303) lags xwOBA (0.342)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.303,
-        "xwoba": 0.34163673887861534,
-        "babip": 0.237,
-        "sprint_speed": 26.6
-      }
-    },
-    {
       "player_id": "31097",
       "name": "Manny Machado",
       "team": null,
@@ -231,14 +231,14 @@
       "eligible_slots": "3B,CI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.203 below floor (0.260)",
-        "OBP (0.292) lags xwOBA (0.327)"
+        "BABIP 0.202 below floor (0.260)",
+        "OBP (0.294) lags xwOBA (0.327)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.292,
+        "obp": 0.294,
         "xwoba": 0.326888432277935,
-        "babip": 0.203,
+        "babip": 0.202,
         "sprint_speed": 25.1
       }
     },
@@ -277,8 +277,8 @@
       "score": 0.69,
       "stats": {
         "era": 3.96,
-        "xfip": 2.6306341086941973,
-        "siera": 2.57082711259507,
+        "xfip": 2.629326912090255,
+        "siera": 2.5697260359921343,
         "ip": 36.333333333333336
       }
     },
@@ -297,8 +297,8 @@
       "score": 0.69,
       "stats": {
         "era": 4.0,
-        "xfip": 3.090566174196747,
-        "siera": 3.231405976890517,
+        "xfip": 3.0891328902310935,
+        "siera": 3.230304900287581,
         "ip": 119.33333333333333
       }
     },
@@ -317,8 +317,8 @@
       "score": 0.69,
       "stats": {
         "era": 4.46,
-        "xfip": 2.534457998223195,
-        "siera": 2.438794863879761,
+        "xfip": 2.5332228828804233,
+        "siera": 2.4376937872768254,
         "ip": 42.333333333333336
       }
     },
@@ -331,14 +331,14 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.80) >> xFIP (3.95), gap=0.85",
+        "ERA (4.80) >> xFIP (3.94), gap=0.86",
         "ERA (4.80) >> SIERA (3.89), gap=0.91"
       ],
       "score": 0.69,
       "stats": {
         "era": 4.8,
-        "xfip": 3.9463198321442503,
-        "siera": 3.887011844027857,
+        "xfip": 3.9446303284054425,
+        "siera": 3.8859107674249214,
         "ip": 110.66666666666667
       }
     },
@@ -357,8 +357,8 @@
       "score": 0.69,
       "stats": {
         "era": 4.86,
-        "xfip": 3.8430848565508233,
-        "siera": 3.692327387350141,
+        "xfip": 3.8417638241273173,
+        "siera": 3.691226310747205,
         "ip": 37.0
       }
     }

@@ -278,6 +278,15 @@
       "games_final_date": "2026-07-20",
       "all_games_final": true,
       "last_game": "STL@LAA"
+    },
+    {
+      "run_ts": "2026-07-22T11:42:34.251107+00:00",
+      "espn_standings_update": "2026-07-22T09:20:27.745000+00:00",
+      "espn_waiver_execution": "2026-07-22T09:20:27.233000+00:00",
+      "scoring_period": 120,
+      "games_final_date": "2026-07-21",
+      "all_games_final": true,
+      "last_game": "OAK@ARI"
     }
   ]
 }
