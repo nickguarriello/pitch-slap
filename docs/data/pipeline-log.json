@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-07-22T11:42:43.281662+00:00",
+  "as_of": "2026-07-23T11:46:12.084966+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-07-22T11:42:34.251107+00:00",
+  "last_full_run": "2026-07-23T11:46:01.182273+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-07-22T11:42:43.281662+00:00",
-  "mlb_last_fetch": "2026-07-22T11:42:43.965255+00:00",
-  "statcast_last_fetch": "2026-07-22T11:42:47.187521+00:00",
+  "espn_last_fetch": "2026-07-23T11:46:12.084966+00:00",
+  "mlb_last_fetch": "2026-07-23T11:46:12.463866+00:00",
+  "statcast_last_fetch": "2026-07-23T11:46:15.456080+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-07-21",
-    "games": 15,
-    "final": 15,
+    "date": "2026-07-22",
+    "games": 17,
+    "final": 17,
     "incomplete": [],
-    "last_game": "OAK@ARI",
+    "last_game": "DET@CHC",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-07-22T09:20:27.745000+00:00",
-    "waiver_last_execution": "2026-07-22T09:20:27.233000+00:00",
-    "scoring_period": 120,
-    "checked_at": "2026-07-22T11:42:43.401427+00:00"
+    "standings_update": "2026-07-23T09:01:39.727000+00:00",
+    "waiver_last_execution": "2026-07-23T09:01:37.376000+00:00",
+    "scoring_period": 121,
+    "checked_at": "2026-07-23T11:46:12.173607+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 555,
-    "fact_player_stats": 3170,
+    "fact_player_stats": 3252,
     "fact_statcast": 526,
     "fact_matchups": 150,
     "stats_season": 572,
     "stats_first_half": 570,
-    "stats_second_half": 414,
-    "stats_30d": 467,
+    "stats_second_half": 426,
+    "stats_30d": 466,
     "stats_14d": 432,
-    "stats_7d": 414,
-    "stats_current": 301
+    "stats_7d": 426,
+    "stats_current": 360
   },
   "validation_checks": [
     {
@@ -103,12 +103,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3170 rows across 7 windows"
+      "detail": "3252 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "188 upcoming team-game slots"
+      "detail": "184 upcoming team-game slots"
     },
     {
       "name": "",

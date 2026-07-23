@@ -287,6 +287,15 @@
       "games_final_date": "2026-07-21",
       "all_games_final": true,
       "last_game": "OAK@ARI"
+    },
+    {
+      "run_ts": "2026-07-23T11:46:01.182273+00:00",
+      "espn_standings_update": "2026-07-23T09:01:39.727000+00:00",
+      "espn_waiver_execution": "2026-07-23T09:01:37.376000+00:00",
+      "scoring_period": 121,
+      "games_final_date": "2026-07-22",
+      "all_games_final": true,
+      "last_game": "DET@CHC"
     }
   ]
 }

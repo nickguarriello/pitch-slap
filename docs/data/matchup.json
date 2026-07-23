@@ -43,22 +43,22 @@
       "gap": null
     },
     "ERA": {
-      "state": "TIE",
+      "state": "LOSS",
       "my_val": null,
       "opp_val": null,
       "gap": null,
-      "ip_note": "You 4.3/15 IP \u00b7 Opp 13.7/15 IP",
-      "my_ip_week": 4.333333333333333,
-      "opp_ip_week": 13.666666666666666
+      "ip_note": "You 13.0/15 IP \u00b7 Opp 32.7/15 IP",
+      "my_ip_week": 13.0,
+      "opp_ip_week": 32.666666666666664
     },
     "WHIP": {
-      "state": "TIE",
+      "state": "LOSS",
       "my_val": null,
       "opp_val": null,
       "gap": null,
-      "ip_note": "You 4.3/15 IP \u00b7 Opp 13.7/15 IP",
-      "my_ip_week": 4.333333333333333,
-      "opp_ip_week": 13.666666666666666
+      "ip_note": "You 13.0/15 IP \u00b7 Opp 32.7/15 IP",
+      "my_ip_week": 13.0,
+      "opp_ip_week": 32.666666666666664
     },
     "SvHd": {
       "state": "UNKNOWN",
@@ -1440,8 +1440,8 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 4.333333333333333,
-    "ip_remaining": 10.7,
+    "ip_accumulated": 13.0,
+    "ip_remaining": 2.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,
