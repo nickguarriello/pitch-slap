@@ -296,6 +296,15 @@
       "games_final_date": "2026-07-22",
       "all_games_final": true,
       "last_game": "DET@CHC"
+    },
+    {
+      "run_ts": "2026-07-24T11:30:39.960955+00:00",
+      "espn_standings_update": "2026-07-24T08:51:38.218000+00:00",
+      "espn_waiver_execution": "2026-07-24T08:51:37.526000+00:00",
+      "scoring_period": 122,
+      "games_final_date": "2026-07-23",
+      "all_games_final": true,
+      "last_game": "KC@DET"
     }
   ]
 }
