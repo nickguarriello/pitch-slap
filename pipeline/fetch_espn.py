@@ -233,7 +233,10 @@ def fetch_matchups(league) -> dict:
     Return current week live per-cat scores + high-level scoreboard.
     Uses direct API call for per-cat data since espn-api doesn't expose it.
     """
-    week = _current_week_number()
+    # ESPN's own current matchup period, not local calendar math — the naive
+    # date formula (_current_week_number) drifts out of sync with ESPN's real
+    # schedule around the All-Star break, leaving current_scores empty.
+    week = league.currentMatchupPeriod
     result = {
         'current_week': week,
         'current_scores': [],   # per-cat dicts for each matchup
