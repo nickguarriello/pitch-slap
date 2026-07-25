@@ -477,7 +477,7 @@ def build_league(conn: sqlite3.Connection) -> dict:
 # playoff.json
 # ---------------------------------------------------------------------------
 
-def build_playoff(league_data: dict) -> dict:
+def build_playoff(conn: sqlite3.Connection, league_data: dict) -> dict:
     """
     Build playoff picture: standings, bracket, category matchup previews vs
     each potential opponent, swing categories, and improvement targets.
@@ -495,18 +495,25 @@ def build_playoff(league_data: dict) -> dict:
     )
     playoff_teams = PLAYOFFS["teams"]
 
-    # Current week from fact_matchups max week
-    # (already computed by the time report.py runs)
-    # We use the league data's as_of date as a proxy
-    from config import WEEK_1_START, WEEK_1_END, WEEK_2_START
-    from datetime import date, timedelta
-    today = date.today()
-    w1_end   = date.fromisoformat(WEEK_1_END)
-    w2_start = date.fromisoformat(WEEK_2_START)
-    if today <= w1_end:
-        current_week = 1
-    else:
-        current_week = 2 + (today - w2_start).days // 7
+    # Current week: ESPN's own matchup period (same source evaluate.py uses),
+    # not local calendar math — a naive days-since-start // 7 formula drifts
+    # out of sync with ESPN's real week numbering around the All-Star break,
+    # which also throws off the playoff_start comparison below.
+    current_week = conn.execute("SELECT MAX(week) FROM matchup_snapshots").fetchone()[0]
+    if current_week is None:
+        current_week = conn.execute(
+            "SELECT MAX(week) FROM fact_matchups WHERE is_final = 0"
+        ).fetchone()[0]
+    if current_week is None:
+        from config import WEEK_1_START, WEEK_1_END, WEEK_2_START
+        from datetime import date
+        today = date.today()
+        w1_end   = date.fromisoformat(WEEK_1_END)
+        w2_start = date.fromisoformat(WEEK_2_START)
+        if today <= w1_end:
+            current_week = 1
+        else:
+            current_week = 2 + (today - w2_start).days // 7
 
     weeks_until_playoffs = max(0, playoff_start - current_week - 1)
     in_playoff_weeks     = current_week >= playoff_start
@@ -881,7 +888,7 @@ def run() -> dict:
     _write_json(os.path.join(DOCS_DATA_DIR, "league.json"), league)
 
     print("  playoff.json...")
-    playoff = build_playoff(league)
+    playoff = build_playoff(conn, league)
     _write_json(os.path.join(DOCS_DATA_DIR, "playoff.json"), playoff)
 
     print("  status.json...")
