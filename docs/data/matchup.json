@@ -1434,7 +1434,7 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 30.0,
+    "ip_accumulated": 56.666666666666664,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,

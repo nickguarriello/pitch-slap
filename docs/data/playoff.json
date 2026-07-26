@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-25",
+  "as_of": "2026-07-26",
   "playoff_start_week": 22,
   "current_week": 17,
   "weeks_until_playoffs": 4,
@@ -59,7 +59,7 @@
         "K": 3,
         "QS": 7,
         "SvHd": 4,
-        "ERA": 5,
+        "ERA": 4,
         "WHIP": 6
       },
       "seed": 2,
@@ -233,7 +233,7 @@
         "K": 6,
         "QS": 5,
         "SvHd": 5,
-        "ERA": 4,
+        "ERA": 5,
         "WHIP": 2
       },
       "seed": 8,
@@ -390,9 +390,9 @@
         },
         "ERA": {
           "my_rank": 1,
-          "their_rank": 5,
+          "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 3
         },
         "WHIP": {
           "my_rank": 1,

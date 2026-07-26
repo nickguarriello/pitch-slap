@@ -314,6 +314,15 @@
       "games_final_date": "2026-07-24",
       "all_games_final": true,
       "last_game": "LAA@SF"
+    },
+    {
+      "run_ts": "2026-07-26T11:13:53.962528+00:00",
+      "espn_standings_update": "2026-07-26T08:31:52.835000+00:00",
+      "espn_waiver_execution": "2026-07-26T08:31:52.442000+00:00",
+      "scoring_period": 124,
+      "games_final_date": "2026-07-25",
+      "all_games_final": true,
+      "last_game": "LAD@NYM"
     }
   ]
 }
