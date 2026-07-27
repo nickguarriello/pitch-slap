@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-07-26T11:14:03.501248+00:00",
+  "as_of": "2026-07-27T12:51:24.635168+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-07-26T11:13:53.962528+00:00",
+  "last_full_run": "2026-07-27T12:51:16.589265+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-07-26T11:14:03.501248+00:00",
-  "mlb_last_fetch": "2026-07-26T11:14:04.154046+00:00",
-  "statcast_last_fetch": "2026-07-26T11:14:07.595371+00:00",
+  "espn_last_fetch": "2026-07-27T12:51:24.635168+00:00",
+  "mlb_last_fetch": "2026-07-27T12:51:29.251112+00:00",
+  "statcast_last_fetch": "2026-07-27T12:51:32.558300+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-07-25",
+    "date": "2026-07-26",
     "games": 15,
     "final": 15,
     "incomplete": [],
-    "last_game": "LAD@NYM",
+    "last_game": "NYY@PHI",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-07-26T08:31:52.835000+00:00",
-    "waiver_last_execution": "2026-07-26T08:31:52.442000+00:00",
-    "scoring_period": 124,
-    "checked_at": "2026-07-26T11:14:03.653116+00:00"
+    "standings_update": "2026-07-27T09:02:37.688000+00:00",
+    "waiver_last_execution": "2026-07-27T09:02:37.011000+00:00",
+    "scoring_period": 125,
+    "checked_at": "2026-07-27T12:51:24.710988+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 555,
-    "fact_player_stats": 3295,
-    "fact_statcast": 526,
-    "fact_matchups": 150,
-    "stats_season": 572,
-    "stats_first_half": 570,
-    "stats_second_half": 428,
-    "stats_30d": 461,
-    "stats_14d": 430,
-    "stats_7d": 422,
-    "stats_current": 412
+    "fact_player_stats": 2899,
+    "fact_statcast": 528,
+    "fact_matchups": 160,
+    "stats_season": 574,
+    "stats_first_half": 572,
+    "stats_second_half": 433,
+    "stats_30d": 463,
+    "stats_14d": 433,
+    "stats_7d": 424,
+    "stats_current": 0
   },
   "validation_checks": [
     {
@@ -88,7 +88,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "33 players on roster"
+      "detail": "32 players on roster"
     },
     {
       "name": "",
@@ -98,12 +98,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "526 players with Statcast data"
+      "detail": "528 players with Statcast data"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "3295 rows across 7 windows"
+      "detail": "2899 rows across 7 windows"
     },
     {
       "name": "",

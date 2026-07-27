@@ -323,6 +323,15 @@
       "games_final_date": "2026-07-25",
       "all_games_final": true,
       "last_game": "LAD@NYM"
+    },
+    {
+      "run_ts": "2026-07-27T12:51:16.589265+00:00",
+      "espn_standings_update": "2026-07-27T09:02:37.688000+00:00",
+      "espn_waiver_execution": "2026-07-27T09:02:37.011000+00:00",
+      "scoring_period": 125,
+      "games_final_date": "2026-07-26",
+      "all_games_final": true,
+      "last_game": "NYY@PHI"
     }
   ]
 }

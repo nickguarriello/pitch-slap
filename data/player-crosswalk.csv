@@ -559,3 +559,5 @@ player_id,mlb_id,fg_id,bbref_id,name,position,mlb_team,crosswalk_status,crosswal
 5023852,695611,,,Gage Jump,SP,,manual,manual 2026-07-01 - ATH LHP debut 2026-05-26 not in pybaseball register,2026-07-01T00:00:00.000000,2026-07-01T00:00:00.000000
 41311,665019,20572,clemeko01,Kody Clemens,1B,,matched,exact,2026-07-06T13:38:49.275832+00:00,2026-07-06T13:38:49.275832+00:00
 5137200,699013,-1,valdees01,Esmerlyn Valdez,RF,,matched,exact,2026-07-20T12:09:56.307976+00:00,2026-07-20T12:09:56.307976+00:00
+5124113,701678,-1,leeha02,Hao-Yu Lee,3B,,matched,exact,2026-07-27T12:51:28.792755+00:00,2026-07-27T12:51:28.792755+00:00
+5149101,806198,-1,prattco01,Cooper Pratt,SS,,matched,exact,2026-07-27T12:51:28.792755+00:00,2026-07-27T12:51:28.792755+00:00
