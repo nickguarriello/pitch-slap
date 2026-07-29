@@ -1,6 +1,6 @@
 cat,state,my_val,opp_val,gap,need_weight,season_wins,season_losses,win_rate
 R,UNKNOWN,,,,0.4,9,7,0.562
-HR,UNKNOWN,,,,0.4,8,7,0.5
+HR,UNKNOWN,,,,0.44,8,7,0.5
 RBI,UNKNOWN,,,,0.15,11,4,0.688
 SB,UNKNOWN,,,,0.44,9,6,0.562
 OBP,UNKNOWN,,,,0.7,10,6,0.625
