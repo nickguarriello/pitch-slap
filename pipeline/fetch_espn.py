@@ -259,9 +259,27 @@ def fetch_matchups(league) -> dict:
     try:
         data = _espn_get(['mMatchup', 'mMatchupScore'])
         schedule = data.get('schedule', [])
+        # Identify the current matchup period from ESPN's own data, not the
+        # date-based week number: ESPN pauses matchupPeriodId over the All-Star
+        # break, so from mid-July on the date math (_current_week_number) runs one
+        # ahead of the real period. The old `period != week` filter then matched an
+        # empty *future* matchup and every my_val/opp_val came back None — the
+        # dashboard showed UNKNOWN for all categories (since 2026-07-13). The
+        # current week is the earliest matchup not yet decided (completed weeks
+        # carry a winner; current + future weeks are UNDECIDED).
+        undecided = sorted(
+            m.get('matchupPeriodId') for m in schedule
+            if m.get('winner', 'UNDECIDED') == 'UNDECIDED'
+            and m.get('matchupPeriodId') is not None
+        )
+        current_period = undecided[0] if undecided else week
+        if current_period != week:
+            print(f"  Note: current matchup period is {current_period} "
+                  f"(date-based week {week}; ASG-break offset)")
+        result['current_week'] = current_period
         for matchup in schedule:
             period = matchup.get('matchupPeriodId')
-            if period != week:
+            if period != current_period:
                 continue
             home = matchup.get('home', {})
             away = matchup.get('away', {})
