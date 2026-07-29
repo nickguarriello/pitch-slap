@@ -1,77 +1,77 @@
 {
   "cat_states": {
     "R": {
-      "state": "UNKNOWN",
-      "my_val": null,
-      "opp_val": null,
-      "gap": null
+      "state": "FLOPPABLE",
+      "my_val": 11.0,
+      "opp_val": 7.0,
+      "gap": 4.0
     },
     "HR": {
-      "state": "UNKNOWN",
-      "my_val": null,
-      "opp_val": null,
-      "gap": null
+      "state": "FLOPPABLE",
+      "my_val": 2.0,
+      "opp_val": 1.0,
+      "gap": 1.0
     },
     "RBI": {
-      "state": "UNKNOWN",
-      "my_val": null,
-      "opp_val": null,
-      "gap": null
+      "state": "TIE",
+      "my_val": 9.0,
+      "opp_val": 9.0,
+      "gap": 0.0
     },
     "SB": {
-      "state": "UNKNOWN",
-      "my_val": null,
-      "opp_val": null,
-      "gap": null
+      "state": "FLOPPABLE",
+      "my_val": 4.0,
+      "opp_val": 1.0,
+      "gap": 3.0
     },
     "OBP": {
-      "state": "UNKNOWN",
-      "my_val": null,
-      "opp_val": null,
-      "gap": null
+      "state": "FLOPPABLE",
+      "my_val": 0.30097087,
+      "opp_val": 0.29787234,
+      "gap": 0.0031
     },
     "K": {
-      "state": "UNKNOWN",
-      "my_val": null,
-      "opp_val": null,
-      "gap": null
+      "state": "FLIPPABLE",
+      "my_val": 19.0,
+      "opp_val": 23.0,
+      "gap": -4.0
     },
     "QS": {
-      "state": "UNKNOWN",
-      "my_val": null,
-      "opp_val": null,
-      "gap": null
+      "state": "FLIPPABLE",
+      "my_val": 1.0,
+      "opp_val": 3.0,
+      "gap": -2.0
     },
     "ERA": {
-      "state": "TIE",
-      "my_val": null,
-      "opp_val": null,
+      "state": "LOSS",
+      "my_val": 6.075,
+      "opp_val": 2.25,
       "gap": null,
-      "ip_note": "You 13.7/15 IP \u00b7 Opp 8.0/15 IP",
+      "ip_note": "You 13.7/15 IP \u00b7 Opp 20.0/15 IP",
       "my_ip_week": 13.666666666666666,
-      "opp_ip_week": 8.0
+      "opp_ip_week": 20.0
     },
     "WHIP": {
-      "state": "TIE",
-      "my_val": null,
-      "opp_val": null,
+      "state": "LOSS",
+      "my_val": 1.35,
+      "opp_val": 1.05,
       "gap": null,
-      "ip_note": "You 13.7/15 IP \u00b7 Opp 8.0/15 IP",
+      "ip_note": "You 13.7/15 IP \u00b7 Opp 20.0/15 IP",
       "my_ip_week": 13.666666666666666,
-      "opp_ip_week": 8.0
+      "opp_ip_week": 20.0
     },
     "SvHd": {
-      "state": "UNKNOWN",
-      "my_val": null,
-      "opp_val": null,
-      "gap": null
+      "state": "FLIPPABLE",
+      "my_val": 0.0,
+      "opp_val": 1.0,
+      "gap": -1.0
     }
   },
   "need_weights": {
     "R": 0.4,
     "HR": 0.44,
     "RBI": 0.15,
-    "SB": 0.44,
+    "SB": 0.4,
     "OBP": 0.7,
     "K": 0.66,
     "QS": 0.57,
@@ -1521,8 +1521,8 @@
       "matchup_ties": 3
     }
   },
-  "current_opponent_name": "Jazz In Her Batters Box",
-  "current_opponent_abbrev": "Jhf",
+  "current_opponent_name": "2010 State Sectional Champ",
+  "current_opponent_abbrev": "BJL",
   "constraints": {
     "acquisitions_used": 1,
     "acquisitions_remaining": 6,
