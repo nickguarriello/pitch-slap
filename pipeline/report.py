@@ -495,18 +495,28 @@ def build_playoff(league_data: dict) -> dict:
     )
     playoff_teams = PLAYOFFS["teams"]
 
-    # Current week from fact_matchups max week
-    # (already computed by the time report.py runs)
-    # We use the league data's as_of date as a proxy
-    from config import WEEK_1_START, WEEK_1_END, WEEK_2_START
-    from datetime import date, timedelta
-    today = date.today()
-    w1_end   = date.fromisoformat(WEEK_1_END)
-    w2_start = date.fromisoformat(WEEK_2_START)
-    if today <= w1_end:
-        current_week = 1
-    else:
-        current_week = 2 + (today - w2_start).days // 7
+    # Current matchup period: read the live period from matchup_snapshots (which
+    # fetch_espn derives from ESPN's own matchupPeriodId), so it stays consistent
+    # with playoff_start (also an ESPN period number). Pure date math drifts +1
+    # after the All-Star break — the same off-by-one that broke the matchup tab —
+    # so it is only a fallback when no snapshot exists.
+    current_week = None
+    try:
+        _c = _conn()
+        _row = _c.execute("SELECT MAX(week) FROM matchup_snapshots").fetchone()
+        _c.close()
+        if _row and _row[0] is not None:
+            current_week = int(_row[0])
+    except Exception:
+        current_week = None
+    if current_week is None:
+        from config import WEEK_1_END, WEEK_2_START
+        from datetime import date
+        today = date.today()
+        if today <= date.fromisoformat(WEEK_1_END):
+            current_week = 1
+        else:
+            current_week = 2 + (today - date.fromisoformat(WEEK_2_START)).days // 7
 
     weeks_until_playoffs = max(0, playoff_start - current_week - 1)
     in_playoff_weeks     = current_week >= playoff_start
