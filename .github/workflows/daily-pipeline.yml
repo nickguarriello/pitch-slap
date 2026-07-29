@@ -64,3 +64,9 @@ jobs:
           git add docs/data/ data/player-crosswalk.csv
           git diff --staged --quiet || git commit -m "data: pipeline run $(date -u +'%Y-%m-%d %H:%M UTC') [${{ steps.mode.outputs.mode }}]"
           git push
+
+      # Data is already committed above. This step re-checks output completeness
+      # and fails the job (→ GitHub email) if the dashboard is degraded, so silent
+      # breakage surfaces same-day without ever losing a run's output.
+      - name: Alert on degraded output
+        run: python -m pipeline.health

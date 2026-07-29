@@ -90,6 +90,25 @@ def _heal_crosswalk() -> dict:
         return {"resolved": [], "unresolved": [], "checked": 0, "error": str(e)}
 
 
+def _health_check(meta: dict) -> None:
+    """Output completeness check (non-fatal). Writes docs/data/health.json; the
+    workflow commits the data first, then fails the job (→ email) if degraded,
+    so silent degradation surfaces same-day without losing the run's output."""
+    print("\n--- health ---")
+    try:
+        from pipeline.health import run as health_run
+        result = health_run()
+        meta["health_overall"] = result["overall"]
+        meta["health_degraded"] = result["degraded_checks"]
+        for c in result["checks"]:
+            if c["status"] == "degraded":
+                print(f"  DEGRADED {c['check']}: {c['detail']}")
+        print(f"  health: {result['overall'].upper()}")
+    except Exception as e:
+        print(f"  WARNING: health check failed ({e})")
+    _save_meta(meta)
+
+
 def run_full() -> dict:
     """Full pipeline: crosswalk refresh + all fetchers + transform + validate + evaluate + report."""
     from pipeline.fetch_espn import run as fetch_espn, get_espn_update_status
@@ -220,6 +239,9 @@ def run_full() -> dict:
         print(f"  WARNING: trade analyzer failed ({e}) — skipping trades.json")
     _save_meta(meta)
 
+    # Phase 7: output health check (non-fatal; workflow alerts on degraded)
+    _health_check(meta)
+
     print(f"\n[{_ts()}] Full pipeline complete.")
     return meta
 
@@ -298,6 +320,9 @@ def run_light() -> dict:
     except Exception as e:
         print(f"  WARNING: trade analyzer failed ({e}) — skipping trades.json")
     _save_meta(meta)
+
+    # Output health check (non-fatal; workflow alerts on degraded)
+    _health_check(meta)
 
     print(f"\n[{_ts()}] Light pipeline complete.")
     return meta
