@@ -477,6 +477,56 @@ def build_league(conn: sqlite3.Connection) -> dict:
 # playoff.json
 # ---------------------------------------------------------------------------
 
+_LOWER_BETTER = {"ERA", "WHIP"}
+
+
+def _compute_category_profile() -> dict:
+    """My season-long per-category HEAD-TO-HEAD performance: how often I win each
+    category across completed weeks and by what margin. Distinct from the
+    rank-based 'My Category Profile' (league standing) — this is actual weekly
+    matchup results. Classifies each cat as STRENGTH / SWING / WEAKNESS; the SWING
+    cats are where playoff matchups are actually decided, so a marginal add/trade
+    there is worth more than padding a category you already lock or always lose."""
+    conn = _conn()
+    try:
+        rows = conn.execute(
+            """SELECT cat_name, my_val, opp_val, result
+               FROM fact_matchups
+               WHERE my_team_id = ? AND is_final = 1 AND cat_name IS NOT NULL""",
+            (TEAM_ID,),
+        ).fetchall()
+    except Exception:
+        rows = []
+    conn.close()
+
+    by_cat: dict = {}
+    for r in rows:
+        by_cat.setdefault(r["cat_name"], []).append(r)
+
+    profile: dict = {}
+    for cat in ALL_CATS:
+        recs = by_cat.get(cat, [])
+        wins   = sum(1 for r in recs if r["result"] == "W")
+        losses = sum(1 for r in recs if r["result"] == "L")
+        ties   = sum(1 for r in recs if r["result"] == "T")
+        n = wins + losses + ties
+        if n == 0:
+            continue
+        win_rate = round((wins + 0.5 * ties) / n, 3)
+        lower_better = cat in _LOWER_BETTER
+        margins = [((r["opp_val"] - r["my_val"]) if lower_better else (r["my_val"] - r["opp_val"]))
+                   for r in recs if r["my_val"] is not None and r["opp_val"] is not None]
+        avg_margin = round(sum(margins) / len(margins), 3) if margins else None
+        cls = "STRENGTH" if win_rate >= 0.60 else "WEAKNESS" if win_rate <= 0.40 else "SWING"
+        profile[cat] = {
+            "wins": wins, "losses": losses, "ties": ties,
+            "record": f"{wins}-{losses}-{ties}",
+            "win_rate": win_rate, "avg_margin": avg_margin,
+            "weeks": n, "class": cls,
+        }
+    return profile
+
+
 def build_playoff(league_data: dict) -> dict:
     """
     Build playoff picture: standings, bracket, category matchup previews vs
@@ -659,6 +709,7 @@ def build_playoff(league_data: dict) -> dict:
             {"seed_high": 2, "seed_low": 3},
         ],
         "my_category_ranks":       my_ranks,
+        "category_profile":        _compute_category_profile(),
         "opponent_previews":       opponent_previews,
         "swing_categories":        global_swings,
         "improvement_targets":     improvement_targets,

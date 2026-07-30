@@ -115,6 +115,15 @@ th.sortable .arr{font-size:9px;opacity:.8}
   </div>
 
   <div class="card">
+    <h2>Season Category Trends <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>How often you actually win each category head-to-head across completed weeks, and by how much.</b><br><br><b>STRENGTH</b> — you win it ≥60% of weeks. Likely locked in the playoffs; don't overspend padding it.<br><b>SWING</b> — 40–60%. Genuinely contested — <b>this is where playoff matchups are decided.</b> A marginal add or trade here is worth the most.<br><b>WEAKNESS</b> — you win it ≤40%. Only worth targeting with a significant roster change.<br><br>Margin = average weekly gap in your favor (negative = losing on average). A thin margin means even a STRENGTH is fragile.</div></span></h2>
+    <p class="section-note">Your actual head-to-head win rate per category across completed weeks (distinct from league rank above). Sorted worst-first — target SWING categories with adds and trades before the playoffs.</p>
+    <table>
+      <thead><tr><th>Category</th><th>Record</th><th>Win %</th><th>Avg Margin</th><th>Trend</th></tr></thead>
+      <tbody id="cat-trends"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
     <h2>Opponent Previews <span class="tip-wrap"><span class="tip-btn">?</span><div class="tip-box"><b>Projected cat-by-cat matchup based on season ranks.</b><br><br><b>WIN</b> — you rank better in this cat<br><b>TOSS</b> — within 1 rank (coin flip)<br><b>LOSS</b> — opponent ranks better<br><b>SWING</b> — within 2 ranks; competitive. Prioritize these.<br><br>★ = likely Round 1 opponent (seed 1 vs 4, seed 2 vs 3).<br><br>Projected score = sum of WIN/LOSS/TOSS across all 10 categories.</div></span></h2>
     <p class="section-note">Category-by-category projection based on season ranks. <span style="color:var(--warn)">★ = likely Round 1 opponent</span> based on current seeding.</p>
     <div class="opp-tabs" id="opp-tabs"></div>
@@ -338,6 +347,30 @@ async function main(){
       <div class="cat-rank">${rank||'—'}</div>
       <div class="cat-tag">${rl}</div>
     </div>`;
+  }
+
+  // Season category trends (head-to-head win-rate + margin)
+  const prof = playoff.category_profile || {};
+  const trendsEl = document.getElementById('cat-trends');
+  const RATE_CATS = new Set(['OBP','ERA','WHIP']);
+  const clsColor = {STRENGTH:'var(--win)', SWING:'var(--warn)', WEAKNESS:'var(--loss)'};
+  const profRows = ALL_CATS.filter(c=>prof[c]).map(c=>[c,prof[c]])
+                           .sort((a,b)=>a[1].win_rate-b[1].win_rate);
+  if(!profRows.length){
+    trendsEl.innerHTML = '<tr><td colspan="5" style="color:var(--muted);padding:12px">No completed weeks yet.</td></tr>';
+  } else {
+    trendsEl.innerHTML = profRows.map(([c,p])=>{
+      const m = p.avg_margin;
+      const md = m==null ? '—' : (m>=0?'+':'') + fmt(m, RATE_CATS.has(c)?3:1);
+      const col = clsColor[p.class] || 'var(--muted)';
+      return `<tr>
+        <td><b>${CAT_LABELS[c]||c}</b></td>
+        <td>${p.record}</td>
+        <td>${(p.win_rate*100).toFixed(0)}%</td>
+        <td style="color:${m>=0?'var(--win)':'var(--loss)'}">${md}</td>
+        <td><span style="color:${col};font-weight:700;font-size:11px">${p.class}</span></td>
+      </tr>`;
+    }).join('');
   }
 
   // Opponent tabs + content
