@@ -200,9 +200,13 @@ opponent-adjusted swing (score Δ against the specific week's opponent, not leag
 - **Rate-scale calibration** (the big one): scorer `RATE_MARGIN` + `player_value` rate terms
   inflate ERA-driven swings → absolute scores run large (1.0+). Widen margins / normalize and
   re-validate against hand examples. Ranking is sensible; magnitudes are not yet trustworthy.
-- **Asset/upside valuation:** the model prices players by current-season category production,
-  so it under-values ace pedigree / prospect upside — a category-fair deal may be declined on
-  talent (the talent gate only partially mitigates). Consider blending in ESPN projections /
-  ownership / a scarcity term.
+- ✅ **Asset/upside valuation (DONE 2026-07-30):** `_make_player` now blends actual season
+  production with ESPN's full-season projection, scaled to an "expected-to-date" total so it is
+  directly comparable to the actual total (`PROJ_BLEND` = 0.5, `SEASON_FRACTION` from
+  SEASON_START). Regresses over/under-performers toward talent and stops under-pricing pedigree
+  (e.g. Juan Soto value +0.15→+0.23; Chase Burns-for-bat scored higher). A player exactly on his
+  projection is unchanged, so the score thresholds stay valid (full run still 35 trades). Missing
+  projection → actual-only fallback. **Scarcity term intentionally omitted** — slot scarcity is
+  already handled by the lineup-aware optimizer (§6) by construction.
 - **Nav link:** add `trades.html` to the `<nav>` on the other 6 pages (only trades.html has it).
 - **Polish:** protected-players param, value-window blend (§7), `replacement`/VORP sanity baseline.

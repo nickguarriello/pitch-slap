@@ -17,8 +17,10 @@ import os
 import sqlite3
 import sys
 
+from datetime import date
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from config import DB_PATH, DATA_DIR, TEAM_ID, ROSTER_SLOTS
+from config import DB_PATH, DATA_DIR, TEAM_ID, ROSTER_SLOTS, SEASON_START
 from pipeline.evaluate import compute_need_weights
 
 # --- parameters (see design spec §2/§4) -----------------------------------
@@ -39,6 +41,23 @@ FAIR_TOL = 0.15         # max raw-talent edge I may receive (blocks lopsided "fl
 TOP_N = 5               # ranked trades kept per target team
 NEUTRAL_NEED = {c: 0.5 for c in ('R', 'HR', 'RBI', 'SB', 'OBP', 'K', 'QS', 'ERA', 'WHIP', 'SvHd')}
 PROTECTED_PLAYERS: set[str] = set()   # players I will never offer (by name); never appear on the give side
+
+# --- rest-of-season projection blend (design §7) ---------------------------
+# Player value blends actual season production with ESPN's full-season
+# projection, scaled to an "expected-to-date" total so it is directly comparable
+# to the actual season total. This regresses over/under-performers toward their
+# talent and stops the model under-pricing pedigree (a projected ace with few
+# games logged). A player exactly on his projection is unchanged (expected ==
+# actual), so the existing score thresholds stay valid. Missing projection ->
+# fall back to actual only.
+SEASON_WEEKS = 26.0                                            # full MLB season length
+_elapsed_weeks = max(0.1, (date.today() - date.fromisoformat(SEASON_START)).days / 7.0)
+SEASON_FRACTION = min(1.0, _elapsed_weeks / SEASON_WEEKS)      # share of season elapsed
+PROJ_BLEND = 0.5                                               # weight on projection vs actual
+PROJ_COL = {'R': 'espn_proj_r', 'HR': 'espn_proj_hr', 'RBI': 'espn_proj_rbi',
+            'SB': 'espn_proj_sb', 'OBP': 'espn_proj_obp', 'K': 'espn_proj_k',
+            'QS': 'espn_proj_qs', 'ERA': 'espn_proj_era', 'WHIP': 'espn_proj_whip',
+            'SvHd': 'espn_proj_svhd'}
 
 HIT_COUNT = {'R': 'r', 'HR': 'hr', 'RBI': 'rbi', 'SB': 'sb'}   # cat -> stats column
 PIT_COUNT = {'K': 'k', 'QS': 'qs', 'SvHd': 'svhd'}
@@ -61,7 +80,10 @@ def load_team(team_id: int, db_path: str = DB_PATH, snapshot: str = None) -> lis
     if snapshot is None:
         snapshot = conn.execute("SELECT MAX(snapshot_date) FROM fact_espn_rosters").fetchone()[0]
     rows = conn.execute(
-        """SELECT r.player_id, p.name, p.position, r.eligible_slots, r.is_il
+        """SELECT r.player_id, p.name, p.position, r.eligible_slots, r.is_il,
+                  r.espn_proj_r, r.espn_proj_hr, r.espn_proj_rbi, r.espn_proj_sb,
+                  r.espn_proj_obp, r.espn_proj_k, r.espn_proj_qs, r.espn_proj_era,
+                  r.espn_proj_whip, r.espn_proj_svhd
            FROM fact_espn_rosters r JOIN dim_players p ON p.player_id = r.player_id
            WHERE r.espn_team_id = ? AND r.snapshot_date = ?""",
         (team_id, snapshot),
@@ -84,7 +106,10 @@ def load_rostered(db_path: str = DB_PATH, snapshot: str = None) -> dict:
     if snapshot is None:
         snapshot = conn.execute("SELECT MAX(snapshot_date) FROM fact_espn_rosters").fetchone()[0]
     rows = conn.execute(
-        """SELECT r.player_id, p.name, p.position, r.eligible_slots, r.is_il, r.espn_team_id
+        """SELECT r.player_id, p.name, p.position, r.eligible_slots, r.is_il, r.espn_team_id,
+                  r.espn_proj_r, r.espn_proj_hr, r.espn_proj_rbi, r.espn_proj_sb,
+                  r.espn_proj_obp, r.espn_proj_k, r.espn_proj_qs, r.espn_proj_era,
+                  r.espn_proj_whip, r.espn_proj_svhd
            FROM fact_espn_rosters r JOIN dim_players p ON p.player_id = r.player_id
            WHERE r.espn_team_id IS NOT NULL AND r.snapshot_date = ?""",
         (snapshot,),
@@ -105,13 +130,40 @@ def _make_player(r, s) -> dict:
     s = s or {}
     g = lambda k: (s[k] if s and s[k] is not None else 0.0)
     is_pit = 'P' in elig
+
+    def _proj(cat):
+        """ESPN full-season projected total for `cat`, or None if not projected."""
+        try:
+            v = r[PROJ_COL[cat]]
+        except (IndexError, KeyError):
+            return None
+        return None if v is None else float(v)
+
+    def _blend_count(cat, col):
+        """Blend actual season total with the projection's expected-to-date total,
+        then normalize to the per-week pace. Falls back to actual if unprojected."""
+        actual_total = g(col)
+        pt = _proj(cat)
+        total = actual_total if pt is None else \
+            PROJ_BLEND * (pt * SEASON_FRACTION) + (1 - PROJ_BLEND) * actual_total
+        return total / WEEKS
+
+    def _blend_rate(actual, cat):
+        """Rates aren't cumulative — blend the rate value directly (regress toward
+        the projected rate). Falls back to actual if unprojected."""
+        pv = _proj(cat)
+        if pv is None or pv == 0:
+            return actual
+        return PROJ_BLEND * pv + (1 - PROJ_BLEND) * actual
+
     return {
         'player_id': r['player_id'], 'name': r['name'], 'position': r['position'],
         'eligible': elig, 'is_il': bool(r['is_il']), 'is_pitcher': is_pit,
         # per-week counting contributions + rate stats with their weighting denom
-        'wk': {cat: g(col) / WEEKS for cat, col in (PIT_COUNT if is_pit else HIT_COUNT).items()},
-        'obp': g('obp'), 'pa': g('pa'),
-        'era': g('era'), 'whip': g('whip'), 'ip': g('ip'),
+        'wk': {cat: _blend_count(cat, col)
+               for cat, col in (PIT_COUNT if is_pit else HIT_COUNT).items()},
+        'obp': _blend_rate(g('obp'), 'OBP'), 'pa': g('pa'),
+        'era': _blend_rate(g('era'), 'ERA'), 'whip': _blend_rate(g('whip'), 'WHIP'), 'ip': g('ip'),
     }
 
 
