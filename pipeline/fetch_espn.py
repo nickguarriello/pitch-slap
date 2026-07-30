@@ -172,6 +172,54 @@ def _extract_projections(player) -> dict:
     return proj
 
 
+def _extract_espn_actuals(player) -> dict | None:
+    """ESPN's OWN actual season ERA / WHIP / OBP from stats[0]['breakdown'],
+    used to ground-truth our MLB-derived stats. Returns None if no usable line.
+      ERA  = ER * 9 / (OUTS/3)      WHIP = ESPN's WHIP field
+      OBP  = (H + BB + HBP) / (AB + BB + HBP + SF)
+    """
+    bd = ((getattr(player, 'stats', {}) or {}).get(0) or {}).get('breakdown') or {}
+    if not bd:
+        return None
+    out: dict = {}
+    outs = bd.get('OUTS')
+    if outs:  # pitcher line
+        ip = outs / 3.0
+        er = bd.get('ER')
+        if ip > 0 and er is not None:
+            out['era'] = round(er * 9.0 / ip, 3)
+        if bd.get('WHIP') is not None:
+            out['whip'] = round(float(bd['WHIP']), 3)
+        out['ip'] = round(ip, 1)
+    ab = bd.get('AB')
+    if ab:  # hitter line
+        bb  = bd.get('B_BB', 0) or 0
+        hbp = bd.get('HBP', 0) or 0
+        sf  = bd.get('SF', 0) or 0
+        h   = bd.get('H', 0) or 0
+        denom = ab + bb + hbp + sf
+        if denom > 0:
+            out['obp'] = round((h + bb + hbp) / denom, 3)
+        out['pa'] = bd.get('PA')
+    return out or None
+
+
+def write_espn_actuals(league) -> int:
+    """Write ESPN's actual season ERA/WHIP/OBP per rostered player to
+    data/espn-actuals.json for validate.check_ground_truth_espn to compare
+    our computed stats against. Rostered players only (the ones that matter)."""
+    actuals: dict = {}
+    for team in league.teams:
+        for player in team.roster:
+            a = _extract_espn_actuals(player)
+            if a:
+                actuals[str(player.playerId)] = a
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(os.path.join(DATA_DIR, 'espn-actuals.json'), 'w') as f:
+        json.dump(actuals, f, indent=2)
+    return len(actuals)
+
+
 # ---------------------------------------------------------------------------
 # Direct ESPN API helper
 # ---------------------------------------------------------------------------
@@ -709,6 +757,10 @@ def run(mode: str = 'full') -> dict:
     rostered_count = sum(1 for r in roster_rows if r['espn_team_id'] is not None)
     fa_count       = len(roster_rows) - rostered_count
     print(f"  {rostered_count} rostered, {fa_count} FA")
+
+    # ESPN's own actual season stats — ground-truth reference for validate.py
+    n_actuals = write_espn_actuals(league)
+    print(f"  ESPN actual stats extracted for {n_actuals} rostered players")
 
     # Matchups
     print("  Fetching matchup scores...")

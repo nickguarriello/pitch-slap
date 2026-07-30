@@ -314,6 +314,56 @@ def check_ground_truth_obp_definition(conn: sqlite3.Connection) -> dict:
     return _pass(name)
 
 
+# tolerances calibrated 2026-07-30 against same-day ESPN actuals (p90 divergence
+# ERA/WHIP ~0.005, OBP ~0.0005) — set well above the noise floor so only a real
+# calculation drift from ESPN's official numbers trips the check.
+_GT_TOL = {"era": 0.20, "whip": 0.05, "obp": 0.015}
+
+
+def check_ground_truth_espn(conn: sqlite3.Connection) -> dict:
+    """Compare our MLB-derived season ERA/WHIP/OBP against ESPN's OWN numbers
+    (data/espn-actuals.json, written by fetch_espn). Non-blocking: WARN on
+    systematic drift, PASS when values match within tolerance. Confirms the stat
+    engine hasn't silently drifted from the scoring authority."""
+    name = "ground_truth.espn"
+    path = os.path.join(DATA_DIR, "espn-actuals.json")
+    if not os.path.exists(path):
+        return _warn(name, "ESPN actuals file missing — skipping ground-truth comparison")
+    try:
+        with open(path) as f:
+            actuals = json.load(f)
+    except Exception as e:
+        return _warn(name, f"could not read ESPN actuals ({e})")
+
+    ours = {
+        str(pid): {"era": era, "whip": whip, "obp": obp, "ip": ip, "pa": pa}
+        for pid, era, whip, obp, ip, pa in conn.execute(
+            "SELECT player_id, era, whip, obp, ip, pa FROM fact_player_stats WHERE window = 'season'"
+        )
+    }
+
+    checked, mism = 0, []
+    for pid, a in actuals.items():
+        o = ours.get(pid)
+        if not o:
+            continue
+        ip, pa = (a.get("ip") or 0), (a.get("pa") or 0)
+        for cat, min_samp, sample in (("era", 20, ip), ("whip", 20, ip), ("obp", 80, pa)):
+            ev, ov = a.get(cat), o[cat]
+            if ev is None or ov is None or sample < min_samp:
+                continue
+            checked += 1
+            if abs(ev - ov) > _GT_TOL[cat]:
+                mism.append(f"{cat} ours={ov} espn={ev} (pid {pid})")
+    if checked == 0:
+        return _warn(name, "no comparable players with enough sample — skipping")
+    if len(mism) / checked > 0.10:
+        return _warn(name, f"{len(mism)}/{checked} season stat values diverge from ESPN "
+                           f"beyond tolerance — possible calculation drift (e.g. {mism[0]})")
+    return _pass(name, f"{checked} season stat values match ESPN within tolerance "
+                       f"({len(mism)} outlier(s))")
+
+
 # ---------------------------------------------------------------------------
 # Staleness checks
 # ---------------------------------------------------------------------------
@@ -483,6 +533,7 @@ def run(
         check_ground_truth_era(conn, espn_era),
         check_ground_truth_svhd(conn, espn_svhd),
         check_ground_truth_obp_definition(conn),
+        check_ground_truth_espn(conn),
     ]
 
     # Staleness
