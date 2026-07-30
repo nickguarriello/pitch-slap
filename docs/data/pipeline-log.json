@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-07-30T11:45:57.799460+00:00",
+  "as_of": "2026-07-30T18:25:40.662165+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-07-30T11:45:47.996739+00:00",
+  "last_full_run": "2026-07-30T18:25:32.448961+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-07-30T11:45:57.799460+00:00",
-  "mlb_last_fetch": "2026-07-30T11:45:58.293548+00:00",
-  "statcast_last_fetch": "2026-07-30T11:46:01.616574+00:00",
+  "espn_last_fetch": "2026-07-30T18:25:40.662165+00:00",
+  "mlb_last_fetch": "2026-07-30T18:25:41.235206+00:00",
+  "statcast_last_fetch": "2026-07-30T18:25:44.732000+00:00",
   "validate_overall": "warn",
   "games_settled": {
     "date": "2026-07-29",
@@ -19,14 +19,14 @@
     "standings_update": "2026-07-30T08:22:08.859000+00:00",
     "waiver_last_execution": "2026-07-30T08:22:07.735000+00:00",
     "scoring_period": 128,
-    "checked_at": "2026-07-30T11:45:57.940961+00:00"
+    "checked_at": "2026-07-30T18:25:40.756483+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 555,
-    "fact_player_stats": 3265,
+    "fact_player_stats": 3269,
     "fact_statcast": 528,
     "fact_matchups": 160,
-    "stats_season": 576,
+    "stats_season": 580,
     "stats_first_half": 572,
     "stats_second_half": 442,
     "stats_30d": 463,
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3265 rows across 7 windows"
+      "detail": "3269 rows across 7 windows"
     },
     {
       "name": "",
@@ -134,6 +134,11 @@
       "name": "",
       "status": "pass",
       "detail": ""
+    },
+    {
+      "name": "",
+      "status": "pass",
+      "detail": "351 season stat values match ESPN within tolerance (2 outlier(s))"
     },
     {
       "name": "",
