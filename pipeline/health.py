@@ -188,6 +188,21 @@ def check_projections(db_path: str = DB_PATH) -> dict:
     return _ok(name, f"{populated}/{total} rostered have projections ({frac:.0%})")
 
 
+def check_validation() -> dict:
+    """Surface a validate FAIL in the health layer too. validate normally
+    hard-stops the run on a fail (so this rarely fires), but this catches any
+    path where a fail is recorded without aborting. WARN is normal (skipped
+    ground-truth checks) and does not degrade."""
+    name = "validation"
+    try:
+        ov = _load_json("pipeline-log.json").get("validate_overall")
+    except Exception as e:
+        return _ok(name, f"skipped (no pipeline-log: {e})")
+    if ov == "fail":
+        return _degraded(name, "validate_overall = FAIL")
+    return _ok(name, f"validate_overall = {ov or 'unknown'}")
+
+
 _EXPECTED_FILES = ["status.json", "matchup.json", "roster.json", "waivers.json",
                    "league.json", "playoff.json", "pipeline-log.json"]
 
@@ -228,6 +243,7 @@ def run(db_path: str = DB_PATH, write: bool = True) -> dict:
         check_statcast_fresh(),
         check_stat_rows(),
         check_projections(db_path),
+        check_validation(),
     ]
     degraded = [c for c in checks if c["status"] == "degraded"]
     result = {
