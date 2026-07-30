@@ -26,7 +26,7 @@ import json
 import os
 import sqlite3
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import DB_PATH
@@ -56,9 +56,24 @@ def _load_json(name: str):
 # Checks
 # ---------------------------------------------------------------------------
 
-def check_matchup_populated() -> dict:
-    """The current matchup must have real per-category values, not all UNKNOWN."""
-    name = "matchup_populated"
+def _in_season(today: date) -> bool:
+    """Is a fantasy matchup expected today? True during the regular season +
+    playoffs (with a grace buffer), False in the deep offseason. On any error,
+    default True — better to fail loud than mask a real fetch failure."""
+    try:
+        from config import SEASON_START, WEEK_2_START, PLAYOFF_START_WEEK, PLAYOFFS
+        start = date.fromisoformat(SEASON_START)
+        end_week = PLAYOFF_START_WEEK + PLAYOFFS.get("rounds", 2) * PLAYOFFS.get("weeks_per_round", 2)
+        # date-based week N begins WEEK_2_START + (N-2)*7; add a 2-week grace buffer
+        end = date.fromisoformat(WEEK_2_START) + timedelta(weeks=(end_week - 2 + 2))
+        return start <= today <= end
+    except Exception:
+        return True
+
+
+def _matchup_from_json(name: str, floor_ok: str = None) -> dict:
+    """Cross-check the committed matchup.json cat_states (catches a report-side
+    bug where the DB has values but the dashboard doesn't reflect them)."""
     try:
         cs = _load_json("matchup.json").get("cat_states", {})
     except Exception as e:
@@ -68,10 +83,45 @@ def check_matchup_populated() -> dict:
     known = [c for c, v in cs.items() if v.get("state") != "UNKNOWN"]
     if len(known) < MIN_KNOWN_CAT_STATES:
         unknown = [c for c, v in cs.items() if v.get("state") == "UNKNOWN"]
-        return _degraded(name, f"only {len(known)}/{len(cs)} categories have a known "
-                               f"state — UNKNOWN: {', '.join(unknown)} "
-                               "(current matchup values not populated)")
-    return _ok(name, f"{len(known)}/{len(cs)} categories populated")
+        return _degraded(name, f"only {len(known)}/{len(cs)} categories have a known state "
+                               f"— UNKNOWN: {', '.join(unknown)}")
+    return _ok(name, floor_ok or f"{len(known)}/{len(cs)} categories populated")
+
+
+def check_matchup_populated(db_path: str = DB_PATH) -> dict:
+    """Airtight current-matchup check, DB-driven so it can't false-alarm:
+      - matchup exists but 0 populated values -> DEGRADED (the ASG-break bug class)
+      - no matchup rows at all, in-season      -> DEGRADED (fetch likely failed)
+      - no matchup rows at all, offseason      -> OK (nothing is expected)
+      - values present                         -> cross-check the JSON output
+    """
+    name = "matchup_populated"
+    try:
+        conn = sqlite3.connect(db_path)
+        row = conn.execute(
+            """
+            SELECT COUNT(*) AS total,
+                   SUM(CASE WHEN my_val IS NOT NULL OR opp_val IS NOT NULL
+                            THEN 1 ELSE 0 END) AS pop
+            FROM matchup_snapshots
+            WHERE week = (SELECT MAX(week) FROM matchup_snapshots)
+              AND snapshot_ts = (SELECT MAX(snapshot_ts) FROM matchup_snapshots)
+            """
+        ).fetchone()
+        conn.close()
+        total, pop = (row[0] or 0), (row[1] or 0)
+    except Exception:
+        return _matchup_from_json(name)   # DB unreachable — fall back to output
+
+    if total > 0 and pop == 0:
+        return _degraded(name, f"current matchup has {total} categories but 0 populated "
+                               "values (wrong period selected / fetch issue)")
+    if total == 0:
+        if _in_season(date.today()):
+            return _degraded(name, "no current matchup found this run — the matchup fetch "
+                                   "may have failed (a matchup is expected in-season)")
+        return _ok(name, "no active matchup (offseason) — skipped")
+    return _matchup_from_json(name, floor_ok=f"{pop} categories populated")
 
 
 def check_statcast_fresh() -> dict:
@@ -138,13 +188,43 @@ def check_projections(db_path: str = DB_PATH) -> dict:
     return _ok(name, f"{populated}/{total} rostered have projections ({frac:.0%})")
 
 
+_EXPECTED_FILES = ["status.json", "matchup.json", "roster.json", "waivers.json",
+                   "league.json", "playoff.json", "pipeline-log.json"]
+
+
+def check_output_files() -> dict:
+    """Every dashboard JSON exists, parses, and isn't empty (catches a partial
+    report() failure that would leave the site half-rendered)."""
+    name = "output_files"
+    missing, unparseable, empty = [], [], []
+    for fn in _EXPECTED_FILES:
+        p = os.path.join(DOCS_DATA_DIR, fn)
+        if not os.path.exists(p):
+            missing.append(fn); continue
+        try:
+            with open(p, encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            unparseable.append(fn); continue
+        if not data:
+            empty.append(fn)
+    problems = []
+    if missing:     problems.append("missing: " + ", ".join(missing))
+    if unparseable: problems.append("unparseable: " + ", ".join(unparseable))
+    if empty:       problems.append("empty: " + ", ".join(empty))
+    if problems:
+        return _degraded(name, "; ".join(problems))
+    return _ok(name, f"all {len(_EXPECTED_FILES)} output files present")
+
+
 # ---------------------------------------------------------------------------
 # Runner
 # ---------------------------------------------------------------------------
 
 def run(db_path: str = DB_PATH, write: bool = True) -> dict:
     checks = [
-        check_matchup_populated(),
+        check_output_files(),
+        check_matchup_populated(db_path),
         check_statcast_fresh(),
         check_stat_rows(),
         check_projections(db_path),

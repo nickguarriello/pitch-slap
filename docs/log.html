@@ -68,6 +68,19 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
   </div>
 
+  <div class="card" id="health-card" style="border-left:3px solid var(--accent)">
+    <h2>Output Health <span id="health-badge"></span></h2>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5">
+      Automated completeness checks on the finished dashboard. A degraded run still
+      publishes its data, but flags the daily job (email alert) so silent breakage is
+      caught the same day rather than days later.
+    </div>
+    <table>
+      <thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>
+      <tbody id="health-table"></tbody>
+    </table>
+  </div>
+
   <div class="grid2">
     <div class="card">
       <h2>Last Run</h2>
@@ -120,11 +133,34 @@ function relAge(ts){
   return `<span style="color:${color};font-weight:600">${txt} · ${note}</span>`;
 }
 
+function renderHealth(h){
+  const badge = document.getElementById('health-badge');
+  const tbody = document.getElementById('health-table');
+  if(!h){
+    badge.innerHTML = `<span class="overall-badge badge-unknown">UNAVAILABLE</span>`;
+    tbody.innerHTML = '<tr><td colspan="3" style="color:var(--muted);padding:12px">No health data yet — generated on the next run.</td></tr>';
+    return;
+  }
+  const ov = h.overall === 'ok' ? 'pass' : 'fail';
+  badge.innerHTML = `<span class="overall-badge badge-${ov}">${(h.overall||'?').toUpperCase()}</span>`;
+  const checks = h.checks || [];
+  tbody.innerHTML = checks.length ? checks.map(c => {
+    const cls = c.status === 'ok' ? 'status-pass' : 'status-fail';
+    return `<tr>
+      <td>${c.check||'—'}</td>
+      <td><span class="${cls}">${(c.status||'?').toUpperCase()}</span></td>
+      <td style="color:var(--muted);font-size:12px">${c.detail||'—'}</td>
+    </tr>`;
+  }).join('') : '<tr><td colspan="3" style="color:var(--muted);padding:12px">No checks.</td></tr>';
+}
+
 async function main(){
   const [log, status] = await Promise.all([
     load('data/pipeline-log.json'),
     load('data/status.json'),
   ]);
+  const health = await load('data/health.json').catch(()=>null);
+  renderHealth(health);
 
   const asof = log.espn_last_fetch || status.espn_last_fetch;
   document.getElementById('fresh-asof').textContent = fmtTs(asof);

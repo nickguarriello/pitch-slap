@@ -122,6 +122,8 @@ async function main() {
     load('data/roster.json'),
     load('data/waivers.json'),
   ]);
+  // Health is a soft signal — never let a missing/old health.json break the page.
+  const health = await load('data/health.json').catch(() => null);
 
   // Banner
   const valClass = status.validate_overall === 'pass' ? 'ok' : status.validate_overall === 'warn' ? 'warn' : 'fail';
@@ -131,6 +133,11 @@ async function main() {
   document.getElementById('banner').innerHTML =
     `<span>As of <b>${status.as_of || '—'}</b></span>` +
     `<span class="${valClass}" title="Checks data integrity: stat totals match ESPN, no unmatched player IDs, etc. Warnings are non-blocking but worth reviewing.">Data Quality: ${status.validate_overall?.toUpperCase() || '?'} — ${warnDetail}</span>` +
+    (health && health.overall === 'degraded'
+      ? `<span class="fail" title="Automated completeness checks flagged this run: ${(health.checks||[]).filter(x=>x.status==='degraded').map(x=>x.check+' — '+x.detail).join(' | ')}. Data is still published; this is an early warning.">⚠ Health: DEGRADED — ${(health.degraded_checks || []).join(', ')}</span>`
+      : health && health.overall === 'ok'
+      ? `<span class="ok" title="Automated output-completeness checks all passed this run.">Health: OK</span>`
+      : '') +
     (c.acq_alert ? `<span class="warn">${c.acq_alert}</span>` : '') +
     (c.ip_alert   ? `<span class="warn">${c.ip_alert}</span>` : '');
 
