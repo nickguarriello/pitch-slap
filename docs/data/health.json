@@ -1,0 +1,27 @@
+{
+  "run_ts": "2026-07-30T11:46:22.158378+00:00",
+  "overall": "ok",
+  "degraded_checks": [],
+  "checks": [
+    {
+      "check": "matchup_populated",
+      "status": "ok",
+      "detail": "10/10 categories populated"
+    },
+    {
+      "check": "statcast_fresh",
+      "status": "ok",
+      "detail": "statcast 0d old"
+    },
+    {
+      "check": "stat_rows",
+      "status": "ok",
+      "detail": "rosters=555 season=576 statcast=528"
+    },
+    {
+      "check": "projections",
+      "status": "ok",
+      "detail": "252/255 rostered have projections (99%)"
+    }
+  ]
+}

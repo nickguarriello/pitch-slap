@@ -1,14 +1,14 @@
 {
-  "as_of": "2026-07-29T18:18:26.004459+00:00",
+  "as_of": "2026-07-30T11:45:57.799460+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-07-29T18:18:17.930148+00:00",
+  "last_full_run": "2026-07-30T11:45:47.996739+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-07-29T18:18:26.004459+00:00",
-  "mlb_last_fetch": "2026-07-29T18:18:26.477540+00:00",
-  "statcast_last_fetch": "2026-07-29T18:18:31.269771+00:00",
+  "espn_last_fetch": "2026-07-30T11:45:57.799460+00:00",
+  "mlb_last_fetch": "2026-07-30T11:45:58.293548+00:00",
+  "statcast_last_fetch": "2026-07-30T11:46:01.616574+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-07-28",
+    "date": "2026-07-29",
     "games": 16,
     "final": 16,
     "incomplete": [],
@@ -16,23 +16,23 @@
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-07-29T09:26:11.986000+00:00",
-    "waiver_last_execution": "2026-07-29T09:26:11.673000+00:00",
-    "scoring_period": 127,
-    "checked_at": "2026-07-29T18:18:26.109555+00:00"
+    "standings_update": "2026-07-30T08:22:08.859000+00:00",
+    "waiver_last_execution": "2026-07-30T08:22:07.735000+00:00",
+    "scoring_period": 128,
+    "checked_at": "2026-07-30T11:45:57.940961+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 555,
-    "fact_player_stats": 3206,
+    "fact_player_stats": 3265,
     "fact_statcast": 528,
     "fact_matchups": 160,
     "stats_season": 576,
     "stats_first_half": 572,
-    "stats_second_half": 439,
-    "stats_30d": 461,
-    "stats_14d": 439,
+    "stats_second_half": 442,
+    "stats_30d": 463,
+    "stats_14d": 442,
     "stats_7d": 420,
-    "stats_current": 299
+    "stats_current": 350
   },
   "validation_checks": [
     {
@@ -103,12 +103,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3206 rows across 7 windows"
+      "detail": "3265 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "188 upcoming team-game slots"
+      "detail": "186 upcoming team-game slots"
     },
     {
       "name": "",

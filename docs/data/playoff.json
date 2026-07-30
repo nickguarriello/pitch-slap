@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-07-29",
+  "as_of": "2026-07-30",
   "playoff_start_week": 22,
-  "current_week": 18,
-  "weeks_until_playoffs": 3,
+  "current_week": 17,
+  "weeks_until_playoffs": 4,
   "in_playoff_weeks": false,
   "my_seed": 1,
   "in_playoffs": true,
@@ -23,7 +23,7 @@
       "is_my_team": true,
       "ranks": {
         "R": 1,
-        "HR": 2,
+        "HR": 1,
         "RBI": 2,
         "SB": 1,
         "OBP": 1,
@@ -110,10 +110,10 @@
       "is_my_team": false,
       "ranks": {
         "R": 6,
-        "HR": 1,
+        "HR": 2,
         "RBI": 7,
         "SB": 5,
-        "OBP": 6,
+        "OBP": 5,
         "K": 8,
         "QS": 8,
         "SvHd": 1,
@@ -200,7 +200,7 @@
         "HR": 6,
         "RBI": 3,
         "SB": 3,
-        "OBP": 5,
+        "OBP": 6,
         "K": 2,
         "QS": 4,
         "SvHd": 3,
@@ -252,7 +252,7 @@
   ],
   "my_category_ranks": {
     "R": 1,
-    "HR": 2,
+    "HR": 1,
     "RBI": 2,
     "SB": 1,
     "OBP": 1,
@@ -269,7 +269,7 @@
       "team_name": "ChicksDigTheLongBall",
       "abbrev": "CDLB",
       "is_likely_r1_opp": true,
-      "projected_score": "8-2",
+      "projected_score": "9-1",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -278,9 +278,9 @@
           "rank_gap": 5
         },
         "HR": {
-          "my_rank": 2,
-          "their_rank": 1,
-          "winner": "theirs",
+          "my_rank": 1,
+          "their_rank": 2,
+          "winner": "mine",
           "rank_gap": 1
         },
         "RBI": {
@@ -297,9 +297,9 @@
         },
         "OBP": {
           "my_rank": 1,
-          "their_rank": 6,
+          "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 5
+          "rank_gap": 4
         },
         "K": {
           "my_rank": 7,
@@ -353,10 +353,10 @@
           "rank_gap": 1
         },
         "HR": {
-          "my_rank": 2,
+          "my_rank": 1,
           "their_rank": 3,
           "winner": "mine",
-          "rank_gap": 1
+          "rank_gap": 2
         },
         "RBI": {
           "my_rank": 2,
@@ -432,10 +432,10 @@
           "rank_gap": 4
         },
         "HR": {
-          "my_rank": 2,
+          "my_rank": 1,
           "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 4
         },
         "RBI": {
           "my_rank": 2,
@@ -498,7 +498,6 @@
     "SvHd"
   ],
   "improvement_targets": [
-    "HR",
     "SvHd"
   ]
 }
