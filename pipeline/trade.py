@@ -59,6 +59,14 @@ PROJ_COL = {'R': 'espn_proj_r', 'HR': 'espn_proj_hr', 'RBI': 'espn_proj_rbi',
             'QS': 'espn_proj_qs', 'ERA': 'espn_proj_era', 'WHIP': 'espn_proj_whip',
             'SvHd': 'espn_proj_svhd'}
 
+# Statcast "deserved" regression: after the actual+projection blend, nudge the
+# rate value toward its skill estimator (pitchers -> mean(xFIP, SIERA); hitters
+# -> xwOBA put on the OBP scale) so the model sees through lucky/unlucky ERA/OBP
+# before the surface stats do. Modest weight; skipped when Statcast is missing.
+STAT_BLEND = 0.30
+LEAGUE_WOBA = 0.320
+WOBA_TO_OBP = RATE_BASE['OBP'] / LEAGUE_WOBA   # ~1.08: convert xwOBA to an expected OBP
+
 HIT_COUNT = {'R': 'r', 'HR': 'hr', 'RBI': 'rbi', 'SB': 'sb'}   # cat -> stats column
 PIT_COUNT = {'K': 'k', 'QS': 'qs', 'SvHd': 'svhd'}
 ACTIVE_SLOTS = {s: n for s, n in ROSTER_SLOTS.items() if s not in ('BN', 'IL')}
@@ -94,7 +102,11 @@ def load_team(team_id: int, db_path: str = DB_PATH, snapshot: str = None) -> lis
             "SELECT * FROM fact_player_stats WHERE player_id=? AND window='season' "
             "ORDER BY stat_date DESC LIMIT 1", (r['player_id'],)
         ).fetchone()
-        players.append(_make_player(r, s))
+        sc = conn.execute(
+            "SELECT xwoba, xfip, siera FROM fact_statcast WHERE player_id=? "
+            "ORDER BY fetch_date DESC LIMIT 1", (r['player_id'],)
+        ).fetchone()
+        players.append(_make_player(r, s, sc))
     conn.close()
     return players
 
@@ -120,16 +132,36 @@ def load_rostered(db_path: str = DB_PATH, snapshot: str = None) -> dict:
             "SELECT * FROM fact_player_stats WHERE player_id=? AND window='season' "
             "ORDER BY stat_date DESC LIMIT 1", (r['player_id'],)
         ).fetchone()
-        out[r['name']] = _make_player(r, s)
+        sc = conn.execute(
+            "SELECT xwoba, xfip, siera FROM fact_statcast WHERE player_id=? "
+            "ORDER BY fetch_date DESC LIMIT 1", (r['player_id'],)
+        ).fetchone()
+        out[r['name']] = _make_player(r, s, sc)
     conn.close()
     return out
 
 
-def _make_player(r, s) -> dict:
+def _make_player(r, s, sc=None) -> dict:
     elig = set((r['eligible_slots'] or '').split(',')) - {''}
     s = s or {}
     g = lambda k: (s[k] if s and s[k] is not None else 0.0)
     is_pit = 'P' in elig
+
+    def _stat_rate(blended, kind):
+        """Regress an (actual+projection)-blended rate toward its Statcast skill
+        estimator. ERA -> mean(xFIP, SIERA); OBP -> xwOBA on the OBP scale."""
+        if sc is None:
+            return blended
+        if kind == 'ERA':
+            sk = [v for v in (sc['xfip'], sc['siera']) if v is not None]
+            if not sk:
+                return blended
+            skill = sum(sk) / len(sk)
+        else:  # OBP
+            if sc['xwoba'] is None:
+                return blended
+            skill = sc['xwoba'] * WOBA_TO_OBP
+        return (1 - STAT_BLEND) * blended + STAT_BLEND * float(skill)
 
     def _proj(cat):
         """ESPN full-season projected total for `cat`, or None if not projected."""
@@ -162,8 +194,9 @@ def _make_player(r, s) -> dict:
         # per-week counting contributions + rate stats with their weighting denom
         'wk': {cat: _blend_count(cat, col)
                for cat, col in (PIT_COUNT if is_pit else HIT_COUNT).items()},
-        'obp': _blend_rate(g('obp'), 'OBP'), 'pa': g('pa'),
-        'era': _blend_rate(g('era'), 'ERA'), 'whip': _blend_rate(g('whip'), 'WHIP'), 'ip': g('ip'),
+        'obp': _stat_rate(_blend_rate(g('obp'), 'OBP'), 'OBP'), 'pa': g('pa'),
+        'era': _stat_rate(_blend_rate(g('era'), 'ERA'), 'ERA'),
+        'whip': _blend_rate(g('whip'), 'WHIP'), 'ip': g('ip'),
     }
 
 

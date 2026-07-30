@@ -208,5 +208,11 @@ opponent-adjusted swing (score Δ against the specific week's opponent, not leag
   projection is unchanged, so the score thresholds stay valid (full run still 35 trades). Missing
   projection → actual-only fallback. **Scarcity term intentionally omitted** — slot scarcity is
   already handled by the lineup-aware optimizer (§6) by construction.
+- ✅ **Statcast "deserved" layer (DONE 2026-07-30):** after the actual+projection blend,
+  `_make_player` regresses the rate value toward its skill estimator (`STAT_BLEND` = 0.30):
+  pitchers' ERA → mean(xFIP, SIERA); hitters' OBP → xwOBA × `WOBA_TO_OBP`. Sees through
+  lucky/unlucky results before surface stats do (validated: lucky pitchers regress down, unlucky
+  hitters lift; full run still 35 trades). Skipped when Statcast is missing. This is the
+  "multi-layer value model" backlog item, now three layers: actual + projection + Statcast.
 - **Nav link:** add `trades.html` to the `<nav>` on the other 6 pages (only trades.html has it).
 - **Polish:** protected-players param, value-window blend (§7), `replacement`/VORP sanity baseline.
