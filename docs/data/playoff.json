@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-30",
+  "as_of": "2026-07-31",
   "playoff_start_week": 22,
   "current_week": 17,
   "weeks_until_playoffs": 4,
@@ -25,7 +25,7 @@
         "R": 1,
         "HR": 1,
         "RBI": 2,
-        "SB": 1,
+        "SB": 2,
         "OBP": 1,
         "K": 7,
         "QS": 5,
@@ -54,7 +54,7 @@
         "R": 2,
         "HR": 3,
         "RBI": 1,
-        "SB": 2,
+        "SB": 1,
         "OBP": 8,
         "K": 3,
         "QS": 7,
@@ -111,7 +111,7 @@
       "ranks": {
         "R": 6,
         "HR": 2,
-        "RBI": 7,
+        "RBI": 8,
         "SB": 5,
         "OBP": 5,
         "K": 8,
@@ -227,7 +227,7 @@
       "ranks": {
         "R": 7,
         "HR": 8,
-        "RBI": 8,
+        "RBI": 7,
         "SB": 6,
         "OBP": 4,
         "K": 6,
@@ -254,7 +254,7 @@
     "R": 1,
     "HR": 1,
     "RBI": 2,
-    "SB": 1,
+    "SB": 2,
     "OBP": 1,
     "K": 7,
     "QS": 5,
@@ -387,15 +387,15 @@
         },
         "RBI": {
           "my_rank": 2,
-          "their_rank": 7,
+          "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 5
+          "rank_gap": 6
         },
         "SB": {
-          "my_rank": 1,
+          "my_rank": 2,
           "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 3
         },
         "OBP": {
           "my_rank": 1,
@@ -446,7 +446,7 @@
       "team_name": "Lunch",
       "abbrev": "LCH",
       "is_likely_r1_opp": false,
-      "projected_score": "8-2",
+      "projected_score": "7-3",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -467,9 +467,9 @@
           "rank_gap": 1
         },
         "SB": {
-          "my_rank": 1,
-          "their_rank": 2,
-          "winner": "mine",
+          "my_rank": 2,
+          "their_rank": 1,
+          "winner": "theirs",
           "rank_gap": 1
         },
         "OBP": {
@@ -546,10 +546,10 @@
           "rank_gap": 3
         },
         "SB": {
-          "my_rank": 1,
+          "my_rank": 2,
           "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 7
+          "rank_gap": 6
         },
         "OBP": {
           "my_rank": 1,
