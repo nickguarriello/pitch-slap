@@ -1,64 +1,64 @@
 {
   "cat_states": {
     "R": {
-      "state": "FLIPPABLE",
-      "my_val": 25.0,
-      "opp_val": 27.0,
-      "gap": -2.0
+      "state": "TIE",
+      "my_val": 34.0,
+      "opp_val": 34.0,
+      "gap": 0.0
     },
     "HR": {
       "state": "FLOPPABLE",
-      "my_val": 7.0,
-      "opp_val": 6.0,
-      "gap": 1.0
+      "my_val": 11.0,
+      "opp_val": 9.0,
+      "gap": 2.0
     },
     "RBI": {
       "state": "FLIPPABLE",
-      "my_val": 24.0,
-      "opp_val": 27.0,
-      "gap": -3.0
+      "my_val": 32.0,
+      "opp_val": 37.0,
+      "gap": -5.0
     },
     "SB": {
-      "state": "WIN",
+      "state": "FLOPPABLE",
       "my_val": 8.0,
-      "opp_val": 2.0,
-      "gap": 6.0
+      "opp_val": 3.0,
+      "gap": 5.0
     },
     "OBP": {
-      "state": "FLOPPABLE",
-      "my_val": 0.30980392,
-      "opp_val": 0.29565217,
-      "gap": 0.0142
+      "state": "FLIPPABLE",
+      "my_val": 0.31168831,
+      "opp_val": 0.32014388,
+      "gap": -0.0085
     },
     "K": {
-      "state": "LOSS",
-      "my_val": 40.0,
-      "opp_val": 50.0,
-      "gap": -10.0
+      "state": "FLIPPABLE",
+      "my_val": 47.0,
+      "opp_val": 52.0,
+      "gap": -5.0
     },
     "QS": {
       "state": "LOSS",
-      "my_val": 2.0,
+      "my_val": 3.0,
       "opp_val": 6.0,
-      "gap": -4.0
+      "gap": -3.0
     },
     "ERA": {
       "state": "LOSS",
-      "my_val": 6.12605042,
-      "opp_val": 3.24,
-      "gap": -2.8861
+      "my_val": 5.25974026,
+      "opp_val": 3.15584416,
+      "gap": -2.1039
     },
     "WHIP": {
       "state": "LOSS",
-      "my_val": 1.46218487,
-      "opp_val": 0.98,
-      "gap": -0.4822
+      "my_val": 1.26623377,
+      "opp_val": 0.97402597,
+      "gap": -0.2922
     },
     "SvHd": {
-      "state": "FLOPPABLE",
-      "my_val": 3.0,
+      "state": "WIN",
+      "my_val": 4.0,
       "opp_val": 1.0,
-      "gap": 2.0
+      "gap": 3.0
     }
   },
   "need_weights": {
@@ -70,7 +70,7 @@
     "K": 0.66,
     "QS": 0.57,
     "ERA": 0.44,
-    "WHIP": 0.4,
+    "WHIP": 0.44,
     "SvHd": 0.15
   },
   "cat_records": {
@@ -1520,7 +1520,7 @@
   "constraints": {
     "acquisitions_used": 1,
     "acquisitions_remaining": 6,
-    "ip_accumulated": 40.0,
+    "ip_accumulated": 51.666666666666664,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,
