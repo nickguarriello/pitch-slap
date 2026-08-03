@@ -404,6 +404,15 @@
       "games_final_date": "2026-08-01",
       "all_games_final": true,
       "last_game": "DET@OAK"
+    },
+    {
+      "run_ts": "2026-08-03T12:50:38.695848+00:00",
+      "espn_standings_update": "2026-08-03T08:20:28.559000+00:00",
+      "espn_waiver_execution": "2026-08-03T08:20:25.150000+00:00",
+      "scoring_period": 132,
+      "games_final_date": "2026-08-02",
+      "all_games_final": true,
+      "last_game": "BOS@LAD"
     }
   ]
 }

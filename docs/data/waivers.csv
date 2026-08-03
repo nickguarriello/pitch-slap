@@ -1,8 +1,7 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
-JJ Bleday,,buy_low_hitter,0.7,False,,,,0.337,0.36435106822422575,0.233,BABIP 0.233 below floor (0.260); OBP (0.337) lags xwOBA (0.364)
-Brent Rooker,,buy_low_hitter,0.7,False,,,,0.281,0.3120117958145912,0.243,BABIP 0.243 below floor (0.260); OBP (0.281) lags xwOBA (0.312)
-Devin Williams,,buy_low_pitcher,0.69,False,4.17,3.366029580361457,3.3498731877237025,,,,"ERA (4.17) >> xFIP (3.37), gap=0.80; ERA (4.17) >> SIERA (3.35), gap=0.82"
-Walker Buehler,,buy_low_pitcher,0.69,False,5.18,4.197571512219223,4.382252629023638,,,,"ERA (5.18) >> xFIP (4.20), gap=0.98; ERA (5.18) >> SIERA (4.38), gap=0.80"
-Matthew Liberatore,,buy_low_pitcher,0.69,False,5.26,4.261849871688556,4.277756933002607,,,,"ERA (5.26) >> xFIP (4.26), gap=1.00; ERA (5.26) >> SIERA (4.28), gap=0.98"
-Jack Leiter,,buy_low_pitcher,0.69,False,5.29,4.276553283073008,4.244549539636095,,,,"ERA (5.29) >> xFIP (4.28), gap=1.01; ERA (5.29) >> SIERA (4.24), gap=1.05"
-Brayan Bello,,buy_low_pitcher,0.69,False,5.3,4.1042272522903955,4.223591668269155,,,,"ERA (5.30) >> xFIP (4.10), gap=1.20; ERA (5.30) >> SIERA (4.22), gap=1.08"
+Brent Rooker,,buy_low_hitter,0.7,False,,,,0.281,0.3119821259469697,0.243,BABIP 0.243 below floor (0.260); OBP (0.281) lags xwOBA (0.312)
+Devin Williams,,buy_low_pitcher,0.69,False,4.3,3.4386077403522397,3.3869816205668988,,,,"ERA (4.30) >> xFIP (3.44), gap=0.86; ERA (4.30) >> SIERA (3.39), gap=0.91"
+Matthew Liberatore,,buy_low_pitcher,0.69,False,4.97,4.193263076200282,4.194983382732051,,,,"ERA (4.97) >> xFIP (4.19), gap=0.78; ERA (4.97) >> SIERA (4.19), gap=0.78"
+Tyler Mahle,,buy_low_pitcher,0.69,False,5.13,4.110863981806066,4.26076756543066,,,,"ERA (5.13) >> xFIP (4.11), gap=1.02; ERA (5.13) >> SIERA (4.26), gap=0.87"
+Jack Leiter,,buy_low_pitcher,0.69,False,5.29,4.275268403068186,4.243023422311266,,,,"ERA (5.29) >> xFIP (4.28), gap=1.01; ERA (5.29) >> SIERA (4.24), gap=1.05"
+Brayan Bello,,buy_low_pitcher,0.69,False,5.3,4.103000923272108,4.222065550944326,,,,"ERA (5.30) >> xFIP (4.10), gap=1.20; ERA (5.30) >> SIERA (4.22), gap=1.08"

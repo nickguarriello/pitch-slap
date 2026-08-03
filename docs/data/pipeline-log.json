@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-08-02T11:11:20.893437+00:00",
+  "as_of": "2026-08-03T12:50:48.729937+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-02T11:11:11.309976+00:00",
+  "last_full_run": "2026-08-03T12:50:38.695848+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-02T11:11:20.893437+00:00",
-  "mlb_last_fetch": "2026-08-02T11:11:21.477332+00:00",
-  "statcast_last_fetch": "2026-08-02T11:11:24.475320+00:00",
+  "espn_last_fetch": "2026-08-03T12:50:48.729937+00:00",
+  "mlb_last_fetch": "2026-08-03T12:50:53.017144+00:00",
+  "statcast_last_fetch": "2026-08-03T12:50:56.217899+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-01",
+    "date": "2026-08-02",
     "games": 15,
     "final": 15,
     "incomplete": [],
-    "last_game": "DET@OAK",
+    "last_game": "BOS@LAD",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-08-02T08:25:56.644000+00:00",
-    "waiver_last_execution": "2026-08-02T08:25:56.323000+00:00",
-    "scoring_period": 131,
-    "checked_at": "2026-08-02T11:11:21.015203+00:00"
+    "standings_update": "2026-08-03T08:20:28.559000+00:00",
+    "waiver_last_execution": "2026-08-03T08:20:25.150000+00:00",
+    "scoring_period": 132,
+    "checked_at": "2026-08-03T12:50:48.839072+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 555,
-    "fact_player_stats": 3340,
-    "fact_statcast": 528,
-    "fact_matchups": 160,
-    "stats_season": 577,
+    "fact_player_stats": 2930,
+    "fact_statcast": 529,
+    "fact_matchups": 170,
+    "stats_season": 578,
     "stats_first_half": 572,
-    "stats_second_half": 448,
-    "stats_30d": 463,
+    "stats_second_half": 451,
+    "stats_30d": 464,
     "stats_14d": 443,
-    "stats_7d": 423,
-    "stats_current": 414
+    "stats_7d": 422,
+    "stats_current": 0
   },
   "validation_checks": [
     {
@@ -98,12 +98,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "528 players with Statcast data"
+      "detail": "529 players with Statcast data"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "3340 rows across 7 windows"
+      "detail": "2930 rows across 7 windows"
     },
     {
       "name": "",
@@ -138,7 +138,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "351 season stat values match ESPN within tolerance (2 outlier(s))"
+      "detail": "350 season stat values match ESPN within tolerance (2 outlier(s))"
     },
     {
       "name": "",

@@ -462,7 +462,7 @@ player_id,mlb_id,fg_id,bbref_id,name,position,mlb_team,crosswalk_status,crosswal
 34068,518585,7048,cruzfe01,Fernando Cruz,RP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 34999,664074,17920,ponceco01,Cody Ponce,SP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 5149068,491913,-1,nan,Colt Emerson,SS,,matched,fuzzy:88,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
-5148964,,,,Max Clark,CF,,flagged,Fuzzy match 'clark' (score=90) is ambiguous — 4 players. Add to crosswalk-overrides.json.,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
+5148964,703601,-1,clarkma04,Max Clark,CF,,matched,exact,2026-05-07T13:37:54.009098,2026-08-03T12:50:52.717104+00:00
 34973,641816,16358,mahlety01,Tyler Mahle,SP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 41205,663616,21501,larnatr01,Trevor Larnach,DH,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
 4187661,683769,25636,gaddihu01,Hunter Gaddis,RP,,matched,exact,2026-05-07T13:37:54.009098,2026-05-07T13:37:54.009098
