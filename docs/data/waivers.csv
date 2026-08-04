@@ -1,7 +1,7 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
 Brent Rooker,,buy_low_hitter,0.7,False,,,,0.281,0.3119821259469697,0.243,BABIP 0.243 below floor (0.260); OBP (0.281) lags xwOBA (0.312)
-Devin Williams,,buy_low_pitcher,0.69,False,4.3,3.4386077403522397,3.3869816205668988,,,,"ERA (4.30) >> xFIP (3.44), gap=0.86; ERA (4.30) >> SIERA (3.39), gap=0.91"
-Matthew Liberatore,,buy_low_pitcher,0.69,False,4.97,4.193263076200282,4.194983382732051,,,,"ERA (4.97) >> xFIP (4.19), gap=0.78; ERA (4.97) >> SIERA (4.19), gap=0.78"
-Tyler Mahle,,buy_low_pitcher,0.69,False,5.13,4.110863981806066,4.26076756543066,,,,"ERA (5.13) >> xFIP (4.11), gap=1.02; ERA (5.13) >> SIERA (4.26), gap=0.87"
-Jack Leiter,,buy_low_pitcher,0.69,False,5.29,4.275268403068186,4.243023422311266,,,,"ERA (5.29) >> xFIP (4.28), gap=1.01; ERA (5.29) >> SIERA (4.24), gap=1.05"
-Brayan Bello,,buy_low_pitcher,0.69,False,5.3,4.103000923272108,4.222065550944326,,,,"ERA (5.30) >> xFIP (4.10), gap=1.20; ERA (5.30) >> SIERA (4.22), gap=1.08"
+Devin Williams,,buy_low_pitcher,0.69,False,4.3,3.4416870673978908,3.3906381867099347,,,,"ERA (4.30) >> xFIP (3.44), gap=0.86; ERA (4.30) >> SIERA (3.39), gap=0.91"
+Matthew Liberatore,,buy_low_pitcher,0.69,False,4.97,4.197232583470096,4.198639948875087,,,,"ERA (4.97) >> xFIP (4.20), gap=0.77; ERA (4.97) >> SIERA (4.20), gap=0.77"
+Tyler Mahle,,buy_low_pitcher,0.69,False,5.13,4.114432775495628,4.264424131573696,,,,"ERA (5.13) >> xFIP (4.11), gap=1.02; ERA (5.13) >> SIERA (4.26), gap=0.87"
+Brandon Sproat,,buy_low_pitcher,0.69,False,5.27,4.310543926144107,4.30810825641829,,,,"ERA (5.27) >> xFIP (4.31), gap=0.96; ERA (5.27) >> SIERA (4.31), gap=0.96"
+Jack Leiter,,buy_low_pitcher,0.69,False,5.29,4.279159022495151,4.246679988454302,,,,"ERA (5.29) >> xFIP (4.28), gap=1.01; ERA (5.29) >> SIERA (4.25), gap=1.04"

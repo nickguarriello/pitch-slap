@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-08-03T12:51:17.267964+00:00",
+  "run_ts": "2026-08-04T11:57:51.144243+00:00",
   "overall": "ok",
   "degraded_checks": [],
   "checks": [
@@ -26,7 +26,7 @@
     {
       "check": "projections",
       "status": "ok",
-      "detail": "252/255 rostered have projections (99%)"
+      "detail": "251/255 rostered have projections (98%)"
     },
     {
       "check": "validation",

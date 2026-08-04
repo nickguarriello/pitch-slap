@@ -1,69 +1,69 @@
 {
   "cat_states": {
     "R": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLIPPABLE",
+      "my_val": 4.0,
+      "opp_val": 12.0,
+      "gap": -8.0
     },
     "HR": {
-      "state": "TIE",
+      "state": "LOSS",
       "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "opp_val": 6.0,
+      "gap": -6.0
     },
     "RBI": {
-      "state": "TIE",
+      "state": "LOSS",
       "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "opp_val": 9.0,
+      "gap": -9.0
     },
     "SB": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLIPPABLE",
+      "my_val": 1.0,
+      "opp_val": 2.0,
+      "gap": -1.0
     },
     "OBP": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "LOSS",
+      "my_val": 0.2,
+      "opp_val": 0.37777778,
+      "gap": -0.1778
     },
     "K": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "WIN",
+      "my_val": 15.0,
+      "opp_val": 1.0,
+      "gap": 14.0
     },
     "QS": {
-      "state": "TIE",
-      "my_val": 0.0,
+      "state": "FLOPPABLE",
+      "my_val": 1.0,
       "opp_val": 0.0,
-      "gap": 0.0
+      "gap": 1.0
     },
     "ERA": {
       "state": "TIE",
-      "my_val": null,
-      "opp_val": null,
+      "my_val": 2.25,
+      "opp_val": 0.0,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "ip_note": "You 12.0/15 IP \u00b7 Opp 1.0/15 IP",
+      "my_ip_week": 12.0,
+      "opp_ip_week": 1.0
     },
     "WHIP": {
       "state": "TIE",
-      "my_val": null,
-      "opp_val": null,
+      "my_val": 1.25,
+      "opp_val": 0.0,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "ip_note": "You 12.0/15 IP \u00b7 Opp 1.0/15 IP",
+      "my_ip_week": 12.0,
+      "opp_ip_week": 1.0
     },
     "SvHd": {
       "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
+      "my_val": 1.0,
+      "opp_val": 1.0,
       "gap": 0.0
     }
   },
@@ -1612,8 +1612,8 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 0.0,
-    "ip_remaining": 15.0,
+    "ip_accumulated": 12.0,
+    "ip_remaining": 3.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,

@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-03",
+  "as_of": "2026-08-04",
   "playoff_start_week": 22,
   "current_week": 18,
   "weeks_until_playoffs": 3,
@@ -52,15 +52,15 @@
       "is_my_team": false,
       "ranks": {
         "R": 2,
-        "HR": 3,
+        "HR": 4,
         "RBI": 1,
         "SB": 2,
         "OBP": 8,
         "K": 3,
-        "QS": 7,
+        "QS": 6,
         "SvHd": 4,
-        "ERA": 4,
-        "WHIP": 5
+        "ERA": 2,
+        "WHIP": 4
       },
       "seed": 2,
       "in_playoffs": true
@@ -88,7 +88,7 @@
         "K": 4,
         "QS": 3,
         "SvHd": 7,
-        "ERA": 2,
+        "ERA": 4,
         "WHIP": 3
       },
       "seed": 3,
@@ -109,8 +109,8 @@
       "cat_record": "80-84-6",
       "is_my_team": false,
       "ranks": {
-        "R": 4,
-        "HR": 4,
+        "R": 3,
+        "HR": 3,
         "RBI": 5,
         "SB": 8,
         "OBP": 3,
@@ -138,7 +138,7 @@
       "cat_record": "88-77-5",
       "is_my_team": false,
       "ranks": {
-        "R": 3,
+        "R": 4,
         "HR": 7,
         "RBI": 4,
         "SB": 4,
@@ -147,7 +147,7 @@
         "QS": 1,
         "SvHd": 8,
         "ERA": 8,
-        "WHIP": 8
+        "WHIP": 7
       },
       "seed": 5,
       "in_playoffs": false
@@ -176,7 +176,7 @@
         "QS": 8,
         "SvHd": 1,
         "ERA": 7,
-        "WHIP": 7
+        "WHIP": 8
       },
       "seed": 6,
       "in_playoffs": false
@@ -231,10 +231,10 @@
         "SB": 7,
         "OBP": 4,
         "K": 6,
-        "QS": 6,
+        "QS": 7,
         "SvHd": 5,
         "ERA": 6,
-        "WHIP": 4
+        "WHIP": 5
       },
       "seed": 8,
       "in_playoffs": false
@@ -375,15 +375,15 @@
       "category_matchup": {
         "R": {
           "my_rank": 1,
-          "their_rank": 4,
+          "their_rank": 3,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 2
         },
         "HR": {
           "my_rank": 1,
-          "their_rank": 4,
+          "their_rank": 3,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 2
         },
         "RBI": {
           "my_rank": 2,
@@ -435,6 +435,8 @@
         }
       },
       "swing_categories": [
+        "R",
+        "HR",
         "OBP",
         "K",
         "ERA"
@@ -446,7 +448,7 @@
       "team_name": "Lunch",
       "abbrev": "LCH",
       "is_likely_r1_opp": false,
-      "projected_score": "8-2",
+      "projected_score": "7-3",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -456,9 +458,9 @@
         },
         "HR": {
           "my_rank": 1,
-          "their_rank": 3,
+          "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 3
         },
         "RBI": {
           "my_rank": 2,
@@ -486,21 +488,21 @@
         },
         "QS": {
           "my_rank": 5,
-          "their_rank": 7,
+          "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "ERA": {
           "my_rank": 3,
-          "their_rank": 4,
-          "winner": "mine",
+          "their_rank": 2,
+          "winner": "theirs",
           "rank_gap": 1
         },
         "WHIP": {
           "my_rank": 2,
-          "their_rank": 5,
+          "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 2
         },
         "SvHd": {
           "my_rank": 2,
@@ -511,11 +513,11 @@
       },
       "swing_categories": [
         "R",
-        "HR",
         "RBI",
         "SB",
         "QS",
         "ERA",
+        "WHIP",
         "SvHd"
       ]
     },
@@ -525,7 +527,7 @@
       "team_name": "2010 State Sectional Champ",
       "abbrev": "BJL",
       "is_likely_r1_opp": false,
-      "projected_score": "7-3",
+      "projected_score": "8-2",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -571,8 +573,8 @@
         },
         "ERA": {
           "my_rank": 3,
-          "their_rank": 2,
-          "winner": "theirs",
+          "their_rank": 4,
+          "winner": "mine",
           "rank_gap": 1
         },
         "WHIP": {
@@ -597,7 +599,9 @@
   ],
   "swing_categories": [
     "ERA",
-    "QS"
+    "R",
+    "QS",
+    "WHIP"
   ],
   "improvement_targets": [
     "K",

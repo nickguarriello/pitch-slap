@@ -413,6 +413,15 @@
       "games_final_date": "2026-08-02",
       "all_games_final": true,
       "last_game": "BOS@LAD"
+    },
+    {
+      "run_ts": "2026-08-04T11:57:06.441068+00:00",
+      "espn_standings_update": "2026-08-04T08:33:54.533000+00:00",
+      "espn_waiver_execution": "2026-08-04T08:33:54.223000+00:00",
+      "scoring_period": 133,
+      "games_final_date": "2026-08-03",
+      "all_games_final": true,
+      "last_game": "SD@ARI"
     }
   ]
 }
