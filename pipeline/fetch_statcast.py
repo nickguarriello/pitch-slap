@@ -35,7 +35,13 @@ CACHE_PATH    = os.path.join(DATA_DIR, "statcast-cache.json")
 CACHE_TTL_DAYS = 7
 
 _FG_API    = "https://www.fangraphs.com/api/leaders/major-league/data"
-_FG_HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+_FG_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Referer": "https://www.fangraphs.com/leaders",
+}
 
 
 # ---------------------------------------------------------------------------
@@ -212,6 +218,31 @@ def _existing_savant_frames() -> tuple:
 
 
 # ---------------------------------------------------------------------------
+# Existing FanGraphs columns (fallback when the live FanGraphs API blocks us)
+# ---------------------------------------------------------------------------
+
+def _existing_fangraphs_frames() -> tuple:
+    """Read the FanGraphs columns already in the DB, keyed by mlb_id, shaped like
+    the _fg_pitching/_fg_batting fetchers. Used as a fallback so a FanGraphs fetch
+    failure preserves the prior xFIP/SIERA/FIP/wRC+ values instead of nulling them
+    out on the full-refresh write (Savant metrics are still refreshed live)."""
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    rows = conn.execute(
+        """SELECT d.mlb_id, s.xfip, s.siera, s.fip, s.wrc_plus, s.xwoba
+           FROM fact_statcast s JOIN dim_players d ON d.player_id = s.player_id
+           WHERE d.mlb_id IS NOT NULL AND d.mlb_id > 0"""
+    ).fetchall()
+    conn.close()
+    cols = ["mlb_id", "xfip", "siera", "fip", "wrc_plus", "xwoba"]
+    df = pd.DataFrame([dict(r) for r in rows], columns=cols)
+    fg_pitch = df[["mlb_id", "xfip", "siera", "fip"]].copy()
+    fg_bat   = df[["mlb_id", "wrc_plus", "xwoba"]].rename(columns={"xwoba": "xwoba_fg"}).copy()
+    print(f"  Fallback: preserved {len(df)} existing FanGraphs rows from DB")
+    return fg_pitch, fg_bat
+
+
+# ---------------------------------------------------------------------------
 # Load dim_players mlb_id -> player_id (ESPN) mapping
 # ---------------------------------------------------------------------------
 
@@ -244,9 +275,20 @@ def fetch_and_write(force: bool = False) -> dict:
 
     print("Fetching Statcast + FanGraphs data...")
 
-    # Fetch all sources (FanGraphs first -- 403 fails fast if blocked)
-    fg_pitch  = _fg_pitching()
-    fg_bat    = _fg_batting()
+    # FanGraphs JSON API — can 403 without warning (bot detection). On failure:
+    # preserve the existing FanGraphs columns from the DB and continue, so the
+    # freshly-fetched Savant metrics are still written rather than discarded.
+    fg_skipped = False
+    fg_error = None
+    try:
+        fg_pitch  = _fg_pitching()
+        fg_bat    = _fg_batting()
+    except Exception as e:
+        print(f"  WARNING: FanGraphs fetch failed ({e})")
+        print("  Preserving existing FanGraphs columns; refreshing Savant only.")
+        fg_pitch, fg_bat = _existing_fangraphs_frames()
+        fg_skipped = True
+        fg_error = str(e)
 
     # Baseball Savant via pybaseball — scraper can break without warning.
     # On failure: preserve the existing Savant columns from the DB and continue,
@@ -332,22 +374,30 @@ def fetch_and_write(force: bool = False) -> dict:
 
     # Update cache
     _save_cache({
-        "last_fetch_date": fetch_date,
-        "rows_written":    rows_inserted,
-        "total_mlb":       total,
-        "matched_espn":    len(matched),
-        "savant_skipped":  savant_skipped,
+        "last_fetch_date":    fetch_date,
+        "rows_written":       rows_inserted,
+        "total_mlb":          total,
+        "matched_espn":       len(matched),
+        "savant_skipped":     savant_skipped,
+        "fangraphs_skipped":  fg_skipped,
     })
 
-    note = " (Savant preserved from DB; FanGraphs refreshed)" if savant_skipped else ""
+    notes = []
+    if savant_skipped:
+        notes.append("Savant preserved from DB")
+    if fg_skipped:
+        notes.append("FanGraphs preserved from DB")
+    note = f" ({'; '.join(notes)})" if notes else ""
     print(f"  Wrote {rows_inserted} rows to fact_statcast{note}")
     return {
-        "skipped":        False,
-        "rows_written":   rows_inserted,
-        "total_mlb":      total,
-        "matched_espn":   len(matched),
-        "savant_skipped": savant_skipped,
-        "savant_error":   savant_error,
+        "skipped":           False,
+        "rows_written":      rows_inserted,
+        "total_mlb":         total,
+        "matched_espn":      len(matched),
+        "savant_skipped":    savant_skipped,
+        "savant_error":      savant_error,
+        "fangraphs_skipped": fg_skipped,
+        "fangraphs_error":   fg_error,
     }
 
 
