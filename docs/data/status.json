@@ -1,9 +1,9 @@
 {
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-06",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-04T11:57:06.441068+00:00",
+  "last_full_run": "2026-08-06T11:57:28.035870+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-04T11:57:16.380480+00:00",
+  "espn_last_fetch": "2026-08-06T11:57:35.405738+00:00",
   "validate_overall": "warn",
   "validate_warnings": 2,
   "cats_winning": 1,
@@ -12,8 +12,8 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 12.0,
-    "ip_remaining": 3.0,
+    "ip_accumulated": 21.333333333333332,
+    "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,

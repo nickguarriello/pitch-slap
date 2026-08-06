@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-08-04T11:57:16.380480+00:00",
+  "as_of": "2026-08-06T11:57:35.405738+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-04T11:57:06.441068+00:00",
+  "last_full_run": "2026-08-06T11:57:28.035870+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-04T11:57:16.380480+00:00",
-  "mlb_last_fetch": "2026-08-04T11:57:17.124580+00:00",
-  "statcast_last_fetch": "2026-08-04T11:57:20.810925+00:00",
+  "espn_last_fetch": "2026-08-06T11:57:35.405738+00:00",
+  "mlb_last_fetch": "2026-08-06T11:57:35.913993+00:00",
+  "statcast_last_fetch": "2026-08-06T11:57:39.871358+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-03",
-    "games": 8,
-    "final": 8,
+    "date": "2026-08-05",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
     "last_game": "SD@ARI",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-08-04T08:33:54.533000+00:00",
-    "waiver_last_execution": "2026-08-04T08:33:54.223000+00:00",
-    "scoring_period": 133,
-    "checked_at": "2026-08-04T11:57:16.505723+00:00"
+    "standings_update": "2026-08-06T08:38:15.146000+00:00",
+    "waiver_last_execution": "2026-08-06T08:38:14.699000+00:00",
+    "scoring_period": 135,
+    "checked_at": "2026-08-06T11:57:35.511063+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 555,
-    "fact_player_stats": 3050,
-    "fact_statcast": 529,
+    "fact_player_stats": 3277,
+    "fact_statcast": 530,
     "fact_matchups": 170,
-    "stats_season": 578,
+    "stats_season": 579,
     "stats_first_half": 572,
-    "stats_second_half": 451,
-    "stats_30d": 463,
-    "stats_14d": 439,
+    "stats_second_half": 460,
+    "stats_30d": 469,
+    "stats_14d": 444,
     "stats_7d": 421,
-    "stats_current": 126
+    "stats_current": 332
   },
   "validation_checks": [
     {
@@ -98,12 +98,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "529 players with Statcast data"
+      "detail": "530 players with Statcast data"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "3050 rows across 7 windows"
+      "detail": "3277 rows across 7 windows"
     },
     {
       "name": "",
