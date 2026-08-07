@@ -15,7 +15,7 @@
       "score": 0.7,
       "stats": {
         "obp": 0.281,
-        "xwoba": 0.3119871158792515,
+        "xwoba": 0.3119899672691268,
         "babip": 0.243,
         "sprint_speed": 27.6
       }
@@ -89,15 +89,15 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.10) >> xFIP (4.03), gap=1.07",
-        "ERA (5.10) >> SIERA (4.15), gap=0.95"
+        "ERA (4.97) >> xFIP (4.03), gap=0.94",
+        "ERA (4.97) >> SIERA (4.15), gap=0.82"
       ],
       "score": 0.69,
       "stats": {
-        "era": 5.1,
+        "era": 4.97,
         "xfip": 4.029439300146063,
         "siera": 4.149641702372228,
-        "ip": 77.66666666666667
+        "ip": 79.66666666666667
       }
     },
     {
@@ -171,14 +171,14 @@
       "eligible_slots": "2B,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.255 below floor (0.260)",
-        "OBP (0.304) lags xwOBA (0.348)"
+        "BABIP 0.256 below floor (0.260)",
+        "OBP (0.306) lags xwOBA (0.348)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.304,
-        "xwoba": 0.34828221149524385,
-        "babip": 0.255,
+        "obp": 0.306,
+        "xwoba": 0.3482845737345548,
+        "babip": 0.256,
         "sprint_speed": 26.6
       }
     },
@@ -191,14 +191,14 @@
       "eligible_slots": "1B,2B,MI,CI,UTIL,BN,IL,OF",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.257 below floor (0.260)",
-        "OBP (0.289) lags xwOBA (0.326)"
+        "BABIP 0.258 below floor (0.260)",
+        "OBP (0.290) lags xwOBA (0.323)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.289,
-        "xwoba": 0.3256663598384954,
-        "babip": 0.257,
+        "obp": 0.29,
+        "xwoba": 0.3234910054422503,
+        "babip": 0.258,
         "sprint_speed": 27.9
       }
     },
@@ -211,35 +211,15 @@
       "eligible_slots": "SS,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.251 below floor (0.260)",
-        "OBP (0.311) lags xwOBA (0.350)"
+        "BABIP 0.254 below floor (0.260)",
+        "OBP (0.311) lags xwOBA (0.343)"
       ],
       "score": 0.7,
       "stats": {
         "obp": 0.311,
-        "xwoba": 0.35027356651740343,
-        "babip": 0.251,
+        "xwoba": 0.3433751262041677,
+        "babip": 0.254,
         "sprint_speed": 26.6
-      }
-    },
-    {
-      "player_id": "31097",
-      "name": "Manny Machado",
-      "team": null,
-      "espn_team_id": 9,
-      "rostered": true,
-      "eligible_slots": "3B,CI,UTIL,BN,IL",
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.223 below floor (0.260)",
-        "OBP (0.295) lags xwOBA (0.326)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.295,
-        "xwoba": 0.3255521459804102,
-        "babip": 0.223,
-        "sprint_speed": 25.2
       }
     },
     {
@@ -252,14 +232,34 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.222 below floor (0.260)",
-        "OBP (0.310) lags xwOBA (0.342)"
+        "OBP (0.310) lags xwOBA (0.338)"
       ],
       "score": 0.7,
       "stats": {
         "obp": 0.31,
-        "xwoba": 0.3415506834624916,
+        "xwoba": 0.3379534207857572,
         "babip": 0.222,
         "sprint_speed": 26.6
+      }
+    },
+    {
+      "player_id": "31097",
+      "name": "Manny Machado",
+      "team": null,
+      "espn_team_id": 9,
+      "rostered": true,
+      "eligible_slots": "3B,CI,UTIL,BN,IL",
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.220 below floor (0.260)",
+        "OBP (0.294) lags xwOBA (0.327)"
+      ],
+      "score": 0.7,
+      "stats": {
+        "obp": 0.294,
+        "xwoba": 0.32678157725232715,
+        "babip": 0.22,
+        "sprint_speed": 25.2
       }
     },
     {
@@ -277,7 +277,7 @@
       "score": 0.7,
       "stats": {
         "obp": 0.31,
-        "xwoba": 0.33644453145689884,
+        "xwoba": 0.3364486047777079,
         "babip": 0.235,
         "sprint_speed": 24.8
       }
