@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-07",
+  "as_of": "2026-08-08",
   "playoff_start_week": 22,
   "current_week": 18,
   "weeks_until_playoffs": 3,
@@ -28,7 +28,7 @@
         "SB": 1,
         "OBP": 1,
         "K": 7,
-        "QS": 5,
+        "QS": 6,
         "SvHd": 2,
         "ERA": 3,
         "WHIP": 2
@@ -57,7 +57,7 @@
         "SB": 2,
         "OBP": 8,
         "K": 3,
-        "QS": 6,
+        "QS": 5,
         "SvHd": 4,
         "ERA": 2,
         "WHIP": 4
@@ -111,7 +111,7 @@
       "ranks": {
         "R": 3,
         "HR": 3,
-        "RBI": 5,
+        "RBI": 4,
         "SB": 8,
         "OBP": 3,
         "K": 5,
@@ -140,8 +140,8 @@
       "ranks": {
         "R": 4,
         "HR": 7,
-        "RBI": 4,
-        "SB": 3,
+        "RBI": 5,
+        "SB": 4,
         "OBP": 2,
         "K": 1,
         "QS": 1,
@@ -199,7 +199,7 @@
         "R": 5,
         "HR": 5,
         "RBI": 1,
-        "SB": 4,
+        "SB": 3,
         "OBP": 5,
         "K": 2,
         "QS": 4,
@@ -257,7 +257,7 @@
     "SB": 1,
     "OBP": 1,
     "K": 7,
-    "QS": 5,
+    "QS": 6,
     "SvHd": 2,
     "ERA": 3,
     "WHIP": 2
@@ -387,9 +387,9 @@
         },
         "RBI": {
           "my_rank": 3,
-          "their_rank": 5,
+          "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "SB": {
           "my_rank": 1,
@@ -410,10 +410,10 @@
           "rank_gap": 2
         },
         "QS": {
-          "my_rank": 5,
+          "my_rank": 6,
           "their_rank": 2,
           "winner": "theirs",
-          "rank_gap": 3
+          "rank_gap": 4
         },
         "ERA": {
           "my_rank": 3,
@@ -449,7 +449,7 @@
       "team_name": "Lunch",
       "abbrev": "LCH",
       "is_likely_r1_opp": false,
-      "projected_score": "7-3",
+      "projected_score": "6-4",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -488,9 +488,9 @@
           "rank_gap": 4
         },
         "QS": {
-          "my_rank": 5,
-          "their_rank": 6,
-          "winner": "mine",
+          "my_rank": 6,
+          "their_rank": 5,
+          "winner": "theirs",
           "rank_gap": 1
         },
         "ERA": {
@@ -567,10 +567,10 @@
           "rank_gap": 3
         },
         "QS": {
-          "my_rank": 5,
+          "my_rank": 6,
           "their_rank": 3,
           "winner": "theirs",
-          "rank_gap": 2
+          "rank_gap": 3
         },
         "ERA": {
           "my_rank": 3,
@@ -592,7 +592,6 @@
         }
       },
       "swing_categories": [
-        "QS",
         "ERA",
         "WHIP"
       ]
@@ -602,7 +601,6 @@
     "ERA",
     "R",
     "RBI",
-    "QS",
     "WHIP"
   ],
   "improvement_targets": [
