@@ -2,63 +2,63 @@
   "cat_states": {
     "R": {
       "state": "FLIPPABLE",
-      "my_val": 32.0,
-      "opp_val": 42.0,
-      "gap": -10.0
+      "my_val": 38.0,
+      "opp_val": 47.0,
+      "gap": -9.0
     },
     "HR": {
       "state": "LOSS",
       "my_val": 6.0,
-      "opp_val": 16.0,
-      "gap": -10.0
+      "opp_val": 17.0,
+      "gap": -11.0
     },
     "RBI": {
       "state": "LOSS",
-      "my_val": 22.0,
-      "opp_val": 42.0,
+      "my_val": 27.0,
+      "opp_val": 47.0,
       "gap": -20.0
     },
     "SB": {
       "state": "FLOPPABLE",
       "my_val": 7.0,
-      "opp_val": 5.0,
-      "gap": 2.0
+      "opp_val": 6.0,
+      "gap": 1.0
     },
     "OBP": {
       "state": "LOSS",
-      "my_val": 0.30243902,
-      "opp_val": 0.36029412,
-      "gap": -0.0579
+      "my_val": 0.29770992,
+      "opp_val": 0.33850932,
+      "gap": -0.0408
     },
     "K": {
-      "state": "FLOPPABLE",
-      "my_val": 40.0,
-      "opp_val": 32.0,
-      "gap": 8.0
+      "state": "WIN",
+      "my_val": 61.0,
+      "opp_val": 38.0,
+      "gap": 23.0
     },
     "QS": {
-      "state": "FLOPPABLE",
-      "my_val": 2.0,
-      "opp_val": 1.0,
-      "gap": 1.0
-    },
-    "ERA": {
-      "state": "FLOPPABLE",
-      "my_val": 2.78350515,
-      "opp_val": 3.58163265,
-      "gap": 0.7981
-    },
-    "WHIP": {
-      "state": "FLIPPABLE",
-      "my_val": 1.20618557,
-      "opp_val": 1.07142857,
-      "gap": -0.1348
-    },
-    "SvHd": {
       "state": "FLOPPABLE",
       "my_val": 3.0,
       "opp_val": 2.0,
       "gap": 1.0
+    },
+    "ERA": {
+      "state": "WIN",
+      "my_val": 2.59615385,
+      "opp_val": 3.85714286,
+      "gap": 1.261
+    },
+    "WHIP": {
+      "state": "FLIPPABLE",
+      "my_val": 1.13461538,
+      "opp_val": 1.08403361,
+      "gap": -0.0506
+    },
+    "SvHd": {
+      "state": "FLOPPABLE",
+      "my_val": 5.0,
+      "opp_val": 3.0,
+      "gap": 2.0
     }
   },
   "need_weights": {
@@ -1606,7 +1606,7 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 33.666666666666664,
+    "ip_accumulated": 53.333333333333336,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,

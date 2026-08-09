@@ -449,6 +449,15 @@
       "games_final_date": "2026-08-07",
       "all_games_final": true,
       "last_game": "DET@SF"
+    },
+    {
+      "run_ts": "2026-08-09T10:23:23.820730+00:00",
+      "espn_standings_update": "2026-08-09T08:37:20.436000+00:00",
+      "espn_waiver_execution": "2026-08-09T08:37:20.133000+00:00",
+      "scoring_period": 138,
+      "games_final_date": "2026-08-08",
+      "all_games_final": true,
+      "last_game": "TB@SEA"
     }
   ]
 }
