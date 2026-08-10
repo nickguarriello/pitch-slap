@@ -1,64 +1,70 @@
 {
   "cat_states": {
     "R": {
-      "state": "FLIPPABLE",
-      "my_val": 38.0,
-      "opp_val": 47.0,
-      "gap": -9.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "HR": {
-      "state": "LOSS",
-      "my_val": 6.0,
-      "opp_val": 17.0,
-      "gap": -11.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "RBI": {
-      "state": "LOSS",
-      "my_val": 27.0,
-      "opp_val": 47.0,
-      "gap": -20.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "SB": {
-      "state": "FLOPPABLE",
-      "my_val": 7.0,
-      "opp_val": 6.0,
-      "gap": 1.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "OBP": {
-      "state": "LOSS",
-      "my_val": 0.29770992,
-      "opp_val": 0.33850932,
-      "gap": -0.0408
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "K": {
-      "state": "WIN",
-      "my_val": 61.0,
-      "opp_val": 38.0,
-      "gap": 23.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "QS": {
-      "state": "FLOPPABLE",
-      "my_val": 3.0,
-      "opp_val": 2.0,
-      "gap": 1.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "ERA": {
-      "state": "WIN",
-      "my_val": 2.59615385,
-      "opp_val": 3.85714286,
-      "gap": 1.261
+      "state": "TIE",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "WHIP": {
-      "state": "FLIPPABLE",
-      "my_val": 1.13461538,
-      "opp_val": 1.08403361,
-      "gap": -0.0506
+      "state": "TIE",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "SvHd": {
-      "state": "FLOPPABLE",
-      "my_val": 5.0,
-      "opp_val": 3.0,
-      "gap": 2.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     }
   },
   "need_weights": {
@@ -67,75 +73,147 @@
     "RBI": 0.49,
     "SB": 0.4,
     "OBP": 0.7,
-    "K": 0.66,
-    "QS": 0.61,
-    "ERA": 0.49,
+    "K": 0.61,
+    "QS": 0.57,
+    "ERA": 0.53,
     "WHIP": 0.44,
     "SvHd": 0.15
   },
   "cat_records": {
     "ERA": {
-      "wins": 10,
+      "wins": 11,
       "losses": 7,
       "ties": 0,
-      "win_rate": 0.588
+      "win_rate": 0.611
     },
     "HR": {
       "wins": 9,
-      "losses": 7,
+      "losses": 8,
       "ties": 1,
-      "win_rate": 0.529
+      "win_rate": 0.5
     },
     "K": {
-      "wins": 8,
+      "wins": 9,
       "losses": 9,
       "ties": 0,
-      "win_rate": 0.471
+      "win_rate": 0.5
     },
     "OBP": {
       "wins": 10,
-      "losses": 7,
+      "losses": 8,
       "ties": 0,
-      "win_rate": 0.588
+      "win_rate": 0.556
     },
     "QS": {
-      "wins": 10,
+      "wins": 11,
       "losses": 5,
       "ties": 2,
-      "win_rate": 0.588
+      "win_rate": 0.611
     },
     "R": {
       "wins": 9,
-      "losses": 7,
+      "losses": 8,
       "ties": 1,
-      "win_rate": 0.529
+      "win_rate": 0.5
     },
     "RBI": {
       "wins": 11,
-      "losses": 5,
-      "ties": 1,
-      "win_rate": 0.647
-    },
-    "SB": {
-      "wins": 10,
       "losses": 6,
       "ties": 1,
-      "win_rate": 0.588
+      "win_rate": 0.611
+    },
+    "SB": {
+      "wins": 11,
+      "losses": 6,
+      "ties": 1,
+      "win_rate": 0.611
     },
     "SvHd": {
-      "wins": 13,
+      "wins": 14,
       "losses": 2,
       "ties": 2,
-      "win_rate": 0.765
+      "win_rate": 0.778
     },
     "WHIP": {
-      "wins": 9,
+      "wins": 10,
       "losses": 8,
       "ties": 0,
-      "win_rate": 0.529
+      "win_rate": 0.556
     }
   },
   "history": {
+    "18": [
+      {
+        "cat": "R",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 46.0,
+        "opp_val": 56.0
+      },
+      {
+        "cat": "HR",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 7.0,
+        "opp_val": 20.0
+      },
+      {
+        "cat": "RBI",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 30.0,
+        "opp_val": 54.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 8.0,
+        "opp_val": 7.0
+      },
+      {
+        "cat": "OBP",
+        "result": "L",
+        "state": "FLIPPABLE",
+        "my_val": 0.313,
+        "opp_val": 0.336
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 64.0,
+        "opp_val": 50.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 4.0,
+        "opp_val": 3.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 2.361,
+        "opp_val": 3.587
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 1.082,
+        "opp_val": 1.091
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 5.0,
+        "opp_val": 3.0
+      }
+    ],
     "17": [
       {
         "cat": "R",
@@ -1365,28 +1443,28 @@
     "1": {
       "name": "ICECOLDBEERHERE! ",
       "abbrev": "BEER",
-      "wins": 6,
+      "wins": 7,
       "losses": 9,
       "ties": 2,
-      "pct": 0.4,
-      "cat_wins": 83,
-      "cat_losses": 74,
-      "cat_ties": 13,
-      "matchup_wins": 6,
+      "pct": 0.438,
+      "cat_wins": 90,
+      "cat_losses": 76,
+      "cat_ties": 14,
+      "matchup_wins": 7,
       "matchup_losses": 9,
       "matchup_ties": 2
     },
     "2": {
       "name": "ChicksDigTheLongBall",
       "abbrev": "CDLB",
-      "wins": 6,
+      "wins": 7,
       "losses": 8,
       "ties": 3,
-      "pct": 0.429,
-      "cat_wins": 71,
-      "cat_losses": 92,
+      "pct": 0.467,
+      "cat_wins": 78,
+      "cat_losses": 95,
       "cat_ties": 7,
-      "matchup_wins": 6,
+      "matchup_wins": 7,
       "matchup_losses": 8,
       "matchup_ties": 3
     },
@@ -1394,97 +1472,97 @@
       "name": "2010 State Sectional Champ",
       "abbrev": "BJL",
       "wins": 7,
-      "losses": 7,
+      "losses": 8,
       "ties": 3,
-      "pct": 0.5,
-      "cat_wins": 78,
-      "cat_losses": 80,
+      "pct": 0.467,
+      "cat_wins": 81,
+      "cat_losses": 87,
       "cat_ties": 12,
       "matchup_wins": 7,
-      "matchup_losses": 7,
+      "matchup_losses": 8,
       "matchup_ties": 3
     },
     "4": {
       "name": "Jazz In Her Batters Box",
       "abbrev": "Jhf",
       "wins": 7,
-      "losses": 8,
+      "losses": 9,
       "ties": 2,
-      "pct": 0.467,
-      "cat_wins": 80,
-      "cat_losses": 84,
+      "pct": 0.438,
+      "cat_wins": 84,
+      "cat_losses": 90,
       "cat_ties": 6,
       "matchup_wins": 7,
-      "matchup_losses": 8,
+      "matchup_losses": 9,
       "matchup_ties": 2
     },
     "5": {
       "name": "I Robbed A Nuke",
       "abbrev": "IRAN",
       "wins": 7,
-      "losses": 8,
+      "losses": 9,
       "ties": 2,
-      "pct": 0.467,
-      "cat_wins": 88,
-      "cat_losses": 77,
-      "cat_ties": 5,
+      "pct": 0.438,
+      "cat_wins": 90,
+      "cat_losses": 84,
+      "cat_ties": 6,
       "matchup_wins": 7,
-      "matchup_losses": 8,
+      "matchup_losses": 9,
       "matchup_ties": 2
     },
     "6": {
       "name": "All Rise Run Club",
       "abbrev": "RUN",
       "wins": 5,
-      "losses": 10,
+      "losses": 11,
       "ties": 2,
-      "pct": 0.333,
-      "cat_wins": 61,
-      "cat_losses": 97,
+      "pct": 0.312,
+      "cat_wins": 64,
+      "cat_losses": 104,
       "cat_ties": 12,
       "matchup_wins": 5,
-      "matchup_losses": 10,
+      "matchup_losses": 11,
       "matchup_ties": 2
     },
     "7": {
       "name": "Lunch",
       "abbrev": "LCH",
-      "wins": 11,
+      "wins": 12,
       "losses": 6,
       "ties": 0,
-      "pct": 0.647,
-      "cat_wins": 85,
-      "cat_losses": 78,
+      "pct": 0.667,
+      "cat_wins": 92,
+      "cat_losses": 81,
       "cat_ties": 7,
-      "matchup_wins": 11,
+      "matchup_wins": 12,
       "matchup_losses": 6,
       "matchup_ties": 0
     },
     "8": {
       "name": "ICECOLDBEERHERE! ",
       "abbrev": "BEER",
-      "wins": 6,
+      "wins": 7,
       "losses": 9,
       "ties": 2,
-      "pct": 0.4,
-      "cat_wins": 83,
-      "cat_losses": 74,
-      "cat_ties": 13,
-      "matchup_wins": 6,
+      "pct": 0.438,
+      "cat_wins": 90,
+      "cat_losses": 76,
+      "cat_ties": 14,
+      "matchup_wins": 7,
       "matchup_losses": 9,
       "matchup_ties": 2
     },
     "9": {
       "name": "ChicksDigTheLongBall",
       "abbrev": "CDLB",
-      "wins": 6,
+      "wins": 7,
       "losses": 8,
       "ties": 3,
-      "pct": 0.429,
-      "cat_wins": 71,
-      "cat_losses": 92,
+      "pct": 0.467,
+      "cat_wins": 78,
+      "cat_losses": 95,
       "cat_ties": 7,
-      "matchup_wins": 6,
+      "matchup_wins": 7,
       "matchup_losses": 8,
       "matchup_ties": 3
     },
@@ -1492,97 +1570,97 @@
       "name": "2010 State Sectional Champ",
       "abbrev": "BJL",
       "wins": 7,
-      "losses": 7,
+      "losses": 8,
       "ties": 3,
-      "pct": 0.5,
-      "cat_wins": 78,
-      "cat_losses": 80,
+      "pct": 0.467,
+      "cat_wins": 81,
+      "cat_losses": 87,
       "cat_ties": 12,
       "matchup_wins": 7,
-      "matchup_losses": 7,
+      "matchup_losses": 8,
       "matchup_ties": 3
     },
     "11": {
       "name": "Jazz In Her Batters Box",
       "abbrev": "Jhf",
       "wins": 7,
-      "losses": 8,
+      "losses": 9,
       "ties": 2,
-      "pct": 0.467,
-      "cat_wins": 80,
-      "cat_losses": 84,
+      "pct": 0.438,
+      "cat_wins": 84,
+      "cat_losses": 90,
       "cat_ties": 6,
       "matchup_wins": 7,
-      "matchup_losses": 8,
+      "matchup_losses": 9,
       "matchup_ties": 2
     },
     "12": {
       "name": "I Robbed A Nuke",
       "abbrev": "IRAN",
       "wins": 7,
-      "losses": 8,
+      "losses": 9,
       "ties": 2,
-      "pct": 0.467,
-      "cat_wins": 88,
-      "cat_losses": 77,
-      "cat_ties": 5,
+      "pct": 0.438,
+      "cat_wins": 90,
+      "cat_losses": 84,
+      "cat_ties": 6,
       "matchup_wins": 7,
-      "matchup_losses": 8,
+      "matchup_losses": 9,
       "matchup_ties": 2
     },
     "13": {
       "name": "All Rise Run Club",
       "abbrev": "RUN",
       "wins": 5,
-      "losses": 10,
+      "losses": 11,
       "ties": 2,
-      "pct": 0.333,
-      "cat_wins": 61,
-      "cat_losses": 97,
+      "pct": 0.312,
+      "cat_wins": 64,
+      "cat_losses": 104,
       "cat_ties": 12,
       "matchup_wins": 5,
-      "matchup_losses": 10,
+      "matchup_losses": 11,
       "matchup_ties": 2
     },
     "14": {
       "name": "Lunch",
       "abbrev": "LCH",
-      "wins": 11,
+      "wins": 12,
       "losses": 6,
       "ties": 0,
-      "pct": 0.647,
-      "cat_wins": 85,
-      "cat_losses": 78,
+      "pct": 0.667,
+      "cat_wins": 92,
+      "cat_losses": 81,
       "cat_ties": 7,
-      "matchup_wins": 11,
+      "matchup_wins": 12,
       "matchup_losses": 6,
       "matchup_ties": 0
     },
     "15": {
       "name": "ICECOLDBEERHERE! ",
       "abbrev": "BEER",
-      "wins": 6,
+      "wins": 7,
       "losses": 9,
       "ties": 2,
-      "pct": 0.4,
-      "cat_wins": 83,
-      "cat_losses": 74,
-      "cat_ties": 13,
-      "matchup_wins": 6,
+      "pct": 0.438,
+      "cat_wins": 90,
+      "cat_losses": 76,
+      "cat_ties": 14,
+      "matchup_wins": 7,
       "matchup_losses": 9,
       "matchup_ties": 2
     },
     "16": {
       "name": "ChicksDigTheLongBall",
       "abbrev": "CDLB",
-      "wins": 6,
+      "wins": 7,
       "losses": 8,
       "ties": 3,
-      "pct": 0.429,
-      "cat_wins": 71,
-      "cat_losses": 92,
+      "pct": 0.467,
+      "cat_wins": 78,
+      "cat_losses": 95,
       "cat_ties": 7,
-      "matchup_wins": 6,
+      "matchup_wins": 7,
       "matchup_losses": 8,
       "matchup_ties": 3
     },
@@ -1590,24 +1668,38 @@
       "name": "2010 State Sectional Champ",
       "abbrev": "BJL",
       "wins": 7,
-      "losses": 7,
+      "losses": 8,
       "ties": 3,
-      "pct": 0.5,
-      "cat_wins": 78,
-      "cat_losses": 80,
+      "pct": 0.467,
+      "cat_wins": 81,
+      "cat_losses": 87,
       "cat_ties": 12,
       "matchup_wins": 7,
-      "matchup_losses": 7,
+      "matchup_losses": 8,
       "matchup_ties": 3
+    },
+    "18": {
+      "name": "Jazz In Her Batters Box",
+      "abbrev": "Jhf",
+      "wins": 7,
+      "losses": 9,
+      "ties": 2,
+      "pct": 0.438,
+      "cat_wins": 84,
+      "cat_losses": 90,
+      "cat_ties": 6,
+      "matchup_wins": 7,
+      "matchup_losses": 9,
+      "matchup_ties": 2
     }
   },
-  "current_opponent_name": "Jazz In Her Batters Box",
-  "current_opponent_abbrev": "Jhf",
+  "current_opponent_name": "I Robbed A Nuke",
+  "current_opponent_abbrev": "IRAN",
   "constraints": {
-    "acquisitions_used": 0,
-    "acquisitions_remaining": 7,
-    "ip_accumulated": 53.333333333333336,
-    "ip_remaining": 0.0,
+    "acquisitions_used": 1,
+    "acquisitions_remaining": 6,
+    "ip_accumulated": 0.0,
+    "ip_remaining": 15.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,
