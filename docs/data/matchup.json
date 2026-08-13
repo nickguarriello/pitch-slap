@@ -2,63 +2,57 @@
   "cat_states": {
     "R": {
       "state": "FLIPPABLE",
-      "my_val": 8.0,
-      "opp_val": 9.0,
-      "gap": -1.0
+      "my_val": 14.0,
+      "opp_val": 20.0,
+      "gap": -6.0
     },
     "HR": {
       "state": "TIE",
-      "my_val": 4.0,
-      "opp_val": 4.0,
+      "my_val": 6.0,
+      "opp_val": 6.0,
       "gap": 0.0
     },
     "RBI": {
       "state": "FLOPPABLE",
-      "my_val": 12.0,
-      "opp_val": 9.0,
-      "gap": 3.0
+      "my_val": 19.0,
+      "opp_val": 15.0,
+      "gap": 4.0
     },
     "SB": {
       "state": "FLIPPABLE",
-      "my_val": 2.0,
-      "opp_val": 3.0,
-      "gap": -1.0
+      "my_val": 4.0,
+      "opp_val": 6.0,
+      "gap": -2.0
     },
     "OBP": {
-      "state": "FLIPPABLE",
-      "my_val": 0.32291667,
-      "opp_val": 0.33707865,
-      "gap": -0.0142
+      "state": "LOSS",
+      "my_val": 0.31168831,
+      "opp_val": 0.37762238,
+      "gap": -0.0659
     },
     "K": {
       "state": "LOSS",
-      "my_val": 6.0,
-      "opp_val": 19.0,
-      "gap": -13.0
+      "my_val": 7.0,
+      "opp_val": 23.0,
+      "gap": -16.0
     },
     "QS": {
-      "state": "TIE",
+      "state": "FLIPPABLE",
       "my_val": 1.0,
-      "opp_val": 1.0,
-      "gap": 0.0
+      "opp_val": 2.0,
+      "gap": -1.0
     },
     "ERA": {
-      "state": "LOSS",
-      "my_val": 2.25,
-      "opp_val": 4.28571429,
-      "gap": null,
-      "ip_note": "You 14.0/15 IP \u00b7 Opp 27.7/15 IP",
-      "my_ip_week": 14.0,
-      "opp_ip_week": 27.666666666666668
+      "state": "WIN",
+      "my_val": 2.0,
+      "opp_val": 3.66666667,
+      "gap": 1.6667
     },
     "WHIP": {
-      "state": "LOSS",
-      "my_val": 1.0,
-      "opp_val": 1.42857143,
-      "gap": null,
-      "ip_note": "You 14.0/15 IP \u00b7 Opp 27.7/15 IP",
-      "my_ip_week": 14.0,
-      "opp_ip_week": 27.666666666666668
+      "state": "WIN",
+      "my_val": 1.11111111,
+      "opp_val": 1.33333333,
+      "gap": 0.2222
     },
     "SvHd": {
       "state": "FLOPPABLE",
@@ -1698,8 +1692,8 @@
   "constraints": {
     "acquisitions_used": 3,
     "acquisitions_remaining": 4,
-    "ip_accumulated": 14.0,
-    "ip_remaining": 1.0,
+    "ip_accumulated": 15.0,
+    "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,

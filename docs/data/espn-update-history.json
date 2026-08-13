@@ -485,6 +485,15 @@
       "games_final_date": "2026-08-11",
       "all_games_final": true,
       "last_game": "KC@LAD"
+    },
+    {
+      "run_ts": "2026-08-13T10:53:47.424021+00:00",
+      "espn_standings_update": "2026-08-13T08:33:22.146000+00:00",
+      "espn_waiver_execution": "2026-08-13T08:33:21.310000+00:00",
+      "scoring_period": 142,
+      "games_final_date": "2026-08-12",
+      "all_games_final": true,
+      "last_game": "KC@LAD"
     }
   ]
 }
