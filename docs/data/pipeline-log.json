@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-08-13T10:53:56.574981+00:00",
+  "as_of": "2026-08-14T10:50:21.447609+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-13T10:53:47.424021+00:00",
+  "last_full_run": "2026-08-14T10:50:12.729184+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-13T10:53:56.574981+00:00",
-  "mlb_last_fetch": "2026-08-13T10:53:57.075218+00:00",
-  "statcast_last_fetch": "2026-08-13T10:54:00.408759+00:00",
+  "espn_last_fetch": "2026-08-14T10:50:21.447609+00:00",
+  "mlb_last_fetch": "2026-08-14T10:50:22.155562+00:00",
+  "statcast_last_fetch": "2026-08-14T10:50:28.598195+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-12",
-    "games": 15,
-    "final": 15,
+    "date": "2026-08-13",
+    "games": 9,
+    "final": 9,
     "incomplete": [],
-    "last_game": "KC@LAD",
+    "last_game": "MIL@LAD",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-08-13T08:33:22.146000+00:00",
-    "waiver_last_execution": "2026-08-13T08:33:21.310000+00:00",
-    "scoring_period": 142,
-    "checked_at": "2026-08-13T10:53:56.716398+00:00"
+    "standings_update": "2026-08-14T08:30:10.922000+00:00",
+    "waiver_last_execution": "2026-08-14T08:30:09.579000+00:00",
+    "scoring_period": 143,
+    "checked_at": "2026-08-14T10:50:21.539835+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 3271,
+    "fact_player_stats": 3293,
     "fact_statcast": 531,
     "fact_matchups": 180,
     "stats_season": 581,
     "stats_first_half": 573,
     "stats_second_half": 469,
     "stats_30d": 469,
-    "stats_14d": 437,
+    "stats_14d": 435,
     "stats_7d": 413,
-    "stats_current": 329
+    "stats_current": 353
   },
   "validation_checks": [
     {
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3271 rows across 7 windows"
+      "detail": "3293 rows across 7 windows"
     },
     {
       "name": "",
