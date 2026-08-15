@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-14",
+  "as_of": "2026-08-15",
   "playoff_start_week": 22,
   "current_week": 19,
   "weeks_until_playoffs": 2,
@@ -60,7 +60,7 @@
         "QS": 5,
         "SvHd": 4,
         "ERA": 2,
-        "WHIP": 5
+        "WHIP": 4
       },
       "seed": 2,
       "in_playoffs": true
@@ -167,7 +167,7 @@
       "cat_record": "90-76-14",
       "is_my_team": false,
       "ranks": {
-        "R": 4,
+        "R": 5,
         "HR": 5,
         "RBI": 1,
         "SB": 5,
@@ -196,7 +196,7 @@
       "cat_record": "90-84-6",
       "is_my_team": false,
       "ranks": {
-        "R": 5,
+        "R": 4,
         "HR": 6,
         "RBI": 5,
         "SB": 3,
@@ -234,7 +234,7 @@
         "QS": 7,
         "SvHd": 6,
         "ERA": 6,
-        "WHIP": 4
+        "WHIP": 5
       },
       "seed": 8,
       "in_playoffs": false
@@ -497,9 +497,9 @@
         },
         "WHIP": {
           "my_rank": 2,
-          "their_rank": 5,
+          "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 2
         },
         "SvHd": {
           "my_rank": 3,
@@ -515,6 +515,7 @@
         "SB",
         "QS",
         "ERA",
+        "WHIP",
         "SvHd"
       ]
     },
@@ -597,6 +598,7 @@
   ],
   "swing_categories": [
     "ERA",
+    "WHIP",
     "HR",
     "QS",
     "SvHd"
