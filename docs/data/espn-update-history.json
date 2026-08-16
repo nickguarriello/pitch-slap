@@ -512,6 +512,15 @@
       "games_final_date": "2026-08-14",
       "all_games_final": true,
       "last_game": "COL@SF"
+    },
+    {
+      "run_ts": "2026-08-16T10:14:18.557825+00:00",
+      "espn_standings_update": "2026-08-16T08:34:25.474000+00:00",
+      "espn_waiver_execution": "2026-08-16T08:34:24.871000+00:00",
+      "scoring_period": 145,
+      "games_final_date": "2026-08-15",
+      "all_games_final": true,
+      "last_game": "TEX@OAK"
     }
   ]
 }
