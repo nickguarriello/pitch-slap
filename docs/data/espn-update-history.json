@@ -521,6 +521,15 @@
       "games_final_date": "2026-08-15",
       "all_games_final": true,
       "last_game": "TEX@OAK"
+    },
+    {
+      "run_ts": "2026-08-17T10:22:49.713293+00:00",
+      "espn_standings_update": "2026-08-17T08:43:00.222000+00:00",
+      "espn_waiver_execution": "2026-08-17T08:42:58.492000+00:00",
+      "scoring_period": 146,
+      "games_final_date": "2026-08-16",
+      "all_games_final": true,
+      "last_game": "SEA@HOU"
     }
   ]
 }

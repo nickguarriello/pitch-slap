@@ -563,3 +563,4 @@ player_id,mlb_id,fg_id,bbref_id,name,position,mlb_team,crosswalk_status,crosswal
 5149101,806198,-1,prattco01,Cooper Pratt,SS,,matched,exact,2026-07-27T12:51:28.792755+00:00,2026-07-27T12:51:28.792755+00:00
 5149070,136601,101,lombage01,George Lombard Jr.,SS,,matched,exact,2026-08-10T10:59:16.832774+00:00,2026-08-10T10:59:16.832774+00:00
 42664,663968,26202,manguja01,Jake Mangum,LF,,matched,exact,2026-08-11T10:42:26.436950+00:00,2026-08-11T10:42:26.436950+00:00
+4920835,818664,-1,nan,Joshua Baez,RF,,matched,fuzzy:90,2026-08-17T10:23:01.747216+00:00,2026-08-17T10:23:01.747216+00:00
