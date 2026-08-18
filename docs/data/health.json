@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-08-17T10:23:27.399507+00:00",
+  "run_ts": "2026-08-18T10:19:34.159221+00:00",
   "overall": "ok",
   "degraded_checks": [],
   "checks": [
@@ -21,7 +21,7 @@
     {
       "check": "stat_rows",
       "status": "ok",
-      "detail": "rosters=556 season=582 statcast=531"
+      "detail": "rosters=556 season=583 statcast=531"
     },
     {
       "check": "projections",

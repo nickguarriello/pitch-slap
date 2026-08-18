@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-08-17T10:22:57.519703+00:00",
+  "as_of": "2026-08-18T10:19:03.362347+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-17T10:22:49.713293+00:00",
+  "last_full_run": "2026-08-18T10:18:52.723896+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-17T10:22:57.519703+00:00",
-  "mlb_last_fetch": "2026-08-17T10:23:02.083807+00:00",
-  "statcast_last_fetch": "2026-08-17T10:23:05.321137+00:00",
+  "espn_last_fetch": "2026-08-18T10:19:03.362347+00:00",
+  "mlb_last_fetch": "2026-08-18T10:19:04.135478+00:00",
+  "statcast_last_fetch": "2026-08-18T10:19:08.958726+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-16",
-    "games": 15,
-    "final": 15,
+    "date": "2026-08-17",
+    "games": 11,
+    "final": 11,
     "incomplete": [],
-    "last_game": "SEA@HOU",
+    "last_game": "LAD@COL",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-08-17T08:43:00.222000+00:00",
-    "waiver_last_execution": "2026-08-17T08:42:58.492000+00:00",
-    "scoring_period": 146,
-    "checked_at": "2026-08-17T10:22:57.584394+00:00"
+    "standings_update": "2026-08-18T08:32:51.016000+00:00",
+    "waiver_last_execution": "2026-08-18T08:32:50.736000+00:00",
+    "scoring_period": 147,
+    "checked_at": "2026-08-18T10:19:03.485404+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 2941,
+    "fact_player_stats": 3132,
     "fact_statcast": 531,
     "fact_matchups": 190,
-    "stats_season": 582,
+    "stats_season": 583,
     "stats_first_half": 573,
-    "stats_second_half": 475,
-    "stats_30d": 473,
-    "stats_14d": 429,
-    "stats_7d": 409,
-    "stats_current": 0
+    "stats_second_half": 478,
+    "stats_30d": 474,
+    "stats_14d": 433,
+    "stats_7d": 416,
+    "stats_current": 175
   },
   "validation_checks": [
     {
@@ -57,8 +57,8 @@
     },
     {
       "name": "",
-      "status": "pass",
-      "detail": ""
+      "status": "warn",
+      "detail": "1 pitchers with WHIP > 3.50"
     },
     {
       "name": "",
@@ -103,12 +103,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "2941 rows across 7 windows"
+      "detail": "3132 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "190 upcoming team-game slots"
+      "detail": "188 upcoming team-game slots"
     },
     {
       "name": "",
