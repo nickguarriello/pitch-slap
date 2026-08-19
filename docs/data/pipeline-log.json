@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-08-18T10:19:03.362347+00:00",
+  "as_of": "2026-08-19T10:19:19.583021+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-18T10:18:52.723896+00:00",
+  "last_full_run": "2026-08-19T10:19:10.124765+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-18T10:19:03.362347+00:00",
-  "mlb_last_fetch": "2026-08-18T10:19:04.135478+00:00",
-  "statcast_last_fetch": "2026-08-18T10:19:08.958726+00:00",
+  "espn_last_fetch": "2026-08-19T10:19:19.583021+00:00",
+  "mlb_last_fetch": "2026-08-19T10:19:20.190361+00:00",
+  "statcast_last_fetch": "2026-08-19T10:19:23.725766+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-17",
-    "games": 11,
-    "final": 11,
+    "date": "2026-08-18",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
     "last_game": "LAD@COL",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-08-18T08:32:51.016000+00:00",
-    "waiver_last_execution": "2026-08-18T08:32:50.736000+00:00",
-    "scoring_period": 147,
-    "checked_at": "2026-08-18T10:19:03.485404+00:00"
+    "standings_update": "2026-08-19T08:32:28.441000+00:00",
+    "waiver_last_execution": "2026-08-19T08:32:27.830000+00:00",
+    "scoring_period": 148,
+    "checked_at": "2026-08-19T10:19:19.710958+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 3132,
+    "fact_player_stats": 3246,
     "fact_statcast": 531,
     "fact_matchups": 190,
     "stats_season": 583,
     "stats_first_half": 573,
-    "stats_second_half": 478,
-    "stats_30d": 474,
+    "stats_second_half": 480,
+    "stats_30d": 473,
     "stats_14d": 433,
     "stats_7d": 416,
-    "stats_current": 175
+    "stats_current": 288
   },
   "validation_checks": [
     {
@@ -57,8 +57,8 @@
     },
     {
       "name": "",
-      "status": "warn",
-      "detail": "1 pitchers with WHIP > 3.50"
+      "status": "pass",
+      "detail": ""
     },
     {
       "name": "",
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3132 rows across 7 windows"
+      "detail": "3246 rows across 7 windows"
     },
     {
       "name": "",

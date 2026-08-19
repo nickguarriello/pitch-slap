@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-18",
+  "as_of": "2026-08-19",
   "playoff_start_week": 22,
   "current_week": 20,
   "weeks_until_playoffs": 1,
@@ -118,7 +118,7 @@
         "QS": 1,
         "SvHd": 8,
         "ERA": 7,
-        "WHIP": 8
+        "WHIP": 7
       },
       "seed": 4,
       "in_playoffs": true
@@ -147,7 +147,7 @@
         "QS": 8,
         "SvHd": 1,
         "ERA": 8,
-        "WHIP": 7
+        "WHIP": 8
       },
       "seed": 5,
       "in_playoffs": false
@@ -423,9 +423,9 @@
         },
         "WHIP": {
           "my_rank": 2,
-          "their_rank": 8,
+          "their_rank": 7,
           "winner": "mine",
-          "rank_gap": 6
+          "rank_gap": 5
         },
         "SvHd": {
           "my_rank": 3,
