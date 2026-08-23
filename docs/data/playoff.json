@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-20",
+  "as_of": "2026-08-23",
   "playoff_start_week": 22,
   "current_week": 20,
   "weeks_until_playoffs": 1,
@@ -23,7 +23,7 @@
       "is_my_team": true,
       "ranks": {
         "R": 1,
-        "HR": 2,
+        "HR": 1,
         "RBI": 2,
         "SB": 1,
         "OBP": 1,
@@ -81,7 +81,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 2,
-        "HR": 1,
+        "HR": 2,
         "RBI": 4,
         "SB": 7,
         "OBP": 3,
@@ -252,7 +252,7 @@
   ],
   "my_category_ranks": {
     "R": 1,
-    "HR": 2,
+    "HR": 1,
     "RBI": 2,
     "SB": 1,
     "OBP": 1,
@@ -380,10 +380,10 @@
           "rank_gap": 4
         },
         "HR": {
-          "my_rank": 2,
+          "my_rank": 1,
           "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 5
         },
         "RBI": {
           "my_rank": 2,
@@ -454,10 +454,10 @@
           "rank_gap": 2
         },
         "HR": {
-          "my_rank": 2,
+          "my_rank": 1,
           "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 3
         },
         "RBI": {
           "my_rank": 2,
@@ -510,7 +510,6 @@
       },
       "swing_categories": [
         "R",
-        "HR",
         "RBI",
         "SB",
         "QS",
@@ -524,7 +523,7 @@
       "team_name": "Jazz In Her Batters Box",
       "abbrev": "Jhf",
       "is_likely_r1_opp": false,
-      "projected_score": "7-3",
+      "projected_score": "8-2",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -533,9 +532,9 @@
           "rank_gap": 1
         },
         "HR": {
-          "my_rank": 2,
-          "their_rank": 1,
-          "winner": "theirs",
+          "my_rank": 1,
+          "their_rank": 2,
+          "winner": "mine",
           "rank_gap": 1
         },
         "RBI": {
@@ -601,7 +600,6 @@
     "SB",
     "OBP",
     "R",
-    "HR",
     "RBI",
     "ERA"
   ],

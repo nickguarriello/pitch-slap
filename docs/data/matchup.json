@@ -1,69 +1,69 @@
 {
   "cat_states": {
     "R": {
-      "state": "FLIPPABLE",
-      "my_val": 28.0,
-      "opp_val": 30.0,
-      "gap": -2.0
+      "state": "FLOPPABLE",
+      "my_val": 46.0,
+      "opp_val": 41.0,
+      "gap": 5.0
     },
     "HR": {
-      "state": "FLOPPABLE",
-      "my_val": 7.0,
-      "opp_val": 4.0,
-      "gap": 3.0
+      "state": "WIN",
+      "my_val": 13.0,
+      "opp_val": 8.0,
+      "gap": 5.0
     },
     "RBI": {
-      "state": "FLIPPABLE",
-      "my_val": 21.0,
-      "opp_val": 24.0,
-      "gap": -3.0
+      "state": "TIE",
+      "my_val": 37.0,
+      "opp_val": 37.0,
+      "gap": 0.0
     },
     "SB": {
-      "state": "FLOPPABLE",
-      "my_val": 4.0,
+      "state": "WIN",
+      "my_val": 9.0,
       "opp_val": 0.0,
-      "gap": 4.0
+      "gap": 9.0
     },
     "OBP": {
       "state": "FLOPPABLE",
-      "my_val": 0.41618497,
-      "opp_val": 0.41071429,
-      "gap": 0.0055
+      "my_val": 0.39873418,
+      "opp_val": 0.37710438,
+      "gap": 0.0216
     },
     "K": {
-      "state": "LOSS",
-      "my_val": 16.0,
-      "opp_val": 26.0,
-      "gap": -10.0
+      "state": "FLOPPABLE",
+      "my_val": 41.0,
+      "opp_val": 39.0,
+      "gap": 2.0
     },
     "QS": {
-      "state": "FLOPPABLE",
-      "my_val": 2.0,
-      "opp_val": 1.0,
-      "gap": 1.0
+      "state": "TIE",
+      "my_val": 3.0,
+      "opp_val": 3.0,
+      "gap": 0.0
     },
     "ERA": {
-      "state": "WIN",
-      "my_val": 2.45454545,
-      "opp_val": 4.55844156,
-      "gap": 2.1039
+      "state": "FLOPPABLE",
+      "my_val": 4.35483871,
+      "opp_val": 4.5,
+      "gap": 0.1452
     },
     "WHIP": {
       "state": "WIN",
-      "my_val": 0.81818182,
-      "opp_val": 1.4025974,
-      "gap": 0.5844
+      "my_val": 1.13709677,
+      "opp_val": 1.34090909,
+      "gap": 0.2038
     },
     "SvHd": {
       "state": "WIN",
-      "my_val": 4.0,
-      "opp_val": 1.0,
+      "my_val": 5.0,
+      "opp_val": 2.0,
       "gap": 3.0
     }
   },
   "need_weights": {
     "R": 0.4,
-    "HR": 0.44,
+    "HR": 0.4,
     "RBI": 0.44,
     "SB": 0.4,
     "OBP": 0.7,
@@ -1778,7 +1778,7 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 25.333333333333332,
+    "ip_accumulated": 49.333333333333336,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,
