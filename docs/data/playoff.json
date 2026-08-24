@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-08-23",
+  "as_of": "2026-08-24",
   "playoff_start_week": 22,
-  "current_week": 20,
-  "weeks_until_playoffs": 1,
+  "current_week": 21,
+  "weeks_until_playoffs": 0,
   "in_playoff_weeks": false,
   "my_seed": 1,
   "in_playoffs": true,
@@ -11,15 +11,15 @@
       "team_id": 1,
       "team_name": "Pitch Slap",
       "abbrev": "GUAR",
-      "wins": 12,
+      "wins": 13,
       "losses": 5,
       "ties": 2,
-      "pct": 0.684,
-      "record": "12-5-2",
-      "cat_wins": 109,
-      "cat_losses": 73,
+      "pct": 0.7,
+      "record": "13-5-2",
+      "cat_wins": 117,
+      "cat_losses": 75,
       "cat_ties": 8,
-      "cat_record": "109-73-8",
+      "cat_record": "117-75-8",
       "is_my_team": true,
       "ranks": {
         "R": 1,
@@ -29,7 +29,7 @@
         "OBP": 1,
         "K": 7,
         "QS": 6,
-        "SvHd": 2,
+        "SvHd": 3,
         "ERA": 3,
         "WHIP": 2
       },
@@ -40,15 +40,15 @@
       "team_id": 2,
       "team_name": "Lunch",
       "abbrev": "LCH",
-      "wins": 13,
+      "wins": 14,
       "losses": 6,
       "ties": 0,
-      "pct": 0.684,
-      "record": "13-6-0",
-      "cat_wins": 99,
-      "cat_losses": 83,
-      "cat_ties": 8,
-      "cat_record": "99-83-8",
+      "pct": 0.7,
+      "record": "14-6-0",
+      "cat_wins": 105,
+      "cat_losses": 86,
+      "cat_ties": 9,
+      "cat_record": "105-86-9",
       "is_my_team": false,
       "ranks": {
         "R": 3,
@@ -66,76 +66,18 @@
       "in_playoffs": true
     },
     {
-      "team_id": 7,
-      "team_name": "Jazz In Her Batters Box",
-      "abbrev": "Jhf",
-      "wins": 8,
-      "losses": 9,
-      "ties": 2,
-      "pct": 0.474,
-      "record": "8-9-2",
-      "cat_wins": 90,
-      "cat_losses": 93,
-      "cat_ties": 7,
-      "cat_record": "90-93-7",
-      "is_my_team": false,
-      "ranks": {
-        "R": 2,
-        "HR": 2,
-        "RBI": 4,
-        "SB": 7,
-        "OBP": 3,
-        "K": 5,
-        "QS": 2,
-        "SvHd": 5,
-        "ERA": 5,
-        "WHIP": 6
-      },
-      "seed": 3,
-      "in_playoffs": true
-    },
-    {
-      "team_id": 3,
-      "team_name": "I Robbed A Nuke",
-      "abbrev": "IRAN",
-      "wins": 8,
-      "losses": 9,
-      "ties": 2,
-      "pct": 0.474,
-      "record": "8-9-2",
-      "cat_wins": 96,
-      "cat_losses": 88,
-      "cat_ties": 6,
-      "cat_record": "96-88-6",
-      "is_my_team": false,
-      "ranks": {
-        "R": 5,
-        "HR": 6,
-        "RBI": 5,
-        "SB": 3,
-        "OBP": 2,
-        "K": 1,
-        "QS": 1,
-        "SvHd": 8,
-        "ERA": 7,
-        "WHIP": 8
-      },
-      "seed": 4,
-      "in_playoffs": true
-    },
-    {
       "team_id": 8,
       "team_name": "ChicksDigTheLongBall",
       "abbrev": "CDLB",
-      "wins": 7,
+      "wins": 8,
       "losses": 9,
       "ties": 3,
-      "pct": 0.447,
-      "record": "7-9-3",
-      "cat_wins": 80,
-      "cat_losses": 102,
-      "cat_ties": 8,
-      "cat_record": "80-102-8",
+      "pct": 0.475,
+      "record": "8-9-3",
+      "cat_wins": 85,
+      "cat_losses": 106,
+      "cat_ties": 9,
+      "cat_record": "85-106-9",
       "is_my_team": false,
       "ranks": {
         "R": 7,
@@ -149,7 +91,94 @@
         "ERA": 8,
         "WHIP": 7
       },
+      "seed": 3,
+      "in_playoffs": true
+    },
+    {
+      "team_id": 5,
+      "team_name": "2010 State Sectional Champ",
+      "abbrev": "BJL",
+      "wins": 8,
+      "losses": 9,
+      "ties": 3,
+      "pct": 0.475,
+      "record": "8-9-3",
+      "cat_wins": 91,
+      "cat_losses": 96,
+      "cat_ties": 13,
+      "cat_record": "91-96-13",
+      "is_my_team": false,
+      "ranks": {
+        "R": 8,
+        "HR": 7,
+        "RBI": 8,
+        "SB": 8,
+        "OBP": 6,
+        "K": 5,
+        "QS": 4,
+        "SvHd": 7,
+        "ERA": 4,
+        "WHIP": 3
+      },
+      "seed": 4,
+      "in_playoffs": true
+    },
+    {
+      "team_id": 7,
+      "team_name": "Jazz In Her Batters Box",
+      "abbrev": "Jhf",
+      "wins": 8,
+      "losses": 10,
+      "ties": 2,
+      "pct": 0.45,
+      "record": "8-10-2",
+      "cat_wins": 94,
+      "cat_losses": 98,
+      "cat_ties": 8,
+      "cat_record": "94-98-8",
+      "is_my_team": false,
+      "ranks": {
+        "R": 2,
+        "HR": 2,
+        "RBI": 4,
+        "SB": 7,
+        "OBP": 3,
+        "K": 4,
+        "QS": 2,
+        "SvHd": 5,
+        "ERA": 5,
+        "WHIP": 6
+      },
       "seed": 5,
+      "in_playoffs": false
+    },
+    {
+      "team_id": 3,
+      "team_name": "I Robbed A Nuke",
+      "abbrev": "IRAN",
+      "wins": 8,
+      "losses": 10,
+      "ties": 2,
+      "pct": 0.45,
+      "record": "8-10-2",
+      "cat_wins": 99,
+      "cat_losses": 95,
+      "cat_ties": 6,
+      "cat_record": "99-95-6",
+      "is_my_team": false,
+      "ranks": {
+        "R": 5,
+        "HR": 6,
+        "RBI": 5,
+        "SB": 3,
+        "OBP": 2,
+        "K": 1,
+        "QS": 1,
+        "SvHd": 8,
+        "ERA": 7,
+        "WHIP": 8
+      },
+      "seed": 6,
       "in_playoffs": false
     },
     {
@@ -157,14 +186,14 @@
       "team_name": "ICECOLDBEERHERE! ",
       "abbrev": "BEER",
       "wins": 7,
-      "losses": 9,
+      "losses": 10,
       "ties": 3,
-      "pct": 0.447,
-      "record": "7-9-3",
-      "cat_wins": 95,
-      "cat_losses": 81,
-      "cat_ties": 14,
-      "cat_record": "95-81-14",
+      "pct": 0.425,
+      "record": "7-10-3",
+      "cat_wins": 98,
+      "cat_losses": 87,
+      "cat_ties": 15,
+      "cat_record": "98-87-15",
       "is_my_team": false,
       "ranks": {
         "R": 6,
@@ -173,39 +202,10 @@
         "SB": 5,
         "OBP": 7,
         "K": 2,
-        "QS": 4,
-        "SvHd": 3,
+        "QS": 3,
+        "SvHd": 2,
         "ERA": 1,
         "WHIP": 1
-      },
-      "seed": 6,
-      "in_playoffs": false
-    },
-    {
-      "team_id": 5,
-      "team_name": "2010 State Sectional Champ",
-      "abbrev": "BJL",
-      "wins": 7,
-      "losses": 9,
-      "ties": 3,
-      "pct": 0.447,
-      "record": "7-9-3",
-      "cat_wins": 84,
-      "cat_losses": 93,
-      "cat_ties": 13,
-      "cat_record": "84-93-13",
-      "is_my_team": false,
-      "ranks": {
-        "R": 8,
-        "HR": 7,
-        "RBI": 8,
-        "SB": 8,
-        "OBP": 6,
-        "K": 4,
-        "QS": 3,
-        "SvHd": 7,
-        "ERA": 4,
-        "WHIP": 3
       },
       "seed": 7,
       "in_playoffs": false
@@ -215,14 +215,14 @@
       "team_name": "All Rise Run Club",
       "abbrev": "RUN",
       "wins": 5,
-      "losses": 11,
+      "losses": 12,
       "ties": 3,
-      "pct": 0.342,
-      "record": "5-11-3",
-      "cat_wins": 69,
-      "cat_losses": 109,
+      "pct": 0.325,
+      "record": "5-12-3",
+      "cat_wins": 71,
+      "cat_losses": 117,
       "cat_ties": 12,
-      "cat_record": "69-109-12",
+      "cat_record": "71-117-12",
       "is_my_team": false,
       "ranks": {
         "R": 4,
@@ -258,185 +258,187 @@
     "OBP": 1,
     "K": 7,
     "QS": 6,
-    "SvHd": 2,
+    "SvHd": 3,
     "ERA": 3,
     "WHIP": 2
   },
   "category_profile": {
     "R": {
-      "wins": 10,
+      "wins": 11,
       "losses": 8,
       "ties": 1,
-      "record": "10-8-1",
-      "win_rate": 0.553,
-      "avg_margin": 1.263,
-      "weeks": 19,
+      "record": "11-8-1",
+      "win_rate": 0.575,
+      "avg_margin": 1.3,
+      "weeks": 20,
       "class": "SWING"
     },
     "HR": {
-      "wins": 10,
+      "wins": 11,
       "losses": 8,
       "ties": 1,
-      "record": "10-8-1",
-      "win_rate": 0.553,
-      "avg_margin": 0.737,
-      "weeks": 19,
+      "record": "11-8-1",
+      "win_rate": 0.575,
+      "avg_margin": 0.9,
+      "weeks": 20,
       "class": "SWING"
     },
     "RBI": {
       "wins": 12,
-      "losses": 6,
+      "losses": 7,
       "ties": 1,
-      "record": "12-6-1",
-      "win_rate": 0.658,
-      "avg_margin": 3.737,
-      "weeks": 19,
+      "record": "12-7-1",
+      "win_rate": 0.625,
+      "avg_margin": 3.45,
+      "weeks": 20,
       "class": "STRENGTH"
     },
     "SB": {
-      "wins": 11,
+      "wins": 12,
       "losses": 7,
       "ties": 1,
-      "record": "11-7-1",
-      "win_rate": 0.605,
-      "avg_margin": 1.421,
-      "weeks": 19,
+      "record": "12-7-1",
+      "win_rate": 0.625,
+      "avg_margin": 1.85,
+      "weeks": 20,
       "class": "STRENGTH"
     },
     "OBP": {
-      "wins": 10,
+      "wins": 11,
       "losses": 9,
       "ties": 0,
-      "record": "10-9-0",
-      "win_rate": 0.526,
-      "avg_margin": 0.007,
-      "weeks": 19,
+      "record": "11-9-0",
+      "win_rate": 0.55,
+      "avg_margin": 0.009,
+      "weeks": 20,
       "class": "SWING"
     },
     "K": {
       "wins": 9,
-      "losses": 10,
+      "losses": 11,
       "ties": 0,
-      "record": "9-10-0",
-      "win_rate": 0.474,
-      "avg_margin": -1.737,
-      "weeks": 19,
+      "record": "9-11-0",
+      "win_rate": 0.45,
+      "avg_margin": -1.8,
+      "weeks": 20,
       "class": "SWING"
     },
     "QS": {
-      "wins": 11,
+      "wins": 12,
       "losses": 6,
       "ties": 2,
-      "record": "11-6-2",
-      "win_rate": 0.632,
-      "avg_margin": 0.526,
-      "weeks": 19,
+      "record": "12-6-2",
+      "win_rate": 0.65,
+      "avg_margin": 0.55,
+      "weeks": 20,
       "class": "STRENGTH"
     },
     "ERA": {
-      "wins": 11,
+      "wins": 12,
       "losses": 8,
       "ties": 0,
-      "record": "11-8-0",
-      "win_rate": 0.579,
-      "avg_margin": 0.297,
-      "weeks": 19,
-      "class": "SWING"
+      "record": "12-8-0",
+      "win_rate": 0.6,
+      "avg_margin": 0.335,
+      "weeks": 20,
+      "class": "STRENGTH"
     },
     "WHIP": {
-      "wins": 10,
+      "wins": 11,
       "losses": 9,
       "ties": 0,
-      "record": "10-9-0",
-      "win_rate": 0.526,
-      "avg_margin": 0.063,
-      "weeks": 19,
+      "record": "11-9-0",
+      "win_rate": 0.55,
+      "avg_margin": 0.075,
+      "weeks": 20,
       "class": "SWING"
     },
     "SvHd": {
-      "wins": 15,
+      "wins": 16,
       "losses": 2,
       "ties": 2,
-      "record": "15-2-2",
-      "win_rate": 0.842,
-      "avg_margin": 1.684,
-      "weeks": 19,
+      "record": "16-2-2",
+      "win_rate": 0.85,
+      "avg_margin": 1.8,
+      "weeks": 20,
       "class": "STRENGTH"
     }
   },
   "opponent_previews": [
     {
       "seed": 4,
-      "team_id": 3,
-      "team_name": "I Robbed A Nuke",
-      "abbrev": "IRAN",
+      "team_id": 5,
+      "team_name": "2010 State Sectional Champ",
+      "abbrev": "BJL",
       "is_likely_r1_opp": true,
       "projected_score": "8-2",
       "category_matchup": {
         "R": {
           "my_rank": 1,
-          "their_rank": 5,
+          "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 7
         },
         "HR": {
+          "my_rank": 1,
+          "their_rank": 7,
+          "winner": "mine",
+          "rank_gap": 6
+        },
+        "RBI": {
+          "my_rank": 2,
+          "their_rank": 8,
+          "winner": "mine",
+          "rank_gap": 6
+        },
+        "SB": {
+          "my_rank": 1,
+          "their_rank": 8,
+          "winner": "mine",
+          "rank_gap": 7
+        },
+        "OBP": {
           "my_rank": 1,
           "their_rank": 6,
           "winner": "mine",
           "rank_gap": 5
         },
-        "RBI": {
-          "my_rank": 2,
-          "their_rank": 5,
-          "winner": "mine",
-          "rank_gap": 3
-        },
-        "SB": {
-          "my_rank": 1,
-          "their_rank": 3,
-          "winner": "mine",
-          "rank_gap": 2
-        },
-        "OBP": {
-          "my_rank": 1,
-          "their_rank": 2,
-          "winner": "mine",
-          "rank_gap": 1
-        },
         "K": {
           "my_rank": 7,
-          "their_rank": 1,
+          "their_rank": 5,
           "winner": "theirs",
-          "rank_gap": 6
+          "rank_gap": 2
         },
         "QS": {
           "my_rank": 6,
-          "their_rank": 1,
+          "their_rank": 4,
           "winner": "theirs",
-          "rank_gap": 5
+          "rank_gap": 2
         },
         "ERA": {
+          "my_rank": 3,
+          "their_rank": 4,
+          "winner": "mine",
+          "rank_gap": 1
+        },
+        "WHIP": {
+          "my_rank": 2,
+          "their_rank": 3,
+          "winner": "mine",
+          "rank_gap": 1
+        },
+        "SvHd": {
           "my_rank": 3,
           "their_rank": 7,
           "winner": "mine",
           "rank_gap": 4
-        },
-        "WHIP": {
-          "my_rank": 2,
-          "their_rank": 8,
-          "winner": "mine",
-          "rank_gap": 6
-        },
-        "SvHd": {
-          "my_rank": 2,
-          "their_rank": 8,
-          "winner": "mine",
-          "rank_gap": 6
         }
       },
       "swing_categories": [
-        "SB",
-        "OBP"
+        "K",
+        "QS",
+        "ERA",
+        "WHIP"
       ]
     },
     {
@@ -502,10 +504,10 @@
           "rank_gap": 3
         },
         "SvHd": {
-          "my_rank": 2,
+          "my_rank": 3,
           "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 1
         }
       },
       "swing_categories": [
@@ -519,89 +521,86 @@
     },
     {
       "seed": 3,
-      "team_id": 7,
-      "team_name": "Jazz In Her Batters Box",
-      "abbrev": "Jhf",
+      "team_id": 8,
+      "team_name": "ChicksDigTheLongBall",
+      "abbrev": "CDLB",
       "is_likely_r1_opp": false,
-      "projected_score": "8-2",
+      "projected_score": "9-1",
       "category_matchup": {
         "R": {
-          "my_rank": 1,
-          "their_rank": 2,
-          "winner": "mine",
-          "rank_gap": 1
-        },
-        "HR": {
-          "my_rank": 1,
-          "their_rank": 2,
-          "winner": "mine",
-          "rank_gap": 1
-        },
-        "RBI": {
-          "my_rank": 2,
-          "their_rank": 4,
-          "winner": "mine",
-          "rank_gap": 2
-        },
-        "SB": {
           "my_rank": 1,
           "their_rank": 7,
           "winner": "mine",
           "rank_gap": 6
         },
-        "OBP": {
+        "HR": {
           "my_rank": 1,
           "their_rank": 3,
           "winner": "mine",
           "rank_gap": 2
         },
+        "RBI": {
+          "my_rank": 2,
+          "their_rank": 7,
+          "winner": "mine",
+          "rank_gap": 5
+        },
+        "SB": {
+          "my_rank": 1,
+          "their_rank": 6,
+          "winner": "mine",
+          "rank_gap": 5
+        },
+        "OBP": {
+          "my_rank": 1,
+          "their_rank": 5,
+          "winner": "mine",
+          "rank_gap": 4
+        },
         "K": {
           "my_rank": 7,
-          "their_rank": 5,
-          "winner": "theirs",
-          "rank_gap": 2
+          "their_rank": 8,
+          "winner": "mine",
+          "rank_gap": 1
         },
         "QS": {
           "my_rank": 6,
-          "their_rank": 2,
-          "winner": "theirs",
-          "rank_gap": 4
-        },
-        "ERA": {
-          "my_rank": 3,
-          "their_rank": 5,
+          "their_rank": 8,
           "winner": "mine",
           "rank_gap": 2
         },
+        "ERA": {
+          "my_rank": 3,
+          "their_rank": 8,
+          "winner": "mine",
+          "rank_gap": 5
+        },
         "WHIP": {
           "my_rank": 2,
-          "their_rank": 6,
+          "their_rank": 7,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 5
         },
         "SvHd": {
-          "my_rank": 2,
-          "their_rank": 5,
-          "winner": "mine",
-          "rank_gap": 3
+          "my_rank": 3,
+          "their_rank": 1,
+          "winner": "theirs",
+          "rank_gap": 2
         }
       },
       "swing_categories": [
-        "R",
         "HR",
-        "RBI",
-        "OBP",
         "K",
-        "ERA"
+        "QS",
+        "SvHd"
       ]
     }
   ],
   "swing_categories": [
-    "SB",
-    "OBP",
-    "R",
-    "RBI",
-    "ERA"
+    "QS",
+    "K",
+    "ERA",
+    "SvHd"
   ],
   "improvement_targets": [
     "K",
