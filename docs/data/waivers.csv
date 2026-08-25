@@ -1,5 +1,5 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
-Brent Rooker,,buy_low_hitter,0.7,False,,,,0.281,0.3119905645197088,0.243,BABIP 0.243 below floor (0.260); OBP (0.281) lags xwOBA (0.312)
+Brent Rooker,,buy_low_hitter,0.7,False,,,,0.281,0.31196752220693263,0.243,BABIP 0.243 below floor (0.260); OBP (0.281) lags xwOBA (0.312)
 Devin Williams,,buy_low_pitcher,0.69,False,4.66,3.6014584014823257,3.4941473615192797,,,,"ERA (4.66) >> xFIP (3.60), gap=1.06; ERA (4.66) >> SIERA (3.49), gap=1.17"
 Jared Jones,,buy_low_pitcher,0.69,False,4.76,3.8789411957211355,3.757954932084466,,,,"ERA (4.76) >> xFIP (3.88), gap=0.88; ERA (4.76) >> SIERA (3.76), gap=1.00"
 Caleb Kilian,,buy_low_pitcher,0.69,False,4.91,3.7689637077948133,3.496868522286967,,,,"ERA (4.91) >> xFIP (3.77), gap=1.14; ERA (4.91) >> SIERA (3.50), gap=1.41"

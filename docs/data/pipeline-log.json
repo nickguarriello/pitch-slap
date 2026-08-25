@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-08-24T10:29:04.218202+00:00",
+  "as_of": "2026-08-25T10:22:22.155718+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-24T10:28:53.601866+00:00",
+  "last_full_run": "2026-08-25T10:22:13.686642+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-24T10:29:04.218202+00:00",
-  "mlb_last_fetch": "2026-08-24T10:29:10.135809+00:00",
-  "statcast_last_fetch": "2026-08-24T10:29:15.220494+00:00",
+  "espn_last_fetch": "2026-08-25T10:22:22.155718+00:00",
+  "mlb_last_fetch": "2026-08-25T10:22:26.961453+00:00",
+  "statcast_last_fetch": "2026-08-25T10:22:31.790740+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-23",
-    "games": 15,
-    "final": 15,
+    "date": "2026-08-24",
+    "games": 10,
+    "final": 10,
     "incomplete": [],
-    "last_game": "ATL@MIL",
+    "last_game": "CIN@SF",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-08-24T08:22:10.743000+00:00",
-    "waiver_last_execution": "2026-08-24T08:22:10.495000+00:00",
-    "scoring_period": 153,
-    "checked_at": "2026-08-24T10:29:04.384443+00:00"
+    "standings_update": "2026-08-25T08:31:21.008000+00:00",
+    "waiver_last_execution": "2026-08-25T08:31:18.857000+00:00",
+    "scoring_period": 154,
+    "checked_at": "2026-08-25T10:22:22.241986+00:00"
   },
   "row_counts": {
-    "fact_espn_rosters": 556,
-    "fact_player_stats": 2951,
-    "fact_statcast": 532,
+    "fact_espn_rosters": 555,
+    "fact_player_stats": 3118,
+    "fact_statcast": 533,
     "fact_matchups": 200,
-    "stats_season": 584,
-    "stats_first_half": 574,
-    "stats_second_half": 484,
-    "stats_30d": 469,
-    "stats_14d": 429,
-    "stats_7d": 411,
-    "stats_current": 0
+    "stats_season": 585,
+    "stats_first_half": 575,
+    "stats_second_half": 486,
+    "stats_30d": 472,
+    "stats_14d": 432,
+    "stats_7d": 408,
+    "stats_current": 160
   },
   "validation_checks": [
     {
@@ -98,22 +98,22 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "532 players with Statcast data"
+      "detail": "533 players with Statcast data"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "2951 rows across 7 windows"
+      "detail": "3118 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "186 upcoming team-game slots"
+      "detail": "190 upcoming team-game slots"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "254/256 (99%) rostered players have season stats"
+      "detail": "253/255 (99%) rostered players have season stats"
     },
     {
       "name": "",
@@ -138,7 +138,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "351 season stat values match ESPN within tolerance (1 outlier(s))"
+      "detail": "350 season stat values match ESPN within tolerance (1 outlier(s))"
     },
     {
       "name": "",

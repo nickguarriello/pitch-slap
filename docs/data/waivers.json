@@ -15,7 +15,7 @@
       "score": 0.7,
       "stats": {
         "obp": 0.281,
-        "xwoba": 0.3119905645197088,
+        "xwoba": 0.31196752220693263,
         "babip": 0.243,
         "sprint_speed": 27.6
       }
@@ -237,9 +237,29 @@
       "score": 0.7,
       "stats": {
         "obp": 0.314,
-        "xwoba": 0.3509230585823282,
+        "xwoba": 0.35090179145917094,
         "babip": 0.257,
         "sprint_speed": 26.6
+      }
+    },
+    {
+      "player_id": "34995",
+      "name": "Trent Grisham",
+      "team": null,
+      "espn_team_id": 7,
+      "rostered": true,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.231 below floor (0.260)",
+        "OBP (0.317) lags xwOBA (0.342)"
+      ],
+      "score": 0.7,
+      "stats": {
+        "obp": 0.317,
+        "xwoba": 0.34249338162999576,
+        "babip": 0.231,
+        "sprint_speed": 26.7
       }
     },
     {
@@ -251,14 +271,14 @@
       "eligible_slots": "3B,CI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.232 below floor (0.260)",
-        "OBP (0.303) lags xwOBA (0.331)"
+        "BABIP 0.230 below floor (0.260)",
+        "OBP (0.304) lags xwOBA (0.332)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.303,
-        "xwoba": 0.3314376973660193,
-        "babip": 0.232,
+        "obp": 0.304,
+        "xwoba": 0.33193543045609086,
+        "babip": 0.23,
         "sprint_speed": 25.2
       }
     },
@@ -320,26 +340,6 @@
         "xfip": 2.2063192558183617,
         "siera": 2.2355305594781667,
         "ip": 47.333333333333336
-      }
-    },
-    {
-      "player_id": "32667",
-      "name": "Kevin Gausman",
-      "team": null,
-      "espn_team_id": 8,
-      "rostered": true,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.58) >> xFIP (3.77), gap=0.81",
-        "ERA (4.58) >> SIERA (3.82), gap=0.76"
-      ],
-      "score": 0.69,
-      "stats": {
-        "era": 4.58,
-        "xfip": 3.772798485807814,
-        "siera": 3.8179957773535143,
-        "ip": 143.33333333333334
       }
     },
     {
