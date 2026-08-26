@@ -1,15 +1,6 @@
 {
   "runs": [
     {
-      "run_ts": "2026-06-20T11:51:30.031599+00:00",
-      "espn_standings_update": "2026-06-20T08:47:15.073000+00:00",
-      "espn_waiver_execution": "2026-06-20T08:47:13.907000+00:00",
-      "scoring_period": 88,
-      "games_final_date": "2026-06-19",
-      "all_games_final": true,
-      "last_game": "BAL@LAD"
-    },
-    {
       "run_ts": "2026-06-21T12:06:09.478299+00:00",
       "espn_standings_update": "2026-06-21T08:53:15.962000+00:00",
       "espn_waiver_execution": "2026-06-21T08:53:14.981000+00:00",
@@ -537,6 +528,15 @@
       "espn_waiver_execution": "2026-08-25T08:31:18.857000+00:00",
       "scoring_period": 154,
       "games_final_date": "2026-08-24",
+      "all_games_final": true,
+      "last_game": "CIN@SF"
+    },
+    {
+      "run_ts": "2026-08-26T10:24:56.337442+00:00",
+      "espn_standings_update": "2026-08-26T08:31:17.226000+00:00",
+      "espn_waiver_execution": "2026-08-26T08:31:16.819000+00:00",
+      "scoring_period": 155,
+      "games_final_date": "2026-08-25",
       "all_games_final": true,
       "last_game": "CIN@SF"
     }

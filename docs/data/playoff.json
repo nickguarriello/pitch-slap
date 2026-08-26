@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-25",
+  "as_of": "2026-08-26",
   "playoff_start_week": 22,
   "current_week": 21,
   "weeks_until_playoffs": 0,
@@ -53,7 +53,7 @@
       "ranks": {
         "R": 6,
         "HR": 5,
-        "RBI": 4,
+        "RBI": 3,
         "SB": 2,
         "OBP": 8,
         "K": 3,
@@ -140,7 +140,7 @@
       "ranks": {
         "R": 2,
         "HR": 2,
-        "RBI": 3,
+        "RBI": 4,
         "SB": 7,
         "OBP": 3,
         "K": 4,
@@ -463,9 +463,9 @@
         },
         "RBI": {
           "my_rank": 2,
-          "their_rank": 4,
+          "their_rank": 3,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "SB": {
           "my_rank": 1,
