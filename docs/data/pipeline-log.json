@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-08-26T10:25:04.279029+00:00",
+  "as_of": "2026-08-27T20:04:27.245122+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-26T10:24:56.337442+00:00",
+  "last_full_run": "2026-08-27T20:04:17.535593+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-26T10:25:04.279029+00:00",
-  "mlb_last_fetch": "2026-08-26T10:25:04.640760+00:00",
-  "statcast_last_fetch": "2026-08-26T10:25:07.893448+00:00",
+  "espn_last_fetch": "2026-08-27T20:04:27.245122+00:00",
+  "mlb_last_fetch": "2026-08-27T20:04:27.826734+00:00",
+  "statcast_last_fetch": "2026-08-27T20:04:32.200641+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-25",
+    "date": "2026-08-26",
     "games": 15,
     "final": 15,
     "incomplete": [],
-    "last_game": "CIN@SF",
+    "last_game": "MIN@OAK",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-08-26T08:31:17.226000+00:00",
-    "waiver_last_execution": "2026-08-26T08:31:16.819000+00:00",
-    "scoring_period": 155,
-    "checked_at": "2026-08-26T10:25:04.373817+00:00"
+    "standings_update": "2026-08-27T08:25:19.316000+00:00",
+    "waiver_last_execution": "2026-08-27T08:25:18.920000+00:00",
+    "scoring_period": 156,
+    "checked_at": "2026-08-27T20:04:27.378540+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 555,
-    "fact_player_stats": 3258,
+    "fact_player_stats": 3310,
     "fact_statcast": 533,
     "fact_matchups": 200,
     "stats_season": 586,
     "stats_first_half": 575,
-    "stats_second_half": 490,
-    "stats_30d": 473,
-    "stats_14d": 436,
-    "stats_7d": 408,
-    "stats_current": 290
+    "stats_second_half": 491,
+    "stats_30d": 474,
+    "stats_14d": 438,
+    "stats_7d": 411,
+    "stats_current": 335
   },
   "validation_checks": [
     {
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3258 rows across 7 windows"
+      "detail": "3310 rows across 7 windows"
     },
     {
       "name": "",
