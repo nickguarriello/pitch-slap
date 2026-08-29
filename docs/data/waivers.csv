@@ -1,11 +1,10 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
-Brent Rooker,,buy_low_hitter,0.7,False,,,,0.281,0.3120003709889422,0.243,BABIP 0.243 below floor (0.260); OBP (0.281) lags xwOBA (0.312)
-Jacob deGrom,,buy_low_pitcher,0.69,False,4.21,3.21997392803831,3.2065837985703176,,,,"ERA (4.21) >> xFIP (3.22), gap=0.99; ERA (4.21) >> SIERA (3.21), gap=1.00"
-Devin Williams,,buy_low_pitcher,0.69,False,4.66,3.596606380550044,3.489436538221779,,,,"ERA (4.66) >> xFIP (3.60), gap=1.06; ERA (4.66) >> SIERA (3.49), gap=1.17"
-Jared Jones,,buy_low_pitcher,0.69,False,4.76,3.8732897300492315,3.7532441087869652,,,,"ERA (4.76) >> xFIP (3.87), gap=0.89; ERA (4.76) >> SIERA (3.75), gap=1.01"
-Caleb Kilian,,buy_low_pitcher,0.69,False,4.91,3.7639482389170884,3.4921576989894665,,,,"ERA (4.91) >> xFIP (3.76), gap=1.15; ERA (4.91) >> SIERA (3.49), gap=1.42"
-David Peterson,,buy_low_pitcher,0.69,False,5.11,4.063357614322472,4.258616599723321,,,,"ERA (5.11) >> xFIP (4.06), gap=1.05; ERA (5.11) >> SIERA (4.26), gap=0.85"
-Luis Castillo,,buy_low_pitcher,0.69,False,5.19,4.340436313641099,4.250912127721929,,,,"ERA (5.19) >> xFIP (4.34), gap=0.85; ERA (5.19) >> SIERA (4.25), gap=0.94"
-Dean Kremer,,buy_low_pitcher,0.69,False,5.22,3.852162149446782,3.888178944358113,,,,"ERA (5.22) >> xFIP (3.85), gap=1.37; ERA (5.22) >> SIERA (3.89), gap=1.33"
-Brandon Sproat,,buy_low_pitcher,0.69,False,5.27,4.278582210734951,4.274167613346162,,,,"ERA (5.27) >> xFIP (4.28), gap=0.99; ERA (5.27) >> SIERA (4.27), gap=1.00"
-Emmet Sheehan,,buy_low_pitcher,0.69,False,5.29,3.9599389013423587,3.6434865884361365,,,,"ERA (5.29) >> xFIP (3.96), gap=1.33; ERA (5.29) >> SIERA (3.64), gap=1.65"
+Brent Rooker,,buy_low_hitter,0.7,False,,,,0.281,0.3119976544621015,0.243,BABIP 0.243 below floor (0.260); OBP (0.281) lags xwOBA (0.312)
+Jacob deGrom,,buy_low_pitcher,0.69,False,4.21,3.2170938454787037,3.203758925838155,,,,"ERA (4.21) >> xFIP (3.22), gap=0.99; ERA (4.21) >> SIERA (3.20), gap=1.01"
+Devin Williams,,buy_low_pitcher,0.69,False,4.66,3.593887424742633,3.4866116654896167,,,,"ERA (4.66) >> xFIP (3.59), gap=1.07; ERA (4.66) >> SIERA (3.49), gap=1.17"
+Enyel De Los Santos,,buy_low_pitcher,0.69,False,4.67,3.918573723602798,3.508007467031479,,,,"ERA (4.67) >> xFIP (3.92), gap=0.75; ERA (4.67) >> SIERA (3.51), gap=1.16"
+Jared Jones,,buy_low_pitcher,0.69,False,4.83,3.8203156770958158,3.711826030702208,,,,"ERA (4.83) >> xFIP (3.82), gap=1.01; ERA (4.83) >> SIERA (3.71), gap=1.12"
+Caleb Kilian,,buy_low_pitcher,0.69,False,4.91,3.7611810049882273,3.489332826257304,,,,"ERA (4.91) >> xFIP (3.76), gap=1.15; ERA (4.91) >> SIERA (3.49), gap=1.42"
+David Peterson,,buy_low_pitcher,0.69,False,5.11,4.021213150412165,4.2400606151271445,,,,"ERA (5.11) >> xFIP (4.02), gap=1.09; ERA (5.11) >> SIERA (4.24), gap=0.87"
+Brandon Sproat,,buy_low_pitcher,0.69,False,5.27,4.275881916330167,4.271342740613999,,,,"ERA (5.27) >> xFIP (4.28), gap=0.99; ERA (5.27) >> SIERA (4.27), gap=1.00"
+Emmet Sheehan,,buy_low_pitcher,0.69,False,5.29,3.9568828657982067,3.640661715703974,,,,"ERA (5.29) >> xFIP (3.96), gap=1.33; ERA (5.29) >> SIERA (3.64), gap=1.65"

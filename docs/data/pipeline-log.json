@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-08-28T21:02:31.711533+00:00",
+  "as_of": "2026-08-29T14:49:30.510634+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-28T21:02:23.776230+00:00",
+  "last_full_run": "2026-08-29T14:49:20.230256+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-28T21:02:31.711533+00:00",
-  "mlb_last_fetch": "2026-08-28T21:02:32.124382+00:00",
-  "statcast_last_fetch": "2026-08-28T21:02:36.145148+00:00",
+  "espn_last_fetch": "2026-08-29T14:49:30.510634+00:00",
+  "mlb_last_fetch": "2026-08-29T14:49:31.078802+00:00",
+  "statcast_last_fetch": "2026-08-29T14:49:35.231360+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-27",
-    "games": 7,
-    "final": 7,
+    "date": "2026-08-28",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
     "last_game": "ARI@SF",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-08-28T08:29:50.571000+00:00",
-    "waiver_last_execution": "2026-08-28T08:29:50.122000+00:00",
-    "scoring_period": 157,
-    "checked_at": "2026-08-28T21:02:31.804910+00:00"
+    "standings_update": "2026-08-29T08:22:40.506000+00:00",
+    "waiver_last_execution": "2026-08-29T08:22:39.980000+00:00",
+    "scoring_period": 158,
+    "checked_at": "2026-08-29T14:49:30.615521+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 555,
-    "fact_player_stats": 3314,
+    "fact_player_stats": 3341,
     "fact_statcast": 533,
     "fact_matchups": 200,
     "stats_season": 586,
     "stats_first_half": 575,
-    "stats_second_half": 491,
+    "stats_second_half": 492,
     "stats_30d": 473,
     "stats_14d": 435,
-    "stats_7d": 405,
-    "stats_current": 349
+    "stats_7d": 403,
+    "stats_current": 377
   },
   "validation_checks": [
     {
@@ -103,12 +103,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3314 rows across 7 windows"
+      "detail": "3341 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "194 upcoming team-game slots"
+      "detail": "196 upcoming team-game slots"
     },
     {
       "name": "",
