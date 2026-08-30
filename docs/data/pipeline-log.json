@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-08-29T14:49:30.510634+00:00",
+  "as_of": "2026-08-30T14:35:06.502246+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-08-29T14:49:20.230256+00:00",
+  "last_full_run": "2026-08-30T14:34:57.828104+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-08-29T14:49:30.510634+00:00",
-  "mlb_last_fetch": "2026-08-29T14:49:31.078802+00:00",
-  "statcast_last_fetch": "2026-08-29T14:49:35.231360+00:00",
+  "espn_last_fetch": "2026-08-30T14:35:06.502246+00:00",
+  "mlb_last_fetch": "2026-08-30T14:35:07.356985+00:00",
+  "statcast_last_fetch": "2026-08-30T14:35:24.476788+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-28",
-    "games": 15,
-    "final": 15,
+    "date": "2026-08-29",
+    "games": 17,
+    "final": 17,
     "incomplete": [],
-    "last_game": "ARI@SF",
+    "last_game": "PHI@LAA",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-08-29T08:22:40.506000+00:00",
-    "waiver_last_execution": "2026-08-29T08:22:39.980000+00:00",
-    "scoring_period": 158,
-    "checked_at": "2026-08-29T14:49:30.615521+00:00"
+    "standings_update": "2026-08-30T08:34:03.234000+00:00",
+    "waiver_last_execution": "2026-08-30T08:34:02.997000+00:00",
+    "scoring_period": 159,
+    "checked_at": "2026-08-30T14:35:06.613536+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 555,
-    "fact_player_stats": 3341,
+    "fact_player_stats": 3372,
     "fact_statcast": 533,
     "fact_matchups": 200,
-    "stats_season": 586,
+    "stats_season": 587,
     "stats_first_half": 575,
-    "stats_second_half": 492,
+    "stats_second_half": 493,
     "stats_30d": 473,
-    "stats_14d": 435,
-    "stats_7d": 403,
-    "stats_current": 377
+    "stats_14d": 437,
+    "stats_7d": 407,
+    "stats_current": 400
   },
   "validation_checks": [
     {
@@ -103,12 +103,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3341 rows across 7 windows"
+      "detail": "3372 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "196 upcoming team-game slots"
+      "detail": "192 upcoming team-game slots"
     },
     {
       "name": "",
