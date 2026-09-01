@@ -1,70 +1,70 @@
 {
   "cat_states": {
     "R": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLIPPABLE",
+      "my_val": 3.0,
+      "opp_val": 7.0,
+      "gap": -4.0
     },
     "HR": {
       "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
+      "my_val": 1.0,
+      "opp_val": 1.0,
       "gap": 0.0
     },
     "RBI": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "FLIPPABLE",
+      "my_val": 1.0,
+      "opp_val": 5.0,
+      "gap": -4.0
     },
     "SB": {
-      "state": "TIE",
-      "my_val": 0.0,
+      "state": "FLOPPABLE",
+      "my_val": 1.0,
       "opp_val": 0.0,
-      "gap": 0.0
+      "gap": 1.0
     },
     "OBP": {
-      "state": "TIE",
-      "my_val": 0.0,
-      "opp_val": 0.0,
-      "gap": 0.0
+      "state": "LOSS",
+      "my_val": 0.31818182,
+      "opp_val": 0.38095238,
+      "gap": -0.0628
     },
     "K": {
-      "state": "TIE",
-      "my_val": 0.0,
+      "state": "FLOPPABLE",
+      "my_val": 8.0,
       "opp_val": 0.0,
-      "gap": 0.0
+      "gap": 8.0
     },
     "QS": {
-      "state": "TIE",
-      "my_val": 0.0,
+      "state": "FLOPPABLE",
+      "my_val": 1.0,
       "opp_val": 0.0,
-      "gap": 0.0
+      "gap": 1.0
     },
     "ERA": {
       "state": "TIE",
-      "my_val": null,
+      "my_val": 0.0,
       "opp_val": null,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
+      "ip_note": "You 14.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 14.0,
       "opp_ip_week": 0.0
     },
     "WHIP": {
       "state": "TIE",
-      "my_val": null,
+      "my_val": 1.28571429,
       "opp_val": null,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
-      "my_ip_week": 0.0,
+      "ip_note": "You 14.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 14.0,
       "opp_ip_week": 0.0
     },
     "SvHd": {
-      "state": "TIE",
-      "my_val": 0.0,
+      "state": "FLOPPABLE",
+      "my_val": 1.0,
       "opp_val": 0.0,
-      "gap": 0.0
+      "gap": 1.0
     }
   },
   "need_weights": {
@@ -1956,8 +1956,8 @@
   "constraints": {
     "acquisitions_used": 3,
     "acquisitions_remaining": 4,
-    "ip_accumulated": 0.0,
-    "ip_remaining": 15.0,
+    "ip_accumulated": 14.0,
+    "ip_remaining": 1.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,
