@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-09-01T14:24:40.299532+00:00",
+  "as_of": "2026-09-02T13:58:16.106226+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-09-01T14:24:31.304369+00:00",
+  "last_full_run": "2026-09-02T13:58:05.280860+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-09-01T14:24:40.299532+00:00",
-  "mlb_last_fetch": "2026-09-01T14:24:40.726667+00:00",
-  "statcast_last_fetch": "2026-09-01T14:24:45.050835+00:00",
+  "espn_last_fetch": "2026-09-02T13:58:16.106226+00:00",
+  "mlb_last_fetch": "2026-09-02T13:58:16.719265+00:00",
+  "statcast_last_fetch": "2026-09-02T13:58:21.289975+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-08-31",
-    "games": 12,
-    "final": 12,
+    "date": "2026-09-01",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
-    "last_game": "PHI@ARI",
+    "last_game": "STL@LAD",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-09-01T08:29:14.861000+00:00",
-    "waiver_last_execution": "2026-09-01T08:29:14.855000+00:00",
-    "scoring_period": 161,
-    "checked_at": "2026-09-01T14:24:40.430331+00:00"
+    "standings_update": "2026-09-02T08:24:09.827000+00:00",
+    "waiver_last_execution": "2026-09-02T08:24:09.808000+00:00",
+    "scoring_period": 162,
+    "checked_at": "2026-09-02T13:58:16.362450+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 3181,
+    "fact_player_stats": 3291,
     "fact_statcast": 535,
     "fact_matchups": 210,
     "stats_season": 589,
     "stats_first_half": 577,
-    "stats_second_half": 499,
-    "stats_30d": 473,
-    "stats_14d": 434,
-    "stats_7d": 410,
-    "stats_current": 199
+    "stats_second_half": 502,
+    "stats_30d": 472,
+    "stats_14d": 437,
+    "stats_7d": 415,
+    "stats_current": 299
   },
   "validation_checks": [
     {
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3181 rows across 7 windows"
+      "detail": "3291 rows across 7 windows"
     },
     {
       "name": "",
@@ -138,7 +138,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "352 season stat values match ESPN within tolerance (1 outlier(s))"
+      "detail": "354 season stat values match ESPN within tolerance (1 outlier(s))"
     },
     {
       "name": "",
