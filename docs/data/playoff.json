@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "playoff_start_week": 22,
   "current_week": 22,
   "weeks_until_playoffs": 0,
@@ -52,7 +52,7 @@
       "is_my_team": true,
       "ranks": {
         "R": 1,
-        "HR": 3,
+        "HR": 2,
         "RBI": 3,
         "SB": 1,
         "OBP": 1,
@@ -81,7 +81,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 7,
-        "HR": 2,
+        "HR": 3,
         "RBI": 7,
         "SB": 6,
         "OBP": 5,
@@ -110,7 +110,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 8,
-        "HR": 7,
+        "HR": 6,
         "RBI": 8,
         "SB": 8,
         "OBP": 6,
@@ -197,7 +197,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 5,
-        "HR": 6,
+        "HR": 7,
         "RBI": 5,
         "SB": 3,
         "OBP": 2,
@@ -252,7 +252,7 @@
   ],
   "my_category_ranks": {
     "R": 1,
-    "HR": 3,
+    "HR": 2,
     "RBI": 3,
     "SB": 1,
     "OBP": 1,
@@ -371,7 +371,7 @@
       "team_name": "ChicksDigTheLongBall",
       "abbrev": "CDLB",
       "is_likely_r1_opp": true,
-      "projected_score": "8-2",
+      "projected_score": "9-1",
       "category_matchup": {
         "R": {
           "my_rank": 1,
@@ -380,9 +380,9 @@
           "rank_gap": 6
         },
         "HR": {
-          "my_rank": 3,
-          "their_rank": 2,
-          "winner": "theirs",
+          "my_rank": 2,
+          "their_rank": 3,
+          "winner": "mine",
           "rank_gap": 1
         },
         "RBI": {
@@ -456,10 +456,10 @@
           "rank_gap": 2
         },
         "HR": {
-          "my_rank": 3,
+          "my_rank": 2,
           "their_rank": 4,
           "winner": "mine",
-          "rank_gap": 1
+          "rank_gap": 2
         },
         "RBI": {
           "my_rank": 3,
@@ -534,8 +534,8 @@
           "rank_gap": 7
         },
         "HR": {
-          "my_rank": 3,
-          "their_rank": 7,
+          "my_rank": 2,
+          "their_rank": 6,
           "winner": "mine",
           "rank_gap": 4
         },
@@ -602,7 +602,6 @@
     "WHIP"
   ],
   "improvement_targets": [
-    "HR",
     "SvHd"
   ]
 }

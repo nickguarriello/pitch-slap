@@ -1,15 +1,6 @@
 {
   "runs": [
     {
-      "run_ts": "2026-06-28T11:43:08.592592+00:00",
-      "espn_standings_update": "2026-06-28T08:57:39.117000+00:00",
-      "espn_waiver_execution": "2026-06-28T08:57:38.933000+00:00",
-      "scoring_period": 96,
-      "games_final_date": "2026-06-27",
-      "all_games_final": true,
-      "last_game": "OAK@LAA"
-    },
-    {
       "run_ts": "2026-06-29T13:58:59.248312+00:00",
       "espn_standings_update": "2026-06-29T08:49:21.509000+00:00",
       "espn_waiver_execution": "2026-06-29T08:49:20.956000+00:00",
@@ -537,6 +528,15 @@
       "espn_waiver_execution": "2026-09-02T08:24:09.808000+00:00",
       "scoring_period": 162,
       "games_final_date": "2026-09-01",
+      "all_games_final": true,
+      "last_game": "STL@LAD"
+    },
+    {
+      "run_ts": "2026-09-03T14:00:30.143368+00:00",
+      "espn_standings_update": "2026-09-03T08:28:59.509000+00:00",
+      "espn_waiver_execution": "2026-09-03T08:28:59.223000+00:00",
+      "scoring_period": 163,
+      "games_final_date": "2026-09-02",
       "all_games_final": true,
       "last_game": "STL@LAD"
     }
