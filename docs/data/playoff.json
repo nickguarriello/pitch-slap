@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-05",
+  "as_of": "2026-09-06",
   "playoff_start_week": 22,
   "current_week": 22,
   "weeks_until_playoffs": 0,
@@ -23,7 +23,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 3,
-        "HR": 4,
+        "HR": 5,
         "RBI": 2,
         "SB": 2,
         "OBP": 8,
@@ -114,7 +114,7 @@
         "RBI": 8,
         "SB": 8,
         "OBP": 6,
-        "K": 4,
+        "K": 5,
         "QS": 5,
         "SvHd": 7,
         "ERA": 4,
@@ -143,7 +143,7 @@
         "RBI": 4,
         "SB": 7,
         "OBP": 3,
-        "K": 5,
+        "K": 6,
         "QS": 2,
         "SvHd": 4,
         "ERA": 5,
@@ -168,7 +168,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 6,
-        "HR": 5,
+        "HR": 4,
         "RBI": 1,
         "SB": 4,
         "OBP": 7,
@@ -230,7 +230,7 @@
         "RBI": 6,
         "SB": 5,
         "OBP": 4,
-        "K": 6,
+        "K": 4,
         "QS": 6,
         "SvHd": 6,
         "ERA": 6,
@@ -457,9 +457,9 @@
         },
         "HR": {
           "my_rank": 2,
-          "their_rank": 4,
+          "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 2
+          "rank_gap": 3
         },
         "RBI": {
           "my_rank": 3,
@@ -512,7 +512,6 @@
       },
       "swing_categories": [
         "R",
-        "HR",
         "RBI",
         "SB",
         "ERA",
@@ -559,9 +558,9 @@
         },
         "K": {
           "my_rank": 7,
-          "their_rank": 4,
+          "their_rank": 5,
           "winner": "theirs",
-          "rank_gap": 3
+          "rank_gap": 2
         },
         "QS": {
           "my_rank": 7,
@@ -589,6 +588,7 @@
         }
       },
       "swing_categories": [
+        "K",
         "QS",
         "ERA",
         "WHIP"
@@ -596,7 +596,7 @@
     }
   ],
   "swing_categories": [
-    "HR",
+    "K",
     "QS",
     "ERA",
     "WHIP"

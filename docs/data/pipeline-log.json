@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-09-05T13:07:12.297319+00:00",
+  "as_of": "2026-09-06T13:18:20.367790+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-09-05T13:07:03.598632+00:00",
+  "last_full_run": "2026-09-06T13:18:11.310126+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-09-05T13:07:12.297319+00:00",
-  "mlb_last_fetch": "2026-09-05T13:07:12.866142+00:00",
-  "statcast_last_fetch": "2026-09-05T13:07:17.018544+00:00",
+  "espn_last_fetch": "2026-09-06T13:18:20.367790+00:00",
+  "mlb_last_fetch": "2026-09-06T13:18:20.892434+00:00",
+  "statcast_last_fetch": "2026-09-06T13:18:25.423469+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-09-04",
-    "games": 16,
-    "final": 16,
+    "date": "2026-09-05",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
-    "last_game": "WSH@LAD",
+    "last_game": "OAK@SEA",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-09-05T08:23:05.472000+00:00",
-    "waiver_last_execution": "2026-09-05T08:23:05.359000+00:00",
-    "scoring_period": 165,
-    "checked_at": "2026-09-05T13:07:12.388602+00:00"
+    "standings_update": "2026-09-06T08:23:27.281000+00:00",
+    "waiver_last_execution": "2026-09-06T08:23:27.242000+00:00",
+    "scoring_period": 166,
+    "checked_at": "2026-09-06T13:18:20.464265+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 556,
-    "fact_player_stats": 3385,
+    "fact_player_stats": 3412,
     "fact_statcast": 535,
     "fact_matchups": 210,
     "stats_season": 589,
     "stats_first_half": 577,
-    "stats_second_half": 503,
-    "stats_30d": 471,
+    "stats_second_half": 504,
+    "stats_30d": 473,
     "stats_14d": 438,
-    "stats_7d": 419,
-    "stats_current": 388
+    "stats_7d": 418,
+    "stats_current": 413
   },
   "validation_checks": [
     {
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3385 rows across 7 windows"
+      "detail": "3412 rows across 7 windows"
     },
     {
       "name": "",
