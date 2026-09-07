@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-09-06T13:18:54.701132+00:00",
+  "run_ts": "2026-09-07T15:24:29.787780+00:00",
   "overall": "ok",
   "degraded_checks": [],
   "checks": [
@@ -21,12 +21,12 @@
     {
       "check": "stat_rows",
       "status": "ok",
-      "detail": "rosters=556 season=589 statcast=535"
+      "detail": "rosters=554 season=590 statcast=536"
     },
     {
       "check": "projections",
       "status": "ok",
-      "detail": "251/256 rostered have projections (98%)"
+      "detail": "249/254 rostered have projections (98%)"
     },
     {
       "check": "validation",

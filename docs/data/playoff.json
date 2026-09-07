@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-06",
+  "as_of": "2026-09-07",
   "playoff_start_week": 22,
   "current_week": 22,
   "weeks_until_playoffs": 0,
@@ -22,16 +22,16 @@
       "cat_record": "111-90-9",
       "is_my_team": false,
       "ranks": {
-        "R": 3,
+        "R": 4,
         "HR": 5,
         "RBI": 2,
         "SB": 2,
         "OBP": 8,
-        "K": 3,
-        "QS": 3,
+        "K": 6,
+        "QS": 6,
         "SvHd": 5,
         "ERA": 1,
-        "WHIP": 4
+        "WHIP": 2
       },
       "seed": 1,
       "in_playoffs": true
@@ -52,7 +52,7 @@
       "is_my_team": true,
       "ranks": {
         "R": 1,
-        "HR": 2,
+        "HR": 3,
         "RBI": 3,
         "SB": 1,
         "OBP": 1,
@@ -60,7 +60,7 @@
         "QS": 7,
         "SvHd": 2,
         "ERA": 3,
-        "WHIP": 2
+        "WHIP": 3
       },
       "seed": 2,
       "in_playoffs": true
@@ -81,7 +81,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 7,
-        "HR": 3,
+        "HR": 4,
         "RBI": 7,
         "SB": 6,
         "OBP": 5,
@@ -114,11 +114,11 @@
         "RBI": 8,
         "SB": 8,
         "OBP": 6,
-        "K": 5,
-        "QS": 5,
+        "K": 3,
+        "QS": 4,
         "SvHd": 7,
         "ERA": 4,
-        "WHIP": 3
+        "WHIP": 4
       },
       "seed": 4,
       "in_playoffs": true
@@ -139,11 +139,11 @@
       "is_my_team": false,
       "ranks": {
         "R": 2,
-        "HR": 1,
+        "HR": 2,
         "RBI": 4,
         "SB": 7,
         "OBP": 3,
-        "K": 6,
+        "K": 5,
         "QS": 2,
         "SvHd": 4,
         "ERA": 5,
@@ -167,13 +167,13 @@
       "cat_record": "103-92-15",
       "is_my_team": false,
       "ranks": {
-        "R": 6,
-        "HR": 4,
+        "R": 3,
+        "HR": 1,
         "RBI": 1,
         "SB": 4,
         "OBP": 7,
         "K": 2,
-        "QS": 4,
+        "QS": 3,
         "SvHd": 3,
         "ERA": 2,
         "WHIP": 1
@@ -196,7 +196,7 @@
       "cat_record": "102-101-7",
       "is_my_team": false,
       "ranks": {
-        "R": 5,
+        "R": 6,
         "HR": 7,
         "RBI": 5,
         "SB": 3,
@@ -225,13 +225,13 @@
       "cat_record": "75-121-14",
       "is_my_team": false,
       "ranks": {
-        "R": 4,
+        "R": 5,
         "HR": 8,
         "RBI": 6,
         "SB": 5,
         "OBP": 4,
         "K": 4,
-        "QS": 6,
+        "QS": 5,
         "SvHd": 6,
         "ERA": 6,
         "WHIP": 5
@@ -252,7 +252,7 @@
   ],
   "my_category_ranks": {
     "R": 1,
-    "HR": 2,
+    "HR": 3,
     "RBI": 3,
     "SB": 1,
     "OBP": 1,
@@ -260,7 +260,7 @@
     "QS": 7,
     "SvHd": 2,
     "ERA": 3,
-    "WHIP": 2
+    "WHIP": 3
   },
   "category_profile": {
     "R": {
@@ -380,8 +380,8 @@
           "rank_gap": 6
         },
         "HR": {
-          "my_rank": 2,
-          "their_rank": 3,
+          "my_rank": 3,
+          "their_rank": 4,
           "winner": "mine",
           "rank_gap": 1
         },
@@ -422,10 +422,10 @@
           "rank_gap": 4
         },
         "WHIP": {
-          "my_rank": 2,
+          "my_rank": 3,
           "their_rank": 7,
           "winner": "mine",
-          "rank_gap": 5
+          "rank_gap": 4
         },
         "SvHd": {
           "my_rank": 2,
@@ -447,19 +447,19 @@
       "team_name": "Lunch",
       "abbrev": "LCH",
       "is_likely_r1_opp": false,
-      "projected_score": "6-4",
+      "projected_score": "5-5",
       "category_matchup": {
         "R": {
           "my_rank": 1,
-          "their_rank": 3,
-          "winner": "mine",
-          "rank_gap": 2
-        },
-        "HR": {
-          "my_rank": 2,
-          "their_rank": 5,
+          "their_rank": 4,
           "winner": "mine",
           "rank_gap": 3
+        },
+        "HR": {
+          "my_rank": 3,
+          "their_rank": 5,
+          "winner": "mine",
+          "rank_gap": 2
         },
         "RBI": {
           "my_rank": 3,
@@ -481,15 +481,15 @@
         },
         "K": {
           "my_rank": 7,
-          "their_rank": 3,
+          "their_rank": 6,
           "winner": "theirs",
-          "rank_gap": 4
+          "rank_gap": 1
         },
         "QS": {
           "my_rank": 7,
-          "their_rank": 3,
+          "their_rank": 6,
           "winner": "theirs",
-          "rank_gap": 4
+          "rank_gap": 1
         },
         "ERA": {
           "my_rank": 3,
@@ -498,10 +498,10 @@
           "rank_gap": 2
         },
         "WHIP": {
-          "my_rank": 2,
-          "their_rank": 4,
-          "winner": "mine",
-          "rank_gap": 2
+          "my_rank": 3,
+          "their_rank": 2,
+          "winner": "theirs",
+          "rank_gap": 1
         },
         "SvHd": {
           "my_rank": 2,
@@ -511,9 +511,11 @@
         }
       },
       "swing_categories": [
-        "R",
+        "HR",
         "RBI",
         "SB",
+        "K",
+        "QS",
         "ERA",
         "WHIP"
       ]
@@ -533,10 +535,10 @@
           "rank_gap": 7
         },
         "HR": {
-          "my_rank": 2,
+          "my_rank": 3,
           "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 3
         },
         "RBI": {
           "my_rank": 3,
@@ -558,15 +560,15 @@
         },
         "K": {
           "my_rank": 7,
-          "their_rank": 5,
+          "their_rank": 3,
           "winner": "theirs",
-          "rank_gap": 2
+          "rank_gap": 4
         },
         "QS": {
           "my_rank": 7,
-          "their_rank": 5,
+          "their_rank": 4,
           "winner": "theirs",
-          "rank_gap": 2
+          "rank_gap": 3
         },
         "ERA": {
           "my_rank": 3,
@@ -575,8 +577,8 @@
           "rank_gap": 1
         },
         "WHIP": {
-          "my_rank": 2,
-          "their_rank": 3,
+          "my_rank": 3,
+          "their_rank": 4,
           "winner": "mine",
           "rank_gap": 1
         },
@@ -588,14 +590,13 @@
         }
       },
       "swing_categories": [
-        "K",
-        "QS",
         "ERA",
         "WHIP"
       ]
     }
   ],
   "swing_categories": [
+    "HR",
     "K",
     "QS",
     "ERA",
