@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-09-08T14:00:17.580365+00:00",
+  "as_of": "2026-09-09T14:02:55.194041+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-09-08T14:00:08.268260+00:00",
+  "last_full_run": "2026-09-09T14:02:45.972627+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-09-08T14:00:17.580365+00:00",
-  "mlb_last_fetch": "2026-09-08T14:00:17.968211+00:00",
-  "statcast_last_fetch": "2026-09-08T14:00:23.530809+00:00",
+  "espn_last_fetch": "2026-09-09T14:02:55.194041+00:00",
+  "mlb_last_fetch": "2026-09-09T14:02:55.673916+00:00",
+  "statcast_last_fetch": "2026-09-09T14:02:59.599854+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-09-07",
-    "games": 11,
-    "final": 11,
+    "date": "2026-09-08",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
-    "last_game": "TOR@OAK",
+    "last_game": "CIN@LAD",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-09-08T08:20:23.026000+00:00",
-    "waiver_last_execution": "2026-09-08T08:20:23.008000+00:00",
-    "scoring_period": 168,
-    "checked_at": "2026-09-08T14:00:17.687389+00:00"
+    "standings_update": "2026-09-09T08:19:27.679000+00:00",
+    "waiver_last_execution": "2026-09-09T08:19:27.663000+00:00",
+    "scoring_period": 169,
+    "checked_at": "2026-09-09T14:02:55.292524+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 554,
-    "fact_player_stats": 3207,
+    "fact_player_stats": 3321,
     "fact_statcast": 536,
     "fact_matchups": 210,
-    "stats_season": 591,
+    "stats_season": 592,
     "stats_first_half": 578,
-    "stats_second_half": 511,
-    "stats_30d": 478,
+    "stats_second_half": 514,
+    "stats_30d": 479,
     "stats_14d": 442,
-    "stats_7d": 423,
-    "stats_current": 184
+    "stats_7d": 425,
+    "stats_current": 291
   },
   "validation_checks": [
     {
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3207 rows across 7 windows"
+      "detail": "3321 rows across 7 windows"
     },
     {
       "name": "",

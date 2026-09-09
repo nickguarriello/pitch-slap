@@ -139,6 +139,26 @@
         "siera": 4.152827998326294,
         "ip": 49.0
       }
+    },
+    {
+      "player_id": "4417806",
+      "name": "Emmet Sheehan",
+      "team": null,
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.08) >> xFIP (3.83), gap=1.25",
+        "ERA (5.08) >> SIERA (3.52), gap=1.56"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 5.08,
+        "xfip": 3.8250487445041634,
+        "siera": 3.521891674649403,
+        "ip": 101.0
+      }
     }
   ],
   "buy_low_trade": [
@@ -152,11 +172,11 @@
       "flag_type": "buy_low_hitter",
       "reasons": [
         "BABIP 0.258 below floor (0.260)",
-        "OBP (0.317) lags xwOBA (0.347)"
+        "OBP (0.319) lags xwOBA (0.347)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.317,
+        "obp": 0.319,
         "xwoba": 0.3473998569644517,
         "babip": 0.258,
         "sprint_speed": 26.6
@@ -171,35 +191,15 @@
       "eligible_slots": "SS,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.258 below floor (0.260)",
-        "OBP (0.322) lags xwOBA (0.350)"
+        "BABIP 0.256 below floor (0.260)",
+        "OBP (0.323) lags xwOBA (0.350)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.322,
+        "obp": 0.323,
         "xwoba": 0.35031890869140625,
-        "babip": 0.258,
+        "babip": 0.256,
         "sprint_speed": 25.0
-      }
-    },
-    {
-      "player_id": "31097",
-      "name": "Manny Machado",
-      "team": null,
-      "espn_team_id": 9,
-      "rostered": true,
-      "eligible_slots": "3B,CI,UTIL,BN,IL",
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.241 below floor (0.260)",
-        "OBP (0.312) lags xwOBA (0.338)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.312,
-        "xwoba": 0.337623879716203,
-        "babip": 0.241,
-        "sprint_speed": 25.2
       }
     },
     {
@@ -223,6 +223,26 @@
       }
     },
     {
+      "player_id": "33841",
+      "name": "Jeff Hoffman",
+      "team": null,
+      "espn_team_id": 8,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (3.75) >> xFIP (2.79), gap=0.96",
+        "ERA (3.75) >> SIERA (2.59), gap=1.16"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 3.75,
+        "xfip": 2.7858450769197662,
+        "siera": 2.592845156398068,
+        "ip": 60.0
+      }
+    },
+    {
       "player_id": "4345076",
       "name": "Gavin Williams",
       "team": null,
@@ -240,26 +260,6 @@
         "xfip": 2.7716653819355743,
         "siera": 2.868917182150006,
         "ip": 169.0
-      }
-    },
-    {
-      "player_id": "33841",
-      "name": "Jeff Hoffman",
-      "team": null,
-      "espn_team_id": 8,
-      "rostered": true,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (3.81) >> xFIP (2.79), gap=1.02",
-        "ERA (3.81) >> SIERA (2.59), gap=1.22"
-      ],
-      "score": 0.69,
-      "stats": {
-        "era": 3.81,
-        "xfip": 2.7858450769197662,
-        "siera": 2.592845156398068,
-        "ip": 59.0
       }
     },
     {
