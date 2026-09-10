@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-09",
+  "as_of": "2026-09-10",
   "playoff_start_week": 22,
   "current_week": 22,
   "weeks_until_playoffs": 0,
@@ -88,8 +88,8 @@
         "K": 8,
         "QS": 8,
         "SvHd": 1,
-        "ERA": 7,
-        "WHIP": 6
+        "ERA": 8,
+        "WHIP": 7
       },
       "seed": 3,
       "in_playoffs": true
@@ -114,7 +114,7 @@
         "RBI": 8,
         "SB": 8,
         "OBP": 6,
-        "K": 3,
+        "K": 4,
         "QS": 4,
         "SvHd": 7,
         "ERA": 4,
@@ -147,7 +147,7 @@
         "QS": 2,
         "SvHd": 4,
         "ERA": 5,
-        "WHIP": 7
+        "WHIP": 6
       },
       "seed": 5,
       "in_playoffs": false
@@ -196,7 +196,7 @@
       "cat_record": "102-101-7",
       "is_my_team": false,
       "ranks": {
-        "R": 6,
+        "R": 5,
         "HR": 7,
         "RBI": 5,
         "SB": 3,
@@ -204,7 +204,7 @@
         "K": 1,
         "QS": 1,
         "SvHd": 8,
-        "ERA": 8,
+        "ERA": 7,
         "WHIP": 8
       },
       "seed": 7,
@@ -225,12 +225,12 @@
       "cat_record": "75-121-14",
       "is_my_team": false,
       "ranks": {
-        "R": 5,
+        "R": 6,
         "HR": 8,
         "RBI": 6,
         "SB": 5,
         "OBP": 4,
-        "K": 4,
+        "K": 3,
         "QS": 5,
         "SvHd": 6,
         "ERA": 6,
@@ -417,15 +417,15 @@
         },
         "ERA": {
           "my_rank": 3,
-          "their_rank": 7,
+          "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 5
         },
         "WHIP": {
           "my_rank": 3,
-          "their_rank": 6,
+          "their_rank": 7,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 4
         },
         "SvHd": {
           "my_rank": 2,
@@ -559,9 +559,9 @@
         },
         "K": {
           "my_rank": 7,
-          "their_rank": 3,
+          "their_rank": 4,
           "winner": "theirs",
-          "rank_gap": 4
+          "rank_gap": 3
         },
         "QS": {
           "my_rank": 7,
