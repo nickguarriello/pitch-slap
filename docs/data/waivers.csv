@@ -1,7 +1,7 @@
 name,team,flag_type,score,rostered,era,xfip,siera,obp,xwoba,babip,reasons
-Mark Vientos,,buy_low_hitter,0.7,False,,,,0.259,0.3117896918963669,0.234,BABIP 0.234 below floor (0.260); OBP (0.259) lags xwOBA (0.312)
-Brent Rooker,,buy_low_hitter,0.7,False,,,,0.281,0.31203085003477155,0.243,BABIP 0.243 below floor (0.260); OBP (0.281) lags xwOBA (0.312)
-Jared Jones,,buy_low_pitcher,0.69,False,4.46,3.6405539580155386,3.5681403573085055,,,,"ERA (4.46) >> xFIP (3.64), gap=0.82; ERA (4.46) >> SIERA (3.57), gap=0.89"
-Devin Williams,,buy_low_pitcher,0.69,False,4.66,3.6036025447602316,3.499027968647423,,,,"ERA (4.66) >> xFIP (3.60), gap=1.06; ERA (4.66) >> SIERA (3.50), gap=1.16"
-Garrett Cleavinger,,buy_low_pitcher,0.69,False,4.79,3.5702948962041714,3.4165296113313763,,,,"ERA (4.79) >> xFIP (3.57), gap=1.22; ERA (4.79) >> SIERA (3.42), gap=1.37"
-Caleb Kilian,,buy_low_pitcher,0.69,False,4.91,3.770895230460166,3.5017491294151104,,,,"ERA (4.91) >> xFIP (3.77), gap=1.14; ERA (4.91) >> SIERA (3.50), gap=1.41"
+Mark Vientos,,buy_low_hitter,0.7,False,,,,0.259,0.3117797679470894,0.234,BABIP 0.234 below floor (0.260); OBP (0.259) lags xwOBA (0.312)
+Brent Rooker,,buy_low_hitter,0.7,False,,,,0.281,0.312014897664388,0.243,BABIP 0.243 below floor (0.260); OBP (0.281) lags xwOBA (0.312)
+Devin Williams,,buy_low_pitcher,0.69,False,4.66,3.610584982068536,3.5071739864372637,,,,"ERA (4.66) >> xFIP (3.61), gap=1.05; ERA (4.66) >> SIERA (3.51), gap=1.15"
+Garrett Cleavinger,,buy_low_pitcher,0.69,False,4.79,3.5770482817204057,3.424675629121217,,,,"ERA (4.79) >> xFIP (3.58), gap=1.21; ERA (4.79) >> SIERA (3.42), gap=1.37"
+Caleb Kilian,,buy_low_pitcher,0.69,False,4.91,3.7779590870487834,3.509895147204951,,,,"ERA (4.91) >> xFIP (3.78), gap=1.13; ERA (4.91) >> SIERA (3.51), gap=1.40"
+Yusei Kikuchi,,buy_low_pitcher,0.69,False,4.96,4.107458458627973,4.160025050566666,,,,"ERA (4.96) >> xFIP (4.11), gap=0.85; ERA (4.96) >> SIERA (4.16), gap=0.80"

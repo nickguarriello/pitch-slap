@@ -3,8 +3,8 @@
     "R": {
       "state": "WIN",
       "my_val": 85.0,
-      "opp_val": 57.0,
-      "gap": 28.0
+      "opp_val": 58.0,
+      "gap": 27.0
     },
     "HR": {
       "state": "WIN",
@@ -14,27 +14,27 @@
     },
     "RBI": {
       "state": "WIN",
-      "my_val": 67.0,
+      "my_val": 68.0,
       "opp_val": 52.0,
-      "gap": 15.0
+      "gap": 16.0
     },
     "SB": {
       "state": "WIN",
-      "my_val": 15.0,
+      "my_val": 17.0,
       "opp_val": 5.0,
-      "gap": 10.0
+      "gap": 12.0
     },
     "OBP": {
       "state": "WIN",
-      "my_val": 0.36516854,
-      "opp_val": 0.31827957,
-      "gap": 0.0469
+      "my_val": 0.36363636,
+      "opp_val": 0.31034483,
+      "gap": 0.0533
     },
     "K": {
       "state": "WIN",
-      "my_val": 78.0,
+      "my_val": 79.0,
       "opp_val": 65.0,
-      "gap": 13.0
+      "gap": 14.0
     },
     "QS": {
       "state": "WIN",
@@ -44,15 +44,15 @@
     },
     "ERA": {
       "state": "WIN",
-      "my_val": 2.68778281,
+      "my_val": 2.77232143,
       "opp_val": 3.67455621,
-      "gap": 0.9868
+      "gap": 0.9022
     },
     "WHIP": {
       "state": "FLOPPABLE",
-      "my_val": 1.11312217,
+      "my_val": 1.11160714,
       "opp_val": 1.20710059,
-      "gap": 0.094
+      "gap": 0.0955
     },
     "SvHd": {
       "state": "FLOPPABLE",
@@ -1950,7 +1950,7 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 23.333333333333332,
+    "ip_accumulated": 24.333333333333332,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,
