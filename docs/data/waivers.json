@@ -9,14 +9,14 @@
       "eligible_slots": "3B,CI,UTIL,BN,IL,1B",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.234 below floor (0.260)",
-        "OBP (0.259) lags xwOBA (0.312)"
+        "BABIP 0.233 below floor (0.260)",
+        "OBP (0.263) lags xwOBA (0.312)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.259,
+        "obp": 0.263,
         "xwoba": 0.3117797679470894,
-        "babip": 0.234,
+        "babip": 0.233,
         "sprint_speed": 25.8
       }
     },
@@ -101,23 +101,23 @@
       }
     },
     {
-      "player_id": "41415",
-      "name": "Yusei Kikuchi",
+      "player_id": "4417806",
+      "name": "Emmet Sheehan",
       "team": null,
       "espn_team_id": null,
       "rostered": false,
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.96) >> xFIP (4.11), gap=0.85",
-        "ERA (4.96) >> SIERA (4.16), gap=0.80"
+        "ERA (5.08) >> xFIP (3.83), gap=1.25",
+        "ERA (5.08) >> SIERA (3.53), gap=1.55"
       ],
       "score": 0.69,
       "stats": {
-        "era": 4.96,
-        "xfip": 4.107458458627973,
-        "siera": 4.160025050566666,
-        "ip": 49.0
+        "era": 5.08,
+        "xfip": 3.8313285107338113,
+        "siera": 3.529088726889775,
+        "ip": 101.0
       }
     }
   ],
@@ -131,15 +131,15 @@
       "eligible_slots": "2B,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.257 below floor (0.260)",
-        "OBP (0.318) lags xwOBA (0.348)"
+        "BABIP 0.259 below floor (0.260)",
+        "OBP (0.319) lags xwOBA (0.348)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.318,
+        "obp": 0.319,
         "xwoba": 0.3475898784366462,
-        "babip": 0.257,
-        "sprint_speed": 26.6
+        "babip": 0.259,
+        "sprint_speed": 26.7
       }
     },
     {
@@ -151,14 +151,14 @@
       "eligible_slots": "C,1B,CI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.250 below floor (0.260)",
-        "OBP (0.273) lags xwOBA (0.310)"
+        "BABIP 0.252 below floor (0.260)",
+        "OBP (0.274) lags xwOBA (0.310)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.273,
+        "obp": 0.274,
         "xwoba": 0.31032509962997035,
-        "babip": 0.25,
+        "babip": 0.252,
         "sprint_speed": 23.7
       }
     },
@@ -171,15 +171,35 @@
       "eligible_slots": "SS,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.256 below floor (0.260)",
-        "OBP (0.322) lags xwOBA (0.352)"
+        "BABIP 0.251 below floor (0.260)",
+        "OBP (0.318) lags xwOBA (0.352)"
       ],
       "score": 0.7,
       "stats": {
-        "obp": 0.322,
+        "obp": 0.318,
         "xwoba": 0.35233586212324963,
-        "babip": 0.256,
+        "babip": 0.251,
         "sprint_speed": 25.0
+      }
+    },
+    {
+      "player_id": "31097",
+      "name": "Manny Machado",
+      "team": null,
+      "espn_team_id": 9,
+      "rostered": true,
+      "eligible_slots": "3B,CI,UTIL,BN,IL",
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.241 below floor (0.260)",
+        "OBP (0.311) lags xwOBA (0.337)"
+      ],
+      "score": 0.7,
+      "stats": {
+        "obp": 0.311,
+        "xwoba": 0.3368543983497556,
+        "babip": 0.241,
+        "sprint_speed": 25.2
       }
     },
     {
@@ -211,15 +231,15 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (3.75) >> xFIP (2.79), gap=0.96",
-        "ERA (3.75) >> SIERA (2.59), gap=1.16"
+        "ERA (3.71) >> xFIP (2.79), gap=0.92",
+        "ERA (3.71) >> SIERA (2.59), gap=1.12"
       ],
       "score": 0.69,
       "stats": {
-        "era": 3.75,
+        "era": 3.71,
         "xfip": 2.7877680246652963,
         "siera": 2.58862927334508,
-        "ip": 60.0
+        "ip": 60.666666666666664
       }
     },
     {
@@ -323,26 +343,6 @@
       }
     },
     {
-      "player_id": "4875225",
-      "name": "Daniel Palencia",
-      "team": null,
-      "espn_team_id": 8,
-      "rostered": true,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.70) >> xFIP (3.80), gap=0.90",
-        "ERA (4.70) >> SIERA (3.48), gap=1.22"
-      ],
-      "score": 0.69,
-      "stats": {
-        "era": 4.7,
-        "xfip": 3.803001194569844,
-        "siera": 3.4764983457916263,
-        "ip": 23.0
-      }
-    },
-    {
       "player_id": "33709",
       "name": "Aaron Nola",
       "team": null,
@@ -351,15 +351,15 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.76) >> xFIP (3.80), gap=0.96",
-        "ERA (4.76) >> SIERA (3.85), gap=0.91"
+        "ERA (4.69) >> xFIP (3.80), gap=0.89",
+        "ERA (4.69) >> SIERA (3.85), gap=0.84"
       ],
       "score": 0.69,
       "stats": {
-        "era": 4.76,
+        "era": 4.69,
         "xfip": 3.8045090135066744,
         "siera": 3.848938504827842,
-        "ip": 155.0
+        "ip": 161.33333333333334
       }
     }
   ],

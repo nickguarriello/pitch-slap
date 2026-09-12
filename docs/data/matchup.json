@@ -2,63 +2,63 @@
   "cat_states": {
     "R": {
       "state": "WIN",
-      "my_val": 85.0,
-      "opp_val": 58.0,
-      "gap": 27.0
+      "my_val": 93.0,
+      "opp_val": 61.0,
+      "gap": 32.0
     },
     "HR": {
       "state": "WIN",
-      "my_val": 21.0,
+      "my_val": 23.0,
       "opp_val": 16.0,
-      "gap": 5.0
+      "gap": 7.0
     },
     "RBI": {
       "state": "WIN",
-      "my_val": 68.0,
-      "opp_val": 52.0,
-      "gap": 16.0
+      "my_val": 74.0,
+      "opp_val": 56.0,
+      "gap": 18.0
     },
     "SB": {
       "state": "WIN",
-      "my_val": 17.0,
-      "opp_val": 5.0,
+      "my_val": 18.0,
+      "opp_val": 6.0,
       "gap": 12.0
     },
     "OBP": {
       "state": "WIN",
-      "my_val": 0.36363636,
-      "opp_val": 0.31034483,
-      "gap": 0.0533
+      "my_val": 0.36201299,
+      "opp_val": 0.30683919,
+      "gap": 0.0552
     },
     "K": {
       "state": "WIN",
-      "my_val": 79.0,
-      "opp_val": 65.0,
-      "gap": 14.0
+      "my_val": 94.0,
+      "opp_val": 69.0,
+      "gap": 25.0
     },
     "QS": {
       "state": "WIN",
-      "my_val": 8.0,
+      "my_val": 9.0,
       "opp_val": 3.0,
-      "gap": 5.0
+      "gap": 6.0
     },
     "ERA": {
-      "state": "WIN",
-      "my_val": 2.77232143,
-      "opp_val": 3.67455621,
-      "gap": 0.9022
+      "state": "FLOPPABLE",
+      "my_val": 2.78244275,
+      "opp_val": 3.375,
+      "gap": 0.5926
     },
     "WHIP": {
       "state": "FLOPPABLE",
-      "my_val": 1.11160714,
-      "opp_val": 1.20710059,
-      "gap": 0.0955
+      "my_val": 1.14503817,
+      "opp_val": 1.19021739,
+      "gap": 0.0452
     },
     "SvHd": {
-      "state": "FLOPPABLE",
-      "my_val": 7.0,
-      "opp_val": 6.0,
-      "gap": 1.0
+      "state": "TIE",
+      "my_val": 8.0,
+      "opp_val": 8.0,
+      "gap": 0.0
     }
   },
   "need_weights": {
@@ -1950,7 +1950,7 @@
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 24.333333333333332,
+    "ip_accumulated": 44.0,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,

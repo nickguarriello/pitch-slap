@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-09-11T13:57:23.005681+00:00",
+  "as_of": "2026-09-12T13:15:53.310944+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-09-11T13:57:13.861449+00:00",
+  "last_full_run": "2026-09-12T13:15:42.606722+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-09-11T13:57:23.005681+00:00",
-  "mlb_last_fetch": "2026-09-11T13:57:23.475692+00:00",
-  "statcast_last_fetch": "2026-09-11T13:57:28.718186+00:00",
+  "espn_last_fetch": "2026-09-12T13:15:53.310944+00:00",
+  "mlb_last_fetch": "2026-09-12T13:15:54.018774+00:00",
+  "statcast_last_fetch": "2026-09-12T13:15:58.095419+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-09-10",
-    "games": 5,
-    "final": 5,
+    "date": "2026-09-11",
+    "games": 15,
+    "final": 15,
     "incomplete": [],
-    "last_game": "PIT@CWS",
+    "last_game": "SD@SF",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-09-11T08:24:13.595000+00:00",
-    "waiver_last_execution": "2026-09-11T08:24:13.574000+00:00",
-    "scoring_period": 171,
-    "checked_at": "2026-09-11T13:57:23.100508+00:00"
+    "standings_update": "2026-09-12T08:22:19.872000+00:00",
+    "waiver_last_execution": "2026-09-12T08:22:19.651000+00:00",
+    "scoring_period": 172,
+    "checked_at": "2026-09-12T13:15:53.429920+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 554,
-    "fact_player_stats": 3401,
+    "fact_player_stats": 3441,
     "fact_statcast": 537,
     "fact_matchups": 210,
     "stats_season": 592,
     "stats_first_half": 578,
-    "stats_second_half": 515,
-    "stats_30d": 483,
-    "stats_14d": 447,
-    "stats_7d": 429,
-    "stats_current": 357
+    "stats_second_half": 516,
+    "stats_30d": 486,
+    "stats_14d": 450,
+    "stats_7d": 426,
+    "stats_current": 393
   },
   "validation_checks": [
     {
@@ -103,7 +103,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3401 rows across 7 windows"
+      "detail": "3441 rows across 7 windows"
     },
     {
       "name": "",
