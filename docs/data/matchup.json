@@ -1,141 +1,219 @@
 {
   "cat_states": {
     "R": {
-      "state": "WIN",
-      "my_val": 107.0,
-      "opp_val": 67.0,
-      "gap": 40.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "HR": {
-      "state": "WIN",
-      "my_val": 28.0,
-      "opp_val": 17.0,
-      "gap": 11.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "RBI": {
-      "state": "WIN",
-      "my_val": 85.0,
-      "opp_val": 60.0,
-      "gap": 25.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "SB": {
-      "state": "WIN",
-      "my_val": 19.0,
-      "opp_val": 8.0,
-      "gap": 11.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "OBP": {
-      "state": "WIN",
-      "my_val": 0.36363636,
-      "opp_val": 0.2998325,
-      "gap": 0.0638
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "K": {
-      "state": "WIN",
-      "my_val": 101.0,
-      "opp_val": 74.0,
-      "gap": 27.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "QS": {
-      "state": "WIN",
-      "my_val": 10.0,
-      "opp_val": 3.0,
-      "gap": 7.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "ERA": {
-      "state": "FLOPPABLE",
-      "my_val": 2.7739726,
-      "opp_val": 3.26842105,
-      "gap": 0.4944
+      "state": "TIE",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "WHIP": {
-      "state": "FLOPPABLE",
-      "my_val": 1.09931507,
-      "opp_val": 1.16842105,
-      "gap": 0.0691
+      "state": "TIE",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "SvHd": {
       "state": "TIE",
-      "my_val": 9.0,
-      "opp_val": 9.0,
+      "my_val": 0.0,
+      "opp_val": 0.0,
       "gap": 0.0
     }
   },
   "need_weights": {
     "R": 0.4,
-    "HR": 0.44,
-    "RBI": 0.49,
+    "HR": 0.4,
+    "RBI": 0.44,
     "SB": 0.4,
     "OBP": 0.7,
     "K": 0.66,
-    "QS": 0.61,
+    "QS": 0.66,
     "ERA": 0.49,
     "WHIP": 0.44,
     "SvHd": 0.15
   },
   "cat_records": {
     "ERA": {
-      "wins": 13,
+      "wins": 14,
       "losses": 8,
       "ties": 0,
-      "win_rate": 0.619
+      "win_rate": 0.636
     },
     "HR": {
-      "wins": 11,
+      "wins": 12,
       "losses": 9,
       "ties": 1,
-      "win_rate": 0.524
+      "win_rate": 0.545
     },
     "K": {
-      "wins": 10,
+      "wins": 11,
       "losses": 11,
       "ties": 0,
-      "win_rate": 0.476
+      "win_rate": 0.5
     },
     "OBP": {
-      "wins": 11,
+      "wins": 12,
       "losses": 10,
       "ties": 0,
-      "win_rate": 0.524
+      "win_rate": 0.545
     },
     "QS": {
-      "wins": 12,
+      "wins": 13,
       "losses": 7,
       "ties": 2,
-      "win_rate": 0.571
+      "win_rate": 0.591
     },
     "R": {
-      "wins": 11,
+      "wins": 12,
       "losses": 9,
       "ties": 1,
-      "win_rate": 0.524
+      "win_rate": 0.545
     },
     "RBI": {
-      "wins": 12,
+      "wins": 13,
       "losses": 8,
       "ties": 1,
-      "win_rate": 0.571
+      "win_rate": 0.591
     },
     "SB": {
-      "wins": 12,
+      "wins": 13,
       "losses": 8,
       "ties": 1,
-      "win_rate": 0.571
+      "win_rate": 0.591
     },
     "SvHd": {
-      "wins": 17,
+      "wins": 18,
       "losses": 2,
       "ties": 2,
-      "win_rate": 0.81
+      "win_rate": 0.818
     },
     "WHIP": {
-      "wins": 12,
+      "wins": 13,
       "losses": 9,
       "ties": 0,
-      "win_rate": 0.571
+      "win_rate": 0.591
     }
   },
   "history": {
+    "22": [
+      {
+        "cat": "R",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 110.0,
+        "opp_val": 70.0
+      },
+      {
+        "cat": "HR",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 29.0,
+        "opp_val": 18.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 90.0,
+        "opp_val": 66.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 19.0,
+        "opp_val": 9.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 0.358,
+        "opp_val": 0.303
+      },
+      {
+        "cat": "K",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 113.0,
+        "opp_val": 78.0
+      },
+      {
+        "cat": "QS",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 11.0,
+        "opp_val": 3.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 3.128,
+        "opp_val": 3.439
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 1.116,
+        "opp_val": 1.189
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 10.0,
+        "opp_val": 9.0
+      }
+    ],
     "21": [
       {
         "cat": "R",
@@ -1657,10 +1735,10 @@
       "losses": 10,
       "ties": 4,
       "pct": 0.412,
-      "cat_wins": 103,
-      "cat_losses": 92,
+      "cat_wins": 109,
+      "cat_losses": 96,
       "cat_ties": 15,
-      "matchup_wins": 7,
+      "matchup_wins": 8,
       "matchup_losses": 10,
       "matchup_ties": 4
     },
@@ -1672,10 +1750,10 @@
       "ties": 4,
       "pct": 0.471,
       "cat_wins": 90,
-      "cat_losses": 111,
+      "cat_losses": 121,
       "cat_ties": 9,
       "matchup_wins": 8,
-      "matchup_losses": 9,
+      "matchup_losses": 10,
       "matchup_ties": 4
     },
     "3": {
@@ -1685,11 +1763,11 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 95,
-      "cat_losses": 100,
+      "cat_wins": 99,
+      "cat_losses": 106,
       "cat_ties": 15,
       "matchup_wins": 8,
-      "matchup_losses": 9,
+      "matchup_losses": 10,
       "matchup_ties": 4
     },
     "4": {
@@ -1699,11 +1777,11 @@
       "losses": 10,
       "ties": 2,
       "pct": 0.474,
-      "cat_wins": 100,
-      "cat_losses": 101,
-      "cat_ties": 9,
+      "cat_wins": 101,
+      "cat_losses": 109,
+      "cat_ties": 10,
       "matchup_wins": 9,
-      "matchup_losses": 10,
+      "matchup_losses": 11,
       "matchup_ties": 2
     },
     "5": {
@@ -1713,12 +1791,12 @@
       "losses": 11,
       "ties": 2,
       "pct": 0.421,
-      "cat_wins": 102,
-      "cat_losses": 101,
+      "cat_wins": 107,
+      "cat_losses": 106,
       "cat_ties": 7,
       "matchup_wins": 8,
       "matchup_losses": 11,
-      "matchup_ties": 2
+      "matchup_ties": 3
     },
     "6": {
       "name": "All Rise Run Club",
@@ -1727,12 +1805,12 @@
       "losses": 12,
       "ties": 4,
       "pct": 0.294,
-      "cat_wins": 75,
-      "cat_losses": 121,
+      "cat_wins": 80,
+      "cat_losses": 126,
       "cat_ties": 14,
       "matchup_wins": 5,
       "matchup_losses": 12,
-      "matchup_ties": 4
+      "matchup_ties": 5
     },
     "7": {
       "name": "Lunch",
@@ -1741,10 +1819,10 @@
       "losses": 6,
       "ties": 0,
       "pct": 0.714,
-      "cat_wins": 111,
-      "cat_losses": 90,
-      "cat_ties": 9,
-      "matchup_wins": 15,
+      "cat_wins": 119,
+      "cat_losses": 91,
+      "cat_ties": 10,
+      "matchup_wins": 16,
       "matchup_losses": 6,
       "matchup_ties": 0
     },
@@ -1755,10 +1833,10 @@
       "losses": 10,
       "ties": 4,
       "pct": 0.412,
-      "cat_wins": 103,
-      "cat_losses": 92,
+      "cat_wins": 109,
+      "cat_losses": 96,
       "cat_ties": 15,
-      "matchup_wins": 7,
+      "matchup_wins": 8,
       "matchup_losses": 10,
       "matchup_ties": 4
     },
@@ -1770,10 +1848,10 @@
       "ties": 4,
       "pct": 0.471,
       "cat_wins": 90,
-      "cat_losses": 111,
+      "cat_losses": 121,
       "cat_ties": 9,
       "matchup_wins": 8,
-      "matchup_losses": 9,
+      "matchup_losses": 10,
       "matchup_ties": 4
     },
     "10": {
@@ -1783,11 +1861,11 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 95,
-      "cat_losses": 100,
+      "cat_wins": 99,
+      "cat_losses": 106,
       "cat_ties": 15,
       "matchup_wins": 8,
-      "matchup_losses": 9,
+      "matchup_losses": 10,
       "matchup_ties": 4
     },
     "11": {
@@ -1797,11 +1875,11 @@
       "losses": 10,
       "ties": 2,
       "pct": 0.474,
-      "cat_wins": 100,
-      "cat_losses": 101,
-      "cat_ties": 9,
+      "cat_wins": 101,
+      "cat_losses": 109,
+      "cat_ties": 10,
       "matchup_wins": 9,
-      "matchup_losses": 10,
+      "matchup_losses": 11,
       "matchup_ties": 2
     },
     "12": {
@@ -1811,12 +1889,12 @@
       "losses": 11,
       "ties": 2,
       "pct": 0.421,
-      "cat_wins": 102,
-      "cat_losses": 101,
+      "cat_wins": 107,
+      "cat_losses": 106,
       "cat_ties": 7,
       "matchup_wins": 8,
       "matchup_losses": 11,
-      "matchup_ties": 2
+      "matchup_ties": 3
     },
     "13": {
       "name": "All Rise Run Club",
@@ -1825,12 +1903,12 @@
       "losses": 12,
       "ties": 4,
       "pct": 0.294,
-      "cat_wins": 75,
-      "cat_losses": 121,
+      "cat_wins": 80,
+      "cat_losses": 126,
       "cat_ties": 14,
       "matchup_wins": 5,
       "matchup_losses": 12,
-      "matchup_ties": 4
+      "matchup_ties": 5
     },
     "14": {
       "name": "Lunch",
@@ -1839,10 +1917,10 @@
       "losses": 6,
       "ties": 0,
       "pct": 0.714,
-      "cat_wins": 111,
-      "cat_losses": 90,
-      "cat_ties": 9,
-      "matchup_wins": 15,
+      "cat_wins": 119,
+      "cat_losses": 91,
+      "cat_ties": 10,
+      "matchup_wins": 16,
       "matchup_losses": 6,
       "matchup_ties": 0
     },
@@ -1853,10 +1931,10 @@
       "losses": 10,
       "ties": 4,
       "pct": 0.412,
-      "cat_wins": 103,
-      "cat_losses": 92,
+      "cat_wins": 109,
+      "cat_losses": 96,
       "cat_ties": 15,
-      "matchup_wins": 7,
+      "matchup_wins": 8,
       "matchup_losses": 10,
       "matchup_ties": 4
     },
@@ -1868,10 +1946,10 @@
       "ties": 4,
       "pct": 0.471,
       "cat_wins": 90,
-      "cat_losses": 111,
+      "cat_losses": 121,
       "cat_ties": 9,
       "matchup_wins": 8,
-      "matchup_losses": 9,
+      "matchup_losses": 10,
       "matchup_ties": 4
     },
     "17": {
@@ -1881,11 +1959,11 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 95,
-      "cat_losses": 100,
+      "cat_wins": 99,
+      "cat_losses": 106,
       "cat_ties": 15,
       "matchup_wins": 8,
-      "matchup_losses": 9,
+      "matchup_losses": 10,
       "matchup_ties": 4
     },
     "18": {
@@ -1895,11 +1973,11 @@
       "losses": 10,
       "ties": 2,
       "pct": 0.474,
-      "cat_wins": 100,
-      "cat_losses": 101,
-      "cat_ties": 9,
+      "cat_wins": 101,
+      "cat_losses": 109,
+      "cat_ties": 10,
       "matchup_wins": 9,
-      "matchup_losses": 10,
+      "matchup_losses": 11,
       "matchup_ties": 2
     },
     "19": {
@@ -1909,12 +1987,12 @@
       "losses": 11,
       "ties": 2,
       "pct": 0.421,
-      "cat_wins": 102,
-      "cat_losses": 101,
+      "cat_wins": 107,
+      "cat_losses": 106,
       "cat_ties": 7,
       "matchup_wins": 8,
       "matchup_losses": 11,
-      "matchup_ties": 2
+      "matchup_ties": 3
     },
     "20": {
       "name": "All Rise Run Club",
@@ -1923,12 +2001,12 @@
       "losses": 12,
       "ties": 4,
       "pct": 0.294,
-      "cat_wins": 75,
-      "cat_losses": 121,
+      "cat_wins": 80,
+      "cat_losses": 126,
       "cat_ties": 14,
       "matchup_wins": 5,
       "matchup_losses": 12,
-      "matchup_ties": 4
+      "matchup_ties": 5
     },
     "21": {
       "name": "Lunch",
@@ -1937,21 +2015,35 @@
       "losses": 6,
       "ties": 0,
       "pct": 0.714,
-      "cat_wins": 111,
-      "cat_losses": 90,
-      "cat_ties": 9,
-      "matchup_wins": 15,
+      "cat_wins": 119,
+      "cat_losses": 91,
+      "cat_ties": 10,
+      "matchup_wins": 16,
       "matchup_losses": 6,
       "matchup_ties": 0
+    },
+    "22": {
+      "name": "ChicksDigTheLongBall",
+      "abbrev": "CDLB",
+      "wins": 8,
+      "losses": 9,
+      "ties": 4,
+      "pct": 0.471,
+      "cat_wins": 90,
+      "cat_losses": 121,
+      "cat_ties": 9,
+      "matchup_wins": 8,
+      "matchup_losses": 10,
+      "matchup_ties": 4
     }
   },
-  "current_opponent_name": "ChicksDigTheLongBall",
-  "current_opponent_abbrev": "CDLB",
+  "current_opponent_name": "Lunch",
+  "current_opponent_abbrev": "LCH",
   "constraints": {
     "acquisitions_used": 0,
     "acquisitions_remaining": 7,
-    "ip_accumulated": 58.0,
-    "ip_remaining": 0.0,
+    "ip_accumulated": 0.0,
+    "ip_remaining": 15.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,
