@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-14",
+  "as_of": "2026-09-15",
   "playoff_start_week": 22,
   "current_week": 23,
   "weeks_until_playoffs": 0,
@@ -22,11 +22,11 @@
       "cat_record": "119-91-10",
       "is_my_team": false,
       "ranks": {
-        "R": 4,
+        "R": 5,
         "HR": 7,
         "RBI": 5,
         "SB": 2,
-        "OBP": 5,
+        "OBP": 6,
         "K": 3,
         "QS": 4,
         "SvHd": 3,
@@ -57,9 +57,9 @@
         "SB": 1,
         "OBP": 1,
         "K": 7,
-        "QS": 7,
+        "QS": 6,
         "SvHd": 2,
-        "ERA": 3,
+        "ERA": 2,
         "WHIP": 2
       },
       "seed": 2,
@@ -80,11 +80,11 @@
       "cat_record": "90-121-9",
       "is_my_team": false,
       "ranks": {
-        "R": 6,
+        "R": 7,
         "HR": 3,
         "RBI": 6,
         "SB": 6,
-        "OBP": 6,
+        "OBP": 5,
         "K": 8,
         "QS": 8,
         "SvHd": 1,
@@ -109,15 +109,15 @@
       "cat_record": "109-96-15",
       "is_my_team": false,
       "ranks": {
-        "R": 7,
-        "HR": 4,
+        "R": 6,
+        "HR": 5,
         "RBI": 1,
         "SB": 4,
         "OBP": 8,
         "K": 2,
         "QS": 3,
         "SvHd": 4,
-        "ERA": 2,
+        "ERA": 3,
         "WHIP": 1
       },
       "seed": 4,
@@ -143,11 +143,11 @@
         "RBI": 7,
         "SB": 8,
         "OBP": 7,
-        "K": 5,
-        "QS": 5,
+        "K": 6,
+        "QS": 7,
         "SvHd": 7,
-        "ERA": 4,
-        "WHIP": 4
+        "ERA": 5,
+        "WHIP": 5
       },
       "seed": 5,
       "in_playoffs": false
@@ -172,10 +172,10 @@
         "RBI": 3,
         "SB": 7,
         "OBP": 3,
-        "K": 6,
+        "K": 5,
         "QS": 2,
         "SvHd": 5,
-        "ERA": 5,
+        "ERA": 4,
         "WHIP": 7
       },
       "seed": 6,
@@ -197,7 +197,7 @@
       "is_my_team": false,
       "ranks": {
         "R": 3,
-        "HR": 5,
+        "HR": 4,
         "RBI": 4,
         "SB": 3,
         "OBP": 2,
@@ -225,16 +225,16 @@
       "cat_record": "80-126-14",
       "is_my_team": false,
       "ranks": {
-        "R": 5,
+        "R": 4,
         "HR": 8,
         "RBI": 8,
         "SB": 5,
         "OBP": 4,
         "K": 4,
-        "QS": 6,
+        "QS": 5,
         "SvHd": 6,
         "ERA": 6,
-        "WHIP": 5
+        "WHIP": 4
       },
       "seed": 8,
       "in_playoffs": false
@@ -257,9 +257,9 @@
     "SB": 1,
     "OBP": 1,
     "K": 7,
-    "QS": 7,
+    "QS": 6,
     "SvHd": 2,
-    "ERA": 3,
+    "ERA": 2,
     "WHIP": 2
   },
   "category_profile": {
@@ -375,9 +375,9 @@
       "category_matchup": {
         "R": {
           "my_rank": 1,
-          "their_rank": 6,
+          "their_rank": 7,
           "winner": "mine",
-          "rank_gap": 5
+          "rank_gap": 6
         },
         "HR": {
           "my_rank": 1,
@@ -399,9 +399,9 @@
         },
         "OBP": {
           "my_rank": 1,
-          "their_rank": 6,
+          "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 5
+          "rank_gap": 4
         },
         "K": {
           "my_rank": 7,
@@ -410,16 +410,16 @@
           "rank_gap": 1
         },
         "QS": {
-          "my_rank": 7,
+          "my_rank": 6,
           "their_rank": 8,
           "winner": "mine",
-          "rank_gap": 1
+          "rank_gap": 2
         },
         "ERA": {
-          "my_rank": 3,
+          "my_rank": 2,
           "their_rank": 7,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 5
         },
         "WHIP": {
           "my_rank": 2,
@@ -451,9 +451,9 @@
       "category_matchup": {
         "R": {
           "my_rank": 1,
-          "their_rank": 4,
+          "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 4
         },
         "HR": {
           "my_rank": 1,
@@ -475,9 +475,9 @@
         },
         "OBP": {
           "my_rank": 1,
-          "their_rank": 5,
+          "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 4
+          "rank_gap": 5
         },
         "K": {
           "my_rank": 7,
@@ -486,16 +486,16 @@
           "rank_gap": 4
         },
         "QS": {
-          "my_rank": 7,
+          "my_rank": 6,
           "their_rank": 4,
           "winner": "theirs",
-          "rank_gap": 3
+          "rank_gap": 2
         },
         "ERA": {
-          "my_rank": 3,
+          "my_rank": 2,
           "their_rank": 1,
           "winner": "theirs",
-          "rank_gap": 2
+          "rank_gap": 1
         },
         "WHIP": {
           "my_rank": 2,
@@ -512,6 +512,7 @@
       },
       "swing_categories": [
         "SB",
+        "QS",
         "ERA",
         "WHIP",
         "SvHd"
@@ -523,19 +524,19 @@
       "team_name": "ICECOLDBEERHERE! ",
       "abbrev": "BEER",
       "is_likely_r1_opp": false,
-      "projected_score": "5-5",
+      "projected_score": "6-4",
       "category_matchup": {
         "R": {
           "my_rank": 1,
-          "their_rank": 7,
+          "their_rank": 6,
           "winner": "mine",
-          "rank_gap": 6
+          "rank_gap": 5
         },
         "HR": {
           "my_rank": 1,
-          "their_rank": 4,
+          "their_rank": 5,
           "winner": "mine",
-          "rank_gap": 3
+          "rank_gap": 4
         },
         "RBI": {
           "my_rank": 2,
@@ -562,15 +563,15 @@
           "rank_gap": 5
         },
         "QS": {
-          "my_rank": 7,
+          "my_rank": 6,
           "their_rank": 3,
           "winner": "theirs",
-          "rank_gap": 4
+          "rank_gap": 3
         },
         "ERA": {
-          "my_rank": 3,
-          "their_rank": 2,
-          "winner": "theirs",
+          "my_rank": 2,
+          "their_rank": 3,
+          "winner": "mine",
           "rank_gap": 1
         },
         "WHIP": {
@@ -596,6 +597,7 @@
   ],
   "swing_categories": [
     "SvHd",
+    "QS",
     "ERA",
     "WHIP"
   ],
