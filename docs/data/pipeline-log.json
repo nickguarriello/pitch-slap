@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-09-19T13:35:19.548316+00:00",
+  "as_of": "2026-09-21T16:06:32.039721+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-09-19T13:35:08.874707+00:00",
+  "last_full_run": "2026-09-21T16:06:09.224559+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-09-19T13:35:19.548316+00:00",
-  "mlb_last_fetch": "2026-09-19T13:35:19.978148+00:00",
-  "statcast_last_fetch": "2026-09-19T13:35:23.624118+00:00",
+  "espn_last_fetch": "2026-09-21T16:06:32.039721+00:00",
+  "mlb_last_fetch": "2026-09-21T16:06:47.991754+00:00",
+  "statcast_last_fetch": "2026-09-21T16:06:58.686308+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-09-18",
+    "date": "2026-09-20",
     "games": 15,
     "final": 15,
     "incomplete": [],
-    "last_game": "SF@LAD",
+    "last_game": "MIL@BAL",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-09-19T08:36:30.842000+00:00",
-    "waiver_last_execution": "2026-09-19T08:36:30.832000+00:00",
-    "scoring_period": 179,
-    "checked_at": "2026-09-19T13:35:19.655615+00:00"
+    "standings_update": "2026-09-21T08:30:52.517000+00:00",
+    "waiver_last_execution": "2026-09-21T08:30:52.492000+00:00",
+    "scoring_period": 181,
+    "checked_at": "2026-09-21T16:06:33.181914+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 552,
-    "fact_player_stats": 3483,
-    "fact_statcast": 541,
+    "fact_player_stats": 3097,
+    "fact_statcast": 543,
     "fact_matchups": 220,
-    "stats_season": 596,
-    "stats_first_half": 582,
-    "stats_second_half": 522,
-    "stats_30d": 486,
-    "stats_14d": 452,
-    "stats_7d": 438,
-    "stats_current": 407
+    "stats_season": 601,
+    "stats_first_half": 584,
+    "stats_second_half": 529,
+    "stats_30d": 489,
+    "stats_14d": 458,
+    "stats_7d": 436,
+    "stats_current": 0
   },
   "validation_checks": [
     {
@@ -58,7 +58,7 @@
     {
       "name": "",
       "status": "warn",
-      "detail": "2 pitchers with WHIP > 3.50"
+      "detail": "1 pitchers with WHIP > 3.50"
     },
     {
       "name": "",
@@ -98,12 +98,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "541 players with Statcast data"
+      "detail": "543 players with Statcast data"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "3483 rows across 7 windows"
+      "detail": "3097 rows across 7 windows"
     },
     {
       "name": "",
@@ -113,7 +113,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "250/252 (99%) rostered players have season stats"
+      "detail": "251/252 (100%) rostered players have season stats"
     },
     {
       "name": "",
@@ -138,7 +138,7 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "350 season stat values match ESPN within tolerance (1 outlier(s))"
+      "detail": "351 season stat values match ESPN within tolerance (1 outlier(s))"
     },
     {
       "name": "",

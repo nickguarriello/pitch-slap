@@ -1,40 +1,40 @@
 {
   "cat_states": {
     "R": {
-      "state": "FLOPPABLE",
-      "my_val": 38.0,
-      "opp_val": 29.0,
-      "gap": 9.0
+      "state": "WIN",
+      "my_val": 60.0,
+      "opp_val": 41.0,
+      "gap": 19.0
     },
     "HR": {
-      "state": "WIN",
-      "my_val": 13.0,
-      "opp_val": 8.0,
-      "gap": 5.0
+      "state": "FLOPPABLE",
+      "my_val": 17.0,
+      "opp_val": 14.0,
+      "gap": 3.0
     },
     "RBI": {
       "state": "WIN",
-      "my_val": 47.0,
-      "opp_val": 33.0,
-      "gap": 14.0
+      "my_val": 63.0,
+      "opp_val": 48.0,
+      "gap": 15.0
     },
     "SB": {
-      "state": "FLOPPABLE",
-      "my_val": 8.0,
-      "opp_val": 3.0,
-      "gap": 5.0
+      "state": "WIN",
+      "my_val": 12.0,
+      "opp_val": 4.0,
+      "gap": 8.0
     },
     "OBP": {
-      "state": "FLOPPABLE",
-      "my_val": 0.36842105,
-      "opp_val": 0.34199134,
-      "gap": 0.0264
+      "state": "WIN",
+      "my_val": 0.3974026,
+      "opp_val": 0.34472934,
+      "gap": 0.0527
     },
     "K": {
-      "state": "FLIPPABLE",
-      "my_val": 32.0,
-      "opp_val": 40.0,
-      "gap": -8.0
+      "state": "LOSS",
+      "my_val": 38.0,
+      "opp_val": 54.0,
+      "gap": -16.0
     },
     "QS": {
       "state": "FLIPPABLE",
@@ -43,21 +43,27 @@
       "gap": -1.0
     },
     "ERA": {
-      "state": "WIN",
-      "my_val": 1.6875,
-      "opp_val": 2.7,
-      "gap": 1.0125
+      "state": "TIE",
+      "my_val": 1.65306122,
+      "opp_val": 4.12738854,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "WHIP": {
-      "state": "WIN",
-      "my_val": 0.9375,
-      "opp_val": 1.36363636,
-      "gap": 0.4261
+      "state": "TIE",
+      "my_val": 0.85714286,
+      "opp_val": 1.4522293,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "SvHd": {
       "state": "WIN",
-      "my_val": 5.0,
-      "opp_val": 2.0,
+      "my_val": 7.0,
+      "opp_val": 4.0,
       "gap": 3.0
     }
   },
@@ -68,10 +74,10 @@
     "SB": 0.4,
     "OBP": 0.7,
     "K": 0.66,
-    "QS": 0.61,
-    "ERA": 0.44,
+    "QS": 0.66,
+    "ERA": 0.4,
     "WHIP": 0.4,
-    "SvHd": 0.15
+    "SvHd": 0.2
   },
   "cat_records": {
     "ERA": {
@@ -2034,10 +2040,10 @@
   "current_opponent_name": "Lunch",
   "current_opponent_abbrev": "LCH",
   "constraints": {
-    "acquisitions_used": 2,
-    "acquisitions_remaining": 5,
-    "ip_accumulated": 37.666666666666664,
-    "ip_remaining": 0.0,
+    "acquisitions_used": 0,
+    "acquisitions_remaining": 7,
+    "ip_accumulated": 0.0,
+    "ip_remaining": 15.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,
