@@ -27,14 +27,14 @@
     "OBP": {
       "state": "WIN",
       "my_val": 0.3974026,
-      "opp_val": 0.34472934,
-      "gap": 0.0527
+      "opp_val": 0.33983287,
+      "gap": 0.0576
     },
     "K": {
       "state": "LOSS",
       "my_val": 38.0,
-      "opp_val": 54.0,
-      "gap": -16.0
+      "opp_val": 63.0,
+      "gap": -25.0
     },
     "QS": {
       "state": "FLIPPABLE",
@@ -45,20 +45,20 @@
     "ERA": {
       "state": "TIE",
       "my_val": 1.65306122,
-      "opp_val": 4.12738854,
+      "opp_val": 4.68208092,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 5.3/15 IP",
       "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "opp_ip_week": 5.333333333333333
     },
     "WHIP": {
       "state": "TIE",
       "my_val": 0.85714286,
-      "opp_val": 1.4522293,
+      "opp_val": 1.49132948,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 5.3/15 IP",
       "my_ip_week": 0.0,
-      "opp_ip_week": 0.0
+      "opp_ip_week": 5.333333333333333
     },
     "SvHd": {
       "state": "WIN",
@@ -2040,8 +2040,8 @@
   "current_opponent_name": "Lunch",
   "current_opponent_abbrev": "LCH",
   "constraints": {
-    "acquisitions_used": 0,
-    "acquisitions_remaining": 7,
+    "acquisitions_used": 1,
+    "acquisitions_remaining": 6,
     "ip_accumulated": 0.0,
     "ip_remaining": 15.0,
     "waiver_priority": 3,
