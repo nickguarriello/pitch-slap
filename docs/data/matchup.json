@@ -2,39 +2,39 @@
   "cat_states": {
     "R": {
       "state": "WIN",
-      "my_val": 60.0,
-      "opp_val": 41.0,
-      "gap": 19.0
+      "my_val": 69.0,
+      "opp_val": 45.0,
+      "gap": 24.0
     },
     "HR": {
       "state": "FLOPPABLE",
-      "my_val": 17.0,
-      "opp_val": 14.0,
-      "gap": 3.0
+      "my_val": 20.0,
+      "opp_val": 16.0,
+      "gap": 4.0
     },
     "RBI": {
       "state": "WIN",
-      "my_val": 63.0,
-      "opp_val": 48.0,
-      "gap": 15.0
+      "my_val": 73.0,
+      "opp_val": 51.0,
+      "gap": 22.0
     },
     "SB": {
       "state": "WIN",
-      "my_val": 12.0,
-      "opp_val": 4.0,
+      "my_val": 13.0,
+      "opp_val": 5.0,
       "gap": 8.0
     },
     "OBP": {
       "state": "WIN",
-      "my_val": 0.3974026,
-      "opp_val": 0.33983287,
-      "gap": 0.0576
+      "my_val": 0.39072848,
+      "opp_val": 0.31742243,
+      "gap": 0.0733
     },
     "K": {
       "state": "LOSS",
-      "my_val": 38.0,
-      "opp_val": 63.0,
-      "gap": -25.0
+      "my_val": 47.0,
+      "opp_val": 74.0,
+      "gap": -27.0
     },
     "QS": {
       "state": "FLIPPABLE",
@@ -43,28 +43,28 @@
       "gap": -1.0
     },
     "ERA": {
-      "state": "TIE",
-      "my_val": 1.65306122,
-      "opp_val": 4.68208092,
+      "state": "LOSS",
+      "my_val": 2.72268908,
+      "opp_val": 4.28365385,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 5.3/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 5.333333333333333
+      "ip_note": "You 8.0/15 IP \u00b7 Opp 17.0/15 IP",
+      "my_ip_week": 8.0,
+      "opp_ip_week": 17.0
     },
     "WHIP": {
-      "state": "TIE",
-      "my_val": 0.85714286,
-      "opp_val": 1.49132948,
+      "state": "LOSS",
+      "my_val": 1.03361345,
+      "opp_val": 1.5,
       "gap": null,
-      "ip_note": "You 0.0/15 IP \u00b7 Opp 5.3/15 IP",
-      "my_ip_week": 0.0,
-      "opp_ip_week": 5.333333333333333
+      "ip_note": "You 8.0/15 IP \u00b7 Opp 17.0/15 IP",
+      "my_ip_week": 8.0,
+      "opp_ip_week": 17.0
     },
     "SvHd": {
       "state": "WIN",
-      "my_val": 7.0,
+      "my_val": 9.0,
       "opp_val": 4.0,
-      "gap": 3.0
+      "gap": 5.0
     }
   },
   "need_weights": {
@@ -2042,8 +2042,8 @@
   "constraints": {
     "acquisitions_used": 1,
     "acquisitions_remaining": 6,
-    "ip_accumulated": 0.0,
-    "ip_remaining": 15.0,
+    "ip_accumulated": 8.0,
+    "ip_remaining": 7.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,
