@@ -1,5 +1,5 @@
 {
-  "generated_for_snapshot": "2026-09-24",
+  "generated_for_snapshot": "2026-09-25",
   "my_team_id": 1,
   "my_team_name": "Pitch Slap",
   "my_need_weights": {
@@ -7,7 +7,7 @@
     "HR": 0.4,
     "RBI": 0.44,
     "SB": 0.4,
-    "OBP": 0.66,
+    "OBP": 0.7,
     "K": 0.66,
     "QS": 0.66,
     "ERA": 0.4,
@@ -33,20 +33,20 @@
             "Dylan Cease",
             "Gabriel Moreno"
           ],
-          "my_score": 0.464,
-          "their_score": -0.008,
+          "my_score": 0.484,
+          "their_score": -0.007,
           "drivers": {
-            "HR": -0.017,
+            "HR": -0.016,
             "SB": 0.007,
             "K": 0.126,
             "QS": 0.063,
-            "OBP": 0.264,
+            "OBP": 0.28,
             "ERA": 0.024
           },
           "delta": {
-            "R": -3.5,
-            "HR": -5.5,
-            "RBI": 1.5,
+            "R": -3.0,
+            "HR": -5.0,
+            "RBI": 3.0,
             "SB": 1.5,
             "K": 98.5,
             "QS": 5.5,
@@ -66,7 +66,7 @@
             "Dylan Cease"
           ],
           "my_score": 0.358,
-          "their_score": 0.005,
+          "their_score": 0.01,
           "drivers": {
             "K": 0.191,
             "QS": 0.184,
@@ -96,12 +96,12 @@
             "Drew Rasmussen",
             "Elly De La Cruz"
           ],
-          "my_score": 0.274,
-          "their_score": -0.017,
+          "my_score": 0.277,
+          "their_score": -0.016,
           "drivers": {
             "R": 0.027,
-            "HR": 0.025,
-            "RBI": 0.013,
+            "HR": 0.027,
+            "RBI": 0.014,
             "SB": 0.024,
             "K": 0.065,
             "QS": 0.121,
@@ -110,9 +110,9 @@
             "WHIP": 0.08
           },
           "delta": {
-            "R": 24.5,
-            "HR": 8.0,
-            "RBI": 11.0,
+            "R": 25.0,
+            "HR": 8.5,
+            "RBI": 11.5,
             "SB": 5.5,
             "K": 51.0,
             "QS": 10.5,
@@ -129,17 +129,17 @@
           "get": [
             "Gabriel Moreno"
           ],
-          "my_score": 0.251,
-          "their_score": 0.02,
+          "my_score": 0.271,
+          "their_score": 0.015,
           "drivers": {
-            "HR": -0.017,
+            "HR": -0.016,
             "SB": 0.007,
-            "OBP": 0.264
+            "OBP": 0.28
           },
           "delta": {
-            "R": -3.5,
-            "HR": -5.5,
-            "RBI": 1.5,
+            "R": -3.0,
+            "HR": -5.0,
+            "RBI": 3.0,
             "SB": 1.5,
             "K": 0.0,
             "QS": 0.0,
@@ -156,12 +156,12 @@
           "get": [
             "Jacob Misiorowski"
           ],
-          "my_score": 0.243,
-          "their_score": -0.009,
+          "my_score": 0.24,
+          "their_score": -0.013,
           "drivers": {
-            "K": 0.087,
+            "K": 0.086,
             "QS": 0.121,
-            "SvHd": -0.077,
+            "SvHd": -0.078,
             "ERA": 0.032,
             "WHIP": 0.08
           },
@@ -170,9 +170,9 @@
             "HR": 0.0,
             "RBI": 0.0,
             "SB": 0.0,
-            "K": 68.5,
+            "K": 67.5,
             "QS": 10.5,
-            "SvHd": -22.0,
+            "SvHd": -22.5,
             "OBP": 0.0,
             "ERA": -0.04,
             "WHIP": -0.02
@@ -181,115 +181,45 @@
       ]
     },
     {
-      "team_id": 3,
-      "team_name": "I Robbed A Nuke",
+      "team_id": 6,
+      "team_name": "All Rise Run Club",
       "their_top_needs": [
-        "OBP",
-        "ERA",
-        "WHIP"
+        "HR",
+        "RBI",
+        "SvHd"
       ],
       "trades": [
         {
           "give": [
-            "Brock Burke",
-            "Christian Yelich"
+            "Christian Yelich",
+            "Emilio Pagan"
           ],
           "get": [
-            "Pete Alonso",
-            "Sandy Alcantara"
+            "Kevin McGonigle",
+            "Logan Gilbert"
           ],
-          "my_score": 0.317,
-          "their_score": 0.082,
+          "my_score": 0.376,
+          "their_score": 0.033,
           "drivers": {
-            "R": -0.014,
-            "HR": 0.036,
-            "RBI": 0.006,
-            "SB": -0.035,
-            "K": 0.055,
-            "QS": 0.132,
-            "SvHd": -0.04,
-            "OBP": 0.264,
-            "ERA": -0.088
+            "HR": -0.013,
+            "RBI": -0.032,
+            "SB": -0.009,
+            "K": 0.089,
+            "QS": 0.057,
+            "OBP": 0.28,
+            "ERA": -0.04,
+            "WHIP": 0.04
           },
           "delta": {
-            "R": -12.5,
-            "HR": 11.5,
-            "RBI": 5.0,
-            "SB": -8.0,
-            "K": 43.5,
-            "QS": 11.5,
-            "SvHd": -11.5,
+            "R": 2.0,
+            "HR": -4.0,
+            "RBI": -26.5,
+            "SB": -2.0,
+            "K": 70.0,
+            "QS": 5.0,
+            "SvHd": 0.0,
             "OBP": 0.01,
-            "ERA": 0.11,
-            "WHIP": 0.0
-          }
-        },
-        {
-          "give": [
-            "Emilio Pagan",
-            "Juan Soto"
-          ],
-          "get": [
-            "Chase Burns",
-            "Paul Skenes"
-          ],
-          "my_score": 0.293,
-          "their_score": -0.019,
-          "drivers": {
-            "R": 0.01,
-            "HR": -0.032,
-            "RBI": -0.022,
-            "SB": 0.035,
-            "K": 0.176,
-            "QS": 0.132,
-            "SvHd": -0.047,
-            "WHIP": 0.04
-          },
-          "delta": {
-            "R": 9.5,
-            "HR": -10.0,
-            "RBI": -18.0,
-            "SB": 8.0,
-            "K": 138.0,
-            "QS": 11.5,
-            "SvHd": -13.5,
-            "OBP": -0.0,
-            "ERA": 0.0,
-            "WHIP": -0.01
-          }
-        },
-        {
-          "give": [
-            "Emilio Pagan",
-            "Juan Soto"
-          ],
-          "get": [
-            "Michael Wacha",
-            "Paul Skenes"
-          ],
-          "my_score": 0.264,
-          "their_score": 0.035,
-          "drivers": {
-            "R": 0.01,
-            "HR": -0.032,
-            "RBI": -0.022,
-            "SB": 0.035,
-            "K": 0.151,
-            "QS": 0.184,
-            "SvHd": -0.047,
-            "ERA": -0.056,
-            "WHIP": 0.04
-          },
-          "delta": {
-            "R": 9.5,
-            "HR": -10.0,
-            "RBI": -18.0,
-            "SB": 8.0,
-            "K": 118.5,
-            "QS": 16.0,
-            "SvHd": -13.5,
-            "OBP": -0.0,
-            "ERA": 0.07,
+            "ERA": 0.05,
             "WHIP": -0.01
           }
         },
@@ -299,63 +229,493 @@
             "Emilio Pagan"
           ],
           "get": [
-            "Pete Alonso",
-            "Sandy Alcantara"
+            "Jacob deGrom",
+            "Kevin McGonigle"
           ],
-          "my_score": 0.262,
-          "their_score": 0.09,
+          "my_score": 0.372,
+          "their_score": 0.089,
           "drivers": {
-            "R": -0.014,
-            "HR": 0.036,
-            "RBI": 0.006,
-            "SB": -0.035,
+            "HR": -0.013,
+            "RBI": -0.032,
+            "SB": -0.009,
+            "K": 0.089,
+            "QS": 0.046,
+            "OBP": 0.28,
+            "ERA": -0.032,
+            "WHIP": 0.04
+          },
+          "delta": {
+            "R": 2.0,
+            "HR": -4.0,
+            "RBI": -26.5,
+            "SB": -2.0,
+            "K": 69.5,
+            "QS": 4.0,
+            "SvHd": 0.0,
+            "OBP": 0.01,
+            "ERA": 0.04,
+            "WHIP": -0.01
+          }
+        },
+        {
+          "give": [
+            "Brock Burke",
+            "Christian Yelich"
+          ],
+          "get": [
+            "Foster Griffin",
+            "Kevin McGonigle"
+          ],
+          "my_score": 0.289,
+          "their_score": 0.157,
+          "drivers": {
+            "HR": -0.013,
+            "RBI": -0.032,
+            "SB": -0.009,
+            "K": 0.059,
+            "QS": 0.098,
+            "SvHd": -0.049,
+            "OBP": 0.28,
+            "ERA": -0.048
+          },
+          "delta": {
+            "R": 2.0,
+            "HR": -4.0,
+            "RBI": -26.5,
+            "SB": -2.0,
+            "K": 46.0,
+            "QS": 8.5,
+            "SvHd": -14.0,
+            "OBP": 0.01,
+            "ERA": 0.06,
+            "WHIP": 0.0
+          }
+        },
+        {
+          "give": [
+            "Emilio Pagan",
+            "Jhoan Duran"
+          ],
+          "get": [
+            "Jacob deGrom",
+            "Zack Wheeler"
+          ],
+          "my_score": 0.245,
+          "their_score": 0.021,
+          "drivers": {
+            "K": 0.17,
+            "QS": 0.155,
+            "SvHd": -0.064,
+            "ERA": -0.056,
+            "WHIP": 0.04
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": 133.5,
+            "QS": 13.5,
+            "SvHd": -18.5,
+            "OBP": 0.0,
+            "ERA": 0.07,
+            "WHIP": -0.01
+          }
+        },
+        {
+          "give": [
+            "Emilio Pagan",
+            "Jhoan Duran"
+          ],
+          "get": [
+            "Logan Gilbert",
+            "Zack Wheeler"
+          ],
+          "my_score": 0.241,
+          "their_score": 0.023,
+          "drivers": {
+            "K": 0.171,
+            "QS": 0.166,
+            "SvHd": -0.064,
+            "ERA": -0.072,
+            "WHIP": 0.04
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": 134.0,
+            "QS": 14.5,
+            "SvHd": -18.5,
+            "OBP": 0.0,
+            "ERA": 0.09,
+            "WHIP": -0.01
+          }
+        }
+      ]
+    },
+    {
+      "team_id": 3,
+      "team_name": "I Robbed A Nuke",
+      "their_top_needs": [
+        "ERA",
+        "WHIP",
+        "SvHd"
+      ],
+      "trades": [
+        {
+          "give": [
+            "Brock Burke",
+            "Mason Miller"
+          ],
+          "get": [
+            "Paul Skenes",
+            "Yordan Alvarez"
+          ],
+          "my_score": 0.365,
+          "their_score": 0.013,
+          "drivers": {
+            "R": 0.012,
+            "HR": 0.021,
+            "RBI": 0.016,
+            "K": 0.04,
+            "QS": 0.098,
+            "SvHd": -0.073,
+            "OBP": 0.28,
+            "ERA": -0.064,
+            "WHIP": 0.04
+          },
+          "delta": {
+            "R": 11.0,
+            "HR": 6.5,
+            "RBI": 13.5,
+            "SB": -1.0,
+            "K": 31.5,
+            "QS": 8.5,
+            "SvHd": -21.0,
+            "OBP": 0.01,
+            "ERA": 0.08,
+            "WHIP": -0.01
+          }
+        },
+        {
+          "give": [
+            "Brock Burke",
+            "Mason Miller"
+          ],
+          "get": [
+            "Chase Burns",
+            "Yordan Alvarez"
+          ],
+          "my_score": 0.314,
+          "their_score": 0.071,
+          "drivers": {
+            "R": 0.012,
+            "HR": 0.021,
+            "RBI": 0.016,
+            "K": 0.031,
+            "QS": 0.08,
+            "SvHd": -0.073,
+            "OBP": 0.28,
+            "ERA": -0.048
+          },
+          "delta": {
+            "R": 11.0,
+            "HR": 6.5,
+            "RBI": 13.5,
+            "SB": -1.0,
+            "K": 24.0,
+            "QS": 7.0,
+            "SvHd": -21.0,
+            "OBP": 0.01,
+            "ERA": 0.06,
+            "WHIP": 0.0
+          }
+        },
+        {
+          "give": [
+            "Brock Burke",
+            "Mason Montgomery"
+          ],
+          "get": [
+            "Ben Rice",
+            "Chase Burns"
+          ],
+          "my_score": 0.31,
+          "their_score": 0.007,
+          "drivers": {
+            "R": 0.042,
+            "HR": 0.055,
+            "RBI": 0.041,
+            "SB": 0.009,
+            "K": 0.048,
+            "QS": 0.08,
+            "SvHd": -0.063,
+            "ERA": 0.016,
+            "WHIP": 0.08
+          },
+          "delta": {
+            "R": 39.0,
+            "HR": 17.5,
+            "RBI": 34.5,
+            "SB": 2.0,
+            "K": 38.0,
+            "QS": 7.0,
+            "SvHd": -18.0,
+            "OBP": 0.0,
+            "ERA": -0.02,
+            "WHIP": -0.02
+          }
+        },
+        {
+          "give": [
+            "Emilio Pagan",
+            "Mason Miller"
+          ],
+          "get": [
+            "Paul Skenes",
+            "Yordan Alvarez"
+          ],
+          "my_score": 0.288,
+          "their_score": 0.077,
+          "drivers": {
+            "R": 0.012,
+            "HR": 0.021,
+            "RBI": 0.016,
             "K": 0.057,
-            "QS": 0.092,
-            "SvHd": 0.007,
-            "OBP": 0.264,
-            "ERA": -0.112,
+            "QS": 0.098,
+            "SvHd": -0.078,
+            "OBP": 0.28,
+            "ERA": -0.072,
             "WHIP": -0.04
           },
           "delta": {
-            "R": -12.5,
-            "HR": 11.5,
-            "RBI": 5.0,
-            "SB": -8.0,
-            "K": 45.0,
-            "QS": 8.0,
-            "SvHd": 2.0,
+            "R": 11.0,
+            "HR": 6.5,
+            "RBI": 13.5,
+            "SB": -1.0,
+            "K": 44.5,
+            "QS": 8.5,
+            "SvHd": -22.5,
             "OBP": 0.01,
-            "ERA": 0.14,
+            "ERA": 0.09,
             "WHIP": 0.01
           }
         },
         {
           "give": [
-            "Christian Yelich"
+            "Emilio Pagan",
+            "Mason Miller"
           ],
           "get": [
-            "Pete Alonso"
+            "Chase Burns",
+            "Yordan Alvarez"
           ],
-          "my_score": 0.258,
-          "their_score": 0.0,
+          "my_score": 0.286,
+          "their_score": 0.149,
           "drivers": {
-            "R": -0.014,
-            "HR": 0.036,
-            "RBI": 0.006,
-            "SB": -0.035,
-            "OBP": 0.264
+            "R": 0.012,
+            "HR": 0.021,
+            "RBI": 0.016,
+            "K": 0.047,
+            "QS": 0.08,
+            "SvHd": -0.078,
+            "OBP": 0.28,
+            "ERA": -0.048,
+            "WHIP": -0.04
           },
           "delta": {
-            "R": -12.5,
-            "HR": 11.5,
-            "RBI": 5.0,
-            "SB": -8.0,
-            "K": 0.0,
-            "QS": 0.0,
-            "SvHd": 0.0,
+            "R": 11.0,
+            "HR": 6.5,
+            "RBI": 13.5,
+            "SB": -1.0,
+            "K": 37.0,
+            "QS": 7.0,
+            "SvHd": -22.5,
             "OBP": 0.01,
-            "ERA": 0.0,
+            "ERA": 0.06,
+            "WHIP": 0.01
+          }
+        }
+      ]
+    },
+    {
+      "team_id": 7,
+      "team_name": "Jazz In Her Batters Box",
+      "their_top_needs": [
+        "SB",
+        "WHIP",
+        "OBP"
+      ],
+      "trades": [
+        {
+          "give": [
+            "Carter Jensen",
+            "Mason Montgomery"
+          ],
+          "get": [
+            "Junior Caminero",
+            "Shohei Ohtani"
+          ],
+          "my_score": 0.343,
+          "their_score": 0.005,
+          "drivers": {
+            "R": -0.037,
+            "HR": -0.022,
+            "RBI": -0.036,
+            "SB": -0.009,
+            "K": -0.008,
+            "QS": 0.138,
+            "SvHd": -0.068,
+            "OBP": 0.28,
+            "ERA": 0.024,
+            "WHIP": 0.08
+          },
+          "delta": {
+            "R": -34.0,
+            "HR": -7.0,
+            "RBI": -30.0,
+            "SB": -2.0,
+            "K": -6.0,
+            "QS": 12.0,
+            "SvHd": -19.5,
+            "OBP": 0.01,
+            "ERA": -0.03,
+            "WHIP": -0.02
+          }
+        },
+        {
+          "give": [
+            "Carter Jensen",
+            "Jhoan Duran"
+          ],
+          "get": [
+            "Cristopher Sanchez",
+            "Junior Caminero"
+          ],
+          "my_score": 0.327,
+          "their_score": 0.015,
+          "drivers": {
+            "R": -0.037,
+            "HR": -0.022,
+            "RBI": -0.036,
+            "SB": -0.009,
+            "K": 0.103,
+            "QS": 0.143,
+            "SvHd": -0.064,
+            "OBP": 0.28,
+            "ERA": 0.008,
+            "WHIP": -0.04
+          },
+          "delta": {
+            "R": -34.0,
+            "HR": -7.0,
+            "RBI": -30.0,
+            "SB": -2.0,
+            "K": 81.0,
+            "QS": 12.5,
+            "SvHd": -18.5,
+            "OBP": 0.01,
+            "ERA": -0.01,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Emilio Pagan",
+            "Jhoan Duran"
+          ],
+          "get": [
+            "Bryan Woo",
+            "Cristopher Sanchez"
+          ],
+          "my_score": 0.289,
+          "their_score": -0.013,
+          "drivers": {
+            "K": 0.181,
+            "QS": 0.212,
+            "SvHd": -0.064,
+            "ERA": -0.04
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": 142.0,
+            "QS": 18.5,
+            "SvHd": -18.5,
+            "OBP": 0.0,
+            "ERA": 0.05,
             "WHIP": 0.0
+          }
+        },
+        {
+          "give": [
+            "Brock Burke",
+            "Carter Jensen"
+          ],
+          "get": [
+            "Eduardo Rodriguez",
+            "Junior Caminero"
+          ],
+          "my_score": 0.247,
+          "their_score": 0.077,
+          "drivers": {
+            "R": -0.037,
+            "HR": -0.022,
+            "RBI": -0.036,
+            "SB": -0.009,
+            "K": 0.049,
+            "QS": 0.126,
+            "SvHd": -0.049,
+            "OBP": 0.28,
+            "ERA": -0.016,
+            "WHIP": -0.04
+          },
+          "delta": {
+            "R": -34.0,
+            "HR": -7.0,
+            "RBI": -30.0,
+            "SB": -2.0,
+            "K": 38.5,
+            "QS": 11.0,
+            "SvHd": -14.0,
+            "OBP": 0.01,
+            "ERA": 0.02,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Brock Burke",
+            "Mason Montgomery"
+          ],
+          "get": [
+            "Eduardo Rodriguez",
+            "Shohei Ohtani"
+          ],
+          "my_score": 0.237,
+          "their_score": 0.018,
+          "drivers": {
+            "K": 0.041,
+            "QS": 0.264,
+            "SvHd": -0.117,
+            "ERA": 0.008,
+            "WHIP": 0.04
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": 32.5,
+            "QS": 23.0,
+            "SvHd": -33.5,
+            "OBP": 0.0,
+            "ERA": -0.01,
+            "WHIP": -0.01
           }
         }
       ]
@@ -375,131 +735,29 @@
             "Emilio Pagan"
           ],
           "get": [
-            "Cade Cavalli",
+            "Gavin Williams",
             "Hunter Goodman"
           ],
-          "my_score": 0.289,
-          "their_score": 0.039,
+          "my_score": 0.328,
+          "their_score": -0.012,
           "drivers": {
             "R": 0.028,
             "HR": 0.052,
-            "RBI": 0.032,
+            "RBI": 0.033,
             "SB": 0.013,
-            "K": 0.088,
-            "QS": 0.115,
-            "SvHd": -0.047,
-            "ERA": 0.008
-          },
-          "delta": {
-            "R": 25.5,
-            "HR": 16.5,
-            "RBI": 27.0,
-            "SB": 3.0,
-            "K": 69.0,
-            "QS": 10.0,
-            "SvHd": -13.5,
-            "OBP": -0.0,
-            "ERA": -0.01,
-            "WHIP": 0.0
-          }
-        },
-        {
-          "give": [
-            "Brock Burke",
-            "Emilio Pagan"
-          ],
-          "get": [
-            "Hunter Goodman",
-            "Shota Imanaga"
-          ],
-          "my_score": 0.239,
-          "their_score": 0.075,
-          "drivers": {
-            "R": 0.028,
-            "HR": 0.052,
-            "RBI": 0.032,
-            "SB": 0.013,
-            "K": 0.069,
-            "QS": 0.092,
-            "SvHd": -0.047,
-            "ERA": -0.04,
+            "K": 0.124,
+            "QS": 0.086,
+            "SvHd": -0.049,
             "WHIP": 0.04
           },
           "delta": {
-            "R": 25.5,
+            "R": 26.0,
             "HR": 16.5,
-            "RBI": 27.0,
+            "RBI": 27.5,
             "SB": 3.0,
-            "K": 54.0,
-            "QS": 8.0,
-            "SvHd": -13.5,
-            "OBP": -0.0,
-            "ERA": 0.05,
-            "WHIP": -0.01
-          }
-        },
-        {
-          "give": [
-            "Emilio Pagan",
-            "Nathan Eovaldi"
-          ],
-          "get": [
-            "Cade Cavalli",
-            "Hunter Goodman"
-          ],
-          "my_score": 0.22,
-          "their_score": 0.001,
-          "drivers": {
-            "R": 0.028,
-            "HR": 0.052,
-            "RBI": 0.032,
-            "SB": 0.013,
-            "K": 0.045,
-            "QS": 0.046,
-            "ERA": 0.048,
-            "WHIP": -0.04
-          },
-          "delta": {
-            "R": 25.5,
-            "HR": 16.5,
-            "RBI": 27.0,
-            "SB": 3.0,
-            "K": 35.0,
-            "QS": 4.0,
-            "SvHd": -1.0,
-            "OBP": -0.0,
-            "ERA": -0.06,
-            "WHIP": 0.01
-          }
-        },
-        {
-          "give": [
-            "Emilio Pagan",
-            "Nathan Eovaldi"
-          ],
-          "get": [
-            "Hunter Goodman",
-            "Shota Imanaga"
-          ],
-          "my_score": 0.21,
-          "their_score": 0.048,
-          "drivers": {
-            "R": 0.028,
-            "HR": 0.052,
-            "RBI": 0.032,
-            "SB": 0.013,
-            "K": 0.026,
-            "QS": 0.023,
-            "WHIP": 0.04
-          },
-          "delta": {
-            "R": 25.5,
-            "HR": 16.5,
-            "RBI": 27.0,
-            "SB": 3.0,
-            "K": 20.0,
-            "QS": 2.0,
-            "SvHd": -1.0,
+            "K": 97.5,
+            "QS": 7.5,
+            "SvHd": -14.0,
             "OBP": -0.0,
             "ERA": 0.0,
             "WHIP": -0.01
@@ -507,552 +765,132 @@
         },
         {
           "give": [
-            "Brock Burke"
+            "Brock Burke",
+            "Mason Miller"
           ],
           "get": [
-            "Hunter Goodman"
+            "Cam Schlittler",
+            "Sal Stewart"
           ],
-          "my_score": 0.201,
-          "their_score": 0.024,
+          "my_score": 0.297,
+          "their_score": 0.005,
           "drivers": {
-            "R": 0.028,
-            "HR": 0.052,
-            "RBI": 0.032,
-            "SB": 0.013,
-            "K": -0.017,
-            "SvHd": 0.005,
-            "ERA": 0.008,
+            "HR": 0.005,
+            "RBI": 0.021,
+            "SB": 0.028,
+            "K": 0.061,
+            "QS": 0.132,
+            "SvHd": -0.073,
+            "ERA": 0.04,
             "WHIP": 0.08
           },
           "delta": {
-            "R": 25.5,
-            "HR": 16.5,
-            "RBI": 27.0,
-            "SB": 3.0,
-            "K": -13.5,
-            "QS": 0.0,
-            "SvHd": 1.5,
-            "OBP": -0.0,
-            "ERA": -0.01,
+            "R": 3.0,
+            "HR": 1.5,
+            "RBI": 17.5,
+            "SB": 6.5,
+            "K": 48.0,
+            "QS": 11.5,
+            "SvHd": -21.0,
+            "OBP": 0.0,
+            "ERA": -0.05,
             "WHIP": -0.02
           }
-        }
-      ]
-    },
-    {
-      "team_id": 6,
-      "team_name": "All Rise Run Club",
-      "their_top_needs": [
-        "HR",
-        "RBI",
-        "SvHd"
-      ],
-      "trades": [
+        },
         {
           "give": [
-            "Carter Jensen",
-            "Jakob Marsee"
+            "Brock Burke",
+            "Emilio Pagan"
           ],
           "get": [
-            "Jacob deGrom",
-            "Kevin McGonigle"
+            "Cade Cavalli",
+            "Hunter Goodman"
           ],
-          "my_score": 0.275,
-          "their_score": -0.014,
+          "my_score": 0.288,
+          "their_score": 0.039,
           "drivers": {
-            "R": -0.022,
-            "HR": -0.04,
-            "RBI": -0.041,
-            "SB": -0.028,
-            "K": 0.089,
-            "QS": 0.046,
-            "OBP": 0.264,
+            "R": 0.028,
+            "HR": 0.052,
+            "RBI": 0.033,
+            "SB": 0.013,
+            "K": 0.088,
+            "QS": 0.115,
+            "SvHd": -0.049,
+            "ERA": 0.008
+          },
+          "delta": {
+            "R": 26.0,
+            "HR": 16.5,
+            "RBI": 27.5,
+            "SB": 3.0,
+            "K": 69.0,
+            "QS": 10.0,
+            "SvHd": -14.0,
+            "OBP": -0.0,
+            "ERA": -0.01,
+            "WHIP": 0.0
+          }
+        },
+        {
+          "give": [
+            "Emilio Pagan",
+            "Mason Miller"
+          ],
+          "get": [
+            "Cade Cavalli",
+            "Cam Schlittler"
+          ],
+          "my_score": 0.272,
+          "their_score": 0.001,
+          "drivers": {
+            "K": 0.168,
+            "QS": 0.207,
+            "SvHd": -0.078,
+            "ERA": 0.016,
+            "WHIP": -0.04
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": 131.5,
+            "QS": 18.0,
+            "SvHd": -22.5,
+            "OBP": 0.0,
+            "ERA": -0.02,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Emilio Pagan",
+            "Mason Miller"
+          ],
+          "get": [
+            "Cam Schlittler",
+            "Shota Imanaga"
+          ],
+          "my_score": 0.262,
+          "their_score": 0.007,
+          "drivers": {
+            "K": 0.149,
+            "QS": 0.184,
+            "SvHd": -0.078,
             "ERA": -0.032,
             "WHIP": 0.04
           },
           "delta": {
-            "R": -20.5,
-            "HR": -12.5,
-            "RBI": -34.5,
-            "SB": -6.5,
-            "K": 69.5,
-            "QS": 4.0,
-            "SvHd": 0.0,
-            "OBP": 0.01,
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": 116.5,
+            "QS": 16.0,
+            "SvHd": -22.5,
+            "OBP": 0.0,
             "ERA": 0.04,
             "WHIP": -0.01
-          }
-        },
-        {
-          "give": [
-            "Emilio Pagan",
-            "Nolan Arenado"
-          ],
-          "get": [
-            "Foster Griffin",
-            "Jacob deGrom"
-          ],
-          "my_score": 0.212,
-          "their_score": 0.122,
-          "drivers": {
-            "K": 0.147,
-            "QS": 0.143,
-            "SvHd": -0.047,
-            "ERA": -0.072,
-            "WHIP": 0.04
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 115.5,
-            "QS": 12.5,
-            "SvHd": -13.5,
-            "OBP": 0.0,
-            "ERA": 0.09,
-            "WHIP": -0.01
-          }
-        },
-        {
-          "give": [
-            "Blake Snell",
-            "Nolan Arenado"
-          ],
-          "get": [
-            "Foster Griffin",
-            "Jacob deGrom"
-          ],
-          "my_score": 0.212,
-          "their_score": 0.044,
-          "drivers": {
-            "K": 0.147,
-            "QS": 0.143,
-            "SvHd": -0.047,
-            "ERA": -0.072,
-            "WHIP": 0.04
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 115.5,
-            "QS": 12.5,
-            "SvHd": -13.5,
-            "OBP": 0.0,
-            "ERA": 0.09,
-            "WHIP": -0.01
-          }
-        },
-        {
-          "give": [
-            "Brock Burke",
-            "Nolan Arenado"
-          ],
-          "get": [
-            "Foster Griffin",
-            "Jacob deGrom"
-          ],
-          "my_score": 0.212,
-          "their_score": 0.006,
-          "drivers": {
-            "K": 0.147,
-            "QS": 0.143,
-            "SvHd": -0.047,
-            "ERA": -0.072,
-            "WHIP": 0.04
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 115.5,
-            "QS": 12.5,
-            "SvHd": -13.5,
-            "OBP": 0.0,
-            "ERA": 0.09,
-            "WHIP": -0.01
-          }
-        },
-        {
-          "give": [
-            "Emilio Pagan",
-            "Jakob Marsee"
-          ],
-          "get": [
-            "Foster Griffin",
-            "Jacob deGrom"
-          ],
-          "my_score": 0.212,
-          "their_score": 0.103,
-          "drivers": {
-            "K": 0.147,
-            "QS": 0.143,
-            "SvHd": -0.047,
-            "ERA": -0.072,
-            "WHIP": 0.04
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 115.5,
-            "QS": 12.5,
-            "SvHd": -13.5,
-            "OBP": 0.0,
-            "ERA": 0.09,
-            "WHIP": -0.01
-          }
-        }
-      ]
-    },
-    {
-      "team_id": 7,
-      "team_name": "Jazz In Her Batters Box",
-      "their_top_needs": [
-        "SB",
-        "WHIP",
-        "OBP"
-      ],
-      "trades": [
-        {
-          "give": [
-            "Carter Jensen",
-            "Jhoan Duran"
-          ],
-          "get": [
-            "Junior Caminero",
-            "Shohei Ohtani"
-          ],
-          "my_score": 0.263,
-          "their_score": 0.032,
-          "drivers": {
-            "R": -0.037,
-            "HR": -0.022,
-            "RBI": -0.037,
-            "SB": -0.009,
-            "K": 0.006,
-            "QS": 0.138,
-            "SvHd": -0.064,
-            "OBP": 0.264,
-            "ERA": -0.016,
-            "WHIP": 0.04
-          },
-          "delta": {
-            "R": -34.0,
-            "HR": -7.0,
-            "RBI": -31.0,
-            "SB": -2.0,
-            "K": 5.0,
-            "QS": 12.0,
-            "SvHd": -18.5,
-            "OBP": 0.01,
-            "ERA": 0.02,
-            "WHIP": -0.01
-          }
-        },
-        {
-          "give": [
-            "Carter Jensen",
-            "Mason Montgomery"
-          ],
-          "get": [
-            "Bryan Woo",
-            "Junior Caminero"
-          ],
-          "my_score": 0.255,
-          "their_score": -0.013,
-          "drivers": {
-            "R": -0.037,
-            "HR": -0.022,
-            "RBI": -0.037,
-            "SB": -0.009,
-            "K": 0.053,
-            "QS": 0.109,
-            "SvHd": -0.066,
-            "OBP": 0.264,
-            "ERA": -0.04,
-            "WHIP": 0.04
-          },
-          "delta": {
-            "R": -34.0,
-            "HR": -7.0,
-            "RBI": -31.0,
-            "SB": -2.0,
-            "K": 41.5,
-            "QS": 9.5,
-            "SvHd": -19.0,
-            "OBP": 0.01,
-            "ERA": 0.05,
-            "WHIP": -0.01
-          }
-        },
-        {
-          "give": [
-            "Emilio Pagan",
-            "Jhoan Duran"
-          ],
-          "get": [
-            "Bryan Woo",
-            "Shohei Ohtani"
-          ],
-          "my_score": 0.237,
-          "their_score": -0.009,
-          "drivers": {
-            "K": 0.079,
-            "QS": 0.207,
-            "SvHd": -0.064,
-            "ERA": -0.064,
-            "WHIP": 0.08
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 62.0,
-            "QS": 18.0,
-            "SvHd": -18.5,
-            "OBP": 0.0,
-            "ERA": 0.08,
-            "WHIP": -0.02
-          }
-        },
-        {
-          "give": [
-            "Brock Burke",
-            "Carter Jensen"
-          ],
-          "get": [
-            "Eduardo Rodriguez",
-            "Junior Caminero"
-          ],
-          "my_score": 0.224,
-          "their_score": 0.025,
-          "drivers": {
-            "R": -0.037,
-            "HR": -0.022,
-            "RBI": -0.037,
-            "SB": -0.009,
-            "K": 0.047,
-            "QS": 0.121,
-            "SvHd": -0.047,
-            "OBP": 0.264,
-            "ERA": -0.016,
-            "WHIP": -0.04
-          },
-          "delta": {
-            "R": -34.0,
-            "HR": -7.0,
-            "RBI": -31.0,
-            "SB": -2.0,
-            "K": 37.0,
-            "QS": 10.5,
-            "SvHd": -13.5,
-            "OBP": 0.01,
-            "ERA": 0.02,
-            "WHIP": 0.01
-          }
-        },
-        {
-          "give": [
-            "Carter Jensen",
-            "Emilio Pagan"
-          ],
-          "get": [
-            "Eduardo Rodriguez",
-            "Junior Caminero"
-          ],
-          "my_score": 0.169,
-          "their_score": 0.091,
-          "drivers": {
-            "R": -0.037,
-            "HR": -0.022,
-            "RBI": -0.037,
-            "SB": -0.009,
-            "K": 0.049,
-            "QS": 0.08,
-            "OBP": 0.264,
-            "ERA": -0.04,
-            "WHIP": -0.08
-          },
-          "delta": {
-            "R": -34.0,
-            "HR": -7.0,
-            "RBI": -31.0,
-            "SB": -2.0,
-            "K": 38.5,
-            "QS": 7.0,
-            "SvHd": 0.0,
-            "OBP": 0.01,
-            "ERA": 0.05,
-            "WHIP": 0.02
-          }
-        }
-      ]
-    },
-    {
-      "team_id": 8,
-      "team_name": "ChicksDigTheLongBall",
-      "their_top_needs": [
-        "K",
-        "QS",
-        "RBI"
-      ],
-      "trades": [
-        {
-          "give": [
-            "Emilio Pagan",
-            "Mason Montgomery"
-          ],
-          "get": [
-            "Cole Ragans",
-            "Spencer Strider"
-          ],
-          "my_score": 0.214,
-          "their_score": 0.012,
-          "drivers": {
-            "K": 0.188,
-            "QS": 0.172,
-            "SvHd": -0.066,
-            "ERA": -0.08
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 147.5,
-            "QS": 15.0,
-            "SvHd": -19.0,
-            "OBP": 0.0,
-            "ERA": 0.1,
-            "WHIP": 0.0
-          }
-        },
-        {
-          "give": [
-            "Blake Snell",
-            "Mason Montgomery"
-          ],
-          "get": [
-            "Cole Ragans",
-            "Spencer Strider"
-          ],
-          "my_score": 0.214,
-          "their_score": 0.009,
-          "drivers": {
-            "K": 0.188,
-            "QS": 0.172,
-            "SvHd": -0.066,
-            "ERA": -0.08
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 147.5,
-            "QS": 15.0,
-            "SvHd": -19.0,
-            "OBP": 0.0,
-            "ERA": 0.1,
-            "WHIP": 0.0
-          }
-        },
-        {
-          "give": [
-            "Brock Burke",
-            "Mason Montgomery"
-          ],
-          "get": [
-            "Cole Ragans",
-            "Kevin Gausman"
-          ],
-          "my_score": 0.161,
-          "their_score": 0.154,
-          "drivers": {
-            "K": 0.158,
-            "QS": 0.212,
-            "SvHd": -0.113,
-            "ERA": -0.096
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 124.0,
-            "QS": 18.5,
-            "SvHd": -32.5,
-            "OBP": 0.0,
-            "ERA": 0.12,
-            "WHIP": 0.0
-          }
-        },
-        {
-          "give": [
-            "Blake Snell",
-            "Emilio Pagan"
-          ],
-          "get": [
-            "Kevin Gausman",
-            "Spencer Strider"
-          ],
-          "my_score": 0.148,
-          "their_score": 0.289,
-          "drivers": {
-            "K": 0.192,
-            "QS": 0.155,
-            "SvHd": -0.047,
-            "ERA": -0.112,
-            "WHIP": -0.04
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 150.5,
-            "QS": 13.5,
-            "SvHd": -13.5,
-            "OBP": 0.0,
-            "ERA": 0.14,
-            "WHIP": 0.01
-          }
-        },
-        {
-          "give": [
-            "Brock Burke",
-            "Emilio Pagan"
-          ],
-          "get": [
-            "Kevin Gausman",
-            "Spencer Strider"
-          ],
-          "my_score": 0.148,
-          "their_score": 0.151,
-          "drivers": {
-            "K": 0.192,
-            "QS": 0.155,
-            "SvHd": -0.047,
-            "ERA": -0.112,
-            "WHIP": -0.04
-          },
-          "delta": {
-            "R": 0.0,
-            "HR": 0.0,
-            "RBI": 0.0,
-            "SB": 0.0,
-            "K": 150.5,
-            "QS": 13.5,
-            "SvHd": -13.5,
-            "OBP": 0.0,
-            "ERA": 0.14,
-            "WHIP": 0.01
           }
         }
       ]
@@ -1061,43 +899,11 @@
       "team_id": 2,
       "team_name": "Lunch",
       "their_top_needs": [
-        "R",
         "HR",
+        "R",
         "QS"
       ],
       "trades": [
-        {
-          "give": [
-            "Brock Burke"
-          ],
-          "get": [
-            "Liam Hicks"
-          ],
-          "my_score": 0.152,
-          "their_score": -0.015,
-          "drivers": {
-            "R": 0.018,
-            "HR": 0.014,
-            "RBI": 0.03,
-            "SB": 0.013,
-            "K": -0.017,
-            "SvHd": 0.005,
-            "ERA": 0.008,
-            "WHIP": 0.08
-          },
-          "delta": {
-            "R": 16.5,
-            "HR": 4.5,
-            "RBI": 25.5,
-            "SB": 3.0,
-            "K": -13.5,
-            "QS": 0.0,
-            "SvHd": 1.5,
-            "OBP": 0.0,
-            "ERA": -0.01,
-            "WHIP": -0.02
-          }
-        },
         {
           "give": [
             "Tyler Mahle"
@@ -1105,61 +911,29 @@
           "get": [
             "Liam Hicks"
           ],
-          "my_score": 0.142,
-          "their_score": -0.015,
+          "my_score": 0.15,
+          "their_score": -0.014,
           "drivers": {
             "R": 0.018,
             "HR": 0.014,
-            "RBI": 0.03,
+            "RBI": 0.031,
             "SB": 0.013,
-            "K": -0.061,
+            "K": -0.063,
             "QS": -0.069,
-            "SvHd": 0.052,
-            "ERA": 0.064,
+            "SvHd": 0.054,
+            "ERA": 0.072,
             "WHIP": 0.08
           },
           "delta": {
             "R": 16.5,
             "HR": 4.5,
-            "RBI": 25.5,
+            "RBI": 26.0,
             "SB": 3.0,
-            "K": -48.0,
+            "K": -49.5,
             "QS": -6.0,
-            "SvHd": 15.0,
+            "SvHd": 15.5,
             "OBP": 0.0,
-            "ERA": -0.08,
-            "WHIP": -0.02
-          }
-        },
-        {
-          "give": [
-            "Brock Burke"
-          ],
-          "get": [
-            "Cal Raleigh"
-          ],
-          "my_score": 0.139,
-          "their_score": 0.0,
-          "drivers": {
-            "R": 0.009,
-            "HR": 0.025,
-            "RBI": 0.023,
-            "SB": 0.007,
-            "K": -0.017,
-            "SvHd": 0.005,
-            "ERA": 0.008,
-            "WHIP": 0.08
-          },
-          "delta": {
-            "R": 8.0,
-            "HR": 8.0,
-            "RBI": 19.0,
-            "SB": 1.5,
-            "K": -13.5,
-            "QS": 0.0,
-            "SvHd": 1.5,
-            "OBP": -0.0,
-            "ERA": -0.01,
+            "ERA": -0.09,
             "WHIP": -0.02
           }
         },
@@ -1198,30 +972,269 @@
           "get": [
             "Cal Raleigh"
           ],
-          "my_score": 0.129,
+          "my_score": 0.138,
           "their_score": 0.0,
           "drivers": {
             "R": 0.009,
             "HR": 0.025,
             "RBI": 0.023,
             "SB": 0.007,
-            "K": -0.061,
+            "K": -0.063,
             "QS": -0.069,
-            "SvHd": 0.052,
-            "ERA": 0.064,
+            "SvHd": 0.054,
+            "ERA": 0.072,
             "WHIP": 0.08
           },
           "delta": {
-            "R": 8.0,
+            "R": 8.5,
             "HR": 8.0,
             "RBI": 19.0,
             "SB": 1.5,
-            "K": -48.0,
+            "K": -49.5,
             "QS": -6.0,
-            "SvHd": 15.0,
+            "SvHd": 15.5,
             "OBP": -0.0,
-            "ERA": -0.08,
+            "ERA": -0.09,
             "WHIP": -0.02
+          }
+        },
+        {
+          "give": [
+            "Carter Jensen"
+          ],
+          "get": [
+            "Geraldo Perdomo"
+          ],
+          "my_score": 0.13,
+          "their_score": 0.012,
+          "drivers": {
+            "R": -0.037,
+            "HR": -0.054,
+            "RBI": -0.053,
+            "SB": -0.007,
+            "OBP": 0.28
+          },
+          "delta": {
+            "R": -34.0,
+            "HR": -17.0,
+            "RBI": -44.0,
+            "SB": -1.5,
+            "K": 0.0,
+            "QS": 0.0,
+            "SvHd": 0.0,
+            "OBP": 0.01,
+            "ERA": 0.0,
+            "WHIP": 0.0
+          }
+        },
+        {
+          "give": [
+            "Brock Burke"
+          ],
+          "get": [
+            "Liam Hicks"
+          ],
+          "my_score": 0.113,
+          "their_score": -0.014,
+          "drivers": {
+            "R": 0.018,
+            "HR": 0.014,
+            "RBI": 0.031,
+            "SB": 0.013,
+            "K": -0.017,
+            "SvHd": 0.005,
+            "ERA": 0.008,
+            "WHIP": 0.04
+          },
+          "delta": {
+            "R": 16.5,
+            "HR": 4.5,
+            "RBI": 26.0,
+            "SB": 3.0,
+            "K": -13.0,
+            "QS": 0.0,
+            "SvHd": 1.5,
+            "OBP": 0.0,
+            "ERA": -0.01,
+            "WHIP": -0.01
+          }
+        }
+      ]
+    },
+    {
+      "team_id": 8,
+      "team_name": "ChicksDigTheLongBall",
+      "their_top_needs": [
+        "K",
+        "QS",
+        "R"
+      ],
+      "trades": [
+        {
+          "give": [
+            "Emilio Pagan",
+            "Mike Trout"
+          ],
+          "get": [
+            "Kevin Gausman",
+            "Spencer Strider"
+          ],
+          "my_score": 0.147,
+          "their_score": 0.315,
+          "drivers": {
+            "HR": -0.021,
+            "RBI": -0.01,
+            "SB": 0.033,
+            "K": 0.192,
+            "QS": 0.155,
+            "SvHd": -0.049,
+            "ERA": -0.112,
+            "WHIP": -0.04
+          },
+          "delta": {
+            "R": -2.0,
+            "HR": -6.5,
+            "RBI": -8.0,
+            "SB": 7.5,
+            "K": 150.5,
+            "QS": 13.5,
+            "SvHd": -14.0,
+            "OBP": -0.0,
+            "ERA": 0.14,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Blake Snell",
+            "Mike Trout"
+          ],
+          "get": [
+            "Kevin Gausman",
+            "Spencer Strider"
+          ],
+          "my_score": 0.147,
+          "their_score": 0.26,
+          "drivers": {
+            "HR": -0.021,
+            "RBI": -0.01,
+            "SB": 0.033,
+            "K": 0.192,
+            "QS": 0.155,
+            "SvHd": -0.049,
+            "ERA": -0.112,
+            "WHIP": -0.04
+          },
+          "delta": {
+            "R": -2.0,
+            "HR": -6.5,
+            "RBI": -8.0,
+            "SB": 7.5,
+            "K": 150.5,
+            "QS": 13.5,
+            "SvHd": -14.0,
+            "OBP": -0.0,
+            "ERA": 0.14,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Brock Burke",
+            "Mike Trout"
+          ],
+          "get": [
+            "Kevin Gausman",
+            "Spencer Strider"
+          ],
+          "my_score": 0.147,
+          "their_score": 0.125,
+          "drivers": {
+            "HR": -0.021,
+            "RBI": -0.01,
+            "SB": 0.033,
+            "K": 0.192,
+            "QS": 0.155,
+            "SvHd": -0.049,
+            "ERA": -0.112,
+            "WHIP": -0.04
+          },
+          "delta": {
+            "R": -2.0,
+            "HR": -6.5,
+            "RBI": -8.0,
+            "SB": 7.5,
+            "K": 150.5,
+            "QS": 13.5,
+            "SvHd": -14.0,
+            "OBP": -0.0,
+            "ERA": 0.14,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Mike Trout",
+            "Mookie Betts"
+          ],
+          "get": [
+            "Kevin Gausman",
+            "Spencer Strider"
+          ],
+          "my_score": 0.147,
+          "their_score": 0.176,
+          "drivers": {
+            "HR": -0.021,
+            "RBI": -0.01,
+            "SB": 0.033,
+            "K": 0.192,
+            "QS": 0.155,
+            "SvHd": -0.049,
+            "ERA": -0.112,
+            "WHIP": -0.04
+          },
+          "delta": {
+            "R": -2.0,
+            "HR": -6.5,
+            "RBI": -8.0,
+            "SB": 7.5,
+            "K": 150.5,
+            "QS": 13.5,
+            "SvHd": -14.0,
+            "OBP": -0.0,
+            "ERA": 0.14,
+            "WHIP": 0.01
+          }
+        },
+        {
+          "give": [
+            "Blake Snell",
+            "Emilio Pagan"
+          ],
+          "get": [
+            "Kevin Gausman",
+            "Spencer Strider"
+          ],
+          "my_score": 0.146,
+          "their_score": 0.294,
+          "drivers": {
+            "K": 0.192,
+            "QS": 0.155,
+            "SvHd": -0.049,
+            "ERA": -0.112,
+            "WHIP": -0.04
+          },
+          "delta": {
+            "R": 0.0,
+            "HR": 0.0,
+            "RBI": 0.0,
+            "SB": 0.0,
+            "K": 150.5,
+            "QS": 13.5,
+            "SvHd": -14.0,
+            "OBP": 0.0,
+            "ERA": 0.14,
+            "WHIP": 0.01
           }
         }
       ]

@@ -2,39 +2,39 @@
   "cat_states": {
     "R": {
       "state": "WIN",
-      "my_val": 74.0,
-      "opp_val": 51.0,
-      "gap": 23.0
+      "my_val": 81.0,
+      "opp_val": 57.0,
+      "gap": 24.0
     },
     "HR": {
       "state": "WIN",
-      "my_val": 21.0,
+      "my_val": 24.0,
       "opp_val": 16.0,
-      "gap": 5.0
+      "gap": 8.0
     },
     "RBI": {
       "state": "WIN",
-      "my_val": 79.0,
-      "opp_val": 52.0,
-      "gap": 27.0
+      "my_val": 89.0,
+      "opp_val": 55.0,
+      "gap": 34.0
     },
     "SB": {
       "state": "WIN",
-      "my_val": 16.0,
-      "opp_val": 7.0,
+      "my_val": 19.0,
+      "opp_val": 10.0,
       "gap": 9.0
     },
     "OBP": {
       "state": "WIN",
-      "my_val": 0.38640777,
-      "opp_val": 0.31623932,
-      "gap": 0.0702
+      "my_val": 0.39092496,
+      "opp_val": 0.31660232,
+      "gap": 0.0743
     },
     "K": {
       "state": "LOSS",
-      "my_val": 56.0,
+      "my_val": 66.0,
       "opp_val": 82.0,
-      "gap": -26.0
+      "gap": -16.0
     },
     "QS": {
       "state": "TIE",
@@ -44,21 +44,21 @@
     },
     "ERA": {
       "state": "WIN",
-      "my_val": 2.39240506,
+      "my_val": 2.91891892,
       "opp_val": 4.0212766,
-      "gap": 1.6289
+      "gap": 1.1024
     },
     "WHIP": {
       "state": "WIN",
-      "my_val": 1.00632911,
+      "my_val": 1.03783784,
       "opp_val": 1.40425532,
-      "gap": 0.3979
+      "gap": 0.3664
     },
     "SvHd": {
       "state": "WIN",
-      "my_val": 9.0,
+      "my_val": 13.0,
       "opp_val": 5.0,
-      "gap": 4.0
+      "gap": 8.0
     }
   },
   "need_weights": {
@@ -66,7 +66,7 @@
     "HR": 0.4,
     "RBI": 0.44,
     "SB": 0.4,
-    "OBP": 0.66,
+    "OBP": 0.7,
     "K": 0.66,
     "QS": 0.66,
     "ERA": 0.4,
@@ -2036,7 +2036,7 @@
   "constraints": {
     "acquisitions_used": 1,
     "acquisitions_remaining": 6,
-    "ip_accumulated": 21.0,
+    "ip_accumulated": 30.0,
     "ip_remaining": 0.0,
     "waiver_priority": 3,
     "acq_alert": null,
