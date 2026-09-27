@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-25",
+  "as_of": "2026-09-27",
   "playoff_start_week": 22,
   "current_week": 23,
   "weeks_until_playoffs": 0,
@@ -175,7 +175,7 @@
         "K": 5,
         "QS": 2,
         "SvHd": 5,
-        "ERA": 6,
+        "ERA": 5,
         "WHIP": 7
       },
       "seed": 6,
@@ -233,7 +233,7 @@
         "K": 4,
         "QS": 4,
         "SvHd": 6,
-        "ERA": 5,
+        "ERA": 6,
         "WHIP": 5
       },
       "seed": 8,

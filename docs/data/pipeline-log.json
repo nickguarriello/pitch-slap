@@ -1,38 +1,38 @@
 {
-  "as_of": "2026-09-25T14:52:40.405819+00:00",
+  "as_of": "2026-09-27T14:55:10.179066+00:00",
   "last_run_mode": "full",
-  "last_full_run": "2026-09-25T14:52:29.187257+00:00",
+  "last_full_run": "2026-09-27T14:54:55.978938+00:00",
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-  "espn_last_fetch": "2026-09-25T14:52:40.405819+00:00",
-  "mlb_last_fetch": "2026-09-25T14:52:40.973379+00:00",
-  "statcast_last_fetch": "2026-09-25T14:52:44.964215+00:00",
+  "espn_last_fetch": "2026-09-27T14:55:10.179066+00:00",
+  "mlb_last_fetch": "2026-09-27T14:55:10.762650+00:00",
+  "statcast_last_fetch": "2026-09-27T14:55:16.904038+00:00",
   "validate_overall": "warn",
   "games_settled": {
-    "date": "2026-09-24",
-    "games": 12,
-    "final": 12,
+    "date": "2026-09-26",
+    "games": 13,
+    "final": 13,
     "incomplete": [],
-    "last_game": "SD@LAD",
+    "last_game": "HOU@OAK",
     "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-09-25T08:29:54.273000+00:00",
-    "waiver_last_execution": "2026-09-25T08:29:54.091000+00:00",
-    "scoring_period": 185,
-    "checked_at": "2026-09-25T14:52:40.529285+00:00"
+    "standings_update": "2026-09-27T08:23:24.759000+00:00",
+    "waiver_last_execution": "2026-09-27T08:23:24.714000+00:00",
+    "scoring_period": 187,
+    "checked_at": "2026-09-27T14:55:10.339686+00:00"
   },
   "row_counts": {
     "fact_espn_rosters": 552,
-    "fact_player_stats": 3465,
+    "fact_player_stats": 3508,
     "fact_statcast": 543,
     "fact_matchups": 220,
     "stats_season": 601,
     "stats_first_half": 584,
-    "stats_second_half": 532,
-    "stats_30d": 484,
-    "stats_14d": 464,
-    "stats_7d": 438,
-    "stats_current": 362
+    "stats_second_half": 534,
+    "stats_30d": 487,
+    "stats_14d": 458,
+    "stats_7d": 428,
+    "stats_current": 416
   },
   "validation_checks": [
     {
@@ -57,8 +57,8 @@
     },
     {
       "name": "",
-      "status": "warn",
-      "detail": "1 pitchers with WHIP > 3.50"
+      "status": "pass",
+      "detail": ""
     },
     {
       "name": "",
@@ -103,12 +103,12 @@
     {
       "name": "",
       "status": "pass",
-      "detail": "3465 rows across 7 windows"
+      "detail": "3508 rows across 7 windows"
     },
     {
       "name": "",
       "status": "pass",
-      "detail": "114 upcoming team-game slots"
+      "detail": "62 upcoming team-game slots"
     },
     {
       "name": "",
