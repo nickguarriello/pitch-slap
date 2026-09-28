@@ -1,37 +1,41 @@
 {
-  "espn_last_fetch": "2026-06-17T12:02:47.607936+00:00",
+  "espn_last_fetch": "2026-09-28T16:50:33.428578+00:00",
   "espn_status": "ok",
-  "espn_rows": 554,
-  "mlb_last_fetch": "2026-06-17T12:02:49.544946+00:00",
-  "transform_last_run": "2026-06-17T12:02:58.880567+00:00",
-  "validate_last_run": "2026-06-17T12:02:58.900299+00:00",
+  "espn_rows": 552,
+  "mlb_last_fetch": "2026-09-28T16:50:47.269467+00:00",
+  "transform_last_run": "2026-09-28T16:51:14.593846+00:00",
+  "validate_last_run": "2026-09-28T16:51:14.624867+00:00",
   "validate_overall": "warn",
-  "evaluate_last_run": "2026-06-17T12:02:58.922632+00:00",
-  "cats_winning": 1,
+  "evaluate_last_run": "2026-09-28T16:51:14.655362+00:00",
+  "cats_winning": 0,
   "last_light_run": "2026-06-17T11:58:57.391981+00:00",
   "last_run_mode": "full",
-  "schedule_rows": 190,
-  "statcast_last_fetch": "2026-06-15T23:55:54.730796+00:00",
-  "report_last_run": "2026-06-17T12:02:59.050769+00:00",
-  "transform_rows": 2712,
+  "schedule_rows": 36,
+  "statcast_last_fetch": "2026-09-28T16:50:53.514128+00:00",
+  "report_last_run": "2026-09-28T16:51:14.783510+00:00",
+  "transform_rows": 3075,
   "cats_losing": 0,
-  "last_full_run": "2026-06-17T12:02:32.382414+00:00",
-  "statcast_rows": 515,
-  "trades_last_run": "2026-06-17T12:03:05.191121+00:00",
+  "last_full_run": "2026-09-28T16:50:05.745623+00:00",
+  "statcast_rows": 539,
+  "trades_last_run": "2026-09-28T16:51:22.449071+00:00",
   "games_settled": {
-    "date": "2026-06-16",
+    "date": "2026-09-27",
     "games": 15,
-    "final": 14,
-    "incomplete": [
-      "SF@ATL (Suspended)"
-    ],
-    "last_game": "TB@LAD",
-    "all_settled": false
+    "final": 15,
+    "incomplete": [],
+    "last_game": "CLE@KC",
+    "all_settled": true
   },
   "espn_update": {
-    "standings_update": "2026-06-17T09:21:26.262000+00:00",
-    "waiver_last_execution": "2026-06-17T09:21:26.076000+00:00",
-    "scoring_period": 85,
-    "checked_at": "2026-06-17T12:02:48.127538+00:00"
-  }
+    "standings_update": "2026-09-28T09:10:18.916000+00:00",
+    "waiver_last_execution": "2026-09-27T08:23:24.714000+00:00",
+    "scoring_period": 188,
+    "checked_at": "2026-09-28T16:50:33.909729+00:00"
+  },
+  "crosswalk_heal": {
+    "resolved": 17,
+    "unresolved": 1
+  },
+  "health_overall": "ok",
+  "health_degraded": []
 }

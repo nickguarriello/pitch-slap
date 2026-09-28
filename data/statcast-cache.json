@@ -1,6 +1,7 @@
 {
-  "last_fetch_date": "2026-06-15",
-  "rows_written": 515,
-  "total_mlb": 1211,
-  "matched_espn": 515
+  "last_fetch_date": "2026-09-28",
+  "rows_written": 539,
+  "total_mlb": 1462,
+  "matched_espn": 539,
+  "savant_skipped": false
 }

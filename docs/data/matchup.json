@@ -1,64 +1,70 @@
 {
   "cat_states": {
     "R": {
-      "state": "WIN",
-      "my_val": 98.0,
-      "opp_val": 69.0,
-      "gap": 29.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "HR": {
-      "state": "WIN",
-      "my_val": 28.0,
-      "opp_val": 19.0,
-      "gap": 9.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "RBI": {
-      "state": "WIN",
-      "my_val": 105.0,
-      "opp_val": 68.0,
-      "gap": 37.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "SB": {
-      "state": "WIN",
-      "my_val": 21.0,
-      "opp_val": 12.0,
-      "gap": 9.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "OBP": {
-      "state": "WIN",
-      "my_val": 0.37945792,
-      "opp_val": 0.31319555,
-      "gap": 0.0663
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "K": {
-      "state": "LOSS",
-      "my_val": 73.0,
-      "opp_val": 91.0,
-      "gap": -18.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "QS": {
       "state": "TIE",
-      "my_val": 5.0,
-      "opp_val": 5.0,
+      "my_val": 0.0,
+      "opp_val": 0.0,
       "gap": 0.0
     },
     "ERA": {
-      "state": "FLOPPABLE",
-      "my_val": 3.55609756,
-      "opp_val": 3.65413534,
-      "gap": 0.098
+      "state": "TIE",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "WHIP": {
-      "state": "WIN",
-      "my_val": 1.12682927,
-      "opp_val": 1.34210526,
-      "gap": 0.2153
+      "state": "TIE",
+      "my_val": null,
+      "opp_val": null,
+      "gap": null,
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "SvHd": {
-      "state": "WIN",
-      "my_val": 13.0,
-      "opp_val": 9.0,
-      "gap": 4.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     }
   },
   "need_weights": {
@@ -69,73 +75,145 @@
     "OBP": 0.66,
     "K": 0.66,
     "QS": 0.66,
-    "ERA": 0.4,
+    "ERA": 0.1,
     "WHIP": 0.4,
     "SvHd": 0.2
   },
   "cat_records": {
     "ERA": {
-      "wins": 14,
+      "wins": 15,
       "losses": 8,
       "ties": 0,
-      "win_rate": 0.636
+      "win_rate": 0.652
     },
     "HR": {
-      "wins": 12,
+      "wins": 13,
       "losses": 9,
       "ties": 1,
-      "win_rate": 0.545
+      "win_rate": 0.565
     },
     "K": {
       "wins": 11,
-      "losses": 11,
+      "losses": 12,
       "ties": 0,
-      "win_rate": 0.5
+      "win_rate": 0.478
     },
     "OBP": {
-      "wins": 12,
+      "wins": 13,
       "losses": 10,
       "ties": 0,
-      "win_rate": 0.545
+      "win_rate": 0.565
     },
     "QS": {
       "wins": 13,
       "losses": 7,
-      "ties": 2,
-      "win_rate": 0.591
+      "ties": 3,
+      "win_rate": 0.565
     },
     "R": {
-      "wins": 12,
+      "wins": 13,
       "losses": 9,
       "ties": 1,
-      "win_rate": 0.545
+      "win_rate": 0.565
     },
     "RBI": {
-      "wins": 13,
+      "wins": 14,
       "losses": 8,
       "ties": 1,
-      "win_rate": 0.591
+      "win_rate": 0.609
     },
     "SB": {
-      "wins": 13,
+      "wins": 14,
       "losses": 8,
       "ties": 1,
-      "win_rate": 0.591
+      "win_rate": 0.609
     },
     "SvHd": {
-      "wins": 18,
+      "wins": 19,
       "losses": 2,
       "ties": 2,
-      "win_rate": 0.818
+      "win_rate": 0.826
     },
     "WHIP": {
-      "wins": 13,
+      "wins": 14,
       "losses": 9,
       "ties": 0,
-      "win_rate": 0.591
+      "win_rate": 0.609
     }
   },
   "history": {
+    "23": [
+      {
+        "cat": "R",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 102.0,
+        "opp_val": 73.0
+      },
+      {
+        "cat": "HR",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 28.0,
+        "opp_val": 20.0
+      },
+      {
+        "cat": "RBI",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 106.0,
+        "opp_val": 73.0
+      },
+      {
+        "cat": "SB",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 21.0,
+        "opp_val": 12.0
+      },
+      {
+        "cat": "OBP",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 0.373,
+        "opp_val": 0.309
+      },
+      {
+        "cat": "K",
+        "result": "L",
+        "state": "LOSS",
+        "my_val": 77.0,
+        "opp_val": 93.0
+      },
+      {
+        "cat": "QS",
+        "result": "T",
+        "state": "TIE",
+        "my_val": 5.0,
+        "opp_val": 5.0
+      },
+      {
+        "cat": "ERA",
+        "result": "W",
+        "state": "FLOPPABLE",
+        "my_val": 3.455,
+        "opp_val": 3.633
+      },
+      {
+        "cat": "WHIP",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 1.095,
+        "opp_val": 1.375
+      },
+      {
+        "cat": "SvHd",
+        "result": "W",
+        "state": "WIN",
+        "my_val": 14.0,
+        "opp_val": 9.0
+      }
+    ],
     "22": [
       {
         "cat": "R",
@@ -1729,11 +1807,11 @@
       "losses": 10,
       "ties": 4,
       "pct": 0.412,
-      "cat_wins": 109,
-      "cat_losses": 96,
-      "cat_ties": 15,
+      "cat_wins": 111,
+      "cat_losses": 103,
+      "cat_ties": 16,
       "matchup_wins": 8,
-      "matchup_losses": 10,
+      "matchup_losses": 11,
       "matchup_ties": 4
     },
     "2": {
@@ -1743,10 +1821,10 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 90,
-      "cat_losses": 121,
+      "cat_wins": 97,
+      "cat_losses": 124,
       "cat_ties": 9,
-      "matchup_wins": 8,
+      "matchup_wins": 9,
       "matchup_losses": 10,
       "matchup_ties": 4
     },
@@ -1757,10 +1835,10 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 99,
-      "cat_losses": 106,
+      "cat_wins": 106,
+      "cat_losses": 109,
       "cat_ties": 15,
-      "matchup_wins": 8,
+      "matchup_wins": 9,
       "matchup_losses": 10,
       "matchup_ties": 4
     },
@@ -1771,11 +1849,11 @@
       "losses": 10,
       "ties": 2,
       "pct": 0.474,
-      "cat_wins": 101,
-      "cat_losses": 109,
+      "cat_wins": 104,
+      "cat_losses": 116,
       "cat_ties": 10,
       "matchup_wins": 9,
-      "matchup_losses": 11,
+      "matchup_losses": 12,
       "matchup_ties": 2
     },
     "5": {
@@ -1785,10 +1863,10 @@
       "losses": 11,
       "ties": 2,
       "pct": 0.421,
-      "cat_wins": 107,
-      "cat_losses": 106,
-      "cat_ties": 7,
-      "matchup_wins": 8,
+      "cat_wins": 114,
+      "cat_losses": 108,
+      "cat_ties": 8,
+      "matchup_wins": 9,
       "matchup_losses": 11,
       "matchup_ties": 3
     },
@@ -1799,11 +1877,11 @@
       "losses": 12,
       "ties": 4,
       "pct": 0.294,
-      "cat_wins": 80,
-      "cat_losses": 126,
+      "cat_wins": 83,
+      "cat_losses": 133,
       "cat_ties": 14,
       "matchup_wins": 5,
-      "matchup_losses": 12,
+      "matchup_losses": 13,
       "matchup_ties": 5
     },
     "7": {
@@ -1813,11 +1891,11 @@
       "losses": 6,
       "ties": 0,
       "pct": 0.714,
-      "cat_wins": 119,
-      "cat_losses": 91,
-      "cat_ties": 10,
+      "cat_wins": 120,
+      "cat_losses": 99,
+      "cat_ties": 11,
       "matchup_wins": 16,
-      "matchup_losses": 6,
+      "matchup_losses": 7,
       "matchup_ties": 0
     },
     "8": {
@@ -1827,11 +1905,11 @@
       "losses": 10,
       "ties": 4,
       "pct": 0.412,
-      "cat_wins": 109,
-      "cat_losses": 96,
-      "cat_ties": 15,
+      "cat_wins": 111,
+      "cat_losses": 103,
+      "cat_ties": 16,
       "matchup_wins": 8,
-      "matchup_losses": 10,
+      "matchup_losses": 11,
       "matchup_ties": 4
     },
     "9": {
@@ -1841,10 +1919,10 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 90,
-      "cat_losses": 121,
+      "cat_wins": 97,
+      "cat_losses": 124,
       "cat_ties": 9,
-      "matchup_wins": 8,
+      "matchup_wins": 9,
       "matchup_losses": 10,
       "matchup_ties": 4
     },
@@ -1855,10 +1933,10 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 99,
-      "cat_losses": 106,
+      "cat_wins": 106,
+      "cat_losses": 109,
       "cat_ties": 15,
-      "matchup_wins": 8,
+      "matchup_wins": 9,
       "matchup_losses": 10,
       "matchup_ties": 4
     },
@@ -1869,11 +1947,11 @@
       "losses": 10,
       "ties": 2,
       "pct": 0.474,
-      "cat_wins": 101,
-      "cat_losses": 109,
+      "cat_wins": 104,
+      "cat_losses": 116,
       "cat_ties": 10,
       "matchup_wins": 9,
-      "matchup_losses": 11,
+      "matchup_losses": 12,
       "matchup_ties": 2
     },
     "12": {
@@ -1883,10 +1961,10 @@
       "losses": 11,
       "ties": 2,
       "pct": 0.421,
-      "cat_wins": 107,
-      "cat_losses": 106,
-      "cat_ties": 7,
-      "matchup_wins": 8,
+      "cat_wins": 114,
+      "cat_losses": 108,
+      "cat_ties": 8,
+      "matchup_wins": 9,
       "matchup_losses": 11,
       "matchup_ties": 3
     },
@@ -1897,11 +1975,11 @@
       "losses": 12,
       "ties": 4,
       "pct": 0.294,
-      "cat_wins": 80,
-      "cat_losses": 126,
+      "cat_wins": 83,
+      "cat_losses": 133,
       "cat_ties": 14,
       "matchup_wins": 5,
-      "matchup_losses": 12,
+      "matchup_losses": 13,
       "matchup_ties": 5
     },
     "14": {
@@ -1911,11 +1989,11 @@
       "losses": 6,
       "ties": 0,
       "pct": 0.714,
-      "cat_wins": 119,
-      "cat_losses": 91,
-      "cat_ties": 10,
+      "cat_wins": 120,
+      "cat_losses": 99,
+      "cat_ties": 11,
       "matchup_wins": 16,
-      "matchup_losses": 6,
+      "matchup_losses": 7,
       "matchup_ties": 0
     },
     "15": {
@@ -1925,11 +2003,11 @@
       "losses": 10,
       "ties": 4,
       "pct": 0.412,
-      "cat_wins": 109,
-      "cat_losses": 96,
-      "cat_ties": 15,
+      "cat_wins": 111,
+      "cat_losses": 103,
+      "cat_ties": 16,
       "matchup_wins": 8,
-      "matchup_losses": 10,
+      "matchup_losses": 11,
       "matchup_ties": 4
     },
     "16": {
@@ -1939,10 +2017,10 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 90,
-      "cat_losses": 121,
+      "cat_wins": 97,
+      "cat_losses": 124,
       "cat_ties": 9,
-      "matchup_wins": 8,
+      "matchup_wins": 9,
       "matchup_losses": 10,
       "matchup_ties": 4
     },
@@ -1953,10 +2031,10 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 99,
-      "cat_losses": 106,
+      "cat_wins": 106,
+      "cat_losses": 109,
       "cat_ties": 15,
-      "matchup_wins": 8,
+      "matchup_wins": 9,
       "matchup_losses": 10,
       "matchup_ties": 4
     },
@@ -1967,11 +2045,11 @@
       "losses": 10,
       "ties": 2,
       "pct": 0.474,
-      "cat_wins": 101,
-      "cat_losses": 109,
+      "cat_wins": 104,
+      "cat_losses": 116,
       "cat_ties": 10,
       "matchup_wins": 9,
-      "matchup_losses": 11,
+      "matchup_losses": 12,
       "matchup_ties": 2
     },
     "19": {
@@ -1981,10 +2059,10 @@
       "losses": 11,
       "ties": 2,
       "pct": 0.421,
-      "cat_wins": 107,
-      "cat_losses": 106,
-      "cat_ties": 7,
-      "matchup_wins": 8,
+      "cat_wins": 114,
+      "cat_losses": 108,
+      "cat_ties": 8,
+      "matchup_wins": 9,
       "matchup_losses": 11,
       "matchup_ties": 3
     },
@@ -1995,11 +2073,11 @@
       "losses": 12,
       "ties": 4,
       "pct": 0.294,
-      "cat_wins": 80,
-      "cat_losses": 126,
+      "cat_wins": 83,
+      "cat_losses": 133,
       "cat_ties": 14,
       "matchup_wins": 5,
-      "matchup_losses": 12,
+      "matchup_losses": 13,
       "matchup_ties": 5
     },
     "21": {
@@ -2009,11 +2087,11 @@
       "losses": 6,
       "ties": 0,
       "pct": 0.714,
-      "cat_wins": 119,
-      "cat_losses": 91,
-      "cat_ties": 10,
+      "cat_wins": 120,
+      "cat_losses": 99,
+      "cat_ties": 11,
       "matchup_wins": 16,
-      "matchup_losses": 6,
+      "matchup_losses": 7,
       "matchup_ties": 0
     },
     "22": {
@@ -2023,21 +2101,35 @@
       "losses": 9,
       "ties": 4,
       "pct": 0.471,
-      "cat_wins": 90,
-      "cat_losses": 121,
+      "cat_wins": 97,
+      "cat_losses": 124,
       "cat_ties": 9,
-      "matchup_wins": 8,
+      "matchup_wins": 9,
       "matchup_losses": 10,
       "matchup_ties": 4
+    },
+    "23": {
+      "name": "Lunch",
+      "abbrev": "LCH",
+      "wins": 15,
+      "losses": 6,
+      "ties": 0,
+      "pct": 0.714,
+      "cat_wins": 120,
+      "cat_losses": 99,
+      "cat_ties": 11,
+      "matchup_wins": 16,
+      "matchup_losses": 7,
+      "matchup_ties": 0
     }
   },
-  "current_opponent_name": "Lunch",
-  "current_opponent_abbrev": "LCH",
+  "current_opponent_name": null,
+  "current_opponent_abbrev": null,
   "constraints": {
-    "acquisitions_used": 1,
-    "acquisitions_remaining": 6,
-    "ip_accumulated": 41.0,
-    "ip_remaining": 0.0,
+    "acquisitions_used": 0,
+    "acquisitions_remaining": 7,
+    "ip_accumulated": 0.0,
+    "ip_remaining": 15.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,

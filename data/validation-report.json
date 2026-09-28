@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-06-17T12:02:58.898848+00:00",
+  "run_ts": "2026-09-28T16:51:14.623417+00:00",
   "overall": "warn",
   "checks": [
     {
@@ -65,8 +65,8 @@
     {
       "check": "completeness.my_roster",
       "status": "pass",
-      "detail": "32 players on roster",
-      "row_count": 32
+      "detail": "31 players on roster",
+      "row_count": 31
     },
     {
       "check": "completeness.fa_pool",
@@ -77,32 +77,32 @@
     {
       "check": "completeness.statcast",
       "status": "pass",
-      "detail": "515 players with Statcast data",
-      "row_count": 515
+      "detail": "539 players with Statcast data",
+      "row_count": 539
     },
     {
       "check": "completeness.fact_player_stats",
       "status": "pass",
-      "detail": "2712 rows across 6 windows",
-      "row_count": 2712
+      "detail": "3075 rows across 7 windows",
+      "row_count": 3075
     },
     {
       "check": "completeness.schedule",
       "status": "pass",
-      "detail": "190 upcoming team-game slots",
-      "row_count": 190
+      "detail": "36 upcoming team-game slots",
+      "row_count": 36
     },
     {
       "check": "completeness.transform_coverage",
       "status": "pass",
-      "detail": "284/254 (112%) rostered players have season stats",
-      "row_count": 284
+      "detail": "321/252 (127%) rostered players have season stats",
+      "row_count": 321
     },
     {
       "check": "crosswalk.integrity",
       "status": "warn",
-      "detail": "3 rostered players without MLB ID \u2014 check data-gap section",
-      "row_count": 3
+      "detail": "1 rostered players without MLB ID \u2014 check data-gap section",
+      "row_count": 1
     },
     {
       "check": "ground_truth.era",
@@ -123,6 +123,12 @@
       "row_count": 0
     },
     {
+      "check": "ground_truth.espn",
+      "status": "pass",
+      "detail": "351 season stat values match ESPN within tolerance (1 outlier(s))",
+      "row_count": 0
+    },
+    {
       "check": "staleness.espn",
       "status": "pass",
       "detail": "ESPN data is 0.0h old",
@@ -131,45 +137,47 @@
     {
       "check": "staleness.statcast",
       "status": "pass",
-      "detail": "Statcast data is 36.1h old",
+      "detail": "Statcast data is 0.0h old",
       "row_count": 0
     }
   ],
   "meta": {
-    "espn_last_fetch": "2026-06-17T12:02:47.607936+00:00",
+    "espn_last_fetch": "2026-09-28T16:50:33.428578+00:00",
     "espn_status": "ok",
-    "espn_rows": 554,
-    "mlb_last_fetch": "2026-06-17T12:02:49.544946+00:00",
-    "transform_last_run": "2026-06-17T12:02:58.880567+00:00",
-    "validate_last_run": "2026-06-17T11:59:31.200649+00:00",
+    "espn_rows": 552,
+    "mlb_last_fetch": "2026-09-28T16:50:47.269467+00:00",
+    "transform_last_run": "2026-09-28T16:51:14.593846+00:00",
+    "validate_last_run": "2026-06-17T12:02:58.900299+00:00",
     "validate_overall": "warn",
-    "evaluate_last_run": "2026-06-17T11:59:31.229466+00:00",
+    "evaluate_last_run": "2026-06-17T12:02:58.922632+00:00",
     "cats_winning": 1,
     "last_light_run": "2026-06-17T11:58:57.391981+00:00",
-    "last_run_mode": "light",
-    "schedule_rows": 190,
-    "statcast_last_fetch": "2026-06-15T23:55:54.730796+00:00",
-    "report_last_run": "2026-06-17T11:59:31.365662+00:00",
-    "transform_rows": 2712,
-    "cats_losing": 1,
-    "last_full_run": "2026-06-16T23:39:05.484655+00:00",
-    "statcast_rows": 515,
-    "trades_last_run": "2026-06-17T11:59:37.486843+00:00",
+    "last_run_mode": "full",
+    "schedule_rows": 36,
+    "statcast_last_fetch": "2026-09-28T16:50:53.514128+00:00",
+    "report_last_run": "2026-06-17T12:02:59.050769+00:00",
+    "transform_rows": 3075,
+    "cats_losing": 0,
+    "last_full_run": "2026-06-17T12:02:32.382414+00:00",
+    "statcast_rows": 539,
+    "trades_last_run": "2026-06-17T12:03:05.191121+00:00",
     "games_settled": {
-      "date": "2026-06-16",
+      "date": "2026-09-27",
       "games": 15,
-      "final": 14,
-      "incomplete": [
-        "SF@ATL (Suspended)"
-      ],
-      "last_game": "TB@LAD",
-      "all_settled": false
+      "final": 15,
+      "incomplete": [],
+      "last_game": "CLE@KC",
+      "all_settled": true
     },
     "espn_update": {
-      "standings_update": "2026-06-17T09:21:26.262000+00:00",
-      "waiver_last_execution": "2026-06-17T09:21:26.076000+00:00",
-      "scoring_period": 85,
-      "checked_at": "2026-06-17T12:02:48.127538+00:00"
+      "standings_update": "2026-09-28T09:10:18.916000+00:00",
+      "waiver_last_execution": "2026-09-27T08:23:24.714000+00:00",
+      "scoring_period": 188,
+      "checked_at": "2026-09-28T16:50:33.909729+00:00"
+    },
+    "crosswalk_heal": {
+      "resolved": 17,
+      "unresolved": 1
     }
   }
 }

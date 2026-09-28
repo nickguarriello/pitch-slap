@@ -1,42 +1,42 @@
 {
-  "run_ts": "2026-06-17T12:02:58.919464+00:00",
-  "as_of": "2026-06-17",
+  "run_ts": "2026-09-28T16:51:14.650064+00:00",
+  "as_of": "2026-09-28",
   "cat_states": {
     "R": {
-      "state": "FLOPPABLE",
-      "my_val": 11.0,
-      "opp_val": 6.0,
-      "gap": 5.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "HR": {
-      "state": "FLOPPABLE",
-      "my_val": 5.0,
-      "opp_val": 3.0,
-      "gap": 2.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "RBI": {
-      "state": "FLOPPABLE",
-      "my_val": 13.0,
-      "opp_val": 7.0,
-      "gap": 6.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "SB": {
-      "state": "FLOPPABLE",
-      "my_val": 2.0,
+      "state": "TIE",
+      "my_val": 0.0,
       "opp_val": 0.0,
-      "gap": 2.0
+      "gap": 0.0
     },
     "OBP": {
-      "state": "WIN",
-      "my_val": 0.32653061,
-      "opp_val": 0.29166667,
-      "gap": 0.0349
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "K": {
-      "state": "FLIPPABLE",
-      "my_val": 3.0,
-      "opp_val": 11.0,
-      "gap": -8.0
+      "state": "TIE",
+      "my_val": 0.0,
+      "opp_val": 0.0,
+      "gap": 0.0
     },
     "QS": {
       "state": "TIE",
@@ -46,180 +46,80 @@
     },
     "ERA": {
       "state": "TIE",
-      "my_val": 6.75,
-      "opp_val": 9.72,
+      "my_val": Infinity,
+      "opp_val": Infinity,
       "gap": null,
-      "ip_note": "You 5.3/15 IP \u00b7 Opp 14.3/15 IP",
-      "my_ip_week": 5.333333333333333,
-      "opp_ip_week": 14.333333333333334
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "WHIP": {
       "state": "TIE",
-      "my_val": 1.6875,
-      "opp_val": 2.16,
+      "my_val": Infinity,
+      "opp_val": Infinity,
       "gap": null,
-      "ip_note": "You 5.3/15 IP \u00b7 Opp 14.3/15 IP",
-      "my_ip_week": 5.333333333333333,
-      "opp_ip_week": 14.333333333333334
+      "ip_note": "You 0.0/15 IP \u00b7 Opp 0.0/15 IP",
+      "my_ip_week": 0.0,
+      "opp_ip_week": 0.0
     },
     "SvHd": {
-      "state": "FLOPPABLE",
-      "my_val": 1.0,
+      "state": "TIE",
+      "my_val": 0.0,
       "opp_val": 0.0,
-      "gap": 1.0
+      "gap": 0.0
     }
   },
   "need_weights": {
-    "R": 0.44,
-    "HR": 0.49,
-    "RBI": 0.53,
-    "SB": 0.44,
-    "OBP": 0.7,
-    "K": 0.61,
-    "QS": 0.61,
-    "ERA": 0.44,
+    "R": 0.4,
+    "HR": 0.4,
+    "RBI": 0.44,
+    "SB": 0.4,
+    "OBP": 0.66,
+    "K": 0.66,
+    "QS": 0.66,
+    "ERA": 0.1,
     "WHIP": 0.4,
-    "SvHd": 0.4
+    "SvHd": 0.2
   },
   "buy_low": [
     {
-      "player_id": "30951",
-      "name": "Bryce Harper",
+      "player_id": "32512",
+      "name": "Ketel Marte",
       "team": "",
-      "espn_team_id": 8,
-      "rostered": true,
-      "eligible_slots": "1B,CI,UTIL,BN,IL",
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.258 below floor (0.260)",
-        "OBP (0.360) lags xwOBA (0.406)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.36,
-        "xwoba": 0.40573885669446974,
-        "babip": 0.258,
-        "sprint_speed": 27.1
-      }
-    },
-    {
-      "player_id": "41034",
-      "name": "Mark Vientos",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "3B,CI,UTIL,BN,IL,1B",
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.245 below floor (0.260)",
-        "OBP (0.250) lags xwOBA (0.310)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.25,
-        "xwoba": 0.3101984904362605,
-        "babip": 0.245,
-        "sprint_speed": 25.7
-      }
-    },
-    {
-      "player_id": "32177",
-      "name": "J.T. Realmuto",
-      "team": "",
-      "espn_team_id": 6,
-      "rostered": true,
-      "eligible_slots": "C,UTIL,BN,IL",
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.234 below floor (0.240)",
-        "OBP (0.286) lags xwOBA (0.320)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.286,
-        "xwoba": 0.31978471400374076,
-        "babip": 0.234,
-        "sprint_speed": 28.2
-      }
-    },
-    {
-      "player_id": "33039",
-      "name": "Mookie Betts",
-      "team": "",
-      "espn_team_id": 1,
-      "rostered": true,
-      "eligible_slots": "SS,MI,UTIL,BN,IL",
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.189 below floor (0.260)",
-        "OBP (0.262) lags xwOBA (0.332)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.262,
-        "xwoba": 0.3323423255304372,
-        "babip": 0.189,
-        "sprint_speed": 26.7
-      }
-    },
-    {
-      "player_id": "40926",
-      "name": "Brent Rooker",
-      "team": "",
-      "espn_team_id": 5,
-      "rostered": true,
-      "eligible_slots": "OF,UTIL,BN,IL",
-      "flag_type": "buy_low_hitter",
-      "reasons": [
-        "BABIP 0.243 below floor (0.260)",
-        "OBP (0.281) lags xwOBA (0.312)"
-      ],
-      "score": 0.7,
-      "stats": {
-        "obp": 0.281,
-        "xwoba": 0.3122947962597163,
-        "babip": 0.243,
-        "sprint_speed": 27.6
-      }
-    },
-    {
-      "player_id": "5080633",
-      "name": "Jackson Holliday",
-      "team": "",
-      "espn_team_id": 5,
+      "espn_team_id": 2,
       "rostered": true,
       "eligible_slots": "2B,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.234 below floor (0.240)",
-        "OBP (0.271) lags xwOBA (0.329)"
+        "BABIP 0.257 below floor (0.260)",
+        "OBP (0.316) lags xwOBA (0.349)"
       ],
-      "score": 0.7,
+      "score": 0.69,
       "stats": {
-        "obp": 0.271,
-        "xwoba": 0.3290620664270913,
-        "babip": 0.234,
-        "sprint_speed": 28.0
+        "obp": 0.316,
+        "xwoba": 0.3486146307610846,
+        "babip": 0.257,
+        "sprint_speed": 26.8
       }
     },
     {
-      "player_id": "4719511",
-      "name": "Dylan Crews",
+      "player_id": "31127",
+      "name": "Salvador Perez",
       "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "OF,UTIL,BN,IL",
+      "espn_team_id": 9,
+      "rostered": true,
+      "eligible_slots": "C,1B,CI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.188 below floor (0.240)",
-        "OBP (0.229) lags xwOBA (0.330)"
+        "BABIP 0.251 below floor (0.260)",
+        "OBP (0.274) lags xwOBA (0.316)"
       ],
-      "score": 0.7,
+      "score": 0.69,
       "stats": {
-        "obp": 0.229,
-        "xwoba": 0.3299669287670618,
-        "babip": 0.188,
-        "sprint_speed": 29.3
+        "obp": 0.274,
+        "xwoba": 0.3163955786603823,
+        "babip": 0.251,
+        "sprint_speed": 23.7
       }
     },
     {
@@ -231,155 +131,175 @@
       "eligible_slots": "SS,MI,UTIL,BN,IL",
       "flag_type": "buy_low_hitter",
       "reasons": [
-        "BABIP 0.207 below floor (0.260)",
-        "OBP (0.284) lags xwOBA (0.336)"
+        "BABIP 0.254 below floor (0.260)",
+        "OBP (0.312) lags xwOBA (0.350)"
       ],
-      "score": 0.7,
+      "score": 0.69,
       "stats": {
-        "obp": 0.284,
-        "xwoba": 0.3355768789159189,
-        "babip": 0.207,
-        "sprint_speed": 25.0
+        "obp": 0.312,
+        "xwoba": 0.349683267098886,
+        "babip": 0.254,
+        "sprint_speed": 25.1
       }
     },
     {
-      "player_id": "40917",
-      "name": "Adrian Morejon",
+      "player_id": "4917646",
+      "name": "Samuel Basallo",
       "team": "",
       "espn_team_id": null,
       "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
+      "eligible_slots": "C,UTIL,BN,IL,1B,CI",
+      "flag_type": "buy_low_hitter",
       "reasons": [
-        "ERA (4.00) >> xFIP (2.15), gap=1.85",
-        "ERA (4.00) >> SIERA (2.04), gap=1.96"
+        "BABIP 0.259 below floor (0.260)",
+        "OBP (0.291) lags xwOBA (0.318)"
       ],
-      "score": 0.68,
+      "score": 0.69,
       "stats": {
-        "era": 4.0,
-        "xfip": 2.1496353462658657,
-        "siera": 2.044883227226438,
-        "ip": 36.0
+        "obp": 0.291,
+        "xwoba": 0.3183083642887164,
+        "babip": 0.259,
+        "sprint_speed": 24.7
       }
     },
     {
-      "player_id": "40080",
-      "name": "Trevor Megill",
+      "player_id": "34995",
+      "name": "Trent Grisham",
       "team": "",
-      "espn_team_id": 8,
+      "espn_team_id": 7,
+      "rostered": true,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.222 below floor (0.260)",
+        "OBP (0.308) lags xwOBA (0.337)"
+      ],
+      "score": 0.69,
+      "stats": {
+        "obp": 0.308,
+        "xwoba": 0.33729711508849847,
+        "babip": 0.222,
+        "sprint_speed": 26.8
+      }
+    },
+    {
+      "player_id": "32177",
+      "name": "J.T. Realmuto",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": "C,UTIL,BN,IL",
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.239 below floor (0.240)",
+        "OBP (0.283) lags xwOBA (0.317)"
+      ],
+      "score": 0.69,
+      "stats": {
+        "obp": 0.283,
+        "xwoba": 0.3169388637747816,
+        "babip": 0.239,
+        "sprint_speed": 28.1
+      }
+    },
+    {
+      "player_id": "40926",
+      "name": "Brent Rooker",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "flag_type": "buy_low_hitter",
+      "reasons": [
+        "BABIP 0.243 below floor (0.260)",
+        "OBP (0.281) lags xwOBA (0.312)"
+      ],
+      "score": 0.69,
+      "stats": {
+        "obp": 0.281,
+        "xwoba": 0.3120325647219263,
+        "babip": 0.243,
+        "sprint_speed": 27.6
+      }
+    },
+    {
+      "player_id": "4345076",
+      "name": "Gavin Williams",
+      "team": "",
+      "espn_team_id": 5,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.15) >> xFIP (3.06), gap=1.09",
-        "ERA (4.15) >> SIERA (2.62), gap=1.53"
+        "ERA (3.76) >> xFIP (2.85), gap=0.91",
+        "ERA (3.76) >> SIERA (2.95), gap=0.81"
       ],
-      "score": 0.68,
+      "score": 0.69,
       "stats": {
-        "era": 4.15,
-        "xfip": 3.0585315892100335,
-        "siera": 2.62059830457105,
-        "ip": 26.0
+        "era": 3.76,
+        "xfip": 2.8518930956829265,
+        "siera": 2.9518006590355235,
+        "ip": 184.33333333333334
       }
     },
     {
-      "player_id": "39667",
-      "name": "Jesus Luzardo",
+      "player_id": "4683375",
+      "name": "Kyle Harrison",
       "team": "",
-      "espn_team_id": 2,
+      "espn_team_id": 9,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.20) >> xFIP (3.17), gap=1.03",
-        "ERA (4.20) >> SIERA (3.41), gap=0.79"
+        "ERA (4.20) >> xFIP (3.37), gap=0.83",
+        "ERA (4.20) >> SIERA (3.39), gap=0.81"
       ],
-      "score": 0.68,
+      "score": 0.69,
       "stats": {
         "era": 4.2,
-        "xfip": 3.174654892534483,
-        "siera": 3.4103558693767058,
-        "ip": 85.66666666666667
+        "xfip": 3.370524194731249,
+        "siera": 3.3863349769224573,
+        "ip": 115.66666666666667
       }
     },
     {
-      "player_id": "41178",
-      "name": "Ryan Weathers",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.36) >> xFIP (3.42), gap=0.94",
-        "ERA (4.36) >> SIERA (3.45), gap=0.91"
-      ],
-      "score": 0.68,
-      "stats": {
-        "era": 4.36,
-        "xfip": 3.42134397486162,
-        "siera": 3.445105495889291,
-        "ip": 74.33333333333333
-      }
-    },
-    {
-      "player_id": "4417806",
-      "name": "Emmet Sheehan",
+      "player_id": "32796",
+      "name": "Jacob deGrom",
       "team": "",
       "espn_team_id": 6,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.76) >> xFIP (3.61), gap=1.15",
-        "ERA (4.76) >> SIERA (3.41), gap=1.35"
+        "ERA (4.20) >> xFIP (3.14), gap=1.06",
+        "ERA (4.20) >> SIERA (3.16), gap=1.04"
       ],
-      "score": 0.68,
+      "score": 0.69,
       "stats": {
-        "era": 4.76,
-        "xfip": 3.611941401440872,
-        "siera": 3.413898777728475,
-        "ip": 64.33333333333333
+        "era": 4.2,
+        "xfip": 3.1390305749998366,
+        "siera": 3.155658859961314,
+        "ip": 162.66666666666666
       }
     },
     {
-      "player_id": "5134638",
-      "name": "Roki Sasaki",
+      "player_id": "40939",
+      "name": "Andres Munoz",
       "team": "",
-      "espn_team_id": 3,
+      "espn_team_id": 5,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (4.76) >> xFIP (4.01), gap=0.75",
-        "ERA (4.76) >> SIERA (3.97), gap=0.79"
+        "ERA (4.24) >> xFIP (2.33), gap=1.91",
+        "ERA (4.24) >> SIERA (2.41), gap=1.83"
       ],
-      "score": 0.68,
+      "score": 0.69,
       "stats": {
-        "era": 4.76,
-        "xfip": 4.008746008102509,
-        "siera": 3.9702828922141147,
-        "ip": 62.333333333333336
-      }
-    },
-    {
-      "player_id": "33244",
-      "name": "Sean Manaea",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (4.78) >> xFIP (4.03), gap=0.75",
-        "ERA (4.78) >> SIERA (3.59), gap=1.19"
-      ],
-      "score": 0.68,
-      "stats": {
-        "era": 4.78,
-        "xfip": 4.025474227616201,
-        "siera": 3.5900186603783046,
-        "ip": 49.0
+        "era": 4.24,
+        "xfip": 2.3312891482788984,
+        "siera": 2.408462234847211,
+        "ip": 57.333333333333336
       }
     },
     {
@@ -391,137 +311,217 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.01) >> xFIP (3.00), gap=2.01",
-        "ERA (5.01) >> SIERA (2.98), gap=2.03"
+        "ERA (4.43) >> xFIP (3.61), gap=0.82",
+        "ERA (4.43) >> SIERA (3.51), gap=0.92"
       ],
-      "score": 0.68,
+      "score": 0.69,
       "stats": {
-        "era": 5.01,
-        "xfip": 2.9982693267129252,
-        "siera": 2.975218870447728,
-        "ip": 23.333333333333332
+        "era": 4.43,
+        "xfip": 3.6147958512074796,
+        "siera": 3.508967426925673,
+        "ip": 40.666666666666664
       }
     },
     {
-      "player_id": "41337",
-      "name": "Camilo Doval",
+      "player_id": "32667",
+      "name": "Kevin Gausman",
       "team": "",
-      "espn_team_id": 7,
+      "espn_team_id": 8,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.06) >> xFIP (2.95), gap=2.11",
-        "ERA (5.06) >> SIERA (2.83), gap=2.23"
+        "ERA (4.51) >> xFIP (3.58), gap=0.93",
+        "ERA (4.51) >> SIERA (3.67), gap=0.84"
       ],
-      "score": 0.68,
+      "score": 0.69,
       "stats": {
-        "era": 5.06,
-        "xfip": 2.954437352873379,
-        "siera": 2.834600676990904,
-        "ip": 26.666666666666668
+        "era": 4.51,
+        "xfip": 3.5821200241875712,
+        "siera": 3.6656940795297484,
+        "ip": 177.66666666666666
       }
     },
     {
-      "player_id": "35397",
-      "name": "Jeffrey Springs",
+      "player_id": "4417806",
+      "name": "Emmet Sheehan",
       "team": "",
       "espn_team_id": null,
       "rostered": false,
       "eligible_slots": "P,BN,IL",
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.13) >> xFIP (4.37), gap=0.76",
-        "ERA (5.13) >> SIERA (4.28), gap=0.85"
+        "ERA (4.57) >> xFIP (3.73), gap=0.84",
+        "ERA (4.57) >> SIERA (3.42), gap=1.15"
       ],
-      "score": 0.68,
+      "score": 0.69,
       "stats": {
-        "era": 5.13,
-        "xfip": 4.368666855538193,
-        "siera": 4.2833249101433335,
-        "ip": 79.0
+        "era": 4.57,
+        "xfip": 3.7272969455199956,
+        "siera": 3.4201611130694305,
+        "ip": 112.33333333333333
       }
     },
     {
-      "player_id": "40944",
-      "name": "Edward Cabrera",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "buy_low_pitcher",
-      "reasons": [
-        "ERA (5.21) >> xFIP (3.88), gap=1.33",
-        "ERA (5.21) >> SIERA (4.15), gap=1.06"
-      ],
-      "score": 0.68,
-      "stats": {
-        "era": 5.21,
-        "xfip": 3.8820760796097322,
-        "siera": 4.1513460312736346,
-        "ip": 67.33333333333333
-      }
-    },
-    {
-      "player_id": "41290",
-      "name": "Jake Irvin",
+      "player_id": "36429",
+      "name": "Garrett Cleavinger",
       "team": "",
       "espn_team_id": null,
       "rostered": false,
       "eligible_slots": null,
       "flag_type": "buy_low_pitcher",
       "reasons": [
-        "ERA (5.23) >> xFIP (4.17), gap=1.06",
-        "ERA (5.23) >> SIERA (3.91), gap=1.32"
+        "ERA (4.79) >> xFIP (3.58), gap=1.21",
+        "ERA (4.79) >> SIERA (3.43), gap=1.36"
       ],
-      "score": 0.68,
+      "score": 0.69,
+      "stats": {
+        "era": 4.79,
+        "xfip": 3.581353185156853,
+        "siera": 3.4338552212537854,
+        "ip": 41.333333333333336
+      }
+    },
+    {
+      "player_id": "4620001",
+      "name": "Connor Prielipp",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.87) >> xFIP (3.94), gap=0.93",
+        "ERA (4.87) >> SIERA (3.91), gap=0.96"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 4.87,
+        "xfip": 3.939173770436559,
+        "siera": 3.9144101725076323,
+        "ip": 125.66666666666667
+      }
+    },
+    {
+      "player_id": "4791597",
+      "name": "Zebby Matthews",
+      "team": "",
+      "espn_team_id": 2,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.90) >> xFIP (3.99), gap=0.91",
+        "ERA (4.90) >> SIERA (4.10), gap=0.80"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 4.9,
+        "xfip": 3.9902465926249704,
+        "siera": 4.101914549105874,
+        "ip": 130.33333333333334
+      }
+    },
+    {
+      "player_id": "4875969",
+      "name": "Caleb Kilian",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": null,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (4.91) >> xFIP (3.78), gap=1.13",
+        "ERA (4.91) >> SIERA (3.52), gap=1.39"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 4.91,
+        "xfip": 3.7824295561892822,
+        "siera": 3.5190747393375195,
+        "ip": 47.666666666666664
+      }
+    },
+    {
+      "player_id": "5201821",
+      "name": "Bryan King",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": null,
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.19) >> xFIP (4.30), gap=0.89",
+        "ERA (5.19) >> SIERA (4.03), gap=1.16"
+      ],
+      "score": 0.69,
+      "stats": {
+        "era": 5.19,
+        "xfip": 4.29699479389765,
+        "siera": 4.031737567188017,
+        "ip": 60.666666666666664
+      }
+    },
+    {
+      "player_id": "41173",
+      "name": "Matthew Liberatore",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "buy_low_pitcher",
+      "reasons": [
+        "ERA (5.23) >> xFIP (4.07), gap=1.16",
+        "ERA (5.23) >> SIERA (4.09), gap=1.14"
+      ],
+      "score": 0.69,
       "stats": {
         "era": 5.23,
-        "xfip": 4.170564822236689,
-        "siera": 3.9120757451630728,
-        "ip": 51.666666666666664
+        "xfip": 4.067306518170142,
+        "siera": 4.094223535482531,
+        "ip": 155.0
       }
     }
   ],
   "sell_high": [
     {
-      "player_id": "30442",
-      "name": "Aroldis Chapman",
+      "player_id": "32760",
+      "name": "Josh Hader",
       "team": "",
-      "espn_team_id": 9,
+      "espn_team_id": 6,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "sell_high_pitcher",
       "reasons": [
-        "ERA (0.44) << xFIP (2.99), gap=2.55",
-        "ERA (0.44) << SIERA (2.77), gap=2.33"
+        "ERA (1.01) << xFIP (3.23), gap=2.22",
+        "ERA (1.01) << SIERA (2.74), gap=1.73"
       ],
       "score": 0.8,
       "stats": {
-        "era": 0.44,
-        "xfip": 2.9892387243020373,
-        "siera": 2.770978421755963,
-        "ip": 20.666666666666668
+        "era": 1.01,
+        "xfip": 3.2342676237977352,
+        "siera": 2.7433171590479906,
+        "ip": 44.666666666666664
       }
     },
     {
       "player_id": "4148749",
       "name": "Robert Suarez",
       "team": "",
-      "espn_team_id": 5,
-      "rostered": true,
+      "espn_team_id": null,
+      "rostered": false,
       "eligible_slots": "P,BN,IL",
       "flag_type": "sell_high_pitcher",
       "reasons": [
-        "ERA (0.59) << xFIP (3.25), gap=2.66",
-        "ERA (0.59) << SIERA (3.15), gap=2.56"
+        "ERA (1.06) << xFIP (3.61), gap=2.55",
+        "ERA (1.06) << SIERA (3.56), gap=2.50"
       ],
       "score": 0.8,
       "stats": {
-        "era": 0.59,
-        "xfip": 3.2456595488932067,
-        "siera": 3.145906830159452,
-        "ip": 30.666666666666668
+        "era": 1.06,
+        "xfip": 3.610616402912371,
+        "siera": 3.557299790557933,
+        "ip": 34.0
       }
     },
     {
@@ -533,275 +533,55 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "sell_high_pitcher",
       "reasons": [
-        "ERA (0.92) << xFIP (2.12), gap=1.20",
-        "ERA (0.92) << SIERA (2.09), gap=1.17"
+        "ERA (1.27) << xFIP (2.39), gap=1.12",
+        "ERA (1.27) << SIERA (2.46), gap=1.19"
       ],
       "score": 0.8,
       "stats": {
-        "era": 0.92,
-        "xfip": 2.122286915526903,
-        "siera": 2.0875665123667413,
-        "ip": 39.0
+        "era": 1.27,
+        "xfip": 2.3886077634795795,
+        "siera": 2.4566403624449182,
+        "ip": 78.0
       }
     },
     {
-      "player_id": "39832",
-      "name": "Shohei Ohtani",
+      "player_id": "40884",
+      "name": "Bryan Baker",
       "team": "",
-      "espn_team_id": 7,
-      "rostered": true,
-      "eligible_slots": "UTIL,P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.06) << xFIP (3.34), gap=2.28",
-        "ERA (1.06) << SIERA (3.35), gap=2.29"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.06,
-        "xfip": 3.3429658665271367,
-        "siera": 3.3492595832249066,
-        "ip": 67.66666666666667
-      }
-    },
-    {
-      "player_id": "41455",
-      "name": "Dylan Lee",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.14) << xFIP (2.59), gap=1.45",
-        "ERA (1.14) << SIERA (2.08), gap=0.94"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.14,
-        "xfip": 2.589984899773187,
-        "siera": 2.082667189629089,
-        "ip": 31.666666666666668
-      }
-    },
-    {
-      "player_id": "33618",
-      "name": "Raisel Iglesias",
-      "team": "",
-      "espn_team_id": 1,
+      "espn_team_id": 2,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "sell_high_pitcher",
       "reasons": [
-        "ERA (1.16) << xFIP (3.01), gap=1.85",
-        "ERA (1.16) << SIERA (2.61), gap=1.45"
+        "ERA (1.44) << xFIP (3.81), gap=2.37",
+        "ERA (1.44) << SIERA (3.49), gap=2.05"
       ],
       "score": 0.8,
       "stats": {
-        "era": 1.16,
-        "xfip": 3.01445556375228,
-        "siera": 2.610833896995239,
-        "ip": 23.333333333333332
+        "era": 1.44,
+        "xfip": 3.8089006702844235,
+        "siera": 3.4870435603075007,
+        "ip": 62.333333333333336
       }
     },
     {
-      "player_id": "5080761",
-      "name": "Jacob Misiorowski",
+      "player_id": "39674",
+      "name": "Garrett Whitlock",
       "team": "",
-      "espn_team_id": 9,
+      "espn_team_id": 2,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "sell_high_pitcher",
       "reasons": [
-        "ERA (1.34) << xFIP (2.04), gap=0.70",
-        "ERA (1.34) << SIERA (2.13), gap=0.79"
+        "ERA (1.72) << xFIP (2.89), gap=1.17",
+        "ERA (1.72) << SIERA (2.57), gap=0.85"
       ],
       "score": 0.8,
       "stats": {
-        "era": 1.34,
-        "xfip": 2.0432288738502855,
-        "siera": 2.12923976252085,
-        "ip": 87.0
-      }
-    },
-    {
-      "player_id": "4654313",
-      "name": "Bryce Miller",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.54) << xFIP (2.99), gap=1.45",
-        "ERA (1.54) << SIERA (2.89), gap=1.35"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.54,
-        "xfip": 2.9940754660538267,
-        "siera": 2.8871910938312704,
-        "ip": 35.0
-      }
-    },
-    {
-      "player_id": "3210625",
-      "name": "Jacob Latz",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.62) << xFIP (3.27), gap=1.65",
-        "ERA (1.62) << SIERA (2.77), gap=1.15"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.62,
-        "xfip": 3.27279767705807,
-        "siera": 2.766251552144899,
-        "ip": 33.333333333333336
-      }
-    },
-    {
-      "player_id": "5194333",
-      "name": "Erik Sabrowski",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.71) << xFIP (2.65), gap=0.94",
-        "ERA (1.71) << SIERA (2.34), gap=0.63"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.71,
-        "xfip": 2.6530821446021333,
-        "siera": 2.340076675043104,
-        "ip": 21.0
-      }
-    },
-    {
-      "player_id": "41516",
-      "name": "Ben Brown",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.74) << xFIP (3.34), gap=1.60",
-        "ERA (1.74) << SIERA (3.45), gap=1.71"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.74,
-        "xfip": 3.3432882821400876,
-        "siera": 3.452582240099782,
-        "ip": 62.0
-      }
-    },
-    {
-      "player_id": "32145",
-      "name": "Jason Adam",
-      "team": "",
-      "espn_team_id": 8,
-      "rostered": true,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.78) << xFIP (4.63), gap=2.85",
-        "ERA (1.78) << SIERA (4.35), gap=2.57"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.78,
-        "xfip": 4.634227177821389,
-        "siera": 4.351299802976047,
-        "ip": 25.333333333333332
-      }
-    },
-    {
-      "player_id": "42359",
-      "name": "Cristopher Sanchez",
-      "team": "",
-      "espn_team_id": 7,
-      "rostered": true,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.82) << xFIP (2.41), gap=0.59",
-        "ERA (1.82) << SIERA (2.65), gap=0.83"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.82,
-        "xfip": 2.4108873560874153,
-        "siera": 2.6528680737598416,
-        "ip": 99.0
-      }
-    },
-    {
-      "player_id": "41382",
-      "name": "Rico Garcia",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.82) << xFIP (3.40), gap=1.58",
-        "ERA (1.82) << SIERA (3.06), gap=1.24"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.82,
-        "xfip": 3.4012632534400105,
-        "siera": 3.0636790914333063,
-        "ip": 29.666666666666668
-      }
-    },
-    {
-      "player_id": "5134581",
-      "name": "Cam Schlittler",
-      "team": "",
-      "espn_team_id": 5,
-      "rostered": true,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.82) << xFIP (3.01), gap=1.19",
-        "ERA (1.82) << SIERA (3.12), gap=1.30"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.82,
-        "xfip": 3.0138976390107297,
-        "siera": 3.1202282140640074,
-        "ip": 89.0
-      }
-    },
-    {
-      "player_id": "36056",
-      "name": "Jakob Junis",
-      "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "eligible_slots": "P,BN,IL",
-      "flag_type": "sell_high_pitcher",
-      "reasons": [
-        "ERA (1.84) << xFIP (3.95), gap=2.11",
-        "ERA (1.84) << SIERA (3.68), gap=1.84"
-      ],
-      "score": 0.8,
-      "stats": {
-        "era": 1.84,
-        "xfip": 3.950085007464426,
-        "siera": 3.6785294219299893,
-        "ip": 29.333333333333332
+        "era": 1.72,
+        "xfip": 2.8909971781797097,
+        "siera": 2.568020132664574,
+        "ip": 52.333333333333336
       }
     },
     {
@@ -813,152 +593,1325 @@
       "eligible_slots": "P,BN,IL",
       "flag_type": "sell_high_pitcher",
       "reasons": [
-        "ERA (1.85) << xFIP (3.56), gap=1.71",
-        "ERA (1.85) << SIERA (3.25), gap=1.40"
+        "ERA (1.77) << xFIP (4.12), gap=2.35",
+        "ERA (1.77) << SIERA (3.92), gap=2.15"
       ],
       "score": 0.8,
       "stats": {
-        "era": 1.85,
-        "xfip": 3.5620472186966916,
-        "siera": 3.2535041777578084,
-        "ip": 34.0
+        "era": 1.77,
+        "xfip": 4.115149926695987,
+        "siera": 3.921405320292991,
+        "ip": 71.0
       }
     },
     {
-      "player_id": "36543",
-      "name": "Kyle Finnegan",
+      "player_id": "39832",
+      "name": "Shohei Ohtani",
+      "team": "",
+      "espn_team_id": 7,
+      "rostered": true,
+      "eligible_slots": "UTIL,P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (1.79) << xFIP (3.24), gap=1.45",
+        "ERA (1.79) << SIERA (3.32), gap=1.53"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 1.79,
+        "xfip": 3.237211290528526,
+        "siera": 3.3236479836890163,
+        "ip": 85.66666666666667
+      }
+    },
+    {
+      "player_id": "41516",
+      "name": "Ben Brown",
       "team": "",
       "espn_team_id": null,
       "rostered": false,
       "eligible_slots": "P,BN,IL",
       "flag_type": "sell_high_pitcher",
       "reasons": [
-        "ERA (1.87) << xFIP (5.48), gap=3.61",
-        "ERA (1.87) << SIERA (5.63), gap=3.76"
+        "ERA (1.85) << xFIP (3.47), gap=1.62",
+        "ERA (1.85) << SIERA (3.56), gap=1.71"
       ],
       "score": 0.8,
       "stats": {
-        "era": 1.87,
-        "xfip": 5.480305157199009,
-        "siera": 5.631183137992986,
-        "ip": 33.666666666666664
+        "era": 1.85,
+        "xfip": 3.4698918039763305,
+        "siera": 3.55550147471076,
+        "ip": 68.0
       }
     },
     {
-      "player_id": "40884",
-      "name": "Bryan Baker",
+      "player_id": "33748",
+      "name": "Blake Snell",
       "team": "",
       "espn_team_id": 1,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "sell_high_pitcher",
       "reasons": [
-        "ERA (1.91) << xFIP (3.42), gap=1.51",
-        "ERA (1.91) << SIERA (3.21), gap=1.30"
+        "ERA (1.90) << xFIP (3.06), gap=1.16",
+        "ERA (1.90) << SIERA (3.22), gap=1.32"
       ],
       "score": 0.8,
       "stats": {
-        "era": 1.91,
-        "xfip": 3.418661012335604,
-        "siera": 3.2072468736707207,
-        "ip": 28.333333333333332
+        "era": 1.9,
+        "xfip": 3.0626589958454087,
+        "siera": 3.2163434472567474,
+        "ip": 42.666666666666664
       }
     },
     {
-      "player_id": "4927516",
-      "name": "Chase Burns",
+      "player_id": "30442",
+      "name": "Aroldis Chapman",
       "team": "",
-      "espn_team_id": 3,
+      "espn_team_id": 9,
       "rostered": true,
       "eligible_slots": "P,BN,IL",
       "flag_type": "sell_high_pitcher",
       "reasons": [
-        "ERA (2.01) << xFIP (3.21), gap=1.20",
-        "ERA (2.01) << SIERA (3.23), gap=1.22"
+        "ERA (1.92) << xFIP (2.97), gap=1.05",
+        "ERA (1.92) << SIERA (2.89), gap=0.97"
       ],
       "score": 0.8,
       "stats": {
-        "era": 2.01,
-        "xfip": 3.211892920007346,
-        "siera": 3.232200855202163,
-        "ip": 80.66666666666667
+        "era": 1.92,
+        "xfip": 2.973281005673921,
+        "siera": 2.8878774806074228,
+        "ip": 51.666666666666664
+      }
+    },
+    {
+      "player_id": "5134581",
+      "name": "Cam Schlittler",
+      "team": "",
+      "espn_team_id": 5,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (1.95) << xFIP (2.86), gap=0.91",
+        "ERA (1.95) << SIERA (2.94), gap=0.99"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 1.95,
+        "xfip": 2.8567015743360527,
+        "siera": 2.9354615974774485,
+        "ip": 193.66666666666666
+      }
+    },
+    {
+      "player_id": "4917865",
+      "name": "Abner Uribe",
+      "team": "",
+      "espn_team_id": 9,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (1.97) << xFIP (3.17), gap=1.20",
+        "ERA (1.97) << SIERA (3.09), gap=1.12"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 1.97,
+        "xfip": 3.1672145692476588,
+        "siera": 3.0854829216173987,
+        "ip": 59.333333333333336
+      }
+    },
+    {
+      "player_id": "3210625",
+      "name": "Jacob Latz",
+      "team": "",
+      "espn_team_id": 9,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (2.13) << xFIP (3.39), gap=1.26",
+        "ERA (2.13) << SIERA (2.96), gap=0.83"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 2.13,
+        "xfip": 3.3892187998342598,
+        "siera": 2.960324548955759,
+        "ip": 72.0
+      }
+    },
+    {
+      "player_id": "30948",
+      "name": "Chris Sale",
+      "team": "",
+      "espn_team_id": 9,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (2.16) << xFIP (2.82), gap=0.66",
+        "ERA (2.16) << SIERA (2.79), gap=0.63"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 2.16,
+        "xfip": 2.8174117189414747,
+        "siera": 2.7933846323746416,
+        "ip": 162.66666666666666
+      }
+    },
+    {
+      "player_id": "4927630",
+      "name": "Grant Taylor",
+      "team": "",
+      "espn_team_id": null,
+      "rostered": false,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (2.25) << xFIP (2.96), gap=0.71",
+        "ERA (2.25) << SIERA (2.83), gap=0.58"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 2.25,
+        "xfip": 2.9602753241133164,
+        "siera": 2.828492964034425,
+        "ip": 84.0
+      }
+    },
+    {
+      "player_id": "39945",
+      "name": "Brock Burke",
+      "team": "",
+      "espn_team_id": 1,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (2.30) << xFIP (4.59), gap=2.29",
+        "ERA (2.30) << SIERA (4.24), gap=1.94"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 2.3,
+        "xfip": 4.591724119737612,
+        "siera": 4.236059750069028,
+        "ip": 74.33333333333333
+      }
+    },
+    {
+      "player_id": "34943",
+      "name": "Dylan Cease",
+      "team": "",
+      "espn_team_id": 9,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (2.40) << xFIP (2.93), gap=0.53",
+        "ERA (2.40) << SIERA (3.19), gap=0.79"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 2.4,
+        "xfip": 2.925252086946951,
+        "siera": 3.1916795590619325,
+        "ip": 169.0
+      }
+    },
+    {
+      "player_id": "4917878",
+      "name": "Logan Henderson",
+      "team": "",
+      "espn_team_id": 6,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (2.47) << xFIP (3.30), gap=0.83",
+        "ERA (2.47) << SIERA (3.14), gap=0.67"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 2.47,
+        "xfip": 3.300831733892217,
+        "siera": 3.135317608662535,
+        "ip": 98.33333333333333
+      }
+    },
+    {
+      "player_id": "4872587",
+      "name": "Yoshinobu Yamamoto",
+      "team": "",
+      "espn_team_id": 1,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (2.53) << xFIP (3.28), gap=0.75",
+        "ERA (2.53) << SIERA (3.40), gap=0.87"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 2.53,
+        "xfip": 3.2825729984689405,
+        "siera": 3.399498225998077,
+        "ip": 185.0
+      }
+    },
+    {
+      "player_id": "33618",
+      "name": "Raisel Iglesias",
+      "team": "",
+      "espn_team_id": 2,
+      "rostered": true,
+      "eligible_slots": "P,BN,IL",
+      "flag_type": "sell_high_pitcher",
+      "reasons": [
+        "ERA (2.55) << xFIP (3.45), gap=0.90",
+        "ERA (2.55) << SIERA (3.15), gap=0.60"
+      ],
+      "score": 0.8,
+      "stats": {
+        "era": 2.55,
+        "xfip": 3.452777822222971,
+        "siera": 3.153942324185712,
+        "ip": 60.0
       }
     }
   ],
   "two_starters": [],
   "ownership_alerts": [
     {
-      "player_id": "4326697",
-      "name": "Reid Detmers",
+      "player_id": "41197",
+      "name": "Jake McCarthy",
       "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "ownership_now": 56.62,
-      "ownership_prev": 48.08,
-      "delta": 8.5,
-      "lookback_days": 2
+      "espn_team_id": 1,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 79.68,
+      "ownership_prev": 25.46,
+      "delta": 54.2,
+      "lookback_days": 91
     },
     {
-      "player_id": "34230",
-      "name": "Willi Castro",
+      "player_id": "4918156",
+      "name": "Jared Jones",
       "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "ownership_now": 19.57,
-      "ownership_prev": 12.94,
-      "delta": 6.6,
-      "lookback_days": 2
+      "espn_team_id": 9,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 61.25,
+      "ownership_prev": 9.87,
+      "delta": 51.4,
+      "lookback_days": 91
     },
     {
-      "player_id": "4414339",
-      "name": "Brandon Young",
+      "player_id": "4917878",
+      "name": "Logan Henderson",
       "team": "",
-      "espn_team_id": null,
-      "rostered": false,
-      "ownership_now": 18.57,
-      "ownership_prev": 12.77,
-      "delta": 5.8,
-      "lookback_days": 2
+      "espn_team_id": 6,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 62.14,
+      "ownership_prev": 13.38,
+      "delta": 48.8,
+      "lookback_days": 91
     },
     {
-      "player_id": "33773",
-      "name": "Foster Griffin",
+      "player_id": "4308037",
+      "name": "Cade Cavalli",
+      "team": "",
+      "espn_team_id": 5,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 54.56,
+      "ownership_prev": 10.33,
+      "delta": 44.2,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5073992",
+      "name": "Javier Sanoja",
       "team": "",
       "espn_team_id": null,
+      "eligible_slots": "2B,3B,MI,CI,OF,UTIL,P,BN,IL,SS",
       "rostered": false,
-      "ownership_now": 50.44,
-      "ownership_prev": 45.3,
-      "delta": 5.1,
-      "lookback_days": 2
+      "ownership_now": 43.08,
+      "ownership_prev": 3.52,
+      "delta": 39.6,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "42464",
+      "name": "Gabriel Moreno",
+      "team": "",
+      "espn_team_id": 9,
+      "eligible_slots": "C,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 75.13,
+      "ownership_prev": 39.32,
+      "delta": 35.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "40459",
+      "name": "Luis Garcia Jr.",
+      "team": "",
+      "espn_team_id": 2,
+      "eligible_slots": "2B,MI,UTIL,BN,IL,1B,CI",
+      "rostered": true,
+      "ownership_now": 81.28,
+      "ownership_prev": 46.06,
+      "delta": 35.2,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "38295",
+      "name": "Dean Kremer",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 35.03,
+      "ownership_prev": 2.2,
+      "delta": 32.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "39706",
+      "name": "Isaac Paredes",
+      "team": "",
+      "espn_team_id": 9,
+      "eligible_slots": "3B,CI,UTIL,BN,IL,1B",
+      "rostered": true,
+      "ownership_now": 66.48,
+      "ownership_prev": 37.4,
+      "delta": 29.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "33244",
+      "name": "Sean Manaea",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 31.29,
+      "ownership_prev": 2.96,
+      "delta": 28.3,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4417208",
+      "name": "Noah Cameron",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 41.1,
+      "ownership_prev": 13.91,
+      "delta": 27.2,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4867679",
+      "name": "Sean Burke",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 53.94,
+      "ownership_prev": 27.19,
+      "delta": 26.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "34973",
+      "name": "Tyler Mahle",
+      "team": "",
+      "espn_team_id": 1,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 28.24,
+      "ownership_prev": 1.59,
+      "delta": 26.6,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5198748",
+      "name": "Kade Anderson",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 28.05,
+      "ownership_prev": 2.39,
+      "delta": 25.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "31261",
+      "name": "Nolan Arenado",
+      "team": "",
+      "espn_team_id": 1,
+      "eligible_slots": "3B,CI,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 39.28,
+      "ownership_prev": 15.67,
+      "delta": 23.6,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "40080",
+      "name": "Trevor Megill",
+      "team": "",
+      "espn_team_id": 8,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 66.52,
+      "ownership_prev": 44.85,
+      "delta": 21.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4669425",
+      "name": "Ian Seymour",
+      "team": "",
+      "espn_team_id": 5,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 31.25,
+      "ownership_prev": 10.16,
+      "delta": 21.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "33372",
+      "name": "Nick Martinez",
+      "team": "",
+      "espn_team_id": 5,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 78.67,
+      "ownership_prev": 57.62,
+      "delta": 21.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "42457",
+      "name": "Ezequiel Duran",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "1B,SS,MI,CI,UTIL,BN,IL,OF,2B,3B",
+      "rostered": false,
+      "ownership_now": 44.41,
+      "ownership_prev": 23.74,
+      "delta": 20.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4966140",
+      "name": "Payton Tolle",
+      "team": "",
+      "espn_team_id": 2,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 64.18,
+      "ownership_prev": 43.73,
+      "delta": 20.5,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5148964",
+      "name": "Max Clark",
+      "team": "",
+      "espn_team_id": 5,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 20.12,
+      "ownership_prev": 1.62,
+      "delta": 18.5,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "41311",
+      "name": "Kody Clemens",
+      "team": "",
+      "espn_team_id": 6,
+      "eligible_slots": "1B,2B,MI,CI,UTIL,BN,IL,OF",
+      "rostered": true,
+      "ownership_now": 32.75,
+      "ownership_prev": 14.98,
+      "delta": 17.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4977664",
+      "name": "Luke Keaschall",
+      "team": "",
+      "espn_team_id": 6,
+      "eligible_slots": "2B,MI,UTIL,BN,IL,OF",
+      "rostered": true,
+      "ownership_now": 62.16,
+      "ownership_prev": 45.24,
+      "delta": 16.9,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4654024",
+      "name": "Jake Bennett",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 21.39,
+      "ownership_prev": 4.8,
+      "delta": 16.6,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "39640",
+      "name": "Trevor Rogers",
+      "team": "",
+      "espn_team_id": 3,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 52.38,
+      "ownership_prev": 36.02,
+      "delta": 16.4,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4925604",
+      "name": "Carson Benge",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": false,
+      "ownership_now": 38.71,
+      "ownership_prev": 22.72,
+      "delta": 16.0,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "33403",
+      "name": "Emilio Pagan",
+      "team": "",
+      "espn_team_id": 1,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 63.46,
+      "ownership_prev": 47.75,
+      "delta": 15.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "42480",
+      "name": "Taj Bradley",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 59.56,
+      "ownership_prev": 44.12,
+      "delta": 15.4,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "33748",
+      "name": "Blake Snell",
+      "team": "",
+      "espn_team_id": 1,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 80.97,
+      "ownership_prev": 65.76,
+      "delta": 15.2,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "28976",
+      "name": "Max Scherzer",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 17.27,
+      "ownership_prev": 2.07,
+      "delta": 15.2,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "3210625",
+      "name": "Jacob Latz",
+      "team": "",
+      "espn_team_id": 9,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 61.8,
+      "ownership_prev": 46.63,
+      "delta": 15.2,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4990055",
+      "name": "Wilyer Abreu",
+      "team": "",
+      "espn_team_id": 7,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 75.74,
+      "ownership_prev": 60.67,
+      "delta": 15.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "32827",
+      "name": "Clay Holmes",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 29.6,
+      "ownership_prev": 14.78,
+      "delta": 14.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "42604",
+      "name": "Griffin Jax",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 49.72,
+      "ownership_prev": 35.0,
+      "delta": 14.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4629081",
+      "name": "Brooks Lee",
+      "team": "",
+      "espn_team_id": 9,
+      "eligible_slots": "2B,3B,SS,MI,CI,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 58.1,
+      "ownership_prev": 43.97,
+      "delta": 14.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "39639",
+      "name": "Shane Baz",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 44.09,
+      "ownership_prev": 30.09,
+      "delta": 14.0,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4721302",
+      "name": "Brandon Pfaadt",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 14.61,
+      "ownership_prev": 1.29,
+      "delta": 13.3,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4927630",
+      "name": "Grant Taylor",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 21.81,
+      "ownership_prev": 8.97,
+      "delta": 12.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "32640",
+      "name": "Michael Wacha",
+      "team": "",
+      "espn_team_id": 3,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 71.4,
+      "ownership_prev": 59.38,
+      "delta": 12.0,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4987382",
+      "name": "Ceddanne Rafaela",
+      "team": "",
+      "espn_team_id": 9,
+      "eligible_slots": "2B,MI,OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 56.84,
+      "ownership_prev": 45.04,
+      "delta": 11.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4679983",
+      "name": "Chandler Simpson",
+      "team": "",
+      "espn_team_id": 3,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 47.26,
+      "ownership_prev": 35.52,
+      "delta": 11.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4414531",
+      "name": "Zack Gelof",
+      "team": "",
+      "espn_team_id": 1,
+      "eligible_slots": "2B,MI,UTIL,BN,IL,OF,3B,CI",
+      "rostered": true,
+      "ownership_now": 40.72,
+      "ownership_prev": 29.03,
+      "delta": 11.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4872691",
+      "name": "Jackson Merrill",
+      "team": "",
+      "espn_team_id": 7,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 88.87,
+      "ownership_prev": 77.42,
+      "delta": 11.5,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "40917",
+      "name": "Adrian Morejon",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 23.32,
+      "ownership_prev": 12.03,
+      "delta": 11.3,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "40884",
+      "name": "Bryan Baker",
+      "team": "",
+      "espn_team_id": 2,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 77.59,
+      "ownership_prev": 66.7,
+      "delta": 10.9,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "41996",
+      "name": "Steven Kwan",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": false,
+      "ownership_now": 68.82,
+      "ownership_prev": 57.93,
+      "delta": 10.9,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5006093",
+      "name": "Kyle Leahy",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 18.13,
+      "ownership_prev": 7.33,
+      "delta": 10.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "35013",
+      "name": "Jake Bauers",
+      "team": "",
+      "espn_team_id": 1,
+      "eligible_slots": "1B,CI,OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 74.15,
+      "ownership_prev": 63.49,
+      "delta": 10.7,
+      "lookback_days": 91
     },
     {
       "player_id": "39898",
       "name": "Peter Lambert",
       "team": "",
       "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
       "rostered": false,
-      "ownership_now": 14.58,
-      "ownership_prev": 9.51,
-      "delta": 5.1,
-      "lookback_days": 2
+      "ownership_now": 36.06,
+      "ownership_prev": 25.51,
+      "delta": 10.6,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4109034",
+      "name": "Andre Pallante",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 30.6,
+      "ownership_prev": 20.15,
+      "delta": 10.5,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "42417",
+      "name": "Bryson Stott",
+      "team": "",
+      "espn_team_id": 6,
+      "eligible_slots": "2B,MI,UTIL,BN,IL,3B,CI",
+      "rostered": true,
+      "ownership_now": 50.68,
+      "ownership_prev": 40.36,
+      "delta": 10.3,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4142424",
+      "name": "Seiya Suzuki",
+      "team": "",
+      "espn_team_id": 7,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 88.31,
+      "ownership_prev": 78.11,
+      "delta": 10.2,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5197476",
+      "name": "Walbert Urena",
+      "team": "",
+      "espn_team_id": 2,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 25.22,
+      "ownership_prev": 15.08,
+      "delta": 10.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4619649",
+      "name": "Chase DeLauter",
+      "team": "",
+      "espn_team_id": 3,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 61.59,
+      "ownership_prev": 51.49,
+      "delta": 10.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "29630",
+      "name": "Kenley Jansen",
+      "team": "",
+      "espn_team_id": 8,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 47.84,
+      "ownership_prev": 38.06,
+      "delta": 9.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "41169",
+      "name": "Alec Bohm",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "3B,CI,UTIL,BN,IL,1B",
+      "rostered": false,
+      "ownership_now": 27.08,
+      "ownership_prev": 17.56,
+      "delta": 9.5,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "33709",
+      "name": "Aaron Nola",
+      "team": "",
+      "espn_team_id": 3,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 49.03,
+      "ownership_prev": 39.59,
+      "delta": 9.4,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "34984",
+      "name": "Michael Soroka",
+      "team": "",
+      "espn_team_id": 7,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 62.3,
+      "ownership_prev": 52.93,
+      "delta": 9.4,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "41587",
+      "name": "Ryan Jeffers",
+      "team": "",
+      "espn_team_id": 6,
+      "eligible_slots": "C,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 35.67,
+      "ownership_prev": 26.44,
+      "delta": 9.2,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "39674",
+      "name": "Garrett Whitlock",
+      "team": "",
+      "espn_team_id": 2,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 18.37,
+      "ownership_prev": 9.31,
+      "delta": 9.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "41415",
+      "name": "Yusei Kikuchi",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 16.23,
+      "ownership_prev": 7.44,
+      "delta": 8.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "34401",
+      "name": "Matthew Boyd",
+      "team": "",
+      "espn_team_id": 8,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 52.52,
+      "ownership_prev": 43.78,
+      "delta": 8.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5080757",
+      "name": "JR Ritchie",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 10.49,
+      "ownership_prev": 2.08,
+      "delta": 8.4,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5137200",
+      "name": "Esmerlyn Valdez",
+      "team": "",
+      "espn_team_id": 5,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 9.9,
+      "ownership_prev": 1.89,
+      "delta": 8.0,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4326697",
+      "name": "Reid Detmers",
+      "team": "",
+      "espn_team_id": 2,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 69.54,
+      "ownership_prev": 61.59,
+      "delta": 8.0,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "35304",
+      "name": "Mauricio Dubon",
+      "team": "",
+      "espn_team_id": 5,
+      "eligible_slots": "2B,3B,SS,MI,CI,OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 68.31,
+      "ownership_prev": 60.4,
+      "delta": 7.9,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5007615",
+      "name": "Caleb Durbin",
+      "team": "",
+      "espn_team_id": 9,
+      "eligible_slots": "3B,CI,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 39.69,
+      "ownership_prev": 31.9,
+      "delta": 7.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "35135",
+      "name": "Tanner Scott",
+      "team": "",
+      "espn_team_id": 2,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 41.54,
+      "ownership_prev": 33.83,
+      "delta": 7.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4872683",
+      "name": "Andrew Painter",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 13.16,
+      "ownership_prev": 5.6,
+      "delta": 7.6,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "33840",
+      "name": "Grant Holmes",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 15.74,
+      "ownership_prev": 8.19,
+      "delta": 7.6,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4917919",
+      "name": "Lawrence Butler",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": false,
+      "ownership_now": 17.26,
+      "ownership_prev": 9.94,
+      "delta": 7.3,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4311634",
+      "name": "Nick Gonzales",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "2B,MI,UTIL,BN,IL,3B,CI",
+      "rostered": false,
+      "ownership_now": 17.17,
+      "ownership_prev": 10.06,
+      "delta": 7.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4867424",
+      "name": "Spencer Jones",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": false,
+      "ownership_now": 10.4,
+      "ownership_prev": 3.52,
+      "delta": 6.9,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4917854",
+      "name": "Eury Perez",
+      "team": "",
+      "espn_team_id": 3,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 66.47,
+      "ownership_prev": 59.66,
+      "delta": 6.8,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "32517",
+      "name": "Josh Bell",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "1B,CI,UTIL,BN,IL",
+      "rostered": false,
+      "ownership_now": 18.77,
+      "ownership_prev": 12.29,
+      "delta": 6.5,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "41208",
+      "name": "Bryan Abreu",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 37.99,
+      "ownership_prev": 31.62,
+      "delta": 6.4,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "33900",
+      "name": "Jeff McNeil",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "2B,MI,OF,UTIL,BN,IL,1B,CI",
+      "rostered": false,
+      "ownership_now": 11.69,
+      "ownership_prev": 5.59,
+      "delta": 6.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "38303",
+      "name": "David Bednar",
+      "team": "",
+      "espn_team_id": 7,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 88.74,
+      "ownership_prev": 82.66,
+      "delta": 6.1,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "40921",
+      "name": "David Peterson",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 9.26,
+      "ownership_prev": 3.38,
+      "delta": 5.9,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5080756",
+      "name": "Henry Bolte",
+      "team": "",
+      "espn_team_id": 2,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 11.64,
+      "ownership_prev": 5.78,
+      "delta": 5.9,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4187661",
+      "name": "Hunter Gaddis",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "P,BN,IL",
+      "rostered": false,
+      "ownership_now": 10.14,
+      "ownership_prev": 4.47,
+      "delta": 5.7,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "5136929",
+      "name": "Chase Meidroth",
+      "team": "",
+      "espn_team_id": null,
+      "eligible_slots": "2B,SS,MI,UTIL,BN,IL",
+      "rostered": false,
+      "ownership_now": 14.88,
+      "ownership_prev": 9.39,
+      "delta": 5.5,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4917889",
+      "name": "Daylen Lile",
+      "team": "",
+      "espn_team_id": 2,
+      "eligible_slots": "OF,UTIL,BN,IL",
+      "rostered": true,
+      "ownership_now": 65.69,
+      "ownership_prev": 60.22,
+      "delta": 5.5,
+      "lookback_days": 91
+    },
+    {
+      "player_id": "4917888",
+      "name": "Louis Varland",
+      "team": "",
+      "espn_team_id": 6,
+      "eligible_slots": "P,BN,IL",
+      "rostered": true,
+      "ownership_now": 85.66,
+      "ownership_prev": 80.36,
+      "delta": 5.3,
+      "lookback_days": 91
     }
   ],
   "constraints": {
-    "acquisitions_used": 1,
-    "acquisitions_remaining": 6,
-    "ip_accumulated": 5.333333333333333,
-    "ip_remaining": 9.7,
+    "acquisitions_used": 0,
+    "acquisitions_remaining": 7,
+    "ip_accumulated": 0.0,
+    "ip_remaining": 15.0,
     "waiver_priority": 3,
     "acq_alert": null,
     "ip_alert": null,
     "waiver_alert": "STRONG: waiver priority #3 \u2014 act early in week"
   },
   "summary": {
-    "cats_winning": 1,
+    "cats_winning": 0,
     "cats_losing": 0,
-    "cats_flippable": 1,
-    "buy_low_count": 108,
-    "sell_high_count": 140,
+    "cats_flippable": 0,
+    "buy_low_count": 92,
+    "sell_high_count": 136,
     "two_starters_count": 0
   }
 }
